@@ -522,7 +522,7 @@ function initBooking() {
     timesPanel.innerHTML = '';
     const title = document.createElement('p');
     title.className = 'cal-times-title';
-    title.textContent = 'Kies een uur — ' + fmtDay.format(date);
+    title.textContent = 'Kies een uur · ' + fmtDay.format(date);
     const grid = document.createElement('div');
     grid.className = 'times-grid';
     for (let h = 9; h <= 16; h++) {
@@ -556,10 +556,11 @@ function initBooking() {
       embed_domain: location.hostname || 'localhost',
       embed_type: 'Inline',
       hide_event_type_details: '1',
-      hide_gdpr_banner: '1'
+      hide_gdpr_banner: '1',
+      locale: 'nl'
     });
     const slotUrl = base + '/' + encodeURIComponent(iso) + '?' + params.toString();
-    openModal(slotUrl, fmtDay.format(date) + ' · ' + time + ' — bevestig je gegevens');
+    openModal(slotUrl, fmtDay.format(date) + ' · ' + time + ' · bevestig je gegevens');
   }
 
   function openModal(src, titleText) {
