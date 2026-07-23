@@ -2903,6 +2903,57 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 /* ============================================================
+   PRICING — prijs, credits, badges
+   ============================================================ */
+.pricing-credit-note {
+  margin: 16px auto 0;
+  max-width: 460px;
+  font-size: 12.5px;
+  color: var(--text-3);
+  line-height: 1.6;
+  padding: 8px 16px;
+  border: 1px solid var(--border-0);
+  border-radius: 100px;
+  background: rgba(99,102,241,0.04);
+}
+.pricing-price {
+  font-family: var(--font-h);
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-1);
+  margin-top: 8px;
+  line-height: 1;
+}
+.pricing-per {
+  font-family: var(--font-b);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-3);
+  letter-spacing: 0;
+}
+.pricing-from {
+  font-family: var(--font-b);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-3);
+  margin-right: 4px;
+}
+.pricing-badge-scale {
+  background: rgba(124,58,237,0.15);
+  border-color: rgba(124,58,237,0.4);
+  color: #c4b5fd;
+}
+.pricing-feat.included.hl .feat-icon {
+  background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+  color: #fff;
+}
+.pricing-feat.included.hl .feat-text {
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+/* ============================================================
    SOLUTIONS (oplossingen per sector)
    ============================================================ */
 .solutions { background: var(--bg-0); }
