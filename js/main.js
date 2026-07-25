@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroParallax();
   initCalculator();
   initBooking();
+  initDemoForm();
   initSignature();
   initWordAnim();
   initMagnetic();
@@ -665,5 +666,71 @@ function initContactForm() {
       btn.style.opacity = '';
       form.reset();
     }, 3000);
+  });
+}
+
+/* ============================================================
+   DEMO-FORMULIER — bezoeker vult zijn nummer in en start
+   meteen een demo-gesprek met de Helvaro-AI op WhatsApp.
+
+   INSTELLEN: zet het WhatsApp-demonummer van Helvaro in het
+   data-demo-number attribuut van .demo-form in index.html,
+   in internationaal formaat zonder + of spaties.
+   Bijvoorbeeld: data-demo-number="32470123456"
+   Zolang het leeg is, valt de knop terug op de boekingspagina.
+   ============================================================ */
+function initDemoForm() {
+  const form = document.querySelector('.demo-form');
+  if (!form) return;
+
+  const input = form.querySelector('.demo-input');
+  const note = form.querySelector('.demo-note');
+  const noteText = note ? note.textContent : '';
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const raw = (input.value || '').trim();
+    const digits = raw.replace(/[^\d]/g, '');
+
+    // Minimaal een plausibel internationaal nummer
+    if (digits.length < 8) {
+      input.classList.add('invalid');
+      if (note) {
+        note.textContent = 'Vul je WhatsApp-nummer in, inclusief landcode (bijvoorbeeld +32).';
+        note.classList.add('error');
+      }
+      input.focus();
+      return;
+    }
+
+    input.classList.remove('invalid');
+    if (note) {
+      note.textContent = noteText;
+      note.classList.remove('error');
+    }
+
+    const demoNumber = (form.dataset.demoNumber || '').replace(/[^\d]/g, '');
+
+    if (!demoNumber) {
+      // Nog geen demonummer ingesteld: stuur door naar de boekingspagina
+      window.location.href = 'meeting.html#booking';
+      return;
+    }
+
+    const msg = 'Hallo Helvaro, ik wil graag een demo-gesprek. Mijn nummer is ' + raw + '.';
+    window.open(
+      'https://wa.me/' + demoNumber + '?text=' + encodeURIComponent(msg),
+      '_blank',
+      'noopener'
+    );
+  });
+
+  input.addEventListener('input', () => {
+    input.classList.remove('invalid');
+    if (note && note.classList.contains('error')) {
+      note.textContent = noteText;
+      note.classList.remove('error');
+    }
   });
 }

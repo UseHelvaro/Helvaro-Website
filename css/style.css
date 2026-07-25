@@ -2903,8 +2903,149 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 /* ============================================================
+   HERO DEMO-FORMULIER (nummer invullen → demo op WhatsApp)
+   ============================================================ */
+.demo-form {
+  margin: 26px 0 20px;
+  padding: 20px 22px;
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-m);
+  background: rgba(99,102,241,0.05);
+  box-shadow: 0 0 40px rgba(99,102,241,0.08);
+  max-width: 480px;
+}
+.demo-label {
+  display: block;
+  font-family: var(--font-h);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: 12px;
+}
+.demo-row { display: flex; gap: 10px; }
+.demo-input {
+  flex: 1;
+  min-width: 0;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(99,102,241,0.25);
+  border-radius: var(--radius-s);
+  padding: 12px 16px;
+  color: var(--text-1);
+  font-family: var(--font-b);
+  font-size: 14.5px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  -webkit-appearance: none;
+}
+.demo-input::placeholder { color: var(--text-3); }
+.demo-input:focus {
+  border-color: rgba(99,102,241,0.55);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+}
+.demo-input.invalid { border-color: rgba(255,120,120,0.6); }
+.demo-btn { flex-shrink: 0; padding: 12px 22px; }
+.demo-note { margin-top: 10px; font-size: 12px; color: var(--text-3); line-height: 1.5; }
+.demo-note.error { color: rgba(255,140,140,0.9); }
+@media (max-width: 1024px) { .demo-form { margin-left: auto; margin-right: auto; text-align: left; } }
+@media (max-width: 480px) { .demo-row { flex-direction: column; } .demo-btn { width: 100%; } }
+
+/* ============================================================
+   FOTOKAARTEN (visueel bewijs op de homepage)
+   ============================================================ */
+.photo-section { padding-top: 84px; padding-bottom: 84px; }
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.photo-card {
+  position: relative;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  border: 1px solid var(--border-0);
+  background: var(--bg-card);
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.photo-card:hover {
+  border-color: var(--border-1);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 50px rgba(0,0,0,0.5), 0 0 40px rgba(79,70,229,0.12);
+}
+.photo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 0.6s var(--ease);
+}
+.photo-card:hover .photo-img { transform: scale(1.04); }
+.photo-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(7,7,9,0.15) 0%, rgba(7,7,9,0.75) 55%, rgba(7,7,9,0.95) 100%);
+}
+.photo-body { position: relative; z-index: 2; padding: 28px 26px; }
+.photo-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  margin-bottom: 10px;
+  border-radius: 100px;
+  border: 1px solid rgba(99,102,241,0.4);
+  background: rgba(99,102,241,0.2);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #c7d2fe;
+}
+.photo-title {
+  font-family: var(--font-h);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.photo-desc { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+@media (max-width: 900px) {
+  .photo-grid { grid-template-columns: 1fr; }
+  .photo-card { min-height: 340px; }
+}
+
+/* ============================================================
    PRICING — prijs, credits, badges
    ============================================================ */
+.pricing-trial {
+  margin: 20px auto 0;
+  max-width: 560px;
+  font-size: 13.5px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+.trial-badge {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent-purple));
+  font-family: var(--font-h);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #fff;
+  box-shadow: 0 0 18px rgba(99,102,241,0.35);
+}
 .pricing-credit-note {
   margin: 16px auto 0;
   max-width: 460px;
