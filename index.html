@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body>
 
@@ -93,7 +93,7 @@
           <p class="hero-subtitle">Helvaro reageert binnen 30 seconden op elke nieuwe lead, ook zaterdagavond, en zet alleen warme prospects in je agenda. Meer afspraken uit dezelfde leads, zonder extra personeel.</p>
           <div class="hero-ctas">
             <a href="meeting.html" class="btn btn-lg">Plan een gesprek <span class="btn-arrow" aria-hidden="true">→</span></a>
-            <a href="waarom.html#calculator" class="btn btn-lg btn-ghost">Bereken wat je laat liggen</a>
+            <a href="#calculator" class="btn btn-lg btn-ghost">Bereken wat je laat liggen</a>
           </div>
           <form class="demo-form" data-demo-number="" novalidate>
             <label class="demo-label" for="demo-phone">Probeer het zelf: ontvang een demo-gesprek op WhatsApp</label>
@@ -321,6 +321,53 @@
       </div>
     </section>
 
+    <!-- ===== ROI CALCULATOR ===== -->
+    <section class="section comparison" id="calculator">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">Reken het zelf uit</span>
+          <h2 class="section-title">Hoeveel laat je liggen door trage opvolging?</h2>
+          <p class="section-sub">Vul je eigen cijfers in. Geen e-mailadres nodig.</p>
+        </div>
+        <div class="calc-card reveal">
+          <div class="calc-inputs">
+            <div class="calc-field">
+              <label for="calc-leads">Nieuwe leads per maand</label>
+              <input type="number" id="calc-leads" value="50" min="0" inputmode="numeric">
+            </div>
+            <div class="calc-field">
+              <label for="calc-value">Gemiddelde omzet per klant (&euro;)</label>
+              <input type="number" id="calc-value" value="2500" min="0" inputmode="numeric">
+            </div>
+            <div class="calc-field">
+              <label for="calc-conv">Conversie van lead naar klant (%)</label>
+              <input type="number" id="calc-conv" value="20" min="0" max="100" inputmode="numeric">
+            </div>
+            <div class="calc-field">
+              <label for="calc-miss">Leads die je niet binnen het uur opvolgt (%)</label>
+              <input type="number" id="calc-miss" value="50" min="0" max="100" inputmode="numeric">
+            </div>
+          </div>
+          <div class="calc-result">
+            <p class="calc-result-label">Geschatte gemiste omzet per maand</p>
+            <p class="calc-result-value" aria-live="polite">&euro; 12.500</p>
+            <div class="calc-breakdown">
+              <div class="calc-stat">
+                <span class="calc-stat-val" id="calc-out-leads">25</span>
+                <span class="calc-stat-label">leads te laat opgevolgd</span>
+              </div>
+              <div class="calc-stat">
+                <span class="calc-stat-val" id="calc-out-clients">5</span>
+                <span class="calc-stat-label">klanten die je misloopt</span>
+              </div>
+            </div>
+            <p class="calc-result-note">Berekening: leads &times; percentage te trage opvolging &times; je conversie &times; je omzet per klant. Een indicatie op basis van je eigen cijfers, geen belofte.</p>
+            <a href="meeting.html" class="btn">Plan een gesprek <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== PRICING ===== -->
     <section class="section" id="prijzen">
       <div class="section-glow" aria-hidden="true"></div>
@@ -445,7 +492,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=6"></script>
-  <script src="js/i18n.js?v=2"></script>
+  <script src="js/main.js?v=7"></script>
+  <script src="js/i18n.js?v=3"></script>
 </body>
 </html>

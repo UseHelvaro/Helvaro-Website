@@ -617,7 +617,10 @@ function initCalculator() {
   const leadsInput = calc.querySelector('#calc-leads');
   const valueInput = calc.querySelector('#calc-value');
   const convInput = calc.querySelector('#calc-conv');
+  const missInput = calc.querySelector('#calc-miss');
   const result = calc.querySelector('.calc-result-value');
+  const outLeads = calc.querySelector('#calc-out-leads');
+  const outClients = calc.querySelector('#calc-out-clients');
   if (!leadsInput || !valueInput || !convInput || !result) return;
 
   const fmt = new Intl.NumberFormat('nl-BE', {
@@ -625,6 +628,7 @@ function initCalculator() {
     currency: 'EUR',
     maximumFractionDigits: 0
   });
+  const num = new Intl.NumberFormat('nl-BE', { maximumFractionDigits: 0 });
 
   function clamp(val, min, max) {
     return Math.min(Math.max(val, min), max);
@@ -634,13 +638,20 @@ function initCalculator() {
     const leads = clamp(parseFloat(leadsInput.value) || 0, 0, 100000);
     const value = clamp(parseFloat(valueInput.value) || 0, 0, 10000000);
     const conv = clamp(parseFloat(convInput.value) || 0, 0, 100);
-    // Aanname: zonder opvolging binnen het uur verdampt ±50% van het conversiepotentieel
-    const lost = leads * (conv / 100) * value * 0.5;
+    // Percentage leads dat niet binnen het uur wordt opgevolgd (instelbaar)
+    const missPct = missInput ? clamp(parseFloat(missInput.value) || 0, 0, 100) : 50;
+
+    const missedLeads = leads * (missPct / 100);
+    const missedClients = missedLeads * (conv / 100);
+    const lost = missedClients * value;
+
     result.textContent = fmt.format(Math.round(lost));
+    if (outLeads) outLeads.textContent = num.format(Math.round(missedLeads));
+    if (outClients) outClients.textContent = num.format(Math.round(missedClients));
   }
 
-  [leadsInput, valueInput, convInput].forEach(input => {
-    input.addEventListener('input', update);
+  [leadsInput, valueInput, convInput, missInput].forEach(input => {
+    if (input) input.addEventListener('input', update);
   });
   update();
 }
