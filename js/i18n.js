@@ -57,15 +57,78 @@
     document.querySelectorAll('.lang-opt').forEach(function(o){ o.classList.toggle('active', o.getAttribute('data-lang')===lang); });
     applyHero(lang);
   }
+  /* ----------------------------------------------------------
+     Automatische taalkeuze.
+     Volgorde: eigen keuze van de bezoeker > ?lang= in de URL >
+     browsertaal > tijdzone als landhint > Nederlands.
+
+     Bewust geen IP-geolocatie: dat vereist een externe dienst,
+     stuurt het IP van elke bezoeker naar een derde partij (slecht
+     te rijmen met onze eigen GDPR-belofte) en vertraagt de pagina.
+     Browsertaal en tijdzone komen uit de browser zelf.
+     ---------------------------------------------------------- */
+  var SUPPORTED = ['nl','fr','en','de','es'];
+
+  /* Tijdzone -> taal. Enkel als de browsertaal niets oplevert. */
+  var TZ_LANG = {
+    'Europe/Brussels':'nl', 'Europe/Amsterdam':'nl',
+    'Europe/Paris':'fr', 'Europe/Monaco':'fr', 'Europe/Luxembourg':'fr',
+    'Europe/Madrid':'es', 'Atlantic/Canary':'es', 'Europe/Andorra':'es',
+    'Europe/Berlin':'de', 'Europe/Vienna':'de', 'Europe/Zurich':'de'
+  };
+
+  function detect(){
+    /* 1. Eerdere expliciete keuze respecteren */
+    try {
+      if (localStorage.getItem('helvaro_lang_set') === '1') {
+        var chosen = localStorage.getItem('helvaro_lang');
+        if (chosen && SUPPORTED.indexOf(chosen) >= 0) return chosen;
+      }
+    } catch(e){}
+
+    /* 2. ?lang=fr in de URL, handig voor advertenties per land */
+    try {
+      var q = (location.search.match(/[?&]lang=([a-zA-Z-]+)/) || [])[1];
+      if (q) {
+        q = q.slice(0,2).toLowerCase();
+        if (SUPPORTED.indexOf(q) >= 0) return q;
+      }
+    } catch(e){}
+
+    /* 3. Voorkeurstalen van de browser */
+    var langs = navigator.languages && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || navigator.userLanguage || ''];
+    for (var i = 0; i < langs.length; i++) {
+      var code = String(langs[i] || '').slice(0,2).toLowerCase();
+      if (SUPPORTED.indexOf(code) >= 0) return code;
+    }
+
+    /* 4. Tijdzone als landhint */
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (TZ_LANG[tz]) return TZ_LANG[tz];
+      /* Buiten Europa is Engels de veiligste gok */
+      if (tz && tz.indexOf('Europe/') !== 0) return 'en';
+    } catch(e){}
+
+    /* 5. Standaard */
+    return 'nl';
+  }
+
   function init(){
     heroEl = document.querySelector('.hero-title');
     collect();
-    var saved = 'nl';
-    try { saved = localStorage.getItem('helvaro_lang') || 'nl'; } catch(e){}
-    apply(saved);
+    apply(detect());
     document.addEventListener('click', function(e){
       var opt = e.target.closest('.lang-opt');
-      if(opt){ apply(opt.getAttribute('data-lang')); document.querySelectorAll('.lang-switch').forEach(function(s){ s.classList.remove('open'); }); return; }
+      if(opt){
+        /* Vanaf nu telt de keuze van de bezoeker, niet de detectie */
+        try { localStorage.setItem('helvaro_lang_set','1'); } catch(err){}
+        apply(opt.getAttribute('data-lang'));
+        document.querySelectorAll('.lang-switch').forEach(function(s){ s.classList.remove('open'); });
+        return;
+      }
       var tog = e.target.closest('.lang-toggle');
       if(tog){ var sw = tog.closest('.lang-switch'); var open = sw.classList.toggle('open'); tog.setAttribute('aria-expanded', open?'true':'false'); e.stopPropagation(); return; }
       document.querySelectorAll('.lang-switch.open').forEach(function(s){ s.classList.remove('open'); });
