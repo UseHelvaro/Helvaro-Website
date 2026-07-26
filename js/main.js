@@ -312,8 +312,8 @@ function initWhatsApp() {
     messages.forEach((msg, i) => {
       const delay = 1000 + i * 1100;
 
-      // Show typing before "sent" messages
-      if (msg.classList.contains('sent') && typing) {
+      // Typ-indicator hoort bij Mathis, dus vóór de ontvangen berichten
+      if (msg.classList.contains('received') && typing) {
         setTimeout(() => {
           typing.classList.add('visible');
           chat.scrollTop = chat.scrollHeight;
