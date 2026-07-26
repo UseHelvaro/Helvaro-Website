@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCalculator();
   initBooking();
   initDemoForm();
+  initTheme();
   initSignature();
   initWordAnim();
   initMagnetic();
@@ -743,5 +744,41 @@ function initDemoForm() {
       note.textContent = noteText;
       note.classList.remove('error');
     }
+  });
+}
+
+
+/* ============================================================
+   THEMA — licht of donker, keuze blijft bewaard.
+   Het thema wordt al in de <head> gezet zodat de pagina niet
+   even in de verkeerde kleur flitst; hier hangen we enkel de
+   knop eraan.
+   ============================================================ */
+function initTheme() {
+  var root = document.documentElement;
+
+  function current() {
+    return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  }
+
+  function apply(theme, animate) {
+    if (animate) {
+      root.classList.add('theme-anim');
+      window.setTimeout(function () { root.classList.remove('theme-anim'); }, 320);
+    }
+    root.setAttribute('data-theme', theme);
+    try { localStorage.setItem('helvaro_theme', theme); } catch (e) {}
+    document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+      btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    });
+  }
+
+  // Beginwaarde vastleggen (de head-code zette het attribuut al)
+  apply(current(), false);
+
+  document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      apply(current() === 'dark' ? 'light' : 'dark', true);
+    });
   });
 }
