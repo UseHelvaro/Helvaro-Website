@@ -10,6 +10,28 @@
     de: 'Jeder Lead <span class="highlight">in 30 Sekunden</span> über WhatsApp nachverfolgt',
     es: 'Cada lead seguido <span class="highlight">en 30 segundos</span> vía WhatsApp'
   };
+  /* Titel van het browsertabblad: die staat buiten de <body> en wordt
+     dus niet door de tekstwandeling opgepikt. Apart vertalen. */
+  var TITLES = {
+    'Helvaro \u00b7 AI Leadopvolging via WhatsApp voor Salesteams': {
+      fr: 'Helvaro \u00b7 Suivi de leads par IA via WhatsApp',
+      en: 'Helvaro \u00b7 AI Lead Follow-up via WhatsApp',
+      de: 'Helvaro \u00b7 KI-Lead-Nachverfolgung \u00fcber WhatsApp',
+      es: 'Helvaro \u00b7 Seguimiento de leads con IA por WhatsApp'
+    },
+    'Waarom Helvaro \u00b7 Zo werkt AI-leadopvolging via WhatsApp': {
+      fr: 'Pourquoi Helvaro \u00b7 le suivi de leads par IA sur WhatsApp',
+      en: 'Why Helvaro \u00b7 how AI lead follow-up on WhatsApp works',
+      de: 'Warum Helvaro \u00b7 so funktioniert KI-Lead-Nachverfolgung',
+      es: 'Por qu\u00e9 Helvaro \u00b7 as\u00ed funciona el seguimiento con IA'
+    }
+  };
+  var baseTitle = document.title;
+  function applyTitle(lang){
+    var set = TITLES[baseTitle];
+    document.title = (lang === 'nl' || !set || !set[lang]) ? baseTitle : set[lang];
+  }
+
   var heroEl = null, heroTouched = false;
   function applyHero(lang){
     if(!heroEl) return;
@@ -56,6 +78,7 @@
     document.querySelectorAll('.lang-current').forEach(function(c){ c.textContent = LABELS[lang]; });
     document.querySelectorAll('.lang-opt').forEach(function(o){ o.classList.toggle('active', o.getAttribute('data-lang')===lang); });
     applyHero(lang);
+    applyTitle(lang);
   }
   /* ----------------------------------------------------------
      Automatische taalkeuze.
