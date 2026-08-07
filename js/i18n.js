@@ -13,23 +13,39 @@
   /* Titel van het browsertabblad: die staat buiten de <body> en wordt
      dus niet door de tekstwandeling opgepikt. Apart vertalen. */
   var TITLES = {
-    'Helvaro \u00b7 AI Leadopvolging via WhatsApp voor Salesteams': {
-      fr: 'Helvaro \u00b7 Suivi de leads par IA via WhatsApp',
-      en: 'Helvaro \u00b7 AI Lead Follow-up via WhatsApp',
-      de: 'Helvaro \u00b7 KI-Lead-Nachverfolgung \u00fcber WhatsApp',
-      es: 'Helvaro \u00b7 Seguimiento de leads con IA por WhatsApp'
+    'Helvaro \u00b7 AI agents that follow up every lead on WhatsApp': {
+      nl: 'Helvaro \u00b7 AI-agents die elke lead opvolgen via WhatsApp',
+      fr: 'Helvaro \u00b7 des agents IA qui suivent chaque lead sur WhatsApp',
+      de: 'Helvaro \u00b7 KI-Agents, die jeden Lead \u00fcber WhatsApp nachverfolgen',
+      es: 'Helvaro \u00b7 agentes de IA que siguen cada lead por WhatsApp'
     },
-    'Waarom Helvaro \u00b7 Zo werkt AI-leadopvolging via WhatsApp': {
-      fr: 'Pourquoi Helvaro \u00b7 le suivi de leads par IA sur WhatsApp',
-      en: 'Why Helvaro \u00b7 how AI lead follow-up on WhatsApp works',
-      de: 'Warum Helvaro \u00b7 so funktioniert KI-Lead-Nachverfolgung',
-      es: 'Por qu\u00e9 Helvaro \u00b7 as\u00ed funciona el seguimiento con IA'
+    'Why Helvaro \u00b7 how AI agents follow up your leads on WhatsApp': {
+      nl: 'Waarom Helvaro \u00b7 zo volgen AI-agents je leads op via WhatsApp',
+      fr: 'Pourquoi Helvaro \u00b7 comment des agents IA suivent vos leads',
+      de: 'Warum Helvaro \u00b7 so verfolgen KI-Agents Ihre Leads nach',
+      es: 'Por qu\u00e9 Helvaro \u00b7 as\u00ed siguen tus leads los agentes de IA'
+    },
+    'Book a lead audit \u00b7 Helvaro': {
+      nl: 'Plan een lead-audit \u00b7 Helvaro',
+      fr: 'Planifier un audit de leads \u00b7 Helvaro',
+      de: 'Lead-Audit planen \u00b7 Helvaro',
+      es: 'Agenda una auditor\u00eda de leads \u00b7 Helvaro'
+    },
+    'Contact \u00b7 Helvaro': {
+      nl: 'Contact \u00b7 Helvaro', fr: 'Contact \u00b7 Helvaro',
+      de: 'Kontakt \u00b7 Helvaro', es: 'Contacto \u00b7 Helvaro'
+    },
+    'Privacy policy \u00b7 Helvaro': {
+      nl: 'Privacybeleid \u00b7 Helvaro',
+      fr: 'Politique de confidentialit\u00e9 \u00b7 Helvaro',
+      de: 'Datenschutzerkl\u00e4rung \u00b7 Helvaro',
+      es: 'Pol\u00edtica de privacidad \u00b7 Helvaro'
     }
   };
   var baseTitle = document.title;
   function applyTitle(lang){
     var set = TITLES[baseTitle];
-    document.title = (lang === 'nl' || !set || !set[lang]) ? baseTitle : set[lang];
+    document.title = (lang === 'en' || !set || !set[lang]) ? baseTitle : set[lang];
   }
 
   /* Zinnen met opmaak erin: die splitsen in losse tekstknopen, waardoor
