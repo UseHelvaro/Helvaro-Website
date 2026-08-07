@@ -23,7 +23,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=19">
+  <link rel="stylesheet" href="css/style.css?v=20">
 </head>
 <body>
 
@@ -199,28 +199,66 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
+
+      <div class="footer-cta">
+        <p class="footer-cta-text">Je leads wachten niet.</p>
+        <a href="meeting.html" class="btn btn-lg">Plan je lead-audit <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col footer-col-brand">
           <a href="index.html" aria-label="Helvaro home">
-            <img class="footer-logo" src="https://framerusercontent.com/images/KzEAOsQQC53r2cROhsxbbyIck6g.png" alt="Helvaro logo" width="44" height="44" loading="lazy">
+            <img class="footer-logo" src="assets/icon-512.png" alt="Helvaro logo" width="44" height="44" loading="lazy">
           </a>
           <p class="footer-tagline">AI-agents die je leads opvolgen via WhatsApp</p>
+          <p class="footer-place">Gemaakt in Belgi&euml; &middot; data in de EU</p>
         </div>
-        <nav class="footer-links" aria-label="Footer navigatie">
-          <a href="contact.html" class="footer-link">FAQ</a>
-          <a href="privacybeleid.html" class="footer-link">Privacy</a>
-          <a href="index.html" class="footer-link">Oplossing</a>
-          <a href="index.html" class="footer-link">Probleem</a>
-        </nav>
+
+        <div class="footer-col">
+          <span class="footer-head">Agents</span>
+          <a href="waarom.html#oplossing" class="footer-link">Opvolg-agent</a>
+          <a href="waarom.html#oplossing" class="footer-link">Kwalificatie-agent</a>
+          <a href="waarom.html#oplossing" class="footer-link">Planning-agent</a>
+          <a href="index.html#solutions" class="footer-link">Visualisatie-agent</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-head">Sectoren</span>
+          <a href="index.html#solutions" class="footer-link">Vastgoed</a>
+          <a href="index.html#solutions" class="footer-link">Bouw &amp; renovatie</a>
+          <a href="index.html#solutions" class="footer-link">Healthcare</a>
+          <a href="index.html#solutions" class="footer-link">Keuken</a>
+          <a href="index.html#solutions" class="footer-link">Klantenservice</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-head">Aan de slag</span>
+          <a href="index.html#hero" class="footer-link">Praat met onze agent</a>
+          <a href="meeting.html" class="footer-link">Plan een lead-audit</a>
+          <a href="index.html#prijzen" class="footer-link">Prijzen</a>
+          <a href="index.html#calculator" class="footer-link">Bereken wat je misloopt</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-head">Bedrijf</span>
+          <a href="waarom.html" class="footer-link">Waarom Helvaro</a>
+          <a href="waarom.html#team" class="footer-link">Het team</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="https://app.helvaro.pro/" class="footer-link">Login</a>
+        </div>
       </div>
+
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Helvaro · Gemaakt in België</p>
-        <a href="mailto:hello@helvaro.pro" class="footer-email">hello@helvaro.pro</a>
+        <p class="footer-copy">&copy; 2026 Helvaro</p>
+        <nav class="footer-legal" aria-label="Juridisch">
+          <a href="privacybeleid.html" class="footer-link">Privacybeleid</a>
+          <a href="mailto:hello@helvaro.pro" class="footer-link">hello@helvaro.pro</a>
+        </nav>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js?v=15"></script>
-  <script src="js/i18n.js?v=10"></script>
+  <script src="js/i18n.js?v=11"></script>
 </body>
 </html>
