@@ -1249,7 +1249,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   flex-wrap: wrap;
 }
 .footer-brand {}
-.footer-logo { height: 44px; width: auto; margin-bottom: 12px; }
+.footer-logo { height: 68px; width: auto; margin-bottom: 0; }
 .footer-tagline { font-size: 13px; color: var(--text-3); max-width: 240px; line-height: 1.5; }
 .footer-links {
   display: flex;
@@ -1421,7 +1421,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .nav-logo img { height: 40px; }
-  .footer-logo { height: 38px; }
+  .footer-logo { height: 54px; }
 
   .hero-inner { padding: 44px 20px 60px; }
   .hero-title { font-size: 32px; }
@@ -3609,4 +3609,38 @@ body { padding-top: 0; }
   .footer-cols { grid-template-columns: 1fr; }
   .footer-cta { flex-direction: column; align-items: flex-start; }
   .footer-cta .btn { width: 100%; }
+}
+
+
+/* ============================================================
+   PRIJSKAARTEN — alles op één lijn
+   ============================================================ */
+.pricing-badge-pill { height: 26px; }
+/* Lege plek bij het plan zonder badge, zodat alle kaarten
+   op dezelfde hoogte beginnen */
+.pricing-badge-spacer {
+  display: block;
+  height: 26px;
+  margin-bottom: 4px;
+}
+.pricing-tier { min-height: 30px; }
+.pricing-price {
+  min-height: 62px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.pricing-volume { min-height: 40px; }
+/* "vanaf" boven het bedrag zodat alle prijzen links uitlijnen */
+.pricing-from {
+  display: block;
+  margin: 0 0 2px;
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--text-3);
+}
+@media (max-width: 1024px) {
+  .pricing-badge-spacer { display: none; }
+  .pricing-tier, .pricing-price, .pricing-volume { min-height: 0; }
 }
