@@ -23,9 +23,10 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=23">
+  <link rel="stylesheet" href="css/style.css?v=25">
 </head>
 <body>
+  <a class="skip-link" href="#main">Naar de inhoud</a>
 
   <!-- ===== AANKONDIGINGSBALK ===== -->
   <a class="topbar" href="waarom.html">
@@ -100,7 +101,7 @@
     <a href="meeting.html" class="btn">Plan een lead-audit</a>
   </div>
 
-  <main>
+  <main id="main">
 
     <!-- ===== HERO ===== -->
     <section class="hero" id="hero">
@@ -238,8 +239,9 @@
     </div>
 
     <!-- ===== PHOTO CARDS ===== -->
-    <section class="section photo-section">
+    <section class="section photo-section" aria-labelledby="photo-heading">
       <div class="container">
+        <h2 class="visually-hidden" id="photo-heading">Wat je agents voor je doen</h2>
         <div class="photo-grid">
           <article class="photo-card reveal">
             <img class="photo-img" src="https://images.pexels.com/photos/10041266/pexels-photo-10041266.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Zaakvoerder beantwoordt een bericht op haar smartphone" decoding="async" width="900" height="600">
@@ -555,7 +557,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=16"></script>
-  <script src="js/i18n.js?v=13"></script>
+  <script src="js/main.js?v=17"></script>
+  <script src="js/i18n.js?v=16"></script>
 </body>
 </html>

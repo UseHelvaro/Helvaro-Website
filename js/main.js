@@ -660,24 +660,117 @@ function initCalculator() {
 /* ============================================================
    CONTACT FORM — prevent default, show feedback
    ============================================================ */
+/* Teksten van het contactformulier in vijf talen */
+const FORM_TEKST = {
+  nl: { bezig:'Versturen…', gelukt:'Verzonden ✓', fout:'Versturen mislukt',
+        leeg:'Vul alle velden in.', email:'Vul een geldig e-mailadres in.',
+        gelukt_uitleg:'Bedankt, we nemen binnen 24 uur contact op.',
+        fout_uitleg:'Er ging iets mis. Mail ons rechtstreeks op hello@helvaro.pro.' },
+  fr: { bezig:'Envoi…', gelukt:'Envoyé ✓', fout:'Échec de l\'envoi',
+        leeg:'Veuillez remplir tous les champs.', email:'Saisissez une adresse e-mail valide.',
+        gelukt_uitleg:'Merci, nous vous recontactons sous 24 heures.',
+        fout_uitleg:'Une erreur est survenue. Écrivez-nous à hello@helvaro.pro.' },
+  en: { bezig:'Sending…', gelukt:'Sent ✓', fout:'Sending failed',
+        leeg:'Please fill in every field.', email:'Enter a valid email address.',
+        gelukt_uitleg:'Thanks, we will get back to you within 24 hours.',
+        fout_uitleg:'Something went wrong. Email us directly at hello@helvaro.pro.' },
+  de: { bezig:'Wird gesendet…', gelukt:'Gesendet ✓', fout:'Senden fehlgeschlagen',
+        leeg:'Bitte füllen Sie alle Felder aus.', email:'Geben Sie eine gültige E-Mail-Adresse ein.',
+        gelukt_uitleg:'Danke, wir melden uns innerhalb von 24 Stunden.',
+        fout_uitleg:'Etwas ist schiefgelaufen. Schreiben Sie an hello@helvaro.pro.' },
+  es: { bezig:'Enviando…', gelukt:'Enviado ✓', fout:'Error al enviar',
+        leeg:'Rellena todos los campos.', email:'Introduce un correo válido.',
+        gelukt_uitleg:'Gracias, te contactamos en menos de 24 horas.',
+        fout_uitleg:'Algo salió mal. Escríbenos a hello@helvaro.pro.' }
+};
+
+/* ============================================================
+   CONTACTFORMULIER
+   Verstuurt naar het adres in data-endpoint. Staat dat leeg, dan
+   opent het de mailclient van de bezoeker met alles ingevuld, zodat
+   een bericht nooit verloren gaat.
+   Een endpoint instellen: data-endpoint="https://..." op het formulier.
+   ============================================================ */
 function initContactForm() {
   const form = document.querySelector('.helvaro-form');
   if (!form) return;
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = form.querySelector('.form-submit');
+  const btn = form.querySelector('.form-submit');
+  const btnTekst = btn ? btn.textContent : '';
+  let melding = form.querySelector('.form-status');
+  if (!melding) {
+    melding = document.createElement('p');
+    melding.className = 'form-status';
+    melding.setAttribute('role', 'status');
+    melding.setAttribute('aria-live', 'polite');
+    form.appendChild(melding);
+  }
+
+  function taal() {
+    const l = (document.documentElement.lang || 'nl').slice(0, 2);
+    return FORM_TEKST[l] || FORM_TEKST.nl;
+  }
+
+  function toon(soort, tekst) {
+    melding.textContent = tekst;
+    melding.className = 'form-status ' + soort;
+  }
+
+  function herstel() {
     if (!btn) return;
-    btn.textContent = 'Verzonden ✓';
-    btn.disabled = true;
-    btn.style.opacity = '0.7';
-    // Reset after 3 seconds
-    setTimeout(() => {
-      btn.textContent = 'Verzend';
-      btn.disabled = false;
-      btn.style.opacity = '';
+    btn.textContent = btnTekst;
+    btn.disabled = false;
+  }
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const t = taal();
+
+    const naam = (form.naam ? form.naam.value : '').trim();
+    const email = (form.email ? form.email.value : '').trim();
+    const bedrijf = (form.bedrijf ? form.bedrijf.value : '').trim();
+    const bericht = (form.bericht ? form.bericht.value : '').trim();
+
+    if (!naam || !email || !bedrijf || !bericht) {
+      toon('error', t.leeg);
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      toon('error', t.email);
+      if (form.email) form.email.focus();
+      return;
+    }
+
+    const endpoint = (form.dataset.endpoint || '').trim();
+
+    if (!endpoint) {
+      // Geen endpoint ingesteld: openen in de mailclient, zo raakt niets kwijt
+      const onderwerp = 'Lead-analyse aanvraag — ' + bedrijf;
+      const body = naam + ' (' + bedrijf + ')\n' + email + '\n\n' + bericht;
+      window.location.href = 'mailto:hello@helvaro.pro?subject=' +
+        encodeURIComponent(onderwerp) + '&body=' + encodeURIComponent(body);
+      toon('ok', t.gelukt_uitleg);
+      return;
+    }
+
+    if (btn) { btn.textContent = t.bezig; btn.disabled = true; }
+    toon('', '');
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ naam, email, bedrijf, bericht })
+      });
+      if (!res.ok) throw new Error('status ' + res.status);
+      if (btn) btn.textContent = t.gelukt;
+      toon('ok', t.gelukt_uitleg);
       form.reset();
-    }, 3000);
+      setTimeout(herstel, 4000);
+    } catch (err) {
+      if (btn) btn.textContent = t.fout;
+      toon('error', t.fout_uitleg);
+      setTimeout(herstel, 4000);
+    }
   });
 }
 
