@@ -3335,6 +3335,22 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   .sol-grid { grid-template-columns: 1fr; }
 }
 
+/* Actie onder de sectorkaarten */
+.sol-cta {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+.sol-cta-text {
+  font-family: var(--font-h);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
 /* ============================================================
    TAALKIEZER (i18n language switch)
    ============================================================ */
