@@ -446,166 +446,26 @@ function initHeroParallax() {
 }
 
 /* ============================================================
-   BOOKING — eigen kalender in huisstijl, Calendly enkel als
-   modal voor het kiezen van een tijdstip
+   BOEKINGSAGENDA
+   Toont de boekingspagina uit Google Agenda in de pagina zelf.
+   Die haalt de vrije momenten rechtstreeks uit admins@helvaro.pro,
+   dus wat een bezoeker ziet is altijd echt boekbaar en dubbele
+   boekingen kunnen niet.
+   Ander schema koppelen: pas data-booking aan in meeting.html.
    ============================================================ */
 function initBooking() {
-  const cal = document.querySelector('.cal[data-calendly]');
-  if (!cal) return;
+  const houder = document.querySelector('.booking-embed[data-booking]');
+  if (!houder) return;
 
-  const base = cal.dataset.calendly;
-  const monthLabel = cal.querySelector('.cal-month');
-  const datesGrid = cal.querySelector('.cal-dates');
-  const prevBtn = cal.querySelector('.cal-prev');
-  const nextBtn = cal.querySelector('.cal-next');
-
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const firstOfThisMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-  let view = new Date(firstOfThisMonth);
-  const maxView = new Date(today.getFullYear(), today.getMonth() + 3, 1);
-
-  const fmtMonth = new Intl.DateTimeFormat('nl-BE', { month: 'long', year: 'numeric' });
-  const fmtDay = new Intl.DateTimeFormat('nl-BE', { weekday: 'long', day: 'numeric', month: 'long' });
-  const pad = n => String(n).padStart(2, '0');
-
-  // Paneel voor de eigen tijdslot-kiezer
-  const timesPanel = document.createElement('div');
-  timesPanel.className = 'cal-times';
-  timesPanel.hidden = true;
-  cal.appendChild(timesPanel);
-
-  function render() {
-    monthLabel.textContent = fmtMonth.format(view);
-    datesGrid.innerHTML = '';
-    const year = view.getFullYear();
-    const month = view.getMonth();
-    const firstWeekday = (new Date(year, month, 1).getDay() + 6) % 7; // maandag = 0
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-    for (let i = 0; i < firstWeekday; i++) {
-      datesGrid.appendChild(document.createElement('span'));
-    }
-    for (let d = 1; d <= daysInMonth; d++) {
-      const date = new Date(year, month, d);
-      const cell = document.createElement('button');
-      cell.type = 'button';
-      cell.className = 'cal-date';
-      cell.textContent = d;
-      const isPast = date < today;
-      const isWeekend = date.getDay() === 0 || date.getDay() === 6;
-      if (isPast || isWeekend) {
-        cell.disabled = true;
-      } else {
-        cell.setAttribute('aria-label', fmtDay.format(date));
-        cell.addEventListener('click', () => showTimes(date, cell));
-      }
-      if (date.getTime() === today.getTime()) cell.classList.add('today');
-      datesGrid.appendChild(cell);
-    }
-    prevBtn.disabled = view.getTime() <= firstOfThisMonth.getTime();
-    nextBtn.disabled = view.getTime() >= maxView.getTime();
-  }
-
-  prevBtn.addEventListener('click', () => {
-    view = new Date(view.getFullYear(), view.getMonth() - 1, 1);
-    render();
+  const loader = houder.querySelector('.booking-loading');
+  const frame = document.createElement('iframe');
+  frame.src = houder.dataset.booking + '?gv=true';
+  frame.title = 'Kies een moment voor je lead-audit';
+  frame.loading = 'lazy';
+  frame.addEventListener('load', () => {
+    if (loader) loader.classList.add('hidden');
   });
-  nextBtn.addEventListener('click', () => {
-    view = new Date(view.getFullYear(), view.getMonth() + 1, 1);
-    render();
-  });
-
-  function showTimes(date, cell) {
-    datesGrid.querySelectorAll('.cal-date.selected').forEach(c => c.classList.remove('selected'));
-    cell.classList.add('selected');
-
-    timesPanel.hidden = false;
-    timesPanel.innerHTML = '';
-    const title = document.createElement('p');
-    title.className = 'cal-times-title';
-    title.textContent = 'Kies een uur · ' + fmtDay.format(date);
-    const grid = document.createElement('div');
-    grid.className = 'times-grid';
-    for (let h = 9; h <= 16; h++) {
-      ['00', '30'].forEach(m => {
-        const time = pad(h) + ':' + m;
-        const chip = document.createElement('button');
-        chip.type = 'button';
-        chip.className = 'time-chip';
-        chip.textContent = time;
-        chip.addEventListener('click', () => openConfirm(date, time));
-        grid.appendChild(chip);
-      });
-    }
-    const note = document.createElement('p');
-    note.className = 'cal-times-note';
-    note.textContent = 'Daarna bevestig je enkel nog je naam en e-mailadres.';
-    timesPanel.append(title, grid, note);
-    timesPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-  function openConfirm(date, time) {
-    // Directe slot-URL: Calendly toont dan enkel het bevestigingsformulier
-    const d = new Date(date);
-    const parts = time.split(':');
-    d.setHours(+parts[0], +parts[1], 0, 0);
-    const off = -d.getTimezoneOffset();
-    const sign = off >= 0 ? '+' : '-';
-    const iso = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) +
-      'T' + time + ':00' + sign + pad(Math.floor(Math.abs(off) / 60)) + ':' + pad(Math.abs(off) % 60);
-    const params = new URLSearchParams({
-      embed_domain: location.hostname || 'localhost',
-      embed_type: 'Inline',
-      hide_event_type_details: '1',
-      hide_gdpr_banner: '1',
-      locale: 'nl'
-    });
-    const slotUrl = base + '/' + encodeURIComponent(iso) + '?' + params.toString();
-    openModal(slotUrl, fmtDay.format(date) + ' · ' + time + ' · bevestig je gegevens');
-  }
-
-  function openModal(src, titleText) {
-    const overlay = document.createElement('div');
-    overlay.className = 'cal-modal';
-    overlay.innerHTML =
-      '<div class="cal-modal-box" role="dialog" aria-modal="true">' +
-        '<div class="cal-modal-head">' +
-          '<span class="cal-modal-title"></span>' +
-          '<button type="button" class="cal-modal-close" aria-label="Sluiten">✕</button>' +
-        '</div>' +
-        '<div class="cal-modal-body">' +
-          '<div class="booking-loading"><span class="booking-spinner" aria-hidden="true"></span>Formulier laden…</div>' +
-        '</div>' +
-      '</div>';
-    overlay.querySelector('.cal-modal-title').textContent = titleText;
-    document.body.appendChild(overlay);
-    document.body.style.overflow = 'hidden';
-
-    const iframe = document.createElement('iframe');
-    iframe.src = src;
-    iframe.title = 'Bevestig je afspraak';
-    iframe.addEventListener('load', () => {
-      const loader = overlay.querySelector('.booking-loading');
-      if (loader) loader.classList.add('hidden');
-    });
-    overlay.querySelector('.cal-modal-body').appendChild(iframe);
-
-    function close() {
-      overlay.remove();
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', onKey);
-    }
-    function onKey(e) {
-      if (e.key === 'Escape') close();
-    }
-    overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
-    overlay.querySelector('.cal-modal-close').addEventListener('click', close);
-    document.addEventListener('keydown', onKey);
-    requestAnimationFrame(() => overlay.classList.add('open'));
-  }
-
-  render();
+  houder.appendChild(frame);
 }
 
 /* ============================================================

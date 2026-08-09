@@ -23,7 +23,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=25">
+  <link rel="stylesheet" href="css/style.css?v=27">
 </head>
 <body>
   <a class="skip-link" href="#main">Naar de inhoud</a>
@@ -131,20 +131,18 @@
           <div class="booking-card reveal reveal-delay-1" id="booking">
             <div class="booking-head">
               <p class="booking-label">Boek hier je gesprek</p>
-              <p class="booking-sub">Kies een dag en een uur, daarna bevestig je enkel je naam en e-mail. 20 minuten, gratis.</p>
+              <p class="booking-sub">Kies een moment dat vrij is in onze agenda. 20 minuten, gratis, geen verplichtingen.</p>
             </div>
-            <div class="cal" data-calendly="https://calendly.com/helvaro/30min">
-              <div class="cal-nav">
-                <button type="button" class="cal-prev" aria-label="Vorige maand">‹</button>
-                <span class="cal-month" aria-live="polite"></span>
-                <button type="button" class="cal-next" aria-label="Volgende maand">›</button>
+            <!-- Boekingspagina uit Google Agenda van admins@helvaro.pro.
+                 Toont enkel momenten die daar echt vrij zijn; bezette tijd
+                 wordt automatisch geblokkeerd. -->
+            <div class="booking-embed" data-booking="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1B0wqqejjuRQ4GwcGVAk7ja3IZiSPkOheOSqFw1MVnI25uAye1rvFxEOevxDj9hn5lzrVvFcFI">
+              <div class="booking-loading">
+                <span class="booking-spinner" aria-hidden="true"></span>
+                Agenda laden&hellip;
               </div>
-              <div class="cal-grid cal-days" aria-hidden="true">
-                <span>ma</span><span>di</span><span>wo</span><span>do</span><span>vr</span><span>za</span><span>zo</span>
-              </div>
-              <div class="cal-grid cal-dates"></div>
             </div>
-            <p class="booking-alt">Liever de volledige agenda? <a href="https://calendly.com/helvaro/30min" target="_blank" rel="noopener">Open ze in een nieuw venster →</a> of mail <a href="mailto:hello@helvaro.pro">hello@helvaro.pro</a></p>
+            <p class="booking-alt">Liever in een apart venster? <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1B0wqqejjuRQ4GwcGVAk7ja3IZiSPkOheOSqFw1MVnI25uAye1rvFxEOevxDj9hn5lzrVvFcFI" target="_blank" rel="noopener">Open de agenda &rarr;</a> of mail <a href="mailto:hello@helvaro.pro">hello@helvaro.pro</a></p>
           </div>
         </div>
       </div>
@@ -341,7 +339,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=17"></script>
+  <script src="js/main.js?v=19"></script>
   <script src="js/i18n.js?v=16"></script>
 </body>
 </html>
