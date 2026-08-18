@@ -23,7 +23,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=30">
+  <link rel="stylesheet" href="css/style.css?v=32">
 </head>
 <body>
   <a class="skip-link" href="#main">Naar de inhoud</a>
@@ -136,6 +136,9 @@
         <!-- Echte demo van de agent. Het script komt van de app en brengt
              zijn eigen opmaak mee, afgeschermd onder de prefix hvd-. -->
         <div class="demo-wrap">
+          <!-- Artikel 50 van de AI-verordening: wie hier begint te typen moet
+               vooraf weten dat het een AI is. Niet in de kleine lettertjes. -->
+          <p class="demo-label"><span class="demo-label-dot" aria-hidden="true"></span>Praat met de AI-agent van Helvaro. Geen mens, geen wachtrij.</p>
           <div id="helvaro-ai-demo"></div>
         </div>
 
@@ -503,6 +506,6 @@
 
   <script src="https://app.helvaro.pro/ai-demo.js" defer></script>
   <script src="js/main.js?v=20"></script>
-  <script src="js/i18n.js?v=19"></script>
+  <script src="js/i18n.js?v=21"></script>
 </body>
 </html>

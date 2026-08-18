@@ -3475,43 +3475,73 @@ select:focus-visible {
 }
 
 /* ============================================================
-   GOOGLE USER DATA — blok in het privacybeleid
-   De HTML is woordelijk overgenomen voor de Google-review, dus
-   de opmaak hangt hier aan de elementen in plaats van aan klassen.
+   GOOGLE-GEBRUIKERSGEGEVENS — blok in het privacybeleid
    ============================================================ */
-#google-user-data h2 {
+.privacy-sub {
   font-family: var(--font-h);
-  font-size: clamp(22px, 2.4vw, 28px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--text-1);
-  margin-bottom: 14px;
-}
-#google-user-data h3 {
-  font-family: var(--font-h);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--text-1);
-  margin: 26px 0 8px;
+  margin: 30px 0 10px;
 }
-#google-user-data p,
-#google-user-data li {
-  color: var(--text-2);
+.privacy-section .privacy-scopes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  margin-bottom: 18px;
+}
+/* De algemene li-regel hierboven is een flexbox, waardoor <strong> en tekst
+   naast elkaar in aparte kolommen belanden. Hier zetten we ze onder elkaar. */
+.privacy-section .privacy-scopes li {
+  display: block;
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
   line-height: 1.7;
-  margin-bottom: 12px;
 }
-#google-user-data ul { padding-left: 20px; margin-bottom: 16px; }
-#google-user-data li::marker { color: var(--accent); }
-#google-user-data strong { color: var(--text-1); font-weight: 600; }
-#google-user-data a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-#google-user-data a:hover { color: var(--accent-dark); }
-#google-user-data code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.9em;
-  padding: 2px 6px;
-  border-radius: 6px;
-  background: rgba(var(--accent-rgb), 0.12);
+.privacy-section .privacy-scopes li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.privacy-scopes li strong {
+  display: block;
+  color: var(--text-1);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.privacy-scopes li span { color: var(--text-2); }
+#google-user-data a {
   color: var(--accent-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
-:root[data-theme="light"] #google-user-data code { color: var(--accent-light); }
-#google-user-data small { color: var(--text-3); }
+#google-user-data a:hover { color: var(--accent); }
+#google-user-data strong { color: var(--text-1); font-weight: 600; }
+
+/* Transparantielabel boven de demo-agent */
+.demo-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+}
+.demo-label-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.demo-wrap { flex-direction: column; }

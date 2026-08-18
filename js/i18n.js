@@ -6,7 +6,7 @@
   var geladen = {};
   var huidig = 'nl';
   /* Ophogen zodra een taalbestand wijzigt, anders houdt de browser de oude versie vast. */
-  var TAAL_V = '4';
+  var TAAL_V = '6';
   function laadTaal(lang, klaar){
     if (lang === 'nl' || TR[lang] || geladen[lang]) { klaar(); return; }
     geladen[lang] = true;
@@ -66,6 +66,48 @@
   /* Zinnen met opmaak erin: die splitsen in losse tekstknopen, waardoor
      alleen de vetgedrukte stukken zouden vertalen. Daarom hier als geheel. */
   var HTML_BLOKKEN = {
+    gDataBewaren: {
+      nl: "Van je Google-account bewaren we drie dingen: een <strong>vernieuwingstoken</strong> zodat je niet bij elke afspraak opnieuw moet inloggen, het <strong>e-mailadres</strong> van het gekoppelde account en het <strong>agenda-ID</strong> van de agenda die je gekozen hebt.",
+      fr: "De votre compte Google, nous conservons trois choses : un <strong>jeton de rafraîchissement</strong> (pour que vous n'ayez pas à vous reconnecter à chaque rendez-vous), l'<strong>adresse e-mail</strong> du compte connecté et l'<strong>identifiant de l'agenda</strong> que vous avez choisi.",
+      en: "From your Google account we store three things: a <strong>refresh token</strong> (so you do not have to sign in again for every appointment), the <strong>email address</strong> of the connected account, and the <strong>calendar ID</strong> of the calendar you selected.",
+      de: "Von Ihrem Google-Konto speichern wir drei Dinge: ein <strong>Refresh-Token</strong> (damit Sie sich nicht für jeden Termin erneut anmelden müssen), die <strong>E-Mail-Adresse</strong> des verbundenen Kontos und die <strong>Kalender-ID</strong> des von Ihnen gewählten Kalenders.",
+      es: "De tu cuenta de Google guardamos tres cosas: un <strong>token de actualización</strong> (para que no tengas que iniciar sesión de nuevo en cada cita), la <strong>dirección de correo</strong> de la cuenta conectada y el <strong>ID del calendario</strong> que has seleccionado."
+    },
+    gDataInhoud: {
+      nl: "<strong>De inhoud van je agenda bewaren we niet.</strong> Open je de agendapagina, dan halen we je afspraken op dat moment bij Google op en sturen we ze rechtstreeks door naar je browser. Ze worden nooit in onze database geschreven, nooit gearchiveerd en nooit gebruikt voor iets anders dan het tonen van die ene weergave. Sluit je de pagina, dan blijft er niets achter.",
+      fr: "<strong>Nous ne conservons pas le contenu de votre agenda.</strong> Lorsque vous ouvrez la page Agenda, nous récupérons vos rendez-vous auprès de Google à cet instant et les transmettons directement à votre navigateur. Ils ne sont jamais écrits dans notre base de données, jamais archivés et jamais utilisés pour autre chose que l'affichage de cette vue. Fermez la page et il n'en reste rien.",
+      en: "<strong>We do not store the contents of your calendar.</strong> When you open the Calendar page, we fetch your events from Google at that moment and pass them straight through to your browser. They are never written to our database, never archived, and never used for anything beyond rendering that one view. Close the page and nothing remains.",
+      de: "<strong>Die Inhalte Ihres Kalenders speichern wir nicht.</strong> Wenn Sie die Kalenderseite öffnen, holen wir Ihre Termine in diesem Moment von Google und reichen sie direkt an Ihren Browser weiter. Sie werden nie in unsere Datenbank geschrieben, nie archiviert und nie für etwas anderes als diese eine Ansicht verwendet. Schließen Sie die Seite, bleibt nichts zurück.",
+      es: "<strong>No guardamos el contenido de tu calendario.</strong> Cuando abres la página de calendario, obtenemos tus citas de Google en ese momento y las pasamos directamente a tu navegador. Nunca se escriben en nuestra base de datos, nunca se archivan y nunca se usan para nada más que mostrar esa vista. Cierras la página y no queda nada."
+    },
+    gDataPrive: {
+      nl: "Afspraken die je als <em>privé</em> hebt gemarkeerd, tonen we zonder titel, alleen als &ldquo;Bezet&rdquo;. Dat een moment bezet is, hebben we nodig om dubbele boekingen te voorkomen. Waarom het bezet is, gaat Helvaro niets aan.",
+      fr: "Les rendez-vous que vous avez marqués comme <em>privés</em> s'affichent sans titre, uniquement comme &laquo;&nbsp;Occupé&nbsp;&raquo;. Savoir qu'un créneau est pris est nécessaire pour éviter les doubles réservations ; savoir pourquoi ne regarde pas Helvaro.",
+      en: "Events you have marked <em>private</em> are shown without their title, only as &ldquo;Busy&rdquo;. That a slot is taken is needed to prevent double bookings; why it is taken is none of Helvaro's business.",
+      de: "Termine, die Sie als <em>privat</em> markiert haben, zeigen wir ohne Titel, nur als &bdquo;Belegt&ldquo;. Dass ein Zeitfenster belegt ist, brauchen wir, um Doppelbuchungen zu vermeiden. Warum es belegt ist, geht Helvaro nichts an.",
+      es: "Las citas que has marcado como <em>privadas</em> se muestran sin título, solo como &ldquo;Ocupado&rdquo;. Que una franja esté ocupada es necesario para evitar reservas duplicadas; por qué lo está no es asunto de Helvaro."
+    },
+    gDataOntkoppel: {
+      nl: "Je kan op elk moment ontkoppelen via <em>Instellingen &rsaquo; Google Agenda &rsaquo; Ontkoppelen</em> in je Helvaro-dashboard. Helvaro trekt de toestemming dan ook bij Google in en wist het token en het e-mailadres uit onze database. Afspraken die al in je agenda staan, blijven staan. Die zijn van jou.",
+      fr: "Vous pouvez vous déconnecter à tout moment via <em>Paramètres &rsaquo; Google Agenda &rsaquo; Déconnecter</em> dans votre tableau de bord Helvaro. Helvaro révoque alors également l'autorisation auprès de Google et supprime le jeton et l'adresse e-mail de notre base de données. Les rendez-vous déjà présents dans votre agenda y restent : ils sont à vous.",
+      en: "You can disconnect at any time via <em>Settings &rsaquo; Google Calendar &rsaquo; Disconnect</em> in your Helvaro dashboard. Helvaro then revokes the grant with Google as well and deletes the token and email address from our database. Appointments already in your calendar remain, they are yours.",
+      de: "Sie können die Verbindung jederzeit über <em>Einstellungen &rsaquo; Google Kalender &rsaquo; Trennen</em> in Ihrem Helvaro-Dashboard lösen. Helvaro widerruft die Berechtigung dann auch bei Google und löscht Token und E-Mail-Adresse aus unserer Datenbank. Termine, die bereits in Ihrem Kalender stehen, bleiben bestehen. Sie gehören Ihnen.",
+      es: "Puedes desconectar en cualquier momento desde <em>Ajustes &rsaquo; Google Calendar &rsaquo; Desconectar</em> en tu panel de Helvaro. Helvaro revoca entonces también el permiso ante Google y borra el token y la dirección de correo de nuestra base de datos. Las citas que ya están en tu calendario se quedan: son tuyas."
+    },
+    gDataIntrekken: {
+      nl: "Je kan de toegang ook rechtstreeks bij Google intrekken via <a href=\"https://myaccount.google.com/permissions\">myaccount.google.com/permissions</a>.",
+      fr: "Vous pouvez également révoquer l'accès directement auprès de Google via <a href=\"https://myaccount.google.com/permissions\">myaccount.google.com/permissions</a>.",
+      en: "You can also revoke access directly with Google at <a href=\"https://myaccount.google.com/permissions\">myaccount.google.com/permissions</a>.",
+      de: "Sie können den Zugriff auch direkt bei Google widerrufen unter <a href=\"https://myaccount.google.com/permissions\">myaccount.google.com/permissions</a>.",
+      es: "También puedes revocar el acceso directamente en Google en <a href=\"https://myaccount.google.com/permissions\">myaccount.google.com/permissions</a>."
+    },
+    gDataLimited: {
+      nl: "Het gebruik door Helvaro van informatie ontvangen via Google API's volgt het <a href=\"https://developers.google.com/terms/api-services-user-data-policy\">Google API Services User Data Policy</a>, met inbegrip van de Limited Use-vereisten.",
+      fr: "L'utilisation par Helvaro des informations reçues via les API Google respecte le <a href=\"https://developers.google.com/terms/api-services-user-data-policy\">Google API Services User Data Policy</a>, y compris les exigences Limited Use.",
+      en: "Helvaro's use of information received from Google APIs will adhere to the <a href=\"https://developers.google.com/terms/api-services-user-data-policy\">Google API Services User Data Policy</a>, including the Limited Use requirements.",
+      de: "Die Nutzung von über Google-APIs erhaltenen Informationen durch Helvaro folgt der <a href=\"https://developers.google.com/terms/api-services-user-data-policy\">Google API Services User Data Policy</a>, einschließlich der Limited-Use-Anforderungen.",
+      es: "El uso por parte de Helvaro de la información recibida a través de las API de Google se ajusta a la <a href=\"https://developers.google.com/terms/api-services-user-data-policy\">Google API Services User Data Policy</a>, incluidos los requisitos de Limited Use."
+    },
     heroSub: {
       nl: 'Agents die je <strong>volgende aanwerving overbodig maken</strong>. Ze staan 24/7 op je WhatsApp, kwalificeren elke lead en boeken <strong>alleen wie het waard is</strong> in je agenda.',
       fr: 'Des agents qui rendent votre <strong>prochaine embauche superflue</strong>. Ils sont 24/7 sur votre WhatsApp, qualifient chaque lead et ne r\u00e9servent <strong>que ceux qui en valent la peine</strong> dans votre agenda.',
