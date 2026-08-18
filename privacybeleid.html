@@ -23,7 +23,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=27">
+  <link rel="stylesheet" href="css/style.css?v=30">
 </head>
 <body>
   <a class="skip-link" href="#main">Naar de inhoud</a>
@@ -111,7 +111,7 @@
         <span class="badge"><span class="badge-dot" aria-hidden="true"></span>Privacybeleid</span>
         <h1 class="hero-sm-title">Ons Privacybeleid</h1>
         <p class="hero-sm-sub">Hier leggen wij uit hoe wij jouw gegevens verzamelen, gebruiken en beschermen.</p>
-        <p class="hero-sm-date">Laatst bijgewerkt: 23 februari 2026</p>
+        <p class="hero-sm-date">Laatst bijgewerkt: 18 augustus 2026</p>
       </div>
     </section>
 
@@ -144,6 +144,47 @@
               <li>Transacties, abonnementen en betalingen veilig te verwerken</li>
               <li>Te voldoen aan wettelijke verplichtingen en frauduleuze activiteiten te voorkomen</li>
             </ul>
+          </div>
+
+          <!-- Blok voor de Google-verificatie. Bewust in het Engels en woordelijk
+               overgenomen: de reviewer van Google leest dit en elke bewering is
+               getoetst aan wat de app werkelijk doet. Niet herschrijven. -->
+          <div class="privacy-section reveal">
+            <section id="google-user-data">
+              <h2>Google user data</h2>
+
+              <p>Helvaro offers an optional Google Calendar integration. Helvaro works fine without it and every other feature is unaffected. This section applies only if you have connected your calendar yourself.</p>
+
+              <h3>What we request</h3>
+              <ul>
+                <li><strong>Your email address and basic profile</strong> (<code>openid</code>, <code>email</code>) &mdash; so the dashboard can show which Google account is connected, and you do not connect the wrong calendar by mistake.</li>
+                <li><strong>Manage calendar events</strong> (<code>calendar.events</code>) &mdash; to place an appointment booked through Helvaro into your calendar, and to update or remove it when that appointment is rescheduled or cancelled.</li>
+                <li><strong>Read your calendar</strong> (<code>calendar.readonly</code>) &mdash; to check whether you are free at a proposed time, so the AI never offers a slot you are already booked for, and to show your existing appointments alongside Helvaro's own in the Calendar view.</li>
+              </ul>
+
+              <h3>What we store, and what we do not</h3>
+              <p>From your Google account we store three things: a <strong>refresh token</strong> (so you do not have to sign in again for every appointment), the <strong>email address</strong> of the connected account, and the <strong>calendar ID</strong> of the calendar you selected.</p>
+              <p><strong>We do not store the contents of your calendar.</strong> When you open the Calendar page, we fetch your events from Google at that moment and pass them straight through to your browser. They are never written to our database, never archived, and never used for anything beyond rendering that one view. Close the page and nothing remains.</p>
+              <p>Events you have marked <em>private</em> are shown without their title &mdash; only as &ldquo;Busy&rdquo;. That a slot is taken is needed to prevent double bookings; why it is taken is none of Helvaro's business.</p>
+              <p>Events Helvaro creates in your calendar contain only a title, a description, a start and end time, and a time zone.</p>
+
+              <h3>How we protect it</h3>
+              <p>The refresh token is encrypted before storage (AES-256-GCM), so it exists in our database only as ciphertext. The encryption key is held separately and is not stored in the database. If encryption fails for any reason, Helvaro refuses to store the token rather than writing it in plaintext.</p>
+              <p>Access is scoped per customer: an account can only ever reach its own calendar connection, never that of another Helvaro customer.</p>
+
+              <h3>Who we share it with</h3>
+              <p>No one. Your Google data is not sold, not rented, not used for advertising, not used to train AI or machine learning models, and not shared with third parties, except where we are legally required to do so.</p>
+              <p>Calendar contents are never sent to an AI model. The AI only learns whether a time slot is free, not what is in your calendar.</p>
+
+              <h3>Disconnecting and deletion</h3>
+              <p>You can disconnect at any time via <em>Settings &rsaquo; Google Calendar &rsaquo; Disconnect</em> in your Helvaro dashboard. Helvaro then revokes the grant with Google as well and deletes the token and email address from our database. Appointments already in your calendar remain &mdash; they are yours.</p>
+              <p>You can also revoke access directly with Google at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+
+              <h3>Limited Use</h3>
+              <p>Helvaro's use of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+              <p><small>Last updated: 18 August 2026</small></p>
+            </section>
           </div>
 
           <div class="privacy-section reveal">
@@ -263,7 +304,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=19"></script>
-  <script src="js/i18n.js?v=16"></script>
+  <script src="js/main.js?v=20"></script>
+  <script src="js/i18n.js?v=19"></script>
 </body>
 </html>

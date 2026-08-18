@@ -4,11 +4,14 @@
      die de bezoeker nodig heeft wordt opgehaald, dat scheelt zo'n 50 KB. */
   var TR = window.HELVARO_TR || {};
   var geladen = {};
+  var huidig = 'nl';
+  /* Ophogen zodra een taalbestand wijzigt, anders houdt de browser de oude versie vast. */
+  var TAAL_V = '4';
   function laadTaal(lang, klaar){
     if (lang === 'nl' || TR[lang] || geladen[lang]) { klaar(); return; }
     geladen[lang] = true;
     var s = document.createElement('script');
-    s.src = 'js/lang/' + lang + '.js';
+    s.src = 'js/lang/' + lang + '.js?v=' + TAAL_V;
     s.onload = function(){ TR = window.HELVARO_TR || TR; klaar(); };
     s.onerror = function(){ klaar(); };   /* mislukt het, dan blijft Nederlands staan */
     document.head.appendChild(s);
@@ -121,12 +124,56 @@
       }
     });
     document.documentElement.lang = lang;
+    huidig = lang;
     try { localStorage.setItem('helvaro_lang', lang); } catch(e){}
     document.querySelectorAll('.lang-current').forEach(function(c){ c.textContent = LABELS[lang]; });
     document.querySelectorAll('.lang-opt').forEach(function(o){ o.classList.toggle('active', o.getAttribute('data-lang')===lang); });
     applyHero(lang);
     applyTitle(lang);
     applyHtmlBlokken(lang);
+    applyPlaceholders(lang, dict);
+  }
+
+  /* Placeholders zitten in een attribuut, niet in een tekstknoop, dus die
+     ontsnappen aan de TreeWalker. */
+  var phNodes = [];
+  function collectPlaceholders(root){
+    (root || document.body).querySelectorAll('[placeholder]').forEach(function(el){
+      if (el.__ph != null) return;
+      el.__ph = el.getAttribute('placeholder');
+      phNodes.push(el);
+    });
+  }
+  function applyPlaceholders(lang, dict){
+    phNodes.forEach(function(el){
+      if(!el.isConnected) return;
+      var v = (lang==='nl' || !dict) ? null : dict[norm(el.__ph)];
+      el.setAttribute('placeholder', v || el.__ph);
+    });
+  }
+
+  /* Blokken die pas na het laden in de pagina komen, zoals het demo-widget
+     dat van app.helvaro.pro wordt gehaald. Nieuwe tekstknopen worden
+     opgenomen en meteen in de huidige taal gezet. */
+  function collectIn(root){
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if(!n.nodeValue || !n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        var p = n.parentNode;
+        if(!p) return NodeFilter.FILTER_REJECT;
+        var tag = p.nodeName.toLowerCase();
+        if(tag==='script'||tag==='style'||tag==='noscript') return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n;
+    while(n = walker.nextNode()){
+      if(n.__nl != null) continue;
+      n.__nl = norm(n.nodeValue);
+      n.__raw = n.nodeValue;
+      nodes.push(n);
+    }
+    collectPlaceholders(root);
   }
   /* ----------------------------------------------------------
      Automatische taalkeuze.
@@ -194,7 +241,24 @@
   function init(){
     heroEl = document.querySelector('.hero-title');
     collect();
+    collectPlaceholders();
     apply(detect());
+
+    /* Het demo-widget rendert zichzelf pas na dit punt. Zodra er inhoud
+       verschijnt, wordt die alsnog vertaald. */
+    var demo = document.getElementById('helvaro-ai-demo');
+    if (demo && window.MutationObserver) {
+      var wachtend = null;
+      new MutationObserver(function(){
+        /* Tijdens het typen verandert er van alles in het widget. Even
+           wachten scheelt tientallen rondjes over de hele pagina. */
+        clearTimeout(wachtend);
+        wachtend = setTimeout(function(){
+          collectIn(demo);
+          apply(huidig);
+        }, 120);
+      }).observe(demo, { childList: true, subtree: true });
+    }
     document.addEventListener('click', function(e){
       var opt = e.target.closest('.lang-opt');
       if(opt){

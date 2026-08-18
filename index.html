@@ -23,7 +23,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=27">
+  <link rel="stylesheet" href="css/style.css?v=30">
 </head>
 <body>
   <a class="skip-link" href="#main">Naar de inhoud</a>
@@ -133,68 +133,12 @@
           </div>
         </div>
 
-        <!-- WhatsApp mockup -->
-        <div class="phone-wrap">
-          <div class="float-chip float-chip-1" aria-hidden="true">
-            <div class="chip-icon">⚡</div>
-            <div>
-              <div class="chip-title">Lead gekwalificeerd</div>
-              <div class="chip-sub">3 slaapkamers · eigen bewoning</div>
-            </div>
-          </div>
-          <div class="float-chip float-chip-2" aria-hidden="true">
-            <div class="chip-icon">📅</div>
-            <div>
-              <div class="chip-title">Bezichtiging ingepland</div>
-              <div class="chip-sub">Donderdag 14:00</div>
-            </div>
-          </div>
-          <div class="phone-frame">
-            <div class="phone-notch" aria-hidden="true"></div>
-            <div class="phone-screen" role="img" aria-label="WhatsApp-gesprek waarin de agent van een vastgoedkantoor een geïnteresseerde koper kwalificeert en een bezichtiging inplant">
-              <div class="wa-header">
-                <span class="wa-back" aria-hidden="true">‹</span>
-                <div class="wa-avatar" aria-hidden="true">M</div>
-                <div class="wa-contact">
-                  <span class="wa-name">Mathis · Immo Verlinden</span>
-                  <span class="wa-status">online</span>
-                </div>
-                <div class="wa-icons" aria-hidden="true">
-                  <span class="wa-icon">📞</span>
-                  <span class="wa-icon">⋮</span>
-                </div>
-              </div>
-              <div class="wa-chat">
-                <span class="wa-date-badge">Vandaag</span>
-                <div class="wa-msg sent">
-                  <div class="wa-bubble">Hallo, ik zag jullie woning in de Lindenstraat online 👋</div>
-                  <span class="wa-time">14:32</span>
-                </div>
-                <div class="wa-msg received">
-                  <div class="wa-bubble">Hoi! Leuk dat je interesse hebt 🙌 Zoek je voor jezelf of als investering?</div>
-                  <span class="wa-time">14:32</span>
-                </div>
-                <div class="wa-msg sent">
-                  <div class="wa-bubble">Voor onszelf, we zoeken iets met 3 slaapkamers</div>
-                  <span class="wa-time">14:33</span>
-                </div>
-                <div class="wa-msg received">
-                  <div class="wa-bubble">Die heeft er 3, met tuin en garage. Wil je donderdag om 14u langskomen?</div>
-                  <span class="wa-time">14:33</span>
-                </div>
-                <div class="wa-msg sent">
-                  <div class="wa-bubble">Ja, dat past perfect 👍</div>
-                  <span class="wa-time">14:33</span>
-                </div>
-                <div class="wa-msg received">
-                  <div class="wa-bubble-link">📅 Bezichtiging bevestigd, donderdag 14:00</div>
-                  <span class="wa-time">14:33</span>
-                </div>
-                <div class="wa-typing" aria-hidden="true"><span></span><span></span><span></span></div>
-              </div>
-            </div>
-          </div>
+        <!-- Echte demo van de agent. Het script komt van de app en brengt
+             zijn eigen opmaak mee, afgeschermd onder de prefix hvd-. -->
+        <div class="demo-wrap">
+          <div id="helvaro-ai-demo"></div>
         </div>
+
       </div>
     </section>
 
@@ -557,7 +501,8 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=19"></script>
-  <script src="js/i18n.js?v=16"></script>
+  <script src="https://app.helvaro.pro/ai-demo.js" defer></script>
+  <script src="js/main.js?v=20"></script>
+  <script src="js/i18n.js?v=19"></script>
 </body>
 </html>
