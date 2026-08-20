@@ -3304,20 +3304,37 @@ select:focus-visible {
 .faro-visual::before {
   content: '';
   position: absolute;
-  inset: 8% 6%;
+  inset: 16% 14%;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(var(--accent-rgb), 0.28), rgba(var(--accent-rgb), 0) 68%);
   filter: blur(28px);
   z-index: 0;
 }
-.faro-visual img {
+/* Op het lichte thema is Faro zelf bijna wit, dan helpt een warmere en
+   iets sterkere gloed om hem van de achtergrond te tillen. */
+:root[data-theme="light"] .faro-visual::before {
+  inset: 18% 16%;
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.34), rgba(var(--accent-rgb), 0) 72%);
+  filter: blur(34px);
+}
+.faro-visual picture {
   position: relative;
   z-index: 1;
+  display: block;
   width: 100%;
-  max-width: 420px;
-  height: auto;
-  border-radius: 24px;
+  /* Ruimer dan de oude 420, want de renders hebben nu lucht rondom
+     nodig om hun rand te laten vervagen. Faro zelf blijft even groot. */
+  max-width: 470px;
 }
+.faro-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* Zwarte Faro op het donkere thema, witte op het lichte. Beide renders
+   staan in de opmaak, het thema kiest welke er getoond wordt. */
+:root[data-theme="light"] .faro-donker { display: none; }
+:root[data-theme="dark"]  .faro-licht  { display: none; }
 .faro-copy .section-label { display: inline-block; margin-bottom: 14px; }
 .faro-copy .section-title { margin-bottom: 16px; }
 .faro-copy .section-sub { margin-bottom: 28px; }
