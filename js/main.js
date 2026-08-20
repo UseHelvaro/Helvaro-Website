@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initFAQ();
   initReveal();
+  initWhatsApp();
   initSmoothScroll();
   initContactForm();
   initScrollProgress();
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSignature();
   initWordAnim();
   initMagnetic();
+  initTilt();
   initCursor();
   initWatermarkParallax();
 });
@@ -682,5 +684,76 @@ function initTheme() {
     btn.addEventListener('click', function () {
       apply(current() === 'dark' ? 'light' : 'dark', true);
     });
+  });
+}
+
+/* ============================================================
+   WHATSAPP MOCKUP — typindicator en berichten
+   ============================================================ */
+function initWhatsApp() {
+  const chat = document.querySelector('.wa-chat');
+  if (!chat) return;
+
+  const messages = chat.querySelectorAll('.wa-msg');
+  const typing = chat.querySelector('.wa-typing');
+  if (!messages.length) return;
+
+  let loopTimer = null;
+
+  function showMessage(index) {
+    if (index >= messages.length) return;
+    messages[index].classList.add('visible');
+    // Scroll chat to bottom
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  function run() {
+    // Reset
+    messages.forEach(m => m.classList.remove('visible'));
+    if (typing) typing.classList.remove('visible');
+
+    // Schedule each message
+    messages.forEach((msg, i) => {
+      const delay = 1000 + i * 1100;
+
+      // Typ-indicator hoort bij Mathis, dus vóór de ontvangen berichten
+      if (msg.classList.contains('received') && typing) {
+        setTimeout(() => {
+          typing.classList.add('visible');
+          chat.scrollTop = chat.scrollHeight;
+        }, delay - 600);
+        setTimeout(() => {
+          typing.classList.remove('visible');
+        }, delay - 50);
+      }
+
+      setTimeout(() => showMessage(i), delay);
+    });
+
+    // Restart loop after all messages + 3s pause
+    const totalDelay = 1000 + messages.length * 1100 + 3200;
+    loopTimer = setTimeout(run, totalDelay);
+  }
+
+  // Start after a short initial delay
+  setTimeout(run, 600);
+}
+
+/* ============================================================
+   TILT — de telefoon kantelt licht mee met de muis
+   ============================================================ */
+function initTilt() {
+  if (window.matchMedia('(hover: none)').matches) return;
+  const wrap = document.querySelector('.phone-wrap');
+  const hero = document.querySelector('.hero');
+  if (!wrap || !hero) return;
+  hero.addEventListener('pointermove', e => {
+    const r = hero.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    wrap.style.transform = `perspective(1000px) rotateY(${(x * 6).toFixed(2)}deg) rotateX(${(-y * 5).toFixed(2)}deg)`;
+  });
+  hero.addEventListener('pointerleave', () => {
+    wrap.style.transform = '';
   });
 }
