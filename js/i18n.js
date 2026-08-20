@@ -6,7 +6,7 @@
   var geladen = {};
   var huidig = 'nl';
   /* Ophogen zodra een taalbestand wijzigt, anders houdt de browser de oude versie vast. */
-  var TAAL_V = '6';
+  var TAAL_V = '7';
   function laadTaal(lang, klaar){
     if (lang === 'nl' || TR[lang] || geladen[lang]) { klaar(); return; }
     geladen[lang] = true;
@@ -66,6 +66,13 @@
   /* Zinnen met opmaak erin: die splitsen in losse tekstknopen, waardoor
      alleen de vetgedrukte stukken zouden vertalen. Daarom hier als geheel. */
   var HTML_BLOKKEN = {
+    faroTitel: {
+      nl: "Je agents vangen elke lead. <span class=\"highlight\">Faro zorgt dat er meer binnenkomen.</span>",
+      fr: "Vos agents captent chaque lead. <span class=\"highlight\">Faro fait en sorte qu'il y en ait plus.</span>",
+      en: "Your agents catch every lead. <span class=\"highlight\">Faro makes sure more come in.</span>",
+      de: "Ihre Agents fangen jeden Lead. <span class=\"highlight\">Faro sorgt dafür, dass mehr hereinkommen.</span>",
+      es: "Tus agentes captan cada lead. <span class=\"highlight\">Faro hace que lleguen más.</span>"
+    },
     gDataBewaren: {
       nl: "Van je Google-account bewaren we drie dingen: een <strong>vernieuwingstoken</strong> zodat je niet bij elke afspraak opnieuw moet inloggen, het <strong>e-mailadres</strong> van het gekoppelde account en het <strong>agenda-ID</strong> van de agenda die je gekozen hebt.",
       fr: "De votre compte Google, nous conservons trois choses : un <strong>jeton de rafraîchissement</strong> (pour que vous n'ayez pas à vous reconnecter à chaque rendez-vous), l'<strong>adresse e-mail</strong> du compte connecté et l'<strong>identifiant de l'agenda</strong> que vous avez choisi.",

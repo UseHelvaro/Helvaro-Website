@@ -23,7 +23,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=32">
+  <link rel="stylesheet" href="css/style.css?v=33">
 </head>
 <body>
   <a class="skip-link" href="#main">Naar de inhoud</a>
@@ -44,6 +44,7 @@
       <nav class="nav-links" aria-label="Hoofdnavigatie">
         <a href="#hero" class="nav-link">Home</a>
         <a href="#solutions" class="nav-link">Oplossing</a>
+        <a href="#faro" class="nav-link">Faro</a>
         <a href="waarom.html" class="nav-link">Waarom Helvaro</a>
         <a href="contact.html" class="nav-link">Contact</a>
         <a href="https://app.helvaro.pro/" class="nav-link">Login</a>
@@ -77,6 +78,7 @@
   <div class="nav-mobile" aria-label="Mobiel menu">
     <a href="#hero" class="nav-link">Home</a>
     <a href="#solutions" class="nav-link">Oplossing</a>
+        <a href="#faro" class="nav-link">Faro</a>
         <a href="waarom.html" class="nav-link">Waarom Helvaro</a>
     <a href="contact.html" class="nav-link">Contact</a>
     <a href="https://app.helvaro.pro/" class="nav-link">Login</a>
@@ -296,6 +298,47 @@
       </div>
     </section>
 
+    <!-- ===== FARO ===== -->
+    <section class="section faro" id="faro">
+      <div class="section-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="faro-inner">
+
+          <div class="faro-visual reveal">
+            <img src="assets/faro.png" alt="Faro, de content-agent van Helvaro" width="520" height="520">
+          </div>
+
+          <div class="faro-copy">
+            <span class="section-label">Maak kennis met Faro</span>
+            <h2 class="section-title" data-i18n-html="faroTitel">Je agents vangen elke lead. <span class="highlight">Faro zorgt dat er meer binnenkomen.</span></h2>
+            <p class="section-sub">Faro is de agent achter je advertenties. Hij schrijft je content, bewaakt je merk en houdt je campagnes op Meta en Google draaiend, week na week.</p>
+
+            <ul class="faro-list">
+              <li class="reveal">
+                <strong>Content voor Meta en Google</strong>
+                <span>Advertentieteksten, hooks en varianten om te testen. Faro schrijft ze, jij kiest wat live gaat.</span>
+              </li>
+              <li class="reveal">
+                <strong>Merkopbouw die consistent blijft</strong>
+                <span>Eén stem over al je kanalen. Faro kent je toon, je aanbod en je sector, en wijkt daar niet van af.</span>
+              </li>
+              <li class="reveal">
+                <strong>Schalen zonder extra mensen</strong>
+                <span>Meer campagnes, meer varianten, meer leads bovenaan de trechter. Je WhatsApp-agents vangen ze onderaan op.</span>
+              </li>
+            </ul>
+
+            <p class="faro-close">Faro maakt de vraag. Je agents maken er afspraken van. Wij helpen je schalen.</p>
+
+            <div class="faro-actions">
+              <a href="meeting.html" class="btn btn-lg">Laat Faro je campagnes bekijken <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- ===== ROI CALCULATOR ===== -->
     <section class="section comparison" id="calculator">
       <div class="container">
@@ -506,6 +549,6 @@
 
   <script src="https://app.helvaro.pro/ai-demo.js" defer></script>
   <script src="js/main.js?v=20"></script>
-  <script src="js/i18n.js?v=21"></script>
+  <script src="js/i18n.js?v=22"></script>
 </body>
 </html>

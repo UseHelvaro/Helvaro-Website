@@ -3545,3 +3545,120 @@ select:focus-visible {
   flex-shrink: 0;
 }
 .demo-wrap { flex-direction: column; }
+
+/* ============================================================
+   FARO — de content-agent
+   ============================================================ */
+.faro { position: relative; overflow: hidden; }
+.faro-inner {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.faro-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+/* Warme gloed achter Faro, zodat de zwarte figuur op een lichte
+   achtergrond niet als een gat in de pagina oogt. */
+.faro-visual::before {
+  content: '';
+  position: absolute;
+  inset: 8% 6%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.28), rgba(var(--accent-rgb), 0) 68%);
+  filter: blur(28px);
+  z-index: 0;
+}
+.faro-visual img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 24px;
+}
+.faro-copy .section-label { display: inline-block; margin-bottom: 14px; }
+.faro-copy .section-title { margin-bottom: 16px; }
+.faro-copy .section-sub { margin-bottom: 28px; }
+
+.faro-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+.faro-list li {
+  position: relative;
+  padding-left: 26px;
+}
+.faro-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+}
+.faro-list strong {
+  display: block;
+  font-family: var(--font-h);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: 3px;
+}
+.faro-list span {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+.faro-close {
+  font-family: var(--font-h);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-1);
+  line-height: 1.5;
+  padding-left: 16px;
+  border-left: 2px solid var(--accent);
+  margin-bottom: 28px;
+}
+@media (max-width: 900px) {
+  .faro-inner { grid-template-columns: 1fr; gap: 32px; }
+  .faro-visual img { max-width: 300px; }
+  .faro-copy { text-align: left; }
+}
+
+/* Echte schermafbeelding van het dashboard */
+.app-shot-real {
+  margin: 0 auto;
+  max-width: 1080px;
+}
+.app-shot-real img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--border-1);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+}
+.app-shot-real figcaption {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-3);
+}
+
+/* Accentwoorden in sectietitels, rustiger dan in de hero: geen animatie,
+   want die hoort bij de kop bovenaan de pagina. */
+.section-title .highlight {
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

@@ -23,7 +23,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=32">
+  <link rel="stylesheet" href="css/style.css?v=33">
 </head>
 <body>
   <a class="skip-link" href="#main">Naar de inhoud</a>
@@ -44,6 +44,7 @@
       <nav class="nav-links" aria-label="Hoofdnavigatie">
         <a href="index.html#hero" class="nav-link">Home</a>
         <a href="index.html#solutions" class="nav-link">Oplossing</a>
+        <a href="index.html#faro" class="nav-link">Faro</a>
         <a href="waarom.html" class="nav-link">Waarom Helvaro</a>
         <a href="contact.html" class="nav-link">Contact</a>
         <a href="https://app.helvaro.pro/" class="nav-link">Login</a>
@@ -77,6 +78,7 @@
   <div class="nav-mobile" aria-label="Mobiel menu">
     <a href="index.html#hero" class="nav-link">Home</a>
     <a href="index.html#solutions" class="nav-link">Oplossing</a>
+        <a href="index.html#faro" class="nav-link">Faro</a>
         <a href="waarom.html" class="nav-link">Waarom Helvaro</a>
     <a href="contact.html" class="nav-link">Contact</a>
     <a href="https://app.helvaro.pro/" class="nav-link">Login</a>
@@ -220,77 +222,13 @@
           <h2 class="section-title">Geen black box. Alles zichtbaar.</h2>
           <p class="section-sub">Geen black box. Eén dashboard met elke lead, elke score en elk gesprek, live.</p>
         </div>
-        <div class="app-shot reveal" role="img" aria-label="Het Helvaro-dashboard met leadstatistieken, weekgrafiek en leads per bron">
-          <div class="app-chrome" aria-hidden="true">
-            <span class="app-dot"></span><span class="app-dot"></span><span class="app-dot"></span>
-            <span class="app-url">app.helvaro.pro/dashboard</span>
-          </div>
-          <div class="app-body" aria-hidden="true">
-            <div class="app-side">
-              <span class="app-side-logo">Helvaro</span>
-              <span class="app-nav-item active">Dashboard</span>
-              <span class="app-nav-item">Pipeline</span>
-              <span class="app-nav-item">Gesprekken</span>
-              <span class="app-nav-item">Kalender</span>
-              <span class="app-nav-item">Analyse</span>
-              <span class="app-nav-item">Agent-persoonlijkheid</span>
-              <span class="app-nav-item">Instellingen</span>
-            </div>
-            <div class="app-main">
-              <div>
-                <p class="app-title">Dashboard</p>
-                <p class="app-sub">Overzicht van je gekwalificeerde leads</p>
-              </div>
-              <div class="app-linkbar">
-                <code>https://app.helvaro.pro/start/JOUWBEDRIJF</code>
-                <span class="app-copy">Kopieer</span>
-              </div>
-              <div class="app-stats">
-                <div class="app-stat">
-                  <p class="app-stat-label">Totaal leads</p>
-                  <p class="app-stat-value">47</p>
-                </div>
-                <div class="app-stat">
-                  <p class="app-stat-label">Gekwalificeerd</p>
-                  <p class="app-stat-value hl">31</p>
-                </div>
-                <div class="app-stat">
-                  <p class="app-stat-label">Afspraken</p>
-                  <p class="app-stat-value">19</p>
-                </div>
-                <div class="app-stat">
-                  <p class="app-stat-label">Gem. reactie</p>
-                  <p class="app-stat-value hl">28s</p>
-                </div>
-              </div>
-              <div class="app-charts">
-                <div class="app-chart">
-                  <p class="app-chart-title">Leads per week</p>
-                  <div class="app-bars">
-                    <div class="app-bar-wrap"><span class="app-bar" style="height:38%"></span><span class="app-bar-label">W1</span></div>
-                    <div class="app-bar-wrap"><span class="app-bar" style="height:52%"></span><span class="app-bar-label">W2</span></div>
-                    <div class="app-bar-wrap"><span class="app-bar" style="height:44%"></span><span class="app-bar-label">W3</span></div>
-                    <div class="app-bar-wrap"><span class="app-bar" style="height:68%"></span><span class="app-bar-label">W4</span></div>
-                    <div class="app-bar-wrap"><span class="app-bar" style="height:60%"></span><span class="app-bar-label">W5</span></div>
-                    <div class="app-bar-wrap"><span class="app-bar" style="height:82%"></span><span class="app-bar-label">W6</span></div>
-                    <div class="app-bar-wrap"><span class="app-bar" style="height:74%"></span><span class="app-bar-label">W7</span></div>
-                    <div class="app-bar-wrap"><span class="app-bar" style="height:100%"></span><span class="app-bar-label">W8</span></div>
-                  </div>
-                </div>
-                <div class="app-chart">
-                  <p class="app-chart-title">Leads per bron</p>
-                  <div class="app-donut"></div>
-                  <div class="app-legend">
-                    <span><i style="background:#E8D7B1"></i>Website</span>
-                    <span><i style="background:#C9AE7C"></i>Facebook</span>
-                    <span><i style="background:#8C8C8C"></i>Google</span>
-                    <span><i style="background:#4D4D4D"></i>Instagram</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- Echte schermafbeelding van het dashboard, niet nagebouwd. -->
+        <figure class="app-shot-real reveal">
+          <img src="assets/dashboard.png"
+               alt="Het Helvaro-dashboard met Faro, de kansen van vandaag en de pipeline van deze week"
+               width="1600" height="1000">
+          <figcaption>Het dashboard zoals je het krijgt. Faro, je kansen van vandaag en elke lead met zijn score.</figcaption>
+        </figure>
         <div class="shot-points">
           <div class="shot-point reveal"><span class="sp-icon">1</span><span><strong>Lees elk gesprek live mee</strong> en neem op elk moment zelf over.</span></div>
           <div class="shot-point reveal reveal-delay-1"><span class="sp-icon">2</span><span><strong>Deel je eigen lead-formulier-link</strong> via je website, advertenties of QR-code.</span></div>
@@ -684,6 +622,6 @@
   </footer>
 
   <script src="js/main.js?v=20"></script>
-  <script src="js/i18n.js?v=21"></script>
+  <script src="js/i18n.js?v=22"></script>
 </body>
 </html>
