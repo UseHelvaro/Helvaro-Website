@@ -6,7 +6,7 @@
   var geladen = {};
   var huidig = 'nl';
   /* Ophogen zodra een taalbestand wijzigt, anders houdt de browser de oude versie vast. */
-  var TAAL_V = '7';
+  var TAAL_V = '8';
   function laadTaal(lang, klaar){
     if (lang === 'nl' || TR[lang] || geladen[lang]) { klaar(); return; }
     geladen[lang] = true;
