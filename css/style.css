@@ -57,7 +57,7 @@
   --font-h: 'Space Grotesk', system-ui, sans-serif;
   --font-b: 'Inter', system-ui, sans-serif;
 
-  --nav-h: 78px;
+  --nav-h: 78px; --topbar-h: 45px;
   --ease: cubic-bezier(0.4,0,0.2,1);
 }
 
@@ -146,7 +146,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   top: 0; left: 0; right: 0;
   height: var(--nav-h);
   z-index: 900;
-  transition: background 0.4s var(--ease), border-color 0.4s var(--ease), backdrop-filter 0.4s;
+  transition: background 0.4s var(--ease), border-color 0.4s var(--ease),
+    backdrop-filter 0.4s, top 0.3s var(--ease);
   border-bottom: 1px solid transparent;
 }
 .nav.scrolled {
@@ -247,7 +248,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .nav-mobile {
   display: none;
   position: fixed;
-  inset: var(--nav-h) 0 0 0;
+  /* Begint onder de nav. Staat de balk er nog boven, dan schuift het
+     menu mee naar beneden, anders liep het achter de nav door. */
+  inset: calc(var(--topbar-h) + var(--nav-h)) 0 0 0;
+  transition: opacity 0.3s, transform 0.3s, inset 0.3s var(--ease);
   background: rgba(var(--veil-rgb), 0.97);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
@@ -261,6 +265,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   transition: opacity 0.3s, transform 0.3s;
   pointer-events: none;
 }
+.nav.scrolled ~ .nav-mobile { inset: var(--nav-h) 0 0 0; }
+
 .nav-mobile.open {
   display: flex;
   opacity: 1;
@@ -3039,11 +3045,15 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-weight: 600;
   white-space: nowrap;
 }
-.topbar + .nav { top: 45px; }
+/* De aankondigingsbalk scrolt gewoon mee naar boven, de nav niet. Zodra
+   je scrolt schuift de nav dus naar de bovenrand, anders bleef er een
+   strook van 45 pixels open waar de pagina onderdoor liep. */
+.topbar + .nav { top: var(--topbar-h); }
+.topbar + .nav.scrolled { top: 0; }
 body { padding-top: 0; }
 @media (max-width: 640px) {
+  :root { --topbar-h: 41px; }
   .topbar { font-size: 12.5px; padding: 9px 16px; }
-  .topbar + .nav { top: 41px; }
 }
 
 /* ============================================================

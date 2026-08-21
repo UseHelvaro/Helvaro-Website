@@ -18,12 +18,29 @@ Beide krijgen daarna hetzelfde kader, zodat er niets verspringt wanneer
 een bezoeker van thema wisselt.
 """
 import sys
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 DOEL = 840        # afmeting van het eindbestand
 LUCHT = 1.12      # marge rond Faro
 TOLERANTIE = 40   # hoe ver de vulling vanaf de hoeken mag doorlopen
 VLOER = 0.893     # alles daaronder is de weerspiegeling op de vloer
+
+
+def alleen_faro(masker):
+    """Losse vlekjes weghalen: alles wat niet aan Faro zelf vastzit.
+
+    Onder zijn pootjes bleven een paar donkere spikkels over van de
+    schaduw op de vloer. Die raken zijn lijf niet, dus een vulling die
+    vanuit het midden van Faro vertrekt komt er nooit bij.
+    """
+    binair = masker.point(lambda p: 255 if p > 40 else 0)
+    l, bo, r, on = binair.getbbox()
+    vlak = binair.copy()
+    ImageDraw.floodfill(vlak, ((l + r) // 2, (bo + on) // 2), 128, thresh=0)
+    hoofdvorm = vlak.point(lambda p: 255 if p == 128 else 0)
+    weg = sum(1 for a, b in zip(binair.getdata(), hoofdvorm.getdata()) if a and not b)
+    print("losse vlekjes weggehaald: %d pixels" % weg)
+    return ImageChops.multiply(masker, hoofdvorm)
 
 
 def silhouet(wit):
@@ -36,6 +53,8 @@ def silhouet(wit):
     # De weerspiegeling op de vloer hoort er niet bij.
     ImageDraw.Draw(masker).rectangle(
         (0, int(wit.height * VLOER), wit.width, wit.height), fill=0)
+
+    masker = alleen_faro(masker)
 
     # Twee versies. De zwarte render heeft een paar pixels extra nodig om
     # zijn zachte rand mee te nemen. Bij de witte zou diezelfde verruiming
