@@ -46,7 +46,6 @@
 
   --shadow-card: 0 12px 44px rgba(0,0,0,0.45);
   --hero-img-filter: grayscale(1) sepia(0.28) brightness(0.5) contrast(1.05);
-  --logo-filter: sepia(1) saturate(1.6) hue-rotate(-12deg) brightness(1.15);
   --grain-opacity: 0.05;
 
   --radius-s: 8px;
@@ -97,7 +96,6 @@
 
   --shadow-card: 0 10px 34px rgba(17,24,39,0.08);
   --hero-img-filter: grayscale(1) sepia(0.2) brightness(1.75) contrast(0.82);
-  --logo-filter: sepia(1) saturate(2.1) hue-rotate(-18deg) brightness(0.62);
   --grain-opacity: 0.025;
 }
 
@@ -2959,15 +2957,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 /* ============================================================
-   LOGO — tijdelijke sand-tint
-   Het huidige logobestand is nog blauw/paars. Deze filter maakt
-   het warm zodat het bij Sand Black past. Vervang het logo door
-   een echte sand-versie en verwijder dan deze twee regels.
+   LOGO — officieel gouden logo (assets/logo-helvaro.png)
+   Geen tint-filter meer nodig: het bestand is al de juiste
+   goudkleur en wordt lokaal geserveerd.
    ============================================================ */
-.nav-logo img,
-.footer-logo {
-  filter: var(--logo-filter);
-}
 
 
 /* ============================================================
@@ -3988,4 +3981,17 @@ select:focus-visible {
 @media (min-width: 1025px) and (max-width: 1110px) {
   .float-chip { width: 118px; }
   .float-chip .chip-icon { display: none; }
+}
+
+/* ============================================================
+   REVEAL — vangnet zonder JavaScript
+   .reveal verbergt content tot JS hem onthult. Draait er geen JS,
+   dan mag die content nooit onzichtbaar blijven. De .js-klasse
+   wordt bovenaan de <head> gezet; ontbreekt hij, dan tonen we alles.
+   ============================================================ */
+html:not(.js) .reveal,
+html:not(.js) .reveal-scale {
+  opacity: 1;
+  transform: none;
+  filter: none;
 }

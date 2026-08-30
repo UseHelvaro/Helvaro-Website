@@ -251,11 +251,21 @@ function initReveal() {
   const targets = document.querySelectorAll('.reveal, .reveal-scale');
   if (!targets.length) return;
 
+  const show = el => el.classList.add('visible');
+
+  // Fail-safe: zonder IntersectionObserver (of bij een viewport van 0px hoog,
+  // zoals in sommige previews en headless browsers) tonen we alles meteen.
+  // Content mag nooit permanent onzichtbaar blijven door een animatie.
+  if (!('IntersectionObserver' in window) || !window.innerHeight) {
+    targets.forEach(show);
+    return;
+  }
+
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          show(entry.target);
           observer.unobserve(entry.target);
         }
       });
@@ -264,6 +274,14 @@ function initReveal() {
   );
 
   targets.forEach(el => observer.observe(el));
+
+  // Vangnet: wat na 3 seconden nog steeds verborgen is, tonen we alsnog.
+  // Beschermt tegen randgevallen waarin de observer nooit afvuurt.
+  window.setTimeout(() => {
+    targets.forEach(el => {
+      if (!el.classList.contains('visible')) show(el);
+    });
+  }, 3000);
 }
 
 
