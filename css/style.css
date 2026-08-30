@@ -3995,3 +3995,24 @@ html:not(.js) .reveal-scale {
   transform: none;
   filter: none;
 }
+
+/* ============================================================
+   LOGO — contrastvariant per thema
+   Het gouden logo is licht (luminantie ~191/255) en zakt weg op
+   een lichte achtergrond. Op het lichte thema tonen we daarom een
+   donkerdere goudversie; op het donkere thema het originele goud.
+   ============================================================ */
+.nav-logo img,
+img.footer-logo {
+  content: url("../assets/logo-helvaro-dark.png");
+}
+:root[data-theme="dark"] .nav-logo img,
+:root[data-theme="dark"] img.footer-logo {
+  content: url("../assets/logo-helvaro.png");
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .nav-logo img,
+  :root:not([data-theme="light"]) img.footer-logo {
+    content: url("../assets/logo-helvaro.png");
+  }
+}
