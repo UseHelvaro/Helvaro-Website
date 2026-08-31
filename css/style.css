@@ -4305,8 +4305,12 @@ p { text-wrap: pretty; }
    De verticale ruimte liep uiteen van sectie tot sectie. Eén maat, die
    meeschaalt met het scherm.                                                */
 .section {
-  padding-top: clamp(72px, 8vw, 116px);
-  padding-bottom: clamp(72px, 8vw, 116px);
+  /* Boven- en onderpadding tellen bij elkaar op tussen twee secties. Op
+     116px elk werd dat 232px leegte op elke overgang, waar premium SaaS
+     doorgaans op 120 tot 160px zit. Nu 76px elk: 152px tussen secties op
+     desktop, 96px op een telefoon. */
+  padding-top: clamp(48px, 5.5vw, 76px);
+  padding-bottom: clamp(48px, 5.5vw, 76px);
 }
 .section-header {
   margin-bottom: clamp(38px, 4.5vw, 60px);
