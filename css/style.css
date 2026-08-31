@@ -4438,3 +4438,15 @@ p { text-wrap: pretty; }
   line-height: 1.35;
   text-wrap: balance;
 }
+
+/* ---- 14. Voettekst in balans ----------------------------------------------
+   De merkkolom was 281px breed en bevatte alleen het logo, terwijl de vier
+   linkkolommen zich in 176px moesten wringen ("Calculate what you're
+   missing" brak daardoor over twee regels). De merkkolom mag smal zijn;
+   de ruimte die vrijkomt gaat naar de lijsten.                            */
+@media (min-width: 900px) {
+  .footer-cols {
+    grid-template-columns: 150px repeat(4, minmax(0, 1fr));
+    gap: 40px;
+  }
+}
