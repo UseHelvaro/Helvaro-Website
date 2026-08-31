@@ -4,17 +4,17 @@
   <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gratis strategiegesprek plannen · Helvaro</title>
-  <meta name="description" content="In 20 minuten ontdek je hoeveel leads je team vandaag misloopt en wat dat kost. Gratis en vrijblijvend, met concrete cijfers uit je eigen situatie.">
-  <meta property="og:title" content="Gratis strategiegesprek plannen · Helvaro">
-  <meta property="og:description" content="In 20 minuten ontdek je hoeveel leads je team vandaag misloopt en wat dat kost. Gratis en vrijblijvend, met concrete cijfers uit je eigen situatie.">
+  <title>Start je 14 dagen gratis · Helvaro</title>
+  <meta name="description" content="Maak je Helvaro-account aan en probeer veertien dagen gratis. Je agent staat binnen 72 uur live op je WhatsApp en volgt elke lead op. Je kiest pas daarna een plan.">
+  <meta property="og:title" content="Start je 14 dagen gratis · Helvaro">
+  <meta property="og:description" content="Maak je Helvaro-account aan en probeer veertien dagen gratis. Je agent staat binnen 72 uur live op je WhatsApp en volgt elke lead op. Je kiest pas daarna een plan.">
   <meta property="og:image" content="https://helvaro.pro/assets/icon-512.png">
   <meta property="og:locale" content="nl_BE">
   <meta property="og:site_name" content="Helvaro">
-  <meta property="og:url" content="https://helvaro.pro/meeting.html">
+  <meta property="og:url" content="https://helvaro.pro/aanmelden.html">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://helvaro.pro/meeting.html">
+  <link rel="canonical" href="https://helvaro.pro/aanmelden.html">
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
@@ -31,7 +31,7 @@
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://helvaro.pro/" },
-      { "@type": "ListItem", "position": 2, "name": "Gesprek plannen", "item": "https://helvaro.pro/meeting.html" } ] }
+      { "@type": "ListItem", "position": 2, "name": "Aanmelden", "item": "https://helvaro.pro/aanmelden.html" } ] }
   </script>
 </head>
 <body>
@@ -118,45 +118,87 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero-sm">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-bg"></div>
+      <div class="hero-glow"></div>
       <div class="container hero-sm-inner">
-        <span class="badge"><span class="badge-dot" aria-hidden="true"></span>Strategie</span>
-        <h1 class="hero-sm-title">Plan jouw gratis strategie-gesprek</h1>
-        <p class="hero-sm-sub">In 20 minuten ontdek je hoeveel leads jouw salesteam momenteel laat liggen en wat dat concreet kost.</p>
+        <h1 class="hero-sm-title">Start je 14 dagen gratis</h1>
+        <p class="signup-sub">Je agent staat binnen 72 uur live op je eigen WhatsApp-nummer. Veertien dagen lang volgt hij elke lead op, zodat je zelf ziet wat het oplevert voordat je een plan kiest.</p>
       </div>
     </section>
 
-    <!-- ===== CONTENT + BOOKING ===== -->
+    <!-- ===== AANMELDEN ===== -->
     <section class="section">
-      <div class="section-glow" aria-hidden="true"></div>
+      <div class="section-glow"></div>
       <div class="container">
-        <div class="meeting-content">
-          <div class="meeting-text reveal">
-            <p class="meeting-lead">Ons strategie-gesprek</p>
-            <h2 class="meeting-title">Wat kan je verwachten?</h2>
-            <div class="meeting-body">
-              <p>In ons gesprek van 20 minuten gaan we samen door jouw huidige salesproces. We kijken hoeveel leads er binnenkomen, hoe snel ze worden opgevolgd, en waar de grootste lekken zitten.</p>
-              <p>Op basis daarvan laat ik je zien hoe een agent op WhatsApp die opvolging automatisch overneemt, volledig op maat van jouw team.</p>
-              <p>Je verlaat het gesprek met een concreet beeld van wat er nu misloopt en wat dat kost. Zonder verplichtingen.</p>
+        <div class="signup-grid">
+
+          <!-- Formulier -->
+          <div class="signup-card reveal">
+            <div class="signup-card-head">
+              <span class="signup-badge">14 dagen gratis</span>
+              <h2 class="signup-card-title">Maak je account aan</h2>
+              <p class="signup-card-note">Vul je zakelijke e-mailadres in. Je rondt je account af in onze beveiligde omgeving.</p>
+            </div>
+
+            <form class="signup-form" id="signupForm" novalidate>
+              <label class="signup-label" for="signupEmail">Zakelijk e-mailadres</label>
+              <input class="signup-input" type="email" id="signupEmail" name="email"
+                     placeholder="jij@bedrijf.be" autocomplete="email" required
+                     aria-describedby="signupError">
+              <p class="signup-error" id="signupError" role="alert" hidden></p>
+              <button class="btn btn-lg signup-submit" type="submit">
+                Ga verder <span aria-hidden="true">→</span>
+              </button>
+              <p class="signup-legal">Door verder te gaan ga je akkoord met ons <a href="privacybeleid.html">privacybeleid</a>. Servers in de EU.</p>
+            </form>
+
+            <div class="signup-alt">
+              <span class="signup-alt-line">Liever eerst praten?</span>
+              <a class="signup-alt-link" href="meeting.html">Plan een gesprek van 20 minuten →</a>
             </div>
           </div>
-          <div class="booking-card reveal reveal-delay-1" id="booking">
-            <div class="booking-head">
-              <p class="booking-label">Boek hier je gesprek</p>
-              <p class="booking-sub">Kies een moment dat vrij is in onze agenda. 20 minuten, gratis, geen verplichtingen.</p>
+
+          <!-- Wat er gebeurt -->
+          <div class="signup-side reveal reveal-delay-1">
+            <h2 class="signup-side-title">Wat er hierna gebeurt</h2>
+            <ol class="signup-steps">
+              <li class="signup-step">
+                <span class="signup-step-n">1</span>
+                <div>
+                  <strong>Je maakt je account aan</strong>
+                  <span>E-mailadres bevestigen en een wachtwoord kiezen. Duurt een minuut.</span>
+                </div>
+              </li>
+              <li class="signup-step">
+                <span class="signup-step-n">2</span>
+                <div>
+                  <strong>We zetten je agent op</strong>
+                  <span>Je vertelt ons wat je doet en hoe je klanten binnenkomen. Wij trainen je agent op jouw sector en koppelen je WhatsApp en agenda.</span>
+                </div>
+              </li>
+              <li class="signup-step">
+                <span class="signup-step-n">3</span>
+                <div>
+                  <strong>Je agent gaat live</strong>
+                  <span>Binnen 72 uur beantwoordt hij je eerste echte lead. Vanaf dat moment loopt je proefperiode van veertien dagen.</span>
+                </div>
+              </li>
+              <li class="signup-step">
+                <span class="signup-step-n">4</span>
+                <div>
+                  <strong>Je kiest pas daarna</strong>
+                  <span>Aan het einde van de veertien dagen kies je een plan. Doe je dat niet, dan stopt de proefperiode gewoon.</span>
+                </div>
+              </li>
+            </ol>
+
+            <div class="signup-proof">
+              <div class="signup-proof-item"><strong>&lt; 30 sec</strong><span>Reactietijd op elke lead</span></div>
+              <div class="signup-proof-item"><strong>24/7</strong><span>Ook buiten kantooruren</span></div>
+              <div class="signup-proof-item"><strong>EU</strong><span>Je data blijft in Europa</span></div>
             </div>
-            <!-- Boekingspagina uit Google Agenda van admins@helvaro.pro.
-                 Toont enkel momenten die daar echt vrij zijn; bezette tijd
-                 wordt automatisch geblokkeerd. -->
-            <div class="booking-embed" data-booking="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1B0wqqejjuRQ4GwcGVAk7ja3IZiSPkOheOSqFw1MVnI25uAye1rvFxEOevxDj9hn5lzrVvFcFI">
-              <div class="booking-loading">
-                <span class="booking-spinner" aria-hidden="true"></span>
-                Agenda laden&hellip;
-              </div>
-            </div>
-            <p class="booking-alt">Liever in een apart venster? <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1B0wqqejjuRQ4GwcGVAk7ja3IZiSPkOheOSqFw1MVnI25uAye1rvFxEOevxDj9hn5lzrVvFcFI" target="_blank" rel="noopener">Open de agenda &rarr;</a> of mail <a href="mailto:hello@helvaro.pro">hello@helvaro.pro</a></p>
           </div>
+
         </div>
       </div>
     </section>
@@ -165,126 +207,32 @@
     <section class="section comparison">
       <div class="container">
         <div class="section-header text-center reveal">
-          <span class="section-label">FAQ</span>
-          <h2 class="section-title">Veelgestelde vragen</h2>
+          <h2 class="section-title">Over de proefperiode</h2>
         </div>
         <div class="faq-list reveal">
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Voor welke bedrijven werkt Helvaro?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p class="faq-answer-inner">Elk bedrijf met een salesproces en inkomende leads: verzekeringen, recruitment, automotive, B2B SaaS, vastgoed, renovatie, zorgpraktijken, advocaten, coaching en meer.</p>
-            </div>
+            <button class="faq-question">Hoelang duurt de proefperiode?</button>
+            <div class="faq-answer"><p>Veertien dagen, gerekend vanaf het moment dat je agent live staat. Niet vanaf je aanmelding, zodat je de volle periode hebt om er echt mee te werken.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Welk WhatsApp-nummer gebruikt Helvaro?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p class="faq-answer-inner">Je krijgt van ons een vast, professioneel WhatsApp-nummer dat bij jouw bedrijf hoort. Dat nummer blijft altijd hetzelfde, zodat je leads je steeds op dezelfde plek bereiken. Je agent draagt een naam die jij kiest, dus je leads zien jouw bedrijf, niet Helvaro.</p>
-            </div>
+            <button class="faq-question">Moet ik meteen betalen?</button>
+            <div class="faq-answer"><p>Nee. Je kiest pas een plan wanneer de veertien dagen voorbij zijn.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Hoe weet ik dat mijn agent geen foute dingen zegt tegen mijn leads?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p class="faq-answer-inner">Jij bepaalt de naam van je agent, het welkomstbericht en de kwalificatievragen vóór we live gaan. Daarna lees je elk gesprek live mee in het dashboard en kan je op elk moment zelf overnemen.</p>
-            </div>
+            <button class="faq-question">Wat gebeurt er na veertien dagen?</button>
+            <div class="faq-answer"><p>Je kiest een plan en je agent loopt door. Kies je niets, dan stopt de proefperiode. Je account en je instellingen blijven bestaan, we verwijderen niets zomaar.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Wat als een lead met een echt persoon wil praten?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p class="faq-answer-inner">Dan stopt je agent en krijgt jouw team direct een melding. Jij neemt het gesprek gewoon over in dezelfde chat.</p>
-            </div>
+            <button class="faq-question">Kan ik eerder overstappen naar een betaald plan?</button>
+            <div class="faq-answer"><p>Dat kan op elk moment tijdens je proefperiode.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Werkt het ook in het Frans?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p class="faq-answer-inner">Ja. Je agent herkent de taal van je lead en schakelt automatisch tussen Nederlands en Frans.</p>
-            </div>
+            <button class="faq-question">Wat gebeurt er met mijn gegevens?</button>
+            <div class="faq-answer"><p>Je gegevens staan op servers in de EU en worden nooit doorverkocht. Je kunt inzage of verwijdering aanvragen. Meer daarover in ons <a href="privacybeleid.html">privacybeleid</a>.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Is dit GDPR-conform?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p class="faq-answer-inner">Ja. Je data staat op servers in de EU, wordt nooit doorverkocht en je kan op elk moment inzage of volledige verwijdering vragen.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Werkt dit met mijn CRM?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p class="faq-answer-inner">Vandaag koppelt Helvaro met Google Agenda, en exporteer je alle leads als CSV naar elk CRM. Rechtstreekse koppelingen met HubSpot, Teamleader en Pipedrive staan op de roadmap.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Hoe is dit anders dan ChatGPT met een Zapier-flow?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p class="faq-answer-inner">ChatGPT vergeet je lead na één gesprek, verstuurt zelf geen WhatsApp en plant niets in. Je agents onthouden elke lead, scoren op budget en intentie, en boeken rechtstreeks in je agenda, met een dashboard waarin je alles volgt.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Kan Helvaro een extra salesmedewerker vervangen?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p class="faq-answer-inner">Ja. Je agents reageren 24/7 op nieuwe aanvragen, kwalificeren automatisch op budget en intentie en plannen enkel warme leads in. Dit vermindert de nood aan extra personeel.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Hoe snel reageert het systeem op nieuwe leads?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p class="faq-answer-inner">Binnen 30 seconden na aanvraag, ook buiten kantooruren.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Moet mijn team iets extra doen?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p class="faq-answer-inner">Nee. Je krijgt een eigen lead-formulier-link voor je website of advertenties, en afspraken verschijnen automatisch in je Google Agenda. Je team krijgt enkel gekwalificeerde afspraken.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Hoe snel kan dit geïmplementeerd worden?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p class="faq-answer-inner">Meestal binnen 72 uur, afhankelijk van de huidige setup.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Wat als ik over mijn maandelijkse leadlimiet ga?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="faq-answer">
-              <p class="faq-answer-inner">Dan valt er niets stil. We verwittigen je en bekijken samen of een groter plan zinvol is, nooit een verrassing achteraf.</p>
-            </div>
+            <button class="faq-question">Heb ik technische kennis nodig?</button>
+            <div class="faq-answer"><p>Nee. Wij zetten je agent op en koppelen je WhatsApp en agenda. Het is geen IT-project.</p></div>
           </div>
         </div>
       </div>
@@ -354,6 +302,7 @@
   </footer>
 
   <script src="js/main.js?v=21"></script>
-  <script src="js/i18n.js?v=24"></script>
+  <script src="js/signup.js?v=1"></script>
+<script src="js/i18n.js?v=24"></script>
 </body>
 </html>

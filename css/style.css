@@ -4001,3 +4001,166 @@ html:not(.js) .reveal-scale {
   transform: none;
   filter: none;
 }
+
+/* ============================================================
+   AANMELDPAGINA
+   Bouwt volledig op de bestaande tokens: geen nieuwe kleuren,
+   radii of fonts. Werkt daardoor in beide thema's mee.
+   ============================================================ */
+.signup-sub {
+  max-width: 62ch;
+  margin: 18px auto 0;
+  color: var(--text-2);
+  font-size: 17px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.signup-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 48px;
+  align-items: start;
+}
+
+/* ---- kaart met het formulier ---- */
+.signup-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-0);
+  border-radius: var(--radius-l);
+  padding: 34px;
+  box-shadow: var(--shadow-card);
+  position: sticky;
+  top: 104px;
+}
+.signup-card-head { display: flex; flex-direction: column; gap: 10px; }
+.signup-badge {
+  align-self: flex-start;
+  font-family: var(--font-h);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  border: 1px solid var(--border-2);
+  border-radius: 999px;
+  padding: 5px 12px;
+}
+.signup-card-title {
+  font-family: var(--font-h);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.signup-card-note { color: var(--text-3); font-size: 14.5px; line-height: 1.55; margin: 0; }
+
+/* ---- formulier ---- */
+.signup-form { display: flex; flex-direction: column; gap: 10px; margin-top: 26px; }
+.signup-label {
+  font-family: var(--font-h);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-2);
+}
+.signup-input {
+  width: 100%;
+  font-family: var(--font-b);
+  font-size: 16px;                 /* 16px voorkomt inzoomen op iOS */
+  color: var(--text-1);
+  background: rgba(var(--layer-rgb), 0.04);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-s);
+  padding: 14px 16px;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.signup-input::placeholder { color: var(--text-3); }
+.signup-input:hover { border-color: var(--border-2); }
+.signup-input:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.signup-input[aria-invalid="true"] { border-color: #C2564A; }
+.signup-error { color: #C2564A; font-size: 13.5px; margin: 0; }
+
+.signup-submit { width: 100%; justify-content: center; margin-top: 6px; }
+.signup-submit:disabled { opacity: 0.7; cursor: progress; }
+
+.signup-legal { color: var(--text-3); font-size: 12.5px; line-height: 1.5; margin: 6px 0 0; }
+.signup-legal a { color: var(--text-2); text-decoration: underline; }
+
+/* ---- alternatief pad ---- */
+.signup-alt {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-0);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.signup-alt-line { color: var(--text-3); font-size: 13.5px; }
+.signup-alt-link {
+  font-family: var(--font-h);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--accent);
+}
+.signup-alt-link:hover { text-decoration: underline; }
+
+/* ---- stappen ---- */
+.signup-side-title {
+  font-family: var(--font-h);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin: 0 0 22px;
+}
+.signup-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 22px; }
+.signup-step { display: flex; gap: 16px; align-items: flex-start; }
+.signup-step-n {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid var(--border-2);
+  color: var(--accent);
+  font-family: var(--font-h);
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.signup-step div { display: flex; flex-direction: column; gap: 4px; }
+.signup-step strong { font-family: var(--font-h); font-size: 16px; font-weight: 600; color: var(--text-1); }
+.signup-step span { color: var(--text-2); font-size: 15px; line-height: 1.55; }
+
+/* ---- kerncijfers ---- */
+.signup-proof {
+  margin-top: 32px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border-0);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.signup-proof-item { display: flex; flex-direction: column; gap: 4px; }
+.signup-proof-item strong {
+  font-family: var(--font-h);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.signup-proof-item span { color: var(--text-3); font-size: 13px; line-height: 1.4; }
+
+@media (max-width: 900px) {
+  .signup-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .signup-card { position: static; padding: 26px; }
+  .signup-side-title { font-size: 20px; }
+}
+@media (max-width: 480px) {
+  .signup-card { padding: 22px; }
+  .signup-proof { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .signup-proof-item { flex-direction: row; align-items: baseline; gap: 10px; }
+}
