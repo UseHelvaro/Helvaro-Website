@@ -4466,3 +4466,13 @@ p { text-wrap: pretty; }
 .float-chip .chip-sub {
   white-space: nowrap;
 }
+
+/* ---- 16. Contactpagina in balans ------------------------------------------
+   De tekstkolom is 226px hoog, het formulier 667px. Met align-items: start
+   bleef er links een gat van ruim 400px onder de intro. De tekst staat nu
+   op ooghoogte met het formulier.                                          */
+@media (min-width: 900px) {
+  .contact-layout {
+    align-items: center;
+  }
+}
