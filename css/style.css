@@ -4377,3 +4377,64 @@ p { text-wrap: pretty; }
   .hero-title { margin-bottom: 16px; }
   .hero-subtitle { margin-bottom: 26px; }
 }
+
+/* ---- 11. Prijskaarten uitlijnen -------------------------------------------
+   De grid stond op align-items: start, waardoor de drie kaarten hun eigen
+   hoogte hielden (625, 638 en 561px). Daardoor stonden de drie knoppen op
+   drie verschillende hoogtes, wat het blok rommelig maakt en de vergelijking
+   moeilijker. Nu even hoog, met de knop onderaan vastgezet.               */
+.pricing-grid {
+  align-items: stretch;
+}
+.pricing-card {
+  height: 100%;
+}
+.pricing-features {
+  flex: 1 1 auto;
+}
+.pricing-cta {
+  margin-top: auto;
+}
+
+/* ---- 12. Faro krijgt grond onder de voeten --------------------------------
+   De mascotte zweefde als een losse sticker op een witte pagina: de lichte
+   variant had nauwelijks contrast met de achtergrond en er zat veel dode
+   ruimte omheen. Een zacht paneel geeft hem een plek en brengt de twee
+   kolommen visueel in balans.                                             */
+.faro-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 4vw, 48px);
+  border-radius: 28px;
+  background:
+    radial-gradient(120% 90% at 50% 22%, var(--accent-glow) 0%, transparent 62%),
+    var(--bg-2);
+  border: 1px solid var(--border-0);
+}
+.faro-visual img,
+.faro-visual picture {
+  position: relative;
+  z-index: 1;
+  max-width: min(100%, 400px);
+  height: auto;
+}
+
+/* ---- 13. Rekenmodule: cijfers ademruimte ----------------------------------
+   De twee tegels waren 164x87 met een label dat over twee regels brak en
+   tegen de rand aan kwam. Meer ruimte, en de cijfers krijgen de nadruk.  */
+.calc-stat {
+  padding: 16px 14px;
+  min-height: 104px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 12px;
+}
+.calc-stat-label {
+  line-height: 1.35;
+  text-wrap: balance;
+}
