@@ -4450,3 +4450,19 @@ p { text-wrap: pretty; }
     gap: 40px;
   }
 }
+
+/* ---- 15. Zwevende kaartjes bij de telefoon --------------------------------
+   De kaartjes stonden op een vaste 196px, waardoor "owner-occupied" over
+   twee regels brak en het kaartje ongelijk hoog werd. Ze mogen meegroeien
+   met hun inhoud, met een bovengrens zodat ze de telefoon niet overwoekeren.
+   ============================================================ */
+.float-chip {
+  width: auto;
+  min-width: 196px;
+  max-width: 264px;
+}
+/* De ondertitel bepaalt de breedte: laat hem niet afbreken, dan groeit het
+   kaartje mee tot aan de bovengrens hierboven. */
+.float-chip .chip-sub {
+  white-space: nowrap;
+}
