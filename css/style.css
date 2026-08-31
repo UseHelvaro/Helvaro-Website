@@ -3989,3 +3989,15 @@ select:focus-visible {
   .float-chip { width: 118px; }
   .float-chip .chip-icon { display: none; }
 }
+
+/* ============================================================
+   REVEAL — vangnet zonder JavaScript
+   .reveal verbergt content tot JS hem onthult. Draait er geen JS,
+   dan mag die content nooit onzichtbaar blijven.
+   ============================================================ */
+html:not(.js) .reveal,
+html:not(.js) .reveal-scale {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}

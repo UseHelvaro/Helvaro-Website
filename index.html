@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
+  <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Helvaro · AI agents that follow up every lead on WhatsApp</title>
-  <meta name="description" content="Helvaro puts AI agents on your WhatsApp that reply to every lead within 30 seconds, qualify them and book the good ones into your calendar. Live within 72 hours.">
-  <meta property="og:title" content="Helvaro · AI agents that follow up every lead on WhatsApp">
-  <meta property="og:description" content="Helvaro puts AI agents on your WhatsApp that reply to every lead within 30 seconds, qualify them and book the good ones into your calendar. Live within 72 hours.">
+  <title>Automatische leadopvolging via WhatsApp · Helvaro</title>
+  <meta name="description" content="Helvaro zet AI-agents op je WhatsApp die elke lead binnen 30 seconden beantwoorden, kwalificeren en de juiste afspraken in je agenda zetten. Live binnen 72 uur.">
+  <meta property="og:title" content="Automatische leadopvolging via WhatsApp · Helvaro">
+  <meta property="og:description" content="Helvaro zet AI-agents op je WhatsApp die elke lead binnen 30 seconden beantwoorden, kwalificeren en de juiste afspraken in je agenda zetten. Live binnen 72 uur.">
   <meta property="og:image" content="https://helvaro.pro/assets/icon-512.png">
+  <meta property="og:locale" content="nl_BE">
+  <meta property="og:site_name" content="Helvaro">
   <meta property="og:url" content="https://helvaro.pro/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -16,7 +19,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <meta name="theme-color" content="#121212">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -24,6 +28,29 @@
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
   </script>
   <link rel="stylesheet" href="css/style.css?v=45">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "@id": "https://helvaro.pro/#organization", "name": "Helvaro",
+        "url": "https://helvaro.pro/", "email": "hello@helvaro.pro",
+        "areaServed": { "@type": "Country", "name": "Belgi\u00eb" },
+        "knowsLanguage": ["nl", "fr", "en"] },
+      { "@type": "WebSite", "@id": "https://helvaro.pro/#website", "url": "https://helvaro.pro/",
+        "name": "Helvaro", "inLanguage": "nl-BE",
+        "publisher": { "@id": "https://helvaro.pro/#organization" } },
+      { "@type": "SoftwareApplication", "name": "Helvaro", "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web", "url": "https://helvaro.pro/",
+        "publisher": { "@id": "https://helvaro.pro/#organization" },
+        "description": "AI-agents op WhatsApp die inkomende leads binnen 30 seconden beantwoorden, kwalificeren en afspraken in de agenda zetten.",
+        "offers": [
+          { "@type": "Offer", "name": "Starter", "price": "249.99", "priceCurrency": "EUR", "category": "SubscriptionPlan" },
+          { "@type": "Offer", "name": "Growth",  "price": "499.00", "priceCurrency": "EUR", "category": "SubscriptionPlan" },
+          { "@type": "Offer", "name": "Scale",   "price": "799.00", "priceCurrency": "EUR", "category": "SubscriptionPlan" }
+        ] }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Naar de inhoud</a>
