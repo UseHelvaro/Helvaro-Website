@@ -4662,3 +4662,67 @@ p { text-wrap: pretty; }
     align-items: start;
   }
 }
+
+/* ============================================================
+   FARO OP DE AANMELDPAGINA
+   ------------------------------------------------------------
+   Twee plekken, allebei met een reden. Geen mascotte-als-versiering:
+   waar hij staat, doet hij iets.
+
+   1. Naast het formulier reageert hij op de toestand van dat
+      formulier: wachten, meedenken, tegenhouden, klaar. Zijn
+      houding IS de statusregel. De zin ernaast zegt hetzelfde in
+      woorden, want een houding is geen boodschap en een
+      schermlezer ziet hem niet.
+
+   2. Langs de stappen loopt hij mee met de stap die in beeld
+      staat. Dat vervangt niets -- de stappen zijn genummerd en
+      blijven zonder hem volledig leesbaar -- maar het maakt in
+      een oogopslag zichtbaar waar je bent.
+
+   Alles hieronder is klein en rustig gehouden. Dit is een
+   zakelijk product; een stuiterende vogel verkoopt geen
+   abonnement van 249 euro per maand.
+   ============================================================ */
+
+.signup-faro {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 18px 0 4px;
+  padding: 14px 16px;
+  background: rgba(var(--accent-rgb), 0.05);
+  border: 1px solid rgba(var(--accent-rgb), 0.16);
+  border-radius: var(--radius-m);
+}
+
+.signup-faro-img {
+  width: 56px;
+  height: 56px;
+  flex: none;
+  /* Alleen de houding wisselt, niet de grootte: anders springt de kaart. */
+  transition: opacity .18s var(--ease);
+}
+
+.signup-faro-line {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+/* De drie toestanden buiten 'wachten'. Kleur alleen als steun, nooit als
+   enige signaal -- de tekst zegt het ook. */
+.signup-faro[data-faro-state="denkt"]  { border-color: rgba(var(--accent-rgb), 0.3); }
+.signup-faro[data-faro-state="fout"]   { border-color: rgba(220, 38, 38, .34); background: rgba(220, 38, 38, .06); }
+.signup-faro[data-faro-state="fout"]   .signup-faro-line { color: #FF8B8B; }
+.signup-faro[data-faro-state="klaar"]  { border-color: rgba(34, 197, 94, .34); background: rgba(34, 197, 94, .06); }
+.signup-faro[data-faro-state="klaar"]  .signup-faro-line { color: #86EFAC; }
+
+/* ── Wie beweging liever niet heeft ───────────────────────────────
+   De houdingen blijven wisselen: dat is informatie, geen versiering.
+   Alleen het GLIJDEN gaat eruit -- hij verschijnt dan gewoon op zijn
+   plek. */
+@media (prefers-reduced-motion: reduce) {
+  .signup-faro-img { transition: none; }
+}

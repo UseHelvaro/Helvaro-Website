@@ -29,7 +29,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=47">
+  <link rel="stylesheet" href="css/style.css?v=49">
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://helvaro.pro/" },
@@ -142,6 +142,18 @@
               <p class="signup-card-note">Vul je zakelijke e-mailadres in. Je rondt je account af in onze beveiligde omgeving.</p>
             </div>
 
+            <!-- Faro staat naast het formulier en reageert op wat je doet.
+                 Bewust GEEN losse illustratie: zijn houding is de statusregel
+                 van dit formulier. Wachten, meedenken, iets tegenhouden, klaar.
+                 De tekst ernaast zegt hetzelfde in woorden, want een houding
+                 alleen is geen boodschap -- en een schermlezer ziet hem niet. -->
+            <div class="signup-faro" data-faro-state="idle">
+              <img class="signup-faro-img" id="signupFaro"
+                   src="assets/faro/falcon-idle.webp"
+                   alt="" role="presentation" width="96" height="96" decoding="async">
+              <p class="signup-faro-line" id="signupFaroLine">Ik sta klaar. Vul je e-mailadres in, dan zet ik de rest voor je op.</p>
+            </div>
+
             <form class="signup-form" id="signupForm" novalidate>
               <label class="signup-label" for="signupEmail">Zakelijk e-mailadres</label>
               <input class="signup-input" type="email" id="signupEmail" name="email"
@@ -163,7 +175,7 @@
           <!-- Wat er gebeurt -->
           <div class="signup-side reveal reveal-delay-1">
             <h2 class="signup-side-title">Wat er hierna gebeurt</h2>
-            <ol class="signup-steps">
+            <ol class="signup-steps" id="signupSteps">
               <li class="signup-step">
                 <span class="signup-step-n">1</span>
                 <div>
@@ -304,7 +316,7 @@
   </footer>
 
   <script src="js/main.js?v=22"></script>
-  <script src="js/signup.js?v=1"></script>
+  <script src="js/signup.js?v=5"></script>
 <script src="js/i18n.js?v=25"></script>
 </body>
 </html>
