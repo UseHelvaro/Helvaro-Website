@@ -6,15 +6,30 @@
    pagina vangt het e-mailadres op, valideert het, en stuurt de
    bezoeker door met dat adres alvast ingevuld.
 
-   Geverifieerd op 31-08-2026: zelfaanmelden staat open. De pagina
-   toont een echt registratieformulier (e-mail, wachtwoord, Google) en
-   de parameter email_address vult het e-mailveld daar vooraf in.
+   Sinds 31-08-2026 gaat dit naar app.helvaro.pro/signup en NIET meer
+   naar accounts.helvaro.pro/sign-up.
+
+   Waarom: dat laatste is Clerk's eigen portaal. Dat werkt, maar het is
+   onze site niet. Het staat in het Engels ("Create your account"), in
+   Clerks paarse standaardthema, zonder ons logo, zonder een woord over
+   de proefperiode van veertien dagen. Een Vlaamse makelaar klikt dus
+   vanaf een Nederlandse pagina door naar een Engels paars formulier van
+   een partij waar hij nog nooit van gehoord heeft -- precies op het
+   moment dat hij beslist of hij ons vertrouwt.
+
+   app.helvaro.pro/signup toont hetzelfde registratieformulier van Clerk,
+   maar in ons eigen scherm: logo, huisstijl, het promopaneel ernaast, en
+   in de taal van de bezoeker. De inloglink op deze site wijst al naar
+   app.helvaro.pro, dus dit maakt het ook consistent.
+
+   De parameter email_address blijft werken: die pagina vult het adres
+   voor in het formulier.
    Wil je de bestemming wijzigen, pas dan alleen SIGNUP_URL aan.
    ============================================================ */
 (function () {
   'use strict';
 
-  var SIGNUP_URL = 'https://accounts.helvaro.pro/sign-up';
+  var SIGNUP_URL = 'https://app.helvaro.pro/signup';
   var EMAIL_PARAM = 'email_address';
 
   var form = document.getElementById('signupForm');
