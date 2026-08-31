@@ -6,9 +6,10 @@
    pagina vangt het e-mailadres op, valideert het, en stuurt de
    bezoeker door met dat adres alvast ingevuld.
 
-   Wil je de bestemming wijzigen (bijvoorbeeld naar een
-   uitnodigingspagina zolang zelfaanmelden dicht staat), pas dan
-   alleen SIGNUP_URL aan.
+   Geverifieerd op 31-08-2026: zelfaanmelden staat open. De pagina
+   toont een echt registratieformulier (e-mail, wachtwoord, Google) en
+   de parameter email_address vult het e-mailveld daar vooraf in.
+   Wil je de bestemming wijzigen, pas dan alleen SIGNUP_URL aan.
    ============================================================ */
 (function () {
   'use strict';

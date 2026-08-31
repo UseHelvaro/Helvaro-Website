@@ -46,7 +46,6 @@
 
   --shadow-card: 0 12px 44px rgba(0,0,0,0.45);
   --hero-img-filter: grayscale(1) sepia(0.28) brightness(0.5) contrast(1.05);
-  --logo-filter: sepia(1) saturate(1.6) hue-rotate(-12deg) brightness(1.15);
   --grain-opacity: 0.05;
 
   --radius-s: 8px;
@@ -97,7 +96,6 @@
 
   --shadow-card: 0 10px 34px rgba(17,24,39,0.08);
   --hero-img-filter: grayscale(1) sepia(0.2) brightness(1.75) contrast(0.82);
-  --logo-filter: sepia(1) saturate(2.1) hue-rotate(-18deg) brightness(0.62);
   --grain-opacity: 0.025;
 }
 
@@ -2958,16 +2956,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   .reveal { filter: none; }
 }
 
-/* ============================================================
-   LOGO — tijdelijke sand-tint
-   Het huidige logobestand is nog blauw/paars. Deze filter maakt
-   het warm zodat het bij Sand Black past. Vervang het logo door
-   een echte sand-versie en verwijder dan deze twee regels.
-   ============================================================ */
-.nav-logo img,
-.footer-logo {
-  filter: var(--logo-filter);
-}
 
 
 /* ============================================================
@@ -4475,5 +4463,26 @@ p { text-wrap: pretty; }
   .contact-layout,
   .meeting-content {
     align-items: center;
+  }
+}
+
+/* ---- 17. Logo per thema ---------------------------------------------------
+   Het merk heeft twee logobestanden. Gemeten inktluminantie en contrast:
+
+     sand   189/255  ->  1.87:1 op wit      10.02:1 op #121212
+     brons  111/255  ->  4.99:1 op wit       3.75:1 op #121212
+
+   Sand verdwijnt dus op het lichte thema (1.87:1 haalt de ondergrens van
+   3:1 voor grafische elementen niet), brons houdt op allebei stand. Daarom
+   brons als standaard en sand op het donkere thema, waar hij op zijn best is.
+   Geen filters of kleurbewerking: dit zijn de aangeleverde bestanden.     */
+:root[data-theme="dark"] .nav-logo img,
+:root[data-theme="dark"] img.footer-logo {
+  content: url("../assets/logo-sand.png");
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .nav-logo img,
+  :root:not([data-theme="light"]) img.footer-logo {
+    content: url("../assets/logo-sand.png");
   }
 }
