@@ -4486,3 +4486,133 @@ p { text-wrap: pretty; }
     content: url("../assets/logo-sand.png");
   }
 }
+
+/* ============================================================================
+   18. NAVIGATIE — DRIE NIVEAUS IN PLAATS VAN EEN
+   ----------------------------------------------------------------------------
+   "Aanmelden" en "Login" stonden als gewone nav-links tussen Home en Contact:
+   even zwaar als een menu-item, terwijl het de twee ingangen tot het product
+   zijn. Nu een duidelijke rangorde:
+
+     1  Plan een lead-audit  — primair, gevuld, het zwaarst
+     2  Aanmelden            — secundair, omlijnd in de accentkleur
+     3  Login                — tertiair, ingetogen maar herkenbaar als knop
+
+   Aangesproken via het href-attribuut, zodat de markup op alle pagina's
+   ongemoeid blijft.
+   ============================================================================ */
+
+/* Gedeelde pilvorm voor de twee nav-knoppen. */
+.nav-link[href="aanmelden.html"],
+.nav-link[href^="https://app.helvaro.pro"] {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  line-height: 1;
+  transition: color 0.22s var(--ease), background 0.22s var(--ease),
+              border-color 0.22s var(--ease), box-shadow 0.22s var(--ease),
+              transform 0.18s var(--ease);
+}
+/* De onderstreping van gewone nav-links hoort niet onder een pil. */
+.nav-link[href="aanmelden.html"]::after,
+.nav-link[href^="https://app.helvaro.pro"]::after {
+  content: none;
+}
+
+/* 2 — Aanmelden: secundair. Omlijnd in de accentkleur, vult bij hover. */
+.nav-link[href="aanmelden.html"] {
+  color: var(--accent-light);
+  border-color: var(--border-2);
+  background: transparent;
+}
+.nav-link[href="aanmelden.html"]:hover {
+  color: var(--accent-light);
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  transform: translateY(-1px);
+}
+.nav-link[href="aanmelden.html"]:active {
+  transform: translateY(0);
+}
+
+/* 3 — Login: tertiair. Een haarlijn die pas bij hover invult, zodat hij
+       herkenbaar is als knop zonder met de andere twee te concurreren. */
+.nav-link[href^="https://app.helvaro.pro"] {
+  color: var(--text-1);
+  border-color: var(--border-1);
+}
+.nav-link[href^="https://app.helvaro.pro"]:hover {
+  color: var(--text-1);
+  border-color: var(--border-1);
+  background: rgba(var(--layer-rgb), 0.04);
+  transform: translateY(-1px);
+}
+.nav-link[href^="https://app.helvaro.pro"]:active {
+  transform: translateY(0);
+}
+
+/* 1 — Plan een lead-audit: primair. Steviger aanwezig, met diepte die
+       reageert in plaats van een vlak vakje te blijven. */
+.nav .btn {
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(var(--accent-deep-rgb), 0.16),
+              0 8px 20px -12px rgba(var(--accent-deep-rgb), 0.6);
+}
+.nav .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(var(--accent-deep-rgb), 0.2),
+              0 14px 28px -12px rgba(var(--accent-deep-rgb), 0.75);
+}
+.nav .btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(var(--accent-deep-rgb), 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav .btn:hover,
+  .nav-link[href="aanmelden.html"]:hover,
+  .nav-link[href^="https://app.helvaro.pro"]:hover {
+    transform: none;
+  }
+}
+
+/* Op smallere schermen wint ruimte het van versiering. */
+@media (max-width: 1180px) {
+  .nav-link[href="aanmelden.html"],
+  .nav-link[href^="https://app.helvaro.pro"] {
+    padding: 7px 12px;
+  }
+}
+
+/* ---- 19. De proefperiode-knoppen ------------------------------------------
+   "Start 14 dagen gratis" is de belangrijkste knop van de prijstabel: het is
+   de enige plek waar een bezoeker zichzelf kan aanmelden. Op Starter en Scale
+   stond hij als lichte omlijnde knop, nauwelijks te onderscheiden van een
+   secundaire actie. Alle drie krijgen nu hetzelfde accent, met de gevulde
+   variant op het aanbevolen plan zodat de rangorde blijft kloppen.        */
+.pricing-cta .btn {
+  width: 100%;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+.pricing-cta .btn-ghost {
+  color: var(--accent-light);
+  border-color: var(--border-2);
+  background: transparent;
+}
+.pricing-cta .btn-ghost:hover {
+  color: var(--accent-light);
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  box-shadow: 0 10px 24px -14px rgba(var(--accent-deep-rgb), 0.6);
+}
+/* Het aanbevolen plan houdt de gevulde knop, met wat meer diepte. */
+.pricing-card.featured .pricing-cta .btn {
+  box-shadow: 0 1px 2px rgba(var(--accent-deep-rgb), 0.18),
+              0 10px 24px -12px rgba(var(--accent-deep-rgb), 0.65);
+}
+.pricing-card.featured .pricing-cta .btn:hover {
+  box-shadow: 0 2px 5px rgba(var(--accent-deep-rgb), 0.22),
+              0 16px 32px -12px rgba(var(--accent-deep-rgb), 0.8);
+}
