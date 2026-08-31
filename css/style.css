@@ -4647,3 +4647,14 @@ p { text-wrap: pretty; }
 .hero-subtitle {
   line-height: 1.6;
 }
+
+/* ---- 21. Sectorkaarten op eigen hoogte ------------------------------------
+   De kaarten rekten mee met de langste in hun rij. "Bouw & Renovatie" stond
+   daardoor naast "Vastgoed" (die een extra blok over de visualisatie-agent
+   draagt) met zo'n 180px leegte onderaan. Elke kaart is nu zo hoog als zijn
+   eigen inhoud.                                                            */
+@media (min-width: 900px) {
+  .sol-grid {
+    align-items: start;
+  }
+}
