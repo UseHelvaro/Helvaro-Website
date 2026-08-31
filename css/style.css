@@ -4616,3 +4616,34 @@ p { text-wrap: pretty; }
   box-shadow: 0 2px 5px rgba(var(--accent-deep-rgb), 0.22),
               0 16px 32px -12px rgba(var(--accent-deep-rgb), 0.8);
 }
+
+/* ============================================================================
+   20. TYPOGRAFIE — GEWICHT ERAF, SPANNING ERIN
+   ----------------------------------------------------------------------------
+   Gemeten op drie referenties (31-08-2026):
+
+                    Helvaro     Linear      Stripe
+     kopgewicht     700         510         300
+     regelhoogte    1.10        1.00        1.15
+     tracking       -0.028em    -0.022em    -0.020em
+
+   Wat premium leest is niet zwaarder maar lichter: een kop van 700 met
+   strakke tracking wordt dicht en gaat schreeuwen. Space Grotesk 600 houdt
+   ruim genoeg body voor een merk dat stevig wil overkomen, terwijl de
+   strakkere regelhoogte de kop als blok laat staan in plaats van als losse
+   regels. Alleen gewicht, regelhoogte en tracking: geen kleuren, geen maten.
+   ============================================================================ */
+.hero-title {
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+.section-title,
+.hero-sm-title {
+  font-weight: 600;
+  line-height: 1.08;
+}
+/* De subtitel stond op 1.70 en viel daardoor uit elkaar onder de kop. */
+.hero-subtitle {
+  line-height: 1.6;
+}
