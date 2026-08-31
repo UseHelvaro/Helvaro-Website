@@ -4472,7 +4472,8 @@ p { text-wrap: pretty; }
    bleef er links een gat van ruim 400px onder de intro. De tekst staat nu
    op ooghoogte met het formulier.                                          */
 @media (min-width: 900px) {
-  .contact-layout {
+  .contact-layout,
+  .meeting-content {
     align-items: center;
   }
 }
