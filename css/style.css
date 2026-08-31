@@ -4164,3 +4164,216 @@ html:not(.js) .reveal-scale {
   .signup-proof { grid-template-columns: minmax(0, 1fr); gap: 14px; }
   .signup-proof-item { flex-direction: row; align-items: baseline; gap: 10px; }
 }
+
+/* ============================================================================
+   ONTWERPVERFIJNING
+   ----------------------------------------------------------------------------
+   Eén laag bovenop het bestaande systeem. Verandert geen merkkleuren en geen
+   teksten: alleen ritme, hiërarchie, verfijning en het weghalen van effecten
+   die de site goedkoper laten ogen dan ze is.
+   ============================================================================ */
+
+/* ---- 1. Effecten die tegen de merkpositionering in werken ------------------
+   Een filmkorrel-overlay over de hele pagina en een zelfgemaakte muiscursor
+   zijn typische "AI-startup template"-signalen. Ze voegen niets toe, kosten
+   rendertijd, en de eigen cursor neemt bovendien de vertrouwde systeemcursor
+   weg. Voor een B2B-product dat serieus genomen wil worden: eruit.          */
+.grain,
+.cursor-dot,
+.cursor-ring {
+  display: none !important;
+}
+
+/* ---- 2. Navigatie ---------------------------------------------------------
+   De balk droeg zeven links, twee bedieningselementen en een knop zonder
+   onderscheid. Alles woog even zwaar. Nu: navigatie links, hulpmiddelen
+   rechts, met lucht en een haarlijn ertussen zodat het oog de groepen ziet. */
+.nav-inner {
+  gap: 40px;
+}
+.nav-links {
+  gap: 22px;
+}
+.nav-link {
+  position: relative;
+  font-size: 14.5px;
+  color: var(--text-2);
+  padding: 6px 0;
+  transition: color 0.2s var(--ease);
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s var(--ease);
+}
+.nav-link:hover { color: var(--text-1); }
+.nav-link:hover::after { transform: scaleX(1); }
+
+/* Haarlijn tussen navigatie en hulpmiddelen (taal, thema, knop). */
+.nav-inner > .lang-switch {
+  position: relative;
+  margin-left: 6px;
+  padding-left: 22px;
+}
+.nav-inner > .lang-switch::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 20px;
+  background: var(--border-0);
+}
+
+/* De balk zelf: rustiger, met een echte glaslaag zodra je scrolt. */
+.nav {
+  backdrop-filter: saturate(1.4) blur(14px);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+}
+.nav.scrolled {
+  border-bottom-color: var(--border-0);
+  box-shadow: 0 1px 0 rgba(var(--layer-rgb), 0.02), 0 8px 28px -22px rgba(var(--layer-rgb), 0.5);
+}
+
+/* Het woordmerk mag de beeldmerk-grootte dragen in plaats van andersom. */
+.nav-logo {
+  gap: 12px;
+  letter-spacing: -0.015em;
+}
+
+/* ---- 3. Knoppen -----------------------------------------------------------
+   De primaire knop las als een vlak vakje. Nu met meer body, een subtiele
+   lift bij hover en een echte ingedrukte staat, zodat hij zich gedraagt als
+   iets dat je aanklikt.                                                     */
+.btn {
+  padding: 12px 24px;
+  border-radius: 10px;
+  letter-spacing: -0.005em;
+  transition: transform 0.18s var(--ease), box-shadow 0.24s var(--ease),
+              background 0.24s var(--ease), border-color 0.24s var(--ease);
+  will-change: transform;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px -12px rgba(var(--accent-deep-rgb), 0.75);
+}
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+.btn-lg {
+  padding: 15px 30px;
+  border-radius: 12px;
+}
+
+/* ---- 4. Zichtbare focus ---------------------------------------------------
+   Toetsenbordgebruikers zagen nauwelijks waar ze stonden. Eén ring, overal
+   hetzelfde, in de accentkleur.                                             */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ---- 5. Typografie --------------------------------------------------------
+   Koppen stonden te los en braken op ongelukkige plekken. Strakkere
+   letterafstand op grote maten, gebalanceerde regelafbreking, en tekst die
+   niet breder wordt dan comfortabel leest.                                  */
+.section-title,
+.hero-sm-title {
+  letter-spacing: -0.028em;
+  text-wrap: balance;
+}
+/* De hero-titel bevat een koppelteken ("follow-up"). Met text-wrap: balance
+   brak de regel daar middenin het woord af. Balance dus niet op de hero, en
+   expliciet verbieden dat er op een koppelteken wordt afgebroken. */
+.hero-title {
+  letter-spacing: -0.028em;
+  text-wrap: pretty;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+.section-subtitle,
+.hero-subtitle {
+  text-wrap: pretty;
+  max-width: 62ch;
+}
+p { text-wrap: pretty; }
+
+/* ---- 6. Ritme tussen secties ---------------------------------------------
+   De verticale ruimte liep uiteen van sectie tot sectie. Eén maat, die
+   meeschaalt met het scherm.                                                */
+.section {
+  padding-top: clamp(72px, 8vw, 116px);
+  padding-bottom: clamp(72px, 8vw, 116px);
+}
+.section-header {
+  margin-bottom: clamp(38px, 4.5vw, 60px);
+}
+
+/* ---- 7. Kaarten -----------------------------------------------------------
+   Randen, hoeken en schaduwen verschilden per blok. Nu één behandeling, met
+   een hover die reageert in plaats van te schreeuwen.                       */
+.pricing-card,
+.solution-card,
+.booking-card,
+.signup-card {
+  border-radius: 18px;
+  transition: transform 0.26s var(--ease), box-shadow 0.26s var(--ease),
+              border-color 0.26s var(--ease);
+}
+.pricing-card:hover,
+.solution-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-2);
+  box-shadow: 0 18px 48px -26px rgba(var(--layer-rgb), 0.42);
+}
+
+/* ---- 8. Zachtere gloed ----------------------------------------------------
+   De achtergrondgloed was zo sterk dat hij de tekst erboven grijzig maakte. */
+.hero-glow,
+.hero-glow-2,
+.section-glow {
+  opacity: 0.55;
+}
+
+/* ---- 9. Beheerste beweging ------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover,
+  .pricing-card:hover,
+  .solution-card:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 1180px) {
+  .nav-inner { gap: 24px; }
+  .nav-links { gap: 16px; }
+  .nav-link { font-size: 14px; }
+}
+
+/* ---- 10. Mobiele hero -----------------------------------------------------
+   De hero liep op een telefoon ruim over de vouw voordat er iets te doen was.
+   Iets strakkere verticale maten brengen de eerste actie omhoog zonder de
+   tekst te laten verkrampen.                                               */
+@media (max-width: 600px) {
+  .hero-inner {
+    padding-top: 28px;
+    padding-bottom: 44px;
+  }
+  .hero-title { margin-bottom: 16px; }
+  .hero-subtitle { margin-bottom: 26px; }
+}
