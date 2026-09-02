@@ -4788,3 +4788,102 @@ p { text-wrap: pretty; }
   .signup-faro-img,
   .faro-visual img { animation: none; }
 }
+
+
+/* ── Faro loopt met je mee ──────────────────────────────────────────
+   Vast linksonder, klein, en hij vertelt in één zin waar je naar kijkt.
+
+   Wat hier bewust NIET gebeurt: de pagina wordt niet gekaapt. Geen
+   scroll-jacking, geen vastgezette secties, geen animatie die je moet
+   uitzitten voor je verder kan. Je scrollt zoals je gewend bent en hij
+   reageert erop -- andersom is het zijn pagina geworden in plaats van
+   die van de bezoeker.
+
+   Linksonder en niet rechtsonder: rechts zit op bijna elke pagina de
+   chat- of hulpknop, en twee dingen die om dezelfde hoek vechten
+   verliezen allebei. */
+.faro-gids {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 340px;
+  padding: 10px 12px;
+  border-radius: var(--radius-m);
+  background: var(--surface-2, rgba(20, 20, 20, .92));
+  border: 1px solid rgba(var(--accent-rgb), 0.22);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .34);
+  backdrop-filter: blur(8px);
+  /* Hij komt binnengegleden, niet knallend. */
+  animation: faro-gids-in 420ms var(--ease, ease) both;
+}
+.faro-gids[hidden] { display: none; }
+
+.faro-gids-img {
+  width: 44px;
+  height: 44px;
+  flex: none;
+}
+/* Dezelfde houdingen, dezelfde bewegingen als overal elders. */
+.faro-gids-img[src*="falcon-idle"]       { animation: faro-breathe 4.6s ease-in-out infinite; }
+.faro-gids-img[src*="falcon-thinking"]   { animation: faro-denkt   2.8s ease-in-out infinite; }
+.faro-gids-img[src*="falcon-generating"] { animation: faro-werkt   1.9s ease-in-out infinite; }
+.faro-gids-img[src*="falcon-success"]    { animation: faro-juicht  620ms cubic-bezier(.34, 1.56, .64, 1) 2 forwards; }
+
+.faro-gids-tekst {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text-2);
+}
+
+.faro-gids-sluit {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-3, #8b949e);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.faro-gids-sluit:hover { color: var(--text-1, #fff); background: rgba(255, 255, 255, .07); }
+/* Een raakvlak van 26px is te klein voor een duim; vergroot hem onzichtbaar. */
+.faro-gids-sluit::after {
+  content: "";
+  position: absolute;
+  inset: auto;
+  width: 44px; height: 44px;
+  margin: -9px;
+}
+
+@keyframes faro-gids-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Op een telefoon is er geen hoek vrij: daar staat hij onderaan over de
+   volle breedte, boven de vaste onderbalk. Verbergen zou makkelijker
+   zijn, maar dan mist juist de bezoeker met het kleinste scherm de
+   uitleg. */
+@media (max-width: 640px) {
+  .faro-gids {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    max-width: none;
+    padding: 9px 10px;
+  }
+  .faro-gids-img   { width: 36px; height: 36px; }
+  .faro-gids-tekst { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faro-gids,
+  .faro-gids-img { animation: none; }
+}

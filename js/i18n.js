@@ -6,7 +6,7 @@
   var geladen = {};
   var huidig = 'nl';
   /* Ophogen zodra een taalbestand wijzigt, anders houdt de browser de oude versie vast. */
-  var TAAL_V = '10';
+  var TAAL_V = '11';
   function laadTaal(lang, klaar){
     if (lang === 'nl' || TR[lang] || geladen[lang]) { klaar(); return; }
     geladen[lang] = true;
@@ -67,11 +67,11 @@
      alleen de vetgedrukte stukken zouden vertalen. Daarom hier als geheel. */
   var HTML_BLOKKEN = {
     faroTitel: {
-      nl: "Je agents vangen elke lead. <span class=\"highlight\">Faro zorgt dat er meer binnenkomen.</span>",
-      fr: "Vos agents captent chaque lead. <span class=\"highlight\">Faro fait en sorte qu'il y en ait plus.</span>",
-      en: "Your agents catch every lead. <span class=\"highlight\">Faro makes sure more come in.</span>",
-      de: "Ihre Agents fangen jeden Lead. <span class=\"highlight\">Faro sorgt dafür, dass mehr hereinkommen.</span>",
-      es: "Tus agentes captan cada lead. <span class=\"highlight\">Faro hace que lleguen más.</span>"
+      nl: "Je agents vangen elke lead. <span class=\"highlight\">Faro schrijft alles eromheen.</span>",
+      fr: "Vos agents captent chaque lead. <span class=\"highlight\">Faro rédige tout le reste.</span>",
+      en: "Your agents catch every lead. <span class=\"highlight\">Faro writes everything around it.</span>",
+      de: "Ihre Agents fangen jeden Lead. <span class=\"highlight\">Faro schreibt alles drumherum.</span>",
+      es: "Tus agentes captan cada lead. <span class=\"highlight\">Faro escribe todo lo demás.</span>"
     },
     gDataBewaren: {
       nl: "Van je Google-account bewaren we drie dingen: een <strong>vernieuwingstoken</strong> zodat je niet bij elke afspraak opnieuw moet inloggen, het <strong>e-mailadres</strong> van het gekoppelde account en het <strong>agenda-ID</strong> van de agenda die je gekozen hebt.",

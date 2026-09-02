@@ -33,7 +33,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=49">
+  <link rel="stylesheet" href="css/style.css?v=50">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -141,7 +141,7 @@
   <main id="main">
 
     <!-- ===== HERO ===== -->
-    <section class="hero" id="hero">
+    <section class="hero" data-gids="hero" id="hero">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-glow" aria-hidden="true"></div>
@@ -165,7 +165,7 @@
           <p class="hero-micro">Voor vastgoedkantoren, renovatie &amp; bouw, verzekeringsmakelaars, recruiters, zorgpraktijken en advocaten.</p>
           <div class="trust-row">
             <span class="trust-pill">Gemaakt in België</span>
-            <span class="trust-pill">Nederlands + Frans</span>
+            <span class="trust-pill">Spreekt 40 talen</span>
             <span class="trust-pill">Data in de EU · GDPR</span>
           </div>
         </div>
@@ -236,7 +236,7 @@
     </section>
 
     <!-- ===== FARO ===== -->
-    <section class="section faro" id="faro">
+    <section class="section faro" data-gids="faro" id="faro">
       <div class="section-glow" aria-hidden="true"></div>
       <div class="container">
         <div class="faro-inner">
@@ -248,39 +248,39 @@
                  De witte is wel echt uitgesneden. -->
             <picture class="faro-donker">
               <source srcset="assets/faro-donker.webp?v=4" type="image/webp">
-              <img src="assets/faro-donker.png?v=4" alt="Faro, de content-agent van Helvaro" width="840" height="840" decoding="async">
+              <img src="assets/faro-donker.png?v=4" alt="Faro, je assistent binnen Helvaro" width="840" height="840" decoding="async">
             </picture>
             <picture class="faro-licht">
               <source srcset="assets/faro-wit.webp?v=4" type="image/webp">
-              <img src="assets/faro-wit.png?v=4" alt="Faro, de content-agent van Helvaro" width="840" height="840" decoding="async">
+              <img src="assets/faro-wit.png?v=4" alt="Faro, je assistent binnen Helvaro" width="840" height="840" decoding="async">
             </picture>
           </div>
 
           <div class="faro-copy">
             <span class="section-label">Maak kennis met Faro</span>
-            <h2 class="section-title" data-i18n-html="faroTitel">Je agents vangen elke lead. <span class="highlight">Faro zorgt dat er meer binnenkomen.</span></h2>
+            <h2 class="section-title" data-i18n-html="faroTitel">Je agents vangen elke lead. <span class="highlight">Faro schrijft alles eromheen.</span></h2>
             <p class="faro-kop">Content creation &amp; brand building</p>
-            <p class="section-sub">Faro is de agent achter je advertenties. Hij schrijft je content, bewaakt je merk en houdt je campagnes op Meta en Google draaiend, week na week.</p>
+            <p class="section-sub">Faro is je assistent binnen Helvaro. Hij kent je leads, je panden en de stem van je kantoor, en schrijft je advertentieteksten, zoekertjes en campagnes — als concepten die jij goedkeurt. Publiceren doe jij.</p>
 
             <ul class="faro-list">
               <li class="reveal">
-                <strong>Content voor Meta en Google</strong>
-                <span>Advertentieteksten, hooks en varianten om te testen. Faro schrijft ze, jij kiest wat live gaat.</span>
+                <strong>Teksten voor Meta en Google</strong>
+                <span>Advertentieteksten, hooks en varianten om te testen. Faro schrijft ze, jij kiest wat live gaat. Er gaat niets automatisch de deur uit.</span>
               </li>
               <li class="reveal">
-                <strong>Merkopbouw die consistent blijft</strong>
+                <strong>Eén stem, overal dezelfde</strong>
                 <span>Eén stem over al je kanalen. Faro kent je toon, je aanbod en je sector, en wijkt daar niet van af.</span>
               </li>
               <li class="reveal">
-                <strong>Schalen zonder extra mensen</strong>
-                <span>Meer campagnes, meer varianten, meer leads bovenaan de trechter. Je WhatsApp-agents vangen ze onderaan op.</span>
+                <strong>Sneller klaar, zonder extra mensen</strong>
+                <span>Meer varianten om te testen, in de tijd die je anders aan één tekst kwijt was. En de leads die eruit komen, vangen je WhatsApp-agents op.</span>
               </li>
             </ul>
 
-            <p class="faro-close">Faro maakt de vraag. Je agents maken er afspraken van. Wij helpen je schalen.</p>
+            <p class="faro-close">Faro schrijft. Jij keurt goed. Je agents maken er afspraken van.</p>
 
             <div class="faro-actions">
-              <a href="meeting.html" class="btn btn-lg">Laat Faro je campagnes bekijken <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+              <a href="meeting.html" class="btn btn-lg">Laat Faro je eerste advertentietekst schrijven <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
             </div>
           </div>
 
@@ -293,13 +293,13 @@
       <div class="ticker-track">
         <span>Reactie binnen 30 seconden</span><span class="tick-sep">◆</span>
         <span>24/7 bereikbaar, ook in het weekend</span><span class="tick-sep">◆</span>
-        <span>Nederlands + Frans</span><span class="tick-sep">◆</span>
+        <span>Spreekt 40 talen</span><span class="tick-sep">◆</span>
         <span>Gemaakt in België</span><span class="tick-sep">◆</span>
         <span>Live binnen 72 uur</span><span class="tick-sep">◆</span>
         <span>GDPR · data in de EU</span><span class="tick-sep">◆</span>
         <span>Reactie binnen 30 seconden</span><span class="tick-sep">◆</span>
         <span>24/7 bereikbaar, ook in het weekend</span><span class="tick-sep">◆</span>
-        <span>Nederlands + Frans</span><span class="tick-sep">◆</span>
+        <span>Spreekt 40 talen</span><span class="tick-sep">◆</span>
         <span>Gemaakt in België</span><span class="tick-sep">◆</span>
         <span>Live binnen 72 uur</span><span class="tick-sep">◆</span>
         <span>GDPR · data in de EU</span><span class="tick-sep">◆</span>
@@ -329,7 +329,7 @@
     </div>
 
     <!-- ===== PHOTO CARDS ===== -->
-    <section class="section photo-section" aria-labelledby="photo-heading">
+    <section class="section photo-section" data-gids="werk" aria-labelledby="photo-heading">
       <div class="container">
         <h2 class="visually-hidden" id="photo-heading">Wat je agents voor je doen</h2>
         <div class="photo-grid">
@@ -369,7 +369,7 @@
     </section>
 
     <!-- ===== SOLUTIONS (per sector) ===== -->
-    <section class="section solutions" id="solutions">
+    <section class="section solutions" data-gids="sectoren" id="solutions">
       <div class="section-glow" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header text-center reveal">
@@ -449,7 +449,7 @@
     </section>
 
     <!-- ===== ROI CALCULATOR ===== -->
-    <section class="section comparison" id="calculator">
+    <section class="section comparison" data-gids="rekenen" id="calculator">
       <div class="container">
         <div class="section-header text-center reveal">
           <span class="section-label">Reken het zelf uit</span>
@@ -496,7 +496,7 @@
     </section>
 
     <!-- ===== PRICING ===== -->
-    <section class="section" id="prijzen">
+    <section class="section" id="prijzen" data-gids="prijs">
       <div class="section-glow" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header text-center reveal">
@@ -545,7 +545,7 @@
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Alles uit Starter</span></div>
               <div class="pricing-feat included hl"><span class="feat-icon">✓</span><span class="feat-text">Visualisatie-agent inbegrepen (bv. verbouwingsbeelden)</span></div>
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">3 agents, getraind op jouw sector</span></div>
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Nederlands + Frans automatisch</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Spreekt 40 talen automatisch</span></div>
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">CSV-exports naar elk CRM</span></div>
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Prioriteit support, SLA &lt; 4 uur</span></div>
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Dedicated account manager</span></div>
@@ -585,7 +585,7 @@
     </section>
 
     <!-- ===== CTA BAND ===== -->
-    <section class="cta-band">
+    <section class="cta-band" data-gids="start">
       <div class="cta-band-glow" aria-hidden="true"></div>
       <div class="container">
         <h2 class="cta-band-title reveal">Je leads wachten niet. Waarom jij wel?</h2>
@@ -657,7 +657,22 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=22"></script>
-  <script src="js/i18n.js?v=25"></script>
+  <script src="js/main.js?v=23"></script>
+  <script src="js/i18n.js?v=26"></script>
+
+  <!-- ── Faro loopt met je mee ────────────────────────────────────────────
+       Hij verandert van houding per sectie en zegt in één zin waar je naar
+       kijkt. Bewust GEEN scroll-kaping: de pagina scrollt gewoon zoals je
+       gewend bent, hij reageert er alleen op.
+
+       Wegklikbaar, en dat onthouden we. Iets dat meescrollt en niet weg kan,
+       is geen gids maar een banner. -->
+  <aside class="faro-gids" id="faroGids" hidden aria-live="polite">
+    <img class="faro-gids-img" id="faroGidsImg" src="assets/faro/falcon-idle.webp"
+         alt="" aria-hidden="true" width="44" height="44" decoding="async">
+    <p class="faro-gids-tekst" id="faroGidsTekst"></p>
+    <button type="button" class="faro-gids-sluit" id="faroGidsSluit"
+            aria-label="Faro verbergen">&times;</button>
+  </aside>
 </body>
 </html>

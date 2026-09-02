@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initWhatsApp();
   initSmoothScroll();
   initContactForm();
+  initFaroGids();
   initScrollProgress();
   initCountUp();
   initSpotlight();
@@ -863,4 +864,120 @@ function initTilt() {
   hero.addEventListener('pointerleave', () => {
     wrap.style.transform = '';
   });
+}
+
+
+/* ============================================================
+   FARO LOOPT MET JE MEE
+   Hij verandert van houding per sectie en zegt in één zin waar je naar
+   kijkt.
+
+   Wat hier bewust NIET gebeurt: de pagina wordt niet gekaapt. Geen
+   scroll-jacking, geen vastgezette secties. Je scrollt zoals je gewend
+   bent; hij reageert erop. Andersom is het zijn pagina geworden in
+   plaats van die van de bezoeker.
+
+   Wegklikbaar, en dat onthouden we. Iets dat meescrollt en niet weg kan
+   is geen gids maar een banner.
+   ============================================================ */
+var FARO_GIDS = {
+  hero:     { pose: 'thinking',
+              nl: 'Dit is het probleem in één zin: de leads komen binnen, alleen antwoordt er niemand meteen.',
+              en: 'Here is the problem in one line: the leads come in, but nobody answers them straight away.',
+              fr: 'Voilà le problème en une phrase : les leads arrivent, mais personne ne répond tout de suite.',
+              de: 'Das Problem in einem Satz: Die Leads kommen rein, nur antwortet niemand sofort.',
+              es: 'El problema en una frase: los leads llegan, pero nadie responde de inmediato.' },
+  faro:     { pose: 'idle',
+              nl: 'Dit ben ik. Ik schrijf je teksten en campagnes; jij keurt ze goed voor er iets live gaat.',
+              en: 'This is me. I write your copy and campaigns; you approve them before anything goes live.',
+              fr: 'C\'est moi. Je rédige vos textes et campagnes ; vous validez avant toute publication.',
+              de: 'Das bin ich. Ich schreibe Ihre Texte und Kampagnen; Sie geben sie frei, bevor etwas live geht.',
+              es: 'Este soy yo. Escribo tus textos y campañas; tú los apruebas antes de publicar nada.' },
+  werk:     { pose: 'generating',
+              nl: 'Hier zie je wat er gebeurt zodra een lead je schrijft: antwoorden, kwalificeren, inplannen.',
+              en: 'Here is what happens the moment a lead writes to you: answer, qualify, book.',
+              fr: 'Voici ce qui se passe dès qu\'un lead vous écrit : répondre, qualifier, planifier.',
+              de: 'Das passiert, sobald ein Lead Ihnen schreibt: antworten, qualifizieren, einplanen.',
+              es: 'Esto pasa en cuanto un lead te escribe: responder, cualificar, agendar.' },
+  sectoren: { pose: 'thinking',
+              nl: 'Elke sector krijgt een eigen agent, met de vragen die in jouw vak echt tellen.',
+              en: 'Every sector gets its own agent, asking the questions that actually matter in your field.',
+              fr: 'Chaque secteur a son agent, avec les questions qui comptent vraiment dans votre métier.',
+              de: 'Jede Branche bekommt einen eigenen Agent, mit den Fragen, die in Ihrem Fach zählen.',
+              es: 'Cada sector tiene su propio agente, con las preguntas que de verdad importan en tu campo.' },
+  rekenen:  { pose: 'generating',
+              nl: 'Vul je eigen cijfers in, dan zie je zwart op wit wat trage opvolging je kost.',
+              en: 'Put in your own numbers and you will see in black and white what slow follow-up costs you.',
+              fr: 'Entrez vos propres chiffres et vous verrez noir sur blanc ce que coûte un suivi lent.',
+              de: 'Tragen Sie Ihre eigenen Zahlen ein, dann sehen Sie schwarz auf weiß, was langsames Nachfassen kostet.',
+              es: 'Introduce tus propios números y verás negro sobre blanco lo que cuesta un seguimiento lento.' },
+  prijs:    { pose: 'idle',
+              nl: 'Eén prijs, alles inbegrepen. Geen setupkosten en maandelijks opzegbaar.',
+              en: 'One price, everything included. No setup fee, cancel monthly.',
+              fr: 'Un seul prix, tout compris. Sans frais de mise en route, résiliable chaque mois.',
+              de: 'Ein Preis, alles inklusive. Keine Einrichtungsgebühr, monatlich kündbar.',
+              es: 'Un solo precio, todo incluido. Sin coste de instalación y cancelable cada mes.' },
+  start:    { pose: 'success',
+              nl: 'Klaar om te starten? Je staat binnen 72 uur live.',
+              en: 'Ready to start? You are live within 72 hours.',
+              fr: 'Prêt à démarrer ? Vous êtes en ligne sous 72 heures.',
+              de: 'Bereit loszulegen? Sie sind in 72 Stunden live.',
+              es: '¿Listo para empezar? Estás en marcha en 72 horas.' }
+};
+
+function initFaroGids() {
+  var doos = document.getElementById('faroGids');
+  var img  = document.getElementById('faroGidsImg');
+  var reg  = document.getElementById('faroGidsTekst');
+  var weg  = document.getElementById('faroGidsSluit');
+  if (!doos || !img || !reg) return;
+
+  try { if (localStorage.getItem('helvaro_faro_gids') === 'uit') return; } catch (e) {}
+
+  var secties = document.querySelectorAll('[data-gids]');
+  if (!secties.length || !('IntersectionObserver' in window)) return;
+
+  var huidig = '';
+  function taal() {
+    return (document.documentElement.lang || 'nl').slice(0, 2).toLowerCase();
+  }
+  function toon(sleutel) {
+    var g = FARO_GIDS[sleutel];
+    if (!g || sleutel === huidig) return;
+    huidig = sleutel;
+    doos.hidden = false;
+    img.src = 'assets/faro/falcon-' + g.pose + '.webp';
+    reg.textContent = g[taal()] || g.nl;
+  }
+
+  /* De sectie die het meest in beeld staat wint. Zonder die vergelijking
+     springt hij heen en weer op de grens tussen twee secties. */
+  var zichtbaar = {};
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      zichtbaar[e.target.dataset.gids] = e.isIntersecting ? e.intersectionRatio : 0;
+    });
+    var beste = '', hoogste = 0;
+    Object.keys(zichtbaar).forEach(function (k) {
+      if (zichtbaar[k] > hoogste) { hoogste = zichtbaar[k]; beste = k; }
+    });
+    if (beste && hoogste > 0.18) toon(beste);
+  }, { threshold: [0, 0.18, 0.4, 0.7, 1] });
+
+  secties.forEach(function (el) { obs.observe(el); });
+
+  /* Meewisselen wanneer de bezoeker van taal verandert. */
+  if (window.MutationObserver) {
+    new MutationObserver(function () {
+      var was = huidig; huidig = ''; toon(was);
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  }
+
+  if (weg) {
+    weg.addEventListener('click', function () {
+      doos.hidden = true;
+      obs.disconnect();
+      try { localStorage.setItem('helvaro_faro_gids', 'uit'); } catch (e) {}
+    });
+  }
 }
