@@ -476,23 +476,38 @@ const FORM_TEKST = {
   nl: { bezig:'Versturen…', gelukt:'Verzonden ✓', fout:'Versturen mislukt',
         leeg:'Vul alle velden in.', email:'Vul een geldig e-mailadres in.',
         gelukt_uitleg:'Bedankt, we nemen binnen 24 uur contact op.',
-        fout_uitleg:'Er ging iets mis. Mail ons rechtstreeks op hello@helvaro.pro.' },
+        fout_uitleg:'Er ging iets mis. Mail ons rechtstreeks op hello@helvaro.pro.' ,
+        faro_idle:'Vul je gegevens in, dan zorg ik dat je bericht bij de juiste persoon komt.',
+        faro_denkt:'Dat ziet er compleet uit. Klik op verzenden en ik geef het door.',
+        faro_klaar:'Verzonden. Iemand van ons leest het en komt bij je terug.' },
   fr: { bezig:'Envoi…', gelukt:'Envoyé ✓', fout:'Échec de l\'envoi',
         leeg:'Veuillez remplir tous les champs.', email:'Saisissez une adresse e-mail valide.',
         gelukt_uitleg:'Merci, nous vous recontactons sous 24 heures.',
-        fout_uitleg:'Une erreur est survenue. Écrivez-nous à hello@helvaro.pro.' },
+        fout_uitleg:'Une erreur est survenue. Écrivez-nous à hello@helvaro.pro.' ,
+        faro_idle:'Remplissez vos coordonnées et je veille à ce que votre message arrive au bon endroit.',
+        faro_denkt:'Cela a l\'air complet. Cliquez sur envoyer et je le transmets.',
+        faro_klaar:'Envoyé. Quelqu\'un de chez nous le lit et vous recontacte.' },
   en: { bezig:'Sending…', gelukt:'Sent ✓', fout:'Sending failed',
         leeg:'Please fill in every field.', email:'Enter a valid email address.',
         gelukt_uitleg:'Thanks, we will get back to you within 24 hours.',
-        fout_uitleg:'Something went wrong. Email us directly at hello@helvaro.pro.' },
+        fout_uitleg:'Something went wrong. Email us directly at hello@helvaro.pro.' ,
+        faro_idle:'Fill in your details and I\'ll make sure your message reaches the right person.',
+        faro_denkt:'That looks complete. Hit send and I\'ll pass it on.',
+        faro_klaar:'Sent. Someone here will read it and get back to you.' },
   de: { bezig:'Wird gesendet…', gelukt:'Gesendet ✓', fout:'Senden fehlgeschlagen',
         leeg:'Bitte füllen Sie alle Felder aus.', email:'Geben Sie eine gültige E-Mail-Adresse ein.',
         gelukt_uitleg:'Danke, wir melden uns innerhalb von 24 Stunden.',
-        fout_uitleg:'Etwas ist schiefgelaufen. Schreiben Sie an hello@helvaro.pro.' },
+        fout_uitleg:'Etwas ist schiefgelaufen. Schreiben Sie an hello@helvaro.pro.' ,
+        faro_idle:'Tragen Sie Ihre Daten ein, dann sorge ich dafür, dass Ihre Nachricht ankommt.',
+        faro_denkt:'Das sieht vollständig aus. Klicken Sie auf Senden, ich gebe es weiter.',
+        faro_klaar:'Gesendet. Jemand von uns liest es und meldet sich bei Ihnen.' },
   es: { bezig:'Enviando…', gelukt:'Enviado ✓', fout:'Error al enviar',
         leeg:'Rellena todos los campos.', email:'Introduce un correo válido.',
         gelukt_uitleg:'Gracias, te contactamos en menos de 24 horas.',
-        fout_uitleg:'Algo salió mal. Escríbenos a hello@helvaro.pro.' }
+        fout_uitleg:'Algo salió mal. Escríbenos a hello@helvaro.pro.' ,
+        faro_idle:'Rellena tus datos y me aseguro de que tu mensaje llegue a la persona indicada.',
+        faro_denkt:'Parece completo. Pulsa enviar y yo lo hago llegar.',
+        faro_klaar:'Enviado. Alguien de nuestro equipo lo leerá y te responderá.' }
 };
 
 /* ============================================================
@@ -522,6 +537,29 @@ function initContactForm() {
     return FORM_TEKST[l] || FORM_TEKST.nl;
   }
 
+  /* ── Faro bij dit formulier ────────────────────────────────────────
+     Zelfde opzet als op de aanmeldpagina: zijn houding IS de statusregel,
+     en elke houding zegt hetzelfde in woorden in de regel ernaast. Een
+     houding is geen boodschap -- een schermlezer ziet hem niet, en wie
+     kleurenblind is leest hem ook niet aan de rand af. */
+  const faroVak  = form.querySelector('.signup-faro');
+  const faroImg  = document.getElementById('contactFaro');
+  const faroLine = document.getElementById('contactFaroLine');
+  const FARO_IMG = {
+    idle:  'assets/faro/falcon-idle.webp',
+    denkt: 'assets/faro/falcon-thinking.webp',
+    bezig: 'assets/faro/falcon-generating.webp',
+    fout:  'assets/faro/falcon-error.webp',
+    klaar: 'assets/faro/falcon-success.webp'
+  };
+  function zetFaro(toestand, tekst) {
+    if (!faroVak || !faroImg || !faroLine) return;
+    faroVak.setAttribute('data-faro-state', toestand);
+    faroImg.src = FARO_IMG[toestand] || FARO_IMG.idle;
+    const tt = taal();
+    faroLine.textContent = tekst || tt['faro_' + toestand] || tt.faro_idle || '';
+  }
+
   function toon(soort, tekst) {
     melding.textContent = tekst;
     melding.className = 'form-status ' + soort;
@@ -532,6 +570,42 @@ function initContactForm() {
     btn.textContent = btnTekst;
     btn.disabled = false;
   }
+
+  /* De beginregel staat in het Nederlands in de HTML, als terugval wanneer dit
+     script niet laadt. Draait het wel, dan hoort hij de taal van de bezoeker te
+     volgen -- de vertaalmachine van de site loopt eenmalig door de DOM en kent
+     deze zin niet.
+
+     Precies dezelfde val als in js/signup.js, en ik liep er alsnog in: bij het
+     naleven stond er een Nederlandse beginregel op een Engelse pagina, terwijl
+     alle andere toestanden wel klopten. Kijken naar het lang-attribuut lost het
+     op EN doet meteen het goede wanneer iemand halverwege van taal wisselt met
+     de kiezer in de navigatie. */
+  function faroBeginregel() {
+    const vak = form.querySelector('.signup-faro');
+    // Niet overschrijven wanneer Faro iets specifiekers zegt (een fout, of
+    // 'bezig') -- alleen de rusttoestand volgt de taal.
+    if (!vak || vak.getAttribute('data-faro-state') !== 'idle') return;
+    zetFaro('idle');
+  }
+  faroBeginregel();
+  if (window.MutationObserver) {
+    new MutationObserver(faroBeginregel).observe(document.documentElement, {
+      attributes: true, attributeFilter: ['lang']
+    });
+  }
+
+  /* Reageren terwijl je typt, niet pas bij verzenden. Zodra alles ingevuld is
+     gaat hij van rust naar aandacht: dat is het moment waarop hij iets kan
+     betekenen, en het maakt zichtbaar dat het formulier compleet is voordat je
+     op de knop drukt. */
+  form.addEventListener('input', () => {
+    const vak = form.querySelector('.signup-faro');
+    if (vak && vak.getAttribute('data-faro-state') === 'bezig') return;
+    const velden = ['naam', 'email', 'bedrijf', 'bericht']
+      .map(n => (form[n] ? String(form[n].value || '').trim() : ''));
+    zetFaro(velden.every(Boolean) ? 'denkt' : 'idle');
+  });
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
@@ -544,10 +618,12 @@ function initContactForm() {
 
     if (!naam || !email || !bedrijf || !bericht) {
       toon('error', t.leeg);
+      zetFaro('fout', t.leeg);
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
       toon('error', t.email);
+      zetFaro('fout', t.email);
       if (form.email) form.email.focus();
       return;
     }
@@ -561,10 +637,16 @@ function initContactForm() {
       window.location.href = 'mailto:hello@helvaro.pro?subject=' +
         encodeURIComponent(onderwerp) + '&body=' + encodeURIComponent(body);
       toon('ok', t.gelukt_uitleg);
+      /* Bewust GEEN 'klaar': er is niets naar ons verstuurd, alleen het
+         mailvenster van de bezoeker geopend. Faro juichen laten om iets dat
+         nog moet gebeuren is precies het soort onwaarheid dat de rest van wat
+         hij zegt verdacht maakt. */
+      zetFaro('bezig');
       return;
     }
 
     if (btn) { btn.textContent = t.bezig; btn.disabled = true; }
+    zetFaro('bezig');
     toon('', '');
     try {
       const res = await fetch(endpoint, {
@@ -575,11 +657,13 @@ function initContactForm() {
       if (!res.ok) throw new Error('status ' + res.status);
       if (btn) btn.textContent = t.gelukt;
       toon('ok', t.gelukt_uitleg);
+      zetFaro('klaar');
       form.reset();
       setTimeout(herstel, 4000);
     } catch (err) {
       if (btn) btn.textContent = t.fout;
       toon('error', t.fout_uitleg);
+      zetFaro('fout', t.fout_uitleg);
       setTimeout(herstel, 4000);
     }
   });

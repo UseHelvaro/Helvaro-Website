@@ -158,7 +158,16 @@
                 <label class="form-label" for="bericht">Bericht</label>
                 <textarea class="form-textarea" id="bericht" name="bericht" placeholder="Hoe worden jullie leads vandaag opgevolgd?" required></textarea>
               </div>
-              <button type="submit" class="btn btn-lg form-submit">Verzend</button>
+              <!-- Faro staat naast dit formulier om dezelfde reden als bij aanmelden:
+             zijn houding is de statusregel. Elke toestand zegt hetzelfde in
+             WOORDEN in de regel ernaast -- een houding is geen boodschap, en
+             een schermlezer ziet hem niet. -->
+          <div class="signup-faro" data-faro-state="idle">
+            <img class="signup-faro-img" id="contactFaro" src="assets/faro/falcon-idle.webp"
+                 alt="" aria-hidden="true" width="56" height="56" decoding="async">
+            <p class="signup-faro-line" id="contactFaroLine">Vul je gegevens in, dan zorg ik dat je bericht bij de juiste persoon komt.</p>
+          </div>
+          <button type="submit" class="btn btn-lg form-submit">Verzend</button>
             </form>
           </div>
         </div>

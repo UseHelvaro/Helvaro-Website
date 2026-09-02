@@ -107,6 +107,13 @@
              tekst: null },   // uit t('denkt')
     fout:  { img: 'assets/faro/falcon-error.webp',
              tekst: '' },   // de tekst is de validatiefout zelf, die is specifieker
+    /* 'bezig' hoorde er al te zijn. Bij het versturen sprong Faro meteen op
+       'klaar' -- juichen terwijl er nog niets gelukt was, en terwijl de knop
+       ernaast wel gewoon 'Een moment...' zei. Twee dingen die tegelijk iets
+       anders beweren over hetzelfde moment, en de vrolijkste van de twee was
+       de leugen. Nu werkt hij zichtbaar tijdens het doorsturen. */
+    bezig: { img: 'assets/faro/falcon-generating.webp',
+             tekst: null },   // uit t('bezig')
     klaar: { img: 'assets/faro/falcon-success.webp',
              tekst: null },   // uit t('klaar')
   };
@@ -198,7 +205,7 @@
     }
 
     clearError();
-    zetFaro('klaar');
+    zetFaro('bezig');
     button.disabled = true;
     button.classList.add('is-loading');
     button.textContent = t('bezig');
