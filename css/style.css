@@ -4791,99 +4791,240 @@ p { text-wrap: pretty; }
 
 
 /* ── Faro loopt met je mee ──────────────────────────────────────────
-   Vast linksonder, klein, en hij vertelt in één zin waar je naar kijkt.
+   Geen kaartje met een vogeltje erin. De valk staat VRIJ op de pagina --
+   geen achtergrond, geen kader, geen blur -- en zegt het in een
+   tekstballon, zoals in een strip. Een paneel eromheen maakte er een
+   melding van; zo is het een personage.
 
-   Wat hier bewust NIET gebeurt: de pagina wordt niet gekaapt. Geen
-   scroll-jacking, geen vastgezette secties, geen animatie die je moet
-   uitzitten voor je verder kan. Je scrollt zoals je gewend bent en hij
-   reageert erop -- andersom is het zijn pagina geworden in plaats van
-   die van de bezoeker.
+   ── Waarom de uitdrukking NIET aan het plaatje hangt ──────────────
+   Er zijn zes tekeningen. Als je "uitdrukking" gelijkstelt aan
+   "tekening", heb je er dus zes, en dan staat hij op negen momenten
+   drie keer precies hetzelfde te doen.
 
-   Linksonder en niet rechtsonder: rechts zit op bijna elke pagina de
-   chat- of hulpknop, en twee dingen die om dezelfde hoek vechten
-   verliezen allebei. */
+   Een uitdrukking is hier daarom een TEKENING PLUS EEN BEWEGING. Dezelfde
+   rustende valk die knikt, schuin kijkt of naar de tekst leunt leest als
+   drie verschillende stemmingen. Vandaar data-stem op de houder: het
+   koppelt de beweging los van het bestand, en uit zes tekeningen komen
+   elf uitdrukkingen.
+
+   ── En waarom hij verhuist ────────────────────────────────────────
+   Niet alleen omdat het leuk is: hij staat daardoor nooit lang op
+   dezelfde plek iets af te dekken, en de sprong vertelt je dat er iets
+   nieuws staat. Wat NIET gebeurt is scroll-kaping -- geen vastgezette
+   secties, geen animatie die je moet uitzitten. */
+:root                     { --faro-wolk: #F6F3EC; --faro-wolk-ink: #14110C; }
+:root[data-theme="light"] { --faro-wolk: #FFFFFF; --faro-wolk-ink: #14110C; }
+:root[data-theme="light"] .faro-gids-ballon { border-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20160%20160%22%3E%3Cg%20fill%3D%22%23FFFFFF%22%3E%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%22120%22%20height%3D%22120%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2260%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%2260%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%22100%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%22100%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 40 fill round; }
+
 .faro-gids {
   position: fixed;
-  left: 20px;
-  bottom: 20px;
   z-index: 60;
   display: flex;
-  align-items: center;
-  gap: 12px;
-  max-width: 340px;
-  padding: 10px 12px;
-  border-radius: var(--radius-m);
-  background: var(--surface-2, rgba(20, 20, 20, .92));
-  border: 1px solid rgba(var(--accent-rgb), 0.22);
-  box-shadow: 0 12px 34px rgba(0, 0, 0, .34);
-  backdrop-filter: blur(8px);
-  /* Hij komt binnengegleden, niet knallend. */
-  animation: faro-gids-in 420ms var(--ease, ease) both;
+  align-items: flex-end;
+  gap: 14px;
+  pointer-events: none;          /* de pagina eronder blijft klikbaar */
+  transition: left 700ms cubic-bezier(.34, 1.2, .5, 1),
+              right 700ms cubic-bezier(.34, 1.2, .5, 1),
+              top 700ms cubic-bezier(.34, 1.2, .5, 1),
+              bottom 700ms cubic-bezier(.34, 1.2, .5, 1);
 }
 .faro-gids[hidden] { display: none; }
+.faro-gids > * { pointer-events: auto; }
 
+/* ── De valk ─────────────────────────────────────────────────────── */
 .faro-gids-img {
-  width: 44px;
-  height: 44px;
+  width: 180px;
+  height: 180px;
   flex: none;
+  /* Geen kader meer, dus hij draagt zijn eigen leesbaarheid. */
+  filter: drop-shadow(0 14px 30px rgba(0, 0, 0, .5))
+          drop-shadow(0 0 26px rgba(var(--accent-rgb), .18));
+  transform-origin: 50% 85%;     /* draait om zijn voeten, niet om zijn buik */
 }
-/* Dezelfde houdingen, dezelfde bewegingen als overal elders. */
-.faro-gids-img[src*="falcon-idle"]       { animation: faro-breathe 4.6s ease-in-out infinite; }
-.faro-gids-img[src*="falcon-thinking"]   { animation: faro-denkt   2.8s ease-in-out infinite; }
-.faro-gids-img[src*="falcon-generating"] { animation: faro-werkt   1.9s ease-in-out infinite; }
-.faro-gids-img[src*="falcon-success"]    { animation: faro-juicht  620ms cubic-bezier(.34, 1.56, .64, 1) 2 forwards; }
+
+/* ── Elf uitdrukkingen uit zes tekeningen ───────────────────────── */
+[data-stem="rust"]         .faro-gids-img { animation: faro-breathe 4.6s ease-in-out infinite; }
+[data-stem="nieuwsgierig"] .faro-gids-img { animation: faro-schuin  3.4s ease-in-out infinite; }
+[data-stem="knikt"]        .faro-gids-img { animation: faro-knikt   2.2s ease-in-out infinite; }
+[data-stem="wijst"]        .faro-gids-img { animation: faro-leunt   3.0s ease-in-out infinite; }
+[data-stem="denkt"]        .faro-gids-img { animation: faro-denkt   2.8s ease-in-out infinite; }
+[data-stem="speurt"]       .faro-gids-img { animation: faro-speurt  5.2s ease-in-out infinite; }
+[data-stem="werkt"]        .faro-gids-img { animation: faro-werkt   1.9s ease-in-out infinite; }
+[data-stem="rekent"]       .faro-gids-img { animation: faro-rekent  1.1s ease-in-out infinite; }
+[data-stem="wiegt"]        .faro-gids-img { animation: faro-drijft  6.5s ease-in-out infinite; }
+[data-stem="juicht"]       .faro-gids-img { animation: faro-juicht  620ms cubic-bezier(.34, 1.56, .64, 1) 2 forwards; }
+[data-stem="trots"]        .faro-gids-img { animation: faro-trots   1.6s ease-in-out infinite; }
+
+@keyframes faro-schuin {
+  0%, 100% { transform: rotate(0deg)    translateY(0);    }
+  50%      { transform: rotate(-5deg)   translateY(-3px); }
+}
+@keyframes faro-knikt {
+  0%, 100% { transform: translateY(0)   scale(1);    }
+  30%      { transform: translateY(6px) scale(.985); }
+  60%      { transform: translateY(-2px) scale(1.005); }
+}
+@keyframes faro-leunt {
+  0%, 100% { transform: translateX(0)   rotate(0deg);  }
+  50%      { transform: translateX(-8px) rotate(-3deg); }
+}
+@keyframes faro-speurt {
+  0%, 100% { transform: rotate(0deg);   }
+  25%      { transform: rotate(6deg);   }
+  60%      { transform: rotate(-6deg);  }
+}
+@keyframes faro-rekent {
+  0%, 100% { transform: scale(1)     translateY(0);    }
+  50%      { transform: scale(1.02)  translateY(-2px); }
+}
+@keyframes faro-trots {
+  0%, 100% { transform: translateY(0)    scale(1);     }
+  50%      { transform: translateY(-6px) scale(1.03);  }
+}
+
+/* ── De tekstwolk ────────────────────────────────────────────────────
+   Een stripwolk, geen kaartje met ronde hoeken. De bollen zijn geen
+   versiering: ze zijn het verschil tussen "een tooltip" en "iemand die
+   iets zegt".
+
+   ── Waarom hij licht is op een donkere pagina ──────────────────────
+   Eerste poging was een donkere wolk (#1E1E1E) op een #121212 pagina.
+   Die werd keurig getekend en was volstrekt onzichtbaar -- goed
+   berekend, niet te zien. Een tekstballon hoort eruit te springen; in
+   een strip is hij ook wit. Dus wit met donkere tekst.
+
+   ── Waarom de bollen in de background staan en niet in ::before ─────
+   Ze zaten eerst in een ::before met z-index:-1. Op de ballon staat een
+   filter (de drop-shadow), en dat maakt een eigen stapelcontext -- dan
+   is waar zo'n negatieve laag terechtkomt afhankelijk van de browser.
+   Als achtergrond van het element zelf kan dat niet misgaan: de tekst is
+   een kind en staat dus altijd erboven. */
+.faro-gids-ballon {
+  position: relative;
+  max-width: 320px;
+  /* De 40px rand IS de wolkrand; de tekst hoeft alleen wat lucht. */
+  padding: 0 10px 0 4px;
+  color: var(--faro-wolk-ink);
+  /* ── De wolkvorm ────────────────────────────────────────────────
+     border-image met een SVG, in negen stukken gesneden. Dat is de
+     techniek die hiervoor bestaat: de hoeken blijven zoals ze zijn en
+     alleen de RANDEN herhalen, dus de bollen blijven rond hoe breed of
+     hoog de ballon ook wordt.
+
+     Eerst geprobeerd met een stapel radial-gradients. Dat rekende keurig
+     en zag er niet uit: de kern stak met vierkante hoeken tussen de
+     bollen door en de bobbels werden bij elke zinslengte anders uitgerekt.
+     Een vorm die van de tekstlengte afhangt, is geen vorm.
+
+     In de tegel staan de bollen op x/y = 20, 60, 100 en 140 met r=20. Ze
+     raken elkaar dus precies, en de snijlijn van border-image valt tussen
+     twee bollen in -- daardoor loopt de schulprand door zonder naad. */
+  border: 30px solid transparent;
+  border-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20160%20160%22%3E%3Cg%20fill%3D%22%23F6F3EC%22%3E%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%22120%22%20height%3D%22120%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2260%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%2260%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%22100%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%22100%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 40 fill round;
+  filter: drop-shadow(0 14px 32px rgba(0, 0, 0, .5));
+  animation: faro-ballon-in 340ms cubic-bezier(.34, 1.56, .64, 1) both;
+}
+
+/* De staart: twee bolletjes die naar de valk toe kleiner worden. Daaraan
+   zie je WIE er praat. */
+.faro-gids-staart {
+  position: absolute;
+  /* Zelfde valkuil als bij het kruisje: -6px was nog binnen de wolkrand,
+     dus wit op wit. Ver genoeg naar buiten om echt naast de wolk te
+     staan, richting de valk. */
+  bottom: -30px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--faro-wolk);
+}
+.faro-gids-staart::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--faro-wolk);
+}
+.faro-gids[data-kant="rechts"] .faro-gids-staart        { right: -46px; }
+.faro-gids[data-kant="rechts"] .faro-gids-staart::after { right: -16px; }
+.faro-gids[data-kant="links"]  .faro-gids-staart        { left: -46px; }
+.faro-gids[data-kant="links"]  .faro-gids-staart::after { left: -16px; }
 
 .faro-gids-tekst {
+  position: relative;
+  z-index: 1;
   margin: 0;
-  font-size: 13px;
-  line-height: 1.45;
-  color: var(--text-2);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: inherit;               /* de donkere inkt van de wolk */
+  font-weight: 500;
 }
 
 .faro-gids-sluit {
-  flex: none;
-  width: 26px;
-  height: 26px;
+  position: absolute;
+  /* Let op: absolute offsets rekenen vanaf de PADDING-box, dus vanaf
+     BINNEN de 30px wolkrand. Met top:2px belandde hij dwars op de tekst.
+     Negatief eruit getrokken zodat hij op de rand van de wolk zit. */
+  top: -24px;
+  right: -20px;
+  width: 24px;
+  height: 24px;
   border: 0;
   border-radius: 999px;
   background: transparent;
-  color: var(--text-3, #8b949e);
-  font-size: 18px;
+  color: rgba(20, 17, 12, .45);
+  font-size: 17px;
   line-height: 1;
   cursor: pointer;
 }
-.faro-gids-sluit:hover { color: var(--text-1, #fff); background: rgba(255, 255, 255, .07); }
-/* Een raakvlak van 26px is te klein voor een duim; vergroot hem onzichtbaar. */
-.faro-gids-sluit::after {
-  content: "";
-  position: absolute;
-  inset: auto;
-  width: 44px; height: 44px;
-  margin: -9px;
+.faro-gids-sluit:hover { color: #14110C; background: rgba(20, 17, 12, .09); }
+
+/* ── Acht plekken ────────────────────────────────────────────────────
+   De 'boven'-varianten beginnen onder de vaste kopbalk, anders schuift
+   hij eronder. De ballon staat altijd aan de kant van het schermmidden,
+   zodat hij nooit half buiten beeld hangt. */
+.faro-gids[data-plek="rechtsonder"]  { right: 26px; bottom: 26px; left: auto; top: auto;  flex-direction: row; }
+.faro-gids[data-plek="linksonder"]   { left: 26px;  bottom: 26px; right: auto; top: auto; flex-direction: row-reverse; }
+.faro-gids[data-plek="rechtsmidden"] { right: 26px; top: 40%;     left: auto;  bottom: auto; flex-direction: row; }
+.faro-gids[data-plek="linksmidden"]  { left: 26px;  top: 40%;     right: auto; bottom: auto; flex-direction: row-reverse; }
+.faro-gids[data-plek="rechtsboven"]  { right: 26px; top: 15%;     left: auto;  bottom: auto; flex-direction: row; }
+.faro-gids[data-plek="linksboven"]   { left: 26px;  top: 15%;     right: auto; bottom: auto; flex-direction: row-reverse; }
+.faro-gids[data-plek="rechtslaag"]   { right: 26px; bottom: 16%;  left: auto;  top: auto;    flex-direction: row; }
+.faro-gids[data-plek="linkslaag"]    { left: 26px;  bottom: 16%;  right: auto; top: auto;    flex-direction: row-reverse; }
+
+@keyframes faro-ballon-in {
+  from { opacity: 0; transform: translateY(10px) scale(.92); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);   }
 }
 
-@keyframes faro-gids-in {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0);    }
-}
-
-/* Op een telefoon is er geen hoek vrij: daar staat hij onderaan over de
-   volle breedte, boven de vaste onderbalk. Verbergen zou makkelijker
-   zijn, maar dan mist juist de bezoeker met het kleinste scherm de
-   uitleg. */
-@media (max-width: 640px) {
-  .faro-gids {
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    max-width: none;
-    padding: 9px 10px;
+/* ── Telefoon ────────────────────────────────────────────────────────
+   Geen dans op 375px: daar is geen hoek die vrij blijft. Hij staat
+   onderaan, valk links, ballon ernaast. Verbergen zou makkelijker zijn,
+   maar dan mist juist de bezoeker met het kleinste scherm de uitleg.
+   De uitdrukkingen blijven wel gewoon wisselen. */
+@media (max-width: 720px) {
+  .faro-gids[data-plek] {
+    left: 10px; right: 10px; bottom: 10px; top: auto;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 8px;
   }
-  .faro-gids-img   { width: 36px; height: 36px; }
-  .faro-gids-tekst { font-size: 12px; }
+  .faro-gids-img { width: 96px; height: 96px; }
+  .faro-gids-ballon { flex: 1; max-width: none; padding: 12px 30px 12px 14px; border-radius: 16px; }
+  .faro-gids-tekst { font-size: 12.5px; }
+  /* Op de telefoon staat de valk RECHTS van de wolk (de ballon komt eerst
+     in de DOM), dus daar wijst de staart naar rechts -- ongeacht wat
+     data-kant op de desktop zei. Deze regels verwezen nog naar de oude
+     driehoek-staart uit ::before/::after, die er niet meer is. */
+  .faro-gids[data-kant] .faro-gids-staart        { left: auto; right: -40px; bottom: -26px; }
+  .faro-gids[data-kant] .faro-gids-staart::after { left: auto; right: -15px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .faro-gids,
-  .faro-gids-img { animation: none; }
+  .faro-gids-img,
+  .faro-gids-ballon,
+  [data-stem] .faro-gids-img { animation: none; transition: none; }
 }

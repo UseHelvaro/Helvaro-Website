@@ -881,43 +881,55 @@ function initTilt() {
    is geen gids maar een banner.
    ============================================================ */
 var FARO_GIDS = {
-  hero:     { pose: 'thinking',
+  hero: { pose: 'thinking', stem: 'denkt', plek: 'rechtsonder',
               nl: 'Dit is het probleem in één zin: de leads komen binnen, alleen antwoordt er niemand meteen.',
               en: 'Here is the problem in one line: the leads come in, but nobody answers them straight away.',
               fr: 'Voilà le problème en une phrase : les leads arrivent, mais personne ne répond tout de suite.',
               de: 'Das Problem in einem Satz: Die Leads kommen rein, nur antwortet niemand sofort.',
               es: 'El problema en una frase: los leads llegan, pero nadie responde de inmediato.' },
-  faro:     { pose: 'idle',
+  faro: { pose: 'idle', stem: 'nieuwsgierig', plek: 'linksonder',
               nl: 'Dit ben ik. Ik schrijf je teksten en campagnes; jij keurt ze goed voor er iets live gaat.',
               en: 'This is me. I write your copy and campaigns; you approve them before anything goes live.',
               fr: 'C\'est moi. Je rédige vos textes et campagnes ; vous validez avant toute publication.',
               de: 'Das bin ich. Ich schreibe Ihre Texte und Kampagnen; Sie geben sie frei, bevor etwas live geht.',
               es: 'Este soy yo. Escribo tus textos y campañas; tú los apruebas antes de publicar nada.' },
-  werk:     { pose: 'generating',
+  werk: { pose: 'generating', stem: 'werkt', plek: 'rechtsmidden',
               nl: 'Hier zie je wat er gebeurt zodra een lead je schrijft: antwoorden, kwalificeren, inplannen.',
               en: 'Here is what happens the moment a lead writes to you: answer, qualify, book.',
               fr: 'Voici ce qui se passe dès qu\'un lead vous écrit : répondre, qualifier, planifier.',
               de: 'Das passiert, sobald ein Lead Ihnen schreibt: antworten, qualifizieren, einplanen.',
               es: 'Esto pasa en cuanto un lead te escribe: responder, cualificar, agendar.' },
-  sectoren: { pose: 'thinking',
+  sectoren: { pose: 'thinking', stem: 'speurt', plek: 'linksboven',
               nl: 'Elke sector krijgt een eigen agent, met de vragen die in jouw vak echt tellen.',
               en: 'Every sector gets its own agent, asking the questions that actually matter in your field.',
               fr: 'Chaque secteur a son agent, avec les questions qui comptent vraiment dans votre métier.',
               de: 'Jede Branche bekommt einen eigenen Agent, mit den Fragen, die in Ihrem Fach zählen.',
               es: 'Cada sector tiene su propio agente, con las preguntas que de verdad importan en tu campo.' },
-  rekenen:  { pose: 'generating',
+  rekenen: { pose: 'generating', stem: 'rekent', plek: 'rechtsonder',
               nl: 'Vul je eigen cijfers in, dan zie je zwart op wit wat trage opvolging je kost.',
               en: 'Put in your own numbers and you will see in black and white what slow follow-up costs you.',
               fr: 'Entrez vos propres chiffres et vous verrez noir sur blanc ce que coûte un suivi lent.',
               de: 'Tragen Sie Ihre eigenen Zahlen ein, dann sehen Sie schwarz auf weiß, was langsames Nachfassen kostet.',
               es: 'Introduce tus propios números y verás negro sobre blanco lo que cuesta un seguimiento lento.' },
-  prijs:    { pose: 'idle',
+  prijs: { pose: 'idle', stem: 'wijst', plek: 'linksmidden',
               nl: 'Eén prijs, alles inbegrepen. Geen setupkosten en maandelijks opzegbaar.',
               en: 'One price, everything included. No setup fee, cancel monthly.',
               fr: 'Un seul prix, tout compris. Sans frais de mise en route, résiliable chaque mois.',
               de: 'Ein Preis, alles inklusive. Keine Einrichtungsgebühr, monatlich kündbar.',
               es: 'Un solo precio, todo incluido. Sin coste de instalación y cancelable cada mes.' },
-  start:    { pose: 'success',
+  bewijs: { pose: 'idle', stem: 'knikt', plek: 'linkslaag',
+              nl: 'Dit draait al in deze sectoren, niet alleen op papier.',
+              en: 'This is already running in these sectors, not just on paper.',
+              fr: 'Cela tourne déjà dans ces secteurs, pas seulement sur le papier.',
+              de: 'Das läuft bereits in diesen Branchen, nicht nur auf dem Papier.',
+              es: 'Esto ya funciona en estos sectores, no solo sobre el papel.' },
+  plannen: { pose: 'success', stem: 'trots', plek: 'rechtsboven',
+              nl: 'Drie plannen, maandelijks opzegbaar. Geen setupkosten.',
+              en: 'Three plans, cancel monthly. No setup fee.',
+              fr: 'Trois formules, résiliables chaque mois. Sans frais de mise en route.',
+              de: 'Drei Tarife, monatlich kündbar. Keine Einrichtungsgebühr.',
+              es: 'Tres planes, cancelables cada mes. Sin coste de instalación.' },
+  start: { pose: 'success', stem: 'juicht', plek: 'rechtsonder',
               nl: 'Klaar om te starten? Je staat binnen 72 uur live.',
               en: 'Ready to start? You are live within 72 hours.',
               fr: 'Prêt à démarrer ? Vous êtes en ligne sous 72 heures.',
@@ -941,13 +953,28 @@ function initFaroGids() {
   function taal() {
     return (document.documentElement.lang || 'nl').slice(0, 2).toLowerCase();
   }
+  var ballon = document.getElementById('faroGidsBallon');
+
   function toon(sleutel) {
     var g = FARO_GIDS[sleutel];
     if (!g || sleutel === huidig) return;
     huidig = sleutel;
     doos.hidden = false;
+    var plek = g.plek || 'rechtsonder';
+    doos.setAttribute('data-plek', plek);
+    doos.setAttribute('data-stem', g.stem || 'rust');
+    /* De ballon staat altijd aan de kant van het schermmidden, dus de
+       staart wijst naar de valk en niet het beeld uit. */
+    doos.setAttribute('data-kant', plek.indexOf('rechts') === 0 ? 'rechts' : 'links');
     img.src = 'assets/faro/falcon-' + g.pose + '.webp';
     reg.textContent = g[taal()] || g.nl;
+    /* De ballon opnieuw laten opkomen bij elke nieuwe zin. Zonder dit
+       wisselt alleen de tekst en lijkt het alsof er niets gebeurd is. */
+    if (ballon) {
+      ballon.style.animation = 'none';
+      void ballon.offsetWidth;          // forceer een herstart
+      ballon.style.animation = '';
+    }
   }
 
   /* De sectie die het meest in beeld staat wint. Zonder die vergelijking

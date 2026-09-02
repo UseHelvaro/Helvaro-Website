@@ -33,7 +33,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=50">
+  <link rel="stylesheet" href="css/style.css?v=58">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -289,7 +289,7 @@
     </section>
 
     <!-- ===== TICKER ===== -->
-    <div class="ticker" aria-hidden="true">
+    <div class="ticker" aria-hidden="true" data-gids="bewijs">
       <div class="ticker-track">
         <span>Reactie binnen 30 seconden</span><span class="tick-sep">◆</span>
         <span>24/7 bereikbaar, ook in het weekend</span><span class="tick-sep">◆</span>
@@ -506,7 +506,7 @@
           <p class="pricing-credit-note reveal">1 leadgesprek ≈ 20 credits. Credits gelden voor gesprekken van je agents én gegenereerde beelden.</p>
           <p class="pricing-trial reveal"><span class="trial-badge">14 dagen gratis</span> Probeer Helvaro 14 dagen uit. Geen kaartgegevens nodig, stop wanneer je wil.</p>
         </div>
-        <div class="pricing-grid">
+        <div class="pricing-grid" data-gids="plannen">
 
           <!-- Starter -->
           <div class="pricing-card reveal">
@@ -657,22 +657,25 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=23"></script>
+  <script src="js/main.js?v=24"></script>
   <script src="js/i18n.js?v=26"></script>
 
   <!-- ── Faro loopt met je mee ────────────────────────────────────────────
-       Hij verandert van houding per sectie en zegt in één zin waar je naar
-       kijkt. Bewust GEEN scroll-kaping: de pagina scrollt gewoon zoals je
-       gewend bent, hij reageert er alleen op.
+       Geen kaartje met een vogeltje erin: de valk staat vrij op de pagina en
+       zegt het in een tekstballon, zoals in een strip. Hij verhuist per sectie
+       naar een andere hoek zodat hij leeft in plaats van vastgeplakt te staan.
 
-       Wegklikbaar, en dat onthouden we. Iets dat meescrollt en niet weg kan,
-       is geen gids maar een banner. -->
-  <aside class="faro-gids" id="faroGids" hidden aria-live="polite">
+       Bewust GEEN scroll-kaping: de pagina scrollt gewoon zoals je gewend
+       bent, hij reageert er alleen op. -->
+  <aside class="faro-gids" id="faroGids" data-plek="rechtsonder" hidden>
+    <div class="faro-gids-ballon" id="faroGidsBallon" aria-live="polite">
+      <p class="faro-gids-tekst" id="faroGidsTekst"></p>
+      <span class="faro-gids-staart" aria-hidden="true"></span>
+      <button type="button" class="faro-gids-sluit" id="faroGidsSluit"
+              aria-label="Faro verbergen">&times;</button>
+    </div>
     <img class="faro-gids-img" id="faroGidsImg" src="assets/faro/falcon-idle.webp"
-         alt="" aria-hidden="true" width="44" height="44" decoding="async">
-    <p class="faro-gids-tekst" id="faroGidsTekst"></p>
-    <button type="button" class="faro-gids-sluit" id="faroGidsSluit"
-            aria-label="Faro verbergen">&times;</button>
+         alt="" aria-hidden="true" width="112" height="112" decoding="async">
   </aside>
 </body>
 </html>
