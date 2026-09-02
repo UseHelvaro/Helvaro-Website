@@ -4814,7 +4814,6 @@ p { text-wrap: pretty; }
    secties, geen animatie die je moet uitzitten. */
 :root                     { --faro-wolk: #F6F3EC; --faro-wolk-ink: #14110C; }
 :root[data-theme="light"] { --faro-wolk: #FFFFFF; --faro-wolk-ink: #14110C; }
-:root[data-theme="light"] .faro-gids-ballon { border-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20160%20160%22%3E%3Cg%20fill%3D%22%23FFFFFF%22%3E%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%22120%22%20height%3D%22120%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2260%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%2260%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%22100%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%22100%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 40 fill round; }
 
 .faro-gids {
   position: fixed;
@@ -4882,75 +4881,40 @@ p { text-wrap: pretty; }
   50%      { transform: translateY(-6px) scale(1.03);  }
 }
 
-/* ── De tekstwolk ────────────────────────────────────────────────────
-   Een stripwolk, geen kaartje met ronde hoeken. De bollen zijn geen
-   versiering: ze zijn het verschil tussen "een tooltip" en "iemand die
-   iets zegt".
+/* ── De tekstballon ──────────────────────────────────────────────────
+   Een strakke ronde ballon met een punt naar de valk. Geen wolk.
 
-   ── Waarom hij licht is op een donkere pagina ──────────────────────
-   Eerste poging was een donkere wolk (#1E1E1E) op een #121212 pagina.
-   Die werd keurig getekend en was volstrekt onzichtbaar -- goed
-   berekend, niet te zien. Een tekstballon hoort eruit te springen; in
-   een strip is hij ook wit. Dus wit met donkere tekst.
+   Er is een schulprand met bollen geprobeerd -- eerst met gestapelde
+   radial-gradients, daarna netjes met border-image en een SVG in negen
+   stukken. Dat tweede was technisch in orde (de bollen bleven rond bij
+   elke tekstlengte) en zag er alsnog niet uit: een bobbelrand trekt alle
+   aandacht naar de omtrek in plaats van naar de zin die erin staat, en
+   naast een strak vormgegeven pagina leest het als een sticker.
 
-   ── Waarom de bollen in de background staan en niet in ::before ─────
-   Ze zaten eerst in een ::before met z-index:-1. Op de ballon staat een
-   filter (de drop-shadow), en dat maakt een eigen stapelcontext -- dan
-   is waar zo'n negatieve laag terechtkomt afhankelijk van de browser.
-   Als achtergrond van het element zelf kan dat niet misgaan: de tekst is
-   een kind en staat dus altijd erboven. */
+   Vandaar terug naar de vorm die het wel deed. De ballon hoort het
+   rustigste element van dit geheel te zijn: de valk beweegt, de zin
+   verandert, en de ballon houdt zich stil zodat je de tekst leest. */
 .faro-gids-ballon {
   position: relative;
   max-width: 320px;
-  /* De 40px rand IS de wolkrand; de tekst hoeft alleen wat lucht. */
-  padding: 0 10px 0 4px;
+  padding: 16px 38px 16px 20px;
+  border-radius: 20px;
   color: var(--faro-wolk-ink);
-  /* ── De wolkvorm ────────────────────────────────────────────────
-     border-image met een SVG, in negen stukken gesneden. Dat is de
-     techniek die hiervoor bestaat: de hoeken blijven zoals ze zijn en
-     alleen de RANDEN herhalen, dus de bollen blijven rond hoe breed of
-     hoog de ballon ook wordt.
-
-     Eerst geprobeerd met een stapel radial-gradients. Dat rekende keurig
-     en zag er niet uit: de kern stak met vierkante hoeken tussen de
-     bollen door en de bobbels werden bij elke zinslengte anders uitgerekt.
-     Een vorm die van de tekstlengte afhangt, is geen vorm.
-
-     In de tegel staan de bollen op x/y = 20, 60, 100 en 140 met r=20. Ze
-     raken elkaar dus precies, en de snijlijn van border-image valt tussen
-     twee bollen in -- daardoor loopt de schulprand door zonder naad. */
-  border: 30px solid transparent;
-  border-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20160%20160%22%3E%3Cg%20fill%3D%22%23F6F3EC%22%3E%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%22120%22%20height%3D%22120%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%2220%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2260%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%2260%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%22100%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%22100%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%22140%22%20r%3D%2220%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 40 fill round;
-  filter: drop-shadow(0 14px 32px rgba(0, 0, 0, .5));
+  background: var(--faro-wolk);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, .45);
   animation: faro-ballon-in 340ms cubic-bezier(.34, 1.56, .64, 1) both;
 }
 
-/* De staart: twee bolletjes die naar de valk toe kleiner worden. Daaraan
-   zie je WIE er praat. */
-.faro-gids-staart {
-  position: absolute;
-  /* Zelfde valkuil als bij het kruisje: -6px was nog binnen de wolkrand,
-     dus wit op wit. Ver genoeg naar buiten om echt naast de wolk te
-     staan, richting de valk. */
-  bottom: -30px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--faro-wolk);
-}
-.faro-gids-staart::after {
+/* De punt. Een driehoek van dezelfde kleur als de ballon, op de hoogte
+   van de onderste regel zodat hij naar de valk wijst en niet de lucht in. */
+.faro-gids-ballon::after {
   content: "";
   position: absolute;
-  bottom: -15px;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: var(--faro-wolk);
+  bottom: 18px;
+  border: 11px solid transparent;
 }
-.faro-gids[data-kant="rechts"] .faro-gids-staart        { right: -46px; }
-.faro-gids[data-kant="rechts"] .faro-gids-staart::after { right: -16px; }
-.faro-gids[data-kant="links"]  .faro-gids-staart        { left: -46px; }
-.faro-gids[data-kant="links"]  .faro-gids-staart::after { left: -16px; }
+.faro-gids[data-kant="rechts"] .faro-gids-ballon::after { right: -21px; border-left-color:  var(--faro-wolk); }
+.faro-gids[data-kant="links"]  .faro-gids-ballon::after { left:  -21px; border-right-color: var(--faro-wolk); }
 
 .faro-gids-tekst {
   position: relative;
@@ -5014,12 +4978,13 @@ p { text-wrap: pretty; }
   .faro-gids-img { width: 96px; height: 96px; }
   .faro-gids-ballon { flex: 1; max-width: none; padding: 12px 30px 12px 14px; border-radius: 16px; }
   .faro-gids-tekst { font-size: 12.5px; }
-  /* Op de telefoon staat de valk RECHTS van de wolk (de ballon komt eerst
-     in de DOM), dus daar wijst de staart naar rechts -- ongeacht wat
-     data-kant op de desktop zei. Deze regels verwezen nog naar de oude
-     driehoek-staart uit ::before/::after, die er niet meer is. */
-  .faro-gids[data-kant] .faro-gids-staart        { left: auto; right: -40px; bottom: -26px; }
-  .faro-gids[data-kant] .faro-gids-staart::after { left: auto; right: -15px; }
+  /* Op de telefoon staat de valk RECHTS van de ballon (de ballon komt
+     eerst in de DOM), dus wijst de punt daar naar rechts -- ongeacht wat
+     data-kant op de desktop zei. */
+  .faro-gids[data-kant] .faro-gids-ballon::after {
+    left: auto; right: -21px;
+    border-left-color: var(--faro-wolk); border-right-color: transparent;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
