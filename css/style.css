@@ -4832,8 +4832,12 @@ p { text-wrap: pretty; }
 
 /* ── De valk ─────────────────────────────────────────────────────── */
 .faro-gids-img {
-  width: 180px;
+  /* Vaste HOOGTE, breedte volgt. De zes tekeningen zijn genormaliseerd op
+     hoogte met de voeten op dezelfde lijn (240x224 doek), dus een vaste
+     breedte zou ze juist weer uit verhouding trekken -- 'thinking' is een
+     smalle vogel, 'error' een brede. */
   height: 180px;
+  width: auto;
   flex: none;
   /* Geen kader meer, dus hij draagt zijn eigen leesbaarheid. */
   filter: drop-shadow(0 14px 30px rgba(0, 0, 0, .5))
@@ -4841,45 +4845,17 @@ p { text-wrap: pretty; }
   transform-origin: 50% 85%;     /* draait om zijn voeten, niet om zijn buik */
 }
 
-/* ── Elf uitdrukkingen uit zes tekeningen ───────────────────────── */
-[data-stem="rust"]         .faro-gids-img { animation: faro-breathe 4.6s ease-in-out infinite; }
-[data-stem="nieuwsgierig"] .faro-gids-img { animation: faro-schuin  3.4s ease-in-out infinite; }
-[data-stem="knikt"]        .faro-gids-img { animation: faro-knikt   2.2s ease-in-out infinite; }
-[data-stem="wijst"]        .faro-gids-img { animation: faro-leunt   3.0s ease-in-out infinite; }
-[data-stem="denkt"]        .faro-gids-img { animation: faro-denkt   2.8s ease-in-out infinite; }
-[data-stem="speurt"]       .faro-gids-img { animation: faro-speurt  5.2s ease-in-out infinite; }
-[data-stem="werkt"]        .faro-gids-img { animation: faro-werkt   1.9s ease-in-out infinite; }
-[data-stem="rekent"]       .faro-gids-img { animation: faro-rekent  1.1s ease-in-out infinite; }
-[data-stem="wiegt"]        .faro-gids-img { animation: faro-drijft  6.5s ease-in-out infinite; }
-[data-stem="juicht"]       .faro-gids-img { animation: faro-juicht  620ms cubic-bezier(.34, 1.56, .64, 1) 2 forwards; }
-[data-stem="trots"]        .faro-gids-img { animation: faro-trots   1.6s ease-in-out infinite; }
+/* ── Geen beweging ──────────────────────────────────────────────────
+   Hier stonden elf animaties: ademen, knikken, schuin kijken, leunen.
+   Die zijn eruit op verzoek, en er zat een echt probleem onder dat ik
+   zelf had moeten zien: bijna al die bewegingen schaalden hem
+   (scale(1.015) tot scale(1.06)). Samen met zes tekeningen waarin de
+   vogel 60% in breedte verschilde, stond hij dus voortdurend van formaat
+   te wisselen. "Nooit dezelfde grootte" was geen gevoel maar een
+   optelsom van twee fouten.
 
-@keyframes faro-schuin {
-  0%, 100% { transform: rotate(0deg)    translateY(0);    }
-  50%      { transform: rotate(-5deg)   translateY(-3px); }
-}
-@keyframes faro-knikt {
-  0%, 100% { transform: translateY(0)   scale(1);    }
-  30%      { transform: translateY(6px) scale(.985); }
-  60%      { transform: translateY(-2px) scale(1.005); }
-}
-@keyframes faro-leunt {
-  0%, 100% { transform: translateX(0)   rotate(0deg);  }
-  50%      { transform: translateX(-8px) rotate(-3deg); }
-}
-@keyframes faro-speurt {
-  0%, 100% { transform: rotate(0deg);   }
-  25%      { transform: rotate(6deg);   }
-  60%      { transform: rotate(-6deg);  }
-}
-@keyframes faro-rekent {
-  0%, 100% { transform: scale(1)     translateY(0);    }
-  50%      { transform: scale(1.02)  translateY(-2px); }
-}
-@keyframes faro-trots {
-  0%, 100% { transform: translateY(0)    scale(1);     }
-  50%      { transform: translateY(-6px) scale(1.03);  }
-}
+   De uitdrukking zit nu volledig in de TEKENING. Die wisselt per sectie
+   en verder staat hij stil. */
 
 /* ── De tekstballon ──────────────────────────────────────────────────
    Een strakke ronde ballon met een punt naar de valk. Geen wolk.
@@ -4945,18 +4921,16 @@ p { text-wrap: pretty; }
 }
 .faro-gids-sluit:hover { color: #14110C; background: rgba(20, 17, 12, .09); }
 
-/* ── Acht plekken ────────────────────────────────────────────────────
-   De 'boven'-varianten beginnen onder de vaste kopbalk, anders schuift
-   hij eronder. De ballon staat altijd aan de kant van het schermmidden,
-   zodat hij nooit half buiten beeld hangt. */
-.faro-gids[data-plek="rechtsonder"]  { right: 26px; bottom: 26px; left: auto; top: auto;  flex-direction: row; }
-.faro-gids[data-plek="linksonder"]   { left: 26px;  bottom: 26px; right: auto; top: auto; flex-direction: row-reverse; }
-.faro-gids[data-plek="rechtsmidden"] { right: 26px; top: 40%;     left: auto;  bottom: auto; flex-direction: row; }
-.faro-gids[data-plek="linksmidden"]  { left: 26px;  top: 40%;     right: auto; bottom: auto; flex-direction: row-reverse; }
-.faro-gids[data-plek="rechtsboven"]  { right: 26px; top: 15%;     left: auto;  bottom: auto; flex-direction: row; }
-.faro-gids[data-plek="linksboven"]   { left: 26px;  top: 15%;     right: auto; bottom: auto; flex-direction: row-reverse; }
-.faro-gids[data-plek="rechtslaag"]   { right: 26px; bottom: 16%;  left: auto;  top: auto;    flex-direction: row; }
-.faro-gids[data-plek="linkslaag"]    { left: 26px;  bottom: 16%;  right: auto; top: auto;    flex-direction: row-reverse; }
+/* ── Eén vaste plek ─────────────────────────────────────────────────
+   Hij verhuisde per sectie tussen zeven hoeken. Dat is eruit: hij blijft
+   rechtsonder staan. Een gids die telkens ergens anders opduikt, laat je
+   zoeken waar hij nu weer is -- en dat is precies de aandacht die naar de
+   pagina hoort te gaan.
+
+   De data-plek-waarden blijven bestaan in de JS; ze wijzen nu allemaal
+   naar dezelfde hoek. Zo is het één regel om er ooit weer variatie in te
+   brengen, zonder dode code. */
+.faro-gids[data-plek] { right: 26px; bottom: 26px; left: auto; top: auto; flex-direction: row; }
 
 @keyframes faro-ballon-in {
   from { opacity: 0; transform: translateY(10px) scale(.92); }

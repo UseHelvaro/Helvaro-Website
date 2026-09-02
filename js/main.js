@@ -965,7 +965,9 @@ function initFaroGids() {
     doos.setAttribute('data-stem', g.stem || 'rust');
     /* De ballon staat altijd aan de kant van het schermmidden, dus de
        staart wijst naar de valk en niet het beeld uit. */
-    doos.setAttribute('data-kant', plek.indexOf('rechts') === 0 ? 'rechts' : 'links');
+    /* Hij staat altijd rechtsonder, dus de ballon staat altijd links van
+       hem en de punt wijst naar rechts. */
+    doos.setAttribute('data-kant', 'rechts');
     img.src = 'assets/faro/falcon-' + g.pose + '.webp';
     reg.textContent = g[taal()] || g.nl;
     /* De ballon opnieuw laten opkomen bij elke nieuwe zin. Zonder dit
