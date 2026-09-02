@@ -774,6 +774,11 @@ function initTheme() {
     }
     root.setAttribute('data-theme', theme);
     try { localStorage.setItem('helvaro_theme', theme); } catch (e) {}
+    /* De browserbalk mee laten kleuren. Stond als twee media-query-metatags in
+       de head, maar die keken naar de voorkeur van het BESTURINGSSYSTEEM -- en
+       die bepaalt hier niets meer sinds donker de standaard is. */
+    var kleurTag = document.querySelector('meta[name="theme-color"]');
+    if (kleurTag) kleurTag.setAttribute('content', theme === 'dark' ? '#121212' : '#FFFFFF');
     document.querySelectorAll('.theme-toggle').forEach(function (btn) {
       btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
     });
