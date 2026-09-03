@@ -4697,8 +4697,10 @@ p { text-wrap: pretty; }
 }
 
 .signup-faro-img {
-  width: 56px;
+  /* Vaste HOOGTE, breedte volgt -- het doek is 416x400 en niet vierkant.
+     Met width EN height op 56px werd hij platgedrukt. */
   height: 56px;
+  width: auto;
   flex: none;
   /* Alleen de houding wisselt, niet de grootte: anders springt de kaart. */
   transition: opacity .18s var(--ease);
@@ -4738,15 +4740,49 @@ p { text-wrap: pretty; }
 
    De keyframes heten hetzelfde als in api/_faro/ui/styles.js, zodat de
    twee kanten naast elkaar te leggen zijn. */
-.signup-faro-img[src*="falcon-idle"]       { animation: faro-breathe 4.6s ease-in-out infinite; }
-.signup-faro-img[src*="falcon-thinking"]   { animation: faro-denkt   2.8s ease-in-out infinite; }
-.signup-faro-img[src*="falcon-generating"] { animation: faro-werkt   1.9s ease-in-out infinite; }
-.signup-faro-img[src*="falcon-success"]    { animation: faro-juicht  620ms cubic-bezier(.34, 1.56, .64, 1) 2 forwards; }
-.signup-faro-img[src*="falcon-error"]      { animation: faro-schudt  480ms ease-in-out 1 forwards; }
+/* Geen animaties meer. Ze stonden hier per houding (ademen, denken,
+   werken, juichen, schudden) en zijn eruit op verzoek -- overal, niet
+   alleen bij de gids, anders beweegt dezelfde valk op de ene pagina wel
+   en op de andere niet. De houding wisselt nog gewoon; dat is de
+   informatie. */
+
+.signup-faro-line {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+/* De drie toestanden buiten 'wachten'. Kleur alleen als steun, nooit als
+   enige signaal -- de tekst zegt het ook. */
+.signup-faro[data-faro-state="denkt"]  { border-color: rgba(var(--accent-rgb), 0.3); }
+.signup-faro[data-faro-state="fout"]   { border-color: rgba(220, 38, 38, .34); background: rgba(220, 38, 38, .06); }
+.signup-faro[data-faro-state="fout"]   .signup-faro-line { color: #FF8B8B; }
+.signup-faro[data-faro-state="klaar"]  { border-color: rgba(34, 197, 94, .34); background: rgba(34, 197, 94, .06); }
+.signup-faro[data-faro-state="klaar"]  .signup-faro-line { color: #86EFAC; }
+
+/* ── Faro beweegt ─────────────────────────────────────────────────
+   Hij stond op deze site volledig stil. Zes houdingen, geen enkele
+   beweging: een plaatje dat af en toe van plaatje wisselt. In de app
+   beweegt hij wel, en het hoort dezelfde Faro te zijn -- een valk die
+   op de ene plek leeft en op de andere bevroren staat, leest als twee
+   verschillende dingen met dezelfde naam.
+
+   Dezelfde twee regels als in de app, en om dezelfde reden:
+
+   1. Wat BLIJFT DUREN beweegt zacht en traag. Ademen, deinen. Iets dat
+      naast een formulier staat te stuiteren terwijl jij je e-mailadres
+      intikt, leidt af van het enige wat hier moet gebeuren.
+
+   2. Wat een GEBEURTENIS is speelt EEN keer af en stopt. Juichen dat
+      blijft juichen viert niets meer; trillen dat blijft trillen leest
+      als een kapotte pagina in plaats van als een foutmelding.
+
+   De keyframes heten hetzelfde als in api/_faro/ui/styles.js, zodat de
+   twee kanten naast elkaar te leggen zijn. */
 
 /* De grote render op de homepage ademt alleen -- hij is 840px groot en
    staat stil in beeld; alles meer dan ademen wordt daar een show. */
-.faro-visual img { animation: faro-breathe 5.8s ease-in-out infinite; }
 
 @keyframes faro-breathe {
   0%, 100% { transform: translateY(0)    scale(1);     }
