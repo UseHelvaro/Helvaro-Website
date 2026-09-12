@@ -412,7 +412,7 @@ function initBooking() {
   const loader = houder.querySelector('.booking-loading');
   const frame = document.createElement('iframe');
   frame.src = houder.dataset.booking + '?gv=true';
-  frame.title = 'Kies een moment voor je lead-audit';
+  frame.title = 'Kies een moment voor je werkaudit';
   frame.loading = 'lazy';
   frame.addEventListener('load', () => {
     if (loader) loader.classList.add('hidden');

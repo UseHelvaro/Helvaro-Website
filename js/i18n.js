@@ -6,7 +6,7 @@
   var geladen = {};
   var huidig = 'nl';
   /* Ophogen zodra een taalbestand wijzigt, anders houdt de browser de oude versie vast. */
-  var TAAL_V = '11';
+  var TAAL_V = '12';
   function laadTaal(lang, klaar){
     if (lang === 'nl' || TR[lang] || geladen[lang]) { klaar(); return; }
     geladen[lang] = true;
@@ -19,15 +19,29 @@
 
   var LABELS = {nl:'NL',fr:'FR',en:'EN',de:'DE',es:'ES'};
   var HERO = {
-    nl: 'Je leads groeien. <span class="highlight">Je opvolging niet.</span>',
-    fr: 'Vos leads augmentent. <span class="highlight">Votre suivi, non.</span>',
-    en: 'Your leads grow. <span class="highlight">Your follow-up doesn\'t.</span>',
-    de: 'Ihre Leads wachsen. <span class="highlight">Ihre Nachverfolgung nicht.</span>',
-    es: 'Tus leads crecen. <span class="highlight">Tu seguimiento no.</span>'
+    nl: 'Je bedrijf groeit. <span class="highlight">Je werkdruk niet.</span>',
+    fr: 'Votre activité grandit. <span class="highlight">Votre charge de travail, non.</span>',
+    en: 'Your business grows. <span class="highlight">Your workload doesn\'t.</span>',
+    de: 'Ihr Unternehmen wächst. <span class="highlight">Ihre Arbeitslast nicht.</span>',
+    es: 'Tu empresa crece. <span class="highlight">Tu carga de trabajo no.</span>'
   };
   /* Titel van het browsertabblad: die staat buiten de <body> en wordt
      dus niet door de tekstwandeling opgepikt. Apart vertalen. */
   var TITLES = {
+    /* De titels hieronder staan Nederlands in de HTML, dus die zijn hier ook
+       de sleutel. Vroeger stonden er Engelse sleutels die nooit matchten. */
+    'AI-agents die je herhaalwerk overnemen \u00b7 Helvaro': {
+      fr: 'Des agents IA qui reprennent votre travail r\u00e9p\u00e9titif \u00b7 Helvaro',
+      en: 'AI agents that take over your repetitive work \u00b7 Helvaro',
+      de: 'KI-Agents, die Ihre Routinearbeit \u00fcbernehmen \u00b7 Helvaro',
+      es: 'Agentes de IA que asumen tu trabajo repetitivo \u00b7 Helvaro'
+    },
+    'Plan een werkaudit \u00b7 Helvaro': {
+      fr: 'Planifier un audit de travail \u00b7 Helvaro',
+      en: 'Book a work audit \u00b7 Helvaro',
+      de: 'Arbeits-Audit planen \u00b7 Helvaro',
+      es: 'Agenda una auditor\u00eda de trabajo \u00b7 Helvaro'
+    },
     'Helvaro \u00b7 AI agents that follow up every lead on WhatsApp': {
       nl: 'Helvaro \u00b7 AI-agents die elke lead opvolgen via WhatsApp',
       fr: 'Helvaro \u00b7 des agents IA qui suivent chaque lead sur WhatsApp',
@@ -41,7 +55,7 @@
       es: 'Por qu\u00e9 Helvaro \u00b7 as\u00ed siguen tus leads los agentes de IA'
     },
     'Book a lead audit \u00b7 Helvaro': {
-      nl: 'Plan een lead-audit \u00b7 Helvaro',
+      nl: 'Plan een werkaudit \u00b7 Helvaro',
       fr: 'Planifier un audit de leads \u00b7 Helvaro',
       de: 'Lead-Audit planen \u00b7 Helvaro',
       es: 'Agenda una auditor\u00eda de leads \u00b7 Helvaro'
@@ -66,6 +80,13 @@
   /* Zinnen met opmaak erin: die splitsen in losse tekstknopen, waardoor
      alleen de vetgedrukte stukken zouden vertalen. Daarom hier als geheel. */
   var HTML_BLOKKEN = {
+    nietBeweren: {
+      nl: "Wat we <strong>niet</strong> beweren: dat een agent nooit een fout maakt. Daarom bestaan de goedkeuringen hierboven. Onze modelleveranciers verwerken goedgekeurde context onder hun eigen voorwaarden, en dat zetten we op papier voor we beginnen.",
+      fr: "Ce que nous ne prétendons <strong>pas</strong> : qu'un agent ne se trompe jamais. C'est précisément pour cela que les approbations ci-dessus existent. Nos fournisseurs de modèles traitent le contexte approuvé selon leurs propres conditions, et nous le mettons par écrit avant de commencer.",
+      en: "What we do <strong>not</strong> claim: that an agent never makes a mistake. That is exactly why the approvals above exist. Our model providers process approved context under their own terms, and we put that in writing before we start.",
+      de: "Was wir <strong>nicht</strong> behaupten: dass ein Agent nie einen Fehler macht. Genau dafür gibt es die Freigaben oben. Unsere Modellanbieter verarbeiten freigegebenen Kontext zu ihren eigenen Bedingungen, und das halten wir schriftlich fest, bevor wir anfangen.",
+      es: "Lo que <strong>no</strong> afirmamos: que un agente nunca se equivoca. Precisamente por eso existen las aprobaciones de arriba. Nuestros proveedores de modelos procesan el contexto aprobado bajo sus propias condiciones, y lo dejamos por escrito antes de empezar."
+    },
     faroTitel: {
       nl: "Je agents vangen elke lead. <span class=\"highlight\">Faro schrijft alles eromheen.</span>",
       fr: "Vos agents captent chaque lead. <span class=\"highlight\">Faro rédige tout le reste.</span>",
@@ -116,11 +137,11 @@
       es: "El uso por parte de Helvaro de la información recibida a través de las API de Google se ajusta a la <a href=\"https://developers.google.com/terms/api-services-user-data-policy\">Google API Services User Data Policy</a>, incluidos los requisitos de Limited Use."
     },
     heroSub: {
-      nl: 'Agents die je <strong>volgende aanwerving overbodig maken</strong>. Ze staan 24/7 op je WhatsApp, kwalificeren elke lead en boeken <strong>alleen wie het waard is</strong> in je agenda.',
-      fr: 'Des agents qui rendent votre <strong>prochaine embauche superflue</strong>. Ils sont 24/7 sur votre WhatsApp, qualifient chaque lead et ne r\u00e9servent <strong>que ceux qui en valent la peine</strong> dans votre agenda.',
-      en: 'Agents that make your <strong>next hire irrelevant</strong>. They sit on your WhatsApp 24/7, qualify every lead and book <strong>only those worth your time</strong> into your calendar.',
-      de: 'Agents, die Ihre <strong>n\u00e4chste Einstellung \u00fcberfl\u00fcssig machen</strong>. Sie sind 24/7 auf Ihrem WhatsApp, qualifizieren jeden Lead und buchen <strong>nur wer es wert ist</strong> in Ihren Kalender.',
-      es: 'Agentes que hacen que tu <strong>pr\u00f3xima contrataci\u00f3n sea innecesaria</strong>. Est\u00e1n 24/7 en tu WhatsApp, cualifican cada lead y agendan <strong>solo a quien vale la pena</strong>.'
+      nl: 'Helvaro bouwt en beheert <strong>AI-agents die het herhaalwerk overnemen</strong>. Gesprekken, opvolging, planning en de administratie erachter. <strong>Jij houdt elke beslissing.</strong>',
+      fr: 'Helvaro con\u00e7oit et g\u00e8re des <strong>agents IA qui reprennent le travail r\u00e9p\u00e9titif</strong>. Conversations, suivi, planification et l\'administration qui va avec. <strong>Chaque d\u00e9cision reste la v\u00f4tre.</strong>',
+      en: 'Helvaro builds and runs <strong>AI agents that take over the repetitive work</strong>. Conversations, follow-up, scheduling and the admin behind it. <strong>You keep every decision.</strong>',
+      de: 'Helvaro baut und betreibt <strong>KI-Agents, die die Routinearbeit \u00fcbernehmen</strong>. Gespr\u00e4che, Nachverfolgung, Terminplanung und die Verwaltung dahinter. <strong>Jede Entscheidung bleibt bei Ihnen.</strong>',
+      es: 'Helvaro construye y gestiona <strong>agentes de IA que asumen el trabajo repetitivo</strong>. Conversaciones, seguimiento, agenda y la administraci\u00f3n que conlleva. <strong>Cada decisi\u00f3n sigue siendo tuya.</strong>'
     }
   };
   function applyHtmlBlokken(lang){
