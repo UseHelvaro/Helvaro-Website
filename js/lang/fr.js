@@ -109,3 +109,18 @@ Object.assign(window.HELVARO_TR['fr'], {
   "Vanaf €2.500 opstart · 6 maanden starttermijn": "À partir de 2 500 € de mise en route · 6 mois d'engagement initial",
   "€750 opstart · Maandelijks opzegbaar": "750 € de mise en route · Résiliable chaque mois"
 });
+
+Object.assign(window.HELVARO_TR['fr'], {
+  "De laag boven je agents": "La couche au-dessus de vos agents",
+  "Faro is geen losse agent. Het is de laag waarin je agents hun geheugen delen, waarin staat wat ze mogen, en waarin jij ziet wat er gebeurd is. Eén plek voor alles wat er draait.": "Faro n'est pas un agent à part. C'est la couche où vos agents partagent leur mémoire, où sont définies leurs permissions, et où vous voyez ce qui s'est passé. Un seul endroit pour tout ce qui tourne.",
+  "Eén overzicht van wat er loopt": "Une vue de ce qui tourne",
+  "Elke agent, elk gesprek, elke actie. Je leest live mee en neemt op elk moment zelf over.": "Chaque agent, chaque conversation, chaque action. Vous suivez en direct et reprenez la main à tout moment.",
+  "Wat op jou wacht, staat apart": "Ce qui vous attend est mis à part",
+  "Alles wat goedkeuring nodig heeft komt in één lijst, met de reden erbij. Je keurt goed of je houdt het tegen.": "Tout ce qui nécessite une approbation arrive dans une seule liste, avec la raison. Vous approuvez ou vous bloquez.",
+  "Gedeeld geheugen": "Mémoire partagée",
+  "Een correctie die je één keer maakt, geldt daarna voor elke agent. Je legt niet twee keer hetzelfde uit.": "Une correction faite une fois s'applique ensuite à tous les agents. Vous n'expliquez pas deux fois la même chose.",
+  "Vraag het gewoon": "Demandez-le, simplement",
+  "Wat is er gisteren blijven liggen, welke lead is het warmst, wat heeft een agent doorgegeven. Je vraagt het Faro in gewone taal.": "Ce qui est resté en plan hier, quel lead est le plus chaud, ce qu'un agent a transmis. Vous le demandez à Faro en langage courant.",
+  "Je agents werken. Faro laat zien wat ze deden. Jij beslist.": "Vos agents travaillent. Faro montre ce qu'ils ont fait. Vous décidez.",
+  "Bekijk Faro tijdens een werkaudit": "Découvrez Faro lors d'un audit de travail"
+});

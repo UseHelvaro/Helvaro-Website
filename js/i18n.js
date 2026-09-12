@@ -88,11 +88,11 @@
       es: "Lo que <strong>no</strong> afirmamos: que un agente nunca se equivoca. Precisamente por eso existen las aprobaciones de arriba. Nuestros proveedores de modelos procesan el contexto aprobado bajo sus propias condiciones, y lo dejamos por escrito antes de empezar."
     },
     faroTitel: {
-      nl: "Je agents vangen elke lead. <span class=\"highlight\">Faro schrijft alles eromheen.</span>",
-      fr: "Vos agents captent chaque lead. <span class=\"highlight\">Faro rédige tout le reste.</span>",
-      en: "Your agents catch every lead. <span class=\"highlight\">Faro writes everything around it.</span>",
-      de: "Ihre Agents fangen jeden Lead. <span class=\"highlight\">Faro schreibt alles drumherum.</span>",
-      es: "Tus agentes captan cada lead. <span class=\"highlight\">Faro escribe todo lo demás.</span>"
+      nl: "Je agents doen het werk. <span class=\"highlight\">Faro houdt het in de gaten.</span>",
+      fr: "Vos agents font le travail. <span class=\"highlight\">Faro garde l'œil dessus.</span>",
+      en: "Your agents do the work. <span class=\"highlight\">Faro keeps watch over it.</span>",
+      de: "Ihre Agents machen die Arbeit. <span class=\"highlight\">Faro behält sie im Blick.</span>",
+      es: "Tus agentes hacen el trabajo. <span class=\"highlight\">Faro lo vigila.</span>"
     },
     gDataBewaren: {
       nl: "Van je Google-account bewaren we drie dingen: een <strong>vernieuwingstoken</strong> zodat je niet bij elke afspraak opnieuw moet inloggen, het <strong>e-mailadres</strong> van het gekoppelde account en het <strong>agenda-ID</strong> van de agenda die je gekozen hebt.",

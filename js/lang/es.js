@@ -109,3 +109,18 @@ Object.assign(window.HELVARO_TR['es'], {
   "Vanaf €2.500 opstart · 6 maanden starttermijn": "Desde 2.500 € de puesta en marcha · 6 meses de plazo inicial",
   "€750 opstart · Maandelijks opzegbaar": "750 € de puesta en marcha · Cancelable cada mes"
 });
+
+Object.assign(window.HELVARO_TR['es'], {
+  "De laag boven je agents": "La capa por encima de tus agentes",
+  "Faro is geen losse agent. Het is de laag waarin je agents hun geheugen delen, waarin staat wat ze mogen, en waarin jij ziet wat er gebeurd is. Eén plek voor alles wat er draait.": "Faro no es un agente aparte. Es la capa donde tus agentes comparten su memoria, donde se define lo que pueden hacer y donde tú ves lo que ha pasado. Un solo sitio para todo lo que está funcionando.",
+  "Eén overzicht van wat er loopt": "Una vista de todo lo que está en marcha",
+  "Elke agent, elk gesprek, elke actie. Je leest live mee en neemt op elk moment zelf over.": "Cada agente, cada conversación, cada acción. Lo sigues en directo y tomas el control cuando quieras.",
+  "Wat op jou wacht, staat apart": "Lo que espera por ti va aparte",
+  "Alles wat goedkeuring nodig heeft komt in één lijst, met de reden erbij. Je keurt goed of je houdt het tegen.": "Todo lo que necesita aprobación llega a una sola lista, con el motivo incluido. Lo apruebas o lo detienes.",
+  "Gedeeld geheugen": "Memoria compartida",
+  "Een correctie die je één keer maakt, geldt daarna voor elke agent. Je legt niet twee keer hetzelfde uit.": "Una corrección que haces una vez vale después para todos los agentes. No explicas dos veces lo mismo.",
+  "Vraag het gewoon": "Pregúntaselo sin más",
+  "Wat is er gisteren blijven liggen, welke lead is het warmst, wat heeft een agent doorgegeven. Je vraagt het Faro in gewone taal.": "Qué quedó pendiente ayer, qué lead está más caliente, qué ha traspasado un agente. Se lo preguntas a Faro en lenguaje normal.",
+  "Je agents werken. Faro laat zien wat ze deden. Jij beslist.": "Tus agentes trabajan. Faro muestra lo que hicieron. Tú decides.",
+  "Bekijk Faro tijdens een werkaudit": "Descubre Faro en una auditoría de trabajo"
+});

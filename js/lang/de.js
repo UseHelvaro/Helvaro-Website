@@ -109,3 +109,18 @@ Object.assign(window.HELVARO_TR['de'], {
   "Vanaf €2.500 opstart · 6 maanden starttermijn": "Ab 2.500 € Einrichtung · 6 Monate Anfangslaufzeit",
   "€750 opstart · Maandelijks opzegbaar": "750 € Einrichtung · Monatlich kündbar"
 });
+
+Object.assign(window.HELVARO_TR['de'], {
+  "De laag boven je agents": "Die Schicht über Ihren Agents",
+  "Faro is geen losse agent. Het is de laag waarin je agents hun geheugen delen, waarin staat wat ze mogen, en waarin jij ziet wat er gebeurd is. Eén plek voor alles wat er draait.": "Faro ist kein einzelner Agent. Es ist die Schicht, in der Ihre Agents ihr Gedächtnis teilen, in der festgelegt ist, was sie dürfen, und in der Sie sehen, was passiert ist. Ein Ort für alles, was läuft.",
+  "Eén overzicht van wat er loopt": "Eine Übersicht über alles, was läuft",
+  "Elke agent, elk gesprek, elke actie. Je leest live mee en neemt op elk moment zelf over.": "Jeder Agent, jedes Gespräch, jede Aktion. Sie lesen live mit und übernehmen jederzeit selbst.",
+  "Wat op jou wacht, staat apart": "Was auf Sie wartet, steht separat",
+  "Alles wat goedkeuring nodig heeft komt in één lijst, met de reden erbij. Je keurt goed of je houdt het tegen.": "Alles, was eine Freigabe braucht, landet in einer Liste, mit der Begründung dabei. Sie geben frei oder halten es auf.",
+  "Gedeeld geheugen": "Geteiltes Gedächtnis",
+  "Een correctie die je één keer maakt, geldt daarna voor elke agent. Je legt niet twee keer hetzelfde uit.": "Eine Korrektur, die Sie einmal machen, gilt danach für jeden Agent. Sie erklären dasselbe nicht zweimal.",
+  "Vraag het gewoon": "Fragen Sie einfach",
+  "Wat is er gisteren blijven liggen, welke lead is het warmst, wat heeft een agent doorgegeven. Je vraagt het Faro in gewone taal.": "Was gestern liegen geblieben ist, welcher Lead am wärmsten ist, was ein Agent übergeben hat. Sie fragen Faro in normaler Sprache.",
+  "Je agents werken. Faro laat zien wat ze deden. Jij beslist.": "Ihre Agents arbeiten. Faro zeigt, was sie getan haben. Sie entscheiden.",
+  "Bekijk Faro tijdens een werkaudit": "Faro bei einem Arbeits-Audit ansehen"
+});

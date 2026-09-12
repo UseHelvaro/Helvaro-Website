@@ -109,3 +109,18 @@ Object.assign(window.HELVARO_TR['en'], {
   "Vanaf €2.500 opstart · 6 maanden starttermijn": "From €2,500 setup · 6-month initial term",
   "€750 opstart · Maandelijks opzegbaar": "€750 setup · Cancel monthly"
 });
+
+Object.assign(window.HELVARO_TR['en'], {
+  "De laag boven je agents": "The layer above your agents",
+  "Faro is geen losse agent. Het is de laag waarin je agents hun geheugen delen, waarin staat wat ze mogen, en waarin jij ziet wat er gebeurd is. Eén plek voor alles wat er draait.": "Faro is not a separate agent. It is the layer where your agents share their memory, where what they are allowed to do is set, and where you see what has happened. One place for everything that runs.",
+  "Eén overzicht van wat er loopt": "One view of what is running",
+  "Elke agent, elk gesprek, elke actie. Je leest live mee en neemt op elk moment zelf over.": "Every agent, every conversation, every action. You read along live and take over yourself at any moment.",
+  "Wat op jou wacht, staat apart": "What is waiting on you sits separately",
+  "Alles wat goedkeuring nodig heeft komt in één lijst, met de reden erbij. Je keurt goed of je houdt het tegen.": "Everything needing approval lands in one list, with the reason attached. You approve it or you hold it.",
+  "Gedeeld geheugen": "Shared memory",
+  "Een correctie die je één keer maakt, geldt daarna voor elke agent. Je legt niet twee keer hetzelfde uit.": "A correction you make once applies to every agent afterwards. You do not explain the same thing twice.",
+  "Vraag het gewoon": "Just ask it",
+  "Wat is er gisteren blijven liggen, welke lead is het warmst, wat heeft een agent doorgegeven. Je vraagt het Faro in gewone taal.": "What was left undone yesterday, which lead is warmest, what an agent handed over. You ask Faro in plain language.",
+  "Je agents werken. Faro laat zien wat ze deden. Jij beslist.": "Your agents work. Faro shows what they did. You decide.",
+  "Bekijk Faro tijdens een werkaudit": "See Faro during a work audit"
+});
