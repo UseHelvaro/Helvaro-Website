@@ -33,7 +33,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=62">
+  <link rel="stylesheet" href="css/style.css?v=63">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -51,16 +51,14 @@
         "areaServed": [{ "@type": "Country", "name": "België" }, { "@type": "Country", "name": "Nederland" }],
         "description": "Helvaro bouwt en beheert AI-agents die het herhaalwerk in je bedrijf overnemen: klantcontact via telefoon en WhatsApp, opvolging en planning, en de administratie erachter. Elke actie zichtbaar, elke beslissing bij jou.",
         "hasOfferCatalog": {
-          "@type": "OfferCatalog", "name": "Helvaro diensten",
+          "@type": "OfferCatalog", "name": "Helvaro plannen",
           "itemListElement": [
-            { "@type": "Offer", "name": "Helvaro Start", "price": "490.00", "priceCurrency": "EUR",
-              "description": "Eén agent, één workflow, één kanaal. Inclusief Faro-dashboard en logboek." },
-            { "@type": "Offer", "name": "Helvaro Operate", "priceCurrency": "EUR",
-              "priceSpecification": { "@type": "PriceSpecification", "minPrice": "1450.00", "priceCurrency": "EUR" },
-              "description": "Een set agents over één of meer domeinen, volledig beheerd, met goedkeuringsregels en maandelijkse rapportage." },
-            { "@type": "Offer", "name": "Helvaro Maatwerk", "priceCurrency": "EUR",
-              "priceSpecification": { "@type": "PriceSpecification", "minPrice": "12000.00", "priceCurrency": "EUR" },
-              "description": "Agents en workflows op maat, gebouwd in je eigen omgeving en met documentatie overgedragen." }
+            { "@type": "Offer", "name": "Starter", "price": "249.99", "priceCurrency": "EUR", "category": "SubscriptionPlan",
+              "description": "3.000 credits per maand, ongeveer 150 gesprekken. Eén agent, dashboard en logboek." },
+            { "@type": "Offer", "name": "Growth", "price": "499.00", "priceCurrency": "EUR", "category": "SubscriptionPlan",
+              "description": "10.000 credits per maand, ongeveer 500 gesprekken. Drie agents, visualisatie-agent en 40 talen." },
+            { "@type": "Offer", "name": "Scale", "price": "799.00", "priceCurrency": "EUR", "category": "SubscriptionPlan",
+              "description": "Onbeperkte credits onder fair use, onbeperkt aantal agents en kwalificatievragen op maat." }
           ] } }
     ]
   }
@@ -256,51 +254,82 @@
           <p class="section-sub">Vier domeinen. Je begint bij het werk dat het meeste tijd kost, de rest volgt wanneer het eerste draait.</p>
         </div>
 
-        <div class="sol-grid">
+        <div class="showcase reveal" data-showcase>
+          <div class="showcase-viewport">
+            <div class="showcase-track" data-showcase-track>
 
-          <div class="sol-card reveal spot">
-            <div class="sol-head">
-              <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-              <span class="sol-tag">Domein 01</span>
+              <article class="showcase-slide" role="group" aria-label="Domein 1 van 4">
+                <span class="showcase-num">Domein 01</span>
+                <h3 class="sol-title">Klantcontact</h3>
+                <p class="sol-claim">Elke vraag beantwoord, ook om 19u</p>
+                <p class="sol-desc">Inkomende telefoon, WhatsApp, chat en e-mail. Je agents beantwoorden wat routine is, noteren wat ze niet weten en geven de rest door aan de juiste persoon, met het hele gesprek erbij.</p>
+                <ul class="showcase-list">
+                  <li>Telefoonagent</li><li>WhatsApp</li><li>Webchat</li><li>E-mailtriage</li><li>Veelgestelde vragen</li><li>Statusvragen</li><li>Klachten doorzetten</li>
+                </ul>
+              </article>
+
+              <article class="showcase-slide" role="group" aria-label="Domein 2 van 4">
+                <span class="showcase-num">Domein 02</span>
+                <h3 class="sol-title">Commercie</h3>
+                <p class="sol-claim">Van eerste bericht tot afspraak</p>
+                <p class="sol-desc">Kwalificeren, scoren, opvolgen en inplannen. Offertes die blijven liggen worden nagebeld, oude leads krijgen een tweede kans. Alleen wie het waard is komt in je agenda.</p>
+                <ul class="showcase-list">
+                  <li>Kwalificatie</li><li>Leadscore</li><li>Opvolging</li><li>Afspraken boeken</li><li>Offerte-opvolging</li><li>Reactivatie</li><li>Herinneringen</li>
+                </ul>
+              </article>
+
+              <article class="showcase-slide" role="group" aria-label="Domein 3 van 4">
+                <span class="showcase-num">Domein 03</span>
+                <h3 class="sol-title">Backoffice</h3>
+                <p class="sol-claim">Het werk na het gesprek</p>
+                <p class="sol-desc">Je CRM bijwerken, documenten uitlezen, gegevens overtypen, rapporten klaarzetten en interne vragen beantwoorden. Het werk dat niemand ziet en dat toch elke week uren kost.</p>
+                <ul class="showcase-list">
+                  <li>CRM bijwerken</li><li>Documenten uitlezen</li><li>Gegevensinvoer</li><li>Rapportage</li><li>Interne kennisvragen</li><li>Dossiers aanvullen</li>
+                </ul>
+              </article>
+
+              <article class="showcase-slide" role="group" aria-label="Domein 4 van 4">
+                <span class="showcase-num">Domein 04</span>
+                <h3 class="sol-title">Maatwerk</h3>
+                <p class="sol-claim">Als je proces nergens in past</p>
+                <p class="sol-desc">Agents en workflows gebouwd op je eigen systemen, met documentatie overgedragen. Je blijft eigenaar van wat we bouwen. Laten draaien doe je zelf, of laat je aan ons over.</p>
+                <ul class="showcase-list">
+                  <li>Eigen workflows</li><li>Koppelingen op maat</li><li>Eigen omgeving</li><li>Overdracht met documentatie</li><li>Beheer optioneel</li>
+                </ul>
+              </article>
+
             </div>
-            <h3 class="sol-title">Klantcontact</h3>
-            <p class="sol-claim">Elke vraag beantwoord, ook om 19u</p>
-            <p class="sol-desc">Inkomende telefoon, WhatsApp, chat en e-mail. Je agents beantwoorden wat routine is, noteren wat ze niet weten en geven de rest door aan de juiste persoon, met het hele gesprek erbij.</p>
           </div>
 
-          <div class="sol-card reveal spot">
-            <div class="sol-head">
-              <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
-              <span class="sol-tag">Domein 02</span>
-            </div>
-            <h3 class="sol-title">Commercie</h3>
-            <p class="sol-claim">Van eerste bericht tot afspraak</p>
-            <p class="sol-desc">Kwalificeren, scoren, opvolgen en inplannen. Offertes die blijven liggen worden nagebeld, oude leads krijgen een tweede kans. Alleen wie het waard is komt in je agenda.</p>
+          <div class="showcase-nav">
+            <button type="button" class="showcase-btn" data-showcase-prev aria-label="Vorig domein">&#8592;</button>
+            <div class="showcase-dots" role="tablist" data-showcase-dots></div>
+            <button type="button" class="showcase-btn" data-showcase-next aria-label="Volgend domein">&#8594;</button>
           </div>
-
-          <div class="sol-card reveal reveal-delay-1 spot">
-            <div class="sol-head">
-              <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6"/><path d="M9 11h2"/></svg></div>
-              <span class="sol-tag">Domein 03</span>
-            </div>
-            <h3 class="sol-title">Backoffice</h3>
-            <p class="sol-claim">Het werk na het gesprek</p>
-            <p class="sol-desc">Je CRM bijwerken, documenten uitlezen, gegevens overtypen, rapporten klaarzetten en interne vragen beantwoorden. Het werk dat niemand ziet en dat toch elke week uren kost.</p>
-          </div>
-
-          <div class="sol-card reveal reveal-delay-1 spot">
-            <div class="sol-head">
-              <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
-              <span class="sol-tag">Domein 04</span>
-            </div>
-            <h3 class="sol-title">Maatwerk</h3>
-            <p class="sol-claim">Als je proces nergens in past</p>
-            <p class="sol-desc">Agents en workflows gebouwd op je eigen systemen, met documentatie overgedragen. Je blijft eigenaar van wat we bouwen. Laten draaien doe je zelf, of laat je aan ons over.</p>
-          </div>
-
+          <p class="showcase-label">Sleep, of gebruik de pijlen</p>
         </div>
       </div>
     </section>
+
+    <!-- ===== AGENTBALK =================================================
+         Losse handelingen die voorbijrollen, in plaats van een rijtje
+         beloftes. Decoratief, dus afgeschermd voor schermlezers. -->
+    <div class="agentbar" aria-hidden="true" data-agentbar>
+      <div class="agentbar-track" data-agentbar-track>
+        <span class="agent-chip"><span class="dot"></span><span class="who">Telefoonagent</span><span class="did">nam een oproep aan</span></span>
+        <span class="agent-chip"><span class="dot"></span><span class="who">Planningsagent</span><span class="did">boekte een onderhoudsbeurt</span></span>
+        <span class="agent-chip"><span class="dot"></span><span class="who">Kwalificatieagent</span><span class="did">scoorde een lead op 8,6</span></span>
+        <span class="agent-chip"><span class="dot"></span><span class="who">Opvolgagent</span><span class="did">herinnerde aan een offerte</span></span>
+        <span class="agent-chip"><span class="dot"></span><span class="who">CRM-agent</span><span class="did">werkte een dossier bij</span></span>
+        <span class="agent-chip"><span class="dot"></span><span class="who">Inruilagent</span><span class="did">gaf een schatting door</span></span>
+        <span class="agent-chip"><span class="dot"></span><span class="who">Serviceagent</span><span class="did">beantwoordde een openingsuur</span></span>
+        <span class="agent-chip"><span class="dot"></span><span class="who">Escalatieagent</span><span class="did">gaf door aan een collega</span></span>
+        <span class="agent-chip"><span class="dot"></span><span class="who">Documentagent</span><span class="did">las een keuringsbewijs uit</span></span>
+        <span class="agent-chip"><span class="dot"></span><span class="who">Reviewagent</span><span class="did">vroeg om een beoordeling</span></span>
+        <span class="agent-chip"><span class="dot"></span><span class="who">Visualisatieagent</span><span class="did">maakte een renovatiebeeld</span></span>
+        <span class="agent-chip"><span class="dot"></span><span class="who">Rapportageagent</span><span class="did">zette het weekoverzicht klaar</span></span>
+      </div>
+    </div>
 
     <!-- ===== FARO ===== -->
     <section class="section faro" data-gids="faro" id="faro">
@@ -359,23 +388,6 @@
       </div>
     </section>
 
-    <!-- ===== TICKER ===== -->
-    <div class="ticker" aria-hidden="true" data-gids="bewijs">
-      <div class="ticker-track">
-        <span>Reactie binnen 30 seconden</span><span class="tick-sep">◆</span>
-        <span>24/7 bereikbaar, ook in het weekend</span><span class="tick-sep">◆</span>
-        <span>Spreekt 40 talen</span><span class="tick-sep">◆</span>
-        <span>Gemaakt in België</span><span class="tick-sep">◆</span>
-        <span>Live binnen 72 uur</span><span class="tick-sep">◆</span>
-        <span>GDPR · data in de EU</span><span class="tick-sep">◆</span>
-        <span>Reactie binnen 30 seconden</span><span class="tick-sep">◆</span>
-        <span>24/7 bereikbaar, ook in het weekend</span><span class="tick-sep">◆</span>
-        <span>Spreekt 40 talen</span><span class="tick-sep">◆</span>
-        <span>Gemaakt in België</span><span class="tick-sep">◆</span>
-        <span>Live binnen 72 uur</span><span class="tick-sep">◆</span>
-        <span>GDPR · data in de EU</span><span class="tick-sep">◆</span>
-      </div>
-    </div>
 
     <!-- ===== STATS STRIP ===== -->
     <div class="stats-strip">
@@ -650,91 +662,126 @@
       </div>
     </section>
 
-    <!-- ===== PRICING ===== -->
+    <!-- ===== PRICING =====================================================
+         Dezelfde lijst in alle drie de plannen, met een vinkje of een kruisje.
+         Zo vergelijk je kolommen in plaats van drie verschillende lijstjes. -->
     <section class="section" id="prijzen" data-gids="prijs">
       <div class="section-glow" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header text-center reveal">
-          <span class="section-label">Prijzen</span>
-          <h2 class="section-title">Eén prijs per maand. Geen credits.</h2>
-          <p class="section-sub">Je betaalt voor werk dat overgenomen wordt, niet voor gesprekken die je moet afmeten. Hoe meer je ons geeft, hoe beter het werkt.</p>
-          <p class="pricing-credit-note reveal">De prijs van Operate hangt af van drie dingen: hoeveel agents, hoeveel volume en hoeveel systemen we koppelen. Geen andere variabelen.</p>
+          <span class="section-label">Plannen</span>
+          <h2 class="section-title">Eén prijs. Geen verrassingen.</h2>
+          <p class="section-sub">Geen setup-kosten. Maandelijks opzegbaar. Nooit een verrassing op je factuur.</p>
+          <p class="pricing-credit-note reveal">1 gesprek ≈ 20 credits. Credits gelden voor gesprekken van je agents én gegenereerde beelden.</p>
+          <p class="pricing-trial reveal"><span class="trial-badge">14 dagen gratis</span> Probeer Helvaro 14 dagen uit. Geen kaartgegevens nodig, stop wanneer je wil.</p>
         </div>
         <div class="pricing-grid" data-gids="plannen">
 
-          <!-- Start -->
+          <!-- Starter -->
           <div class="pricing-card reveal">
             <div>
               <span class="pricing-badge-spacer" aria-hidden="true"></span>
-              <h3 class="pricing-tier">Helvaro Start</h3>
-              <p class="pricing-price">€490<span class="pricing-per">/maand</span></p>
-              <p class="pricing-volume">Eén agent · één workflow · één kanaal</p>
+              <h3 class="pricing-tier">Starter</h3>
+              <p class="pricing-price">€249,99<span class="pricing-per">/maand</span></p>
+              <p class="pricing-volume">3.000 credits/maand · ±150 gesprekken</p>
             </div>
             <div class="pricing-divider"></div>
             <div class="pricing-features">
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Eén agent, getraind op jouw sector</span></div>
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">WhatsApp of webchat, jij kiest</span></div>
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Afspraken rechtstreeks in je Google Agenda</span></div>
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Faro-dashboard, lees elk gesprek live mee</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Reactie binnen 30 sec, 24/7</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Automatische kwalificatie met score</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Afspraken in je Google Agenda</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Eigen naam en stijl voor je agent</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Eigen formulier met deelbare link</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Real-time dashboard, lees elk gesprek mee</span></div>
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Actielogboek, exporteerbaar</span></div>
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Live binnen 2 weken</span></div>
-              <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Geen telefoonagent</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">1 agent</span></div>
+              <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Visualisatie-agent</span></div>
+              <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Spreekt 40 talen automatisch</span></div>
+              <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">CSV-exports naar elk CRM</span></div>
+              <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Prioriteit support, SLA &lt; 4 uur</span></div>
+              <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Vaste accountmanager</span></div>
+              <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Wekelijkse rapportage</span></div>
+              <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Kwalificatievragen volledig op maat</span></div>
+              <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Persoonlijke onboarding met het team</span></div>
+              <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Eerste toegang tot nieuwe features</span></div>
             </div>
             <div class="pricing-cta">
-              <a href="meeting.html" class="btn btn-ghost">Plan een werkaudit</a>
-              <p class="pricing-note">€750 opstart · Maandelijks opzegbaar</p>
+              <a href="aanmelden.html" class="btn btn-ghost">Start 14 dagen gratis</a>
+              <p class="pricing-note">Geen setup-kosten · Maandelijks opzegbaar</p>
             </div>
           </div>
 
-          <!-- Operate (featured) -->
+          <!-- Growth (featured) -->
           <div class="pricing-card featured reveal reveal-delay-1">
             <div>
               <span class="pricing-badge-pill">★ Meest gekozen</span>
-              <h3 class="pricing-tier">Helvaro Operate</h3>
-              <p class="pricing-price"><span class="pricing-from">vanaf</span>€1.450<span class="pricing-per">/maand</span></p>
-              <p class="pricing-volume">Een set agents · volledig beheerd</p>
+              <h3 class="pricing-tier">Growth</h3>
+              <p class="pricing-price">€499<span class="pricing-per">/maand</span></p>
+              <p class="pricing-volume">10.000 credits/maand · ±500 gesprekken</p>
             </div>
             <div class="pricing-divider"></div>
             <div class="pricing-features">
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Alles uit Start</span></div>
-              <div class="pricing-feat included hl"><span class="feat-icon">✓</span><span class="feat-text">Telefoonagent in het Nederlands en het Frans</span></div>
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Agents over meerdere domeinen</span></div>
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Goedkeuringsregels per actietype</span></div>
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Escalatie naar een vaste naam bij jou</span></div>
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Koppeling met je CRM of planning</span></div>
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Maandelijkse bijsturing en rapport</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Reactie binnen 30 sec, 24/7</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Automatische kwalificatie met score</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Afspraken in je Google Agenda</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Eigen naam en stijl voor je agent</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Eigen formulier met deelbare link</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Real-time dashboard, lees elk gesprek mee</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Actielogboek, exporteerbaar</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">3 agents, getraind op jouw sector</span></div>
+              <div class="pricing-feat included hl"><span class="feat-icon">✓</span><span class="feat-text">Visualisatie-agent inbegrepen</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Spreekt 40 talen automatisch</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">CSV-exports naar elk CRM</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Prioriteit support, SLA &lt; 4 uur</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Vaste accountmanager</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Wekelijkse rapportage</span></div>
+              <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Kwalificatievragen volledig op maat</span></div>
+              <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Persoonlijke onboarding met het team</span></div>
+              <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Eerste toegang tot nieuwe features</span></div>
             </div>
             <div class="pricing-cta">
-              <a href="meeting.html" class="btn">Plan een werkaudit</a>
-              <p class="pricing-note">Vanaf €2.500 opstart · 6 maanden starttermijn</p>
+              <a href="aanmelden.html" class="btn">Start 14 dagen gratis</a>
+              <p class="pricing-note">Geen setup-kosten · Maandelijks opzegbaar</p>
             </div>
           </div>
 
-          <!-- Maatwerk -->
+          <!-- Scale -->
           <div class="pricing-card reveal reveal-delay-2">
             <div>
-              <span class="pricing-badge-pill pricing-badge-scale">✦ Op maat</span>
-              <h3 class="pricing-tier">Helvaro Maatwerk</h3>
-              <p class="pricing-price"><span class="pricing-from">vanaf</span>€12.000<span class="pricing-per">/project</span></p>
-              <p class="pricing-volume">Gebouwd in je eigen omgeving</p>
+              <span class="pricing-badge-pill pricing-badge-scale">✦ Meest compleet</span>
+              <h3 class="pricing-tier">Scale</h3>
+              <p class="pricing-price"><span class="pricing-from">vanaf</span>€799<span class="pricing-per">/maand</span></p>
+              <p class="pricing-volume">Onbeperkte credits · fair-use</p>
             </div>
             <div class="pricing-divider"></div>
             <div class="pricing-features">
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Agents en workflows op maat</span></div>
-              <div class="pricing-feat included hl"><span class="feat-icon">✓</span><span class="feat-text">Jij wordt eigenaar van wat we bouwen</span></div>
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Koppeling met je bestaande systemen</span></div>
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Overdracht met documentatie</span></div>
-              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Zelf laten draaien, of door ons</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Reactie binnen 30 sec, 24/7</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Automatische kwalificatie met score</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Afspraken in je Google Agenda</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Eigen naam en stijl voor je agent</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Eigen formulier met deelbare link</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Real-time dashboard, lees elk gesprek mee</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Actielogboek, exporteerbaar</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Onbeperkt aantal agents</span></div>
+              <div class="pricing-feat included hl"><span class="feat-icon">✓</span><span class="feat-text">Visualisatie-agent zonder praktisch plafond</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Spreekt 40 talen automatisch</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">CSV-exports naar elk CRM</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Prioriteit support, SLA &lt; 4 uur</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Vaste accountmanager</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Wekelijkse rapportage</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Kwalificatievragen volledig op maat</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Persoonlijke onboarding met het team</span></div>
+              <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Eerste toegang tot nieuwe features</span></div>
             </div>
             <div class="pricing-cta">
               <a href="meeting.html" class="btn btn-ghost">Praat met ons team</a>
-              <p class="pricing-note">Vooraf afgebakend · Geen open einde</p>
+              <p class="pricing-note">Geen setup-kosten · Maandelijks opzegbaar</p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
-
     <!-- ===== CTA BAND ===== -->
     <section class="cta-band" data-gids="start">
       <div class="cta-band-glow" aria-hidden="true"></div>
@@ -810,8 +857,8 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=25"></script>
-  <script src="js/i18n.js?v=27"></script>
+  <script src="js/main.js?v=26"></script>
+  <script src="js/i18n.js?v=28"></script>
 
   <!-- ── Faro loopt met je mee ────────────────────────────────────────────
        Geen kaartje met een vogeltje erin: de valk staat vrij op de pagina en

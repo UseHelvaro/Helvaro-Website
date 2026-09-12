@@ -5065,3 +5065,178 @@ p { text-wrap: pretty; }
   .faro-gids-ballon,
   [data-stem] .faro-gids-img { animation: none; transition: none; }
 }
+
+/* ============================================================
+   22. SECTORKAARTEN: STAPELEN ZONDER GATEN
+   ------------------------------------------------------------
+   Regel 21 hierboven zette align-items op start om te voorkomen dat
+   een korte kaart meerekte met een lange. Dat loste de leegte binnen
+   de kaart op, maar liet een zwart gat achter onder de korte kaart.
+
+   Kolommen in plaats van een raster: de kaarten schuiven tegen elkaar
+   aan, elk zo hoog als zijn eigen inhoud, zonder gat ertussen. De
+   brede kaart (automotive) overspant beide kolommen.
+   ============================================================ */
+@media (min-width: 721px) {
+  .sol-grid {
+    display: block;
+    columns: 2;
+    column-gap: 20px;
+  }
+  .sol-grid > .sol-card {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    margin: 0 0 20px;
+  }
+  .sol-wide {
+    column-span: all;
+  }
+}
+
+/* ============================================================
+   23. WERKDOMEINEN ALS SLIDESHOW
+   ------------------------------------------------------------
+   Vier domeinen naast elkaar leest als een rijtje kaarten. Als
+   slideshow kijk je naar één ding tegelijk, en dat is precies wat
+   we willen: kies het werk.
+   ============================================================ */
+.showcase { position: relative; margin-top: 34px; }
+.showcase-viewport { overflow: hidden; border-radius: var(--radius-m); }
+.showcase-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.showcase-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 40px 44px 44px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-0);
+  border-radius: var(--radius-m);
+}
+.showcase-num {
+  font-family: var(--font-h);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--accent-deep);
+  display: block;
+  margin-bottom: 16px;
+}
+.showcase-slide .sol-title { font-size: clamp(24px, 3.4vw, 34px); margin-bottom: 10px; }
+.showcase-slide .sol-claim { font-size: 17px; margin-bottom: 14px; }
+.showcase-slide .sol-desc { font-size: 15.5px; max-width: 60ch; }
+.showcase-list {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.showcase-list li {
+  font-size: 12.5px;
+  color: var(--text-2);
+  border: 1px solid var(--border-0);
+  border-radius: 999px;
+  padding: 5px 12px;
+  white-space: nowrap;
+}
+.showcase-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 26px;
+}
+.showcase-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-1);
+  background: transparent;
+  color: var(--text-1);
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.25s, color 0.25s, transform 0.25s;
+}
+.showcase-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+.showcase-btn:disabled { opacity: 0.35; cursor: default; transform: none; }
+.showcase-dots { display: flex; gap: 7px; }
+.showcase-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  background: var(--border-1);
+  cursor: pointer;
+  transition: background 0.25s, width 0.25s, border-radius 0.25s;
+}
+.showcase-dot.active { background: var(--accent); width: 26px; border-radius: 999px; }
+.showcase-label {
+  text-align: center;
+  font-family: var(--font-h);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-top: 16px;
+}
+@media (max-width: 720px) {
+  .showcase-slide { padding: 28px 24px 30px; }
+  .showcase-nav { gap: 14px; }
+}
+
+/* ============================================================
+   24. AGENTBALK
+   ------------------------------------------------------------
+   Rollende strook met wat agents zoal doen. Geen opsomming van
+   beloftes, maar losse handelingen die voorbijkomen.
+   ============================================================ */
+.agentbar {
+  overflow: hidden;
+  border-top: 1px solid var(--border-0);
+  border-bottom: 1px solid var(--border-0);
+  background: var(--bg-0);
+  padding: 18px 0;
+}
+.agentbar-track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+  animation: agentbar 58s linear infinite;
+}
+.agentbar:hover .agentbar-track { animation-play-state: paused; }
+.agent-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+  border: 1px solid var(--border-0);
+  border-radius: 999px;
+  padding: 8px 16px;
+  background: var(--bg-card);
+}
+.agent-chip .dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+.agent-chip .who {
+  font-family: var(--font-h);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-1);
+}
+.agent-chip .did { font-size: 13px; color: var(--text-3); }
+@keyframes agentbar { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .agentbar-track { animation: none; flex-wrap: wrap; width: auto; }
+  .showcase-track { transition: none; }
+}

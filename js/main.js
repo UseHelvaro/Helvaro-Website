@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTilt();
   initCursor();
   initWatermarkParallax();
+  initShowcase();
+  initAgentbar();
 });
 
 /* ============================================================
@@ -1010,3 +1012,87 @@ function initFaroGids() {
     });
   }
 }
+
+/* ── Werkdomeinen als slideshow ─────────────────────────────────────────
+   Eén domein tegelijk in beeld. Pijlen, bolletjes, pijltjestoetsen en
+   slepen op een touchscreen. Zonder JS staat het eerste domein gewoon
+   in beeld en blijft de rest bereikbaar door te scrollen in het spoor. */
+function initShowcase() {
+  document.querySelectorAll('[data-showcase]').forEach((root) => {
+    const track = root.querySelector('[data-showcase-track]');
+    const slides = Array.from(root.querySelectorAll('.showcase-slide'));
+    const dotsHouder = root.querySelector('[data-showcase-dots]');
+    const vorige = root.querySelector('[data-showcase-prev]');
+    const volgende = root.querySelector('[data-showcase-next]');
+    if (!track || slides.length < 2) return;
+
+    let index = 0;
+
+    const dots = slides.map((_, i) => {
+      const d = document.createElement('button');
+      d.type = 'button';
+      d.className = 'showcase-dot';
+      d.setAttribute('role', 'tab');
+      d.setAttribute('aria-label', 'Domein ' + (i + 1));
+      d.addEventListener('click', () => ga(i));
+      dotsHouder.appendChild(d);
+      return d;
+    });
+
+    function ga(n) {
+      index = Math.max(0, Math.min(slides.length - 1, n));
+      track.style.transform = 'translateX(' + (-index * 100) + '%)';
+      dots.forEach((d, i) => d.classList.toggle('active', i === index));
+      slides.forEach((s, i) => s.setAttribute('aria-hidden', i === index ? 'false' : 'true'));
+      if (vorige) vorige.disabled = index === 0;
+      if (volgende) volgende.disabled = index === slides.length - 1;
+    }
+
+    if (vorige) vorige.addEventListener('click', () => ga(index - 1));
+    if (volgende) volgende.addEventListener('click', () => ga(index + 1));
+
+    root.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { ga(index - 1); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { ga(index + 1); e.preventDefault(); }
+    });
+
+    /* Slepen. Alleen de horizontale beweging telt, zodat verticaal
+       scrollen op een telefoon niet gekaapt wordt. */
+    let startX = null, startY = null, bezig = false;
+    root.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX; startY = e.touches[0].clientY; bezig = false;
+    }, { passive: true });
+    root.addEventListener('touchmove', (e) => {
+      if (startX === null) return;
+      const dx = e.touches[0].clientX - startX;
+      const dy = e.touches[0].clientY - startY;
+      if (!bezig && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 12) bezig = true;
+    }, { passive: true });
+    root.addEventListener('touchend', (e) => {
+      if (startX !== null && bezig) {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 45) ga(index + (dx < 0 ? 1 : -1));
+      }
+      startX = null; startY = null; bezig = false;
+    });
+
+    ga(0);
+  });
+}
+
+/* ── Agentbalk ──────────────────────────────────────────────────────────
+   De animatie schuift het spoor de halve breedte op. Dat werkt alleen als
+   de reeks er twee keer in staat. Hier verdubbeld in plaats van in de
+   HTML, zodat elke tekst maar één keer vertaald hoeft te worden. */
+function initAgentbar() {
+  document.querySelectorAll('[data-agentbar-track]').forEach((track) => {
+    if (track.dataset.gedupliceerd) return;
+    track.querySelectorAll('.agent-chip').forEach((chip) => {
+      const kopie = chip.cloneNode(true);
+      kopie.setAttribute('aria-hidden', 'true');
+      track.appendChild(kopie);
+    });
+    track.dataset.gedupliceerd = '1';
+  });
+}
+

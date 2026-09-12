@@ -6,7 +6,7 @@
   var geladen = {};
   var huidig = 'nl';
   /* Ophogen zodra een taalbestand wijzigt, anders houdt de browser de oude versie vast. */
-  var TAAL_V = '12';
+  var TAAL_V = '13';
   function laadTaal(lang, klaar){
     if (lang === 'nl' || TR[lang] || geladen[lang]) { klaar(); return; }
     geladen[lang] = true;
@@ -27,46 +27,43 @@
   };
   /* Titel van het browsertabblad: die staat buiten de <body> en wordt
      dus niet door de tekstwandeling opgepikt. Apart vertalen. */
+  /* Elke titel in de HTML staat Nederlands, dus dat is hier ook de sleutel.
+     Er stonden vroeger Engelse sleutels, die nooit matchten: het tabblad
+     bleef daardoor Nederlands terwijl de pagina wel vertaalde. */
   var TITLES = {
-    /* De titels hieronder staan Nederlands in de HTML, dus die zijn hier ook
-       de sleutel. Vroeger stonden er Engelse sleutels die nooit matchten. */
     'AI-agents die je herhaalwerk overnemen \u00b7 Helvaro': {
       fr: 'Des agents IA qui reprennent votre travail r\u00e9p\u00e9titif \u00b7 Helvaro',
       en: 'AI agents that take over your repetitive work \u00b7 Helvaro',
       de: 'KI-Agents, die Ihre Routinearbeit \u00fcbernehmen \u00b7 Helvaro',
       es: 'Agentes de IA que asumen tu trabajo repetitivo \u00b7 Helvaro'
     },
-    'Plan een werkaudit \u00b7 Helvaro': {
-      fr: 'Planifier un audit de travail \u00b7 Helvaro',
-      en: 'Book a work audit \u00b7 Helvaro',
-      de: 'Arbeits-Audit planen \u00b7 Helvaro',
-      es: 'Agenda una auditor\u00eda de trabajo \u00b7 Helvaro'
+    'Hoe Helvaro werkt \u00b7 AI-agents die je herhaalwerk overnemen': {
+      fr: 'Comment fonctionne Helvaro \u00b7 des agents IA qui reprennent votre travail r\u00e9p\u00e9titif',
+      en: 'How Helvaro works \u00b7 AI agents that take over your repetitive work',
+      de: 'So funktioniert Helvaro \u00b7 KI-Agents, die Ihre Routinearbeit \u00fcbernehmen',
+      es: 'C\u00f3mo funciona Helvaro \u00b7 agentes de IA que asumen tu trabajo repetitivo'
     },
-    'Helvaro \u00b7 AI agents that follow up every lead on WhatsApp': {
-      nl: 'Helvaro \u00b7 AI-agents die elke lead opvolgen via WhatsApp',
-      fr: 'Helvaro \u00b7 des agents IA qui suivent chaque lead sur WhatsApp',
-      de: 'Helvaro \u00b7 KI-Agents, die jeden Lead \u00fcber WhatsApp nachverfolgen',
-      es: 'Helvaro \u00b7 agentes de IA que siguen cada lead por WhatsApp'
+    'Plan je gratis werkaudit \u00b7 Helvaro': {
+      fr: 'Planifiez votre audit de travail gratuit \u00b7 Helvaro',
+      en: 'Book your free work audit \u00b7 Helvaro',
+      de: 'Ihr kostenloses Arbeits-Audit planen \u00b7 Helvaro',
+      es: 'Agenda tu auditor\u00eda de trabajo gratuita \u00b7 Helvaro'
     },
-    'Why Helvaro \u00b7 how AI agents follow up your leads on WhatsApp': {
-      nl: 'Waarom Helvaro \u00b7 zo volgen AI-agents je leads op via WhatsApp',
-      fr: 'Pourquoi Helvaro \u00b7 comment des agents IA suivent vos leads',
-      de: 'Warum Helvaro \u00b7 so verfolgen KI-Agents Ihre Leads nach',
-      es: 'Por qu\u00e9 Helvaro \u00b7 as\u00ed siguen tus leads los agentes de IA'
+    'Gratis strategiegesprek plannen \u00b7 Helvaro': {
+      fr: 'Planifier un entretien strat\u00e9gique gratuit \u00b7 Helvaro',
+      en: 'Book a free strategy call \u00b7 Helvaro',
+      de: 'Kostenloses Strategiegespr\u00e4ch planen \u00b7 Helvaro',
+      es: 'Agenda una sesi\u00f3n de estrategia gratuita \u00b7 Helvaro'
     },
-    'Book a lead audit \u00b7 Helvaro': {
-      nl: 'Plan een werkaudit \u00b7 Helvaro',
-      fr: 'Planifier un audit de leads \u00b7 Helvaro',
-      de: 'Lead-Audit planen \u00b7 Helvaro',
-      es: 'Agenda una auditor\u00eda de leads \u00b7 Helvaro'
+    'Start je 14 dagen gratis \u00b7 Helvaro': {
+      fr: 'Commencez vos 14 jours gratuits \u00b7 Helvaro',
+      en: 'Start your 14 free days \u00b7 Helvaro',
+      de: 'Starten Sie Ihre 14 Tage gratis \u00b7 Helvaro',
+      es: 'Empieza tus 14 d\u00edas gratis \u00b7 Helvaro'
     },
-    'Contact \u00b7 Helvaro': {
-      nl: 'Contact \u00b7 Helvaro', fr: 'Contact \u00b7 Helvaro',
-      de: 'Kontakt \u00b7 Helvaro', es: 'Contacto \u00b7 Helvaro'
-    },
-    'Privacy policy \u00b7 Helvaro': {
-      nl: 'Privacybeleid \u00b7 Helvaro',
+    'Privacybeleid \u00b7 Helvaro': {
       fr: 'Politique de confidentialit\u00e9 \u00b7 Helvaro',
+      en: 'Privacy policy \u00b7 Helvaro',
       de: 'Datenschutzerkl\u00e4rung \u00b7 Helvaro',
       es: 'Pol\u00edtica de privacidad \u00b7 Helvaro'
     }
@@ -74,7 +71,10 @@
   var baseTitle = document.title;
   function applyTitle(lang){
     var set = TITLES[baseTitle];
-    document.title = (lang === 'en' || !set || !set[lang]) ? baseTitle : set[lang];
+    /* De titel in de HTML staat Nederlands. Hier stond 'en', nog uit de tijd
+       dat de brontitel Engels was, waardoor het tabblad Nederlands bleef
+       terwijl de pagina Engels werd. */
+    document.title = (lang === 'nl' || !set || !set[lang]) ? baseTitle : set[lang];
   }
 
   /* Zinnen met opmaak erin: die splitsen in losse tekstknopen, waardoor
