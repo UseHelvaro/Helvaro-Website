@@ -5842,3 +5842,24 @@ body { background: var(--surface-1); }
 .dash-recent li,
 .wa-name,
 .wa-status { font-size: 12px; }
+
+/* ============================================================
+   41. AFSLUITER EN VOETTEKST ZIJN ÉÉN BLOK
+   ------------------------------------------------------------
+   Allebei houtskool, maar er liep een randlijn tussen, en samen
+   stond er 170px lege donkerte tussen de knop en de eerste
+   voettekstkolom (110 onder + 60 boven). Dat leest als twee
+   secties die toevallig dezelfde kleur hebben, en het maakt het
+   donkere deel van de pagina onnodig groot.
+
+   Geen lijn, en de ruimte teruggebracht tot iets wat als één
+   afsluiting leest.
+   ============================================================ */
+.cta-band.op-houtskool + .footer {
+  border-top: 0;
+  padding-top: 24px;
+}
+.cta-band.op-houtskool { padding-bottom: 56px; }
+
+/* De scheiding binnen de voettekst mag wel zichtbaar zijn, maar zacht. */
+.op-houtskool .footer-bottom { border-top-color: rgba(232,215,177,0.14); }
