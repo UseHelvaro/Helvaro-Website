@@ -13,18 +13,34 @@
      spoor geel-rood erin, zodat het zand erbij hoort in plaats van erop
      ligt. Elke pagina leest uit deze variabelen, dus dit zet de hele site
      in één keer recht.                                                    */
-  --bg-0: #100E0A;
-  --bg-1: #17140F;
-  --bg-2: #1E1A14;
-  --bg-card: #262117;
-  --bg-card-hover: #2F2920;
+  /* Er was een licht en een donker thema met een schakelaar ertussen. Dat
+     zijn twee sites die je allebei moet onderhouden, en het dwingt elke
+     sectie in één van twee bakjes. Nu is er één versie.
 
-  /* Tonentrap voor secties. Niet om en om licht/donker, maar een verloop
-     dat de pagina van boven naar onder dieper laat worden. */
-  --surface-1: #17140F;
-  --surface-2: #1C1812;
-  --surface-3: #221D16;
-  --surface-4: #100E0A;
+     Room is de grond. Zand en tan zijn de trappen erboven. Houtskool is
+     geen tweede thema meer maar een accent: twee, hooguit drie momenten
+     op de pagina waar het dieper wordt. Licht voert de boventoon. */
+  --bg-0: #F3ECDD;
+  --bg-1: #FBF7EF;
+  --bg-2: #F7F1E4;
+  --bg-card: #FFFCF6;
+  --bg-card-hover: #FAF4E8;
+
+  /* Tonentrap: van room naar zand, met houtskool als sluitsteen. */
+  --surface-1: #FBF7EF;
+  --surface-2: #F7F1E4;
+  --surface-3: #F1E9D8;
+  --surface-4: #EADFC8;
+
+  /* Houtskool. Niet zwart, maar warm, zodat het bij het zand hoort.
+     Alleen voor de paar secties die dieper mogen. */
+  --ink-bg: #1C1810;
+  --ink-bg-2: #242016;
+  --ink-card: #2C271C;
+  --ink-line: #3A3327;
+  --ink-text-1: #F8F4EB;
+  --ink-text-2: #C6BCA9;
+  --ink-text-3: #9A9082;
 
   /* Vlakken in sand met donkere tekst erop: gelijk in beide thema's */
   --accent-fill: #E8D7B1;
@@ -33,37 +49,40 @@
   --on-accent: #121212;
 
   /* Accent voor tekst, randen en iconen: past zich aan het thema aan */
-  --accent: #E8D7B1;
-  --accent-hover: #DDCAA1;
-  --accent-dark: #C9AE7C;
-  --accent-light: #F0E4C8;
-  --accent-deep: #C9AE7C;
+  /* Zand blijft de vulkleur voor knoppen (donkere tekst erop). Als
+     tekstkleur op room haalt zand maar 1,7:1, dus daar staat dieper brons.
+     Op de houtskoolsecties schakelt dit terug naar zand, zie 34. */
+  --accent: #8A6A33;
+  --accent-hover: #75591F;
+  --accent-dark: #75591F;
+  --accent-light: #8A6A33;
+  --accent-deep: #6E5427;
 
   /* Kleurdriehoeken voor doorschijnende tinten */
-  --accent-rgb: 232,215,177;
-  --accent-deep-rgb: 201,174,124;
-  --layer-rgb: 255,250,240;   /* subtiele laag boven de achtergrond, warm */
-  --veil-rgb: 16,14,10;       /* sluier voor nav en modals */
+  --accent-rgb: 138,106,51;
+  --accent-deep-rgb: 110,84,39;
+  --layer-rgb: 32,27,18;      /* subtiele laag boven de achtergrond, warm */
+  --veil-rgb: 251,247,239;    /* sluier voor nav en modals */
 
-  --accent-glow: rgba(232,215,177,0.18);
+  --accent-glow: rgba(138,106,51,0.16);
 
-  /* Tekst was neutraal grijs. Nu warm, zodat het bij het zand hoort.
-     Contrast op --bg-1: 15,8:1 / 8,1:1 / 5,6:1. */
-  --text-1: #F8F4EB;
-  --text-2: #BDB3A1;
-  --text-3: #968C7C;
+  /* Warm bijna-zwart in plaats van blauwzwart.
+     Contrast op --bg-1: 15,1:1 / 7,4:1 / 4,6:1. */
+  --text-1: #201B12;
+  --text-2: #574E3E;
+  --text-3: #7C7160;
 
   --success: #22C55E;
   --warning: #D4A017;
   --error: #DC2626;
 
-  --border-0: #2A251C;
-  --border-1: #3A3327;
-  --border-2: rgba(232,215,177,0.35);
+  --border-0: #E7DCC6;
+  --border-1: #D6C7A8;
+  --border-2: rgba(138,106,51,0.4);
 
-  --shadow-card: 0 12px 44px rgba(10,8,4,0.5);
-  --hero-img-filter: grayscale(1) sepia(0.28) brightness(0.5) contrast(1.05);
-  --grain-opacity: 0.05;
+  --shadow-card: 0 10px 34px rgba(60,48,26,0.10);
+  --hero-img-filter: grayscale(1) sepia(0.2) brightness(1.75) contrast(0.82);
+  --grain-opacity: 0.025;
 
   --radius-s: 8px;
   --radius-m: 14px;
@@ -83,50 +102,6 @@
    brons zodat ze leesbaar blijven; sand blijft de vulkleur voor
    knoppen (donkere tekst erop haalt ruim voldoende contrast).
    ============================================================ */
-:root[data-theme="light"] {
-  /* Hier stond wit met blauwgrijze tekst (#111827, #4B5563, #6B7280) en
-     koele randen (#E5E7EB). Dat is de kant die het zand het hardst tegenwerkt:
-     zand op wit met koelgrijs eromheen leest als een grijze site met een
-     gele vlek. Alles hieronder is warm, en zuiver wit is nergens meer de
-     achtergrond. Room is de grond, zand de volgende trap. */
-  --bg-0: #F3ECDD;
-  --bg-1: #FBF7EF;
-  --bg-2: #F7F1E4;
-  --bg-card: #FFFCF6;
-  --bg-card-hover: #FAF4E8;
-
-  --surface-1: #FBF7EF;
-  --surface-2: #F7F1E4;
-  --surface-3: #F1E9D8;
-  --surface-4: #EADFC8;
-
-  --accent: #8A6A33;
-  --accent-hover: #75591F;
-  --accent-dark: #75591F;
-  --accent-light: #8A6A33;
-  --accent-deep: #6E5427;
-
-  --accent-rgb: 138,106,51;
-  --accent-deep-rgb: 110,84,39;
-  --layer-rgb: 32,27,18;
-  --veil-rgb: 251,247,239;
-
-  --accent-glow: rgba(138,106,51,0.16);
-
-  /* Warm bijna-zwart in plaats van blauwzwart.
-     Contrast op --bg-1: 15,1:1 / 7,4:1 / 4,6:1. */
-  --text-1: #201B12;
-  --text-2: #574E3E;
-  --text-3: #7C7160;
-
-  --border-0: #E7DCC6;
-  --border-1: #D6C7A8;
-  --border-2: rgba(138,106,51,0.4);
-
-  --shadow-card: 0 10px 34px rgba(60,48,26,0.10);
-  --hero-img-filter: grayscale(1) sepia(0.2) brightness(1.75) contrast(0.82);
-  --grain-opacity: 0.025;
-}
 
 /* === RESET === */
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1346,7 +1321,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    V2 — PREMIUM POLISH LAYER
    ============================================================ */
 
-::selection { background: rgba(var(--accent-rgb), 0.35); color: #ffffff; }
+::selection { background: rgba(var(--accent-rgb), 0.28); color: var(--text-1); }
 
 :focus-visible {
   outline: 2px solid var(--accent);
@@ -3058,8 +3033,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 /* Toon de zon in donkere modus (klik = naar licht), de maan in lichte modus */
 .theme-toggle .icon-sun { display: block; }
 .theme-toggle .icon-moon { display: none; }
-:root[data-theme="light"] .theme-toggle .icon-sun { display: none; }
-:root[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 
 .nav-mobile .theme-toggle { width: 100%; max-width: 280px; height: 46px; gap: 10px; }
 .nav-mobile .theme-toggle::after {
@@ -3078,9 +3051,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
               color 0.28s var(--ease) !important;
 }
 
-/* In het lichte thema hoeft de foto-overlay minder zwaar */
-:root[data-theme="light"] .photo-card::after {
-  background: linear-gradient(180deg, rgba(17,24,39,0.1) 0%, rgba(17,24,39,0.62) 55%, rgba(17,24,39,0.9) 100%);
+/* Eén versie, dus deze overlay geldt altijd. Warm bijna-zwart in plaats
+   van blauwzwart, zodat de foto bij de rest van de pagina hoort. */
+:root .photo-card::after {
+  background: linear-gradient(180deg, rgba(28,24,16,0.10) 0%, rgba(28,24,16,0.62) 55%, rgba(28,24,16,0.92) 100%);
 }
 /* De telefoon- en dashboardmockups blijven donker: dat zijn schermen */
 
@@ -3383,9 +3357,8 @@ select:focus-visible {
   filter: blur(28px);
   z-index: 0;
 }
-/* Op het lichte thema is Faro zelf bijna wit, dan helpt een warmere en
-   iets sterkere gloed om hem van de achtergrond te tillen. */
-:root[data-theme="light"] .faro-visual::before {
+/* Faro is zelf bijna wit, dus een warme gloed tilt hem van de room af. */
+:root .faro-visual::before {
   inset: 18% 16%;
   background: radial-gradient(circle, rgba(var(--accent-rgb), 0.34), rgba(var(--accent-rgb), 0) 72%);
   filter: blur(34px);
@@ -3406,8 +3379,9 @@ select:focus-visible {
 }
 /* Zwarte Faro op het donkere thema, witte op het lichte. Beide renders
    staan in de opmaak, het thema kiest welke er getoond wordt. */
-:root[data-theme="light"] .faro-donker { display: none; }
-:root[data-theme="dark"]  .faro-licht  { display: none; }
+/* Er is nog één versie van de site, dus ook nog één Faro-render: de
+   uitgesneden lichte. De donkere hoorde bij het donkere thema. */
+.faro-donker { display: none; }
 .faro-copy .section-label { display: inline-block; margin-bottom: 14px; }
 .faro-copy .section-title { margin-bottom: 16px; }
 .faro-copy .section-sub { margin-bottom: 28px; }
@@ -4568,16 +4542,8 @@ p { text-wrap: pretty; }
    3:1 voor grafische elementen niet), brons houdt op allebei stand. Daarom
    brons als standaard en sand op het donkere thema, waar hij op zijn best is.
    Geen filters of kleurbewerking: dit zijn de aangeleverde bestanden.     */
-:root[data-theme="dark"] .nav-logo img,
-:root[data-theme="dark"] img.footer-logo {
-  content: url("../assets/logo-sand.png");
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .nav-logo img,
-  :root:not([data-theme="light"]) img.footer-logo {
-    content: url("../assets/logo-sand.png");
-  }
-}
+/* Sand hoorde bij het donkere thema. Op room is brons het juiste logo,
+   en dat is nu het enige geval. */
 
 /* ============================================================================
    18. NAVIGATIE — DRIE NIVEAUS IN PLAATS VAN EEN
@@ -4941,8 +4907,7 @@ p { text-wrap: pretty; }
    dezelfde plek iets af te dekken, en de sprong vertelt je dat er iets
    nieuws staat. Wat NIET gebeurt is scroll-kaping -- geen vastgezette
    secties, geen animatie die je moet uitzitten. */
-:root                     { --faro-wolk: #F6F3EC; --faro-wolk-ink: #14110C; }
-:root[data-theme="light"] { --faro-wolk: #FFFCF6; --faro-wolk-ink: #201B12; }
+:root { --faro-wolk: #FFFCF6; --faro-wolk-ink: #201B12; }
 
 .faro-gids {
   position: fixed;
@@ -5694,3 +5659,75 @@ body { background: var(--surface-1); }
   border-top-color: var(--border-0);
   border-bottom-color: var(--border-0);
 }
+
+/* ============================================================
+   34. HOUTSKOOL ALS ACCENT, NIET ALS TWEEDE THEMA
+   ------------------------------------------------------------
+   Er was een lichte en een donkere versie met een schakelaar
+   ertussen. Nu is er één versie: room voert de boventoon, en
+   houtskool komt twee keer voor als rustpunt. De agentbalk
+   halverwege, en de afsluiter met de voettekst.
+
+   Dat is geen tweede thema. Het zijn twee secties in dezelfde
+   pagina die dieper staan, zoals een zwarte bladzijde in een
+   tijdschrift: je merkt dat je ergens anders bent zonder dat het
+   een andere site wordt.
+
+   Binnen deze secties draait het accent terug naar zand, want op
+   houtskool is brons te donker en zand juist goed.
+   ============================================================ */
+.op-houtskool {
+  background: var(--ink-bg);
+  color: var(--ink-text-1);
+
+  --text-1: var(--ink-text-1);
+  --text-2: var(--ink-text-2);
+  --text-3: var(--ink-text-3);
+  --bg-card: var(--ink-card);
+  --bg-card-hover: #353024;
+  --border-0: var(--ink-line);
+  --border-1: #48402F;
+  --border-2: rgba(232,215,177,0.35);
+
+  /* Zand als accent, het brons van de lichte kant haalt hier te weinig. */
+  --accent: #E8D7B1;
+  --accent-hover: #F0E4C8;
+  --accent-dark: #C9AE7C;
+  --accent-light: #F0E4C8;
+  --accent-deep: #C9AE7C;
+  --accent-rgb: 232,215,177;
+  --accent-deep-rgb: 201,174,124;
+  --accent-glow: rgba(232,215,177,0.18);
+  --layer-rgb: 255,250,240;
+  --shadow-card: 0 12px 44px rgba(8,6,3,0.5);
+}
+
+/* De overgang naar houtskool mag niet als een harde rand lezen. Een smalle
+   verloopstrook erboven laat room in houtskool zakken. */
+.op-houtskool { position: relative; }
+.op-houtskool::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: -70px;
+  height: 70px;
+  background: linear-gradient(180deg, transparent 0%, var(--ink-bg) 100%);
+  pointer-events: none;
+}
+
+/* De agentbalk zit in het midden van de pagina en is de eerste keer dat het
+   dieper wordt. */
+.agentbar.op-houtskool {
+  border-top: 0;
+  border-bottom: 0;
+  padding: 26px 0;
+}
+.agentbar.op-houtskool .agent-chip {
+  background: var(--ink-bg-2);
+  border-color: var(--ink-line);
+}
+
+/* De afsluiter en de voettekst horen bij elkaar: samen één donker blok
+   onderaan, zonder naad ertussen. */
+.cta-band.op-houtskool { background: var(--ink-bg); }
+.cta-band.op-houtskool + .footer { background: var(--ink-bg); }
+.footer.op-houtskool::before { display: none; }

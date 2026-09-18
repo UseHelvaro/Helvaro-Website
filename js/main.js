@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCalculator();
   initBooking();
   initDemoForm();
-  initTheme();
   initSignature();
   initWordAnim();
   initMagnetic();
@@ -765,41 +764,6 @@ function initDemoForm() {
    even in de verkeerde kleur flitst; hier hangen we enkel de
    knop eraan.
    ============================================================ */
-function initTheme() {
-  var root = document.documentElement;
-
-  function current() {
-    return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-  }
-
-  function apply(theme, animate) {
-    if (animate) {
-      root.classList.add('theme-anim');
-      window.setTimeout(function () { root.classList.remove('theme-anim'); }, 320);
-    }
-    root.setAttribute('data-theme', theme);
-    try { localStorage.setItem('helvaro_theme', theme); } catch (e) {}
-    /* De browserbalk mee laten kleuren. Stond als twee media-query-metatags in
-       de head, maar die keken naar de voorkeur van het BESTURINGSSYSTEEM -- en
-       die bepaalt hier niets meer sinds donker de standaard is. */
-    var kleurTag = document.querySelector('meta[name="theme-color"]');
-    /* Deze twee moeten gelijk zijn aan --surface-1 in beide thema's, anders
-       staat de browserbalk in een andere kleur dan de pagina eronder. */
-    if (kleurTag) kleurTag.setAttribute('content', theme === 'dark' ? '#17140F' : '#FBF7EF');
-    document.querySelectorAll('.theme-toggle').forEach(function (btn) {
-      btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-    });
-  }
-
-  // Beginwaarde vastleggen (de head-code zette het attribuut al)
-  apply(current(), false);
-
-  document.querySelectorAll('.theme-toggle').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      apply(current() === 'dark' ? 'light' : 'dark', true);
-    });
-  });
-}
 
 /* ============================================================
    WHATSAPP MOCKUP — typindicator en berichten
