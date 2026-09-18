@@ -294,3 +294,33 @@ Object.assign(window.HELVARO_TR['de'], {
   "Wat gebeurt er na veertien dagen?": "Was passiert nach vierzehn Tagen?",
   "We zetten je agent op": "Wir richten Ihren Agent ein"
 });
+
+Object.assign(window.HELVARO_TR['de'], {
+  "Neem op terwijl je aan een auto staat": "Abheben, während Sie am Auto stehen",
+  "Je telefoonagent neemt de oproep aan, noteert het kenteken en boekt de beurt. Je monteur legt zijn sleutel niet neer.": "Ihr Telefon-Agent nimmt den Anruf an, notiert das Kennzeichen und bucht den Termin. Ihr Mechaniker legt den Schlüssel nicht weg.",
+  "Het kenteken vertelt de rest": "Das Kennzeichen erzählt den Rest",
+  "Eén kenteken en je agent weet merk, model, bouwjaar en tot wanneer de keuring geldig is. De klant hoeft niets uit te leggen.": "Ein Kennzeichen, und Ihr Agent kennt Marke, Modell, Baujahr und bis wann die Prüfung gültig ist. Der Kunde muss nichts erklären.",
+  "Je werkplaats vult zichzelf": "Ihre Werkstatt füllt sich von selbst",
+  "Onderhoud, keuring en proefritten gaan rechtstreeks in de planning. Jij opent je agenda en de posten staan al gevuld.": "Wartung, Prüfung und Probefahrten gehen direkt in die Planung. Sie öffnen Ihren Kalender und die Plätze sind schon belegt.",
+  "Kenteken herkend": "Kennzeichen erkannt",
+  "Proefrit ingepland": "Probefahrt geplant",
+  "Donderdag 10:30": "Donnerstag 10:30",
+  "Dag, ik zag jullie Golf staan op AutoScout24 👋 Is die er nog?": "Hallo, ich habe Ihren Golf auf AutoScout24 gesehen 👋 Ist der noch da?",
+  "Hoi! Die staat er nog 🙌 Rijd je nu zelf iets dat je wil inruilen?": "Hallo! Der ist noch da 🙌 Fahren Sie selbst etwas, das Sie in Zahlung geben möchten?",
+  "Ja, een Passat. Kenteken 1-ABC-234": "Ja, einen Passat. Kennzeichen 1-ABC-234",
+  "Passat 2.0 TDI uit 2017, keuring geldig tot 3 maart. Hoeveel km staat er ongeveer op?": "Passat 2.0 TDI von 2017, Prüfung gültig bis 3. März. Wie viele km stehen ungefähr drauf?",
+  "Rond de 168.000": "Rund 168.000",
+  "Genoteerd. Donderdag 10:30 vrij voor een proefrit en een schatting van je inruil?": "Notiert. Donnerstag 10:30 frei für eine Probefahrt und eine Schätzung Ihrer Inzahlungnahme?",
+  "Top, doen we 👍": "Super, machen wir 👍",
+  "📅 Proefrit bevestigd, donderdag 10:30": "📅 Probefahrt bestätigt, Donnerstag 10:30",
+  "Zo klinkt het bij een kandidaat": "So klingt es bei einem Interessenten",
+  "Zaterdagavond kwart voor tien. Je kantoor is dicht, de afspraak staat.": "Samstagabend, Viertel vor zehn. Ihr Büro ist zu, der Termin steht.",
+  "Zo klinkt het bij een aanvraag": "So klingt es bei einer Anfrage",
+  "Dag, wat kost een badkamer renoveren ongeveer? 👋": "Hallo, was kostet eine Badsanierung ungefähr? 👋",
+  "Hoi! Dat hangt af van een paar dingen. Gaat het om volledig strippen of enkel vernieuwen?": "Hallo! Das hängt von ein paar Dingen ab. Geht es um komplett entkernen oder nur erneuern?",
+  "Volledig strippen, ongeveer 8m². In Aalst": "Komplett entkernen, etwa 8m². In Aalst",
+  "Duidelijk, dat zit binnen ons werkgebied. Wanneer zou je willen starten, en heb je een richtbudget?": "Alles klar, das liegt in unserem Gebiet. Wann möchten Sie starten, und haben Sie ein Richtbudget?",
+  "Na de zomer, rond 15.000": "Nach dem Sommer, rund 15.000",
+  "📅 Plaatsbezoek bevestigd, dinsdag 08:30": "📅 Ortstermin bestätigt, Dienstag 08:30",
+  "Type, omvang, locatie, timing en budget. Alles wat je nodig hebt voor je iets opmaakt.": "Art, Umfang, Ort, Zeitrahmen und Budget. Alles, was Sie brauchen, bevor Sie etwas erstellen."
+});

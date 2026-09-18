@@ -35,7 +35,8 @@ our $NEGEER = qr/^(?:Helvaro|Faro|Login|Home|Contact|FAQ|WhatsApp|Automotive|
                     # Talen staan in hun eigen taal in de kiezer, dat is de bedoeling.
                     Nederlands|Deutsch|English|Fran\x{00e7}ais|Espa\x{00f1}ol|
                     # Namen, merken en vaste termen.
-                    Mathis\s.*|Sindi\sSaid|Stefan\sV\.|Teljo\sCrisrosio\sKodia|
+                    Mathis\s.*|Driss\s.*|Wout\s.*|Sindi\sSaid|Stefan\sV\.|
+                    Teljo\sCrisrosio\sKodia|Passat.*|
                     Co-Founder\s.*|Limited\sUse|E-Mail:?|Google\sAgenda|
                     app\.helvaro\.pro|hello\@helvaro\.pro|\x{00a9}\s*\d{4}\sHelvaro)$/x;
 
@@ -123,7 +124,8 @@ my %ENT = (
   'hellip' => "\x{2026}", 'rsquo' => "\x{2019}", 'lsquo' => "\x{2018}",
   'ldquo' => "\x{201c}", 'rdquo' => "\x{201d}", 'laquo' => "\x{00ab}",
   'raquo' => "\x{00bb}", 'times' => "\x{00d7}", 'rarr' => "\x{2192}",
-  'larr' => "\x{2190}", 'eacute' => "\x{00e9}", 'egrave' => "\x{00e8}",
+  'larr' => "\x{2190}", 'sup2' => "\x{00b2}", 'deg' => "\x{00b0}",
+  'eacute' => "\x{00e9}", 'egrave' => "\x{00e8}",
   'ccedil' => "\x{00e7}", 'ntilde' => "\x{00f1}", 'uuml' => "\x{00fc}",
   'auml' => "\x{00e4}", 'ouml' => "\x{00f6}", 'szlig' => "\x{00df}",
   'iacute' => "\x{00ed}", 'oacute' => "\x{00f3}", 'aacute' => "\x{00e1}",

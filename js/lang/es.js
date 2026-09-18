@@ -294,3 +294,33 @@ Object.assign(window.HELVARO_TR['es'], {
   "Wat gebeurt er na veertien dagen?": "¿Qué pasa después de catorce días?",
   "We zetten je agent op": "Configuramos tu agente"
 });
+
+Object.assign(window.HELVARO_TR['es'], {
+  "Neem op terwijl je aan een auto staat": "Contesta mientras estás con un coche",
+  "Je telefoonagent neemt de oproep aan, noteert het kenteken en boekt de beurt. Je monteur legt zijn sleutel niet neer.": "Tu agente de voz atiende la llamada, anota la matrícula y reserva el mantenimiento. Tu mecánico no suelta la llave.",
+  "Het kenteken vertelt de rest": "La matrícula cuenta el resto",
+  "Eén kenteken en je agent weet merk, model, bouwjaar en tot wanneer de keuring geldig is. De klant hoeft niets uit te leggen.": "Una matrícula y tu agente sabe marca, modelo, año y hasta cuándo vale la inspección. El cliente no tiene que explicar nada.",
+  "Je werkplaats vult zichzelf": "Tu taller se llena solo",
+  "Onderhoud, keuring en proefritten gaan rechtstreeks in de planning. Jij opent je agenda en de posten staan al gevuld.": "Mantenimiento, inspección y pruebas de conducción van directos a la planificación. Abres tu agenda y los puestos ya están llenos.",
+  "Kenteken herkend": "Matrícula reconocida",
+  "Proefrit ingepland": "Prueba de conducción agendada",
+  "Donderdag 10:30": "Jueves 10:30",
+  "Dag, ik zag jullie Golf staan op AutoScout24 👋 Is die er nog?": "Hola, he visto vuestro Golf en AutoScout24 👋 ¿Sigue disponible?",
+  "Hoi! Die staat er nog 🙌 Rijd je nu zelf iets dat je wil inruilen?": "¡Hola! Sigue aquí 🙌 ¿Tienes algún coche que quieras entregar a cuenta?",
+  "Ja, een Passat. Kenteken 1-ABC-234": "Sí, un Passat. Matrícula 1-ABC-234",
+  "Passat 2.0 TDI uit 2017, keuring geldig tot 3 maart. Hoeveel km staat er ongeveer op?": "Passat 2.0 TDI de 2017, inspección válida hasta el 3 de marzo. ¿Cuántos km tiene más o menos?",
+  "Rond de 168.000": "Unos 168.000",
+  "Genoteerd. Donderdag 10:30 vrij voor een proefrit en een schatting van je inruil?": "Anotado. ¿Jueves 10:30 libre para una prueba y una tasación de tu entrega?",
+  "Top, doen we 👍": "Genial, hecho 👍",
+  "📅 Proefrit bevestigd, donderdag 10:30": "📅 Prueba confirmada, jueves 10:30",
+  "Zo klinkt het bij een kandidaat": "Así suena para un candidato",
+  "Zaterdagavond kwart voor tien. Je kantoor is dicht, de afspraak staat.": "Sábado por la noche, las diez menos cuarto. Tu oficina está cerrada, la cita está hecha.",
+  "Zo klinkt het bij een aanvraag": "Así suena en una solicitud",
+  "Dag, wat kost een badkamer renoveren ongeveer? 👋": "Hola, ¿cuánto cuesta más o menos reformar un baño? 👋",
+  "Hoi! Dat hangt af van een paar dingen. Gaat het om volledig strippen of enkel vernieuwen?": "¡Hola! Depende de un par de cosas. ¿Es un desmontaje completo o solo renovar?",
+  "Volledig strippen, ongeveer 8m². In Aalst": "Desmontaje completo, unos 8m². En Aalst",
+  "Duidelijk, dat zit binnen ons werkgebied. Wanneer zou je willen starten, en heb je een richtbudget?": "Entendido, entra en nuestra zona. ¿Cuándo querrías empezar y tienes un presupuesto orientativo?",
+  "Na de zomer, rond 15.000": "Después del verano, sobre 15.000",
+  "📅 Plaatsbezoek bevestigd, dinsdag 08:30": "📅 Visita a obra confirmada, martes 08:30",
+  "Type, omvang, locatie, timing en budget. Alles wat je nodig hebt voor je iets opmaakt.": "Tipo, tamaño, ubicación, plazos y presupuesto. Todo lo que necesitas antes de hacer nada."
+});

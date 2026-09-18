@@ -294,3 +294,33 @@ Object.assign(window.HELVARO_TR['en'], {
   "Wat gebeurt er na veertien dagen?": "What happens after fourteen days?",
   "We zetten je agent op": "We set up your agent"
 });
+
+Object.assign(window.HELVARO_TR['en'], {
+  "Neem op terwijl je aan een auto staat": "Answer while you're under a car",
+  "Je telefoonagent neemt de oproep aan, noteert het kenteken en boekt de beurt. Je monteur legt zijn sleutel niet neer.": "Your voice agent takes the call, notes the plate and books the service. Your mechanic never puts down a spanner.",
+  "Het kenteken vertelt de rest": "The plate tells the rest",
+  "Eén kenteken en je agent weet merk, model, bouwjaar en tot wanneer de keuring geldig is. De klant hoeft niets uit te leggen.": "One plate and your agent knows make, model, year and how long the inspection is still valid. The customer has to explain nothing.",
+  "Je werkplaats vult zichzelf": "Your workshop fills itself",
+  "Onderhoud, keuring en proefritten gaan rechtstreeks in de planning. Jij opent je agenda en de posten staan al gevuld.": "Servicing, inspections and test drives go straight into the schedule. You open your calendar and the bays are already booked.",
+  "Kenteken herkend": "Plate recognised",
+  "Proefrit ingepland": "Test drive booked",
+  "Donderdag 10:30": "Thursday 10:30",
+  "Dag, ik zag jullie Golf staan op AutoScout24 👋 Is die er nog?": "Hi, I saw your Golf on AutoScout24 👋 Is it still available?",
+  "Hoi! Die staat er nog 🙌 Rijd je nu zelf iets dat je wil inruilen?": "Hi! It's still here 🙌 Are you driving something you'd want to trade in?",
+  "Ja, een Passat. Kenteken 1-ABC-234": "Yes, a Passat. Plate 1-ABC-234",
+  "Passat 2.0 TDI uit 2017, keuring geldig tot 3 maart. Hoeveel km staat er ongeveer op?": "Passat 2.0 TDI from 2017, inspection valid until 3 March. Roughly how many km does it have?",
+  "Rond de 168.000": "Around 168,000",
+  "Genoteerd. Donderdag 10:30 vrij voor een proefrit en een schatting van je inruil?": "Noted. Thursday 10:30 free for a test drive and a trade-in valuation?",
+  "Top, doen we 👍": "Great, let's do it 👍",
+  "📅 Proefrit bevestigd, donderdag 10:30": "📅 Test drive confirmed, Thursday 10:30",
+  "Zo klinkt het bij een kandidaat": "How it sounds to a prospect",
+  "Zaterdagavond kwart voor tien. Je kantoor is dicht, de afspraak staat.": "Quarter to ten on a Saturday evening. Your office is closed, the appointment is booked.",
+  "Zo klinkt het bij een aanvraag": "How it sounds on an enquiry",
+  "Dag, wat kost een badkamer renoveren ongeveer? 👋": "Hi, roughly what does renovating a bathroom cost? 👋",
+  "Hoi! Dat hangt af van een paar dingen. Gaat het om volledig strippen of enkel vernieuwen?": "Hi! That depends on a few things. Is it a full strip-out or just an update?",
+  "Volledig strippen, ongeveer 8m². In Aalst": "Full strip-out, about 8m². In Aalst",
+  "Duidelijk, dat zit binnen ons werkgebied. Wanneer zou je willen starten, en heb je een richtbudget?": "Clear, that's within our area. When would you want to start, and do you have a rough budget?",
+  "Na de zomer, rond 15.000": "After the summer, around 15,000",
+  "📅 Plaatsbezoek bevestigd, dinsdag 08:30": "📅 Site visit confirmed, Tuesday 08:30",
+  "Type, omvang, locatie, timing en budget. Alles wat je nodig hebt voor je iets opmaakt.": "Type, size, location, timing and budget. Everything you need before you draw anything up."
+});

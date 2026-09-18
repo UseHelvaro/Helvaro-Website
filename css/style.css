@@ -5396,3 +5396,81 @@ p { text-wrap: pretty; }
   color: var(--accent);
   font-weight: 700;
 }
+
+/* Stap-lijst op de sectorpagina's: de li is een raster van twee kolommen,
+   maar er stonden drie kinderen in (het nummer, de titel en de tekst). De
+   tekst belandde daardoor in de kolom van 34px en brak af op elk woord.
+   Titel en tekst horen allebei in kolom twee. */
+.sector-steps li > strong,
+.sector-steps li > span {
+  grid-column: 2;
+  min-width: 0;
+}
+
+/* "Andere sectoren" brak over twee regels en duwde het pijltje weg. */
+.navdrop-toggle { white-space: nowrap; }
+
+/* Andere sectoren onder de automotive-sectie: één regel, geen eigen blok
+   met knop. Automotive is het verhaal, de rest is een voetnoot. */
+.sol-andere {
+  text-align: center;
+  margin: 34px 0 0;
+  font-size: 15px;
+  color: var(--text-3);
+}
+.sol-andere a { color: var(--accent-text, var(--accent)); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ============================================================
+   27. GESPREK OP DE SECTORPAGINA
+   ------------------------------------------------------------
+   Dezelfde bubbels als in de telefoon op de homepagina, maar
+   zonder toestel eromheen: hier is het een voorbeeld in de tekst,
+   geen product-shot.
+   ============================================================ */
+.sector-chat {
+  background: var(--bg-card);
+  border: 1px solid var(--border-0);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  margin: 24px 0 12px;
+  max-width: 560px;
+}
+.sector-chat .wa-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-0);
+  background: var(--bg-0);
+}
+.sector-chat .wa-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: #121212;
+  font-family: var(--font-h);
+  font-weight: 700;
+  font-size: 15px;
+  flex: none;
+}
+.sector-chat .wa-contact { display: flex; flex-direction: column; line-height: 1.3; }
+.sector-chat .wa-name { font-family: var(--font-h); font-size: 14.5px; font-weight: 600; color: var(--text-1); }
+.sector-chat .wa-status { font-size: 12px; color: var(--good, #22C55E); }
+.sector-chat .wa-chat { padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+.sector-chat .wa-msg { display: flex; flex-direction: column; max-width: 84%; }
+.sector-chat .wa-msg.sent { align-self: flex-end; align-items: flex-end; }
+.sector-chat .wa-msg.received { align-self: flex-start; align-items: flex-start; }
+.sector-chat .wa-bubble,
+.sector-chat .wa-bubble-link {
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+.sector-chat .wa-msg.sent .wa-bubble { background: rgba(var(--accent-rgb), 0.16); color: var(--text-1); border-bottom-right-radius: 5px; }
+.sector-chat .wa-msg.received .wa-bubble { background: var(--bg-0); border: 1px solid var(--border-0); color: var(--text-1); border-bottom-left-radius: 5px; }
+.sector-chat .wa-bubble-link { background: var(--accent); color: #121212; font-weight: 600; border-bottom-left-radius: 5px; }
+.sector-chat .wa-time { font-size: 11px; color: var(--text-3); margin-top: 4px; }
+.sector-chat-bij { font-size: 14px; color: var(--text-3); font-style: italic; margin: 0 0 8px; }
