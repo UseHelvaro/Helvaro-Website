@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <script>document.documentElement.classList.add('js');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina niet gevonden · Helvaro</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#17140F">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
+    (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+  </script>
+  <link rel="stylesheet" href="/css/style.css?v=73">
+  <style>
+    /* Deze pagina heeft geen navigatie en geen voettekst. Wie hier belandt,
+       is iets kwijt: dan is één weg terug duidelijker dan een volledig menu. */
+    .nf {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+      background:
+        radial-gradient(120% 90% at 50% 0%, rgba(var(--accent-rgb), 0.10) 0%, transparent 60%),
+        var(--surface-1);
+    }
+    .nf-inner { max-width: 560px; text-align: center; }
+    .nf-logo { width: 56px; height: 56px; margin: 0 auto 30px; display: block; }
+    .nf-code {
+      font-family: var(--font-h);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+    }
+    .nf h1 {
+      font-family: var(--font-h);
+      font-size: clamp(30px, 5.5vw, 44px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--text-1);
+      margin: 0 0 16px;
+      text-wrap: balance;
+    }
+    .nf p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text-2);
+      margin: 0 auto 30px;
+      max-width: 44ch;
+    }
+    .nf-acties { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .nf-faro {
+      width: 150px;
+      height: auto;
+      margin: 38px auto 0;
+      display: block;
+      opacity: 0.9;
+    }
+    @media (max-width: 560px) { .nf-faro { width: 116px; } }
+  </style>
+</head>
+<body>
+  <main class="nf" id="main">
+    <div class="nf-inner">
+      <img class="nf-logo" src="/assets/logo-brons.png" alt="Helvaro" width="56" height="56">
+
+      <p class="nf-code" data-nf="code">Fout 404</p>
+      <h1 data-nf="titel">Deze pagina bestaat niet.</h1>
+      <p data-nf="tekst">Misschien is de link verouderd, of staat er een tikfout in het adres. Faro kijkt mee, maar deze heeft hij ook niet gevonden.</p>
+
+      <div class="nf-acties">
+        <a href="/" class="btn btn-lg" data-nf="home">Naar de homepagina</a>
+        <a href="/meeting.html" class="btn btn-ghost btn-lg" data-nf="audit">Plan een werkaudit</a>
+      </div>
+
+      <picture>
+        <source srcset="/assets/faro-donker.webp?v=4" type="image/webp">
+        <img class="nf-faro" src="/assets/faro-donker.png?v=4" alt="" aria-hidden="true" width="840" height="840" decoding="async">
+      </picture>
+    </div>
+  </main>
+
+  <script>
+  /* Vercel serveert dit bestand voor de hele site, ook onder /fr/ en /de/.
+     Er is dus één 404-pagina voor vijf talen. De taal komt uit het pad, en
+     de links eronder blijven binnen diezelfde taal. */
+  (function () {
+    var T = {
+      nl: { code: 'Fout 404', titel: 'Deze pagina bestaat niet.',
+            tekst: 'Misschien is de link verouderd, of staat er een tikfout in het adres. Faro kijkt mee, maar deze heeft hij ook niet gevonden.',
+            home: 'Naar de homepagina', audit: 'Plan een werkaudit', titel_tab: 'Pagina niet gevonden · Helvaro' },
+      fr: { code: 'Erreur 404', titel: "Cette page n'existe pas.",
+            tekst: "Le lien est peut-être périmé, ou l'adresse contient une faute de frappe. Faro regarde aussi, mais il ne l'a pas trouvée non plus.",
+            home: "Retour à l'accueil", audit: 'Planifier un audit de travail', titel_tab: 'Page introuvable · Helvaro' },
+      en: { code: 'Error 404', titel: 'This page does not exist.',
+            tekst: 'The link may be out of date, or there is a typo in the address. Faro had a look too, and could not find it either.',
+            home: 'Back to the homepage', audit: 'Book a work audit', titel_tab: 'Page not found · Helvaro' },
+      de: { code: 'Fehler 404', titel: 'Diese Seite gibt es nicht.',
+            tekst: 'Vielleicht ist der Link veraltet, oder die Adresse enthält einen Tippfehler. Faro hat auch nachgesehen und sie ebenfalls nicht gefunden.',
+            home: 'Zur Startseite', audit: 'Arbeits-Audit planen', titel_tab: 'Seite nicht gefunden · Helvaro' },
+      es: { code: 'Error 404', titel: 'Esta página no existe.',
+            tekst: 'Puede que el enlace esté desactualizado o que la dirección tenga una errata. Faro también lo ha mirado y tampoco la ha encontrado.',
+            home: 'Volver al inicio', audit: 'Agenda una auditoría de trabajo', titel_tab: 'Página no encontrada · Helvaro' }
+    };
+
+    var m = location.pathname.match(/^\/(fr|en|de|es)(\/|$)/);
+    var lang = m ? m[1] : 'nl';
+    var t = T[lang];
+    var wortel = lang === 'nl' ? '/' : '/' + lang + '/';
+
+    document.documentElement.lang = lang;
+    document.title = t.titel_tab;
+
+    document.querySelectorAll('[data-nf]').forEach(function (el) {
+      var sleutel = el.getAttribute('data-nf');
+      if (t[sleutel]) el.textContent = t[sleutel];
+    });
+
+    /* Terug naar de eigen taal, niet naar het Nederlands. */
+    var home = document.querySelector('[data-nf="home"]');
+    if (home) home.setAttribute('href', wortel);
+    var audit = document.querySelector('[data-nf="audit"]');
+    if (audit) audit.setAttribute('href', wortel + 'meeting.html');
+  })();
+  </script>
+  <script src="/js/main.js?v=30"></script>
+</body>
+</html>

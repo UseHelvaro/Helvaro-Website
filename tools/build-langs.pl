@@ -232,6 +232,49 @@ sub zet_taalkiezer {
   return $html;
 }
 
+# ── FAQ-gegevens voor Google ────────────────────────────────────────────────
+# De vragen en antwoorden staan al als tekst op de pagina. Die hier nog eens
+# met de hand in JSON overtypen betekent twee plekken die uit elkaar gaan
+# lopen. Dus lezen we ze uit de pagina zelf, ná het vertalen, waardoor elke
+# taal vanzelf de juiste tekst krijgt.
+sub json_tekst {
+  my ($s) = @_;
+  $s = decode_ents($s);
+  $s =~ s/\s+/ /g;
+  $s =~ s/^\s+|\s+$//g;
+  $s =~ s/\\/\\\\/g;
+  $s =~ s/"/\\"/g;
+  return $s;
+}
+sub faq_schema {
+  my ($html) = @_;
+  my (@q, @a);
+  while ($html =~ /<button class="faq-question"[^>]*>\s*(.*?)\s*<span class="faq-chevron"/gs) { push @q, $1 }
+  while ($html =~ /<p class="faq-answer-inner">(.*?)<\/p>/gs)                                  { push @a, $1 }
+  return '' unless @q && @q == @a;
+
+  my @items;
+  for my $i (0 .. $#q) {
+    my $vraag    = json_tekst($q[$i]);
+    my $antwoord = json_tekst($a[$i]);
+    $antwoord =~ s/<[^>]*>//g;
+    next unless length $vraag && length $antwoord;
+    push @items, qq({"\@type":"Question","name":"$vraag","acceptedAnswer":{"\@type":"Answer","text":"$antwoord"}});
+  }
+  return '' unless @items;
+  return qq(\n  <script type="application/ld+json">\n)
+       . qq({"\@context":"https://schema.org","\@type":"FAQPage","mainEntity":[)
+       . join(',', @items)
+       . qq(]}\n  </script>);
+}
+sub zet_faq_schema {
+  my ($html) = @_;
+  $html =~ s{\n\s*<script type="application/ld\+json">\s*\{"\@context":"https://schema\.org","\@type":"FAQPage".*?</script>}{}gs;
+  my $blok = faq_schema($html);
+  $html =~ s{(\n</head>)}{$blok$1} if $blok;
+  return $html;
+}
+
 for my $lang (@LANGS) { remove_tree($lang) if -d $lang; }
 
 my %MIST = map { $_ => {} } @LANGS;
@@ -252,6 +295,7 @@ for my $pagina (@PAGES) {
   my $alt = alternates($pagina);
   $nl =~ s{(<link rel="canonical"[^>]*>)}{$1$alt};
   $nl = zet_taalkiezer($nl, $pagina, 'nl');
+  $nl = zet_faq_schema($nl);
   if ($nl ne $bron) {
     open my $o, '>:raw', $pagina or die "$pagina: $!";
     print $o encode_utf8($nl);
@@ -337,6 +381,8 @@ for my $pagina (@PAGES) {
 
     # 5h. De browservertaling mag hier niets meer doen.
     $h =~ s{<body}{<body data-vertaald="$lang"};
+
+    $h = zet_faq_schema($h);
 
     my $doelpad = "$lang/$pagina";
     make_path(dirname($doelpad));
