@@ -1148,14 +1148,31 @@ function initNavDrop() {
   });
 }
 
-/* ── Video zonder trackers ──────────────────────────────────────────────
-   Er staat eerst alleen een vlak met een afspeelknop. Pas bij een klik
-   komt de iframe, en dan via youtube-nocookie.com. Tot dat moment gaat er
-   geen enkel verzoek naar Google, ook niet voor een thumbnail.
+/* ── Video ──────────────────────────────────────────────────────────────
+   Er staat eerst alleen een vlak met een afspeelknop. De iframe komt er
+   pas als de video echt aan de beurt is, en altijd via
+   youtube-nocookie.com. Tot dat moment gaat er geen enkel verzoek naar
+   Google, ook niet voor een thumbnail.
+
+   Staat er data-video-auto op het blok, dan start hij vanzelf zodra hij
+   half in beeld komt. Dat gebeurt zonder geluid: elke browser blokkeert
+   geluid dat uit zichzelf begint, en een marketingpagina die ongevraagd
+   begint te praten is sowieso vervelend. Er komt een knop bij om het
+   geluid alsnog aan te zetten. Die zet het geluid aan in de lopende
+   video, hij begint dus niet opnieuw.
+
+   Wie beweging heeft uitgezet of op een datazuinige verbinding zit,
+   krijgt de klikversie. Dan blijft het ook bij nul verzoeken.
 
    Staat er geen video-ID, dan doet dit niets: het blok is dan met CSS al
    verborgen. */
 function initVideo() {
+  const YT = 'https://www.youtube-nocookie.com';
+
+  let stil = false, zuinig = false;
+  try { stil = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  try { zuinig = !!(navigator.connection && navigator.connection.saveData); } catch (e) {}
+
   document.querySelectorAll('.ytfacade[data-video-id]').forEach((blok) => {
     const id = (blok.dataset.videoId || '').trim();
     if (!id) return;
@@ -1166,16 +1183,51 @@ function initVideo() {
     const titel = blok.dataset.videoTitel || 'Video';
     knop.setAttribute('aria-label', titel);
 
-    knop.addEventListener('click', () => {
+    const geluidknop = blok.querySelector('.ytfacade-geluid');
+    let gestart = false;
+
+    function start(zonderGeluid) {
+      if (gestart) return;
+      gestart = true;
+
       const frame = document.createElement('iframe');
       frame.className = 'ytfacade-speler';
-      frame.src = 'https://www.youtube-nocookie.com/embed/' +
-        encodeURIComponent(id) + '?autoplay=1&rel=0&modestbranding=1';
+      frame.src = YT + '/embed/' + encodeURIComponent(id) +
+        '?autoplay=1&rel=0&modestbranding=1&playsinline=1' +
+        (zonderGeluid ? '&mute=1&enablejsapi=1' : '');
       frame.title = titel;
       frame.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
       frame.referrerPolicy = 'strict-origin-when-cross-origin';
       frame.allowFullscreen = true;
       knop.replaceWith(frame);
-    });
+
+      if (!zonderGeluid || !geluidknop) return;
+
+      geluidknop.hidden = false;
+      geluidknop.addEventListener('click', () => {
+        /* Via de speler-API, zodat de video doorloopt waar hij is. */
+        try {
+          ['unMute', 'playVideo'].forEach((commando) => {
+            frame.contentWindow.postMessage(
+              JSON.stringify({ event: 'command', func: commando, args: [] }), YT);
+          });
+        } catch (e) {}
+        geluidknop.hidden = true;
+      });
+    }
+
+    knop.addEventListener('click', () => start(false));
+
+    if (!blok.hasAttribute('data-video-auto')) return;
+    if (stil || zuinig || !('IntersectionObserver' in window)) return;
+
+    const kijker = new IntersectionObserver((rijen) => {
+      rijen.forEach((rij) => {
+        if (!rij.isIntersecting) return;
+        kijker.disconnect();
+        start(true);
+      });
+    }, { threshold: 0.5 });
+    kijker.observe(blok);
   });
 }

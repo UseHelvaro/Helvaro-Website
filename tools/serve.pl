@@ -45,6 +45,7 @@ my $server = IO::Socket::INET->new(
   ReuseAddr => 1,
 ) or die "Kan poort $poort niet openen: $!\n";
 
+$SIG{PIPE} = "IGNORE";   # een browser die de verbinding dichtgooit mag de server niet meenemen
 $| = 1;
 print "Helvaro staat op http://localhost:$poort\n";
 print "Map: $wortel\n";

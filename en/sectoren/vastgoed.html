@@ -39,7 +39,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="../../css/style.css?v=85">
+  <link rel="stylesheet" href="../../css/style.css?v=86">
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://helvaro.pro/" },
@@ -196,16 +196,21 @@
              Bewust geen gewone embed: die legt contact met Google en zet
              trackers voor iemand iets aangeklikt heeft. Op een site die
              "data in de EU" als argument gebruikt, is dat moeilijk uit te
-             leggen. Hier gebeurt er niets tot iemand op afspelen drukt, en
-             dan via youtube-nocookie.com. -->
-        <figure class="ytfacade" data-video-id="RNFfdaaG2zc" data-video-titel="Dit huis bestaat nog niet">
+             leggen. Hier gebeurt er niets tot de video echt aan de beurt is,
+             en dan via youtube-nocookie.com.
+
+             data-video-auto laat hem vanzelf starten zodra hij half in
+             beeld komt, zonder geluid. De knop eronder zet het geluid aan.
+             Haal data-video-auto weg en het is weer puur klikken. -->
+        <figure class="ytfacade" data-video-auto data-video-id="RNFfdaaG2zc" data-video-titel="Dit huis bestaat nog niet">
           <button type="button" class="ytfacade-knop">
             <span class="ytfacade-play" aria-hidden="true"></span>
             <span class="ytfacade-tekst">
               <span class="ytfacade-titel">This house doesn't exist yet</span>
-              <span class="ytfacade-sub">39 seconds · YouTube only loads when you click</span>
+              <span class="ytfacade-sub">39 seconds · spoken English · starts without sound</span>
             </span>
           </button>
+          <button type="button" class="ytfacade-geluid" hidden>Turn on sound</button>
           <figcaption class="ytfacade-bij">Your seller has a tired house. Your buyer wants a home. Faro shows what it becomes before anyone lifts a hammer.</figcaption>
         </figure>
 
@@ -323,7 +328,7 @@
     </div>
   </footer>
 
-  <script src="../../js/main.js?v=33"></script>
-  <script src="../../js/i18n.js?v=38"></script>
+  <script src="../../js/main.js?v=34"></script>
+  <script src="../../js/i18n.js?v=39"></script>
 </body>
 </html>

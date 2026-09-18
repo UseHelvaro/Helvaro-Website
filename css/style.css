@@ -5609,6 +5609,35 @@ p { text-wrap: pretty; }
 .ytfacade-sub { font-size: 13px; color: var(--text-3); }
 .ytfacade-bij { font-size: 14px; color: var(--text-3); font-style: italic; margin: 12px 0 0; }
 
+/* De video start zonder geluid, want anders start hij helemaal niet: elke
+   browser blokkeert geluid dat uit zichzelf begint. Deze knop zet het
+   geluid alsnog aan, en dan wel met een echte klik erachter. */
+.ytfacade-geluid {
+  margin: 10px 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  border: 1px solid var(--border-1);
+  border-radius: 999px;
+  background: var(--bg-2);
+  color: var(--text-1);
+  font-family: var(--font-b);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color .18s ease, color .18s ease;
+}
+.ytfacade-geluid::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.ytfacade-geluid:hover { border-color: var(--accent); }
+.ytfacade-geluid[hidden] { display: none; }
+
 /* Na de klik zit de iframe op dezelfde plek en in dezelfde verhouding. */
 .ytfacade-speler {
   width: 100%;

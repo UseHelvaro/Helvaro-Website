@@ -338,7 +338,8 @@ Object.assign(window.HELVARO_TR['fr'], {
 
 Object.assign(window.HELVARO_TR['fr'], {
   "Dit huis bestaat nog niet": "Cette maison n'existe pas encore",
-  "39 seconden · Engels gesproken · YouTube laadt pas als je klikt": "39 secondes · en anglais · YouTube ne se charge qu'au clic",
+  "39 seconden · Engels gesproken · start vanzelf, zonder geluid": "39 secondes · en anglais · démarre sans le son",
+  "Geluid aan": "Activer le son",
   "Je verkoper heeft een vermoeide woning. Je koper zoekt een thuis. Faro laat zien wat het wordt voor er een hamer bovenkomt.": "Votre vendeur a une maison fatiguée. Votre acheteur cherche un foyer. Faro montre ce qu'elle devient avant qu'on ne lève le moindre marteau."
 });
 
