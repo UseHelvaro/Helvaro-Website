@@ -33,7 +33,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=63">
+  <link rel="stylesheet" href="css/style.css?v=64">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -82,7 +82,20 @@
       </a>
       <nav class="nav-links" aria-label="Hoofdnavigatie">
         <a href="#werk" class="nav-link">Wat we overnemen</a>
-        <a href="#sectoren" class="nav-link">Sectoren</a>
+        <div class="navdrop">
+          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Andere sectoren <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+          <div class="navdrop-menu" role="menu">
+            <a href="sectoren/vastgoed.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Vastgoed</span>
+              <span class="ndi-sub">Kopers en verkopers kwalificeren, bezichtigingen inplannen</span>
+            </a>
+            <a href="sectoren/bouw.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Bouw &amp; Renovatie</span>
+              <span class="ndi-sub">Alleen offertes die hout snijden, en opvolging die blijft lopen</span>
+            </a>
+          </div>
+        </div>
+
         <a href="#faro" class="nav-link">Faro</a>
         <a href="#controle" class="nav-link">Controle</a>
         <a href="#prijzen" class="nav-link">Prijzen</a>
@@ -117,7 +130,20 @@
   <!-- Mobile menu -->
   <div class="nav-mobile" aria-label="Mobiel menu">
     <a href="#werk" class="nav-link">Wat we overnemen</a>
-    <a href="#sectoren" class="nav-link">Sectoren</a>
+    <div class="navdrop">
+          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Andere sectoren <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+          <div class="navdrop-menu" role="menu">
+            <a href="sectoren/vastgoed.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Vastgoed</span>
+              <span class="ndi-sub">Kopers en verkopers kwalificeren, bezichtigingen inplannen</span>
+            </a>
+            <a href="sectoren/bouw.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Bouw &amp; Renovatie</span>
+              <span class="ndi-sub">Alleen offertes die hout snijden, en opvolging die blijft lopen</span>
+            </a>
+          </div>
+        </div>
+
         <a href="#faro" class="nav-link">Faro</a>
         <a href="#controle" class="nav-link">Controle</a>
     <a href="#prijzen" class="nav-link">Prijzen</a>
@@ -452,106 +478,62 @@
     </section>
 
     <!-- ===== SOLUTIONS (per sector) ===== -->
+    <!-- ===== SECTOREN =====================================================
+         Automotive staat vooraan en krijgt de hele sectie. De andere niches
+         hebben een eigen pagina onder "Andere sectoren" in de navigatie,
+         zodat de homepagina één verhaal vertelt in plaats van zes. -->
     <section class="section solutions" data-gids="sectoren" id="sectoren">
       <div class="section-glow" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header text-center reveal">
-          <span class="section-label">Sectoren</span>
-          <h2 class="section-title">Elke sector. Eigen agent.</h2>
-          <p class="section-sub">Dezelfde agents, getraind op de manier waarop jouw sector werkt. Een garage vraagt andere dingen dan een makelaar.</p>
+          <span class="section-label">Automotive</span>
+          <h2 class="section-title">Je operatie draait door. Ook als niemand opneemt.</h2>
+          <p class="section-sub">Garages, dealers en verhuur. De telefoon is de flessenhals, en dat is precies waar je agent begint.</p>
         </div>
 
         <div class="sol-grid">
 
-          <!-- Automotive: het brede vlaggenschip, bewust als eerste -->
           <div class="sol-card sol-wide reveal spot">
             <div class="sol-head">
               <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M6.5 17V9.5l1.8-4a2 2 0 0 1 1.8-1.1h3.8a2 2 0 0 1 1.8 1.1l1.8 4V17"/><path d="M4 13h16"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg></div>
-              <span class="sol-tag">Automotive</span>
+              <span class="sol-tag">De werkplaats</span>
             </div>
-            <h3 class="sol-title">Garages, dealers &amp; verhuur</h3>
-            <p class="sol-claim">Je operatie draait door. Ook als niemand opneemt.</p>
-            <p class="sol-desc">De telefoon is de flessenhals. Terwijl je balie een klant helpt, belt de volgende vergeefs. Je telefoonagent neemt op in het Nederlands en het Frans, boekt onderhoud rechtstreeks in de werkplaatsplanning, beantwoordt vragen over beschikbaarheid en kwalificeert inruil. Wat hij niet zelf oplost, geeft hij door met het hele gesprek erbij.</p>
+            <h3 class="sol-title">Terwijl je balie een klant helpt, belt de volgende vergeefs</h3>
+            <p class="sol-desc">Je telefoonagent neemt op in het Nederlands en het Frans, boekt onderhoud rechtstreeks in de werkplaatsplanning, beantwoordt vragen over beschikbaarheid en kwalificeert inruil. Wat hij niet zelf oplost, geeft hij door met het hele gesprek erbij.</p>
             <div class="sol-highlight">
               <span class="sol-badge">Reken het ruw uit</span>
-              <p class="sol-desc">Een werkpost draait aan zo'n €120 per uur. Eén teruggewonnen boeking per werkdag is ongeveer €2.400 per maand aan werkplaatsomzet. De vraag is niet of het terugverdient, de vraag is hoeveel oproepen er vandaag onbeantwoord bleven.</p>
+              <p class="sol-desc">Een werkpost draait aan zo'n &euro;120 per uur. E&eacute;n teruggewonnen boeking per werkdag is ongeveer &euro;2.400 per maand aan werkplaatsomzet. De vraag is niet of het terugverdient, de vraag is hoeveel oproepen er vandaag onbeantwoord bleven.</p>
             </div>
           </div>
 
-          <!-- Bouw & Renovatie -->
           <div class="sol-card reveal spot">
-            <div class="sol-head">
-              <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.5 8.5a2.12 2.12 0 1 1-3-3L12 9"/><path d="M17.64 15 22 10.64"/><path d="M20.91 11.7l1.4-1.4a2 2 0 0 0 0-2.82l-3.83-3.83a2 2 0 0 0-2.82 0l-1.4 1.4a2 2 0 0 0 0 2.82l3.83 3.83a2 2 0 0 0 2.82 0Z"/></svg></div>
-              <span class="sol-tag">Bouw &amp; Renovatie</span>
-            </div>
-            <h3 class="sol-title">Bouw &amp; Renovatie</h3>
-            <p class="sol-claim">Alleen offertes die hout snijden</p>
-            <p class="sol-desc">Je kwalificatie-agent vraagt eerst naar type project, timing, locatie en budget. Zo krijgt je team enkel nog serieuze aanvragen op tafel, en verspil je geen tijd meer aan prijsvragers. Offertes die blijven liggen worden vanzelf opgevolgd.</p>
-            <div class="sol-highlight">
-              <span class="sol-badge">Extra · visualisatie-agent</span>
-              <p class="sol-desc">Je visualisatie-agent maakt beelden van een pand in verschillende bouwstijlen. Je klant ziet wat mogelijk is nog voor er een steen verlegd is.</p>
-            </div>
+            <div class="sol-head"><span class="sol-tag">Onderhoud</span></div>
+            <h3 class="sol-title">Afspraken die zichzelf boeken</h3>
+            <p class="sol-desc">Onderhoud, keuring en reparatie gaan rechtstreeks in de planning. Bevestigingen, herinneringen en het opnieuw vullen van een geannuleerd tijdslot horen erbij, zodat er minder posten leeg staan.</p>
           </div>
 
-          <!-- Installatie & Thuisdiensten -->
           <div class="sol-card reveal spot">
-            <div class="sol-head">
-              <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg></div>
-              <span class="sol-tag">Installatie</span>
-            </div>
-            <h3 class="sol-title">Installatie &amp; Thuisdiensten</h3>
-            <p class="sol-claim">De dringende oproep komt altijd ongelegen</p>
-            <p class="sol-desc">Verwarming, elektriciteit, sanitair, zonnepanelen. Je agent neemt de intake af, schat de urgentie in, plant het juiste tijdslot en stuurt de technicus de gegevens door. Wat echt dringend is, gaat meteen naar een mens.</p>
+            <div class="sol-head"><span class="sol-tag">Verkoop</span></div>
+            <h3 class="sol-title">Inruil en beschikbaarheid</h3>
+            <p class="sol-desc">Merk, model, kilometerstand, staat en verwachting. Je agent stelt de vragen die je verkoper anders stelt, en geeft een gescoorde inruil door. Vragen over voorraad krijgen ook buiten de openingsuren antwoord.</p>
           </div>
 
-          <!-- Vastgoed -->
           <div class="sol-card reveal reveal-delay-1 spot">
-            <div class="sol-head">
-              <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
-              <span class="sol-tag">Vastgoed</span>
-            </div>
-            <h3 class="sol-title">Vastgoed</h3>
-            <p class="sol-claim">Van eerste contact tot bezichtiging</p>
-            <p class="sol-desc">Helvaro kwalificeert kopers en verkopers automatisch en plant bezichtigingen rechtstreeks in je agenda. Na het bezoek volgt je agent op, zodat geen enkel dossier stilvalt.</p>
+            <div class="sol-head"><span class="sol-tag">Na de beurt</span></div>
+            <h3 class="sol-title">Opvolging en beoordelingen</h3>
+            <p class="sol-desc">Een controle na de beurt, een vraag om een beoordeling, en een herinnering wanneer de volgende keuring nadert. Wie ontevreden is, gaat eerst naar een mens en niet naar een reviewpagina.</p>
           </div>
 
-          <!-- Verzekering & Financieel -->
           <div class="sol-card reveal reveal-delay-1 spot">
-            <div class="sol-head">
-              <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
-              <span class="sol-tag">Verzekering &amp; Financieel</span>
-            </div>
-            <h3 class="sol-title">Verzekering &amp; Financieel</h3>
-            <p class="sol-claim">Minder papierwerk, hetzelfde dossier</p>
-            <p class="sol-desc">Je agent vraagt eerst naar producttype en situatie, verzamelt de documenten die je nodig hebt en zet ze bij het juiste dossier. Alles wat een agent doet staat gelogd, wat in een gecontroleerde sector geen detail is.</p>
-          </div>
-
-          <!-- Zorgpraktijken -->
-          <div class="sol-card reveal reveal-delay-2 spot">
-            <div class="sol-head">
-              <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
-              <span class="sol-tag">Zorgpraktijken</span>
-            </div>
-            <h3 class="sol-title">Zorgpraktijken</h3>
-            <p class="sol-claim">Afspraken zonder wachtrij aan de telefoon</p>
-            <p class="sol-desc">Patiënten boeken en verzetten hun afspraak zelf, krijgen automatisch herinneringen en antwoord op veelgestelde vragen. Minder no-shows en minder telefoondruk aan de balie.</p>
-          </div>
-
-          <!-- Keuken -->
-          <div class="sol-card reveal reveal-delay-2 spot">
-            <div class="sol-head">
-              <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v7a2 2 0 0 1-2 2H4"/><path d="M6 2v20"/><path d="M18 2a3 3 0 0 0-3 3v6h6V5a3 3 0 0 0-3-3z"/><path d="M18 11v11"/></svg></div>
-              <span class="sol-tag">Keuken</span>
-            </div>
-            <h3 class="sol-title">Keuken</h3>
-            <p class="sol-claim">Van showroombezoek tot ontwerp</p>
-            <p class="sol-desc">Je agent vangt elke aanvraag op, peilt naar wensen, stijl en budget en plant een ontwerpafspraak in je showroom. Warme leads komen binnen terwijl jij aan een keuken werkt.</p>
+            <div class="sol-head"><span class="sol-tag">Verhuur &amp; lease</span></div>
+            <h3 class="sol-title">Reserveren zonder wachtrij</h3>
+            <p class="sol-desc">Vragen over beschikbaarheid, voorwaarden en tarieven worden meteen beantwoord. Je agent kwalificeert de aanvraag en zet de reservering klaar voor je team.</p>
           </div>
 
         </div>
 
         <div class="sol-cta reveal">
-          <p class="sol-cta-text">Wil je zien hoe je agent klinkt in jouw sector?</p>
+          <p class="sol-cta-text">Werk je niet in automotive? Helvaro draait ook in <a href="sectoren/vastgoed.html">vastgoed</a> en <a href="sectoren/bouw.html">bouw &amp; renovatie</a>.</p>
           <a href="#hero" class="btn btn-lg">Praat met onze agent <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
         </div>
       </div>
@@ -857,8 +839,8 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=26"></script>
-  <script src="js/i18n.js?v=29"></script>
+  <script src="js/main.js?v=27"></script>
+  <script src="js/i18n.js?v=30"></script>
 
   <!-- ── Faro loopt met je mee ────────────────────────────────────────────
        Geen kaartje met een vogeltje erin: de valk staat vrij op de pagina en

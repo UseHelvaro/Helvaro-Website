@@ -26,6 +26,16 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://helvaro.pro/sectoren/vastgoed.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/sectoren/bouw.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://helvaro.pro/privacybeleid.html</loc>
     <lastmod>2026-08-30</lastmod>
     <priority>0.3</priority>

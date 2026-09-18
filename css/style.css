@@ -5240,3 +5240,150 @@ p { text-wrap: pretty; }
   .agentbar-track { animation: none; flex-wrap: wrap; width: auto; }
   .showcase-track { transition: none; }
 }
+
+/* ============================================================
+   25. SECTORENMENU IN DE NAVIGATIE
+   ------------------------------------------------------------
+   Automotive staat vooraan op de homepagina. De andere sectoren
+   hangen onder één navigatie-item met een eigen pagina per sector.
+   Zelfde gedrag als de taalkiezer, zodat er maar één patroon is.
+   ============================================================ */
+.navdrop { position: relative; display: inline-flex; }
+.navdrop-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-b);
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--text-2);
+  transition: color 0.25s;
+}
+.navdrop-toggle:hover, .navdrop.open .navdrop-toggle { color: var(--text-1); }
+.navdrop-caret { font-size: 9px; transition: transform 0.25s; }
+.navdrop.open .navdrop-caret { transform: rotate(180deg); }
+.navdrop-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  min-width: 260px;
+  background: rgba(var(--veil-rgb), 0.97);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-m);
+  box-shadow: 0 16px 50px rgba(0,0,0,0.5), 0 0 24px rgba(var(--accent-rgb), 0.12);
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 0.22s var(--ease), transform 0.22s var(--ease);
+  z-index: 950;
+}
+.navdrop.open .navdrop-menu { opacity: 1; transform: translateY(0); pointer-events: all; }
+.navdrop-item {
+  display: block;
+  padding: 11px 13px;
+  border-radius: 9px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.navdrop-item:hover { background: rgba(var(--accent-rgb), 0.09); }
+.navdrop-item .ndi-title {
+  display: block;
+  font-family: var(--font-h);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: 2px;
+}
+.navdrop-item .ndi-sub { display: block; font-size: 12.5px; color: var(--text-3); line-height: 1.45; }
+
+/* In het mobiele menu klapt hij gewoon open in de kolom. */
+.nav-mobile .navdrop { display: block; width: 100%; max-width: 280px; }
+.nav-mobile .navdrop-menu {
+  position: static;
+  opacity: 1;
+  transform: none;
+  pointer-events: all;
+  min-width: 0;
+  margin-top: 8px;
+  box-shadow: none;
+  background: rgba(var(--layer-rgb), 0.03);
+  display: none;
+}
+.nav-mobile .navdrop.open .navdrop-menu { display: flex; }
+
+/* ============================================================
+   26. SECTORPAGINA
+   ------------------------------------------------------------
+   Eigen pagina per niche. Kort, met de uitleg die vroeger op een
+   kaartje op de homepagina paste en daar te klein voor was.
+   ============================================================ */
+.sector-hero { padding: 120px 0 60px; position: relative; }
+.sector-eyebrow {
+  font-family: var(--font-h);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  display: block;
+  margin-bottom: 18px;
+}
+.sector-hero h1 {
+  font-family: var(--font-h);
+  font-size: clamp(32px, 5.2vw, 54px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0 0 20px;
+  max-width: 18ch;
+}
+.sector-lede { font-size: 18px; line-height: 1.6; color: var(--text-2); max-width: 62ch; margin: 0 0 30px; }
+.sector-body { max-width: 68ch; }
+.sector-body h2 {
+  font-family: var(--font-h);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 48px 0 14px;
+}
+.sector-body p { font-size: 16px; line-height: 1.7; color: var(--text-2); margin: 0 0 16px; }
+.sector-steps { list-style: none; margin: 24px 0 0; padding: 0; counter-reset: st; }
+.sector-steps li {
+  counter-increment: st;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border-0);
+  align-items: baseline;
+}
+.sector-steps li::before {
+  content: counter(st, decimal-leading-zero);
+  font-family: var(--font-h);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-deep);
+}
+.sector-steps strong { display: block; font-family: var(--font-h); font-size: 15.5px; font-weight: 600; color: var(--text-1); margin-bottom: 3px; }
+.sector-steps span { font-size: 14.5px; color: var(--text-2); line-height: 1.6; }
+.sector-note {
+  border-left: 3px solid var(--accent);
+  background: var(--bg-card);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin: 34px 0;
+}
+.sector-note p { margin: 0; font-size: 15.5px; color: var(--text-1); }
+@media (max-width: 720px) {
+  .sector-hero { padding: 96px 0 44px; }
+}

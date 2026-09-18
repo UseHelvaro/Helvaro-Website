@@ -6,12 +6,15 @@
   var geladen = {};
   var huidig = 'nl';
   /* Ophogen zodra een taalbestand wijzigt, anders houdt de browser de oude versie vast. */
-  var TAAL_V = '14';
+  var TAAL_V = '15';
   function laadTaal(lang, klaar){
     if (lang === 'nl' || TR[lang] || geladen[lang]) { klaar(); return; }
     geladen[lang] = true;
     var s = document.createElement('script');
-    s.src = 'js/lang/' + lang + '.js?v=' + TAAL_V;
+    /* Absoluut pad, niet relatief. Vanaf /sectoren/vastgoed.html zocht een
+       relatief pad naar /sectoren/js/lang/en.js, kreeg een 404, en viel de
+       pagina stil terug op Nederlands. */
+    s.src = '/js/lang/' + lang + '.js?v=' + TAAL_V;
     s.onload = function(){ TR = window.HELVARO_TR || TR; klaar(); };
     s.onerror = function(){ klaar(); };   /* mislukt het, dan blijft Nederlands staan */
     document.head.appendChild(s);
@@ -60,6 +63,18 @@
       en: 'Start your 14 free days \u00b7 Helvaro',
       de: 'Starten Sie Ihre 14 Tage gratis \u00b7 Helvaro',
       es: 'Empieza tus 14 d\u00edas gratis \u00b7 Helvaro'
+    },
+    'Vastgoed \u00b7 Helvaro': {
+      fr: 'Immobilier \u00b7 Helvaro',
+      en: 'Real estate \u00b7 Helvaro',
+      de: 'Immobilien \u00b7 Helvaro',
+      es: 'Inmobiliaria \u00b7 Helvaro'
+    },
+    'Bouw & Renovatie \u00b7 Helvaro': {
+      fr: 'Construction et r\u00e9novation \u00b7 Helvaro',
+      en: 'Construction & Renovation \u00b7 Helvaro',
+      de: 'Bau und Renovierung \u00b7 Helvaro',
+      es: 'Construcci\u00f3n y reformas \u00b7 Helvaro'
     },
     'Privacybeleid \u00b7 Helvaro': {
       fr: 'Politique de confidentialit\u00e9 \u00b7 Helvaro',

@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initWatermarkParallax();
   initShowcase();
   initAgentbar();
+  initNavDrop();
 });
 
 /* ============================================================
@@ -1096,3 +1097,36 @@ function initAgentbar() {
   });
 }
 
+
+/* ── Sectorenmenu in de navigatie ───────────────────────────────────────
+   Zelfde gedrag als de taalkiezer: klik opent, klik ernaast sluit,
+   Escape sluit. Op mobiel klapt het menu gewoon open in de kolom. */
+function initNavDrop() {
+  const drops = document.querySelectorAll('.navdrop');
+  if (!drops.length) return;
+
+  function sluitAlles(behalve) {
+    drops.forEach((d) => {
+      if (d === behalve) return;
+      d.classList.remove('open');
+      const t = d.querySelector('.navdrop-toggle');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  drops.forEach((drop) => {
+    const toggle = drop.querySelector('.navdrop-toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      sluitAlles(drop);
+      const open = drop.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  document.addEventListener('click', () => sluitAlles(null));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') sluitAlles(null);
+  });
+}
