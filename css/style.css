@@ -3359,9 +3359,12 @@ select:focus-visible {
 }
 /* Zwarte Faro op het donkere thema, witte op het lichte. Beide renders
    staan in de opmaak, het thema kiest welke er getoond wordt. */
-/* Er is nog één versie van de site, dus ook nog één Faro-render: de
-   uitgesneden lichte. De donkere hoorde bij het donkere thema. */
-.faro-donker { display: none; }
+/* Eén Faro-render tegelijk. Het paneel eromheen is donker, maar de kaart
+   waar hij op staat is room, dus de donkere valk is hier de juiste. Beide
+   tegelijk tonen is wat er gebeurde: de regel hieronder stond wel in het
+   bestand, maar werd verderop overschreven door .faro-visual picture. */
+.faro-visual .faro-licht { display: none !important; }
+.faro-visual .faro-donker { display: block; }
 .faro-copy .section-label { display: inline-block; margin-bottom: 14px; }
 .faro-copy .section-title { margin-bottom: 16px; }
 .faro-copy .section-sub { margin-bottom: 28px; }
