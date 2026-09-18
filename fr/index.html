@@ -39,7 +39,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="../css/style.css?v=67">
+  <link rel="stylesheet" href="../css/style.css?v=68">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -383,11 +383,11 @@
                  daar is de rand vervaagd. Op een donkere pagina zie je dat niet.
                  De witte is wel echt uitgesneden. -->
             <picture class="faro-donker">
-              <source srcset="assets/faro-donker.webp?v=4" type="image/webp">
+              <source srcset="../assets/faro-donker.webp?v=4" type="image/webp">
               <img src="../assets/faro-donker.png?v=4" alt="Faro, je assistent binnen Helvaro" width="840" height="840" decoding="async">
             </picture>
             <picture class="faro-licht">
-              <source srcset="assets/faro-wit.webp?v=4" type="image/webp">
+              <source srcset="../assets/faro-wit.webp?v=4" type="image/webp">
               <img src="../assets/faro-wit.png?v=4" alt="Faro, je assistent binnen Helvaro" width="840" height="840" decoding="async">
             </picture>
           </div>
@@ -456,37 +456,41 @@
       <div class="container">
         <h2 class="visually-hidden" id="photo-heading">Ce que vos agents font pour vous</h2>
         <div class="photo-grid">
+
           <article class="photo-card reveal">
             <picture>
-              <source srcset="assets/photos/reply-first.webp" type="image/webp">
-              <img loading="lazy" class="photo-img" src="../assets/photos/reply-first.jpg" alt="Zaakvoerder beantwoordt een bericht op haar smartphone" decoding="async" width="900" height="600">
+              <source srcset="../assets/photos/reply-first.webp" type="image/webp">
+              <img loading="lazy" class="photo-img" src="../assets/photos/reply-first.jpg" alt="Iemand beantwoordt een bericht op een smartphone" decoding="async" width="900" height="600">
             </picture>
             <div class="photo-body">
               <h3 class="photo-title">Décrochez pendant que vous êtes sous une voiture</h3>
               <p class="photo-desc">Votre agent vocal prend l'appel, note la plaque et réserve l'entretien. Votre mécanicien ne pose pas sa clé.</p>
             </div>
           </article>
-          <article class="photo-card reveal reveal-delay-1">
-            <picture>
-              <source srcset="assets/photos/renovation.webp" type="image/webp">
-              <img loading="lazy" class="photo-img" src="../assets/photos/renovation.jpg" alt="Woning die in aanmerking komt voor renovatie" decoding="async" width="900" height="600">
-            </picture>
+
+          <!-- Geen foto, met opzet. Er is nog geen automotive-beeldbank, en een
+               woning onder een tekst over kentekens is erger dan geen foto. Deze
+               kaart draagt de sterkste boodschap en houdt zichzelf staande. -->
+          <article class="photo-card photo-card-accent reveal reveal-delay-1">
             <div class="photo-body">
               <span class="photo-tag">Automotive</span>
               <h3 class="photo-title">La plaque raconte le reste</h3>
               <p class="photo-desc">Une plaque et votre agent connaît la marque, le modèle, l'année et la validité du contrôle technique. Le client n'a rien à expliquer.</p>
+              <p class="photo-plate" aria-hidden="true">1-ABC-234</p>
             </div>
           </article>
+
           <article class="photo-card reveal reveal-delay-2">
             <picture>
-              <source srcset="assets/photos/calendar.webp" type="image/webp">
-              <img loading="lazy" class="photo-img" src="../assets/photos/calendar.jpg" alt="Ondernemer bekijkt zijn agenda op kantoor" decoding="async" width="900" height="600">
+              <source srcset="../assets/photos/calendar.webp" type="image/webp">
+              <img loading="lazy" class="photo-img" src="../assets/photos/calendar.jpg" alt="Zaakvoerder bekijkt zijn planning" decoding="async" width="900" height="600">
             </picture>
             <div class="photo-body">
               <h3 class="photo-title">Votre atelier se remplit tout seul</h3>
               <p class="photo-desc">L'entretien, le contrôle technique et les essais vont directement dans le planning. Vous ouvrez votre agenda et les postes sont déjà remplis.</p>
             </div>
           </article>
+
         </div>
       </div>
     </section>

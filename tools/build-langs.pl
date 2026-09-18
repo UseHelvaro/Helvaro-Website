@@ -319,7 +319,10 @@ for my $pagina (@PAGES) {
     # 5f. Paden. De taalmap zit één niveau dieper, dus alles wat relatief is
     #     krijgt er een ../ bij. Interne pagina's blijven binnen de taal.
     my $op = '../' x ($diep + 1);
-    for my $attr (qw(href src)) {
+    # srcset hoort in dit rijtje. Zonder deze stond in /fr/ nog
+    # assets/photos/x.webp, wat daar een 404 is. Een <source> die mist valt
+    # niet terug op de <img> ernaast, dus het beeld bleef gewoon leeg.
+    for my $attr (qw(href src srcset)) {
       $h =~ s{(\b$attr=")(?!https?:|//|/|\#|mailto:|tel:)([^"]*)(")}{
         my ($a, $pad, $q) = ($1, $2, $3);
         if ($pad =~ m{^(?:\.\./)*(?:css/|js/|assets/)}) {
