@@ -46,6 +46,7 @@
   --accent-fill: #E8D7B1;
   --accent-fill-hover: #DDCAA1;
   --accent-fill-deep: #D3BE93;
+  --accent-fill-rgb: 232,215,177;
   --on-accent: #121212;
 
   /* Accent voor tekst, randen en iconen: past zich aan het thema aan */
@@ -70,7 +71,7 @@
      Contrast op --bg-1: 15,1:1 / 7,4:1 / 4,6:1. */
   --text-1: #201B12;
   --text-2: #574E3E;
-  --text-3: #7C7160;
+  --text-3: #6B6153;
 
   --success: #22C55E;
   --warning: #D4A017;
@@ -215,11 +216,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-weight: 600;
   padding: 11px 24px;
   border-radius: var(--radius-s);
-  border: 1px solid rgba(var(--accent-rgb), 0.55);
+  border: 1px solid rgba(var(--accent-fill-rgb), 0.85);
   color: var(--on-accent);
   /* Binnen het zand zelf: van de lichte stop naar de diepe. Op wit werkt zand
      alleen als VULLING met donkere tekst -- als letter haalt het 1,7:1. */
-  background: linear-gradient(180deg, #F5ECD7 0%, var(--accent) 55%, #D3BE93 100%);
+  background: linear-gradient(180deg, #F5ECD7 0%, var(--accent-fill) 55%, #D3BE93 100%);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.42), inset 0 -1px 0 rgba(64,52,32,0.20),
               0 2px 8px rgba(var(--accent-rgb), 0.20), 0 10px 28px rgba(var(--accent-rgb), 0.16);
   transition: background 0.3s, box-shadow 0.3s, transform 0.2s, border-color 0.3s;
@@ -425,10 +426,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   margin-bottom: 20px;
 }
 .hero-title .highlight {
-  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
 }
 .hero-subtitle {
   font-size: 17px;
@@ -632,10 +630,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-family: var(--font-h);
   font-size: 36px;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
   line-height: 1;
   margin-bottom: 12px;
 }
@@ -1240,10 +1235,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   margin-bottom: 4px;
 }
 .stat-value span {
-  background: linear-gradient(135deg, var(--accent-light), var(--accent-dark));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
 }
 .stat-label { font-size: 12px; color: var(--text-3); font-weight: 500; }
 
@@ -1372,15 +1364,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .nav-links .nav-link:hover::after { transform: scaleX(1); }
 
-/* Animated gradient headline highlight */
+/* Stond als verlooptekst met een eindeloos pannende animatie en een
+   gekleurde gloed eronder. Dat is precies het trekje dat een pagina
+   gegenereerd laat ogen, en de helft van elke letter werd er lichter van.
+   Eén effen accentkleur leest beter en houdt de kop rustig. */
 .hero-title .highlight {
-  background: linear-gradient(110deg, var(--accent-light), var(--accent), var(--accent-dark), var(--accent-light));
-  background-size: 250% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-pan 6s linear infinite;
-  filter: drop-shadow(0 0 24px rgba(var(--accent-rgb), 0.35));
+  color: var(--accent);
 }
 @keyframes gradient-pan { to { background-position: 250% 0; } }
 
@@ -1747,10 +1736,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-size: clamp(34px, 4.5vw, 50px);
   font-weight: 700;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
   line-height: 1.1;
   margin-bottom: 14px;
 }
@@ -1789,7 +1775,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .calc-stat-label {
   display: block;
   margin-top: 4px;
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--text-3);
   line-height: 1.35;
 }
@@ -1926,7 +1912,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 /* Pricing risk-reversal note */
 .pricing-note {
   margin-top: 10px;
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--text-3);
   text-align: center;
 }
@@ -2213,12 +2199,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   animation: word-in 0.7s var(--ease) forwards;
 }
 .hero-title .highlight .w {
-  background: linear-gradient(110deg, var(--accent-light), var(--accent), var(--accent-dark), var(--accent-light));
-  background-size: 250% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: word-in 0.7s var(--ease) forwards, gradient-pan 6s linear infinite;
+  color: var(--accent);
+  animation: word-in 0.7s var(--ease) forwards;
 }
 @keyframes word-in { to { opacity: 1; transform: none; } }
 
@@ -2329,7 +2311,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .cal-times-note {
   margin-top: 12px;
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--text-3);
 }
 .cal-date.selected {
@@ -2410,10 +2392,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
-  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
 }
 .case-metric-label {
   font-size: 13px;
@@ -2863,10 +2842,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-family: var(--font-h);
   font-size: 15px;
   font-weight: 600;
-  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
   margin-bottom: 14px;
 }
 .sol-desc {
@@ -3440,10 +3416,7 @@ select:focus-visible {
 /* Accentwoorden in sectietitels, rustiger dan in de hero: geen animatie,
    want die hoort bij de kop bovenaan de pagina. */
 .section-title .highlight {
-  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
 }
 
 /* ============================================================
@@ -3539,7 +3512,7 @@ select:focus-visible {
   color: var(--d-mut);
   margin-top: 4px;
 }
-.dash-recent li { font-size: 11.5px; color: var(--d-mut); }
+.dash-recent li { font-size: 12px; color: var(--d-mut); }
 .dash-user {
   margin-top: auto;
   display: flex;
@@ -3651,7 +3624,7 @@ select:focus-visible {
   padding: 13px 16px;
   border-radius: 12px;
   background: var(--d-card);
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--d-mut);
 }
 .dash-stats b { font-family: var(--font-h); font-size: 15px; color: var(--d-txt); margin-right: 3px; }
@@ -3679,7 +3652,7 @@ select:focus-visible {
   border-radius: 9px;
   background: var(--d-gold);
   color: #121212;
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 600;
 }
 .dash-lead {
@@ -3708,7 +3681,7 @@ select:focus-visible {
   background: rgba(34, 197, 94, 0.14);
   color: #4ADE80;
 }
-.dash-lead-meta { font-size: 11.5px; color: var(--d-mut); }
+.dash-lead-meta { font-size: 12px; color: var(--d-mut); }
 
 @media (max-width: 760px) {
   .dash-body { grid-template-columns: 1fr; }
@@ -3850,7 +3823,7 @@ select:focus-visible {
 .wa-bubble {
   padding: 6px 10px;
   border-radius: 8px;
-  font-size: 11.5px;
+  font-size: 12px;
   line-height: 1.38;
   color: #e9edef;
   word-break: break-word;
@@ -5731,3 +5704,141 @@ body { background: var(--surface-1); }
 .cta-band.op-houtskool { background: var(--ink-bg); }
 .cta-band.op-houtskool + .footer { background: var(--ink-bg); }
 .footer.op-houtskool::before { display: none; }
+
+/* ============================================================
+   35. FARO-GIDS ALLEEN WAAR HIJ RUIMTE HEEFT
+   ------------------------------------------------------------
+   De gids staat position:fixed en had geen enkele regel voor
+   smalle schermen. Op een telefoon legt een valk van 180px plus
+   zijn tekstballon zich dwars over de tekst: in de schermafdruk
+   dekte hij de kop "Klantcontact" en de lijst onder Faro af.
+
+   Een verteller die de tekst onleesbaar maakt, kost meer dan hij
+   oplevert. Onder 1000px blijft hij weg. Daarboven heeft hij de
+   marge naast de kolom en zit hij niemand in de weg.
+   ============================================================ */
+@media (max-width: 1000px) {
+  .faro-gids { display: none !important; }
+}
+
+/* Ook op een kort scherm is er geen plaats voor een verteller. */
+@media (max-height: 700px) {
+  .faro-gids { display: none !important; }
+}
+
+/* ============================================================
+   36. MINDER GLOED, MEER RUST
+   ------------------------------------------------------------
+   De gloedvlekken zijn getekend voor een donkere achtergrond.
+   Daar geeft een warme waas diepte. Op room doen ze het
+   omgekeerde: ze maken het vlak vuil in plaats van diep, en met
+   dertig gloeiende schaduwen en zeventien ronde vlekken gaat een
+   pagina er gemaakt uitzien.
+
+   Diepte komt hier van toon, ruimte en typografie. Waar een
+   schaduw nodig is, valt hij naar beneden zoals licht dat doet,
+   in plaats van rondom te gloeien.
+   ============================================================ */
+
+/* De sectievlekken mogen weg: de tonentrap uit 33 doet dit werk nu. */
+.section-glow,
+.cta-band-glow { display: none; }
+
+/* In de hero blijft een spoor warmte, maar veel zwakker. */
+.hero-glow,
+.hero-glow-2 { opacity: 0.35; }
+
+/* Gloed rondom een knop wordt een schaduw eronder. */
+.btn {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    inset 0 -1px 0 rgba(64,52,32,0.18),
+    0 1px 2px rgba(60,48,26,0.10),
+    0 6px 16px rgba(60,48,26,0.10);
+}
+.btn:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.55),
+    inset 0 -1px 0 rgba(64,52,32,0.20),
+    0 2px 4px rgba(60,48,26,0.12),
+    0 10px 24px rgba(60,48,26,0.14);
+}
+
+/* Kaarten: een rand óf een schaduw, niet allebei zwaar. */
+.sol-card,
+.photo-card,
+.pricing-card,
+.showcase-slide,
+.box {
+  box-shadow: 0 1px 2px rgba(60,48,26,0.04), 0 8px 24px rgba(60,48,26,0.06);
+}
+.sol-card:hover,
+.pricing-card:hover {
+  box-shadow: 0 2px 4px rgba(60,48,26,0.06), 0 14px 36px rgba(60,48,26,0.10);
+}
+
+/* Op houtskool valt licht anders: daar mag de schaduw dieper en donkerder,
+   maar nog steeds naar beneden en niet rondom. */
+.op-houtskool .sol-card,
+.op-houtskool .box {
+  box-shadow: 0 2px 6px rgba(8,6,3,0.35), 0 16px 40px rgba(8,6,3,0.30);
+}
+
+/* ============================================================
+   37. LEESBARE ONDERGRENS
+   ------------------------------------------------------------
+   Er stond tekst van 10 en 11px op de pagina. Dat is te klein om
+   te lezen en het is een van de dingen die een ontwerp goedkoop
+   laten ogen. Twaalf is hier de bodem.
+   ============================================================ */
+.trust-pill,
+.chip-sub,
+.wa-time,
+.sol-tag,
+.photo-tag,
+.pricing-note,
+.footer-legal a,
+.showcase-list li { font-size: 12px; }
+.section-label,
+.sector-eyebrow,
+.showcase-num { font-size: 12.5px; }
+
+/* ============================================================
+   38. FOTOKAART HEEFT ZELF EEN DONKERE BODEM
+   ------------------------------------------------------------
+   De tekst op een fotokaart is wit, maar de kaart eronder stond
+   op room. Zolang de foto laadt gaat dat goed, want daar ligt een
+   donkere sluier overheen. Laadt hij niet, dan staat er witte
+   tekst op bijna-wit: onzichtbaar.
+
+   De bodem is nu houtskool. Met of zonder foto klopt het contrast.
+   ============================================================ */
+.photo-card { background: var(--ink-bg); }
+
+/* ============================================================
+   39. GLOED WEG OP ROOM
+   ------------------------------------------------------------
+   Deze schaduwen gloeien rondom in plaats van te vallen. Op een
+   donkere achtergrond werkte dat; op room is het een vage waas om
+   een element heen. Waar ze nog nodig zijn, vallen ze nu.
+   ============================================================ */
+.badge { box-shadow: 0 1px 2px rgba(60,48,26,0.06); }
+.faro-kop { box-shadow: none; }
+.stats-strip { box-shadow: none; }
+.calc-result { box-shadow: 0 8px 24px rgba(60,48,26,0.08); }
+.demo-form { box-shadow: 0 2px 6px rgba(60,48,26,0.05), 0 12px 32px rgba(60,48,26,0.07); }
+.trust-pill { box-shadow: none; }
+
+/* De taal- en sectormenu's zweven boven de pagina, dus die houden een
+   echte schaduw. Alleen niet meer gekleurd. */
+.lang-menu,
+.navdrop-menu {
+  box-shadow: 0 4px 12px rgba(40,32,18,0.10), 0 18px 48px rgba(40,32,18,0.14);
+}
+
+/* ============================================================
+   40. ONDERGRENS 12px, OOK IN DE MOCKUPS
+   ============================================================ */
+.dash-recent li,
+.wa-name,
+.wa-status { font-size: 12px; }
