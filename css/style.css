@@ -5623,18 +5623,39 @@ p { text-wrap: pretty; }
   .ytfacade-play::after { border-left-width: 15px; border-top-width: 9px; border-bottom-width: 9px; }
 }
 
-/* ============================================================
-   FARO-GIDS ALLEEN WAAR HIJ RUIMTE HEEFT
-   ------------------------------------------------------------
-   De gids staat position:fixed en had geen enkele regel voor
-   smalle schermen. Op een telefoon legt een valk van 180px plus
-   zijn tekstballon zich dwars over de tekst: hij dekte de kop
-   "Klantcontact" en de lijst onder Faro af. Gezien op een
-   schermafdruk van de live site, niet in de code.
 
-   Dit is de enige wijziging die is meegenomen uit de periode dat
-   de site één lichte versie was. De rest van de opmaak staat weer
-   zoals hij was: Sand Black met de schakelaar.
+/* ============================================================
+   FARO OP MIDDELGROTE SCHERMEN
+   ------------------------------------------------------------
+   Onder 720px stond hij al goed: klein, als balkje onderaan, de
+   valk naast zijn ballon. Tussen 721 en 1000px kreeg hij nog de
+   opmaak van de desktop, een valk van 180px in de hoek, en dan
+   legt hij zich dwars over de tekst.
+
+   Ik had hem daar eerst helemaal verborgen. Dat was te bot: juist
+   op die maat is er ruimte zat voor de kleine versie. Dus geen
+   verbergen, maar dezelfde compacte balk als op de telefoon.
    ============================================================ */
-@media (max-width: 1000px) { .faro-gids { display: none !important; } }
-@media (max-height: 700px) { .faro-gids { display: none !important; } }
+@media (min-width: 721px) and (max-width: 1000px) {
+  .faro-gids[data-plek] {
+    left: auto; right: 18px; bottom: 18px; top: auto;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 10px;
+    max-width: min(520px, calc(100vw - 36px));
+  }
+  .faro-gids-img { width: 104px; height: 104px; }
+  .faro-gids-ballon { max-width: 300px; padding: 13px 32px 13px 16px; border-radius: 16px; }
+  .faro-gids-tekst { font-size: 13px; }
+  .faro-gids[data-kant] .faro-gids-ballon::after {
+    left: auto; right: -21px;
+    border-left-color: var(--faro-wolk); border-right-color: transparent;
+  }
+}
+
+/* Op een laag scherm krimpt hij mee in plaats van te verdwijnen. */
+@media (max-height: 700px) {
+  .faro-gids-img { width: 76px; height: 76px; }
+  .faro-gids-ballon { padding: 10px 28px 10px 13px; }
+  .faro-gids-tekst { font-size: 12px; }
+}
