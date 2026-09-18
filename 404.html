@@ -10,11 +10,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <meta name="theme-color" content="#17140F">
+  <meta name="theme-color" content="#121212">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css?v=83">
+  <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
+    (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+  </script>
+  <link rel="stylesheet" href="/css/style.css?v=84">
   <style>
     /* Deze pagina heeft geen navigatie en geen voettekst. Wie hier belandt,
        is iets kwijt: dan is één weg terug duidelijker dan een volledig menu. */
@@ -26,7 +29,7 @@
       padding: 48px 24px;
       background:
         radial-gradient(120% 90% at 50% 0%, rgba(var(--accent-rgb), 0.10) 0%, transparent 60%),
-        var(--surface-1);
+        var(--bg-1);
     }
     .nf-inner { max-width: 560px; text-align: center; }
     .nf-logo { width: 56px; height: 56px; margin: 0 auto 30px; display: block; }
@@ -131,6 +134,6 @@
     if (audit) audit.setAttribute('href', wortel + 'meeting.html');
   })();
   </script>
-  <script src="/js/main.js?v=31"></script>
+  <script src="/js/main.js?v=32"></script>
 </body>
 </html>

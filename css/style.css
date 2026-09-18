@@ -4,90 +4,49 @@
 
 /* === VARIABLES === */
 :root {
-  /* ---------- Sand Black (donker) ----------
-     De grijzen hieronder stonden neutraal: #0D0D0D, #121212, #232323. Naast
-     zand las dat koud, en samen met het lichte thema (wit met blauwgrijze
-     tekst) was de site in feite zwart-wit met één zandaccent erop.
-
-     Alles is nu naar warm getrokken. Dezelfde helderheid, maar met een
-     spoor geel-rood erin, zodat het zand erbij hoort in plaats van erop
-     ligt. Elke pagina leest uit deze variabelen, dus dit zet de hele site
-     in één keer recht.                                                    */
-  /* Er was een licht en een donker thema met een schakelaar ertussen. Dat
-     zijn twee sites die je allebei moet onderhouden, en het dwingt elke
-     sectie in één van twee bakjes. Nu is er één versie.
-
-     Room is de grond. Zand en tan zijn de trappen erboven. Houtskool is
-     geen tweede thema meer maar een accent: twee, hooguit drie momenten
-     op de pagina waar het dieper wordt. Licht voert de boventoon. */
-  --bg-0: #EFEBE2;
-  --bg-1: #FAF8F4;
-  --bg-2: #F4F1EA;
-  --bg-card: #FFFFFF;
-  --bg-card-hover: #F7F4EE;
-
-  /* Tonentrap: van room naar zand, met houtskool als sluitsteen. */
-  --surface-1: #FAF8F4;
-  --surface-2: #F4F1EA;
-  --surface-3: #EFEBE2;
-  --surface-4: #E8E3D8;
-
-  /* Houtskool. Niet zwart, maar warm, zodat het bij het zand hoort.
-     Alleen voor de paar secties die dieper mogen. */
-  /* Rechtstreeks uit Faro geplukt. Zijn verenkleed loopt van #141414 via
-     #282828 naar #3C3C3C, zijn schild en snavel zijn #C8A078 en #B48C64,
-     en zijn borst is room. Dat is precies de fusie die we zoeken: de
-     mascotte is zelf al donker plus licht plus goud. */
-  --ink-bg:   #141414;
-  --ink-bg-2: #1E1E1E;
-  --ink-card: #282828;
-  --ink-line: #3C3C3C;
-  --ink-text-1: #F4F1EA;
-  --ink-text-2: #BDB8AE;
-  --ink-text-3: #948F86;
+  /* ---------- Sand Black (donker) ---------- */
+  --bg-0: #0D0D0D;
+  --bg-1: #121212;
+  --bg-2: #1A1A1A;
+  --bg-card: #232323;
+  --bg-card-hover: #2A2A2A;
 
   /* Vlakken in sand met donkere tekst erop: gelijk in beide thema's */
-  --accent-fill: #C8A078;
-  --accent-fill-hover: #D7B48F;
-  --accent-fill-deep: #B48C64;
-  --accent-fill-rgb: 200,160,120;
-  --on-accent: #141414;
+  --accent-fill: #E8D7B1;
+  --accent-fill-hover: #DDCAA1;
+  --accent-fill-deep: #D3BE93;
+  --on-accent: #121212;
 
   /* Accent voor tekst, randen en iconen: past zich aan het thema aan */
-  /* Zand blijft de vulkleur voor knoppen (donkere tekst erop). Als
-     tekstkleur op room haalt zand maar 1,7:1, dus daar staat dieper brons.
-     Op de houtskoolsecties schakelt dit terug naar zand, zie 34. */
-  --accent: #7A5C3C;
-  --accent-hover: #63482C;
-  --accent-dark: #63482C;
-  --accent-light: #7A5C3C;
-  --accent-deep: #63482C;
+  --accent: #E8D7B1;
+  --accent-hover: #DDCAA1;
+  --accent-dark: #C9AE7C;
+  --accent-light: #F0E4C8;
+  --accent-deep: #C9AE7C;
 
   /* Kleurdriehoeken voor doorschijnende tinten */
-  --accent-rgb: 122,92,60;
-  --accent-deep-rgb: 99,72,44;
-  --layer-rgb: 32,27,18;      /* subtiele laag boven de achtergrond, warm */
-  --veil-rgb: 251,247,239;    /* sluier voor nav en modals */
+  --accent-rgb: 232,215,177;
+  --accent-deep-rgb: 201,174,124;
+  --layer-rgb: 255,255,255;   /* subtiele laag boven de achtergrond */
+  --veil-rgb: 13,13,13;       /* sluier voor nav en modals */
 
-  --accent-glow: rgba(138,106,51,0.16);
+  --accent-glow: rgba(232,215,177,0.18);
 
-  /* Warm bijna-zwart in plaats van blauwzwart.
-     Contrast op --bg-1: 15,1:1 / 7,4:1 / 4,6:1. */
-  --text-1: #181818;
-  --text-2: #4E4A44;
-  --text-3: #6A655D;
+  --text-1: #F9F9F9;
+  --text-2: #B5B5B5;
+  --text-3: #999999;
 
   --success: #22C55E;
   --warning: #D4A017;
   --error: #DC2626;
 
-  --border-0: #E4DFD4;
-  --border-1: #D2CCBF;
-  --border-2: rgba(200,160,120,0.5);
+  --border-0: #262626;
+  --border-1: #333333;
+  --border-2: rgba(232,215,177,0.35);
 
-  --shadow-card: 0 10px 34px rgba(60,48,26,0.10);
-  --hero-img-filter: grayscale(1) sepia(0.2) brightness(1.75) contrast(0.82);
-  --grain-opacity: 0.025;
+  --shadow-card: 0 12px 44px rgba(0,0,0,0.45);
+  --hero-img-filter: grayscale(1) sepia(0.28) brightness(0.5) contrast(1.05);
+  --grain-opacity: 0.05;
 
   --radius-s: 8px;
   --radius-m: 14px;
@@ -107,6 +66,38 @@
    brons zodat ze leesbaar blijven; sand blijft de vulkleur voor
    knoppen (donkere tekst erop haalt ruim voldoende contrast).
    ============================================================ */
+:root[data-theme="light"] {
+  --bg-0: #F7F7F7;
+  --bg-1: #FFFFFF;
+  --bg-2: #F7F7F7;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FAFAF8;
+
+  --accent: #B08A4A;
+  --accent-hover: #9A7638;
+  --accent-dark: #9A7638;
+  --accent-light: #8A6A33;
+  --accent-deep: #8A6A33;
+
+  --accent-rgb: 176,138,74;
+  --accent-deep-rgb: 138,106,51;
+  --layer-rgb: 17,24,39;
+  --veil-rgb: 255,255,255;
+
+  --accent-glow: rgba(176,138,74,0.16);
+
+  --text-1: #111827;
+  --text-2: #4B5563;
+  --text-3: #6B7280;
+
+  --border-0: #E5E7EB;
+  --border-1: #D1D5DB;
+  --border-2: rgba(176,138,74,0.4);
+
+  --shadow-card: 0 10px 34px rgba(17,24,39,0.08);
+  --hero-img-filter: grayscale(1) sepia(0.2) brightness(1.75) contrast(0.82);
+  --grain-opacity: 0.025;
+}
 
 /* === RESET === */
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -220,11 +211,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-weight: 600;
   padding: 11px 24px;
   border-radius: var(--radius-s);
-  border: 1px solid rgba(var(--accent-fill-rgb), 0.85);
+  border: 1px solid rgba(var(--accent-rgb), 0.55);
   color: var(--on-accent);
   /* Binnen het zand zelf: van de lichte stop naar de diepe. Op wit werkt zand
      alleen als VULLING met donkere tekst -- als letter haalt het 1,7:1. */
-  background: linear-gradient(180deg, #F5ECD7 0%, var(--accent-fill) 55%, #D3BE93 100%);
+  background: linear-gradient(180deg, #F5ECD7 0%, var(--accent) 55%, #D3BE93 100%);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.42), inset 0 -1px 0 rgba(64,52,32,0.20),
               0 2px 8px rgba(var(--accent-rgb), 0.20), 0 10px 28px rgba(var(--accent-rgb), 0.16);
   transition: background 0.3s, box-shadow 0.3s, transform 0.2s, border-color 0.3s;
@@ -430,7 +421,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   margin-bottom: 20px;
 }
 .hero-title .highlight {
-  color: var(--accent);
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .hero-subtitle {
   font-size: 17px;
@@ -634,7 +628,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-family: var(--font-h);
   font-size: 36px;
   font-weight: 700;
-  color: var(--accent);
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   line-height: 1;
   margin-bottom: 12px;
 }
@@ -1239,7 +1236,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   margin-bottom: 4px;
 }
 .stat-value span {
-  color: var(--accent);
+  background: linear-gradient(135deg, var(--accent-light), var(--accent-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .stat-label { font-size: 12px; color: var(--text-3); font-weight: 500; }
 
@@ -1317,7 +1317,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    V2 — PREMIUM POLISH LAYER
    ============================================================ */
 
-::selection { background: rgba(var(--accent-rgb), 0.28); color: var(--text-1); }
+::selection { background: rgba(var(--accent-rgb), 0.35); color: #ffffff; }
 
 :focus-visible {
   outline: 2px solid var(--accent);
@@ -1368,12 +1368,15 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .nav-links .nav-link:hover::after { transform: scaleX(1); }
 
-/* Stond als verlooptekst met een eindeloos pannende animatie en een
-   gekleurde gloed eronder. Dat is precies het trekje dat een pagina
-   gegenereerd laat ogen, en de helft van elke letter werd er lichter van.
-   Eén effen accentkleur leest beter en houdt de kop rustig. */
+/* Animated gradient headline highlight */
 .hero-title .highlight {
-  color: var(--accent);
+  background: linear-gradient(110deg, var(--accent-light), var(--accent), var(--accent-dark), var(--accent-light));
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-pan 6s linear infinite;
+  filter: drop-shadow(0 0 24px rgba(var(--accent-rgb), 0.35));
 }
 @keyframes gradient-pan { to { background-position: 250% 0; } }
 
@@ -1740,7 +1743,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-size: clamp(34px, 4.5vw, 50px);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--accent);
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   line-height: 1.1;
   margin-bottom: 14px;
 }
@@ -1779,7 +1785,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .calc-stat-label {
   display: block;
   margin-top: 4px;
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--text-3);
   line-height: 1.35;
 }
@@ -1916,7 +1922,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 /* Pricing risk-reversal note */
 .pricing-note {
   margin-top: 10px;
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--text-3);
   text-align: center;
 }
@@ -2203,8 +2209,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   animation: word-in 0.7s var(--ease) forwards;
 }
 .hero-title .highlight .w {
-  color: var(--accent);
-  animation: word-in 0.7s var(--ease) forwards;
+  background: linear-gradient(110deg, var(--accent-light), var(--accent), var(--accent-dark), var(--accent-light));
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: word-in 0.7s var(--ease) forwards, gradient-pan 6s linear infinite;
 }
 @keyframes word-in { to { opacity: 1; transform: none; } }
 
@@ -2315,7 +2325,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .cal-times-note {
   margin-top: 12px;
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--text-3);
 }
 .cal-date.selected {
@@ -2396,7 +2406,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
-  color: var(--accent);
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .case-metric-label {
   font-size: 13px;
@@ -2846,7 +2859,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   font-family: var(--font-h);
   font-size: 15px;
   font-weight: 600;
-  color: var(--accent);
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 14px;
 }
 .sol-desc {
@@ -3013,6 +3029,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 /* Toon de zon in donkere modus (klik = naar licht), de maan in lichte modus */
 .theme-toggle .icon-sun { display: block; }
 .theme-toggle .icon-moon { display: none; }
+:root[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 
 .nav-mobile .theme-toggle { width: 100%; max-width: 280px; height: 46px; gap: 10px; }
 .nav-mobile .theme-toggle::after {
@@ -3031,10 +3049,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
               color 0.28s var(--ease) !important;
 }
 
-/* Eén versie, dus deze overlay geldt altijd. Warm bijna-zwart in plaats
-   van blauwzwart, zodat de foto bij de rest van de pagina hoort. */
-:root .photo-card::after {
-  background: linear-gradient(180deg, rgba(28,24,16,0.10) 0%, rgba(28,24,16,0.62) 55%, rgba(28,24,16,0.92) 100%);
+/* In het lichte thema hoeft de foto-overlay minder zwaar */
+:root[data-theme="light"] .photo-card::after {
+  background: linear-gradient(180deg, rgba(17,24,39,0.1) 0%, rgba(17,24,39,0.62) 55%, rgba(17,24,39,0.9) 100%);
 }
 /* De telefoon- en dashboardmockups blijven donker: dat zijn schermen */
 
@@ -3337,8 +3354,9 @@ select:focus-visible {
   filter: blur(28px);
   z-index: 0;
 }
-/* Faro is zelf bijna wit, dus een warme gloed tilt hem van de room af. */
-:root .faro-visual::before {
+/* Op het lichte thema is Faro zelf bijna wit, dan helpt een warmere en
+   iets sterkere gloed om hem van de achtergrond te tillen. */
+:root[data-theme="light"] .faro-visual::before {
   inset: 18% 16%;
   background: radial-gradient(circle, rgba(var(--accent-rgb), 0.34), rgba(var(--accent-rgb), 0) 72%);
   filter: blur(34px);
@@ -3359,12 +3377,8 @@ select:focus-visible {
 }
 /* Zwarte Faro op het donkere thema, witte op het lichte. Beide renders
    staan in de opmaak, het thema kiest welke er getoond wordt. */
-/* Eén Faro-render tegelijk. Het paneel eromheen is donker, maar de kaart
-   waar hij op staat is room, dus de donkere valk is hier de juiste. Beide
-   tegelijk tonen is wat er gebeurde: de regel hieronder stond wel in het
-   bestand, maar werd verderop overschreven door .faro-visual picture. */
-.faro-visual .faro-licht { display: none !important; }
-.faro-visual .faro-donker { display: block; }
+:root[data-theme="light"] .faro-donker { display: none; }
+:root[data-theme="dark"]  .faro-licht  { display: none; }
 .faro-copy .section-label { display: inline-block; margin-bottom: 14px; }
 .faro-copy .section-title { margin-bottom: 16px; }
 .faro-copy .section-sub { margin-bottom: 28px; }
@@ -3423,7 +3437,10 @@ select:focus-visible {
 /* Accentwoorden in sectietitels, rustiger dan in de hero: geen animatie,
    want die hoort bij de kop bovenaan de pagina. */
 .section-title .highlight {
-  color: var(--accent);
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ============================================================
@@ -3432,14 +3449,12 @@ select:focus-visible {
    net als een telefoon in een productfoto.
    ============================================================ */
 .dash {
-  /* Het nagebouwde dashboard volgde nog de neutrale grijzen. Warm getrokken,
-     zodat het bij de rest van de pagina hoort. */
-  --d-bg: #100E0A;
-  --d-panel: #17140F;
-  --d-card: #1E1A14;
-  --d-line: #2A251C;
-  --d-txt: #F5F1E8;
-  --d-mut: #8C8376;
+  --d-bg: #0D0D0D;
+  --d-panel: #121212;
+  --d-card: #1A1A1A;
+  --d-line: #262626;
+  --d-txt: #F5F5F5;
+  --d-mut: #8C8C8C;
   --d-gold: #E8D7B1;
   max-width: 1040px;
   margin: 0 auto;
@@ -3519,7 +3534,7 @@ select:focus-visible {
   color: var(--d-mut);
   margin-top: 4px;
 }
-.dash-recent li { font-size: 12px; color: var(--d-mut); }
+.dash-recent li { font-size: 11.5px; color: var(--d-mut); }
 .dash-user {
   margin-top: auto;
   display: flex;
@@ -3631,7 +3646,7 @@ select:focus-visible {
   padding: 13px 16px;
   border-radius: 12px;
   background: var(--d-card);
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--d-mut);
 }
 .dash-stats b { font-family: var(--font-h); font-size: 15px; color: var(--d-txt); margin-right: 3px; }
@@ -3659,7 +3674,7 @@ select:focus-visible {
   border-radius: 9px;
   background: var(--d-gold);
   color: #121212;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 600;
 }
 .dash-lead {
@@ -3688,7 +3703,7 @@ select:focus-visible {
   background: rgba(34, 197, 94, 0.14);
   color: #4ADE80;
 }
-.dash-lead-meta { font-size: 12px; color: var(--d-mut); }
+.dash-lead-meta { font-size: 11.5px; color: var(--d-mut); }
 
 @media (max-width: 760px) {
   .dash-body { grid-template-columns: 1fr; }
@@ -3830,7 +3845,7 @@ select:focus-visible {
 .wa-bubble {
   padding: 6px 10px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 11.5px;
   line-height: 1.38;
   color: #e9edef;
   word-break: break-word;
@@ -4522,8 +4537,16 @@ p { text-wrap: pretty; }
    3:1 voor grafische elementen niet), brons houdt op allebei stand. Daarom
    brons als standaard en sand op het donkere thema, waar hij op zijn best is.
    Geen filters of kleurbewerking: dit zijn de aangeleverde bestanden.     */
-/* Sand hoorde bij het donkere thema. Op room is brons het juiste logo,
-   en dat is nu het enige geval. */
+:root[data-theme="dark"] .nav-logo img,
+:root[data-theme="dark"] img.footer-logo {
+  content: url("../assets/logo-sand.png");
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .nav-logo img,
+  :root:not([data-theme="light"]) img.footer-logo {
+    content: url("../assets/logo-sand.png");
+  }
+}
 
 /* ============================================================================
    18. NAVIGATIE — DRIE NIVEAUS IN PLAATS VAN EEN
@@ -4887,7 +4910,8 @@ p { text-wrap: pretty; }
    dezelfde plek iets af te dekken, en de sprong vertelt je dat er iets
    nieuws staat. Wat NIET gebeurt is scroll-kaping -- geen vastgezette
    secties, geen animatie die je moet uitzitten. */
-:root { --faro-wolk: #FFFCF6; --faro-wolk-ink: #201B12; }
+:root                     { --faro-wolk: #F6F3EC; --faro-wolk-ink: #14110C; }
+:root[data-theme="light"] { --faro-wolk: #FFFFFF; --faro-wolk-ink: #14110C; }
 
 .faro-gids {
   position: fixed;
@@ -5600,565 +5624,17 @@ p { text-wrap: pretty; }
 }
 
 /* ============================================================
-   33. TONENTRAP OVER DE PAGINA
-   ------------------------------------------------------------
-   De secties wisselden tussen twee waarden, --bg-1 en --bg-0.
-   Dat leest als om-en-om, en het is precies wat een pagina in
-   losse blokken hakt in plaats van er één geheel van te maken.
-
-   Hieronder staat één verloop voor de hele pagina, van licht
-   naar dieper, met kleine stappen. Het verschil tussen twee
-   opeenvolgende secties is klein genoeg om niet als rand te
-   lezen, en groot genoeg om beweging te geven.
-
-   Eén plek, zodat de volgorde te lezen en te wijzigen is
-   zonder door het hele bestand te zoeken.
-   ============================================================ */
-body { background: var(--surface-1); }
-
-.hero            { background: var(--surface-1); }
-.werk            { background: var(--surface-2); }
-.agentbar        { background: var(--surface-2); }
-.faro            { background: var(--surface-1); }
-.stats-strip     { background: var(--surface-3); }
-.photo-section   { background: var(--surface-2); }
-.solutions       { background: var(--surface-3); }
-.comparison      { background: var(--surface-2); }
-.ticker          { background: var(--surface-3); }
-#controle        { background: var(--surface-3); }
-#prijzen         { background: var(--surface-2); }
-.cta-band        { background: var(--surface-4); }
-.footer          { background: var(--surface-4); }
-
-/* De sectorpagina's volgen hetzelfde verloop. */
-.sector-hero     { background: var(--surface-1); }
-
-/* De randen tussen secties mochten weg: het verschil in toon doet
-   het werk nu. Waar een rand nog nodig is, is hij warm. */
-.ticker, .ticker-herkomst, .agentbar {
-  border-top-color: var(--border-0);
-  border-bottom-color: var(--border-0);
-}
-
-/* ============================================================
-   34. HOUTSKOOL ALS ACCENT, NIET ALS TWEEDE THEMA
-   ------------------------------------------------------------
-   Er was een lichte en een donkere versie met een schakelaar
-   ertussen. Nu is er één versie: room voert de boventoon, en
-   houtskool komt twee keer voor als rustpunt. De agentbalk
-   halverwege, en de afsluiter met de voettekst.
-
-   Dat is geen tweede thema. Het zijn twee secties in dezelfde
-   pagina die dieper staan, zoals een zwarte bladzijde in een
-   tijdschrift: je merkt dat je ergens anders bent zonder dat het
-   een andere site wordt.
-
-   Binnen deze secties draait het accent terug naar zand, want op
-   houtskool is brons te donker en zand juist goed.
-   ============================================================ */
-.op-houtskool {
-  background: var(--ink-bg);
-  color: var(--ink-text-1);
-
-  --text-1: var(--ink-text-1);
-  --text-2: var(--ink-text-2);
-  --text-3: var(--ink-text-3);
-  --bg-card: var(--ink-card);
-  --bg-card-hover: #353024;
-  --border-0: var(--ink-line);
-  --border-1: #48402F;
-  --border-2: rgba(232,215,177,0.35);
-
-  /* Zand als accent, het brons van de lichte kant haalt hier te weinig. */
-  --accent: #E8D7B1;
-  --accent-hover: #F0E4C8;
-  --accent-dark: #C9AE7C;
-  --accent-light: #F0E4C8;
-  --accent-deep: #C9AE7C;
-  --accent-rgb: 232,215,177;
-  --accent-deep-rgb: 201,174,124;
-  --accent-glow: rgba(232,215,177,0.18);
-  --layer-rgb: 255,250,240;
-  --shadow-card: 0 12px 44px rgba(8,6,3,0.5);
-}
-
-/* De overgang naar houtskool mag niet als een harde rand lezen. Een smalle
-   verloopstrook erboven laat room in houtskool zakken. */
-.op-houtskool { position: relative; }
-.op-houtskool::before {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; top: -70px;
-  height: 70px;
-  background: linear-gradient(180deg, transparent 0%, var(--ink-bg) 100%);
-  pointer-events: none;
-}
-
-/* De agentbalk zit in het midden van de pagina en is de eerste keer dat het
-   dieper wordt. */
-.agentbar.op-houtskool {
-  border-top: 0;
-  border-bottom: 0;
-  padding: 26px 0;
-}
-.agentbar.op-houtskool .agent-chip {
-  background: var(--ink-bg-2);
-  border-color: var(--ink-line);
-}
-
-/* De afsluiter en de voettekst horen bij elkaar: samen één donker blok
-   onderaan, zonder naad ertussen. */
-.cta-band.op-houtskool { background: var(--ink-bg); }
-.cta-band.op-houtskool + .footer { background: var(--ink-bg); }
-.footer.op-houtskool::before { display: none; }
-
-/* ============================================================
-   35. FARO-GIDS ALLEEN WAAR HIJ RUIMTE HEEFT
+   FARO-GIDS ALLEEN WAAR HIJ RUIMTE HEEFT
    ------------------------------------------------------------
    De gids staat position:fixed en had geen enkele regel voor
    smalle schermen. Op een telefoon legt een valk van 180px plus
-   zijn tekstballon zich dwars over de tekst: in de schermafdruk
-   dekte hij de kop "Klantcontact" en de lijst onder Faro af.
+   zijn tekstballon zich dwars over de tekst: hij dekte de kop
+   "Klantcontact" en de lijst onder Faro af. Gezien op een
+   schermafdruk van de live site, niet in de code.
 
-   Een verteller die de tekst onleesbaar maakt, kost meer dan hij
-   oplevert. Onder 1000px blijft hij weg. Daarboven heeft hij de
-   marge naast de kolom en zit hij niemand in de weg.
+   Dit is de enige wijziging die is meegenomen uit de periode dat
+   de site één lichte versie was. De rest van de opmaak staat weer
+   zoals hij was: Sand Black met de schakelaar.
    ============================================================ */
-@media (max-width: 1000px) {
-  .faro-gids { display: none !important; }
-}
-
-/* Ook op een kort scherm is er geen plaats voor een verteller. */
-@media (max-height: 700px) {
-  .faro-gids { display: none !important; }
-}
-
-/* ============================================================
-   36. MINDER GLOED, MEER RUST
-   ------------------------------------------------------------
-   De gloedvlekken zijn getekend voor een donkere achtergrond.
-   Daar geeft een warme waas diepte. Op room doen ze het
-   omgekeerde: ze maken het vlak vuil in plaats van diep, en met
-   dertig gloeiende schaduwen en zeventien ronde vlekken gaat een
-   pagina er gemaakt uitzien.
-
-   Diepte komt hier van toon, ruimte en typografie. Waar een
-   schaduw nodig is, valt hij naar beneden zoals licht dat doet,
-   in plaats van rondom te gloeien.
-   ============================================================ */
-
-/* De sectievlekken mogen weg: de tonentrap uit 33 doet dit werk nu. */
-.section-glow,
-.cta-band-glow { display: none; }
-
-/* In de hero blijft een spoor warmte, maar veel zwakker. */
-.hero-glow,
-.hero-glow-2 { opacity: 0.35; }
-
-/* Gloed rondom een knop wordt een schaduw eronder. */
-.btn {
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.5),
-    inset 0 -1px 0 rgba(64,52,32,0.18),
-    0 1px 2px rgba(60,48,26,0.10),
-    0 6px 16px rgba(60,48,26,0.10);
-}
-.btn:hover {
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.55),
-    inset 0 -1px 0 rgba(64,52,32,0.20),
-    0 2px 4px rgba(60,48,26,0.12),
-    0 10px 24px rgba(60,48,26,0.14);
-}
-
-/* Kaarten: een rand óf een schaduw, niet allebei zwaar. */
-.sol-card,
-.photo-card,
-.pricing-card,
-.showcase-slide,
-.box {
-  box-shadow: 0 1px 2px rgba(60,48,26,0.04), 0 8px 24px rgba(60,48,26,0.06);
-}
-.sol-card:hover,
-.pricing-card:hover {
-  box-shadow: 0 2px 4px rgba(60,48,26,0.06), 0 14px 36px rgba(60,48,26,0.10);
-}
-
-/* Op houtskool valt licht anders: daar mag de schaduw dieper en donkerder,
-   maar nog steeds naar beneden en niet rondom. */
-.op-houtskool .sol-card,
-.op-houtskool .box {
-  box-shadow: 0 2px 6px rgba(8,6,3,0.35), 0 16px 40px rgba(8,6,3,0.30);
-}
-
-/* ============================================================
-   37. LEESBARE ONDERGRENS
-   ------------------------------------------------------------
-   Er stond tekst van 10 en 11px op de pagina. Dat is te klein om
-   te lezen en het is een van de dingen die een ontwerp goedkoop
-   laten ogen. Twaalf is hier de bodem.
-   ============================================================ */
-.trust-pill,
-.chip-sub,
-.wa-time,
-.sol-tag,
-.photo-tag,
-.pricing-note,
-.footer-legal a,
-.showcase-list li { font-size: 12px; }
-.section-label,
-.sector-eyebrow,
-.showcase-num { font-size: 12.5px; }
-
-/* ============================================================
-   38. FOTOKAART HEEFT ZELF EEN DONKERE BODEM
-   ------------------------------------------------------------
-   De tekst op een fotokaart is wit, maar de kaart eronder stond
-   op room. Zolang de foto laadt gaat dat goed, want daar ligt een
-   donkere sluier overheen. Laadt hij niet, dan staat er witte
-   tekst op bijna-wit: onzichtbaar.
-
-   De bodem is nu houtskool. Met of zonder foto klopt het contrast.
-   ============================================================ */
-.photo-card { background: var(--ink-bg); }
-
-/* ============================================================
-   39. GLOED WEG OP ROOM
-   ------------------------------------------------------------
-   Deze schaduwen gloeien rondom in plaats van te vallen. Op een
-   donkere achtergrond werkte dat; op room is het een vage waas om
-   een element heen. Waar ze nog nodig zijn, vallen ze nu.
-   ============================================================ */
-.badge { box-shadow: 0 1px 2px rgba(60,48,26,0.06); }
-.faro-kop { box-shadow: none; }
-.stats-strip { box-shadow: none; }
-.calc-result { box-shadow: 0 8px 24px rgba(60,48,26,0.08); }
-.demo-form { box-shadow: 0 2px 6px rgba(60,48,26,0.05), 0 12px 32px rgba(60,48,26,0.07); }
-.trust-pill { box-shadow: none; }
-
-/* De taal- en sectormenu's zweven boven de pagina, dus die houden een
-   echte schaduw. Alleen niet meer gekleurd. */
-.lang-menu,
-.navdrop-menu {
-  box-shadow: 0 4px 12px rgba(40,32,18,0.10), 0 18px 48px rgba(40,32,18,0.14);
-}
-
-/* ============================================================
-   40. ONDERGRENS 12px, OOK IN DE MOCKUPS
-   ============================================================ */
-.dash-recent li,
-.wa-name,
-.wa-status { font-size: 12px; }
-
-/* ============================================================
-   41. AFSLUITER EN VOETTEKST ZIJN ÉÉN BLOK
-   ------------------------------------------------------------
-   Allebei houtskool, maar er liep een randlijn tussen, en samen
-   stond er 170px lege donkerte tussen de knop en de eerste
-   voettekstkolom (110 onder + 60 boven). Dat leest als twee
-   secties die toevallig dezelfde kleur hebben, en het maakt het
-   donkere deel van de pagina onnodig groot.
-
-   Geen lijn, en de ruimte teruggebracht tot iets wat als één
-   afsluiting leest.
-   ============================================================ */
-.cta-band.op-houtskool + .footer {
-  border-top: 0;
-  padding-top: 24px;
-}
-.cta-band.op-houtskool { padding-bottom: 56px; }
-
-/* De scheiding binnen de voettekst mag wel zichtbaar zijn, maar zacht. */
-.op-houtskool .footer-bottom { border-top-color: rgba(232,215,177,0.14); }
-
-/* ============================================================
-   42. LICHT EN DONKER DOOR ELKAAR, NIET NA ELKAAR
-   ------------------------------------------------------------
-   Tot hier was het licht met twee donkere secties. Dat leest nog
-   steeds als "eerst de lichte versie, dan de donkere". Een fusie
-   is iets anders: donkere onderdelen die IN een lichte opmaak
-   staan, en omgekeerd.
-
-   Faro doet het zelf al voor: zwart verenkleed, roomkleurige
-   borst, gouden schild. Dat is de verhouding die de pagina nu
-   aanhoudt, ongeveer zeventig om dertig.
-
-   Waar donker nu zit, verspreid over de pagina:
-     de navigatiebalk        boven het lichte vlak
-     de eerste domeinkaart   tussen lichte kaarten
-     de automotive-kaart     tussen lichte sectorkaarten
-     het Faro-paneel         midden in een licht blok
-     de uitgelichte prijs    tussen twee lichte plannen
-     de agentbalk            als rustpunt halverwege
-     de afsluiter            als sluitsteen onderaan
-   ============================================================ */
-
-/* ── De balk bovenaan is donker ─────────────────────────────────── */
-.nav {
-  background: rgba(20, 20, 20, 0.92);
-  -webkit-backdrop-filter: saturate(140%) blur(14px);
-  backdrop-filter: saturate(140%) blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-.nav.scrolled { background: rgba(20, 20, 20, 0.97); }
-.nav .nav-link,
-.nav .navdrop-toggle { color: var(--ink-text-2); }
-.nav .nav-link:hover,
-.nav .navdrop-toggle:hover,
-.nav .navdrop.open .navdrop-toggle { color: var(--ink-text-1); }
-.nav .nav-brand { color: var(--ink-text-1); }
-.nav .lang-toggle {
-  color: var(--ink-text-2);
-  border-color: rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.04);
-}
-.nav .lang-toggle:hover { color: var(--ink-text-1); border-color: var(--accent-fill); }
-.nav-hamburger span { background: var(--ink-text-1); }
-
-/* De aankondigingsbalk erboven blijft licht: die scheidt de donkere balk
-   van de bovenkant van het scherm en geeft het geheel lucht. */
-.topbar { border-bottom: 0; }
-
-/* ── Donkere kaarten tussen lichte ──────────────────────────────── */
-.kaart-donker {
-  background: var(--ink-bg);
-  color: var(--ink-text-1);
-  border-color: var(--ink-line);
-
-  --text-1: var(--ink-text-1);
-  --text-2: var(--ink-text-2);
-  --text-3: var(--ink-text-3);
-  --bg-card: var(--ink-card);
-  --border-0: var(--ink-line);
-  --border-1: #4A4A4A;
-  --accent: #C8A078;
-  --accent-light: #D7B48F;
-  --accent-deep: #B48C64;
-  --accent-rgb: 200,160,120;
-  --accent-deep-rgb: 180,140,100;
-  box-shadow: 0 2px 6px rgba(20,20,20,0.16), 0 18px 44px rgba(20,20,20,0.20);
-}
-.kaart-donker .sol-title,
-.kaart-donker .showcase-titel { color: var(--ink-text-1); }
-.kaart-donker .sol-claim { color: var(--accent-fill); }
-.kaart-donker .sol-desc { color: var(--ink-text-2); }
-.kaart-donker .sol-tag,
-.kaart-donker .showcase-num {
-  color: var(--accent-fill);
-  border-color: rgba(200,160,120,0.35);
-  background: rgba(200,160,120,0.10);
-}
-.kaart-donker .icon-box {
-  background: rgba(200,160,120,0.14);
-  border-color: rgba(200,160,120,0.30);
-  color: var(--accent-fill);
-}
-.kaart-donker .sol-highlight {
-  background: rgba(255,255,255,0.05);
-  border-color: rgba(255,255,255,0.10);
-}
-
-/* ── De hoofdknop is Faro's verenkleed, niet zijn schild ────────── */
-.btn {
-  background: linear-gradient(180deg, #2A2A2A 0%, #141414 60%, #0E0E0E 100%);
-  color: #F4F1EA;
-  border: 1px solid #141414;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.10),
-    0 1px 2px rgba(20,20,20,0.16),
-    0 8px 20px rgba(20,20,20,0.16);
-}
-.btn:hover {
-  background: linear-gradient(180deg, #333333 0%, #1C1C1C 60%, #141414 100%);
-  border-color: #000;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.14),
-    0 2px 5px rgba(20,20,20,0.20),
-    0 14px 30px rgba(20,20,20,0.20);
-}
-.btn .btn-arrow { color: var(--accent-fill); }
-
-/* Op houtskool draait de knop om: daar is hij licht. */
-.op-houtskool .btn,
-.kaart-donker .btn {
-  background: linear-gradient(180deg, #FFFFFF 0%, #F0EDE6 100%);
-  color: #141414;
-  border-color: #E4DFD4;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.30), 0 10px 26px rgba(0,0,0,0.28);
-}
-.op-houtskool .btn:hover,
-.kaart-donker .btn:hover { background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%); }
-.op-houtskool .btn .btn-arrow,
-.kaart-donker .btn .btn-arrow { color: var(--accent-deep); }
-
-/* De tweede knop blijft rustig: een omlijning, geen vlak. */
-.btn-ghost {
-  background: transparent;
-  color: var(--text-1);
-  border: 1px solid var(--border-1);
-  box-shadow: none;
-}
-.btn-ghost:hover {
-  background: rgba(20,20,20,0.04);
-  border-color: var(--text-1);
-  color: var(--text-1);
-  box-shadow: none;
-}
-.op-houtskool .btn-ghost {
-  color: var(--ink-text-1);
-  border-color: rgba(255,255,255,0.28);
-  background: transparent;
-}
-.op-houtskool .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: var(--accent-fill); }
-
-/* Het uitgelichte prijsplan is donker: dat trekt het oog zonder een badge,
-   en het zet twee lichte plannen ernaast in verhouding. */
-.pricing-card.kaart-donker .pricing-tier { color: var(--ink-text-1); }
-.pricing-card.kaart-donker .pricing-price { color: var(--accent-fill); }
-.pricing-card.kaart-donker .pricing-volume,
-.pricing-card.kaart-donker .pricing-note { color: var(--ink-text-3); }
-.pricing-card.kaart-donker .feat-text { color: var(--ink-text-2); }
-.pricing-card.kaart-donker .pricing-feat.included .feat-icon { color: var(--accent-fill); }
-.pricing-card.kaart-donker .pricing-feat.excluded .feat-text { color: #6E6A63; }
-.pricing-card.kaart-donker .pricing-divider { background: var(--ink-line); }
-.pricing-card.kaart-donker .pricing-badge-pill {
-  background: var(--accent-fill);
-  color: #141414;
-  border-color: transparent;
-}
-
-/* De Faro-sectie wordt een donker paneel binnen een licht blok: de mascotte
-   staat op zijn eigen verenkleed, en het is het derde donkere moment
-   halverwege de pagina in plaats van aan het eind. */
-.section.faro {
-  background: var(--surface-2);
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.section.faro .faro-inner {
-  background: var(--ink-bg);
-  color: var(--ink-text-1);
-  border-radius: var(--radius-l);
-  padding: 64px 48px;
-  margin: 80px 0;
-
-  --text-1: var(--ink-text-1);
-  --text-2: var(--ink-text-2);
-  --text-3: var(--ink-text-3);
-  --accent: #C8A078;
-  --accent-light: #D7B48F;
-  --accent-deep: #B48C64;
-  --accent-rgb: 200,160,120;
-  --border-0: var(--ink-line);
-  box-shadow: 0 4px 12px rgba(20,20,20,0.14), 0 28px 70px rgba(20,20,20,0.22);
-}
-.section.faro .section-title,
-.section.faro .faro-close { color: var(--ink-text-1); }
-.section.faro .section-label,
-.section.faro .faro-kop { color: var(--accent-fill); }
-.section.faro .section-sub,
-.section.faro .faro-list span { color: var(--ink-text-2); }
-.section.faro .faro-list strong { color: var(--ink-text-1); }
-@media (max-width: 720px) {
-  .section.faro .faro-inner { padding: 40px 24px; margin: 52px 0; border-radius: var(--radius-m); }
-}
-
-/* De cijferbalk is het vierde donkere moment, ongeveer een derde van de
-   pagina naar beneden. Vier getallen op houtskool lezen sterker dan op room,
-   en het brengt de verhouding licht/donker op ongeveer 73 om 27. */
-.stats-strip.op-houtskool { border-top: 0; border-bottom: 0; }
-.stats-strip.op-houtskool .stat-value,
-.stats-strip.op-houtskool .stat-value span { color: var(--accent-fill); }
-.stats-strip.op-houtskool .stat-label { color: var(--ink-text-2); }
-
-/* ============================================================
-   43. DE DONKERE BALK VAN BINNENUIT
-   ------------------------------------------------------------
-   De balk donker maken raakte meer dan de balk zelf. Alles wat
-   erin hangt erfde nog de tekstkleuren van de lichte kant:
-
-     de balk zelf        #181818 op #141414   1,04:1
-     de taalkiezer       #BDB8AE op wit       1,98:1
-     de actieve taal     #7A5C3C op #7A5C3C   1,00:1  onzichtbaar
-     het sectormenu      #181818 op donker    1,04:1
-
-   In de code zag dat er goed uit, want de zichtbare links hadden
-   wel een eigen kleur. Alleen de containers en de menu's niet.
-   Hier staat de hele balk in één keer op de donkere set.
-   ============================================================ */
-.nav {
-  color: var(--ink-text-1);
-  --text-1: var(--ink-text-1);
-  --text-2: var(--ink-text-2);
-  --text-3: var(--ink-text-3);
-  --border-0: rgba(255,255,255,0.10);
-  --border-1: rgba(255,255,255,0.20);
-  --accent: #C8A078;
-  --accent-deep: #B48C64;
-  --accent-rgb: 200,160,120;
-  --veil-rgb: 26,26,26;
-}
-.nav .lang-current,
-.nav .lang-caret,
-.nav .lang-code { color: var(--ink-text-2); }
-
-/* De uitklapmenu's zijn eigen vlakken op de donkere balk. */
-.nav .lang-menu,
-.nav .navdrop-menu,
-.nav-mobile .lang-menu,
-.nav-mobile .navdrop-menu {
-  background: #1E1E1E;
-  border-color: rgba(255,255,255,0.12);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.40), 0 24px 60px rgba(0,0,0,0.45);
-}
-.nav .lang-opt,
-.nav-mobile .lang-opt { color: var(--ink-text-2); }
-.nav .lang-opt:hover,
-.nav-mobile .lang-opt:hover { background: rgba(255,255,255,0.08); color: var(--ink-text-1); }
-
-/* De actieve taal was tekst en vlak in dezelfde kleur. Nu goud vlak,
-   donkere letter: 8,1:1. */
-.nav .lang-opt.active,
-.nav-mobile .lang-opt.active {
-  background: var(--accent-fill);
-  color: #141414;
-}
-.nav .lang-opt.active .lang-code,
-.nav-mobile .lang-opt.active .lang-code { color: #141414; }
-
-.nav .navdrop-item .ndi-title,
-.nav-mobile .navdrop-item .ndi-title { color: var(--ink-text-1); }
-.nav .navdrop-item .ndi-sub,
-.nav-mobile .navdrop-item .ndi-sub { color: var(--ink-text-3); }
-.nav .navdrop-item:hover,
-.nav-mobile .navdrop-item:hover { background: rgba(200,160,120,0.14); }
-
-/* Het mobiele menu hoort bij dezelfde balk, dus ook donker. */
-.nav-mobile {
-  background: rgba(20,20,20,0.98);
-  color: var(--ink-text-1);
-  --text-1: var(--ink-text-1);
-  --text-2: var(--ink-text-2);
-  --text-3: var(--ink-text-3);
-  --border-1: rgba(255,255,255,0.20);
-}
-.nav-mobile .nav-link,
-.nav-mobile .navdrop-toggle { color: var(--ink-text-1); }
-.nav-mobile .lang-toggle { color: var(--ink-text-2); border-color: rgba(255,255,255,0.20); }
-
-/* De knop is nu donker, dus alles wat erin staat hoort bij de donkere set.
-   Het diepe brons van de lichte kant haalde er 2,3:1. */
-.btn {
-  --accent: #C8A078;
-  --accent-deep: #B48C64;
-  --accent-light: #D7B48F;
-  --accent-rgb: 200,160,120;
-  --text-1: #F4F1EA;
-  --text-2: #BDB8AE;
-}
-.btn-ghost {
-  --accent: var(--accent-deep);
-  --text-1: #181818;
-}
-.op-houtskool .btn-ghost,
-.kaart-donker .btn-ghost { --text-1: #F4F1EA; --accent: #C8A078; }
+@media (max-width: 1000px) { .faro-gids { display: none !important; } }
+@media (max-height: 700px) { .faro-gids { display: none !important; } }
