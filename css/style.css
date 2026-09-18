@@ -6062,3 +6062,11 @@ body { background: var(--surface-1); }
 @media (max-width: 720px) {
   .section.faro .faro-inner { padding: 40px 24px; margin: 52px 0; border-radius: var(--radius-m); }
 }
+
+/* De cijferbalk is het vierde donkere moment, ongeveer een derde van de
+   pagina naar beneden. Vier getallen op houtskool lezen sterker dan op room,
+   en het brengt de verhouding licht/donker op ongeveer 73 om 27. */
+.stats-strip.op-houtskool { border-top: 0; border-bottom: 0; }
+.stats-strip.op-houtskool .stat-value,
+.stats-strip.op-houtskool .stat-value span { color: var(--accent-fill); }
+.stats-strip.op-houtskool .stat-label { color: var(--ink-text-2); }
