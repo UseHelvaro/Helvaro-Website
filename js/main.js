@@ -948,7 +948,22 @@ function initFaroGids() {
   var weg  = document.getElementById('faroGidsSluit');
   if (!doos || !img || !reg) return;
 
-  try { if (localStorage.getItem('helvaro_faro_gids') === 'uit') return; } catch (e) {}
+  /* Wegklikken gold voorgoed: één klik en Faro kwam op dat toestel nooit
+     meer terug, zonder enige manier om hem terug te halen. Dat is te zwaar
+     voor een kruisje. De keuze houdt nu twee weken stand en vervalt daarna. */
+  try {
+    var weggeklikt = localStorage.getItem('helvaro_faro_gids');
+    if (weggeklikt) {
+      var tot = parseInt(weggeklikt, 10);
+      if (weggeklikt === 'uit') {           /* oude waarde zonder datum */
+        localStorage.removeItem('helvaro_faro_gids');
+      } else if (tot && Date.now() < tot) {
+        return;
+      } else {
+        localStorage.removeItem('helvaro_faro_gids');
+      }
+    }
+  } catch (e) {}
 
   var secties = document.querySelectorAll('[data-gids]');
   if (!secties.length || !('IntersectionObserver' in window)) return;
@@ -1010,7 +1025,8 @@ function initFaroGids() {
     weg.addEventListener('click', function () {
       doos.hidden = true;
       obs.disconnect();
-      try { localStorage.setItem('helvaro_faro_gids', 'uit'); } catch (e) {}
+      /* Veertien dagen stil, daarna mag hij weer meekijken. */
+      try { localStorage.setItem('helvaro_faro_gids', String(Date.now() + 14 * 864e5)); } catch (e) {}
     });
   }
 }
