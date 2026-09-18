@@ -39,7 +39,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="../../css/style.css?v=66">
+  <link rel="stylesheet" href="../../css/style.css?v=67">
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://helvaro.pro/" },
@@ -50,9 +50,9 @@
   <a class="skip-link" href="#main">Ir al contenido</a>
 
   <!-- ===== AANKONDIGINGSBALK ===== -->
-  <a class="topbar" href="../waarom.html">
-    <span class="topbar-text">Cómo los equipos siguen cada lead sin contratar a nadie.</span>
-    <span class="topbar-link">Ver cómo <span aria-hidden="true">&#8594;</span></span>
+  <a class="topbar" href="../index.html#sectoren">
+    <span class="topbar-text">Nuevo: agentes para talleres, concesionarios y alquiler.</span>
+    <span class="topbar-link">Ver automoción <span aria-hidden="true">&#8594;</span></span>
   </a>
 
   <!-- ===== NAV ===== -->
@@ -182,21 +182,35 @@
 
 
         <h2>Así suena en una solicitud</h2>
-        <div class="sector-chat" aria-label="WhatsApp-gesprek waarin de agent van een bouwbedrijf een renovatieaanvraag kwalificeert en een plaatsbezoek inplant">
-          <div class="wa-header">
-            <div class="wa-avatar" aria-hidden="true">W</div>
-            <div class="wa-contact">
-              <span class="wa-name">Wout &middot; Bouwwerken Claes</span>
-              <span class="wa-status">en línea</span>
+        <div class="sector-fonw">
+          <div class="phone-wrap">
+            <div class="phone-frame">
+              <div class="phone-notch" aria-hidden="true"></div>
+              <div class="phone-screen" role="img" aria-label="WhatsApp-gesprek waarin de agent van een bouwbedrijf een renovatieaanvraag kwalificeert en een plaatsbezoek inplant">
+                <div class="wa-header">
+                  <span class="wa-back" aria-hidden="true">&lsaquo;</span>
+                  <div class="wa-avatar" aria-hidden="true">W</div>
+                  <div class="wa-contact">
+                    <span class="wa-name">Wout &middot; Bouwwerken Claes</span>
+                    <span class="wa-status">en línea</span>
+                  </div>
+                  <div class="wa-icons" aria-hidden="true">
+                    <span class="wa-icon">&#128222;</span>
+                    <span class="wa-icon">&#8942;</span>
+                  </div>
+                </div>
+                <div class="wa-chat">
+                  <span class="wa-date-badge">Jueves</span>
+                  <div class="wa-msg sent"><div class="wa-bubble">Hola, ¿cuánto cuesta más o menos reformar un baño? 👋</div><span class="wa-time">19:12</span></div>
+                  <div class="wa-msg received"><div class="wa-bubble">¡Hola! Depende de un par de cosas. ¿Es un desmontaje completo o solo renovar?</div><span class="wa-time">19:12</span></div>
+                  <div class="wa-msg sent"><div class="wa-bubble">Desmontaje completo, unos 8m². En Aalst</div><span class="wa-time">19:15</span></div>
+                  <div class="wa-msg received"><div class="wa-bubble">Entendido, entra en nuestra zona. ¿Cuándo querrías empezar y tienes un presupuesto orientativo?</div><span class="wa-time">19:15</span></div>
+                  <div class="wa-msg sent"><div class="wa-bubble">Después del verano, sobre 15.000</div><span class="wa-time">19:18</span></div>
+                  <div class="wa-msg received"><div class="wa-bubble-link">📅 Visita a obra confirmada, martes 08:30</div><span class="wa-time">19:19</span></div>
+                  <div class="wa-typing" aria-hidden="true"><span></span><span></span><span></span></div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="wa-chat">
-            <div class="wa-msg sent"><div class="wa-bubble">Hola, ¿cuánto cuesta más o menos reformar un baño? 👋</div><span class="wa-time">19:12</span></div>
-            <div class="wa-msg received"><div class="wa-bubble">¡Hola! Depende de un par de cosas. ¿Es un desmontaje completo o solo renovar?</div><span class="wa-time">19:12</span></div>
-            <div class="wa-msg sent"><div class="wa-bubble">Desmontaje completo, unos 8m². En Aalst</div><span class="wa-time">19:15</span></div>
-            <div class="wa-msg received"><div class="wa-bubble">Entendido, entra en nuestra zona. ¿Cuándo querrías empezar y tienes un presupuesto orientativo?</div><span class="wa-time">19:15</span></div>
-            <div class="wa-msg sent"><div class="wa-bubble">Después del verano, sobre 15.000</div><span class="wa-time">19:18</span></div>
-            <div class="wa-msg received"><div class="wa-bubble-link">📅 Visita a obra confirmada, martes 08:30</div><span class="wa-time">19:19</span></div>
           </div>
         </div>
         <p class="sector-chat-bij">Tipo, tamaño, ubicación, plazos y presupuesto. Todo lo que necesitas antes de hacer nada.</p>
@@ -281,6 +295,6 @@
   </footer>
 
   <script src="../../js/main.js?v=28"></script>
-  <script src="../../js/i18n.js?v=33"></script>
+  <script src="../../js/i18n.js?v=34"></script>
 </body>
 </html>

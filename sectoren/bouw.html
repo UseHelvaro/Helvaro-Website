@@ -39,7 +39,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="../css/style.css?v=66">
+  <link rel="stylesheet" href="../css/style.css?v=67">
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://helvaro.pro/" },
@@ -50,9 +50,9 @@
   <a class="skip-link" href="#main">Naar de inhoud</a>
 
   <!-- ===== AANKONDIGINGSBALK ===== -->
-  <a class="topbar" href="../waarom.html">
-    <span class="topbar-text">Zo volgen teams elke lead op zonder iemand aan te nemen.</span>
-    <span class="topbar-link">Bekijk hoe <span aria-hidden="true">&#8594;</span></span>
+  <a class="topbar" href="../index.html#sectoren">
+    <span class="topbar-text">Nieuw: agents voor garages, dealers en verhuur.</span>
+    <span class="topbar-link">Bekijk automotive <span aria-hidden="true">&#8594;</span></span>
   </a>
 
   <!-- ===== NAV ===== -->
@@ -182,21 +182,35 @@
 
 
         <h2>Zo klinkt het bij een aanvraag</h2>
-        <div class="sector-chat" aria-label="WhatsApp-gesprek waarin de agent van een bouwbedrijf een renovatieaanvraag kwalificeert en een plaatsbezoek inplant">
-          <div class="wa-header">
-            <div class="wa-avatar" aria-hidden="true">W</div>
-            <div class="wa-contact">
-              <span class="wa-name">Wout &middot; Bouwwerken Claes</span>
-              <span class="wa-status">online</span>
+        <div class="sector-fonw">
+          <div class="phone-wrap">
+            <div class="phone-frame">
+              <div class="phone-notch" aria-hidden="true"></div>
+              <div class="phone-screen" role="img" aria-label="WhatsApp-gesprek waarin de agent van een bouwbedrijf een renovatieaanvraag kwalificeert en een plaatsbezoek inplant">
+                <div class="wa-header">
+                  <span class="wa-back" aria-hidden="true">&lsaquo;</span>
+                  <div class="wa-avatar" aria-hidden="true">W</div>
+                  <div class="wa-contact">
+                    <span class="wa-name">Wout &middot; Bouwwerken Claes</span>
+                    <span class="wa-status">online</span>
+                  </div>
+                  <div class="wa-icons" aria-hidden="true">
+                    <span class="wa-icon">&#128222;</span>
+                    <span class="wa-icon">&#8942;</span>
+                  </div>
+                </div>
+                <div class="wa-chat">
+                  <span class="wa-date-badge">Donderdag</span>
+                  <div class="wa-msg sent"><div class="wa-bubble">Dag, wat kost een badkamer renoveren ongeveer? &#128075;</div><span class="wa-time">19:12</span></div>
+                  <div class="wa-msg received"><div class="wa-bubble">Hoi! Dat hangt af van een paar dingen. Gaat het om volledig strippen of enkel vernieuwen?</div><span class="wa-time">19:12</span></div>
+                  <div class="wa-msg sent"><div class="wa-bubble">Volledig strippen, ongeveer 8m&sup2;. In Aalst</div><span class="wa-time">19:15</span></div>
+                  <div class="wa-msg received"><div class="wa-bubble">Duidelijk, dat zit binnen ons werkgebied. Wanneer zou je willen starten, en heb je een richtbudget?</div><span class="wa-time">19:15</span></div>
+                  <div class="wa-msg sent"><div class="wa-bubble">Na de zomer, rond 15.000</div><span class="wa-time">19:18</span></div>
+                  <div class="wa-msg received"><div class="wa-bubble-link">&#128197; Plaatsbezoek bevestigd, dinsdag 08:30</div><span class="wa-time">19:19</span></div>
+                  <div class="wa-typing" aria-hidden="true"><span></span><span></span><span></span></div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="wa-chat">
-            <div class="wa-msg sent"><div class="wa-bubble">Dag, wat kost een badkamer renoveren ongeveer? &#128075;</div><span class="wa-time">19:12</span></div>
-            <div class="wa-msg received"><div class="wa-bubble">Hoi! Dat hangt af van een paar dingen. Gaat het om volledig strippen of enkel vernieuwen?</div><span class="wa-time">19:12</span></div>
-            <div class="wa-msg sent"><div class="wa-bubble">Volledig strippen, ongeveer 8m². In Aalst</div><span class="wa-time">19:15</span></div>
-            <div class="wa-msg received"><div class="wa-bubble">Duidelijk, dat zit binnen ons werkgebied. Wanneer zou je willen starten, en heb je een richtbudget?</div><span class="wa-time">19:15</span></div>
-            <div class="wa-msg sent"><div class="wa-bubble">Na de zomer, rond 15.000</div><span class="wa-time">19:18</span></div>
-            <div class="wa-msg received"><div class="wa-bubble-link">&#128197; Plaatsbezoek bevestigd, dinsdag 08:30</div><span class="wa-time">19:19</span></div>
           </div>
         </div>
         <p class="sector-chat-bij">Type, omvang, locatie, timing en budget. Alles wat je nodig hebt voor je iets opmaakt.</p>
@@ -281,6 +295,6 @@
   </footer>
 
   <script src="../js/main.js?v=28"></script>
-  <script src="../js/i18n.js?v=33"></script>
+  <script src="../js/i18n.js?v=34"></script>
 </body>
 </html>

@@ -5421,56 +5421,54 @@ p { text-wrap: pretty; }
 .sol-andere a { color: var(--accent-text, var(--accent)); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ============================================================
+   28. NAVIGATIE PAST WEER
+   ------------------------------------------------------------
+   Sinds de repositionering staan er meer items in de balk: Wat we
+   overnemen, Andere sectoren, Faro, Controle, Prijzen, Bedrijf,
+   Login, taal, thema en de knop. Tussen 768 en 1100px paste dat
+   niet meer, en schoof het menu over het logo heen.
+
+   Twee dingen: het logo krimpt niet mee, en het hamburgermenu
+   neemt het eerder over dan pas bij 768px.
+   ============================================================ */
+.nav-logo {
+  flex: none;
+  min-width: 0;
+}
+.nav-links {
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+}
+@media (min-width: 1101px) and (max-width: 1320px) {
+  .nav-links { gap: 18px; }
+  .nav-link { font-size: 13.5px; }
+}
+
+/* ============================================================
    27. GESPREK OP DE SECTORPAGINA
    ------------------------------------------------------------
-   Dezelfde bubbels als in de telefoon op de homepagina, maar
-   zonder toestel eromheen: hier is het een voorbeeld in de tekst,
-   geen product-shot.
+   Hetzelfde toestel als op de homepagina, alleen rechtop en
+   gecentreerd. De opmaak van de telefoon zelf staat hierboven bij
+   de hero en wordt hier hergebruikt.
    ============================================================ */
-.sector-chat {
-  background: var(--bg-card);
-  border: 1px solid var(--border-0);
-  border-radius: var(--radius-m);
-  overflow: hidden;
-  margin: 24px 0 12px;
-  max-width: 560px;
-}
-.sector-chat .wa-header {
+.sector-fonw {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 18px;
-  border-bottom: 1px solid var(--border-0);
-  background: var(--bg-0);
+  justify-content: center;
+  margin: 30px 0 18px;
 }
-.sector-chat .wa-avatar {
-  width: 38px; height: 38px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: var(--accent);
-  color: #121212;
-  font-family: var(--font-h);
-  font-weight: 700;
-  font-size: 15px;
-  flex: none;
+.sector-fonw .phone-frame { transform: rotate(0deg); }
+.sector-fonw .phone-frame:hover { transform: scale(1.015); }
+.sector-chat-bij {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-3);
+  font-style: italic;
+  margin: 0 0 8px;
+  max-width: 46ch;
+  margin-inline: auto;
 }
-.sector-chat .wa-contact { display: flex; flex-direction: column; line-height: 1.3; }
-.sector-chat .wa-name { font-family: var(--font-h); font-size: 14.5px; font-weight: 600; color: var(--text-1); }
-.sector-chat .wa-status { font-size: 12px; color: var(--good, #22C55E); }
-.sector-chat .wa-chat { padding: 18px; display: flex; flex-direction: column; gap: 12px; }
-.sector-chat .wa-msg { display: flex; flex-direction: column; max-width: 84%; }
-.sector-chat .wa-msg.sent { align-self: flex-end; align-items: flex-end; }
-.sector-chat .wa-msg.received { align-self: flex-start; align-items: flex-start; }
-.sector-chat .wa-bubble,
-.sector-chat .wa-bubble-link {
-  padding: 10px 14px;
-  border-radius: 14px;
-  font-size: 14.5px;
-  line-height: 1.5;
-}
-.sector-chat .wa-msg.sent .wa-bubble { background: rgba(var(--accent-rgb), 0.16); color: var(--text-1); border-bottom-right-radius: 5px; }
-.sector-chat .wa-msg.received .wa-bubble { background: var(--bg-0); border: 1px solid var(--border-0); color: var(--text-1); border-bottom-left-radius: 5px; }
-.sector-chat .wa-bubble-link { background: var(--accent); color: #121212; font-weight: 600; border-bottom-left-radius: 5px; }
-.sector-chat .wa-time { font-size: 11px; color: var(--text-3); margin-top: 4px; }
-.sector-chat-bij { font-size: 14px; color: var(--text-3); font-style: italic; margin: 0 0 8px; }

@@ -324,3 +324,8 @@ Object.assign(window.HELVARO_TR['de'], {
   "📅 Plaatsbezoek bevestigd, dinsdag 08:30": "📅 Ortstermin bestätigt, Dienstag 08:30",
   "Type, omvang, locatie, timing en budget. Alles wat je nodig hebt voor je iets opmaakt.": "Art, Umfang, Ort, Zeitrahmen und Budget. Alles, was Sie brauchen, bevor Sie etwas erstellen."
 });
+
+Object.assign(window.HELVARO_TR['de'], {
+  "Zaterdag": "Samstag",
+  "Donderdag": "Donnerstag"
+});

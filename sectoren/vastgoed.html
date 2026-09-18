@@ -39,7 +39,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="../css/style.css?v=66">
+  <link rel="stylesheet" href="../css/style.css?v=67">
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://helvaro.pro/" },
@@ -50,9 +50,9 @@
   <a class="skip-link" href="#main">Naar de inhoud</a>
 
   <!-- ===== AANKONDIGINGSBALK ===== -->
-  <a class="topbar" href="../waarom.html">
-    <span class="topbar-text">Zo volgen teams elke lead op zonder iemand aan te nemen.</span>
-    <span class="topbar-link">Bekijk hoe <span aria-hidden="true">&#8594;</span></span>
+  <a class="topbar" href="../index.html#sectoren">
+    <span class="topbar-text">Nieuw: agents voor garages, dealers en verhuur.</span>
+    <span class="topbar-link">Bekijk automotive <span aria-hidden="true">&#8594;</span></span>
   </a>
 
   <!-- ===== NAV ===== -->
@@ -182,21 +182,35 @@
 
 
         <h2>Zo klinkt het bij een kandidaat</h2>
-        <div class="sector-chat" aria-label="WhatsApp-gesprek waarin de agent van een vastgoedkantoor een kandidaat-koper kwalificeert en een bezichtiging inplant">
-          <div class="wa-header">
-            <div class="wa-avatar" aria-hidden="true">M</div>
-            <div class="wa-contact">
-              <span class="wa-name">Mathis &middot; Immo Verlinden</span>
-              <span class="wa-status">online</span>
+        <div class="sector-fonw">
+          <div class="phone-wrap">
+            <div class="phone-frame">
+              <div class="phone-notch" aria-hidden="true"></div>
+              <div class="phone-screen" role="img" aria-label="WhatsApp-gesprek waarin de agent van een vastgoedkantoor een kandidaat-koper kwalificeert en een bezichtiging inplant">
+                <div class="wa-header">
+                  <span class="wa-back" aria-hidden="true">&lsaquo;</span>
+                  <div class="wa-avatar" aria-hidden="true">M</div>
+                  <div class="wa-contact">
+                    <span class="wa-name">Mathis &middot; Immo Verlinden</span>
+                    <span class="wa-status">online</span>
+                  </div>
+                  <div class="wa-icons" aria-hidden="true">
+                    <span class="wa-icon">&#128222;</span>
+                    <span class="wa-icon">&#8942;</span>
+                  </div>
+                </div>
+                <div class="wa-chat">
+                  <span class="wa-date-badge">Zaterdag</span>
+                  <div class="wa-msg sent"><div class="wa-bubble">Hallo, ik zag jullie woning aan de Parklaan online &#128075;</div><span class="wa-time">21:47</span></div>
+                  <div class="wa-msg received"><div class="wa-bubble">Hoi! Leuk dat je interesse hebt &#128588; Zoek je voor jezelf of als investering?</div><span class="wa-time">21:47</span></div>
+                  <div class="wa-msg sent"><div class="wa-bubble">Voor onszelf, we zoeken iets met 3 slaapkamers</div><span class="wa-time">21:49</span></div>
+                  <div class="wa-msg received"><div class="wa-bubble">Die heeft er 3, met tuin en garage. Wil je donderdag om 14u langskomen?</div><span class="wa-time">21:49</span></div>
+                  <div class="wa-msg sent"><div class="wa-bubble">Ja, dat past perfect &#128077;</div><span class="wa-time">21:52</span></div>
+                  <div class="wa-msg received"><div class="wa-bubble-link">&#128197; Bezichtiging bevestigd, donderdag 14:00</div><span class="wa-time">21:53</span></div>
+                  <div class="wa-typing" aria-hidden="true"><span></span><span></span><span></span></div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="wa-chat">
-            <div class="wa-msg sent"><div class="wa-bubble">Hallo, ik zag jullie woning aan de Parklaan online &#128075;</div><span class="wa-time">21:47</span></div>
-            <div class="wa-msg received"><div class="wa-bubble">Hoi! Leuk dat je interesse hebt &#128588; Zoek je voor jezelf of als investering?</div><span class="wa-time">21:47</span></div>
-            <div class="wa-msg sent"><div class="wa-bubble">Voor onszelf, we zoeken iets met 3 slaapkamers</div><span class="wa-time">21:49</span></div>
-            <div class="wa-msg received"><div class="wa-bubble">Die heeft er 3, met tuin en garage. Wil je donderdag om 14u langskomen?</div><span class="wa-time">21:49</span></div>
-            <div class="wa-msg sent"><div class="wa-bubble">Ja, dat past perfect &#128077;</div><span class="wa-time">21:52</span></div>
-            <div class="wa-msg received"><div class="wa-bubble-link">&#128197; Bezichtiging bevestigd, donderdag 14:00</div><span class="wa-time">21:53</span></div>
           </div>
         </div>
         <p class="sector-chat-bij">Zaterdagavond kwart voor tien. Je kantoor is dicht, de afspraak staat.</p>
@@ -281,6 +295,6 @@
   </footer>
 
   <script src="../js/main.js?v=28"></script>
-  <script src="../js/i18n.js?v=33"></script>
+  <script src="../js/i18n.js?v=34"></script>
 </body>
 </html>

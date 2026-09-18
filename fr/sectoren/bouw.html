@@ -39,7 +39,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="../../css/style.css?v=66">
+  <link rel="stylesheet" href="../../css/style.css?v=67">
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://helvaro.pro/" },
@@ -50,9 +50,9 @@
   <a class="skip-link" href="#main">Aller au contenu</a>
 
   <!-- ===== AANKONDIGINGSBALK ===== -->
-  <a class="topbar" href="../waarom.html">
-    <span class="topbar-text">Comment des équipes suivent chaque lead sans embaucher.</span>
-    <span class="topbar-link">Voir comment <span aria-hidden="true">&#8594;</span></span>
+  <a class="topbar" href="../index.html#sectoren">
+    <span class="topbar-text">Nouveau : des agents pour garages, concessions et location.</span>
+    <span class="topbar-link">Voir l'automobile <span aria-hidden="true">&#8594;</span></span>
   </a>
 
   <!-- ===== NAV ===== -->
@@ -182,21 +182,35 @@
 
 
         <h2>Ce que donne une demande</h2>
-        <div class="sector-chat" aria-label="WhatsApp-gesprek waarin de agent van een bouwbedrijf een renovatieaanvraag kwalificeert en een plaatsbezoek inplant">
-          <div class="wa-header">
-            <div class="wa-avatar" aria-hidden="true">W</div>
-            <div class="wa-contact">
-              <span class="wa-name">Wout &middot; Bouwwerken Claes</span>
-              <span class="wa-status">en ligne</span>
+        <div class="sector-fonw">
+          <div class="phone-wrap">
+            <div class="phone-frame">
+              <div class="phone-notch" aria-hidden="true"></div>
+              <div class="phone-screen" role="img" aria-label="WhatsApp-gesprek waarin de agent van een bouwbedrijf een renovatieaanvraag kwalificeert en een plaatsbezoek inplant">
+                <div class="wa-header">
+                  <span class="wa-back" aria-hidden="true">&lsaquo;</span>
+                  <div class="wa-avatar" aria-hidden="true">W</div>
+                  <div class="wa-contact">
+                    <span class="wa-name">Wout &middot; Bouwwerken Claes</span>
+                    <span class="wa-status">en ligne</span>
+                  </div>
+                  <div class="wa-icons" aria-hidden="true">
+                    <span class="wa-icon">&#128222;</span>
+                    <span class="wa-icon">&#8942;</span>
+                  </div>
+                </div>
+                <div class="wa-chat">
+                  <span class="wa-date-badge">Jeudi</span>
+                  <div class="wa-msg sent"><div class="wa-bubble">Bonjour, combien coûte à peu près la rénovation d'une salle de bain ? 👋</div><span class="wa-time">19:12</span></div>
+                  <div class="wa-msg received"><div class="wa-bubble">Bonjour ! Cela dépend de quelques éléments. S'agit-il d'une dépose complète ou d'une simple rénovation ?</div><span class="wa-time">19:12</span></div>
+                  <div class="wa-msg sent"><div class="wa-bubble">Dépose complète, environ 8m². À Alost</div><span class="wa-time">19:15</span></div>
+                  <div class="wa-msg received"><div class="wa-bubble">Très clair, c'est dans notre zone. Quand souhaiteriez-vous commencer, et avez-vous un budget indicatif ?</div><span class="wa-time">19:15</span></div>
+                  <div class="wa-msg sent"><div class="wa-bubble">Après l'été, autour de 15 000</div><span class="wa-time">19:18</span></div>
+                  <div class="wa-msg received"><div class="wa-bubble-link">📅 Visite sur place confirmée, mardi 08h30</div><span class="wa-time">19:19</span></div>
+                  <div class="wa-typing" aria-hidden="true"><span></span><span></span><span></span></div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="wa-chat">
-            <div class="wa-msg sent"><div class="wa-bubble">Bonjour, combien coûte à peu près la rénovation d'une salle de bain ? 👋</div><span class="wa-time">19:12</span></div>
-            <div class="wa-msg received"><div class="wa-bubble">Bonjour ! Cela dépend de quelques éléments. S'agit-il d'une dépose complète ou d'une simple rénovation ?</div><span class="wa-time">19:12</span></div>
-            <div class="wa-msg sent"><div class="wa-bubble">Dépose complète, environ 8m². À Alost</div><span class="wa-time">19:15</span></div>
-            <div class="wa-msg received"><div class="wa-bubble">Très clair, c'est dans notre zone. Quand souhaiteriez-vous commencer, et avez-vous un budget indicatif ?</div><span class="wa-time">19:15</span></div>
-            <div class="wa-msg sent"><div class="wa-bubble">Après l'été, autour de 15 000</div><span class="wa-time">19:18</span></div>
-            <div class="wa-msg received"><div class="wa-bubble-link">📅 Visite sur place confirmée, mardi 08h30</div><span class="wa-time">19:19</span></div>
           </div>
         </div>
         <p class="sector-chat-bij">Type, ampleur, lieu, calendrier et budget. Tout ce qu'il vous faut avant d'établir quoi que ce soit.</p>
@@ -281,6 +295,6 @@
   </footer>
 
   <script src="../../js/main.js?v=28"></script>
-  <script src="../../js/i18n.js?v=33"></script>
+  <script src="../../js/i18n.js?v=34"></script>
 </body>
 </html>
