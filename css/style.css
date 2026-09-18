@@ -5446,7 +5446,6 @@ p { text-wrap: pretty; }
 }
 @media (min-width: 1101px) and (max-width: 1320px) {
   .nav-links { gap: 18px; }
-  .nav-link { font-size: 13.5px; }
 }
 
 /* ============================================================
@@ -5520,3 +5519,58 @@ p { text-wrap: pretty; }
   aspect-ratio: 3 / 2;
 }
 .sector-beeld img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ============================================================
+   30. NAVIGATIE: NIETS KRIMPT MEER
+   ------------------------------------------------------------
+   De knop is een flex-item en kromp dus onder zijn eigen tekst.
+   Met white-space:nowrap erbij liep "Plan een werkaudit" gewoon
+   buiten de knop. Niets in de balk mag nog krimpen.
+
+   En de uitklapknop erfde zijn lettergrootte van zijn wrapper,
+   niet van .nav-link. "Wat we overnemen" werd daardoor kleiner
+   gezet dan "Andere sectoren" ernaast.
+   ============================================================ */
+.nav-links > * { flex: none; }
+.nav-links .btn { flex: none; white-space: nowrap; }
+
+.navdrop-toggle {
+  font-family: var(--font-b);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: inherit;
+}
+
+/* ============================================================
+   31. MOBIEL MENU PAST WEER
+   ------------------------------------------------------------
+   Het menu centreerde zijn inhoud verticaal zonder te kunnen
+   scrollen. Met de nieuwe items erbij, plus de twee sectoren in
+   het uitklapmenu, is de lijst langer dan het scherm: onderaan
+   viel de knop weg en er was geen manier om erbij te komen.
+   ============================================================ */
+.nav-mobile {
+  justify-content: flex-start;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 36px 20px calc(48px + env(safe-area-inset-bottom, 0px));
+  gap: 22px;
+}
+.nav-mobile .nav-link { font-size: 19px; }
+.nav-mobile .navdrop { text-align: center; }
+.nav-mobile .navdrop-toggle {
+  font-size: 19px;
+  font-weight: 500;
+  justify-content: center;
+  width: 100%;
+}
+.nav-mobile .navdrop-menu { border: 0; padding: 4px 0; gap: 4px; }
+.nav-mobile .navdrop-item { padding: 9px 12px; }
+.nav-mobile .navdrop-item .ndi-sub { display: none; }
+.nav-mobile .lang-menu { max-height: 42vh; overflow-y: auto; }
+
+@media (max-height: 640px) {
+  .nav-mobile { gap: 16px; padding-top: 24px; }
+  .nav-mobile .nav-link,
+  .nav-mobile .navdrop-toggle { font-size: 17px; }
+}
