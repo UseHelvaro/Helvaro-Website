@@ -341,3 +341,8 @@ Object.assign(window.HELVARO_TR['es'], {
   "39 seconden · Engels gesproken · YouTube laadt pas als je klikt": "39 segundos · en inglés · YouTube solo carga al hacer clic",
   "Je verkoper heeft een vermoeide woning. Je koper zoekt een thuis. Faro laat zien wat het wordt voor er een hamer bovenkomt.": "Tu vendedor tiene una casa cansada. Tu comprador busca un hogar. Faro muestra en qué se convierte antes de que nadie levante un martillo."
 });
+
+Object.assign(window.HELVARO_TR['es'], {
+  "Vragen over je voorraad, ook 's nachts": "Preguntas sobre tu stock, también de noche",
+  "Staat die wagen er nog, wat kost hij, hoeveel is de inruil waard. Je agent antwoordt terwijl je showroom dicht is.": "Si ese coche sigue ahí, cuánto cuesta, cuánto vale la entrega a cuenta. Tu agente responde mientras tu showroom está cerrado."
+});

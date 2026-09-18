@@ -39,7 +39,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="../css/style.css?v=70">
+  <link rel="stylesheet" href="../css/style.css?v=71">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -468,26 +468,26 @@
             </div>
           </article>
 
-          <!-- Geen foto, met opzet. Er is nog geen automotive-beeldbank, en een
-               woning onder een tekst over kentekens is erger dan geen foto. Deze
-               kaart draagt de sterkste boodschap en houdt zichzelf staande. -->
-          <article class="photo-card photo-card-accent reveal reveal-delay-1">
+          <article class="photo-card reveal reveal-delay-1">
+            <picture>
+              <source srcset="../assets/photos/plate-scan.webp" type="image/webp">
+              <img loading="lazy" class="photo-img" src="../assets/photos/plate-scan.jpg" alt="Auto op een brug in een werkplaats" decoding="async" width="900" height="600">
+            </picture>
             <div class="photo-body">
               <span class="photo-tag">Automotive</span>
               <h3 class="photo-title">Das Kennzeichen erzählt den Rest</h3>
               <p class="photo-desc">Ein Kennzeichen, und Ihr Agent kennt Marke, Modell, Baujahr und bis wann die Prüfung gültig ist. Der Kunde muss nichts erklären.</p>
-              <p class="photo-plate" aria-hidden="true">1-ABC-234</p>
             </div>
           </article>
 
           <article class="photo-card reveal reveal-delay-2">
             <picture>
-              <source srcset="../assets/photos/calendar.webp" type="image/webp">
-              <img loading="lazy" class="photo-img" src="../assets/photos/calendar.jpg" alt="Zaakvoerder bekijkt zijn planning" decoding="async" width="900" height="600">
+              <source srcset="../assets/photos/dealer.webp" type="image/webp">
+              <img loading="lazy" class="photo-img" src="../assets/photos/dealer.jpg" alt="Rij wagens bij een dealer" decoding="async" width="900" height="600">
             </picture>
             <div class="photo-body">
-              <h3 class="photo-title">Ihre Werkstatt füllt sich von selbst</h3>
-              <p class="photo-desc">Wartung, Prüfung und Probefahrten gehen direkt in die Planung. Sie öffnen Ihren Kalender und die Plätze sind schon belegt.</p>
+              <h3 class="photo-title">Fragen zu Ihrem Bestand, auch nachts</h3>
+              <p class="photo-desc">Steht der Wagen noch da, was kostet er, was ist die Inzahlungnahme wert. Ihr Agent antwortet, während Ihr Showroom geschlossen ist.</p>
             </div>
           </article>
 
@@ -876,7 +876,7 @@
   </footer>
 
   <script src="../js/main.js?v=29"></script>
-  <script src="../js/i18n.js?v=36"></script>
+  <script src="../js/i18n.js?v=37"></script>
 
   <!-- ── Faro loopt met je mee ────────────────────────────────────────────
        Geen kaartje met een vogeltje erin: de valk staat vrij op de pagina en

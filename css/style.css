@@ -5472,43 +5472,6 @@ p { text-wrap: pretty; }
   margin-inline: auto;
 }
 
-/* ============================================================
-   29. KAART ZONDER FOTO
-   ------------------------------------------------------------
-   Er is nog geen automotive-beeldbank. Liever een kaart die
-   bewust geen foto heeft dan een woning boven een tekst over
-   kentekens. Zodra er echte foto's zijn, wordt dit weer een
-   gewone photo-card met een <picture> erin.
-   ============================================================ */
-.photo-card-accent {
-  background: linear-gradient(160deg, var(--accent-deep) 0%, var(--accent) 100%);
-  display: flex;
-  align-items: flex-end;
-  min-height: 420px;
-}
-.photo-card-accent .photo-body { position: static; }
-.photo-card-accent .photo-title,
-.photo-card-accent .photo-desc { color: #121212; }
-.photo-card-accent .photo-desc { opacity: 0.82; }
-.photo-card-accent .photo-tag {
-  background: rgba(18, 18, 18, 0.12);
-  border-color: rgba(18, 18, 18, 0.22);
-  color: #121212;
-}
-.photo-plate {
-  font-family: var(--font-h);
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #121212;
-  background: rgba(255, 255, 255, 0.55);
-  border: 2px solid rgba(18, 18, 18, 0.5);
-  border-radius: 6px;
-  padding: 6px 14px;
-  display: inline-block;
-  margin: 16px 0 0;
-}
-
 /* Beeld op de sectorpagina. De woning stond op de homepagina boven een
    tekst over kentekens. Hier klopt hij wel. */
 .sector-beeld {
