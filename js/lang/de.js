@@ -184,3 +184,13 @@ Object.assign(window.HELVARO_TR['de'], {
   "werkte een dossier bij": "aktualisierte eine Akte",
   "zette het weekoverzicht klaar": "stellte die Wochenübersicht bereit"
 });
+
+Object.assign(window.HELVARO_TR['de'], {
+  "Kies een moment dat vrij is in onze agenda. 20 minuten, gratis, geen verplichtingen.": "Wählen Sie einen freien Moment in unserem Kalender. 20 Minuten, kostenlos, unverbindlich.",
+  "Agenda laden…": "Kalender wird geladen…",
+  "Liever in een apart venster?": "Lieber in einem eigenen Fenster?",
+  "Open de agenda →": "Kalender öffnen →",
+  "privacybeleid": "Datenschutzerklärung",
+  "Leads": "Leads",
+  "Pipeline": "Pipeline"
+});
