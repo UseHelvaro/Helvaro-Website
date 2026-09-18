@@ -5387,3 +5387,12 @@ p { text-wrap: pretty; }
 @media (max-width: 720px) {
   .sector-hero { padding: 96px 0 44px; }
 }
+
+/* Herkomstbalk: zelfde rollende strook, maar de Belgische claims krijgen
+   nadruk. Zand op bijna-zwart is al het accent, dus hier alleen gewicht
+   en kleur, geen extra versiering. */
+.ticker-herkomst { border-bottom: 1px solid var(--border-0); }
+.ticker-herkomst .tick-sterk {
+  color: var(--accent);
+  font-weight: 700;
+}

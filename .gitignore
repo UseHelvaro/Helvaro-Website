@@ -1,3 +1,6 @@
 .claude-flow/
 .claude/
 .DS_Store
+
+# Gegenereerde taalmappen worden gebouwd, maar wel meegecommit omdat
+# Vercel hier geen buildstap draait.

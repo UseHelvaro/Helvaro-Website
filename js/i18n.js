@@ -6,7 +6,7 @@
   var geladen = {};
   var huidig = 'nl';
   /* Ophogen zodra een taalbestand wijzigt, anders houdt de browser de oude versie vast. */
-  var TAAL_V = '15';
+  var TAAL_V = '17';
   function laadTaal(lang, klaar){
     if (lang === 'nl' || TR[lang] || geladen[lang]) { klaar(); return; }
     geladen[lang] = true;
@@ -324,10 +324,21 @@
   }
 
   function init(){
+    /* Elke taal heeft nu een eigen URL en wordt vooraf vertaald weggeschreven
+       door tools/build-langs.pl. In de browser vertalen zou de inhoud laten
+       afwijken van de canonical van de pagina, dus dat gebeurt hier niet meer.
+       Wat blijft: het openklappen van de kiezer, en de keuze onthouden.
+
+       De vertaalmachinerie hieronder blijft staan voor het demo-widget, dat
+       zichzelf pas na het laden opbouwt en geen eigen URL heeft. */
+    var vooraf = document.body.getAttribute('data-vertaald');
+    huidig = vooraf || 'nl';
+    document.documentElement.lang = huidig;
+
     heroEl = document.querySelector('.hero-title');
     collect();
     collectPlaceholders();
-    apply(detect());
+    if (huidig !== 'nl') { laadTaal(huidig, function(){}); }
 
     /* Het demo-widget rendert zichzelf pas na dit punt. Zodra er inhoud
        verschijnt, wordt die alsnog vertaald. */
@@ -347,9 +358,11 @@
     document.addEventListener('click', function(e){
       var opt = e.target.closest('.lang-opt');
       if(opt){
-        /* Vanaf nu telt de keuze van de bezoeker, niet de detectie */
+        /* De taalkiezer is een echte link geworden: elke taal heeft zijn
+           eigen URL. Hier dus niets vertalen, alleen onthouden wat de
+           bezoeker koos en de browser laten navigeren. */
         try { localStorage.setItem('helvaro_lang_set','1'); } catch(err){}
-        apply(opt.getAttribute('data-lang'));
+        try { localStorage.setItem('helvaro_lang', opt.getAttribute('data-lang')); } catch(err){}
         document.querySelectorAll('.lang-switch').forEach(function(s){ s.classList.remove('open'); });
         return;
       }

@@ -259,3 +259,38 @@ Object.assign(window.HELVARO_TR['en'], {
   "Minder uren aan calculaties die nergens toe leiden, en een opvolging die doorloopt terwijl je team op de werf staat. Elk gesprek blijft leesbaar in het dashboard, en je neemt op elk moment zelf over.": "Fewer hours on calculations that lead nowhere, and follow-up that keeps running while your team is on site. Every conversation stays readable in the dashboard, and you take over yourself at any moment.",
   "Een werkaudit van twintig minuten. Je gaat weg met een eerste workflow, of met de reden waarom het bij jou niet past.": "A twenty-minute work audit. You leave with a first workflow, or with the reason it does not fit you."
 });
+
+Object.assign(window.HELVARO_TR['en'], {
+  "GDPR": "GDPR",
+  "Nederlands en Frans in één systeem": "Dutch and French in one system",
+  "Belgisch bedrijf, geen doorverkoper": "A Belgian company, not a reseller",
+  "Helvaro beantwoordt reacties op je zoekertjes binnen dertig seconden, kwalificeert kopers en verkopers en plant bezichtigingen rechtstreeks in je agenda.": "Helvaro answers enquiries on your listings within thirty seconds, qualifies buyers and sellers, and books viewings straight into your calendar.",
+  "Helvaro bouwt en beheert AI-agents die het herhaalwerk in je bedrijf overnemen. Gesprekken, opvolging, planning en de administratie erachter. Jij houdt elke beslissing.": "Helvaro builds and runs AI agents that take over the repetitive work in your business. Conversations, follow-up, scheduling and the admin behind it. You keep every decision.",
+  "Helvaro kwalificeert bouw- en renovatieaanvragen op type project, timing, locatie en budget, plant plaatsbezoeken in en volgt openstaande offertes automatisch op.": "Helvaro qualifies construction and renovation enquiries on project type, timing, location and budget, books site visits, and chases open quotes automatically.",
+  "Het probleem, het product, de cijfers en een eerlijke vergelijking. Alles wat je wil weten over automatische leadopvolging voordat je een gesprek inplant.": "The problem, the product, the numbers and an honest comparison. Everything you want to know before you book a call.",
+  "Hoe Helvaro je gegevens verzamelt, gebruikt en beschermt. Servers in de EU, nooit doorverkocht, inzage of verwijdering op eenvoudig verzoek.": "How Helvaro collects, uses and protects your data. Servers in the EU, never sold on, access or deletion on simple request.",
+  "In 20 minuten ontdek je hoeveel leads je team vandaag misloopt en wat dat kost. Gratis en vrijblijvend, met concrete cijfers uit je eigen situatie.": "In 20 minutes you find out how much work is slipping through today and what it costs. Free and without obligation, with concrete figures from your own situation.",
+  "Maak je Helvaro-account aan en probeer veertien dagen gratis. Je agent staat binnen 72 uur live op je WhatsApp en volgt elke lead op. Je kiest pas daarna een plan.": "Create your Helvaro account and try it free for fourteen days. Your agent is live on your WhatsApp within 72 hours and follows up on every lead. You only choose a plan afterwards.",
+  "Vertel ons hoe je leads vandaag worden opgevolgd. Wij tonen waar de gemiste kansen zitten en hoe Helvaro ze opvangt. Vrijblijvend en zonder verplichting.": "Tell us how your enquiries are followed up today. We show you where the missed opportunities are and how Helvaro catches them. No strings attached."
+});
+
+Object.assign(window.HELVARO_TR['en'], {
+  "E-mailadres bevestigen en een wachtwoord kiezen. Duurt een minuut.": "Confirm your email address and choose a password. Takes a minute.",
+  "Heb ik technische kennis nodig?": "Do I need technical knowledge?",
+  "Hoelang duurt de proefperiode?": "How long does the trial last?",
+  "Ik sta klaar. Vul je e-mailadres in, dan zet ik de rest voor je op.": "I'm ready. Enter your email address and I'll set up the rest for you.",
+  "Je agent gaat live": "Your agent goes live",
+  "Je agent staat binnen 72 uur live op je eigen WhatsApp-nummer. Veertien dagen lang volgt hij elke lead op, zodat je zelf ziet wat het oplevert voordat je een plan kiest.": "Your agent is live on your own WhatsApp number within 72 hours. For fourteen days it follows up on every lead, so you see what it delivers before you choose a plan.",
+  "Je data blijft in Europa": "Your data stays in Europe",
+  "Je kiest pas daarna": "You only choose afterwards",
+  "Je maakt je account aan": "You create your account",
+  "Kan ik eerder overstappen naar een betaald plan?": "Can I switch to a paid plan sooner?",
+  "Moet ik meteen betalen?": "Do I have to pay straight away?",
+  "Plan een gesprek van 20 minuten →": "Book a 20-minute call →",
+  "Strategie": "Strategy",
+  "Vul je gegevens in, dan zorg ik dat je bericht bij de juiste persoon komt.": "Fill in your details and I'll make sure your message reaches the right person.",
+  "Vul je zakelijke e-mailadres in. Je rondt je account af in onze beveiligde omgeving.": "Enter your work email address. You complete your account in our secure environment.",
+  "Wat gebeurt er met mijn gegevens?": "What happens to my data?",
+  "Wat gebeurt er na veertien dagen?": "What happens after fourteen days?",
+  "We zetten je agent op": "We set up your agent"
+});

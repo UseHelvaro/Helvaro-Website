@@ -1,43 +1,444 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://helvaro.pro/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/"/>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://helvaro.pro/aanmelden.html</loc>
-    <lastmod>2026-08-31</lastmod>
-    <priority>0.9</priority>
+    <loc>https://helvaro.pro/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/en/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/de/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/es/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://helvaro.pro/waarom.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/waarom.html"/>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://helvaro.pro/meeting.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <loc>https://helvaro.pro/fr/waarom.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/waarom.html"/>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://helvaro.pro/contact.html</loc>
-    <lastmod>2026-08-30</lastmod>
-    <priority>0.6</priority>
+    <loc>https://helvaro.pro/en/waarom.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/waarom.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/de/waarom.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/waarom.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/es/waarom.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/waarom.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/waarom.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://helvaro.pro/sectoren/vastgoed.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/sectoren/vastgoed.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/fr/sectoren/vastgoed.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/sectoren/vastgoed.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/en/sectoren/vastgoed.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/sectoren/vastgoed.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/de/sectoren/vastgoed.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/sectoren/vastgoed.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/es/sectoren/vastgoed.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/sectoren/vastgoed.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/sectoren/vastgoed.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://helvaro.pro/sectoren/bouw.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/sectoren/bouw.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://helvaro.pro/fr/sectoren/bouw.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/sectoren/bouw.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/en/sectoren/bouw.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/sectoren/bouw.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/de/sectoren/bouw.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/sectoren/bouw.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/es/sectoren/bouw.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/sectoren/bouw.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/sectoren/bouw.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/meeting.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/meeting.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/fr/meeting.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/meeting.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/en/meeting.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/meeting.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/de/meeting.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/meeting.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/es/meeting.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/meeting.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/meeting.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/contact.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/fr/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/contact.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/contact.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/de/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/contact.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/es/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/contact.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/aanmelden.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/aanmelden.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/fr/aanmelden.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/aanmelden.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/en/aanmelden.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/aanmelden.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/de/aanmelden.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/aanmelden.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/es/aanmelden.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/aanmelden.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/aanmelden.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://helvaro.pro/privacybeleid.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/privacybeleid.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/fr/privacybeleid.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/privacybeleid.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/en/privacybeleid.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/privacybeleid.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/de/privacybeleid.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/privacybeleid.html"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/es/privacybeleid.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/privacybeleid.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/privacybeleid.html"/>
+    <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 </urlset>

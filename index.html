@@ -17,6 +17,12 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://helvaro.pro/">
+  <link rel="alternate" hreflang="nl" href="https://helvaro.pro/">
+  <link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/">
+  <link rel="alternate" hreflang="en" href="https://helvaro.pro/en/">
+  <link rel="alternate" hreflang="de" href="https://helvaro.pro/de/">
+  <link rel="alternate" hreflang="es" href="https://helvaro.pro/es/">
+  <link rel="alternate" hreflang="x-default" href="https://helvaro.pro/">
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
@@ -33,7 +39,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=64">
+  <link rel="stylesheet" href="css/style.css?v=65">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -108,11 +114,11 @@
             <span class="lang-caret" aria-hidden="true">&#9662;</span>
           </button>
           <div class="lang-menu" role="menu">
-            <button class="lang-opt" role="menuitem" data-lang="nl">Nederlands <span class="lang-code">NL</span></button>
-            <button class="lang-opt" role="menuitem" data-lang="fr">Fran&ccedil;ais <span class="lang-code">FR</span></button>
-            <button class="lang-opt" role="menuitem" data-lang="en">English <span class="lang-code">EN</span></button>
-            <button class="lang-opt" role="menuitem" data-lang="de">Deutsch <span class="lang-code">DE</span></button>
-            <button class="lang-opt" role="menuitem" data-lang="es">Espa&ntilde;ol <span class="lang-code">ES</span></button>
+            <a class="lang-opt active" role="menuitem" href="/" hreflang="nl" aria-current="true" data-lang="nl">Nederlands <span class="lang-code">NL</span></a>
+            <a class="lang-opt" role="menuitem" href="/fr/" hreflang="fr" data-lang="fr">Fran&ccedil;ais <span class="lang-code">FR</span></a>
+            <a class="lang-opt" role="menuitem" href="/en/" hreflang="en" data-lang="en">English <span class="lang-code">EN</span></a>
+            <a class="lang-opt" role="menuitem" href="/de/" hreflang="de" data-lang="de">Deutsch <span class="lang-code">DE</span></a>
+            <a class="lang-opt" role="menuitem" href="/es/" hreflang="es" data-lang="es">Espa&ntilde;ol <span class="lang-code">ES</span></a>
           </div>
         </div>
         <button class="theme-toggle" type="button" aria-label="Wissel tussen licht en donker thema" title="Licht of donker">
@@ -156,11 +162,11 @@
             <span class="lang-caret" aria-hidden="true">&#9662;</span>
           </button>
           <div class="lang-menu" role="menu">
-            <button class="lang-opt" role="menuitem" data-lang="nl">Nederlands <span class="lang-code">NL</span></button>
-            <button class="lang-opt" role="menuitem" data-lang="fr">Fran&ccedil;ais <span class="lang-code">FR</span></button>
-            <button class="lang-opt" role="menuitem" data-lang="en">English <span class="lang-code">EN</span></button>
-            <button class="lang-opt" role="menuitem" data-lang="de">Deutsch <span class="lang-code">DE</span></button>
-            <button class="lang-opt" role="menuitem" data-lang="es">Espa&ntilde;ol <span class="lang-code">ES</span></button>
+            <a class="lang-opt active" role="menuitem" href="/" hreflang="nl" aria-current="true" data-lang="nl">Nederlands <span class="lang-code">NL</span></a>
+            <a class="lang-opt" role="menuitem" href="/fr/" hreflang="fr" data-lang="fr">Fran&ccedil;ais <span class="lang-code">FR</span></a>
+            <a class="lang-opt" role="menuitem" href="/en/" hreflang="en" data-lang="en">English <span class="lang-code">EN</span></a>
+            <a class="lang-opt" role="menuitem" href="/de/" hreflang="de" data-lang="de">Deutsch <span class="lang-code">DE</span></a>
+            <a class="lang-opt" role="menuitem" href="/es/" hreflang="es" data-lang="es">Espa&ntilde;ol <span class="lang-code">ES</span></a>
           </div>
         </div>
         <button class="theme-toggle" type="button" aria-label="Wissel tussen licht en donker thema" title="Licht of donker">
@@ -586,6 +592,27 @@
       </div>
     </section>
 
+    <!-- ===== HERKOMSTBALK ==============================================
+         Bewust hier en niet bovenaan: Belgisch, data in de EU en GDPR
+         horen bij elkaar, en staan vlak voor de sectie over controle.
+         Daar telt het, niet in de hero tussen de rest. -->
+    <div class="ticker ticker-herkomst" aria-hidden="true" data-gids="herkomst">
+      <div class="ticker-track">
+        <span class="tick-sterk">Gemaakt in België</span><span class="tick-sep">◆</span>
+        <span>Data in de EU</span><span class="tick-sep">◆</span>
+        <span>GDPR</span><span class="tick-sep">◆</span>
+        <span>Nederlands en Frans in één systeem</span><span class="tick-sep">◆</span>
+        <span class="tick-sterk">Belgisch bedrijf, geen doorverkoper</span><span class="tick-sep">◆</span>
+        <span>Spreekt 40 talen</span><span class="tick-sep">◆</span>
+        <span class="tick-sterk">Gemaakt in België</span><span class="tick-sep">◆</span>
+        <span>Data in de EU</span><span class="tick-sep">◆</span>
+        <span>GDPR</span><span class="tick-sep">◆</span>
+        <span>Nederlands en Frans in één systeem</span><span class="tick-sep">◆</span>
+        <span class="tick-sterk">Belgisch bedrijf, geen doorverkoper</span><span class="tick-sep">◆</span>
+        <span>Spreekt 40 talen</span><span class="tick-sep">◆</span>
+      </div>
+    </div>
+
     <!-- ===== CONTROLE (governance) ==================================
          Staat bewust vóór de prijzen. Wie hier twijfelt over controle,
          leest de prijs anders. -->
@@ -839,8 +866,8 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=27"></script>
-  <script src="js/i18n.js?v=30"></script>
+  <script src="js/main.js?v=28"></script>
+  <script src="js/i18n.js?v=32"></script>
 
   <!-- ── Faro loopt met je mee ────────────────────────────────────────────
        Geen kaartje met een vogeltje erin: de valk staat vrij op de pagina en

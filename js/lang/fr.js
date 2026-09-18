@@ -259,3 +259,38 @@ Object.assign(window.HELVARO_TR['fr'], {
   "Minder uren aan calculaties die nergens toe leiden, en een opvolging die doorloopt terwijl je team op de werf staat. Elk gesprek blijft leesbaar in het dashboard, en je neemt op elk moment zelf over.": "Moins d'heures sur des calculs qui ne mènent nulle part, et une relance qui continue pendant que votre équipe est sur le chantier. Chaque conversation reste lisible dans le tableau de bord, et vous reprenez la main à tout moment.",
   "Een werkaudit van twintig minuten. Je gaat weg met een eerste workflow, of met de reden waarom het bij jou niet past.": "Un audit de travail de vingt minutes. Vous repartez avec un premier workflow, ou avec la raison pour laquelle cela ne vous convient pas."
 });
+
+Object.assign(window.HELVARO_TR['fr'], {
+  "GDPR": "RGPD",
+  "Nederlands en Frans in één systeem": "Néerlandais et français dans un seul système",
+  "Belgisch bedrijf, geen doorverkoper": "Une entreprise belge, pas un revendeur",
+  "Helvaro beantwoordt reacties op je zoekertjes binnen dertig seconden, kwalificeert kopers en verkopers en plant bezichtigingen rechtstreeks in je agenda.": "Helvaro répond aux réactions à vos annonces en trente secondes, qualifie acheteurs et vendeurs et planifie les visites directement dans votre agenda.",
+  "Helvaro bouwt en beheert AI-agents die het herhaalwerk in je bedrijf overnemen. Gesprekken, opvolging, planning en de administratie erachter. Jij houdt elke beslissing.": "Helvaro conçoit et gère des agents IA qui reprennent le travail répétitif de votre entreprise. Conversations, relances, planification et l'administration qui va avec. Chaque décision reste la vôtre.",
+  "Helvaro kwalificeert bouw- en renovatieaanvragen op type project, timing, locatie en budget, plant plaatsbezoeken in en volgt openstaande offertes automatisch op.": "Helvaro qualifie les demandes de construction et de rénovation selon le type de projet, le calendrier, le lieu et le budget, planifie les visites sur place et relance automatiquement les devis en attente.",
+  "Het probleem, het product, de cijfers en een eerlijke vergelijking. Alles wat je wil weten over automatische leadopvolging voordat je een gesprek inplant.": "Le problème, le produit, les chiffres et une comparaison honnête. Tout ce que vous voulez savoir avant de planifier un entretien.",
+  "Hoe Helvaro je gegevens verzamelt, gebruikt en beschermt. Servers in de EU, nooit doorverkocht, inzage of verwijdering op eenvoudig verzoek.": "Comment Helvaro collecte, utilise et protège vos données. Serveurs dans l'UE, jamais revendues, accès ou suppression sur simple demande.",
+  "In 20 minuten ontdek je hoeveel leads je team vandaag misloopt en wat dat kost. Gratis en vrijblijvend, met concrete cijfers uit je eigen situatie.": "En 20 minutes, vous découvrez combien de travail vous échappe aujourd'hui et ce que cela coûte. Gratuit et sans engagement, avec des chiffres concrets tirés de votre situation.",
+  "Maak je Helvaro-account aan en probeer veertien dagen gratis. Je agent staat binnen 72 uur live op je WhatsApp en volgt elke lead op. Je kiest pas daarna een plan.": "Créez votre compte Helvaro et essayez gratuitement pendant quatorze jours. Votre agent est actif sur votre WhatsApp en 72 heures et relance chaque lead. Vous ne choisissez un plan qu'ensuite.",
+  "Vertel ons hoe je leads vandaag worden opgevolgd. Wij tonen waar de gemiste kansen zitten en hoe Helvaro ze opvangt. Vrijblijvend en zonder verplichting.": "Dites-nous comment vos demandes sont suivies aujourd'hui. Nous vous montrons où sont les occasions manquées et comment Helvaro les rattrape. Sans engagement."
+});
+
+Object.assign(window.HELVARO_TR['fr'], {
+  "E-mailadres bevestigen en een wachtwoord kiezen. Duurt een minuut.": "Confirmez votre adresse e-mail et choisissez un mot de passe. Une minute suffit.",
+  "Heb ik technische kennis nodig?": "Faut-il des connaissances techniques ?",
+  "Hoelang duurt de proefperiode?": "Combien de temps dure la période d'essai ?",
+  "Ik sta klaar. Vul je e-mailadres in, dan zet ik de rest voor je op.": "Je suis prêt. Saisissez votre adresse e-mail et je m'occupe du reste.",
+  "Je agent gaat live": "Votre agent entre en service",
+  "Je agent staat binnen 72 uur live op je eigen WhatsApp-nummer. Veertien dagen lang volgt hij elke lead op, zodat je zelf ziet wat het oplevert voordat je een plan kiest.": "Votre agent est actif sur votre propre numéro WhatsApp en 72 heures. Pendant quatorze jours, il relance chaque lead, pour que vous voyiez ce que cela rapporte avant de choisir un plan.",
+  "Je data blijft in Europa": "Vos données restent en Europe",
+  "Je kiest pas daarna": "Vous ne choisissez qu'ensuite",
+  "Je maakt je account aan": "Vous créez votre compte",
+  "Kan ik eerder overstappen naar een betaald plan?": "Puis-je passer à un plan payant plus tôt ?",
+  "Moet ik meteen betalen?": "Dois-je payer tout de suite ?",
+  "Plan een gesprek van 20 minuten →": "Planifier un entretien de 20 minutes →",
+  "Strategie": "Stratégie",
+  "Vul je gegevens in, dan zorg ik dat je bericht bij de juiste persoon komt.": "Renseignez vos coordonnées et je veille à ce que votre message arrive à la bonne personne.",
+  "Vul je zakelijke e-mailadres in. Je rondt je account af in onze beveiligde omgeving.": "Saisissez votre adresse e-mail professionnelle. Vous finalisez votre compte dans notre environnement sécurisé.",
+  "Wat gebeurt er met mijn gegevens?": "Qu'advient-il de mes données ?",
+  "Wat gebeurt er na veertien dagen?": "Que se passe-t-il après quatorze jours ?",
+  "We zetten je agent op": "Nous configurons votre agent"
+});
