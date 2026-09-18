@@ -335,3 +335,9 @@ Object.assign(window.HELVARO_TR['es'], {
   "Video afspelen · pas bij een klik laadt YouTube": "Reproducir vídeo · YouTube solo carga al hacer clic",
   "Een vervallen woning verkoopt zichzelf niet. Een beeld van wat het kan worden wel.": "Un inmueble deteriorado no se vende solo. Una imagen de en qué puede convertirse, sí."
 });
+
+Object.assign(window.HELVARO_TR['es'], {
+  "Dit huis bestaat nog niet": "Esta casa todavía no existe",
+  "39 seconden · Engels gesproken · YouTube laadt pas als je klikt": "39 segundos · en inglés · YouTube solo carga al hacer clic",
+  "Je verkoper heeft een vermoeide woning. Je koper zoekt een thuis. Faro laat zien wat het wordt voor er een hamer bovenkomt.": "Tu vendedor tiene una casa cansada. Tu comprador busca un hogar. Faro muestra en qué se convierte antes de que nadie levante un martillo."
+});
