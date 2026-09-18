@@ -6070,3 +6070,78 @@ body { background: var(--surface-1); }
 .stats-strip.op-houtskool .stat-value,
 .stats-strip.op-houtskool .stat-value span { color: var(--accent-fill); }
 .stats-strip.op-houtskool .stat-label { color: var(--ink-text-2); }
+
+/* ============================================================
+   43. DE DONKERE BALK VAN BINNENUIT
+   ------------------------------------------------------------
+   De balk donker maken raakte meer dan de balk zelf. Alles wat
+   erin hangt erfde nog de tekstkleuren van de lichte kant:
+
+     de balk zelf        #181818 op #141414   1,04:1
+     de taalkiezer       #BDB8AE op wit       1,98:1
+     de actieve taal     #7A5C3C op #7A5C3C   1,00:1  onzichtbaar
+     het sectormenu      #181818 op donker    1,04:1
+
+   In de code zag dat er goed uit, want de zichtbare links hadden
+   wel een eigen kleur. Alleen de containers en de menu's niet.
+   Hier staat de hele balk in één keer op de donkere set.
+   ============================================================ */
+.nav {
+  color: var(--ink-text-1);
+  --text-1: var(--ink-text-1);
+  --text-2: var(--ink-text-2);
+  --text-3: var(--ink-text-3);
+  --border-0: rgba(255,255,255,0.10);
+  --border-1: rgba(255,255,255,0.20);
+  --accent: #C8A078;
+  --accent-deep: #B48C64;
+  --accent-rgb: 200,160,120;
+  --veil-rgb: 26,26,26;
+}
+.nav .lang-current,
+.nav .lang-caret,
+.nav .lang-code { color: var(--ink-text-2); }
+
+/* De uitklapmenu's zijn eigen vlakken op de donkere balk. */
+.nav .lang-menu,
+.nav .navdrop-menu,
+.nav-mobile .lang-menu,
+.nav-mobile .navdrop-menu {
+  background: #1E1E1E;
+  border-color: rgba(255,255,255,0.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.40), 0 24px 60px rgba(0,0,0,0.45);
+}
+.nav .lang-opt,
+.nav-mobile .lang-opt { color: var(--ink-text-2); }
+.nav .lang-opt:hover,
+.nav-mobile .lang-opt:hover { background: rgba(255,255,255,0.08); color: var(--ink-text-1); }
+
+/* De actieve taal was tekst en vlak in dezelfde kleur. Nu goud vlak,
+   donkere letter: 8,1:1. */
+.nav .lang-opt.active,
+.nav-mobile .lang-opt.active {
+  background: var(--accent-fill);
+  color: #141414;
+}
+.nav .lang-opt.active .lang-code,
+.nav-mobile .lang-opt.active .lang-code { color: #141414; }
+
+.nav .navdrop-item .ndi-title,
+.nav-mobile .navdrop-item .ndi-title { color: var(--ink-text-1); }
+.nav .navdrop-item .ndi-sub,
+.nav-mobile .navdrop-item .ndi-sub { color: var(--ink-text-3); }
+.nav .navdrop-item:hover,
+.nav-mobile .navdrop-item:hover { background: rgba(200,160,120,0.14); }
+
+/* Het mobiele menu hoort bij dezelfde balk, dus ook donker. */
+.nav-mobile {
+  background: rgba(20,20,20,0.98);
+  color: var(--ink-text-1);
+  --text-1: var(--ink-text-1);
+  --text-2: var(--ink-text-2);
+  --text-3: var(--ink-text-3);
+  --border-1: rgba(255,255,255,0.20);
+}
+.nav-mobile .nav-link,
+.nav-mobile .navdrop-toggle { color: var(--ink-text-1); }
+.nav-mobile .lang-toggle { color: var(--ink-text-2); border-color: rgba(255,255,255,0.20); }
