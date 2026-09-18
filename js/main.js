@@ -783,7 +783,9 @@ function initTheme() {
        de head, maar die keken naar de voorkeur van het BESTURINGSSYSTEEM -- en
        die bepaalt hier niets meer sinds donker de standaard is. */
     var kleurTag = document.querySelector('meta[name="theme-color"]');
-    if (kleurTag) kleurTag.setAttribute('content', theme === 'dark' ? '#121212' : '#FFFFFF');
+    /* Deze twee moeten gelijk zijn aan --surface-1 in beide thema's, anders
+       staat de browserbalk in een andere kleur dan de pagina eronder. */
+    if (kleurTag) kleurTag.setAttribute('content', theme === 'dark' ? '#17140F' : '#FBF7EF');
     document.querySelectorAll('.theme-toggle').forEach(function (btn) {
       btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
     });

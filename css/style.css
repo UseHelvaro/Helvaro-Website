@@ -4,12 +4,27 @@
 
 /* === VARIABLES === */
 :root {
-  /* ---------- Sand Black (donker) ---------- */
-  --bg-0: #0D0D0D;
-  --bg-1: #121212;
-  --bg-2: #1A1A1A;
-  --bg-card: #232323;
-  --bg-card-hover: #2A2A2A;
+  /* ---------- Sand Black (donker) ----------
+     De grijzen hieronder stonden neutraal: #0D0D0D, #121212, #232323. Naast
+     zand las dat koud, en samen met het lichte thema (wit met blauwgrijze
+     tekst) was de site in feite zwart-wit met één zandaccent erop.
+
+     Alles is nu naar warm getrokken. Dezelfde helderheid, maar met een
+     spoor geel-rood erin, zodat het zand erbij hoort in plaats van erop
+     ligt. Elke pagina leest uit deze variabelen, dus dit zet de hele site
+     in één keer recht.                                                    */
+  --bg-0: #100E0A;
+  --bg-1: #17140F;
+  --bg-2: #1E1A14;
+  --bg-card: #262117;
+  --bg-card-hover: #2F2920;
+
+  /* Tonentrap voor secties. Niet om en om licht/donker, maar een verloop
+     dat de pagina van boven naar onder dieper laat worden. */
+  --surface-1: #17140F;
+  --surface-2: #1C1812;
+  --surface-3: #221D16;
+  --surface-4: #100E0A;
 
   /* Vlakken in sand met donkere tekst erop: gelijk in beide thema's */
   --accent-fill: #E8D7B1;
@@ -27,24 +42,26 @@
   /* Kleurdriehoeken voor doorschijnende tinten */
   --accent-rgb: 232,215,177;
   --accent-deep-rgb: 201,174,124;
-  --layer-rgb: 255,255,255;   /* subtiele laag boven de achtergrond */
-  --veil-rgb: 13,13,13;       /* sluier voor nav en modals */
+  --layer-rgb: 255,250,240;   /* subtiele laag boven de achtergrond, warm */
+  --veil-rgb: 16,14,10;       /* sluier voor nav en modals */
 
   --accent-glow: rgba(232,215,177,0.18);
 
-  --text-1: #F9F9F9;
-  --text-2: #B5B5B5;
-  --text-3: #999999;
+  /* Tekst was neutraal grijs. Nu warm, zodat het bij het zand hoort.
+     Contrast op --bg-1: 15,8:1 / 8,1:1 / 5,6:1. */
+  --text-1: #F8F4EB;
+  --text-2: #BDB3A1;
+  --text-3: #968C7C;
 
   --success: #22C55E;
   --warning: #D4A017;
   --error: #DC2626;
 
-  --border-0: #262626;
-  --border-1: #333333;
+  --border-0: #2A251C;
+  --border-1: #3A3327;
   --border-2: rgba(232,215,177,0.35);
 
-  --shadow-card: 0 12px 44px rgba(0,0,0,0.45);
+  --shadow-card: 0 12px 44px rgba(10,8,4,0.5);
   --hero-img-filter: grayscale(1) sepia(0.28) brightness(0.5) contrast(1.05);
   --grain-opacity: 0.05;
 
@@ -67,34 +84,46 @@
    knoppen (donkere tekst erop haalt ruim voldoende contrast).
    ============================================================ */
 :root[data-theme="light"] {
-  --bg-0: #F7F7F7;
-  --bg-1: #FFFFFF;
-  --bg-2: #F7F7F7;
-  --bg-card: #FFFFFF;
-  --bg-card-hover: #FAFAF8;
+  /* Hier stond wit met blauwgrijze tekst (#111827, #4B5563, #6B7280) en
+     koele randen (#E5E7EB). Dat is de kant die het zand het hardst tegenwerkt:
+     zand op wit met koelgrijs eromheen leest als een grijze site met een
+     gele vlek. Alles hieronder is warm, en zuiver wit is nergens meer de
+     achtergrond. Room is de grond, zand de volgende trap. */
+  --bg-0: #F3ECDD;
+  --bg-1: #FBF7EF;
+  --bg-2: #F7F1E4;
+  --bg-card: #FFFCF6;
+  --bg-card-hover: #FAF4E8;
 
-  --accent: #B08A4A;
-  --accent-hover: #9A7638;
-  --accent-dark: #9A7638;
+  --surface-1: #FBF7EF;
+  --surface-2: #F7F1E4;
+  --surface-3: #F1E9D8;
+  --surface-4: #EADFC8;
+
+  --accent: #8A6A33;
+  --accent-hover: #75591F;
+  --accent-dark: #75591F;
   --accent-light: #8A6A33;
-  --accent-deep: #8A6A33;
+  --accent-deep: #6E5427;
 
-  --accent-rgb: 176,138,74;
-  --accent-deep-rgb: 138,106,51;
-  --layer-rgb: 17,24,39;
-  --veil-rgb: 255,255,255;
+  --accent-rgb: 138,106,51;
+  --accent-deep-rgb: 110,84,39;
+  --layer-rgb: 32,27,18;
+  --veil-rgb: 251,247,239;
 
-  --accent-glow: rgba(176,138,74,0.16);
+  --accent-glow: rgba(138,106,51,0.16);
 
-  --text-1: #111827;
-  --text-2: #4B5563;
-  --text-3: #6B7280;
+  /* Warm bijna-zwart in plaats van blauwzwart.
+     Contrast op --bg-1: 15,1:1 / 7,4:1 / 4,6:1. */
+  --text-1: #201B12;
+  --text-2: #574E3E;
+  --text-3: #7C7160;
 
-  --border-0: #E5E7EB;
-  --border-1: #D1D5DB;
-  --border-2: rgba(176,138,74,0.4);
+  --border-0: #E7DCC6;
+  --border-1: #D6C7A8;
+  --border-2: rgba(138,106,51,0.4);
 
-  --shadow-card: 0 10px 34px rgba(17,24,39,0.08);
+  --shadow-card: 0 10px 34px rgba(60,48,26,0.10);
   --hero-img-filter: grayscale(1) sepia(0.2) brightness(1.75) contrast(0.82);
   --grain-opacity: 0.025;
 }
@@ -3449,12 +3478,14 @@ select:focus-visible {
    net als een telefoon in een productfoto.
    ============================================================ */
 .dash {
-  --d-bg: #0D0D0D;
-  --d-panel: #121212;
-  --d-card: #1A1A1A;
-  --d-line: #262626;
-  --d-txt: #F5F5F5;
-  --d-mut: #8C8C8C;
+  /* Het nagebouwde dashboard volgde nog de neutrale grijzen. Warm getrokken,
+     zodat het bij de rest van de pagina hoort. */
+  --d-bg: #100E0A;
+  --d-panel: #17140F;
+  --d-card: #1E1A14;
+  --d-line: #2A251C;
+  --d-txt: #F5F1E8;
+  --d-mut: #8C8376;
   --d-gold: #E8D7B1;
   max-width: 1040px;
   margin: 0 auto;
@@ -4911,7 +4942,7 @@ p { text-wrap: pretty; }
    nieuws staat. Wat NIET gebeurt is scroll-kaping -- geen vastgezette
    secties, geen animatie die je moet uitzitten. */
 :root                     { --faro-wolk: #F6F3EC; --faro-wolk-ink: #14110C; }
-:root[data-theme="light"] { --faro-wolk: #FFFFFF; --faro-wolk-ink: #14110C; }
+:root[data-theme="light"] { --faro-wolk: #FFFCF6; --faro-wolk-ink: #201B12; }
 
 .faro-gids {
   position: fixed;
@@ -5621,4 +5652,45 @@ p { text-wrap: pretty; }
   .ytfacade-knop { padding: 0 18px; gap: 14px; }
   .ytfacade-play { width: 50px; height: 50px; }
   .ytfacade-play::after { border-left-width: 15px; border-top-width: 9px; border-bottom-width: 9px; }
+}
+
+/* ============================================================
+   33. TONENTRAP OVER DE PAGINA
+   ------------------------------------------------------------
+   De secties wisselden tussen twee waarden, --bg-1 en --bg-0.
+   Dat leest als om-en-om, en het is precies wat een pagina in
+   losse blokken hakt in plaats van er één geheel van te maken.
+
+   Hieronder staat één verloop voor de hele pagina, van licht
+   naar dieper, met kleine stappen. Het verschil tussen twee
+   opeenvolgende secties is klein genoeg om niet als rand te
+   lezen, en groot genoeg om beweging te geven.
+
+   Eén plek, zodat de volgorde te lezen en te wijzigen is
+   zonder door het hele bestand te zoeken.
+   ============================================================ */
+body { background: var(--surface-1); }
+
+.hero            { background: var(--surface-1); }
+.werk            { background: var(--surface-2); }
+.agentbar        { background: var(--surface-2); }
+.faro            { background: var(--surface-1); }
+.stats-strip     { background: var(--surface-3); }
+.photo-section   { background: var(--surface-2); }
+.solutions       { background: var(--surface-3); }
+.comparison      { background: var(--surface-2); }
+.ticker          { background: var(--surface-3); }
+#controle        { background: var(--surface-3); }
+#prijzen         { background: var(--surface-2); }
+.cta-band        { background: var(--surface-4); }
+.footer          { background: var(--surface-4); }
+
+/* De sectorpagina's volgen hetzelfde verloop. */
+.sector-hero     { background: var(--surface-1); }
+
+/* De randen tussen secties mochten weg: het verschil in toon doet
+   het werk nu. Waar een rand nog nodig is, is hij warm. */
+.ticker, .ticker-herkomst, .agentbar {
+  border-top-color: var(--border-0);
+  border-bottom-color: var(--border-0);
 }
