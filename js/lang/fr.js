@@ -329,3 +329,9 @@ Object.assign(window.HELVARO_TR['fr'], {
   "Zaterdag": "Samedi",
   "Donderdag": "Jeudi"
 });
+
+Object.assign(window.HELVARO_TR['fr'], {
+  "Zo verkoop je een pand dat nog niet af is": "Comment vendre un bien qui n'est pas encore fini",
+  "Video afspelen · pas bij een klik laadt YouTube": "Lire la vidéo · YouTube ne se charge qu'au clic",
+  "Een vervallen woning verkoopt zichzelf niet. Een beeld van wat het kan worden wel.": "Un bien délabré ne se vend pas tout seul. Une image de ce qu'il pourrait devenir, si."
+});

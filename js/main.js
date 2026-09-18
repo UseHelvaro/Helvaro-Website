@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initShowcase();
   initAgentbar();
   initNavDrop();
+  initVideo();
 });
 
 /* ============================================================
@@ -1128,5 +1129,37 @@ function initNavDrop() {
   document.addEventListener('click', () => sluitAlles(null));
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') sluitAlles(null);
+  });
+}
+
+/* ── Video zonder trackers ──────────────────────────────────────────────
+   Er staat eerst alleen een vlak met een afspeelknop. Pas bij een klik
+   komt de iframe, en dan via youtube-nocookie.com. Tot dat moment gaat er
+   geen enkel verzoek naar Google, ook niet voor een thumbnail.
+
+   Staat er geen video-ID, dan doet dit niets: het blok is dan met CSS al
+   verborgen. */
+function initVideo() {
+  document.querySelectorAll('.ytfacade[data-video-id]').forEach((blok) => {
+    const id = (blok.dataset.videoId || '').trim();
+    if (!id) return;
+
+    const knop = blok.querySelector('.ytfacade-knop');
+    if (!knop) return;
+
+    const titel = blok.dataset.videoTitel || 'Video';
+    knop.setAttribute('aria-label', titel);
+
+    knop.addEventListener('click', () => {
+      const frame = document.createElement('iframe');
+      frame.className = 'ytfacade-speler';
+      frame.src = 'https://www.youtube-nocookie.com/embed/' +
+        encodeURIComponent(id) + '?autoplay=1&rel=0&modestbranding=1';
+      frame.title = titel;
+      frame.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+      frame.allowFullscreen = true;
+      knop.replaceWith(frame);
+    });
   });
 }

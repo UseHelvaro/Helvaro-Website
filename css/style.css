@@ -5574,3 +5574,88 @@ p { text-wrap: pretty; }
   .nav-mobile .nav-link,
   .nav-mobile .navdrop-toggle { font-size: 17px; }
 }
+
+/* ============================================================
+   32. VIDEO ZONDER TRACKERS
+   ------------------------------------------------------------
+   Een gewone YouTube-embed legt contact met Google zodra de
+   pagina laadt, dus voor iemand iets aangeklikt heeft. Op een
+   site die "data in de EU" als argument gebruikt is dat lastig
+   uit te leggen, en het kost ook nog eens een halve megabyte
+   voor een video die misschien nooit bekeken wordt.
+
+   Hier staat eerst een vlak met een afspeelknop. Geen thumbnail
+   van YouTube, want ook dat is een verzoek naar Google. Pas bij
+   een klik komt de iframe, via youtube-nocookie.com.
+   ============================================================ */
+.ytfacade { margin: 30px 0 8px; max-width: 620px; }
+/* Zonder video-ID laat het blok zich niet zien. */
+.ytfacade:not([data-video-id]),
+.ytfacade[data-video-id=""] { display: none; }
+
+.ytfacade-knop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0 28px;
+  cursor: pointer;
+  text-align: left;
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-m);
+  background:
+    radial-gradient(120% 120% at 20% 10%, rgba(var(--accent-rgb), 0.16) 0%, transparent 60%),
+    var(--bg-card);
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.ytfacade-knop:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 48px rgba(var(--accent-deep-rgb), 0.22);
+}
+.ytfacade-play {
+  flex: none;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: grid;
+  place-items: center;
+  transition: transform 0.3s;
+}
+.ytfacade-play::after {
+  content: "";
+  width: 0; height: 0;
+  margin-left: 4px;
+  border-left: 18px solid #121212;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+}
+.ytfacade-knop:hover .ytfacade-play { transform: scale(1.07); }
+.ytfacade-tekst { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.ytfacade-titel {
+  font-family: var(--font-h);
+  font-size: clamp(17px, 2.4vw, 21px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-1);
+  line-height: 1.25;
+}
+.ytfacade-sub { font-size: 13px; color: var(--text-3); }
+.ytfacade-bij { font-size: 14px; color: var(--text-3); font-style: italic; margin: 12px 0 0; }
+
+/* Na de klik zit de iframe op dezelfde plek en in dezelfde verhouding. */
+.ytfacade-speler {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--radius-m);
+  display: block;
+}
+@media (max-width: 560px) {
+  .ytfacade-knop { padding: 0 18px; gap: 14px; }
+  .ytfacade-play { width: 50px; height: 50px; }
+  .ytfacade-play::after { border-left-width: 15px; border-top-width: 9px; border-bottom-width: 9px; }
+}
