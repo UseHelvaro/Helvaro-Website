@@ -6145,3 +6145,20 @@ body { background: var(--surface-1); }
 .nav-mobile .nav-link,
 .nav-mobile .navdrop-toggle { color: var(--ink-text-1); }
 .nav-mobile .lang-toggle { color: var(--ink-text-2); border-color: rgba(255,255,255,0.20); }
+
+/* De knop is nu donker, dus alles wat erin staat hoort bij de donkere set.
+   Het diepe brons van de lichte kant haalde er 2,3:1. */
+.btn {
+  --accent: #C8A078;
+  --accent-deep: #B48C64;
+  --accent-light: #D7B48F;
+  --accent-rgb: 200,160,120;
+  --text-1: #F4F1EA;
+  --text-2: #BDB8AE;
+}
+.btn-ghost {
+  --accent: var(--accent-deep);
+  --text-1: #181818;
+}
+.op-houtskool .btn-ghost,
+.kaart-donker .btn-ghost { --text-1: #F4F1EA; --accent: #C8A078; }
