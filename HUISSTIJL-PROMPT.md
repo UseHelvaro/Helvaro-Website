@@ -8,9 +8,19 @@ wanneer je iets wil laten maken dat bij Helvaro hoort.
 ## De prompt
 
 ```
-Je ontwerpt voor Helvaro, een Belgisch bedrijf dat AI-agents op WhatsApp zet die
-inkomende leads binnen 30 seconden opvolgen, kwalificeren en inplannen. Klanten zijn
-vastgoedkantoren, bouw- en renovatiebedrijven, zorgpraktijken en keukenzaken.
+Je ontwerpt voor Helvaro, een Belgisch bedrijf dat een systeem bouwt waarmee
+onafhankelijke garages en werkplaatsen meer van hun binnenkomende klantcontact
+omzetten in werkplaatsafspraken. Het vangt gesprekken op via telefoon en WhatsApp,
+herkent de auto aan het kenteken, kwalificeert, plant in en volgt op.
+
+Klanten zijn onafhankelijke en universele garages, APK-erkende bedrijven en
+werkplaatsen met twee tot vijftien monteurs. Vastgoed en bouw zijn oudere sectoren
+die we nog bedienen, maar automotive staat voorop.
+
+BELANGRIJK: Helvaro verkoopt een systeem, geen chatbot. De agents voor APK,
+werkplaatsplanning, gemiste gesprekken en offerte-opvolging zijn onderdelen van dat
+systeem, nooit losse producten. Schrijf dus niet "onze AI-assistent", maar "het
+systeem" of de naam van de werkstroom.
 
 HUISSTIJL: "Sand Black"
 Warm, minimaal en professioneel. Zand op zwart. Het moet aanvoelen als degelijk
@@ -62,12 +72,12 @@ VORMTAAL
 
 TOON VAN DE TEKST
 Korte spanningsparen waarin de tweede zin de eerste onderuithaalt:
-  "Je leads groeien. Je opvolging niet."
-  "Elke sector. Eigen agent."
-  "Drie agents. Nul handwerk."
-  "Geen chatbot. Agents die werk doen."
-Noem het product nooit "de AI". Het zijn agents met een taak: opvolg-agent,
-kwalificatie-agent, planning-agent, visualisatie-agent.
+  "Je bedrijf groeit. Je werkdruk niet."
+  "Tien agents. \x{00e9}\x{00e9}n systeem eronder."
+  "Een lege brug kost evenveel als een volle."
+  "Geen chatbot die vragen beantwoordt. Een systeem dat afspraken oplevert."
+Noem het product nooit "de AI". Het zijn agents met een taak: APK-agent,
+inplan-agent, gemiste-gesprekken-agent, offerte-opvolg-agent.
 Geen uitroeptekens. Geen superlatieven. Geen gedachtestreepjes (— of –) in zinnen,
 gebruik een komma, een punt of een middenstip (·).
 
@@ -79,7 +89,7 @@ VERMIJD
   Alles wat eruitziet als een standaard SaaS-sjabloon
 
 DE TOETS
-Zou een vastgoedmakelaar van vijftig dit vertrouwen met zijn leads? Zo niet, dan is
+Zou een garagehouder van vijftig dit vertrouwen met zijn klanten? Zo niet, dan is
 het te speels. Ziet het eruit als elke andere AI-startup? Dan is het te generiek.
 ```
 
@@ -94,7 +104,7 @@ Sand Black huisstijl: zandkleur #E8D7B1 op bijna-zwart #121212, kaarten #232323,
 tekst #F9F9F9. Warm, minimaal, professioneel. Space Grotesk voor koppen, Inter voor
 tekst. Veel witruimte, zachte hoeken, subtiele randen, warm gegradeerde fotografie.
 Geen paars, geen neon, geen robots of hersenen, geen generieke AI-beeldtaal.
-Moet betrouwbaar aanvoelen voor vastgoed- en bouwprofessionals.
+Moet betrouwbaar aanvoelen voor iemand die een werkplaats runt.
 ```
 
 ---

@@ -45,8 +45,34 @@ my $BASE = 'https://helvaro.pro';
 
 # Bronpagina's, relatief aan de hoofdmap.
 my @PAGES = qw(
-  index.html waarom.html contact.html meeting.html aanmelden.html
-  privacybeleid.html sectoren/vastgoed.html sectoren/bouw.html
+  index.html
+  systeem.html
+  automotive.html
+  agents/index.html
+  roi.html
+  cases.html
+  koppelingen/index.html
+  agents/apk-herinnering-agent.html
+  agents/werkplaats-inplan-agent.html
+  agents/gemiste-gesprekken-agent.html
+  agents/offerte-opvolg-agent.html
+  agents/no-show-agent.html
+  agents/onderdelen-navraag-agent.html
+  agents/leenauto-agent.html
+  agents/schade-intake-agent.html
+  agents/winterbanden-oproep-agent.html
+  agents/onderhoudsbeurt-herinnering-agent.html
+  koppelingen/automaat-go.html
+  koppelingen/autoflex.html
+  koppelingen/wincar.html
+  koppelingen/rdw-kenteken.html
+  waarom.html
+  meeting.html
+  sectoren/vastgoed.html
+  sectoren/bouw.html
+  contact.html
+  aanmelden.html
+  privacybeleid.html
 );
 
 # ── 1. Woordenboeken uit de taalbestanden halen ─────────────────────────────
@@ -336,7 +362,12 @@ for my $pagina (@PAGES) {
     #     ontsnapt dus aan de tekstvervanging hierboven.
     if ($h =~ m{<title>(.*?)</title>}s) {
       my $nl_titel = decode_ents($1);
-      if (my $t = $TITEL->{$nl_titel}{$lang}) {
+      # De oorspronkelijke pagina's staan in TITLES in i18n.js. Voor nieuwe
+      # titels is dat een tweede plek om te vullen, en die loopt uit elkaar.
+      # Staat een titel niet in TITLES, dan pakken we hem uit het gewone
+      # woordenboek. Zo is er maar Ã©Ã©n plaats om te vertalen.
+      my $t = $TITEL->{$nl_titel}{$lang} || $DICT{$lang}{$nl_titel};
+      if ($t) {
         $h =~ s{<title>.*?</title>}{<title>$t</title>}s;
         $h =~ s{(<meta property="og:title" content=")[^"]*(")}{$1$t$2};
       }
@@ -413,3 +444,18 @@ for my $lang (@LANGS) {
 print $zonder
   ? "\nVul die aan in js/lang/*.js en draai opnieuw.\n"
   : "\nElke zin heeft in alle vier de talen een vertaling.\n";
+
+# Met --dump komen de ontbrekende zinnen voluit in tools/mist-<taal>.txt te
+# staan. Bij een grote uitbreiding is dat handiger dan een afgekapte lijst op
+# het scherm: één bestand per taal, klaar om te vertalen.
+if (grep { $_ eq '--dump' } @ARGV) {
+  print "\n";
+  for my $lang (@LANGS) {
+    my @m = sort keys %{ $MIST{$lang} };
+    my $pad = "tools/mist-$lang.txt";
+    open my $uit, '>:raw', $pad or die "$pad: $!";
+    print $uit encode_utf8(join("\n", @m) . "\n") if @m;
+    close $uit;
+    printf "%-22s %4d zinnen\n", $pad, scalar @m;
+  }
+}

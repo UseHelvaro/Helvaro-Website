@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <script>document.documentElement.classList.add('js');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent planification atelier : des rendez-vous qui entrent dans votre planning · Helvaro</title>
+  <meta name="description" content="Un contrôle technique n'est pas une courroie de distribution. L'agent sait combien de temps dure une intervention et réserve le créneau correspondant.">
+  <meta property="og:title" content="Werkplaats-inplan-agent: afspraken die in je planning passen · Helvaro">
+  <meta property="og:description" content="Un contrôle technique n'est pas une courroie de distribution. L'agent sait combien de temps dure une intervention et réserve le créneau correspondant.">
+  <meta property="og:image" content="https://helvaro.pro/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="fr_BE">
+  <meta property="og:site_name" content="Helvaro">
+  <meta property="og:url" content="https://helvaro.pro/fr/agents/werkplaats-inplan-agent.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://helvaro.pro/fr/agents/werkplaats-inplan-agent.html">
+  <link rel="alternate" hreflang="nl" href="https://helvaro.pro/agents/werkplaats-inplan-agent.html">
+  <link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/agents/werkplaats-inplan-agent.html">
+  <link rel="alternate" hreflang="en" href="https://helvaro.pro/en/agents/werkplaats-inplan-agent.html">
+  <link rel="alternate" hreflang="de" href="https://helvaro.pro/de/agents/werkplaats-inplan-agent.html">
+  <link rel="alternate" hreflang="es" href="https://helvaro.pro/es/agents/werkplaats-inplan-agent.html">
+  <link rel="alternate" hreflang="x-default" href="https://helvaro.pro/agents/werkplaats-inplan-agent.html">
+  <link rel="icon" href="../../assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#121212">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
+    (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+  </script>
+  <link rel="stylesheet" href="../../css/style.css?v=89">
+</head>
+<body data-vertaald="fr">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- SHELL:NAV -->
+<a class="topbar" href="../cases.html">
+    <span class="topbar-text">Nous cherchons cinq garages pour la première mesure.</span>
+    <span class="topbar-link">Voir le pilote <span aria-hidden="true">&#8594;</span></span>
+  </a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Helvaro home">
+        <img src="../../assets/logo-brons.png" alt="Helvaro logo" width="48" height="48">
+        <span class="nav-brand">Helvaro</span>
+      </a>
+      <nav class="nav-links" aria-label="Hoofdnavigatie">
+
+        <div class="navdrop">
+          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Système <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+          <div class="navdrop-menu" role="menu">
+            <a href="../systeem.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Le système Helvaro</span>
+              <span class="ndi-sub">Capter, comprendre, agir, connecter, mesurer</span>
+            </a>
+            <a href="../agents/index.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Les agents</span>
+              <span class="ndi-sub">Dix flux de travail au sein du même système</span>
+            </a>
+            <a href="../koppelingen/index.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Intégrations</span>
+              <span class="ndi-sub">Où Helvaro s'insère dans votre logiciel existant</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="navdrop">
+          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Automotive <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+          <div class="navdrop-menu" role="menu">
+            <a href="../automotive.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Pour l'atelier</span>
+              <span class="ndi-sub">Ce que fait le système dans un garage indépendant</span>
+            </a>
+            <a href="../agents/apk-herinnering-agent.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Agent contrôle technique</span>
+              <span class="ndi-sub">D'un contrôle technique qui approche à un rendez-vous réservé</span>
+            </a>
+            <a href="../agents/werkplaats-inplan-agent.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Agent atelier</span>
+              <span class="ndi-sub">Des rendez-vous qui entrent dans votre planning, pas à côté</span>
+            </a>
+            <a href="../agents/gemiste-gesprekken-agent.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Appels manqués</span>
+              <span class="ndi-sub">Celui qui n'arrive pas à vous joindre reçoit un message en moins d'une minute</span>
+            </a>
+            <span class="navdrop-scheiding" role="separator">Autres secteurs</span>
+            <a href="../sectoren/vastgoed.html" class="navdrop-item navdrop-item-klein" role="menuitem">
+              <span class="ndi-title">Immobilier</span>
+            </a>
+            <a href="../sectoren/bouw.html" class="navdrop-item navdrop-item-klein" role="menuitem">
+              <span class="ndi-title">Construction &amp; rénovation</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="navdrop">
+          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Résultat <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+          <div class="navdrop-menu" role="menu">
+            <a href="../roi.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Calculateur de chiffre d'affaires</span>
+              <span class="ndi-sub">Ce qui reste en plan dans votre atelier</span>
+            </a>
+            <a href="../cases.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Pilote et chiffres</span>
+              <span class="ndi-sub">Ce que nous mesurons, et ce que nous ne pouvons pas encore prouver</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="../index.html#prijzen" class="nav-link">Tarifs</a>
+        <a href="../waarom.html" class="nav-link">Entreprise</a>
+        <a href="https://app.helvaro.pro/" class="nav-link">Connexion</a>
+
+        <div class="lang-switch">
+          <button class="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Taal kiezen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span class="lang-current">FR</span>
+            <span class="lang-caret" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="lang-menu" role="menu">
+            <a class="lang-opt" role="menuitem" href="/agents/werkplaats-inplan-agent.html" hreflang="nl" data-lang="nl">Nederlands <span class="lang-code">NL</span></a>
+            <a class="lang-opt active" role="menuitem" href="/fr/agents/werkplaats-inplan-agent.html" hreflang="fr" aria-current="true" data-lang="fr">Fran&ccedil;ais <span class="lang-code">FR</span></a>
+            <a class="lang-opt" role="menuitem" href="/en/agents/werkplaats-inplan-agent.html" hreflang="en" data-lang="en">English <span class="lang-code">EN</span></a>
+            <a class="lang-opt" role="menuitem" href="/de/agents/werkplaats-inplan-agent.html" hreflang="de" data-lang="de">Deutsch <span class="lang-code">DE</span></a>
+            <a class="lang-opt" role="menuitem" href="/es/agents/werkplaats-inplan-agent.html" hreflang="es" data-lang="es">Espa&ntilde;ol <span class="lang-code">ES</span></a>
+          </div>
+        </div>
+
+        <button class="theme-toggle" type="button" aria-label="Wissel tussen licht en donker thema" title="Licht of donker">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+
+        <a href="../meeting.html" class="btn">Planifier une démo</a>
+      </nav>
+      <button class="nav-hamburger" aria-label="Menu openen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobiel menu. Dezelfde links, apart blok, want het schuift open onder
+       de balk in plaats van ernaast. Ook dit wordt gesynchroniseerd. -->
+  <div class="nav-mobile" aria-label="Mobiel menu">
+    <div class="navdrop">
+      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Système <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+      <div class="navdrop-menu" role="menu">
+        <a href="../systeem.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Le système Helvaro</span>
+          <span class="ndi-sub">Capter, comprendre, agir, connecter, mesurer</span>
+        </a>
+        <a href="../agents/index.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Les agents</span>
+          <span class="ndi-sub">Dix flux de travail au sein du même système</span>
+        </a>
+        <a href="../koppelingen/index.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Intégrations</span>
+          <span class="ndi-sub">Où Helvaro s'insère dans votre logiciel existant</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="navdrop">
+      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Automotive <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+      <div class="navdrop-menu" role="menu">
+        <a href="../automotive.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Pour l'atelier</span>
+          <span class="ndi-sub">Ce que fait le système dans un garage indépendant</span>
+        </a>
+        <a href="../agents/apk-herinnering-agent.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Agent contrôle technique</span>
+          <span class="ndi-sub">D'un contrôle technique qui approche à un rendez-vous réservé</span>
+        </a>
+        <a href="../agents/werkplaats-inplan-agent.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Agent atelier</span>
+          <span class="ndi-sub">Des rendez-vous qui entrent dans votre planning, pas à côté</span>
+        </a>
+        <a href="../agents/gemiste-gesprekken-agent.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Appels manqués</span>
+          <span class="ndi-sub">Celui qui n'arrive pas à vous joindre reçoit un message en moins d'une minute</span>
+        </a>
+        <span class="navdrop-scheiding" role="separator">Autres secteurs</span>
+        <a href="../sectoren/vastgoed.html" class="navdrop-item navdrop-item-klein" role="menuitem">
+          <span class="ndi-title">Immobilier</span>
+        </a>
+        <a href="../sectoren/bouw.html" class="navdrop-item navdrop-item-klein" role="menuitem">
+          <span class="ndi-title">Construction &amp; rénovation</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="navdrop">
+      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Résultat <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+      <div class="navdrop-menu" role="menu">
+        <a href="../roi.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Calculateur de chiffre d'affaires</span>
+          <span class="ndi-sub">Ce qui reste en plan dans votre atelier</span>
+        </a>
+        <a href="../cases.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Pilote et chiffres</span>
+          <span class="ndi-sub">Ce que nous mesurons, et ce que nous ne pouvons pas encore prouver</span>
+        </a>
+      </div>
+    </div>
+
+    <a href="../index.html#prijzen" class="nav-link">Tarifs</a>
+    <a href="../waarom.html" class="nav-link">Entreprise</a>
+    <a href="https://app.helvaro.pro/" class="nav-link">Connexion</a>
+
+    <div class="lang-switch">
+      <button class="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Taal kiezen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="lang-current">FR</span>
+        <span class="lang-caret" aria-hidden="true">&#9662;</span>
+      </button>
+      <div class="lang-menu" role="menu">
+            <a class="lang-opt" role="menuitem" href="/agents/werkplaats-inplan-agent.html" hreflang="nl" data-lang="nl">Nederlands <span class="lang-code">NL</span></a>
+            <a class="lang-opt active" role="menuitem" href="/fr/agents/werkplaats-inplan-agent.html" hreflang="fr" aria-current="true" data-lang="fr">Fran&ccedil;ais <span class="lang-code">FR</span></a>
+            <a class="lang-opt" role="menuitem" href="/en/agents/werkplaats-inplan-agent.html" hreflang="en" data-lang="en">English <span class="lang-code">EN</span></a>
+            <a class="lang-opt" role="menuitem" href="/de/agents/werkplaats-inplan-agent.html" hreflang="de" data-lang="de">Deutsch <span class="lang-code">DE</span></a>
+            <a class="lang-opt" role="menuitem" href="/es/agents/werkplaats-inplan-agent.html" hreflang="es" data-lang="es">Espa&ntilde;ol <span class="lang-code">ES</span></a>
+          </div>
+    </div>
+
+    <button class="theme-toggle" type="button" aria-label="Wissel tussen licht en donker thema" title="Licht of donker">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+
+    <a href="../meeting.html" class="btn">Planifier une démo</a>
+  </div>
+<!-- /SHELL:NAV -->
+
+  <main id="main">
+    <section class="paghero" data-gids="hero">
+      <div class="paghero-bg" aria-hidden="true"></div>
+      <div class="container">
+        <nav class="kruimels" aria-label="Kruimelpad">
+          <a href="../index.html">Accueil</a>
+          <span aria-hidden="true">·</span>
+          <a href="index.html">Agents</a>
+          <span aria-hidden="true">·</span>
+          <span aria-current="page">Planification atelier</span>
+        </nav>
+        <span class="section-label">Agent 02 sur dix</span>
+        <h1 class="paghero-titel">Un rendez-vous qui n'entre pas dans votre planning, <span class="highlight">n'est pas une aide.</span></h1>
+        <p class="paghero-lede">La plupart des systèmes de réservation placent un client dans une case d'une heure, qu'il s'agisse d'un changement de pneus ou d'une courroie de distribution. Ensuite, c'est à votre chef d'atelier de rectifier. Cet agent sait combien de temps dure une intervention avant de promettre quoi que ce soit.</p>
+        <div class="paghero-acties">
+          <a href="../meeting.html" class="btn btn-lg">Planifier une démo <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+          <a href="../systeem.html" class="btn btn-ghost btn-lg">Voici comment le système est agencé</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-gids="probleem">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Sans cela</span>
+          <h2 class="section-title">La réservation en ligne ne fonctionne que si la durée est juste.</h2>
+        </div>
+        <div class="prob-inhoud">
+          <div class="prob-tekst reveal">
+            <p>Un contrôle dure une heure et demie. Un grand entretien, une demi-journée. Un embrayage, une journée et demie, et il faut un pont qui ne soit pas requis entre-temps pour autre chose. Un agenda en cases d'une heure ignore cette différence.</p>
+            <p>La suite est connue. Le client réserve en ligne, l'atelier le voit, et quelqu'un doit rappeler pour déplacer. Autant l'avoir fait tout de suite par téléphone, et en plus vous avez un client qui s'est réjoui pour rien.</p>
+            <p>Un rendez-vous n'a de valeur que si votre mécanicien peut compter dessus le matin même.</p>
+          </div>
+          <ul class="prob-gevolgen reveal">
+            <li>Rappeler pour déplacer prend plus de temps que de planifier le rendez-vous lui-même.</li>
+            <li>Une intervention qui déborde repousse tout le reste de la journée.</li>
+            <li>Votre chef d'atelier va se méfier du système et replanifier à la main.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-gids="werkstroom" id="werkstroom">
+      <div class="section-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">Le flux de travail</span>
+          <h2 class="section-title">Ce que fait le système.</h2>
+          <p class="section-sub">D'abord déterminer de quoi il s'agit, puis seulement proposer un moment.</p>
+        </div>
+        <ol class="ws-lijst">
+          <li class="ws-stap reveal">
+            <span class="ws-nr">01</span>
+            <div>
+              <h3 class="ws-kop">D'abord déterminer l'intervention</h3>
+              <p class="ws-tekst">Pourquoi la voiture vient-elle. Contrôle, entretien, réparation, pneus, sinistre ou quelque chose qu'il faut d'abord examiner. Tant que ce n'est pas clair, aucun créneau n'est annoncé.</p>
+            </div>
+          </li>
+          <li class="ws-stap reveal">
+            <span class="ws-nr">02</span>
+            <div>
+              <h3 class="ws-kop">La bonne durée avec</h3>
+              <p class="ws-tekst">Vous définissez vous-même la durée de chaque type d'intervention chez vous. L'agent utilise cette durée, pas une heure standard qui tombe bien dans un agenda.</p>
+            </div>
+          </li>
+          <li class="ws-stap reveal">
+            <span class="ws-nr">03</span>
+            <div>
+              <h3 class="ws-kop">Voir ce qui est réellement libre</h3>
+              <p class="ws-tekst">Un créneau n'est proposé que s'il y a de la place pour toute l'intervention et que le poste nécessaire est libre. Réserver un demi-pont, ce n'est pas réserver.</p>
+            </div>
+          </li>
+          <li class="ws-stap reveal reveal-delay-1">
+            <span class="ws-nr">04</span>
+            <div>
+              <h3 class="ws-kop">Attendre ou déposer</h3>
+              <p class="ws-tekst">Celui qui attend a besoin d'un créneau du matin et d'une intervention de deux heures maximum. Celui qui dépose peut venir toute la journée. Cette question se pose en amont, pas au comptoir.</p>
+            </div>
+          </li>
+          <li class="ws-stap reveal reveal-delay-1">
+            <span class="ws-nr">05</span>
+            <div>
+              <h3 class="ws-kop">Fixer et confirmer</h3>
+              <p class="ws-tekst">Le rendez-vous entre dans le planning, le client reçoit une confirmation indiquant ce qu'il doit apporter et combien de temps cela prendra.</p>
+            </div>
+          </li>
+          <li class="ws-stap reveal reveal-delay-1">
+            <span class="ws-nr">06</span>
+            <div>
+              <h3 class="ws-kop">Ce qui ne convient pas passe à un humain</h3>
+              <p class="ws-tekst">Une panne inconnue, un ancêtre, quelque chose qu'il faut d'abord examiner. Cela passe à votre chef d'atelier, avec la conversation.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" data-gids="gesprek">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">Voici comment cela sonne</span>
+          <h2 class="section-title">Une conversation qui en découle.</h2>
+          <p class="section-sub">Un exemple, pas l'enregistrement d'un client. Le ton, c'est vous qui le fixez, celui-ci est le nôtre.</p>
+        </div>
+        <div class="gesprek-kaart reveal">
+          <div class="gesprek-balk"><span>WhatsApp · demande entrante</span><span class="gesprek-merk">Exemple</span></div>
+          <div class="gesprek-body">
+            <div class="cg-regel cg-klant"><span class="cg-wie">Client</span>J'entends un couinement au freinage, je peux passer ?</div>
+            <div class="cg-regel cg-agent"><span class="cg-wie">Helvaro</span>Nous allons vérifier. Quelle est la plaque ?</div>
+            <div class="cg-regel cg-klant"><span class="cg-wie">Client</span>82-ABC-3</div>
+            <div class="cg-regel cg-agent"><span class="cg-wie">Helvaro</span>Volkswagen Golf de 2019. Pour un contrôle des freins nous comptons une heure, et s'il faut rectifier ou remplacer, du temps s'ajoute. Voulez-vous attendre ou déposer ?</div>
+            <div class="cg-regel cg-klant"><span class="cg-wie">Client</span>De préférence attendre.</div>
+            <div class="cg-regel cg-agent"><span class="cg-wie">Helvaro</span>Alors je planifie une matinée. Mardi 08h00 ou mercredi 08h30, c'est là que vous avez le plus de chances de repartir le matin même.</div>
+            <div class="cg-regel cg-klant"><span class="cg-wie">Client</span>Mardi.</div>
+            <div class="cg-uitkomst">
+              <span class="cg-uitkomst-label">Fixé</span>
+              <span class="cg-uitkomst-waarde">Mardi · 08h00 · contrôle des freins · 1 heure · attend</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-gids="opbrengst">
+      <div class="section-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">Ce que cela rapporte</span>
+          <h2 class="section-title">Un planning sur lequel votre mécanicien peut compter.</h2>
+        </div>
+        <div class="duo-grid">
+          <div class="duo-kaart reveal spot">
+            <h3 class="duo-titel">Moins de déplacements</h3>
+            <p class="duo-desc">Comme la durée est juste dès le départ, il y a beaucoup moins d'appels par la suite pour déplacer quelque chose.</p>
+          </div>
+          <div class="duo-kaart reveal spot">
+            <h3 class="duo-titel">Ceux qui attendent au bon endroit</h3>
+            <p class="duo-desc">Celui qui attend reçoit un créneau du matin et une intervention courte. Cela évite une salle d'attente remplie de gens qui restent jusqu'à quinze heures.</p>
+          </div>
+          <div class="duo-kaart reveal reveal-delay-1 spot">
+            <h3 class="duo-titel">Réserver aussi en dehors des heures d'ouverture</h3>
+            <p class="duo-desc">Un client qui veut régler quelque chose à dix heures du soir peut le faire. Le planning prêt le lendemain matin est juste.</p>
+          </div>
+          <div class="duo-kaart reveal reveal-delay-1 spot">
+            <h3 class="duo-titel">Votre comptoir ne s'en occupe plus</h3>
+            <p class="duo-desc">La planification, c'est le travail qui se fait toujours interrompre. C'est aussi celui qui se laisse le mieux traduire en règles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-gids="systeem">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Dans le système</span>
+          <h2 class="section-title">Pas un petit outil isolé.</h2>
+          <p class="section-sub">Cet agent est le point de convergence de presque tous les autres flux. Un rappel de contrôle technique, un appel manqué et un devis accepté finissent tous en rendez-vous.</p>
+        </div>
+        <div class="sys-duo">
+          <div class="sys-blok reveal">
+            <span class="sys-kop">Les couches concernées</span>
+            <ul class="sys-lijst">
+              <li><a href="../systeem.html#begrijpen">Comprendre</a><span>De quelle intervention il s'agit, et combien de temps elle dure chez vous.</span></li>
+              <li><a href="../systeem.html#handelen">Agir</a><span>Proposer un moment, le fixer et le confirmer.</span></li>
+              <li><a href="../systeem.html#koppelen">Connecter</a><span>Le rendez-vous s'écrit dans le planning dans lequel votre équipe travaille.</span></li>
+            </ul>
+          </div>
+          <div class="sys-blok reveal reveal-delay-1">
+            <span class="sys-kop">Fonctionne avec</span>
+            <ul class="sys-lijst">
+              <li><a href="apk-herinnering-agent.html">Rappel contrôle technique</a><span>Fournit les contrôles qui reçoivent ici un créneau.</span></li>
+              <li><a href="gemiste-gesprekken-agent.html">Appels manqués</a><span>Ramène des appelants qui seraient partis autrement.</span></li>
+              <li><a href="leenauto-agent.html">Véhicule de courtoisie</a><span>Organise le véhicule de courtoisie qui accompagne une intervention longue.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-gids="grenzen">
+      <div class="section-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="grens-kaart reveal">
+          <span class="section-label">Limites</span>
+          <h2 class="grens-titel">Ce que cet agent ne fait pas.</h2>
+          <ul class="grens-lijst">
+            <li>Il ne pose pas de diagnostic. Face à une panne inconnue, il planifie du temps pour examiner, pas une réparation.</li>
+            <li>Il ne déplace pas de rendez-vous existants pour faire de la place.</li>
+            <li>Il ne réserve rien en dehors des limites que vous avez fixées, même si le client insiste.</li>
+            <li>Sans intégration à votre planning, il travaille sur l'agenda que vous lui donnez, et pas sur un logiciel qui n'est pas encore connecté.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" data-gids="start">
+      <div class="cta-band-glow" aria-hidden="true"></div>
+      <div class="container">
+        <h2 class="cta-band-title reveal">D'abord l'intervention. Le créneau ensuite.</h2>
+        <p class="cta-band-sub reveal reveal-delay-1">Vingt minutes sur vos propres chiffres. Nous montrons ce que ce flux ferait chez vous, ou pourquoi vous feriez mieux de commencer par un autre.</p>
+        <a href="../meeting.html" class="btn btn-lg reveal reveal-delay-2">Planifier une démo <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+      </div>
+    </section>
+
+  </main>
+
+<!-- SHELL:FOOTER -->
+<footer class="footer">
+    <div class="container footer-inner">
+
+      <div class="footer-cta">
+        <p class="footer-cta-text">Montrez ce qui arrive.</p>
+        <a href="../meeting.html" class="btn btn-lg">Planifier une démo <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col footer-col-brand">
+          <a href="../index.html" aria-label="Helvaro home">
+            <img class="footer-logo" src="../../assets/logo-brons.png" alt="Helvaro logo" width="68" height="68" loading="lazy">
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-head">Système</span>
+          <a href="../systeem.html" class="footer-link">Le système Helvaro</a>
+          <a href="../agents/index.html" class="footer-link">Les agents</a>
+          <a href="../koppelingen/index.html" class="footer-link">Intégrations</a>
+          <a href="../index.html#controle" class="footer-link">Contrôle et RGPD</a>
+          <a href="../index.html#faro" class="footer-link">Faro</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-head">Flux de travail</span>
+          <a href="../agents/apk-herinnering-agent.html" class="footer-link">Rappel contrôle technique</a>
+          <a href="../agents/werkplaats-inplan-agent.html" class="footer-link">Planification atelier</a>
+          <a href="../agents/gemiste-gesprekken-agent.html" class="footer-link">Appels manqués</a>
+          <a href="../agents/offerte-opvolg-agent.html" class="footer-link">Relance de devis</a>
+          <a href="../agents/no-show-agent.html" class="footer-link">Rendez-vous manqués</a>
+          <a href="../agents/index.html" class="footer-link">Tous les dix</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-head">Commencer</span>
+          <a href="../automotive.html" class="footer-link">Pour l'atelier</a>
+          <a href="../roi.html" class="footer-link">Calculateur de chiffre d'affaires</a>
+          <a href="../cases.html" class="footer-link">Pilote et chiffres</a>
+          <a href="../index.html#prijzen" class="footer-link">Tarifs</a>
+          <a href="../meeting.html" class="footer-link">Planifier une démo</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-head">Entreprise</span>
+          <a href="../waarom.html" class="footer-link">Pourquoi Helvaro</a>
+          <a href="../waarom.html#team" class="footer-link">L'équipe</a>
+          <a href="../contact.html" class="footer-link">Contact</a>
+          <a href="../sectoren/vastgoed.html" class="footer-link">Immobilier</a>
+          <a href="../sectoren/bouw.html" class="footer-link">Construction &amp; rénovation</a>
+          <a href="https://app.helvaro.pro/" class="footer-link">Connexion</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Helvaro</p>
+        <nav class="footer-legal" aria-label="Juridisch">
+          <a href="../privacybeleid.html" class="footer-link">Politique de confidentialité</a>
+          <a href="mailto:hello@helvaro.pro" class="footer-link">hello@helvaro.pro</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+<!-- /SHELL:FOOTER -->
+
+  <script src="../../js/main.js?v=37"></script>
+  <script src="../../js/i18n.js?v=39"></script>
+
+  <aside class="faro-gids" id="faroGids" data-plek="rechtsonder" hidden>
+    <div class="faro-gids-ballon" id="faroGidsBallon" aria-live="polite">
+      <p class="faro-gids-tekst" id="faroGidsTekst"></p>
+      <button type="button" class="faro-gids-sluit" id="faroGidsSluit"
+              aria-label="Faro verbergen">&times;</button>
+    </div>
+    <img class="faro-gids-img" id="faroGidsImg" src="../../assets/faro/falcon-idle.webp"
+         alt="" aria-hidden="true" width="416" height="400" decoding="async">
+  </aside>
+</body>
+</html>

@@ -4,3 +4,6 @@
 
 # Gegenereerde taalmappen worden gebouwd, maar wel meegecommit omdat
 # Vercel hier geen buildstap draait.
+
+# Door tools/build-langs.pl --dump geschreven. Werkbestanden, geen bron.
+tools/mist-*.txt

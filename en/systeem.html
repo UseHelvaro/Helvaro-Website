@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Helvaro system: from customer contact to workshop appointment · Helvaro</title>
+  <meta name="description" content="Five layers: capture, understand, act, connect and measure. That is how incoming customer contact becomes an appointment in your workshop planning.">
+  <meta property="og:title" content="Het Helvaro-systeem: van klantcontact naar werkplaatsafspraak · Helvaro">
+  <meta property="og:description" content="Five layers: capture, understand, act, connect and measure. That is how incoming customer contact becomes an appointment in your workshop planning.">
+  <meta property="og:image" content="https://helvaro.pro/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="Helvaro">
+  <meta property="og:url" content="https://helvaro.pro/en/systeem.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://helvaro.pro/en/systeem.html">
+  <link rel="alternate" hreflang="nl" href="https://helvaro.pro/systeem.html">
+  <link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/systeem.html">
+  <link rel="alternate" hreflang="en" href="https://helvaro.pro/en/systeem.html">
+  <link rel="alternate" hreflang="de" href="https://helvaro.pro/de/systeem.html">
+  <link rel="alternate" hreflang="es" href="https://helvaro.pro/es/systeem.html">
+  <link rel="alternate" hreflang="x-default" href="https://helvaro.pro/systeem.html">
+  <link rel="icon" href="../assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#121212">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
+    (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+  </script>
+  <link rel="stylesheet" href="../css/style.css?v=89">
+</head>
+<body data-vertaald="en">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+<!-- SHELL:NAV -->
+<a class="topbar" href="cases.html">
+    <span class="topbar-text">We are looking for five garages for the first measurement.</span>
+    <span class="topbar-link">See the pilot <span aria-hidden="true">&#8594;</span></span>
+  </a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Helvaro home">
+        <img src="../assets/logo-brons.png" alt="Helvaro logo" width="48" height="48">
+        <span class="nav-brand">Helvaro</span>
+      </a>
+      <nav class="nav-links" aria-label="Hoofdnavigatie">
+
+        <div class="navdrop">
+          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">System <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+          <div class="navdrop-menu" role="menu">
+            <a href="systeem.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">The Helvaro system</span>
+              <span class="ndi-sub">Capture, understand, act, connect, measure</span>
+            </a>
+            <a href="agents/index.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">The agents</span>
+              <span class="ndi-sub">Ten workflows within the same system</span>
+            </a>
+            <a href="koppelingen/index.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Integrations</span>
+              <span class="ndi-sub">Where Helvaro fits into your existing software</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="navdrop">
+          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Automotive <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+          <div class="navdrop-menu" role="menu">
+            <a href="automotive.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">For the workshop</span>
+              <span class="ndi-sub">What the system does in an independent garage</span>
+            </a>
+            <a href="agents/apk-herinnering-agent.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">MOT agent</span>
+              <span class="ndi-sub">From an approaching MOT to a booked appointment</span>
+            </a>
+            <a href="agents/werkplaats-inplan-agent.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Workshop agent</span>
+              <span class="ndi-sub">Appointments that fit your planning, not beside it</span>
+            </a>
+            <a href="agents/gemiste-gesprekken-agent.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Missed calls</span>
+              <span class="ndi-sub">Anyone who does not get through gets a message within a minute</span>
+            </a>
+            <span class="navdrop-scheiding" role="separator">Other sectors</span>
+            <a href="sectoren/vastgoed.html" class="navdrop-item navdrop-item-klein" role="menuitem">
+              <span class="ndi-title">Real estate</span>
+            </a>
+            <a href="sectoren/bouw.html" class="navdrop-item navdrop-item-klein" role="menuitem">
+              <span class="ndi-title">Construction &amp; renovation</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="navdrop">
+          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Result <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+          <div class="navdrop-menu" role="menu">
+            <a href="roi.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Turnover calculator</span>
+              <span class="ndi-sub">What is left lying in your workshop</span>
+            </a>
+            <a href="cases.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Pilot and numbers</span>
+              <span class="ndi-sub">What we measure, and what we cannot yet prove</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="index.html#prijzen" class="nav-link">Pricing</a>
+        <a href="waarom.html" class="nav-link">Company</a>
+        <a href="https://app.helvaro.pro/" class="nav-link">Login</a>
+
+        <div class="lang-switch">
+          <button class="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Taal kiezen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span class="lang-current">EN</span>
+            <span class="lang-caret" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="lang-menu" role="menu">
+            <a class="lang-opt" role="menuitem" href="/systeem.html" hreflang="nl" data-lang="nl">Nederlands <span class="lang-code">NL</span></a>
+            <a class="lang-opt" role="menuitem" href="/fr/systeem.html" hreflang="fr" data-lang="fr">Fran&ccedil;ais <span class="lang-code">FR</span></a>
+            <a class="lang-opt active" role="menuitem" href="/en/systeem.html" hreflang="en" aria-current="true" data-lang="en">English <span class="lang-code">EN</span></a>
+            <a class="lang-opt" role="menuitem" href="/de/systeem.html" hreflang="de" data-lang="de">Deutsch <span class="lang-code">DE</span></a>
+            <a class="lang-opt" role="menuitem" href="/es/systeem.html" hreflang="es" data-lang="es">Espa&ntilde;ol <span class="lang-code">ES</span></a>
+          </div>
+        </div>
+
+        <button class="theme-toggle" type="button" aria-label="Wissel tussen licht en donker thema" title="Licht of donker">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+
+        <a href="meeting.html" class="btn">Book a demo</a>
+      </nav>
+      <button class="nav-hamburger" aria-label="Menu openen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobiel menu. Dezelfde links, apart blok, want het schuift open onder
+       de balk in plaats van ernaast. Ook dit wordt gesynchroniseerd. -->
+  <div class="nav-mobile" aria-label="Mobiel menu">
+    <div class="navdrop">
+      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">System <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+      <div class="navdrop-menu" role="menu">
+        <a href="systeem.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">The Helvaro system</span>
+          <span class="ndi-sub">Capture, understand, act, connect, measure</span>
+        </a>
+        <a href="agents/index.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">The agents</span>
+          <span class="ndi-sub">Ten workflows within the same system</span>
+        </a>
+        <a href="koppelingen/index.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Integrations</span>
+          <span class="ndi-sub">Where Helvaro fits into your existing software</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="navdrop">
+      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Automotive <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+      <div class="navdrop-menu" role="menu">
+        <a href="automotive.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">For the workshop</span>
+          <span class="ndi-sub">What the system does in an independent garage</span>
+        </a>
+        <a href="agents/apk-herinnering-agent.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">MOT agent</span>
+          <span class="ndi-sub">From an approaching MOT to a booked appointment</span>
+        </a>
+        <a href="agents/werkplaats-inplan-agent.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Workshop agent</span>
+          <span class="ndi-sub">Appointments that fit your planning, not beside it</span>
+        </a>
+        <a href="agents/gemiste-gesprekken-agent.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Missed calls</span>
+          <span class="ndi-sub">Anyone who does not get through gets a message within a minute</span>
+        </a>
+        <span class="navdrop-scheiding" role="separator">Other sectors</span>
+        <a href="sectoren/vastgoed.html" class="navdrop-item navdrop-item-klein" role="menuitem">
+          <span class="ndi-title">Real estate</span>
+        </a>
+        <a href="sectoren/bouw.html" class="navdrop-item navdrop-item-klein" role="menuitem">
+          <span class="ndi-title">Construction &amp; renovation</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="navdrop">
+      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Result <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+      <div class="navdrop-menu" role="menu">
+        <a href="roi.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Turnover calculator</span>
+          <span class="ndi-sub">What is left lying in your workshop</span>
+        </a>
+        <a href="cases.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Pilot and numbers</span>
+          <span class="ndi-sub">What we measure, and what we cannot yet prove</span>
+        </a>
+      </div>
+    </div>
+
+    <a href="index.html#prijzen" class="nav-link">Pricing</a>
+    <a href="waarom.html" class="nav-link">Company</a>
+    <a href="https://app.helvaro.pro/" class="nav-link">Login</a>
+
+    <div class="lang-switch">
+      <button class="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Taal kiezen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="lang-current">EN</span>
+        <span class="lang-caret" aria-hidden="true">&#9662;</span>
+      </button>
+      <div class="lang-menu" role="menu">
+            <a class="lang-opt" role="menuitem" href="/systeem.html" hreflang="nl" data-lang="nl">Nederlands <span class="lang-code">NL</span></a>
+            <a class="lang-opt" role="menuitem" href="/fr/systeem.html" hreflang="fr" data-lang="fr">Fran&ccedil;ais <span class="lang-code">FR</span></a>
+            <a class="lang-opt active" role="menuitem" href="/en/systeem.html" hreflang="en" aria-current="true" data-lang="en">English <span class="lang-code">EN</span></a>
+            <a class="lang-opt" role="menuitem" href="/de/systeem.html" hreflang="de" data-lang="de">Deutsch <span class="lang-code">DE</span></a>
+            <a class="lang-opt" role="menuitem" href="/es/systeem.html" hreflang="es" data-lang="es">Espa&ntilde;ol <span class="lang-code">ES</span></a>
+          </div>
+    </div>
+
+    <button class="theme-toggle" type="button" aria-label="Wissel tussen licht en donker thema" title="Licht of donker">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+
+    <a href="meeting.html" class="btn">Book a demo</a>
+  </div>
+<!-- /SHELL:NAV -->
+
+  <main id="main">
+    <section class="paghero" data-gids="hero">
+      <div class="paghero-bg" aria-hidden="true"></div>
+      <div class="container">
+        <nav class="kruimels" aria-label="Kruimelpad">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">·</span>
+          <span aria-current="page">The system</span>
+        </nav>
+        <span class="section-label">The system</span>
+        <h1 class="paghero-titel">One system between your customer <span class="highlight">and your planning.</span></h1>
+        <p class="paghero-lede">Most workshops do not have a gap in their marketing. They have a gap between the moment a customer gets in touch and the moment someone has time to do something with it. Helvaro sits in that gap.</p>
+        <div class="paghero-acties">
+          <a href="meeting.html" class="btn btn-lg">Book a demo <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+          <a href="agents/index.html" class="btn btn-ghost btn-lg">See the ten agents</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-gids="stroom">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">In one picture</span>
+          <h2 class="section-title">Capture on one side. An appointment on the other.</h2>
+        </div>
+
+        <div class="stroom-diagram reveal">
+          <div class="stroom-kolom stroom-bron">
+            <span class="stroom-kop">The customer</span>
+            <ul class="stroom-lijst">
+              <li><span class="stroom-icoon" aria-hidden="true">📞</span>Phone</li>
+              <li><span class="stroom-icoon" aria-hidden="true">💬</span>WhatsApp</li>
+              <li><span class="stroom-icoon" aria-hidden="true">🌐</span>Website</li>
+              <li><span class="stroom-icoon" aria-hidden="true">📝</span>Form</li>
+            </ul>
+          </div>
+          <div class="stroom-pijl" aria-hidden="true"><span></span></div>
+          <div class="stroom-kolom stroom-kern">
+            <span class="stroom-kop">Helvaro</span>
+            <ol class="stroom-stappen">
+              <li><span class="stroom-nr">01</span>Capture</li>
+              <li><span class="stroom-nr">02</span>Understand</li>
+              <li><span class="stroom-nr">03</span>Qualifying</li>
+              <li><span class="stroom-nr">04</span>Schedule</li>
+              <li><span class="stroom-nr">05</span>Follow up</li>
+            </ol>
+          </div>
+          <div class="stroom-pijl" aria-hidden="true"><span></span></div>
+          <div class="stroom-kolom stroom-doel">
+            <span class="stroom-kop">The workshop</span>
+            <ul class="stroom-lijst">
+              <li><span class="stroom-icoon" aria-hidden="true">📅</span>Appointment</li>
+              <li><span class="stroom-icoon" aria-hidden="true">🔧</span>Planning</li>
+              <li><span class="stroom-icoon" aria-hidden="true">🚗</span>Customer on the ramp</li>
+              <li><span class="stroom-icoon" aria-hidden="true">📈</span>Turnover</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DE VIJF LAGEN, UITGEBREID ================================ -->
+    <section class="section" data-gids="lagen" id="lagen">
+      <div class="section-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">Five layers</span>
+          <h2 class="section-title">Where a chatbot stops, the rest begins.</h2>
+          <p class="section-sub">You can buy the first three layers from dozens of suppliers. The last two decide whether anything actually changes in your workshop.</p>
+        </div>
+
+        <div class="laag-diep">
+
+          <article class="laag-blok reveal" id="opvangen">
+            <div class="lb-kop">
+              <span class="lb-nr">01</span>
+              <h3 class="lb-titel">Capture</h3>
+            </div>
+            <p class="lb-zin">Nothing comes in without someone responding.</p>
+            <div class="lb-body">
+              <div class="lb-tekst">
+                <p>A garage does not have one channel, it has four. The phone rings, a WhatsApp message comes in, the form on the site sends an email and someone simply walks up to the counter. The first three come together at Helvaro in one stream, with one history per customer.</p>
+                <p>The point is not that answers come faster. The point is that there <em>always</em> is always an answer. A missed call at a quarter past six is no longer a missed call, but a conversation that started at a quarter past six.</p>
+              </div>
+              <div class="lb-kader">
+                <span class="lb-kader-kop">Channels</span>
+                <ul class="lb-status">
+                  <li>WhatsApp <span class="status-pil status-live">live</span></li>
+                  <li>Website and form <span class="status-pil status-live">live</span></li>
+                  <li>Phone <span class="status-pil status-bouw">in development</span></li>
+                  <li>Email <span class="status-pil status-bouw">in development</span></li>
+                </ul>
+                <p class="lb-kader-voet">We deliberately state here what is not there yet. A demo in which something turns out to be missing costs more than an honest list.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="laag-blok reveal" id="begrijpen">
+            <div class="lb-kop">
+              <span class="lb-nr">02</span>
+              <h3 class="lb-titel">Understand</h3>
+            </div>
+            <p class="lb-zin">The car as well, not just the question.</p>
+            <div class="lb-body">
+              <div class="lb-tekst">
+                <p>This is where the difference lies between a general assistant and something that belongs in automotive. "My car is making a strange noise" is, to a chatbot, a sentence. To this system it is a reason to ask for the registration, and from that moment there is a car on the table with a year, a fuel type and an expiry date.</p>
+                <p>After that the question is no longer "what does this person want", but "is this an MOT, a repair, a service or a price enquiry". That distinction determines which questions follow and how much time the slot should get.</p>
+              </div>
+              <div class="lb-kader">
+                <span class="lb-kader-kop">What is on the table</span>
+                <ul class="lb-status">
+                  <li>Registration and vehicle data</li>
+                  <li>Year and fuel</li>
+                  <li>MOT expiry date</li>
+                  <li>Type of enquiry</li>
+                  <li>Customer history, where you make it available</li>
+                </ul>
+                <p class="lb-kader-voet">The registration integration is on <a href="koppelingen/rdw-kenteken.html">the RDW page</a>, including what we do and do not store.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="laag-blok reveal" id="handelen">
+            <div class="lb-kop">
+              <span class="lb-nr">03</span>
+              <h3 class="lb-titel">Act</h3>
+            </div>
+            <p class="lb-zin">Answering is the beginning, not the end.</p>
+            <div class="lb-body">
+              <div class="lb-tekst">
+                <p>A conversation that ends with "give us a ring" has solved nothing, it has moved the work onto the customer. Helvaro proposes a slot, books it, confirms it and reminds about it. If it stays quiet after a quote, another message follows, and one more, and then it stops.</p>
+                <p>What does not fit goes through to a person. A damage case, an unhappy customer, a technical discussion about an engine problem. Those go to a named person at your end, with the conversation, so nobody has to start again.</p>
+              </div>
+              <div class="lb-kader">
+                <span class="lb-kader-kop">What happens</span>
+                <ul class="lb-status">
+                  <li>Probing and qualifying</li>
+                  <li>Propose a slot and book it</li>
+                  <li>Confirm and remind</li>
+                  <li>Following up until a yes or no is on the table</li>
+                  <li>Handing over with context</li>
+                </ul>
+                <p class="lb-kader-voet">What an agent may do independently and what goes past you first, you set per action type. That is under <a href="index.html#controle">control</a>.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="laag-blok reveal" id="koppelen">
+            <div class="lb-kop">
+              <span class="lb-nr">04</span>
+              <h3 class="lb-titel">Connect</h3>
+            </div>
+            <p class="lb-zin">In your existing software, not beside it.</p>
+            <div class="lb-body">
+              <div class="lb-tekst">
+                <p>This is the layer where most loose tools fail. An appointment that only sits in a separate little screen has to be retyped by someone. That lasts two weeks and then stops, and the system is quietly abandoned.</p>
+                <p>Helvaro writes into the planning your team already works in. We only call live what is live. The rest is marked in development or planned, and that only changes once it works at a real garage.</p>
+              </div>
+              <div class="lb-kader">
+                <span class="lb-kader-kop">State of play</span>
+                <ul class="lb-status">
+                  <li>Google Calendar <span class="status-pil status-live">live</span></li>
+                  <li>AutomaaT GO <span class="status-pil status-bouw">in development</span></li>
+                  <li>RDW registration <span class="status-pil status-bouw">in development</span></li>
+                  <li>Autoflex <span class="status-pil status-plan">planned</span></li>
+                  <li>WinCar <span class="status-pil status-plan">planned</span></li>
+                </ul>
+                <p class="lb-kader-voet">All the details per integration are on <a href="koppelingen/index.html">the integrations page</a>.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="laag-blok reveal" id="meten">
+            <div class="lb-kop">
+              <span class="lb-nr">05</span>
+              <h3 class="lb-titel">Measure</h3>
+            </div>
+            <p class="lb-zin">What you do not count does not improve.</p>
+            <div class="lb-body">
+              <div class="lb-tekst">
+                <p>The question a garage owner asks after three months is not "does the technology work". It is "did it earn me anything". For that you need to know how many conversations came in, how many became appointments, and how many of those would have leaked away without this system.</p>
+                <p>That last number is the only one that really matters, and it is also the hardest. That is why we start the pilot with one figure instead of a dashboard full of charts.</p>
+              </div>
+              <div class="lb-kader">
+                <span class="lb-kader-kop">What gets counted</span>
+                <ul class="lb-status">
+                  <li>Conversations per channel</li>
+                  <li>Appointments that came out of them</li>
+                  <li>Follow-up still running</li>
+                  <li>Recovered missed calls</li>
+                  <li>Everything exportable</li>
+                </ul>
+                <p class="lb-kader-voet">Exactly what we measure in the pilot is on <a href="cases.html">the numbers page</a>.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DE HIËRARCHIE ============================================
+         Helvaro is het systeem, Faro is het gezicht, de agents zijn de
+         werkstromen. Wie dat door elkaar haalt, verkoopt weer een chatbot. -->
+    <section class="section" data-gids="faro">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">How it fits together</span>
+          <h2 class="section-title">Helvaro, Faro and the agents.</h2>
+          <p class="section-sub">Three names that often get mixed up. Each has its own place.</p>
+        </div>
+
+        <div class="hier reveal">
+          <div class="hier-rij hier-1">
+            <span class="hier-naam">Helvaro</span>
+            <span class="hier-wat">The system</span>
+            <span class="hier-uitleg">Capture, understand, act, connect and measure. This is what you buy.</span>
+          </div>
+          <div class="hier-pijl" aria-hidden="true">&#8595;</div>
+          <div class="hier-rij hier-2">
+            <span class="hier-naam">Faro</span>
+            <span class="hier-wat">The face</span>
+            <span class="hier-uitleg">The layer where you read along, approve and ask questions in plain language. Faro is not the product, Faro is how you operate it.</span>
+          </div>
+          <div class="hier-pijl" aria-hidden="true">&#8595;</div>
+          <div class="hier-rij hier-3">
+            <span class="hier-naam">The agents</span>
+            <span class="hier-wat">The workflows</span>
+            <span class="hier-uitleg">MOT, scheduling, missed calls, quotes, no-shows. Ten in total, all within the same system and sharing the same memory.</span>
+          </div>
+        </div>
+
+        <div class="lagen-cta reveal">
+          <a href="agents/index.html" class="btn btn-ghost">All ten agents <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" data-gids="start">
+      <div class="cta-band-glow" aria-hidden="true"></div>
+      <div class="container">
+        <h2 class="cta-band-title reveal">Twenty minutes, on your own numbers.</h2>
+        <p class="cta-band-sub reveal reveal-delay-1">We look together at what comes in at your place and where it gets stuck. You leave with a first workflow, or with the reason why it does not fit you.</p>
+        <a href="meeting.html" class="btn btn-lg reveal reveal-delay-2">Book a demo <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+      </div>
+    </section>
+
+  </main>
+
+<!-- SHELL:FOOTER -->
+<footer class="footer">
+    <div class="container footer-inner">
+
+      <div class="footer-cta">
+        <p class="footer-cta-text">Show what comes in.</p>
+        <a href="meeting.html" class="btn btn-lg">Book a demo <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" aria-label="Helvaro home">
+            <img class="footer-logo" src="../assets/logo-brons.png" alt="Helvaro logo" width="68" height="68" loading="lazy">
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-head">System</span>
+          <a href="systeem.html" class="footer-link">The Helvaro system</a>
+          <a href="agents/index.html" class="footer-link">The agents</a>
+          <a href="koppelingen/index.html" class="footer-link">Integrations</a>
+          <a href="index.html#controle" class="footer-link">Control &amp; GDPR</a>
+          <a href="index.html#faro" class="footer-link">Faro</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-head">Workflows</span>
+          <a href="agents/apk-herinnering-agent.html" class="footer-link">MOT reminder</a>
+          <a href="agents/werkplaats-inplan-agent.html" class="footer-link">Workshop scheduling</a>
+          <a href="agents/gemiste-gesprekken-agent.html" class="footer-link">Missed calls</a>
+          <a href="agents/offerte-opvolg-agent.html" class="footer-link">Quote follow-up</a>
+          <a href="agents/no-show-agent.html" class="footer-link">No-shows</a>
+          <a href="agents/index.html" class="footer-link">All ten</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-head">Get started</span>
+          <a href="automotive.html" class="footer-link">For the workshop</a>
+          <a href="roi.html" class="footer-link">Turnover calculator</a>
+          <a href="cases.html" class="footer-link">Pilot and numbers</a>
+          <a href="index.html#prijzen" class="footer-link">Pricing</a>
+          <a href="meeting.html" class="footer-link">Book a demo</a>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-head">Company</span>
+          <a href="waarom.html" class="footer-link">Why Helvaro</a>
+          <a href="waarom.html#team" class="footer-link">The team</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="sectoren/vastgoed.html" class="footer-link">Real estate</a>
+          <a href="sectoren/bouw.html" class="footer-link">Construction &amp; renovation</a>
+          <a href="https://app.helvaro.pro/" class="footer-link">Login</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Helvaro</p>
+        <nav class="footer-legal" aria-label="Juridisch">
+          <a href="privacybeleid.html" class="footer-link">Privacy policy</a>
+          <a href="mailto:hello@helvaro.pro" class="footer-link">hello@helvaro.pro</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+<!-- /SHELL:FOOTER -->
+
+  <script src="../js/main.js?v=37"></script>
+  <script src="../js/i18n.js?v=39"></script>
+
+  <aside class="faro-gids" id="faroGids" data-plek="rechtsonder" hidden>
+    <div class="faro-gids-ballon" id="faroGidsBallon" aria-live="polite">
+      <p class="faro-gids-tekst" id="faroGidsTekst"></p>
+      <button type="button" class="faro-gids-sluit" id="faroGidsSluit"
+              aria-label="Faro verbergen">&times;</button>
+    </div>
+    <img class="faro-gids-img" id="faroGidsImg" src="../assets/faro/falcon-idle.webp"
+         alt="" aria-hidden="true" width="416" height="400" decoding="async">
+  </aside>
+</body>
+</html>

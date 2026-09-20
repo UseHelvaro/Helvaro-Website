@@ -28,7 +28,23 @@ document.addEventListener('DOMContentLoaded', () => {
   initAgentbar();
   initNavDrop();
   initVideo();
+  initOmzet();
+  initNavActief();
 });
+
+/* ââ Waar staan de plaatjes âââââââââââââââââââââââââââââââââââââââââââââââ
+   De pagina's staan op drie diepten: de hoofdmap, sectoren/, agents/ en
+   koppelingen/, en datzelfde nog eens onder /fr/ /en/ /de/ /es/. Een vast
+   pad als "assets/faro/..." klopt dus alleen in de hoofdmap.
+
+   We lezen het voorvoegsel af van een plaatje dat al in de pagina staat.
+   Dat pad is door de bouwstap goed gezet, dus het klopt per definitie. */
+function assetBasis(el) {
+  var src = el && el.getAttribute && el.getAttribute('src');
+  if (!src) return '';
+  var m = src.match(/^(.*?)assets\//);
+  return m ? m[1] : '';
+}
 
 /* ============================================================
    WORD ANIM — hero-titel verschijnt woord voor woord
@@ -560,7 +576,7 @@ function initContactForm() {
   function zetFaro(toestand, tekst) {
     if (!faroVak || !faroImg || !faroLine) return;
     faroVak.setAttribute('data-faro-state', toestand);
-    faroImg.src = FARO_IMG[toestand] || FARO_IMG.idle;
+    faroImg.src = assetBasis(faroImg) + (FARO_IMG[toestand] || FARO_IMG.idle);
     const tt = taal();
     faroLine.textContent = tekst || tt['faro_' + toestand] || tt.faro_idle || '';
   }
@@ -885,12 +901,78 @@ function initTilt() {
    is geen gids maar een banner.
    ============================================================ */
 var FARO_GIDS = {
+  stroom: { pose: 'thinking', stem: 'wijst', plek: 'linksonder',
+              nl: 'Links komt je klant binnen, rechts staat je planning. Alles ertussen is Helvaro.',
+              en: 'Your customer comes in on the left, your planning sits on the right. Everything between the two is Helvaro.',
+              fr: 'Votre client arrive Ã  gauche, votre planning est Ã  droite. Tout ce qui se trouve entre les deux, câest Helvaro.',
+              de: 'Links kommt Ihr Kunde herein, rechts steht Ihre Planung. Alles dazwischen ist Helvaro.',
+              es: 'Tu cliente entra por la izquierda y tu planning estÃ¡ a la derecha. Todo lo que hay en medio es Helvaro.' },
+  probleem: { pose: 'thinking', stem: 'ernstig', plek: 'rechtsmidden',
+              nl: 'Zes plekken waar werk weglekt. Geen ervan gaat over te weinig klanten.',
+              en: 'Six places where work leaks away. None of them is about having too few customers.',
+              fr: 'Six endroits oÃ¹ le travail se perd. Aucun ne concerne un manque de clients.',
+              de: 'Sechs Stellen, an denen Arbeit versickert. Keine davon hat mit zu wenigen Kunden zu tun.',
+              es: 'Seis puntos por donde se escapa trabajo. Ninguno tiene que ver con tener pocos clientes.' },
+  lagen: { pose: 'generating', stem: 'legt uit', plek: 'linksmidden',
+              nl: 'Een chatbot doet laag drie en stopt daar. Wij doen ze alle vijf.',
+              en: 'A chatbot does layer three and stops there. We do all five.',
+              fr: 'Un chatbot fait la troisiÃ¨me couche et sâarrÃªte lÃ . Nous faisons les cinq.',
+              de: 'Ein Chatbot macht Schicht drei und hÃ¶rt da auf. Wir machen alle fÃ¼nf.',
+              es: 'Un chatbot hace la capa tres y ahÃ­ se para. Nosotros hacemos las cinco.' },
+  verschil: { pose: 'idle', stem: 'nuchter', plek: 'rechtsboven',
+              nl: 'Chatbot, losse agent, systeem. Ze lijken op elkaar tot je ziet wat er in je planning belandt.',
+              en: 'Chatbot, single agent, system. They look alike until you see what actually lands in your planning.',
+              fr: 'Chatbot, agent isolÃ©, systÃ¨me. Ils se ressemblent jusquâÃ  ce quâon regarde ce qui arrive vraiment dans le planning.',
+              de: 'Chatbot, einzelner Agent, System. Sie Ã¤hneln sich, bis man sieht, was wirklich in der Planung landet.',
+              es: 'Chatbot, agente suelto, sistema. Se parecen hasta que miras quÃ© acaba de verdad en tu planning.' },
+  centrum: { pose: 'generating', stem: 'toont', plek: 'linksboven',
+              nl: 'Dit scherm is een voorbeeld, geen klantcijfer. Zodra de pilot gemeten is, staan de echte cijfers er.',
+              en: 'This screen is an example, not a customer result. The moment the pilot is measured, the real numbers go here.',
+              fr: 'Cet Ã©cran est un exemple, pas un rÃ©sultat client. DÃ¨s que le pilote sera mesurÃ©, les vrais chiffres apparaÃ®tront ici.',
+              de: 'Dieser Bildschirm ist ein Beispiel, kein Kundenergebnis. Sobald der Pilot gemessen ist, stehen hier die echten Zahlen.',
+              es: 'Esta pantalla es un ejemplo, no un resultado de cliente. En cuanto midamos el piloto, aquÃ­ estarÃ¡n las cifras reales.' },
+  binnen: { pose: 'generating', stem: 'werkt', plek: 'rechtsonder',
+              nl: 'Wat binnenkomt krijgt antwoord. Ook om kwart voor zes, ook op zaterdag.',
+              en: 'Whatever comes in gets an answer. Also at a quarter to six, also on a Saturday.',
+              fr: 'Tout ce qui arrive reÃ§oit une rÃ©ponse. MÃªme Ã  dix-huit heures moins le quart, mÃªme le samedi.',
+              de: 'Was hereinkommt, bekommt eine Antwort. Auch um Viertel vor sechs, auch samstags.',
+              es: 'Todo lo que entra recibe respuesta. TambiÃ©n a las seis menos cuarto, tambiÃ©n el sÃ¡bado.' },
+  uitgaand: { pose: 'generating', stem: 'port', plek: 'linksonder',
+              nl: 'Je weet welke autoâs binnenkort moeten komen. Wachten tot ze bellen is geen plan.',
+              en: 'You know which cars are due soon. Waiting for them to call is not a plan.',
+              fr: 'Vous savez quelles voitures doivent bientÃ´t passer. Attendre quâelles appellent nâest pas un plan.',
+              de: 'Sie wissen, welche Autos demnÃ¤chst dran sind. Darauf zu warten, dass sie anrufen, ist kein Plan.',
+              es: 'Sabes quÃ© coches tocan pronto. Esperar a que llamen no es un plan.' },
+  kenteken: { pose: 'thinking', stem: 'speurt', plek: 'rechtsmidden',
+              nl: 'Zeven tekens, en het systeem weet al welke auto er komt en wanneer de APK verloopt.',
+              en: 'Seven characters, and the system already knows which car is coming and when the inspection expires.',
+              fr: 'Sept caractÃ¨res, et le systÃ¨me sait dÃ©jÃ  quelle voiture arrive et quand le contrÃ´le expire.',
+              de: 'Sieben Zeichen, und das System weiÃ bereits, welches Auto kommt und wann die Hauptuntersuchung ablÃ¤uft.',
+              es: 'Siete caracteres, y el sistema ya sabe quÃ© coche viene y cuÃ¡ndo caduca la inspecciÃ³n.' },
+  agents: { pose: 'success', stem: 'trots', plek: 'linksmidden',
+              nl: 'Tien werkstromen, maar Ã©Ã©n geheugen en Ã©Ã©n planning eronder.',
+              en: 'Ten workflows, but one shared memory and one planning underneath.',
+              fr: 'Dix flux de travail, mais une seule mÃ©moire et un seul planning en dessous.',
+              de: 'Zehn ArbeitsablÃ¤ufe, aber ein gemeinsames GedÃ¤chtnis und eine Planung darunter.',
+              es: 'Diez flujos de trabajo, pero una sola memoria y un solo planning debajo.' },
+  koppel: { pose: 'idle', stem: 'eerlijk', plek: 'rechtsboven',
+              nl: 'Wat live staat noemen we live. Wat nog gebouwd wordt ook.',
+              en: 'What is live we call live. What is still being built, we call that too.',
+              fr: 'Ce qui est en ligne, nous le disons. Ce qui est encore en construction aussi.',
+              de: 'Was live ist, nennen wir live. Was noch gebaut wird, auch.',
+              es: 'Lo que estÃ¡ en marcha lo llamamos asÃ­. Lo que aÃºn se estÃ¡ construyendo, tambiÃ©n.' },
+  pilot: { pose: 'idle', stem: 'open', plek: 'rechtsonder',
+              nl: 'We hebben nog geen gemeten resultaat, en we verzinnen er ook geen. Daarom deze pilot.',
+              en: 'We do not have a measured result yet, and we are not inventing one. That is what this pilot is for.',
+              fr: 'Nous nâavons pas encore de rÃ©sultat mesurÃ©, et nous nâen inventons pas. Câest Ã  Ã§a que sert ce pilote.',
+              de: 'Wir haben noch kein gemessenes Ergebnis, und wir erfinden auch keines. Genau dafÃ¼r ist dieser Pilot da.',
+              es: 'TodavÃ­a no tenemos un resultado medido, y tampoco nos lo inventamos. Para eso estÃ¡ este piloto.' },
   hero: { pose: 'thinking', stem: 'denkt', plek: 'rechtsonder',
-              nl: 'Dit is het probleem in één zin: de leads komen binnen, alleen antwoordt er niemand meteen.',
-              en: 'Here is the problem in one line: the leads come in, but nobody answers them straight away.',
-              fr: 'Voilà le problème en une phrase : les leads arrivent, mais personne ne répond tout de suite.',
-              de: 'Das Problem in einem Satz: Die Leads kommen rein, nur antwortet niemand sofort.',
-              es: 'El problema en una frase: los leads llegan, pero nadie responde de inmediato.' },
+              nl: 'Dit is het probleem in één zin: de klanten bellen al, alleen neemt er niemand op.',
+              en: 'Here is the problem in one line: the customers are already calling, but nobody picks up.',
+              fr: 'Voilà le problème en une phrase : les clients appellent déjà, mais personne ne décroche.',
+              de: 'Das Problem in einem Satz: Die Kunden rufen bereits an, nur geht niemand ran.',
+              es: 'El problema en una frase: los clientes ya llaman, pero nadie contesta.' },
   faro: { pose: 'idle', stem: 'nieuwsgierig', plek: 'linksonder',
               nl: 'Dit ben ik. Ik schrijf je teksten en campagnes; jij keurt ze goed voor er iets live gaat.',
               en: 'This is me. I write your copy and campaigns; you approve them before anything goes live.',
@@ -987,7 +1069,7 @@ function initFaroGids() {
     /* Hij staat altijd rechtsonder, dus de ballon staat altijd links van
        hem en de punt wijst naar rechts. */
     doos.setAttribute('data-kant', 'rechts');
-    img.src = 'assets/faro/falcon-' + g.pose + '.webp';
+    img.src = assetBasis(img) + 'assets/faro/falcon-' + g.pose + '.webp';
     reg.textContent = g[taal()] || g.nl;
     /* De ballon opnieuw laten opkomen bij elke nieuwe zin. Zonder dit
        wisselt alleen de tekst en lijkt het alsof er niets gebeurd is. */
@@ -1230,4 +1312,182 @@ function initVideo() {
     }, { threshold: 0.5 });
     kijker.observe(blok);
   });
+}
+
+/* ── De omzetcalculator ──────────────────────────────────────────────────
+   Staat op /roi.html. Rekent live mee terwijl je typt en zet de ingevulde
+   cijfers in de URL, zodat een garagehouder de link met zijn eigen getallen
+   kan doorsturen naar een collega. Dat doorsturen is het punt: een
+   rekenmachine die niemand deelt, is gewoon een formulier.
+
+   Bewust geen e-mailadres en geen account. Wie zijn cijfers moet afgeven
+   voor hij een uitkomst ziet, vult iets willekeurigs in en gelooft de
+   uitkomst daarna ook niet meer.
+   ─────────────────────────────────────────────────────────────────────── */
+function initOmzet() {
+  var form = document.getElementById('omzetForm');
+  if (!form) return;
+
+  var VELDEN = {
+    monteurs:  { el: document.getElementById('rek-monteurs'),  kort: 'm', min: 1, max: 60,    standaard: 4 },
+    gemist:    { el: document.getElementById('rek-gemist'),    kort: 'g', min: 0, max: 500,   standaard: 15 },
+    omzet:     { el: document.getElementById('rek-omzet'),     kort: 'o', min: 0, max: 10000, standaard: 280 },
+    conversie: { el: document.getElementById('rek-conversie'), kort: 'c', min: 0, max: 100,   standaard: 35 },
+    terug:     { el: document.getElementById('rek-terug'),     kort: 't', min: 0, max: 100,   standaard: 60 }
+  };
+
+  var uit = {
+    maand:     document.getElementById('rek-uit-maand'),
+    jaar:      document.getElementById('rek-uit-jaar'),
+    monteur:   document.getElementById('rek-uit-monteur'),
+    afspraken: document.getElementById('rek-uit-afspraken'),
+    pct:       document.getElementById('rek-uit-pct'),
+    win:       document.getElementById('rek-uit-win')
+  };
+
+  /* Een maand is geen vier weken. 52 / 12 = 4,33. Dat scheelt acht procent
+     en dat is precies het soort slordigheid waar iemand je op afrekent. */
+  var WEKEN_PER_MAAND = 4.33;
+
+  var euro = new Intl.NumberFormat('nl-NL', {
+    style: 'currency', currency: 'EUR',
+    minimumFractionDigits: 0, maximumFractionDigits: 0
+  });
+  var getal = new Intl.NumberFormat('nl-NL', { maximumFractionDigits: 0 });
+
+  function lees(naam) {
+    var v = VELDEN[naam];
+    var n = parseFloat(v.el.value);
+    if (isNaN(n)) n = v.standaard;
+    if (n < v.min) n = v.min;
+    if (n > v.max) n = v.max;
+    return n;
+  }
+
+  function reken() {
+    var monteurs  = lees('monteurs');
+    var gemist    = lees('gemist');
+    var omzet     = lees('omzet');
+    var conversie = lees('conversie') / 100;
+    var terug     = lees('terug');
+
+    var afspraken = gemist * WEKEN_PER_MAAND * conversie;
+    var permaand  = afspraken * omzet;
+    var gewonnen  = permaand * (terug / 100);
+
+    uit.maand.textContent     = euro.format(permaand);
+    uit.jaar.textContent      = euro.format(permaand * 12);
+    uit.monteur.textContent   = euro.format(monteurs > 0 ? permaand / monteurs : 0);
+    uit.afspraken.textContent = getal.format(afspraken);
+    uit.pct.textContent       = getal.format(terug);
+    uit.win.textContent       = euro.format(gewonnen);
+  }
+
+  /* ── Cijfers in en uit de URL ──────────────────────────────────────────
+     Korte sleutels, want een link die over drie regels loopt deelt niemand. */
+  function uitUrl() {
+    var q;
+    try { q = new URLSearchParams(location.search); } catch (e) { return; }
+    Object.keys(VELDEN).forEach(function (naam) {
+      var v = VELDEN[naam];
+      var w = q.get(v.kort);
+      if (w === null || w === '') return;
+      var n = parseFloat(w);
+      if (isNaN(n)) return;
+      v.el.value = Math.min(v.max, Math.max(v.min, n));
+    });
+  }
+
+  function naarUrl() {
+    var q;
+    try { q = new URLSearchParams(); } catch (e) { return location.href; }
+    Object.keys(VELDEN).forEach(function (naam) {
+      q.set(VELDEN[naam].kort, lees(naam));
+    });
+    return location.origin + location.pathname + '?' + q.toString();
+  }
+
+  var deel = document.getElementById('rek-deel');
+  var melding = document.getElementById('rek-deel-melding');
+
+  if (deel) {
+    deel.addEventListener('click', function () {
+      var link = naarUrl();
+
+      /* De adresbalk bijwerken zodat de pagina herladen dezelfde cijfers
+         geeft, ook als het kopiëren niet lukt. */
+      try { history.replaceState(null, '', link); } catch (e) {}
+
+      function gelukt() {
+        if (!melding) return;
+        melding.textContent = 'Gekopieerd. Plak de link in een bericht en je collega ziet jouw cijfers.';
+        setTimeout(function () { melding.textContent = ''; }, 6000);
+      }
+      function mislukt() {
+        if (!melding) return;
+        melding.textContent = 'Kopiëren lukte niet. De link staat nu wel in je adresbalk.';
+        setTimeout(function () { melding.textContent = ''; }, 6000);
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(link).then(gelukt, mislukt);
+      } else {
+        mislukt();
+      }
+    });
+  }
+
+  Object.keys(VELDEN).forEach(function (naam) {
+    var el = VELDEN[naam].el;
+    if (!el) return;
+    el.addEventListener('input', reken);
+    el.addEventListener('change', reken);
+  });
+
+  form.addEventListener('submit', function (e) { e.preventDefault(); });
+
+  uitUrl();
+  reken();
+}
+
+/* ── Waar sta ik ─────────────────────────────────────────────────────────
+   De navigatie wordt door tools/sync-shell.pl in elke pagina gezet, dus er
+   staat nergens met de hand "deze is actief". Dat doen we hier, door het
+   pad van elke link te vergelijken met het pad van de pagina zelf.
+
+   Dat werkt meteen ook in /fr/, /en/, /de/ en /es/, omdat de links daar
+   relatief blijven en de browser ze binnen dezelfde taalmap oplost.
+   ─────────────────────────────────────────────────────────────────────── */
+function initNavActief() {
+  var hier = location.pathname.replace(/\/index\.html$/, '/');
+  if (hier === '') hier = '/';
+
+  function zelfde(a) {
+    var pad;
+    try { pad = new URL(a.href, location.href).pathname; } catch (e) { return false; }
+    pad = pad.replace(/\/index\.html$/, '/');
+    return pad === hier;
+  }
+
+  var links = document.querySelectorAll('.nav-links a, .nav-mobile a');
+
+  for (var i = 0; i < links.length; i++) {
+    var a = links[i];
+    if (a.classList.contains('lang-opt')) continue;   /* die heeft zijn eigen merkteken */
+    if (a.getAttribute('href') === '#') continue;
+    if (!zelfde(a)) continue;
+
+    a.setAttribute('aria-current', 'page');
+
+    if (a.classList.contains('nav-link')) {
+      a.classList.add('nav-link-actief');
+    } else if (a.classList.contains('navdrop-item')) {
+      a.classList.add('navdrop-item-actief');
+      /* Ook de knop van het menu waarin hij zit, zodat je op een
+         binnenpagina in één blik ziet onder welke kop je zit. */
+      var drop = a.closest('.navdrop');
+      var knop = drop && drop.querySelector('.navdrop-toggle');
+      if (knop) knop.classList.add('nav-link-actief');
+    }
+  }
 }
