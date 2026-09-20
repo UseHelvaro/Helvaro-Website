@@ -5796,7 +5796,19 @@ p { text-wrap: pretty; }
   font-size: 15px;
   color: var(--text-1);
 }
-.stroom-icoon { font-size: 15px; width: 20px; text-align: center; }
+.stroom-icoon {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  border: 1px solid var(--border-1);
+  background: var(--bg-2);
+  color: var(--accent-deep);
+}
+.stroom-icoon svg { width: 17px; height: 17px; }
+[data-theme="light"] .stroom-icoon { color: #8A6A33; }
 .stroom-stappen li {
   display: flex;
   align-items: center;
@@ -7286,3 +7298,9 @@ p { text-wrap: pretty; }
    Daarom op licht het diepere brons uit de huisstijl. */
 .paghero-titel .highlight { color: var(--accent-light); }
 [data-theme="light"] .paghero-titel .highlight { color: #8A6A33; }
+
+/* Het icoon in de zwevende kaartjes naast de telefoon. Was een emoji, is nu
+   een lijnicoon in dezelfde stijl als de rest. */
+.float-chip .chip-icon { color: var(--accent-light); }
+.float-chip .chip-icon svg { width: 16px; height: 16px; }
+[data-theme="light"] .float-chip .chip-icon { color: #8A6A33; }
