@@ -1689,3 +1689,19 @@ Object.assign(window.HELVARO_TR['en'], {
   "Wie niet doorkomt krijgt binnen een minuut een bericht, met de vraag waar het over gaat en een voorstel voor een tijdslot.": "Anyone who does not get through gets a message within a minute, asking what it is about and proposing a slot.",
   "Zes weken voor de APK verloopt een bericht met een concrete datum erbij. Vragen worden beantwoord, de afspraak wordt vastgezet.": "Six weeks before the MOT expires, a message with a concrete date attached. Questions get answered, the appointment gets booked."
 });
+
+Object.assign(window.HELVARO_TR['en'], {
+  "Plan een demo op je eigen cijfers · Helvaro": "Book a demo on your own numbers · Helvaro",
+  "Twintig minuten over wat er bij jou binnenkomt, wat ermee gebeurt en waar het blijft liggen. Geen verkooppraatje, wel cijfers uit je eigen werkplaats.": "Twenty minutes on what comes in at your place, what happens to it and where it gets stuck. No sales pitch, just numbers from your own workshop."
+});
+
+Object.assign(window.HELVARO_TR['en'], {
+  "Daarna laten we het systeem zien op de werkstroom die bij jou het grootste gat dicht. Meestal is dat gemiste gesprekken of APK, want daar zit de snelste winst en is het effect meteen te meten.": "Then we show the system on the workflow that closes the biggest gap at your place. Usually that is missed calls or MOT, because that is where the fastest gain sits and the effect can be measured straight away.",
+  "De demo": "The demo",
+  "Demo": "Demo",
+  "In twintig minuten lopen we jouw dinsdag door. Hoeveel gesprekken er binnenkomen via telefoon, WhatsApp en je website, hoeveel daarvan een afspraak worden, en op welke van de zes bekende plekken het bij jou weglekt.": "In twenty minutes we walk through your Tuesday. How many conversations come in by phone, WhatsApp and your website, how many of those become appointments, and at which of the six known places it leaks away at your end.",
+  "Je gaat weg met een eerste werkstroom, of met de reden waarom het bij jou niet past. Dat tweede zeggen we liever nu dan in maand drie.": "You leave with a first workflow, or with the reason why it does not fit you. We would rather say that second one now than in month three.",
+  "Kies hier je moment": "Pick your moment here",
+  "Plan een demo op je eigen cijfers": "Book a demo on your own numbers",
+  "Twintig minuten over wat er bij jou binnenkomt, wat ermee gebeurt en waar het blijft liggen. Geen verkooppraatje, wel cijfers.": "Twenty minutes on what comes in at your place, what happens to it and where it gets stuck. No sales pitch, just numbers."
+});

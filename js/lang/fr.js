@@ -1689,3 +1689,19 @@ Object.assign(window.HELVARO_TR['fr'], {
   "Wie niet doorkomt krijgt binnen een minuut een bericht, met de vraag waar het over gaat en een voorstel voor een tijdslot.": "Celui qui n'arrive pas à vous joindre reçoit un message en moins d'une minute, avec la question de l'objet de l'appel et une proposition de créneau.",
   "Zes weken voor de APK verloopt een bericht met een concrete datum erbij. Vragen worden beantwoord, de afspraak wordt vastgezet.": "Six semaines avant l'expiration du contrôle technique, un message avec une date concrète. Les questions reçoivent une réponse, le rendez-vous est fixé."
 });
+
+Object.assign(window.HELVARO_TR['fr'], {
+  "Plan een demo op je eigen cijfers · Helvaro": "Planifier une démo sur vos propres chiffres · Helvaro",
+  "Twintig minuten over wat er bij jou binnenkomt, wat ermee gebeurt en waar het blijft liggen. Geen verkooppraatje, wel cijfers uit je eigen werkplaats.": "Vingt minutes sur ce qui arrive chez vous, ce qu%0l en advient et où cela reste en plan. Pas de discours commercial, mais des chiffres de votre propre atelier."
+});
+
+Object.assign(window.HELVARO_TR['fr'], {
+  "Daarna laten we het systeem zien op de werkstroom die bij jou het grootste gat dicht. Meestal is dat gemiste gesprekken of APK, want daar zit de snelste winst en is het effect meteen te meten.": "Ensuite, nous montrons le système sur le flux qui comble le plus grand trou chez vous. C'est généralement les appels manqués ou le contrôle technique, car c'est là que se trouve le gain le plus rapide et que l'effet est immédiatement mesurable.",
+  "De demo": "La démo",
+  "Demo": "Démo",
+  "In twintig minuten lopen we jouw dinsdag door. Hoeveel gesprekken er binnenkomen via telefoon, WhatsApp en je website, hoeveel daarvan een afspraak worden, en op welke van de zes bekende plekken het bij jou weglekt.": "En vingt minutes, nous passons en revue votre mardi. Combien de conversations arrivent par téléphone, WhatsApp et votre site, combien deviennent des rendez-vous, et à laquelle des six failles connues cela se perd chez vous.",
+  "Je gaat weg met een eerste werkstroom, of met de reden waarom het bij jou niet past. Dat tweede zeggen we liever nu dan in maand drie.": "Vous repartez avec un premier flux de travail, ou avec la raison pour laquelle cela ne vous convient pas. Cette seconde possibilité, nous préférons la dire maintenant plutôt qu'au troisième mois.",
+  "Kies hier je moment": "Choisissez votre moment ici",
+  "Plan een demo op je eigen cijfers": "Planifiez une démo sur vos propres chiffres",
+  "Twintig minuten over wat er bij jou binnenkomt, wat ermee gebeurt en waar het blijft liggen. Geen verkooppraatje, wel cijfers.": "Vingt minutes sur ce qui arrive chez vous, ce qu'il en advient et où cela reste en plan. Pas de discours commercial, mais des chiffres."
+});

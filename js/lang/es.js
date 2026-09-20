@@ -1689,3 +1689,19 @@ Object.assign(window.HELVARO_TR['es'], {
   "Wie niet doorkomt krijgt binnen een minuut een bericht, met de vraag waar het over gaat en een voorstel voor een tijdslot.": "Quien no consigue contactar recibe un mensaje en menos de un minuto, preguntando de qué se trata y proponiendo una franja.",
   "Zes weken voor de APK verloopt een bericht met een concrete datum erbij. Vragen worden beantwoord, de afspraak wordt vastgezet.": "Seis semanas antes de que caduque la ITV, un mensaje con una fecha concreta. Las preguntas se responden, la cita se fija."
 });
+
+Object.assign(window.HELVARO_TR['es'], {
+  "Plan een demo op je eigen cijfers · Helvaro": "Agenda una demo con tus propias cifras · Helvaro",
+  "Twintig minuten over wat er bij jou binnenkomt, wat ermee gebeurt en waar het blijft liggen. Geen verkooppraatje, wel cijfers uit je eigen werkplaats.": "Veinte minutos sobre qué entra en tu taller, qué pasa con ello y dónde se queda parado. Sin discurso de venta, con cifras de tu propio taller."
+});
+
+Object.assign(window.HELVARO_TR['es'], {
+  "Daarna laten we het systeem zien op de werkstroom die bij jou het grootste gat dicht. Meestal is dat gemiste gesprekken of APK, want daar zit de snelste winst en is het effect meteen te meten.": "Después enseñamos el sistema en el flujo que tapa el mayor agujero en tu taller. Normalmente son las llamadas perdidas o la ITV, porque ahí está la ganancia más rápida y el efecto se puede medir enseguida.",
+  "De demo": "La demo",
+  "Demo": "Demo",
+  "In twintig minuten lopen we jouw dinsdag door. Hoeveel gesprekken er binnenkomen via telefoon, WhatsApp en je website, hoeveel daarvan een afspraak worden, en op welke van de zes bekende plekken het bij jou weglekt.": "En veinte minutos repasamos tu martes. Cuántas conversaciones entran por teléfono, WhatsApp y tu web, cuántas se convierten en cita y en cuál de los seis puntos conocidos se te escapa.",
+  "Je gaat weg met een eerste werkstroom, of met de reden waarom het bij jou niet past. Dat tweede zeggen we liever nu dan in maand drie.": "Te vas con un primer flujo de trabajo, o con el motivo por el que esto no encaja contigo. Lo segundo preferimos decirlo ahora y no en el tercer mes.",
+  "Kies hier je moment": "Elige aquí tu momento",
+  "Plan een demo op je eigen cijfers": "Agenda una demo con tus propias cifras",
+  "Twintig minuten over wat er bij jou binnenkomt, wat ermee gebeurt en waar het blijft liggen. Geen verkooppraatje, wel cijfers.": "Veinte minutos sobre qué entra en tu taller, qué pasa con ello y dónde se queda parado. Sin discurso de venta, con cifras."
+});
