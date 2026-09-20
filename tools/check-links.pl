@@ -16,6 +16,7 @@
 #   perl tools/check-links.pl --alles    ook /fr/ /en/ /de/ /es/
 # ============================================================================
 use strict;
+use utf8;   # tekens in dit bestand zijn tekens, geen losse bytes
 use warnings;
 use Encode qw(decode_utf8);
 use File::Basename qw(dirname);

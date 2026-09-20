@@ -20,6 +20,7 @@
 #   met de hand, je werk is de volgende keer weg. Bewerk altijd de bron.
 # ============================================================================
 use strict;
+use utf8;   # tekens in dit bestand zijn tekens, geen losse bytes
 use warnings;
 use Encode qw(decode_utf8 encode_utf8);
 use File::Path qw(make_path remove_tree);
@@ -365,7 +366,7 @@ for my $pagina (@PAGES) {
       # De oorspronkelijke pagina's staan in TITLES in i18n.js. Voor nieuwe
       # titels is dat een tweede plek om te vullen, en die loopt uit elkaar.
       # Staat een titel niet in TITLES, dan pakken we hem uit het gewone
-      # woordenboek. Zo is er maar Ã©Ã©n plaats om te vertalen.
+      # woordenboek. Zo is er maar één plaats om te vertalen.
       my $t = $TITEL->{$nl_titel}{$lang} || $DICT{$lang}{$nl_titel};
       if ($t) {
         $h =~ s{<title>.*?</title>}{<title>$t</title>}s;

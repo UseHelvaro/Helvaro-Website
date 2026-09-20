@@ -16,6 +16,7 @@
 #   perl tools/build-agents.pl
 # ============================================================================
 use strict;
+use utf8;   # tekens in dit bestand zijn tekens, geen losse bytes
 use warnings;
 use Encode qw(decode_utf8 encode_utf8);
 

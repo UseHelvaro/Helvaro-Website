@@ -15,3 +15,4 @@ perl tools/sync-shell.pl
 perl tools/build-langs.pl
 perl tools/build-sitemap.pl
 perl tools/check-links.pl
+perl tools/herstel-tekens.pl --kijk   # stopt de build bij dubbel gecodeerde tekens

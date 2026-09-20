@@ -13,6 +13,7 @@
 #   perl tools/nieuwe-paginas.pl
 # ============================================================================
 use strict;
+use utf8;   # tekens in dit bestand zijn tekens, geen losse bytes
 use warnings;
 use Encode qw(encode_utf8);
 use File::Path qw(make_path);
@@ -173,7 +174,7 @@ for my $rij (@PAGINAS) {
 <!-- SHELL:FOOTER -->
 <!-- /SHELL:FOOTER -->
 
-  <script src="${o}js/main.js?v=37"></script>
+  <script src="${o}js/main.js?v=38"></script>
   <script src="${o}js/i18n.js?v=39"></script>
 
   <aside class="faro-gids" id="faroGids" data-plek="rechtsonder" hidden>
