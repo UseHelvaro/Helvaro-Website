@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initVideo();
   initOmzet();
   initNavActief();
-  initKoppelingenMarquee();
 });
 
 /* ── Waar staan de plaatjes ───────────────────────────────────────────────
@@ -398,27 +397,6 @@ function initSpotlight() {
       card.style.setProperty('--my', (e.clientY - r.top) + 'px');
     });
   });
-}
-
-/* ============================================================
-   KOPPELINGEN MARQUEE — horizontal scroll of integration names
-   Reads from data-koppelingen on .koppel-marquee, duplicates for loop
-   ============================================================ */
-function initKoppelingenMarquee() {
-  const marquee = document.querySelector('.koppel-marquee');
-  if (!marquee) return;
-
-  const track = marquee.querySelector('.koppel-marquee-track');
-  if (!track || track.dataset.duplicated) return;
-
-  // Duplicate items for seamless loop
-  const items = track.querySelectorAll('.koppel-marquee-item');
-  items.forEach(item => {
-    const clone = item.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    track.appendChild(clone);
-  });
-  track.dataset.duplicated = '1';
 }
 
 /* ============================================================
