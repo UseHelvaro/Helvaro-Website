@@ -48,6 +48,8 @@ my $BASE = 'https://helvaro.pro';
 my @PAGES = qw(
   index.html
   systeem.html
+  controle.html
+  faro.html
   automotive.html
   agents/index.html
   roi.html

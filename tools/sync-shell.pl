@@ -48,6 +48,7 @@ for ($NAV, $FOOT) { s{^<!--.*?-->\s*}{}s; }
 # heeft er geen, en dat is daar de bedoeling.
 my @PAGES = qw(
   index.html systeem.html automotive.html roi.html cases.html
+  controle.html faro.html
   waarom.html contact.html meeting.html aanmelden.html privacybeleid.html
   sectoren/vastgoed.html sectoren/bouw.html
   agents/index.html

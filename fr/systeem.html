@@ -34,7 +34,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="../css/style.css?v=90">
+  <link rel="stylesheet" href="../css/style.css?v=91">
 </head>
 <body data-vertaald="fr">
   <a class="skip-link" href="#main">Aller au contenu</a>
@@ -67,6 +67,14 @@
             <a href="koppelingen/index.html" class="navdrop-item" role="menuitem">
               <span class="ndi-title">Intégrations</span>
               <span class="ndi-sub">Où Helvaro s'insère dans votre logiciel existant</span>
+            </a>
+            <a href="controle.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Contrôle et confidentialité</span>
+              <span class="ndi-sub">Ce qu'un agent peut faire seul, et où sont vos données</span>
+            </a>
+            <a href="faro.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Faro</span>
+              <span class="ndi-sub">Où vous suivez, validez et posez des questions</span>
             </a>
           </div>
         </div>
@@ -163,6 +171,14 @@
         <a href="koppelingen/index.html" class="navdrop-item" role="menuitem">
           <span class="ndi-title">Intégrations</span>
           <span class="ndi-sub">Où Helvaro s'insère dans votre logiciel existant</span>
+        </a>
+        <a href="controle.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Contrôle et confidentialité</span>
+          <span class="ndi-sub">Ce qu'un agent peut faire seul, et où sont vos données</span>
+        </a>
+        <a href="faro.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Faro</span>
+          <span class="ndi-sub">Où vous suivez, validez et posez des questions</span>
         </a>
       </div>
     </div>
@@ -299,6 +315,111 @@
       </div>
     </section>
 
+    <!-- ===== HET OVERZICHT ============================================
+         Productbeeld, geen marketingplaatje. De cijfers hieronder zijn
+         uitdrukkelijk een voorbeeldweergave: we hebben nog geen klantcijfers
+         en verzinnen er dus ook geen. Dat staat er letterlijk bij. -->
+    <section class="section centrum" data-gids="centrum" id="overzicht">
+      <div class="section-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">Votre aperçu du matin</span>
+          <h2 class="section-title">Un écran avec ce qu'il y a à gagner aujourd'hui.</h2>
+          <p class="section-sub">Pas cent graphiques. La liste dont vous faites quelque chose avant que la première voiture ne soit sur le pont.</p>
+        </div>
+
+        <div class="centrum-paneel reveal">
+          <div class="centrum-balk">
+            <span class="centrum-titel">Aujourd'hui · Garage Verstraeten</span>
+            <span class="centrum-merk">Aperçu d'exemple</span>
+          </div>
+
+          <div class="centrum-cijfers">
+            <div class="centrum-cijfer">
+              <span class="cc-getal">12</span>
+              <span class="cc-label">conversations reçues</span>
+            </div>
+            <div class="centrum-cijfer">
+              <span class="cc-getal">7</span>
+              <span class="cc-label">rendez-vous planifiés</span>
+            </div>
+            <div class="centrum-cijfer">
+              <span class="cc-getal">4</span>
+              <span class="cc-label">contrôles techniques qui expirent</span>
+            </div>
+            <div class="centrum-cijfer">
+              <span class="cc-getal">3</span>
+              <span class="cc-label">devis sans réponse</span>
+            </div>
+            <div class="centrum-cijfer">
+              <span class="cc-getal">2</span>
+              <span class="cc-label">appels manqués récupérés</span>
+            </div>
+          </div>
+
+          <div class="centrum-onder">
+            <div class="centrum-gesprek">
+              <span class="centrum-kop">Conversation 09h14 · WhatsApp</span>
+              <div class="cg-regel cg-klant"><span class="cg-wie">Client</span>Je voudrais faire passer le contrôle technique à ma Golf.</div>
+              <div class="cg-regel cg-agent"><span class="cg-wie">Helvaro</span>Bien sûr. Quelle est la plaque ?</div>
+              <div class="cg-regel cg-klant"><span class="cg-wie">Client</span>82-ABC-3</div>
+              <div class="cg-regel cg-agent"><span class="cg-wie">Helvaro</span>Volkswagen Golf de 2019, contrôle technique expirant le 14 novembre. Je regarde pour un rendez-vous ?</div>
+              <div class="cg-uitkomst">
+                <span class="cg-uitkomst-label">Fixé</span>
+                <span class="cg-uitkomst-waarde">Jeudi 13 novembre · 08h30 · pont 2</span>
+              </div>
+            </div>
+
+            <div class="centrum-context">
+              <span class="centrum-kop">Ce que le système savait en plus</span>
+              <dl class="centrum-dl">
+                <div><dt>Véhicule</dt><dd>Volkswagen Golf 1.0 TSI</dd></div>
+                <div><dt>Année de construction</dt><dd>2019</dd></div>
+                <div><dt>Contrôle technique expire</dt><dd>14 novembre</dd></div>
+                <div><dt>Type de demande</dt><dd>Contrôle technique</dd></div>
+                <div><dt>Dernière visite</dt><dd>Entretien, mars</dd></div>
+                <div><dt>Action</dt><dd>Rendez-vous fixé et confirmé</dd></div>
+              </dl>
+              <p class="centrum-voet">C'est là que se trouve la différence. Pas dans la réponse, mais dans ce qu'il y a derrière.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="centrum-eerlijk reveal">Les chiffres ci-dessus illustrent l'apparence de l'écran, ce n'est pas le résultat d'un client. Dès que le premier pilote sera mesuré, les vrais chiffres figureront sur <a href="cases.html">la page des chiffres</a>.</p>
+      </div>
+    </section>
+
+
+
+    <!-- ===== VERSCHIL ================================================
+         Drie kolommen die het onderscheid uit de positionering hard maken.
+         Kort houden: wie dit leest wil het in vijf seconden snappen. -->
+    <section class="section verschil" data-gids="verschil">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">La distinction</span>
+          <h2 class="section-title">Trois choses qui se ressemblent souvent.</h2>
+        </div>
+        <div class="verschil-grid">
+          <div class="verschil-kaart reveal">
+            <span class="verschil-tag">Chatbot</span>
+            <p class="verschil-doet">Répond aux questions.</p>
+            <p class="verschil-desc">Il est sur votre site, connaît vos heures d'ouverture et redirige. Une fois la conversation terminée, rien n'a changé dans votre planning.</p>
+          </div>
+          <div class="verschil-kaart reveal reveal-delay-1">
+            <span class="verschil-tag">Agent isolé</span>
+            <p class="verschil-doet">Exécute une seule tâche.</p>
+            <p class="verschil-desc">Envoie par exemple des rappels de contrôle technique. Pratique, mais il ignore tout de la conversation d'hier et n'écrit nulle part.</p>
+          </div>
+          <div class="verschil-kaart verschil-kaart-sterk reveal reveal-delay-2">
+            <span class="verschil-tag">Le système Helvaro</span>
+            <p class="verschil-doet">Capte, comprend, agit, connecte et mesure.</p>
+            <p class="verschil-desc">Les agents partagent la même mémoire, écrivent dans le même planning et s'additionnent dans la même vue. C'est pour cela que c'est un processus et pas un petit outil isolé.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== DE VIJF LAGEN, UITGEBREID ================================ -->
     <section class="section" data-gids="lagen" id="lagen">
       <div class="section-glow" aria-hidden="true"></div>
@@ -380,7 +501,7 @@
                   <li>Relancer jusqu'à ce qu'un oui ou un non soit posé</li>
                   <li>Transmettre avec le contexte</li>
                 </ul>
-                <p class="lb-kader-voet">Ce qu'un agent peut faire de façon autonome et ce qui passe d'abord par vous se règle par type d'action. Cela figure sous <a href="index.html#controle">contrôle</a>.</p>
+                <p class="lb-kader-voet">Ce qu'un agent peut faire de façon autonome et ce qui passe d'abord par vous se règle par type d'action. Cela figure sous <a href="controle.html">contrôle</a>.</p>
               </div>
             </div>
           </article>
@@ -435,6 +556,175 @@
             </div>
           </article>
 
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== BINNENKOMEND ============================================= -->
+    <section class="section binnen" data-gids="binnen" id="binnenkomend">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Entrant</span>
+          <h2 class="section-title">Votre client appelle. <span class="highlight">Quelqu'un décroche.</span></h2>
+          <p class="section-sub">Plus aucune opportunité ne disparaît parce que votre équipe était occupée. Ce qui arrive est traité, précisé et planifié.</p>
+        </div>
+
+        <div class="duo-grid">
+          <div class="duo-kaart reveal spot">
+            <h3 class="duo-titel">Décrocher pendant que l'atelier continue</h3>
+            <p class="duo-desc">En quelques secondes, celui qui appelle a quelqu'un au bout du fil qui comprend la demande et note la plaque. Votre mécanicien ne pose pas sa clé et votre comptoir termine sa conversation.</p>
+          </div>
+          <div class="duo-kaart reveal spot">
+            <h3 class="duo-titel">Approfondir comme votre meilleur agent de comptoir</h3>
+            <p class="duo-desc">Quelle voiture, quel symptôme, depuis quand, quelle urgence, voulez-vous attendre ou déposer. Les mêmes questions que vous poseriez, à chaque fois, même à dix-huit heures moins le quart.</p>
+          </div>
+          <div class="duo-kaart reveal reveal-delay-1 spot">
+            <h3 class="duo-titel">Planifier tout de suite au lieu de rappeler</h3>
+            <p class="duo-desc">Proposer un créneau, le fixer et le confirmer se fait dans la même conversation. Rappeler est une promesse qui tombe souvent à l'eau, et votre client le sait aussi.</p>
+          </div>
+          <div class="duo-kaart reveal reveal-delay-1 spot">
+            <h3 class="duo-titel">Ce qui ne convient pas passe à un humain</h3>
+            <p class="duo-desc">Un sinistre, un client en colère, une discussion technique. Cela passe à une personne désignée chez vous, avec toute la conversation, pour que personne ne doive tout reprendre.</p>
+          </div>
+          <div class="duo-kaart reveal reveal-delay-2 spot">
+            <h3 class="duo-titel">Le soir et le samedi comptent aussi</h3>
+            <p class="duo-desc">Celui qui tombe en panne à vingt heures cherche un garage à ce moment-là. Une réponse le lendemain matin arrive chez le second choix.</p>
+          </div>
+          <div class="duo-kaart reveal reveal-delay-2 spot">
+            <h3 class="duo-titel">Néerlandais et français sans numéro séparé</h3>
+            <p class="duo-desc">La langue du client est reconnue et la conversation se poursuit dans cette langue. Pour qui travaille à Bruxelles ou près de la frontière linguistique, cela représente un demi-comptoir en moins.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== UITGAAND =================================================
+         Dit is het deel dat de meeste garages nog nooit hebben gedaan, en
+         waar de snelste winst zit: je eigen bestand. -->
+    <section class="section uitgaand" data-gids="uitgaand" id="uitgaand">
+      <div class="section-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Sortant</span>
+          <h2 class="section-title">Attendre que le client appelle <span class="highlight">n'est pas un plan.</span></h2>
+          <p class="section-sub">Vous savez quelles voitures doivent bientôt passer. Helvaro transforme cela en messages qui produisent des rendez-vous.</p>
+        </div>
+
+        <div class="uit-lijst">
+          <a class="uit-rij reveal" href="agents/apk-herinnering-agent.html">
+            <span class="uit-naam">Rappel contrôle technique</span>
+            <span class="uit-zin">Six semaines avant la date d'expiration, un message avec une date plutôt qu'une demande de rappel.</span>
+            <span class="uit-pijl" aria-hidden="true">&#8594;</span>
+          </a>
+          <a class="uit-rij reveal" href="agents/onderhoudsbeurt-herinnering-agent.html">
+            <span class="uit-naam">Entretien</span>
+            <span class="uit-zin">Au kilométrage ou à la date. Le client qui roulerait sinon encore six mois réserve maintenant.</span>
+            <span class="uit-pijl" aria-hidden="true">&#8594;</span>
+          </a>
+          <a class="uit-rij reveal reveal-delay-1" href="agents/offerte-opvolg-agent.html">
+            <span class="uit-naam">Relance de devis</span>
+            <span class="uit-zin">Trois prises de contact après un devis, et un non clair est aussi un résultat.</span>
+            <span class="uit-pijl" aria-hidden="true">&#8594;</span>
+          </a>
+          <a class="uit-rij reveal reveal-delay-1" href="agents/winterbanden-oproep-agent.html">
+            <span class="uit-naam">Changement de pneus</span>
+            <span class="uit-zin">Deux fois par an une semaine pleine de travail, à condition que quelqu'un commence à appeler à temps. Personne ne le fait.</span>
+            <span class="uit-pijl" aria-hidden="true">&#8594;</span>
+          </a>
+          <a class="uit-rij reveal reveal-delay-2" href="agents/index.html">
+            <span class="uit-naam">Des clients qui ne sont plus revenus</span>
+            <span class="uit-zin">Des noms de votre propre fichier absents depuis plus d'un an, recontactés un par un.</span>
+            <span class="uit-pijl" aria-hidden="true">&#8594;</span>
+          </a>
+          <a class="uit-rij reveal reveal-delay-2" href="agents/no-show-agent.html">
+            <span class="uit-naam">Rendez-vous manqués</span>
+            <span class="uit-zin">Confirmer, rappeler et proposer aussitôt le créneau libéré à quelqu'un qui attend.</span>
+            <span class="uit-pijl" aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HET KENTEKEN =============================================
+         Het kenteken is geen trucje, het is het bewijs dat er een systeem
+         onder zit. Daarom staat de keten er expliciet bij. -->
+    <section class="section kenteken" data-gids="kenteken" id="kenteken">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">Connaissance de l'automobile</span>
+          <h2 class="section-title">Sept caractères, et la moitié de la conversation est déjà faite.</h2>
+          <p class="section-sub">Un chatbot lit une plaque comme du texte. Le système la lit comme une voiture avec un historique et une date d'expiration.</p>
+        </div>
+
+        <div class="kenteken-keten reveal">
+          <div class="kk-stap">
+            <span class="kk-label">Le client dit</span>
+            <span class="kk-plaat">82-ABC-3</span>
+          </div>
+          <div class="kk-pijl" aria-hidden="true">&#8595;</div>
+          <div class="kk-stap">
+            <span class="kk-label">Véhicule reconnu</span>
+            <span class="kk-waarde">Volkswagen Golf · 2019</span>
+          </div>
+          <div class="kk-pijl" aria-hidden="true">&#8595;</div>
+          <div class="kk-stap">
+            <span class="kk-label">Contexte</span>
+            <span class="kk-waarde">Contrôle technique expire le 14 novembre</span>
+          </div>
+          <div class="kk-pijl" aria-hidden="true">&#8595;</div>
+          <div class="kk-stap">
+            <span class="kk-label">Intention</span>
+            <span class="kk-waarde">Planifier le contrôle technique</span>
+          </div>
+          <div class="kk-pijl" aria-hidden="true">&#8595;</div>
+          <div class="kk-stap">
+            <span class="kk-label">Action</span>
+            <span class="kk-waarde">Chercher un créneau libre</span>
+          </div>
+          <div class="kk-pijl" aria-hidden="true">&#8595;</div>
+          <div class="kk-stap kk-stap-uit">
+            <span class="kk-label">Résultat</span>
+            <span class="kk-waarde">Rendez-vous confirmé</span>
+          </div>
+        </div>
+
+        <div class="photo-grid">
+          <article class="photo-card reveal">
+            <picture>
+              <source srcset="../assets/photos/plate-scan.webp" type="image/webp">
+              <img loading="lazy" class="photo-img" src="../assets/photos/plate-scan.jpg" alt="Auto op een brug in een werkplaats" decoding="async" width="900" height="600">
+            </picture>
+            <div class="photo-body">
+              <span class="photo-tag">L'atelier</span>
+              <h3 class="photo-title">Le client n'a rien à expliquer</h3>
+              <p class="photo-desc">Marque, modèle, année et date d'expiration sont déjà là. La conversation porte tout de suite sur le moment où il peut venir.</p>
+            </div>
+          </article>
+
+          <article class="photo-card reveal reveal-delay-1">
+            <picture>
+              <source srcset="../assets/photos/calendar.webp" type="image/webp">
+              <img loading="lazy" class="photo-img" src="../assets/photos/calendar.jpg" alt="Agenda met ingeplande afspraken" decoding="async" width="900" height="600">
+            </picture>
+            <div class="photo-body">
+              <span class="photo-tag">Le planning</span>
+              <h3 class="photo-title">Un rendez-vous qui entre dans votre planning</h3>
+              <p class="photo-desc">Un contrôle n'est pas une courroie de distribution. Le système sait combien de temps dure une intervention et réserve le créneau correspondant.</p>
+            </div>
+          </article>
+
+          <article class="photo-card reveal reveal-delay-2">
+            <picture>
+              <source srcset="../assets/photos/dealer.webp" type="image/webp">
+              <img loading="lazy" class="photo-img" src="../assets/photos/dealer.jpg" alt="Rij wagens voor een autobedrijf" decoding="async" width="900" height="600">
+            </picture>
+            <div class="photo-body">
+              <span class="photo-tag">Votre fichier</span>
+              <h3 class="photo-title">Chaque voiture a une prochaine fois</h3>
+              <p class="photo-desc">Contrôle technique, entretien, pneus. Pour chaque voiture que vous avez vue un jour, il existe un moment futur où elle devrait revenir.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -508,8 +798,8 @@
           <a href="systeem.html" class="footer-link">Le système Helvaro</a>
           <a href="agents/index.html" class="footer-link">Les agents</a>
           <a href="koppelingen/index.html" class="footer-link">Intégrations</a>
-          <a href="index.html#controle" class="footer-link">Contrôle et RGPD</a>
-          <a href="index.html#faro" class="footer-link">Faro</a>
+          <a href="controle.html" class="footer-link">Contrôle et RGPD</a>
+          <a href="faro.html" class="footer-link">Faro</a>
         </div>
 
         <div class="footer-col">
@@ -553,7 +843,7 @@
   </footer>
 <!-- /SHELL:FOOTER -->
 
-  <script src="../js/main.js?v=38"></script>
+  <script src="../js/main.js?v=39"></script>
   <script src="../js/i18n.js?v=39"></script>
 
   <aside class="faro-gids" id="faroGids" data-plek="rechtsonder" hidden>

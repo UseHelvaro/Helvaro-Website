@@ -1705,3 +1705,29 @@ Object.assign(window.HELVARO_TR['en'], {
   "Plan een demo op je eigen cijfers": "Book a demo on your own numbers",
   "Twintig minuten over wat er bij jou binnenkomt, wat ermee gebeurt en waar het blijft liggen. Geen verkooppraatje, wel cijfers.": "Twenty minutes on what comes in at your place, what happens to it and where it gets stuck. No sales pitch, just numbers."
 });
+
+Object.assign(window.HELVARO_TR['en'], {
+  "APK, inplannen, gemiste gesprekken en meer.": "MOT, scheduling, missed calls and more.",
+  "Controle en privacy": "Control and privacy",
+  "Controle en privacy: wat een agent mag, en waar je data staat · Helvaro": "Control and privacy: what an agent may do, and where your data lives · Helvaro",
+  "De tien agents": "The ten agents",
+  "De vijf lagen, en het verschil met een chatbot.": "The five layers, and the difference from a chatbot.",
+  "Een systeem dat met je klanten praat, moet je kunnen nalezen, bijsturen en stilzetten. Dit zijn de afspraken die vastliggen voor we starten, en waar je gegevens blijven.": "A system that talks to your customers has to be something you can read back, adjust and switch off. These are the agreements fixed before we start, and where your data stays.",
+  "Elk gesprek leesbaar, goedkeuring per actietype, een noodstop per agent en verwerking binnen de EU. De afspraken die vastliggen voor we starten.": "Every conversation readable, approval per action type, an emergency stop per agent and processing within the EU. The agreements fixed before we start.",
+  "Faro is niet het product maar de laag waarin je meeleest, goedkeurt en in gewone taal vraagt wat er gebeurd is.": "Faro is not the product but the layer where you read along, approve and ask in plain language what happened.",
+  "Faro: het gezicht van het Helvaro-systeem · Helvaro": "Faro: the face of the Helvaro system · Helvaro",
+  "Helvaro is wat je koopt. Faro is hoe je het bedient: de plek waar je meeleest, goedkeurt en in gewone taal vraagt wat er gebeurd is.": "Helvaro is what you buy. Faro is how you operate it: the place where you read along, approve and ask in plain language what happened.",
+  "Het gezicht van het systeem.": "The face of the system.",
+  "Hoe het systeem werkt": "How the system works",
+  "Je agents doen de rest.": "Your agents do the rest.",
+  "Je team beslist.": "Your team decides.",
+  "Niet het systeem zelf.": "Not the system itself.",
+  "Waar je meeleest, goedkeurt en vragen stelt": "Where you read along, approve and ask questions",
+  "Wat een agent zelf mag, en waar je data staat": "What an agent may do itself, and where your data lives",
+  "Wat een agent zelf mag, en waar je data staat.": "What an agent may do itself, and where your data lives.",
+  "Wat live staat en wat nog gebouwd wordt.": "What is live and what is still being built."
+});
+
+Object.assign(window.HELVARO_TR['en'], {
+  "Geen van deze drie gaat over te weinig klanten. Ze gaan allemaal over klanten die je al had.": "None of these three is about having too few customers. They are all about customers you already had."
+});

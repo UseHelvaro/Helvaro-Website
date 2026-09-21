@@ -7304,3 +7304,35 @@ p { text-wrap: pretty; }
 .float-chip .chip-icon { color: var(--accent-light); }
 .float-chip .chip-icon svg { width: 16px; height: 16px; }
 [data-theme="light"] .float-chip .chip-icon { color: #8A6A33; }
+
+/* ── Verder lezen op de homepagina ─────────────────────────────────────────
+   Vier kaarten naar de pagina's onder Systeem. Wie meer wil weten, klikt;
+   wie de prijs zoekt, hoeft niet langs alle uitleg te scrollen. */
+.verder { padding-top: 24px; padding-bottom: 24px; }
+.verder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.verder-kaart {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 22px;
+  border: 1px solid var(--border-0);
+  border-radius: var(--radius-m);
+  background: var(--bg-card);
+  text-decoration: none;
+  transition: border-color .18s ease, transform .18s ease;
+}
+.verder-kaart:hover { border-color: var(--border-2); transform: translateY(-2px); }
+.verder-kop {
+  font-family: var(--font-h);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-1);
+}
+.verder-kop::after { content: " \2192"; color: var(--accent-deep); }
+[data-theme="light"] .verder-kop::after { color: #8A6A33; }
+.verder-zin { font-size: 14px; line-height: 1.55; color: var(--text-2); }

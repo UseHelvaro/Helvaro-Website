@@ -84,6 +84,14 @@ my @PAGINAS = (
    'Onderhoudsbeurt-agent: op kilometers of op datum',
    'De klant die anders nog een half jaar doorrijdt, boekt nu. Herinneringen op basis van je eigen intervallen, niet op een vast schema.'],
 
+  ['controle.html',
+   'Controle en privacy: wat een agent mag, en waar je data staat',
+   'Elk gesprek leesbaar, goedkeuring per actietype, een noodstop per agent en verwerking binnen de EU. De afspraken die vastliggen voor we starten.'],
+
+  ['faro.html',
+   'Faro: het gezicht van het Helvaro-systeem',
+   'Faro is niet het product maar de laag waarin je meeleest, goedkeurt en in gewone taal vraagt wat er gebeurd is.'],
+
   ['koppelingen/index.html',
    'Koppelingen: waar Helvaro in je bestaande software past',
    'Een afspraak die alleen bij ons staat is geen afspraak. Dit is de eerlijke stand van zaken per koppeling: live, in ontwikkeling of gepland.'],
@@ -160,7 +168,7 @@ for my $rij (@PAGINAS) {
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="${o}css/style.css?v=90">
+  <link rel="stylesheet" href="${o}css/style.css?v=91">
 </head>
 <body>
   <a class="skip-link" href="#main">Naar de inhoud</a>
@@ -174,7 +182,7 @@ for my $rij (@PAGINAS) {
 <!-- SHELL:FOOTER -->
 <!-- /SHELL:FOOTER -->
 
-  <script src="${o}js/main.js?v=38"></script>
+  <script src="${o}js/main.js?v=39"></script>
   <script src="${o}js/i18n.js?v=39"></script>
 
   <aside class="faro-gids" id="faroGids" data-plek="rechtsonder" hidden>

@@ -12,6 +12,8 @@ my @PAGES = (
   ['agents/',                                     '0.9', 'monthly'],
   ['roi.html',                                    '0.8', 'monthly'],
   ['cases.html',                                  '0.8', 'monthly'],
+  ['controle.html',                               '0.6', 'monthly'],
+  ['faro.html',                                   '0.6', 'monthly'],
   ['koppelingen/',                                '0.8', 'monthly'],
   ['agents/apk-herinnering-agent.html',           '0.8', 'monthly'],
   ['agents/werkplaats-inplan-agent.html',         '0.8', 'monthly'],

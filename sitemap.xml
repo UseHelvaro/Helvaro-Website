@@ -332,6 +332,116 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://helvaro.pro/controle.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/controle.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/fr/controle.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/controle.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/en/controle.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/controle.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/de/controle.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/controle.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/es/controle.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/controle.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/controle.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/faro.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/faro.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/fr/faro.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/faro.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/en/faro.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/faro.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/de/faro.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/faro.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://helvaro.pro/es/faro.html</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://helvaro.pro/en/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://helvaro.pro/de/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://helvaro.pro/es/faro.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://helvaro.pro/faro.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://helvaro.pro/koppelingen/</loc>
     <xhtml:link rel="alternate" hreflang="nl" href="https://helvaro.pro/koppelingen/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://helvaro.pro/fr/koppelingen/"/>
