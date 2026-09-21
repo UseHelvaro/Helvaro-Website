@@ -168,11 +168,11 @@ for my $rij (@PAGINAS) {
   <meta name="theme-color" content="#121212">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght\@500;600;700&family=Inter:wght\@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght\@12..96,500..700&family=Instrument+Serif:ital\@0;1&family=Inter:wght\@400;500;600&display=swap" rel="stylesheet">
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="${o}css/style.css?v=91">
+  <link rel="stylesheet" href="${o}css/style.css?v=93">
 </head>
 <body>
   <a class="skip-link" href="#main">Naar de inhoud</a>
@@ -186,8 +186,8 @@ for my $rij (@PAGINAS) {
 <!-- SHELL:FOOTER -->
 <!-- /SHELL:FOOTER -->
 
-  <script src="${o}js/main.js?v=39"></script>
-  <script src="${o}js/i18n.js?v=39"></script>
+  <script src="${o}js/main.js?v=93"></script>
+  <script src="${o}js/i18n.js?v=93"></script>
 
   <aside class="faro-gids" id="faroGids" data-plek="rechtsonder" hidden>
     <div class="faro-gids-ballon" id="faroGidsBallon" aria-live="polite">

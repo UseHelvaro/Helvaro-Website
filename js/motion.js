@@ -24,185 +24,120 @@
   function initLeadlijn() {
     var diagram = document.querySelector('.stroom-diagram');
     if (!diagram) return;
+    var kolommen = diagram.querySelectorAll('.stroom-kolom');
+    var steps = diagram.querySelectorAll('.stroom-stappen li');
+    if (kolommen.length < 3 || !steps.length) return;
 
-    // Create SVG overlay
-    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    var NS = 'http://www.w3.org/2000/svg';
+    var svg = document.createElementNS(NS, 'svg');
     svg.setAttribute('class', 'leadlijn-svg');
     svg.setAttribute('aria-hidden', 'true');
     diagram.style.position = 'relative';
+    diagram.classList.add('leadlijn-aan');
     diagram.appendChild(svg);
 
-    // The path and dot elements
-    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttribute('class', 'leadlijn-path');
-    path.setAttribute('fill', 'none');
-    path.setAttribute('stroke', 'url(#leadlijn-grad)');
-    path.setAttribute('stroke-width', '1.5');
-
-    var dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    dot.setAttribute('class', 'leadlijn-dot');
-    dot.setAttribute('r', '6');
-    dot.setAttribute('fill', 'var(--accent)');
-
-    // Glow filter and gradient
-    var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    var defs = document.createElementNS(NS, 'defs');
     defs.innerHTML =
-      '<linearGradient id="leadlijn-grad" x1="0%" y1="0%" x2="100%" y2="0%">' +
-        '<stop offset="0%" stop-color="var(--accent-dark)" stop-opacity="0.4"/>' +
-        '<stop offset="50%" stop-color="var(--accent)" stop-opacity="0.8"/>' +
-        '<stop offset="100%" stop-color="var(--accent-dark)" stop-opacity="0.4"/>' +
-      '</linearGradient>' +
-      '<filter id="leadlijn-glow" x="-50%" y="-50%" width="200%" height="200%">' +
-        '<feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>' +
+      '<filter id="leadlijn-glow" x="-100%" y="-100%" width="300%" height="300%">' +
+        '<feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>' +
         '<feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>' +
       '</filter>';
-
     svg.appendChild(defs);
-    svg.appendChild(path);
+
+    /* Twee lijnen: klant -> Helvaro, en Helvaro -> werkplaats. De stip loopt
+       nooit door de kaart met de vijf stappen heen; daar gaat hij naar binnen,
+       lichten de stappen een voor een op, en komt hij er rechts weer uit. */
+    var segA = document.createElementNS(NS, 'path');
+    var segB = document.createElementNS(NS, 'path');
+    [segA, segB].forEach(function (el) {
+      el.setAttribute('class', 'leadlijn-path');
+      el.setAttribute('fill', 'none');
+      svg.appendChild(el);
+    });
+    var dot = document.createElementNS(NS, 'circle');
+    dot.setAttribute('class', 'leadlijn-dot');
+    dot.setAttribute('r', '5');
     dot.setAttribute('filter', 'url(#leadlijn-glow)');
     svg.appendChild(dot);
 
-    var steps = diagram.querySelectorAll('.stroom-stappen li');
-    var isVisible = false;
-    var animFrame = null;
+    var kern = kolommen[1];
+    var isVisible = false, animFrame = null, startTime = null;
 
     function updatePath() {
       var rect = diagram.getBoundingClientRect();
-      var kolommen = diagram.querySelectorAll('.stroom-kolom');
-      if (kolommen.length < 3) return;
-
-      var bron = kolommen[0];
-      var kern = kolommen[1];
-      var doel = kolommen[2];
-
-      var svgW = rect.width;
-      var svgH = rect.height;
-      svg.setAttribute('viewBox', '0 0 ' + svgW + ' ' + svgH);
-      svg.style.width = svgW + 'px';
-      svg.style.height = svgH + 'px';
-
-      // Check if mobile (vertical layout)
-      var isMobile = window.innerWidth < 900;
-
-      var bronR = bron.getBoundingClientRect();
-      var kernR = kern.getBoundingClientRect();
-      var doelR = doel.getBoundingClientRect();
-
-      var x1, y1, x2, y2, x3, y3, d;
-
-      if (isMobile) {
-        // Vertical path
-        x1 = (bronR.left + bronR.width / 2) - rect.left;
-        y1 = bronR.bottom - rect.top;
-        x2 = (kernR.left + kernR.width / 2) - rect.left;
-        y2 = kernR.top + kernR.height / 2 - rect.top;
-        x3 = (doelR.left + doelR.width / 2) - rect.left;
-        y3 = doelR.top - rect.top;
-
-        d = 'M' + x1 + ',' + y1 +
-            ' C' + x1 + ',' + (y1 + 40) + ' ' + x2 + ',' + (y2 - 40) + ' ' + x2 + ',' + y2 +
-            ' C' + x2 + ',' + (y2 + 40) + ' ' + x3 + ',' + (y3 - 40) + ' ' + x3 + ',' + y3;
+      svg.setAttribute('viewBox', '0 0 ' + rect.width + ' ' + rect.height);
+      svg.style.width = rect.width + 'px';
+      svg.style.height = rect.height + 'px';
+      var b = kolommen[0].getBoundingClientRect();
+      var k = kern.getBoundingClientRect();
+      var d = kolommen[2].getBoundingClientRect();
+      var vertical = k.top >= b.bottom - 1;
+      var pad = 6;
+      if (vertical) {
+        var cx = k.left + k.width / 2 - rect.left;
+        segA.setAttribute('d', 'M' + cx + ',' + (b.bottom - rect.top + pad) + ' L' + cx + ',' + (k.top - rect.top - pad));
+        segB.setAttribute('d', 'M' + cx + ',' + (k.bottom - rect.top + pad) + ' L' + cx + ',' + (d.top - rect.top - pad));
       } else {
-        // Horizontal path
-        x1 = bronR.right - rect.left + 8;
-        y1 = bronR.top + bronR.height / 2 - rect.top;
-        x2 = kernR.left + kernR.width / 2 - rect.left;
-        y2 = kernR.top + kernR.height / 2 - rect.top;
-        x3 = doelR.left - rect.left - 8;
-        y3 = doelR.top + doelR.height / 2 - rect.top;
-
-        var cpX1 = x1 + (x2 - x1) * 0.5;
-        var cpX2 = x2 + (x3 - x2) * 0.5;
-
-        d = 'M' + x1 + ',' + y1 +
-            ' C' + cpX1 + ',' + y1 + ' ' + cpX1 + ',' + y2 + ' ' + x2 + ',' + y2 +
-            ' C' + cpX2 + ',' + y2 + ' ' + cpX2 + ',' + y3 + ' ' + x3 + ',' + y3;
+        var y = k.top + k.height / 2 - rect.top;
+        segA.setAttribute('d', 'M' + (b.right - rect.left + pad) + ',' + y + ' L' + (k.left - rect.left - pad) + ',' + y);
+        segB.setAttribute('d', 'M' + (k.right - rect.left + pad) + ',' + y + ' L' + (d.left - rect.left - pad) + ',' + y);
       }
-
-      path.setAttribute('d', d);
-      return path.getTotalLength();
     }
 
-    function animateDot() {
-      if (!isVisible || reducedMotion) return;
-
-      var length = path.getTotalLength();
-      var duration = 8000; // 8 seconds
-      var stepDuration = duration / 5;
-      var startTime = null;
-
-      steps.forEach(function(s) { s.classList.remove('leadlijn-active'); });
-
-      function frame(time) {
-        if (!isVisible) return;
-        if (!startTime) startTime = time;
-
-        var elapsed = (time - startTime) % duration;
-        var progress = elapsed / duration;
-
-        // Get point on path
-        var point = path.getPointAtLength(progress * length);
-        dot.setAttribute('cx', point.x);
-        dot.setAttribute('cy', point.y);
-
-        // Light up steps based on progress (middle section is 20%-80% of path)
-        var stepProgress = Math.max(0, Math.min(1, (progress - 0.2) / 0.6));
-        var activeStep = Math.floor(stepProgress * 5);
-
-        steps.forEach(function(s, i) {
-          if (i <= activeStep && progress > 0.15) {
-            s.classList.add('leadlijn-active');
-          } else {
-            s.classList.remove('leadlijn-active');
-          }
-        });
-
-        animFrame = requestAnimationFrame(frame);
+    /* Eén ronde: 0-0.22 onderweg naar Helvaro, 0.22-0.70 binnen (stappen),
+       0.70-0.92 onderweg naar de werkplaats, daarna even rust. */
+    var DUUR = 9000;
+    function frame(time) {
+      if (!isVisible) return;
+      if (!startTime) startTime = time;
+      var p = ((time - startTime) % DUUR) / DUUR;
+      var pt, seg;
+      if (p < 0.22) {
+        seg = segA; pt = seg.getPointAtLength((p / 0.22) * seg.getTotalLength());
+        dot.style.opacity = 1;
+      } else if (p < 0.70) {
+        dot.style.opacity = 0;
+      } else if (p < 0.92) {
+        seg = segB; pt = seg.getPointAtLength(((p - 0.70) / 0.22) * seg.getTotalLength());
+        dot.style.opacity = 1;
+      } else {
+        dot.style.opacity = 0;
       }
+      if (pt) { dot.setAttribute('cx', pt.x); dot.setAttribute('cy', pt.y); }
 
+      var binnen = p >= 0.22 && p < 0.70;
+      kern.classList.toggle('leadlijn-binnen', binnen);
+      var actief = binnen ? Math.floor(((p - 0.22) / 0.48) * steps.length) : (p >= 0.70 && p < 0.92 ? steps.length - 1 : -1);
+      steps.forEach(function (s, i) { s.classList.toggle('leadlijn-active', i <= actief); });
+      kolommen[2].classList.toggle('leadlijn-binnen', p >= 0.90 && p < 0.97);
       animFrame = requestAnimationFrame(frame);
     }
 
-    // Static state for reduced motion
     function showStatic() {
       updatePath();
-      steps.forEach(function(s) { s.classList.add('leadlijn-active'); });
-      // Position dot in center
-      var length = path.getTotalLength();
-      var point = path.getPointAtLength(length * 0.5);
-      dot.setAttribute('cx', point.x);
-      dot.setAttribute('cy', point.y);
+      steps.forEach(function (s) { s.classList.add('leadlijn-active'); });
+      dot.style.opacity = 0;
     }
 
-    // Intersection observer
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         isVisible = entry.isIntersecting;
         if (isVisible) {
           updatePath();
-          if (reducedMotion) {
-            showStatic();
-          } else {
-            animateDot();
-          }
-        } else {
-          if (animFrame) {
-            cancelAnimationFrame(animFrame);
-            animFrame = null;
-          }
+          if (reducedMotion) { showStatic(); return; }
+          startTime = null;
+          animFrame = requestAnimationFrame(frame);
+        } else if (animFrame) {
+          cancelAnimationFrame(animFrame); animFrame = null;
         }
       });
     }, { threshold: 0.3 });
-
     observer.observe(diagram);
 
-    // Update on resize
     var resizeTimeout;
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
       clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(function() {
-        updatePath();
-      }, 100);
+      resizeTimeout = setTimeout(updatePath, 100);
     });
   }
 
