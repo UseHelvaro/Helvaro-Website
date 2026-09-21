@@ -7617,7 +7617,7 @@ p { text-wrap: pretty; }
   transition: height 0.3s var(--ease);
 }
 .nav.frosted .nav-logo img {
-  height: 42px;
+  height: 48px;
   transition: height 0.3s var(--ease);
 }
 
