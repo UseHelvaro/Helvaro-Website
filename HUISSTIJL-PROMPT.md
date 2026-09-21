@@ -58,8 +58,16 @@ Sand is een vulkleur, geen tekstkleur. Op sand-vlakken staat altijd donkere teks
 (#121212). Wil je het accent als tekst op wit, gebruik dan het diepere brons #8A6A33.
 
 TYPOGRAFIE
-  Koppen: Space Grotesk, 600 tot 700, strakke letterafstand (-0.02em)
-  Lopende tekst: Inter, 400 tot 500, regelafstand 1.6 tot 1.7
+  Koppen (--font-h): Bricolage Grotesque, variabel (opsz 12-96, wght 500-700),
+    letterafstand -0.02 tot -0.035em op displaykoppen, text-wrap: balance op h1/h2.
+    Scherper en eigenzinniger dan Space Grotesk, nog steeds tool-like.
+  Speciale items (--font-d): Instrument Serif italic, zand op zwart. Alleen voor:
+    - de .highlight span in elke H1 (de tweede zinshelft in kleur),
+    - pullquotes en stellingen (de sand callout-regels),
+    - prijsbedragen in .pricing-price (het getal; /maand blijft Inter).
+    Deze serif italic is de "signature" typografie; houd het zeldzaam.
+  Lopende tekst (--font-b): Inter 400-600, regelafstand 1.6-1.7.
+    Tabellen en statistieken: font-variant-numeric: tabular-nums.
   Koppen zijn kort en hard. Bodytekst is rustig en concreet.
 
 VORMTAAL
@@ -101,9 +109,10 @@ Voor beeldgeneratoren met een tekenlimiet:
 
 ```
 Sand Black huisstijl: zandkleur #E8D7B1 op bijna-zwart #121212, kaarten #232323,
-tekst #F9F9F9. Warm, minimaal, professioneel. Space Grotesk voor koppen, Inter voor
-tekst. Veel witruimte, zachte hoeken, subtiele randen, warm gegradeerde fotografie.
-Geen paars, geen neon, geen robots of hersenen, geen generieke AI-beeldtaal.
+tekst #F9F9F9. Warm, minimaal, professioneel. Bricolage Grotesque voor koppen,
+Instrument Serif italic zand voor speciale items (highlights, prijzen, pullquotes),
+Inter voor tekst. Veel witruimte, zachte hoeken, subtiele randen, warm gegradeerde
+fotografie. Geen paars, geen neon, geen robots of hersenen, geen generieke AI-beeldtaal.
 Moet betrouwbaar aanvoelen voor iemand die een werkplaats runt.
 ```
 
