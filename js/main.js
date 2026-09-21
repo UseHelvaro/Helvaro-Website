@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initFAQ();
   initReveal();
+  initStaggerReveal();
   initWhatsApp();
   initSmoothScroll();
   initContactForm();
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initVideo();
   initOmzet();
   initNavActief();
+  initKoppelingenMarquee();
 });
 
 /* ── Waar staan de plaatjes ───────────────────────────────────────────────
@@ -381,11 +383,12 @@ function initCountUp() {
 
 /* ============================================================
    SPOTLIGHT — cursor-tracking glow on cards
+   Enhanced: updates CSS custom properties for the radial gradient
    ============================================================ */
 function initSpotlight() {
   if (window.matchMedia('(hover: none)').matches) return;
   const cards = document.querySelectorAll(
-    '.feature-card, .proof-card, .pricing-card, .process-step, .comp-col, .form-card, .booking-placeholder'
+    '.feature-card, .proof-card, .pricing-card, .process-step, .comp-col, .form-card, .booking-placeholder, .lek-kaart, .verder-kaart'
   );
   cards.forEach(card => {
     card.classList.add('spot');
@@ -395,6 +398,52 @@ function initSpotlight() {
       card.style.setProperty('--my', (e.clientY - r.top) + 'px');
     });
   });
+}
+
+/* ============================================================
+   KOPPELINGEN MARQUEE — horizontal scroll of integration names
+   Reads from data-koppelingen on .koppel-marquee, duplicates for loop
+   ============================================================ */
+function initKoppelingenMarquee() {
+  const marquee = document.querySelector('.koppel-marquee');
+  if (!marquee) return;
+
+  const track = marquee.querySelector('.koppel-marquee-track');
+  if (!track || track.dataset.duplicated) return;
+
+  // Duplicate items for seamless loop
+  const items = track.querySelectorAll('.koppel-marquee-item');
+  items.forEach(item => {
+    const clone = item.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  });
+  track.dataset.duplicated = '1';
+}
+
+/* ============================================================
+   STAGGER REVEAL — enhanced IntersectionObserver for staggered children
+   ============================================================ */
+function initStaggerReveal() {
+  const containers = document.querySelectorAll('.reveal-stagger, .section-divider');
+  if (!containers.length || !('IntersectionObserver' in window)) {
+    containers.forEach(c => c.classList.add('visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -30px 0px' }
+  );
+
+  containers.forEach(el => observer.observe(el));
 }
 
 /* ============================================================
@@ -816,55 +865,104 @@ function initTheme() {
 }
 
 /* ============================================================
-   WHATSAPP MOCKUP — typindicator en berichten
+   WHATSAPP MOCKUP — zelfspelend gesprek met IntersectionObserver
+   Berichten verschijnen in volgorde met typindicator, loopt door,
+   pauzeert wanneer buiten beeld, respecteert reduced-motion.
    ============================================================ */
 function initWhatsApp() {
   const chat = document.querySelector('.wa-chat');
   if (!chat) return;
 
-  const messages = chat.querySelectorAll('.wa-msg');
+  const messages = Array.from(chat.querySelectorAll('.wa-msg'));
   const typing = chat.querySelector('.wa-typing');
   if (!messages.length) return;
 
+  // Reduced motion: toon alles statisch
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    messages.forEach(m => m.classList.add('visible'));
+    return;
+  }
+
   let loopTimer = null;
+  let timeouts = [];
+  let isVisible = true;
+
+  function clearAllTimeouts() {
+    timeouts.forEach(t => clearTimeout(t));
+    timeouts = [];
+    if (loopTimer) { clearTimeout(loopTimer); loopTimer = null; }
+  }
 
   function showMessage(index) {
     if (index >= messages.length) return;
     messages[index].classList.add('visible');
-    // Scroll chat to bottom
+    // Sand pulse on the appointment confirmation (last received message with link)
+    const bubble = messages[index].querySelector('.wa-bubble-link');
+    if (bubble) {
+      bubble.classList.add('pulse');
+      setTimeout(() => bubble.classList.remove('pulse'), 700);
+    }
     chat.scrollTop = chat.scrollHeight;
   }
 
   function run() {
+    if (!isVisible) return;
+
     // Reset
+    clearAllTimeouts();
     messages.forEach(m => m.classList.remove('visible'));
     if (typing) typing.classList.remove('visible');
 
     // Schedule each message
     messages.forEach((msg, i) => {
-      const delay = 1000 + i * 1100;
+      const delay = 1200 + i * 1300;
 
-      // Typ-indicator hoort bij Mathis, dus vóór de ontvangen berichten
+      // Typing indicator before received messages
       if (msg.classList.contains('received') && typing) {
-        setTimeout(() => {
+        timeouts.push(setTimeout(() => {
+          if (!isVisible) return;
           typing.classList.add('visible');
           chat.scrollTop = chat.scrollHeight;
-        }, delay - 600);
-        setTimeout(() => {
+        }, delay - 700));
+        timeouts.push(setTimeout(() => {
           typing.classList.remove('visible');
-        }, delay - 50);
+        }, delay - 50));
       }
 
-      setTimeout(() => showMessage(i), delay);
+      timeouts.push(setTimeout(() => {
+        if (!isVisible) return;
+        showMessage(i);
+      }, delay));
     });
 
-    // Restart loop after all messages + 3s pause
-    const totalDelay = 1000 + messages.length * 1100 + 3200;
+    // Restart loop after all messages + pause
+    const totalDelay = 1200 + messages.length * 1300 + 4000;
     loopTimer = setTimeout(run, totalDelay);
   }
 
+  // IntersectionObserver: pause when off-screen
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          const wasVisible = isVisible;
+          isVisible = entry.isIntersecting;
+          if (isVisible && !wasVisible) {
+            // Came into view: restart
+            run();
+          } else if (!isVisible && wasVisible) {
+            // Left view: pause
+            clearAllTimeouts();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(chat.closest('.phone-wrap') || chat);
+  }
+
   // Start after a short initial delay
-  setTimeout(run, 600);
+  setTimeout(run, 800);
 }
 
 /* ============================================================
