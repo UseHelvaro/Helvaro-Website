@@ -7336,3 +7336,301 @@ p { text-wrap: pretty; }
 .verder-kop::after { content: " \2192"; color: var(--accent-deep); }
 [data-theme="light"] .verder-kop::after { color: #8A6A33; }
 .verder-zin { font-size: 14px; line-height: 1.55; color: var(--text-2); }
+
+/* ============================================================
+   V6 — MOTION CRAFT PASS
+   Hero conversation self-play, scroll choreography, micro-interactions,
+   ambient depth, koppelingen marquee, view transitions, polish.
+   ============================================================ */
+
+/* Typography polish */
+.hero-title,
+.section-title,
+.cta-band-title { text-wrap: balance; }
+
+/* ── Hero conversation auto-play ───────────────────────────────────────────
+   The WhatsApp mockup animates itself: messages appear in sequence with
+   typing dots, loops calmly, pauses when off-screen. Under reduced motion
+   all messages show statically. */
+.wa-msg {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.wa-msg.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+}
+/* Static fallback for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .wa-msg { opacity: 1; transform: none; transition: none; }
+  .wa-typing { display: none !important; }
+}
+
+/* Sand pulse on appointment confirmation */
+.wa-bubble-link.pulse {
+  animation: sand-pulse 0.6s ease-out;
+}
+@keyframes sand-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0.5); }
+  100% { box-shadow: 0 0 0 16px rgba(var(--accent-rgb), 0); }
+}
+
+/* ── Enhanced reveal system ────────────────────────────────────────────────
+   Staggered children, deeper staggers, and soft scale-settle for images. */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.08s; }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.16s; }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.24s; }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.32s; }
+.reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.40s; }
+.reveal-stagger.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image scale-settle */
+.reveal-img {
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal-img.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Section label draw-in line */
+.section-label {
+  position: relative;
+  display: inline-block;
+}
+.section-label::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), rgba(var(--accent-rgb), 0.3));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--ease) 0.2s;
+}
+.section-header.visible .section-label::after,
+.reveal.visible .section-label::after {
+  transform: scaleX(1);
+}
+
+/* Section divider hairline that draws across */
+.section-divider {
+  position: relative;
+  height: 1px;
+  background: transparent;
+  margin: 0 auto;
+  max-width: 200px;
+}
+.section-divider::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb), 0.4), transparent);
+  transform: scaleX(0);
+  transition: transform 0.8s var(--ease);
+}
+.section-divider.visible::before {
+  transform: scaleX(1);
+}
+
+/* ── Micro-interactions ────────────────────────────────────────────────────
+   Cards get cursor-following radial highlight, buttons stay magnetic. */
+
+/* Card border glow on hover (enhanced spotlight) */
+.feature-card,
+.proof-card,
+.pricing-card,
+.process-step,
+.lek-kaart,
+.verder-kaart {
+  position: relative;
+  overflow: hidden;
+}
+.feature-card::before,
+.proof-card::before,
+.process-step::before,
+.lek-kaart::before,
+.verder-kaart::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  background: radial-gradient(
+    300px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(var(--accent-rgb), 0.08) 0%,
+    transparent 60%
+  );
+}
+.feature-card:hover::before,
+.proof-card:hover::before,
+.process-step:hover::before,
+.lek-kaart:hover::before,
+.verder-kaart:hover::before {
+  opacity: 1;
+}
+
+/* Featured pricing card breathing glow */
+.pricing-card.featured {
+  animation: breathe-glow 4s ease-in-out infinite;
+}
+@keyframes breathe-glow {
+  0%, 100% { box-shadow: 0 0 50px rgba(var(--accent-rgb), 0.12); }
+  50% { box-shadow: 0 0 70px rgba(var(--accent-rgb), 0.22); }
+}
+
+/* ── Koppelingen marquee ───────────────────────────────────────────────────
+   Slow horizontal scroll of integration names. Pauses on hover.
+   Static list under reduced motion. */
+.koppel-marquee {
+  overflow: hidden;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 1px solid var(--border-0);
+  border-bottom: 1px solid var(--border-0);
+  background: var(--bg-0);
+}
+.koppel-marquee-label {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 16px;
+}
+.koppel-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+}
+.koppel-marquee:hover .koppel-marquee-track {
+  animation-play-state: paused;
+}
+.koppel-marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: 1px solid var(--border-0);
+  background: var(--bg-card);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  white-space: nowrap;
+  transition: border-color 0.25s, color 0.25s;
+}
+.koppel-marquee-item:hover {
+  border-color: var(--border-2);
+  color: var(--text-1);
+}
+.koppel-marquee-item.live::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-fill);
+  box-shadow: 0 0 6px rgba(var(--accent-rgb), 0.6);
+}
+.koppel-marquee-item.bouw {
+  border-style: dashed;
+  color: var(--text-3);
+}
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .koppel-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+/* ── Ambient depth ─────────────────────────────────────────────────────────
+   Slow-moving warm gradient in hero and CTA sections. */
+.hero-ambient,
+.cta-band-ambient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background: radial-gradient(
+    ellipse 80% 50% at 50% 50%,
+    rgba(var(--accent-deep-rgb), 0.12) 0%,
+    transparent 70%
+  );
+  animation: ambient-drift 20s ease-in-out infinite alternate;
+}
+@keyframes ambient-drift {
+  0% { transform: translate(-5%, -3%) scale(1); }
+  100% { transform: translate(5%, 3%) scale(1.1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-ambient,
+  .cta-band-ambient { animation: none; }
+}
+[data-theme="light"] .hero-ambient,
+[data-theme="light"] .cta-band-ambient {
+  opacity: 0.25;
+}
+
+/* ── View Transitions API ──────────────────────────────────────────────────
+   Cross-fade for same-origin navigation. Graceful fallback. */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.25s;
+  animation-timing-function: ease-out;
+}
+
+/* ── Reduced motion: full fallback ─────────────────────────────────────────
+   Everything degrades to static, complete page. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal, .reveal-scale, .reveal-stagger > *, .reveal-img {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  .hero-title .w {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .pricing-card.featured { animation: none; }
+  .pricing-card.featured::before { animation: none; }
+  .hero-glow, .hero-glow-2 { transition: none; }
+  .section-label::after { transform: scaleX(1); transition: none; }
+}
