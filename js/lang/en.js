@@ -1731,3 +1731,39 @@ Object.assign(window.HELVARO_TR['en'], {
 Object.assign(window.HELVARO_TR['en'], {
   "Geen van deze drie gaat over te weinig klanten. Ze gaan allemaal over klanten die je al had.": "None of these three is about having too few customers. They are all about customers you already had."
 });
+
+Object.assign(window.HELVARO_TR['en'], {
+  "Credits op is nooit gesprek op: je agent blijft antwoorden, jij krijgt een seintje en vult aan wanneer het jou uitkomt. Bijkopen kost exact dezelfde prijs per credit als je plan, nooit een boete voor meer gebruik. Bij Scale ligt de praktische grens rond 20.000 credits per maand, ongeveer 1.000 gesprekken, en spreken we daarna gewoon over de juiste prijs.": "Out of credits never means a blocked conversation: your agent keeps answering, you get a heads-up, and you top up whenever it suits you. Topping up costs exactly the same price per credit as your plan, never a penalty for using more. On Scale the practical ceiling sits around 20,000 credits a month, roughly 1,000 conversations, and beyond that we simply talk about the right price."
+});
+
+Object.assign(window.HELVARO_TR['en'], {
+  "Andere sectoren · Keukens": "Other sectors · Kitchens",
+  "Bestaande keuken vervangen, we willen wel de muren laten staan": "Replacing an existing kitchen, we do want to keep the walls",
+  "Budgetrange, timing, nieuwbouw of renovatie, en of er al een opmeting mogelijk is. Wie daar geen antwoord op geeft, was ook geen showroombezoek geworden.": "Budget range, timing, new build or renovation, and whether a measuring appointment is already possible. Whoever does not answer that would not have become a showroom visit anyway.",
+  "De visualisatie-agent maakt beelden van een keuken in verschillende stijlen en indelingen. Een klant die twijfelt tussen twee richtingen, ziet het verschil voor de opmeting plaatsvindt.": "The visualisation agent creates images of a kitchen in different styles and layouts. A customer torn between two directions sees the difference before the measuring appointment takes place.",
+  "Doorvragen voor er iets wordt ingepland": "Asking the right questions before anything is booked",
+  "Duidelijk. Wanneer zou je willen starten, en met welk budget hou je rekening?": "Clear. When would you like to start, and what budget are you working with?",
+  "Een aanvraag voor een nieuwe keuken komt 's avonds binnen, of net wanneer je showroom vol staat met klanten die er al zijn. Helvaro vraagt door zodat elk gesprek een opmeting wordt in de agenda, niet een berichtje dat de volgende ochtend niemand meer terugvindt.": "A request for a new kitchen arrives in the evening, or right when your showroom is full of customers who are already there. Helvaro asks the right questions so every conversation becomes a measuring appointment in the calendar, not a message nobody finds again the next morning.",
+  "Een nieuwe keuken wacht niet tot je showroom leegloopt.": "A new kitchen does not wait for your showroom to empty out.",
+  "Een offerte van een half jaar geleden is geen verloren zaak. Vaak is het uitstel geweest, geen afstel.": "A quote from six months ago is not a lost cause. Often it was a postponement, not a cancellation.",
+  "Een opmeting of showroombezoek inplannen": "Booking a measuring appointment or showroom visit",
+  "Een week na de offerte vraagt je agent hoe het ervoor staat. Niet één keer, maar tot er antwoord is of de klant duidelijk afhaakt.": "A week after the quote, your agent asks how things stand. Not just once, but until there is an answer or the customer clearly drops out.",
+  "Extra voor keukens.": "Extra for kitchens.",
+  "Hallo, ik ben op zoek naar een nieuwe keuken, wat kost dat ongeveer? 👋": "Hi, I'm looking for a new kitchen, roughly what does that cost? 👋",
+  "Helvaro kwalificeert keukenaanvragen op budget, timing en type project, plant een opmeting of showroombezoek in en volgt de offerte nadien op.": "Helvaro qualifies kitchen enquiries on budget, timing and project type, books a measuring appointment or showroom visit, and follows up on the quote afterwards.",
+  "Het eerste is 's avonds en in het weekend: iemand bladert thuis door keukens en stuurt een bericht om half negen, terwijl de showroom dicht is. Het tweede is midden op de dag: de zaak staat vol met klanten die al voor de toonbank staan, en een nieuw bericht wacht tot iedereen weg is. Tegen dan is de interesse van 's ochtends vaak al ergens anders naartoe.": "The first is in the evening and at weekends: someone browses kitchens at home and sends a message around half past eight, while the showroom is closed. The second is in the middle of the day: the shop is full of customers already at the counter, and a new message waits until everyone has left. By then the interest from that morning has often already gone elsewhere.",
+  "Hoi! Dat hangt af van de indeling en de afwerking. Gaat het om een nieuwbouw of een bestaande keuken vervangen?": "Hi! That depends on the layout and the finish. Is this a new build or replacing an existing kitchen?",
+  "Keukenzaken: van aanvraag naar geboekte opmeting · Helvaro": "Kitchen showrooms: from enquiry to a booked measuring appointment · Helvaro",
+  "Minder aanvragen die 's ochtends al koud zijn, en een balie die zich op de klanten in de zaak kan richten in plaats van tussendoor te typen. Elk gesprek blijft leesbaar in het dashboard, en je neemt op elk moment zelf over.": "Fewer enquiries that have already gone cold by morning, and a front desk that can focus on the customers in the shop instead of typing in between. Every conversation stays readable in the dashboard, and you can take over yourself at any moment.",
+  "Past de aanvraag bij je stijl, je regio en je planning. Wat niet past, krijgt een net antwoord in plaats van stilte.": "Does the enquiry fit your style, your region and your planning. What does not fit gets a proper answer instead of silence.",
+  "Serieuze aanvragen krijgen meteen een vrij moment in de agenda, bij de klant thuis of bij jou in de zaak.": "Serious enquiries immediately get a free slot in the calendar, at the customer's home or in your shop.",
+  "Twee momenten waarop je het misloopt": "Two moments where it slips away",
+  "Type project, timing en budget, ook 's avonds. De opmeting staat voor de showroom weer opengaat.": "Project type, timing and budget, even in the evening. The measuring appointment is set before the showroom opens again.",
+  "Voorjaar, ergens tussen 12.000 en 18.000": "Spring, somewhere between 12,000 and 18,000",
+  "📅 Opmeting bevestigd, zaterdag 10:00": "📅 Measuring appointment confirmed, Saturday 10:00"
+});
+
+Object.assign(window.HELVARO_TR['en'], {
+  "Dinsdag": "Tuesday",
+  "Keukens": "Kitchens"
+});

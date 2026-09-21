@@ -1731,3 +1731,39 @@ Object.assign(window.HELVARO_TR['es'], {
 Object.assign(window.HELVARO_TR['es'], {
   "Geen van deze drie gaat over te weinig klanten. Ze gaan allemaal over klanten die je al had.": "Ninguno de estos tres va de tener pocos clientes. Todos van de clientes que ya tenías."
 });
+
+Object.assign(window.HELVARO_TR['es'], {
+  "Credits op is nooit gesprek op: je agent blijft antwoorden, jij krijgt een seintje en vult aan wanneer het jou uitkomt. Bijkopen kost exact dezelfde prijs per credit als je plan, nooit een boete voor meer gebruik. Bij Scale ligt de praktische grens rond 20.000 credits per maand, ongeveer 1.000 gesprekken, en spreken we daarna gewoon over de juiste prijs.": "Sin créditos nunca significa conversación bloqueada: tu agente sigue respondiendo, recibes un aviso y recargas cuando te convenga. Recargar cuesta exactamente el mismo precio por crédito que tu plan, nunca una penalización por usar más. En Scale el límite práctico ronda los 20.000 créditos al mes, unas 1.000 conversaciones, y a partir de ahí simplemente hablamos del precio adecuado."
+});
+
+Object.assign(window.HELVARO_TR['es'], {
+  "Andere sectoren · Keukens": "Otros sectores · Cocinas",
+  "Bestaande keuken vervangen, we willen wel de muren laten staan": "Sustituir una cocina existente, queremos conservar las paredes",
+  "Budgetrange, timing, nieuwbouw of renovatie, en of er al een opmeting mogelijk is. Wie daar geen antwoord op geeft, was ook geen showroombezoek geworden.": "Rango de presupuesto, calendario, obra nueva o reforma, y si ya es posible una cita de medición. Quien no responde a eso tampoco se habría convertido en una visita al showroom.",
+  "De visualisatie-agent maakt beelden van een keuken in verschillende stijlen en indelingen. Een klant die twijfelt tussen twee richtingen, ziet het verschil voor de opmeting plaatsvindt.": "El agente de visualización crea imágenes de una cocina en distintos estilos y distribuciones. Un cliente que duda entre dos direcciones ve la diferencia antes de que se realice la cita de medición.",
+  "Doorvragen voor er iets wordt ingepland": "Preguntar antes de agendar nada",
+  "Duidelijk. Wanneer zou je willen starten, en met welk budget hou je rekening?": "Entendido. ¿Cuándo te gustaría empezar, y con qué presupuesto cuentas?",
+  "Een aanvraag voor een nieuwe keuken komt 's avonds binnen, of net wanneer je showroom vol staat met klanten die er al zijn. Helvaro vraagt door zodat elk gesprek een opmeting wordt in de agenda, niet een berichtje dat de volgende ochtend niemand meer terugvindt.": "Una consulta sobre una cocina nueva llega por la noche, o justo cuando tu showroom está lleno de clientes que ya están allí. Helvaro pregunta lo necesario para que cada conversación se convierta en una cita de medición en la agenda, no en un mensaje que nadie vuelve a encontrar al día siguiente.",
+  "Een nieuwe keuken wacht niet tot je showroom leegloopt.": "Una cocina nueva no espera a que tu showroom se vacíe.",
+  "Een offerte van een half jaar geleden is geen verloren zaak. Vaak is het uitstel geweest, geen afstel.": "Un presupuesto de hace medio año no es una causa perdida. A menudo fue un aplazamiento, no una cancelación.",
+  "Een opmeting of showroombezoek inplannen": "Agendar una cita de medición o visita al showroom",
+  "Een week na de offerte vraagt je agent hoe het ervoor staat. Niet één keer, maar tot er antwoord is of de klant duidelijk afhaakt.": "Una semana después del presupuesto, tu agente pregunta cómo va todo. No solo una vez, sino hasta que haya una respuesta o el cliente se retire claramente.",
+  "Extra voor keukens.": "Extra para cocinas.",
+  "Hallo, ik ben op zoek naar een nieuwe keuken, wat kost dat ongeveer? 👋": "Hola, busco una cocina nueva, ¿cuánto cuesta más o menos? 👋",
+  "Helvaro kwalificeert keukenaanvragen op budget, timing en type project, plant een opmeting of showroombezoek in en volgt de offerte nadien op.": "Helvaro cualifica las consultas de cocina según presupuesto, calendario y tipo de proyecto, agenda una cita de medición o visita al showroom y hace seguimiento del presupuesto después.",
+  "Het eerste is 's avonds en in het weekend: iemand bladert thuis door keukens en stuurt een bericht om half negen, terwijl de showroom dicht is. Het tweede is midden op de dag: de zaak staat vol met klanten die al voor de toonbank staan, en een nieuw bericht wacht tot iedereen weg is. Tegen dan is de interesse van 's ochtends vaak al ergens anders naartoe.": "El primero es por la noche y el fin de semana: alguien hojea cocinas en casa y envía un mensaje sobre las ocho y media, mientras el showroom está cerrado. El segundo es en pleno día: la tienda está llena de clientes que ya están en el mostrador, y un mensaje nuevo espera hasta que todos se hayan ido. Para entonces, el interés de la mañana a menudo ya se ha ido a otra parte.",
+  "Hoi! Dat hangt af van de indeling en de afwerking. Gaat het om een nieuwbouw of een bestaande keuken vervangen?": "¡Hola! Depende de la distribución y del acabado. ¿Se trata de una obra nueva o de sustituir una cocina existente?",
+  "Keukenzaken: van aanvraag naar geboekte opmeting · Helvaro": "Cocinas: de la consulta a la cita de medición reservada · Helvaro",
+  "Minder aanvragen die 's ochtends al koud zijn, en een balie die zich op de klanten in de zaak kan richten in plaats van tussendoor te typen. Elk gesprek blijft leesbaar in het dashboard, en je neemt op elk moment zelf over.": "Menos consultas que ya se han enfriado por la mañana, y un mostrador que puede centrarse en los clientes de la tienda en lugar de escribir entre medias. Cada conversación sigue siendo legible en el panel, y tú puedes intervenir en cualquier momento.",
+  "Past de aanvraag bij je stijl, je regio en je planning. Wat niet past, krijgt een net antwoord in plaats van stilte.": "Encaja la consulta con tu estilo, tu región y tu planificación. Lo que no encaja recibe una respuesta correcta en lugar de silencio.",
+  "Serieuze aanvragen krijgen meteen een vrij moment in de agenda, bij de klant thuis of bij jou in de zaak.": "Las consultas serias obtienen inmediatamente un hueco libre en la agenda, en casa del cliente o en tu tienda.",
+  "Twee momenten waarop je het misloopt": "Dos momentos en los que se te escapa",
+  "Type project, timing en budget, ook 's avonds. De opmeting staat voor de showroom weer opengaat.": "Tipo de proyecto, calendario y presupuesto, incluso por la noche. La cita de medición queda fijada antes de que el showroom vuelva a abrir.",
+  "Voorjaar, ergens tussen 12.000 en 18.000": "Primavera, entre 12.000 y 18.000 aproximadamente",
+  "📅 Opmeting bevestigd, zaterdag 10:00": "📅 Cita de medición confirmada, sábado 10:00"
+});
+
+Object.assign(window.HELVARO_TR['es'], {
+  "Dinsdag": "Martes",
+  "Keukens": "Cocinas"
+});
