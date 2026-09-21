@@ -36,7 +36,7 @@ our $NEGEER = qr/^(?:Helvaro|Faro|Login|Home|Contact|FAQ|WhatsApp|Automotive|
                     # Talen staan in hun eigen taal in de kiezer, dat is de bedoeling.
                     Nederlands|Deutsch|English|Fran\x{00e7}ais|Espa\x{00f1}ol|
                     # Namen, merken en vaste termen.
-                    Mathis\s.*|Driss\s.*|Wout\s.*|Sindi\sSaid|Stefan\sV\.|
+                    Mathis\s.*|Driss\s.*|Wout\s.*|Katrien\s.*|Sindi\sSaid|Stefan\sV\.|
                     Teljo\sCrisrosio\sKodia|Passat.*|
                     Co-Founder\s.*|Limited\sUse|E-Mail:?|Google\sAgenda|
                     app\.helvaro\.pro|hello\@helvaro\.pro|\x{00a9}\s*\d{4}\sHelvaro)$/x;
@@ -73,6 +73,7 @@ my @PAGES = qw(
   meeting.html
   sectoren/vastgoed.html
   sectoren/bouw.html
+  sectoren/keuken.html
   contact.html
   aanmelden.html
   privacybeleid.html

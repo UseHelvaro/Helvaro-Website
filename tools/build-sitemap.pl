@@ -33,6 +33,7 @@ my @PAGES = (
   ['meeting.html',                                '0.7', 'monthly'],
   ['sectoren/vastgoed.html',                      '0.5', 'monthly'],
   ['sectoren/bouw.html',                          '0.5', 'monthly'],
+  ['sectoren/keuken.html',                        '0.5', 'monthly'],
   ['contact.html',                                '0.5', 'monthly'],
   ['aanmelden.html',                              '0.5', 'monthly'],
   ['privacybeleid.html',                          '0.3', 'yearly'],

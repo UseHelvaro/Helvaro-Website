@@ -111,6 +111,10 @@ my @PAGINAS = (
   ['koppelingen/rdw-kenteken.html',
    'Helvaro en het RDW-kentekenregister',
    'Voertuiggegevens en APK-vervaldatum op basis van het kenteken dat de klant noemt. Stand van zaken en wat we wel en niet opslaan.'],
+
+  ['sectoren/keuken.html',
+   'Keukenzaken: van aanvraag naar geboekte opmeting',
+   'Helvaro kwalificeert keukenaanvragen op budget, timing en type project, plant een opmeting of showroombezoek in en volgt de offerte nadien op.'],
 );
 
 sub op { my ($diep) = @_; return $diep == 0 ? '' : '../' x $diep }

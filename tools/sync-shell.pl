@@ -50,7 +50,7 @@ my @PAGES = qw(
   index.html systeem.html automotive.html roi.html cases.html
   controle.html faro.html
   waarom.html contact.html meeting.html aanmelden.html privacybeleid.html
-  sectoren/vastgoed.html sectoren/bouw.html
+  sectoren/vastgoed.html sectoren/bouw.html sectoren/keuken.html
   agents/index.html
   agents/apk-herinnering-agent.html
   agents/werkplaats-inplan-agent.html
