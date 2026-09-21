@@ -172,7 +172,7 @@ for my $rij (@PAGINAS) {
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="${o}css/style.css?v=93">
+  <link rel="stylesheet" href="${o}css/style.css?v=94">
 </head>
 <body>
   <a class="skip-link" href="#main">Naar de inhoud</a>
