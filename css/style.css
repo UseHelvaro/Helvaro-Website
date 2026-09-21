@@ -53,8 +53,9 @@
   --radius-l: 22px;
   --radius-xl: 36px;
 
-  --font-h: 'Space Grotesk', system-ui, sans-serif;
+  --font-h: 'Bricolage Grotesque', system-ui, sans-serif;
   --font-b: 'Inter', system-ui, sans-serif;
+  --font-d: 'Instrument Serif', Georgia, serif;
 
   --nav-h: 78px; --topbar-h: 45px;
   --ease: cubic-bezier(0.4,0,0.2,1);
@@ -414,17 +415,22 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .hero-title {
   font-family: var(--font-h);
   font-size: clamp(36px, 5vw, 58px);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  font-variation-settings: 'opsz' 48;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
   color: var(--text-1);
   margin-bottom: 20px;
+  text-wrap: balance;
 }
 .hero-title .highlight {
-  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-family: var(--font-d);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+  -webkit-text-fill-color: var(--accent);
+  background: none;
+  letter-spacing: -0.01em;
 }
 .hero-subtitle {
   font-size: 17px;
@@ -476,11 +482,21 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .section-title {
   font-family: var(--font-h);
   font-size: clamp(28px, 4vw, 44px);
-  font-weight: 700;
+  font-weight: 600;
+  font-variation-settings: 'opsz' 36;
   letter-spacing: -0.02em;
   line-height: 1.15;
   color: var(--text-1);
   margin-bottom: 14px;
+  text-wrap: balance;
+}
+.section-title .highlight {
+  font-family: var(--font-d);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+  -webkit-text-fill-color: var(--accent);
+  background: none;
 }
 .section-sub {
   font-size: 16px;
@@ -1368,17 +1384,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .nav-links .nav-link:hover::after { transform: scaleX(1); }
 
-/* Animated gradient headline highlight */
-.hero-title .highlight {
-  background: linear-gradient(110deg, var(--accent-light), var(--accent), var(--accent-dark), var(--accent-light));
-  background-size: 250% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-pan 6s linear infinite;
-  filter: drop-shadow(0 0 24px rgba(var(--accent-rgb), 0.35));
-}
-@keyframes gradient-pan { to { background-position: 250% 0; } }
+/* Old animated gradient removed - now using serif italic highlight */
 
 /* Hero grid overlay */
 .hero-grid {
@@ -2209,12 +2215,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   animation: word-in 0.7s var(--ease) forwards;
 }
 .hero-title .highlight .w {
-  background: linear-gradient(110deg, var(--accent-light), var(--accent), var(--accent-dark), var(--accent-light));
-  background-size: 250% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: word-in 0.7s var(--ease) forwards, gradient-pan 6s linear infinite;
+  animation: word-in 0.7s var(--ease) forwards;
 }
 @keyframes word-in { to { opacity: 1; transform: none; } }
 
@@ -2768,13 +2769,22 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   background: rgba(var(--accent-rgb), 0.04);
 }
 .pricing-price {
-  font-family: var(--font-h);
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--text-1);
+  font-family: var(--font-d);
+  font-style: italic;
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--accent);
   margin-top: 8px;
   line-height: 1;
+}
+.pricing-per {
+  font-family: var(--font-b);
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-2);
+  letter-spacing: 0;
 }
 .pricing-per {
   font-family: var(--font-b);
@@ -3434,14 +3444,7 @@ select:focus-visible {
 }
 
 
-/* Accentwoorden in sectietitels, rustiger dan in de hero: geen animatie,
-   want die hoort bij de kop bovenaan de pagina. */
-.section-title .highlight {
-  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-dark) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+/* Old gradient section-title highlight removed - now using serif italic */
 
 /* ============================================================
    DASHBOARD — Faro, nagebouwd in opmaak
@@ -7558,4 +7561,161 @@ p { text-wrap: pretty; }
   .pricing-card.featured::before { animation: none; }
   .hero-glow, .hero-glow-2 { transition: none; }
   .section-label::after { transform: scaleX(1); transition: none; }
+  .phone-floating { animation: none !important; }
+  .leadlijn-dot { display: none; }
+}
+
+/* ============================================================
+   LEADLIJN — Signature flow animation
+   ============================================================ */
+.leadlijn-svg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  overflow: visible;
+}
+.leadlijn-path {
+  stroke-dasharray: 8 4;
+  opacity: 0.6;
+}
+.leadlijn-dot {
+  filter: url(#leadlijn-glow);
+  transition: opacity 0.3s;
+}
+.stroom-stappen li {
+  transition: color 0.4s var(--ease), transform 0.3s var(--ease);
+}
+.stroom-stappen li.leadlijn-active {
+  color: var(--accent);
+}
+.stroom-stappen li.leadlijn-active .stroom-nr {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.12);
+}
+
+/* ============================================================
+   FROSTED NAV — Glass effect on scroll
+   ============================================================ */
+.nav.frosted {
+  background: rgba(var(--veil-rgb), 0.82);
+  border-bottom-color: var(--border-0);
+  -webkit-backdrop-filter: blur(24px) saturate(1.3);
+  backdrop-filter: blur(24px) saturate(1.3);
+  height: calc(var(--nav-h) - 8px);
+}
+.nav.frosted .nav-inner {
+  transition: height 0.3s var(--ease);
+}
+.nav.frosted .nav-logo img {
+  height: 42px;
+  transition: height 0.3s var(--ease);
+}
+
+/* ============================================================
+   PHONE FLOAT — Gentle floating animation
+   ============================================================ */
+.phone-floating {
+  animation: phone-float 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.15s ease-out;
+}
+@keyframes phone-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ============================================================
+   GRAIN OVERLAY — Subtle noise texture
+   ============================================================ */
+.grain-svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: var(--grain-opacity, 0.04);
+  mix-blend-mode: soft-light;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+[data-theme="light"] .grain-overlay {
+  opacity: 0.018;
+}
+
+/* ============================================================
+   SHEEN BUTTONS — Sand sweep on hover
+   ============================================================ */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+.btn-sheen {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease-out;
+  pointer-events: none;
+}
+.btn-sheen.active {
+  left: 150%;
+}
+
+/* ============================================================
+   LINE REVEAL — Per-line clipped rise
+   ============================================================ */
+.line-reveal-ready {
+  overflow: hidden;
+}
+.line-reveal-ready .w {
+  display: inline-block;
+  animation: line-rise 0.6s var(--ease) both;
+  transform: translateY(100%);
+  opacity: 0;
+}
+@keyframes line-rise {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   TABULAR NUMBERS — Stats and tables
+   ============================================================ */
+.pricing-volume,
+.count-up,
+.stat-num,
+.roi-result,
+.calc-result {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   CARD HOVER LIFT
+   ============================================================ */
+.pricing-card,
+.feature-card,
+.proof-card,
+.verder-kaart,
+.lek-kaart {
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.pricing-card:hover,
+.feature-card:hover,
+.proof-card:hover,
+.verder-kaart:hover,
+.lek-kaart:hover {
+  transform: translateY(-3px);
+  border-color: rgba(var(--accent-rgb), 0.25);
 }
