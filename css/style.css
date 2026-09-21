@@ -162,7 +162,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   gap: 32px;
 }
 .nav-logo img {
-  height: 44px;
+  height: 56px;
   width: auto;
   display: block;
 }
@@ -1123,7 +1123,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   flex-wrap: wrap;
 }
 .footer-brand {}
-.footer-logo { height: 46px; width: auto; margin-bottom: 0; }
+.footer-logo { height: 60px; width: auto; margin-bottom: 0; }
 .footer-tagline { font-size: 13px; color: var(--text-3); max-width: 240px; line-height: 1.5; }
 .footer-links {
   display: flex;
@@ -1292,8 +1292,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
-  .nav-logo img { height: 34px; }
-  .footer-logo { height: 38px; }
+  .nav-logo img { height: 42px; }
+  .footer-logo { height: 48px; }
 
   .hero-inner { padding: 44px 20px 60px; }
   .hero-title { font-size: 32px; }
