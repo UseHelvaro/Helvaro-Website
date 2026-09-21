@@ -17,7 +17,7 @@ use warnings;
 # ── 01 ─────────────────────────────────────────────────────────────────────
 {
   slug => 'apk-herinnering-agent',
-  nr   => '01',
+  nr   => '06',
   naam => 'APK-herinnering',
   h1   => 'De APK verloopt over zes weken. <span class="highlight">Wie belt er eerst?</span>',
   lede => 'Je weet precies welke auto\'s deze maand aan de beurt zijn. Die lijst staat in je systeem en niemand heeft tijd om hem af te bellen. De klant weet het zelf niet meer en boekt bij de garage die hem als eerste een bericht stuurt.',
@@ -193,7 +193,7 @@ use warnings;
 # ── 03 ─────────────────────────────────────────────────────────────────────
 {
   slug => 'gemiste-gesprekken-agent',
-  nr   => '03',
+  nr   => '01',
   naam => 'Gemiste gesprekken',
   h1   => 'Je weet niet hoeveel klanten je misloopt. <span class="highlight">Dat is het probleem.</span>',
   lede => 'Een onbeantwoorde oproep laat geen spoor na. Er komt geen melding, er staat niets in een systeem en niemand voelt zich verantwoordelijk. Het is het enige gat in je bedrijf waarvan je de omvang niet kent, en meestal het eerste dat we dichtmaken.',
@@ -281,7 +281,7 @@ use warnings;
 # ── 04 ─────────────────────────────────────────────────────────────────────
 {
   slug => 'offerte-opvolg-agent',
-  nr   => '04',
+  nr   => '08',
   naam => 'Offerte-opvolging',
   h1   => 'De prijs is berekend en verstuurd. <span class="highlight">Daarna gebeurt er niets meer.</span>',
   lede => 'Het dure werk is al gedaan: uitzoeken, onderdelen opvragen, een bedrag opstellen. Wat ontbreekt is het laatste duwtje, en dat is precies waar de marge zit. Een offerte zonder opvolging is een investering die je weggooit.',
@@ -369,7 +369,7 @@ use warnings;
 # ── 05 ─────────────────────────────────────────────────────────────────────
 {
   slug => 'no-show-agent',
-  nr   => '05',
+  nr   => '10',
   naam => 'No-shows',
   h1   => 'Een lege brug kost evenveel <span class="highlight">als een volle.</span>',
   lede => 'De afspraak van twee uur komt niet opdagen. Je monteur staat er, de kosten lopen door, en het is te laat om het gat nog te vullen. Vier no-shows per maand is ruim een halve werkdag die je gewoon weggeeft.',
@@ -455,7 +455,7 @@ use warnings;
 # ── 06 ─────────────────────────────────────────────────────────────────────
 {
   slug => 'onderdelen-navraag-agent',
-  nr   => '06',
+  nr   => '03',
   naam => 'Onderdelen navragen',
   h1   => 'Drie keer terugbellen over één remblok. <span class="highlight">Daar gaat je ochtend.</span>',
   lede => 'De klant vraagt wat het kost en wanneer het kan. Je balie moet eerst de prijs opzoeken, dan de levertijd, dan terugbellen, en dan blijkt de klant in een vergadering te zitten. Dat heen en weer is het werk, niet de reparatie.',
@@ -543,7 +543,7 @@ use warnings;
 # ── 07 ─────────────────────────────────────────────────────────────────────
 {
   slug => 'leenauto-agent',
-  nr   => '07',
+  nr   => '04',
   naam => 'Leenauto',
   h1   => '"En hoe kom ik dan op mijn werk?" <span class="highlight">Dat is de vraag die alles ophoudt.</span>',
   lede => 'Bij elke klus die langer dan een halve dag duurt, komt dezelfde vraag. Zolang die niet beantwoord is, wordt er niets geboekt. En het antwoord is bijna altijd bekend: er staat er wel of niet een vrij.',
@@ -630,7 +630,7 @@ use warnings;
 # ── 08 ─────────────────────────────────────────────────────────────────────
 {
   slug => 'schade-intake-agent',
-  nr   => '08',
+  nr   => '05',
   naam => 'Schade-intake',
   h1   => 'Bij schade begint het werk <span class="highlight">met vragen stellen.</span>',
   lede => 'Voordat je iets kunt zeggen over reparatie of kosten, moet je weten wat er gebeurd is, wie er aansprakelijk is en welke verzekeraar erbij hoort. Die informatie ophalen kost een half uur aan de telefoon, en gebeurt meestal op het drukste moment van de dag.',
@@ -806,7 +806,7 @@ use warnings;
 # ── 10 ─────────────────────────────────────────────────────────────────────
 {
   slug => 'onderhoudsbeurt-herinnering-agent',
-  nr   => '10',
+  nr   => '07',
   naam => 'Onderhoudsbeurt',
   h1   => 'Hij komt echt nog wel een keer. <span class="highlight">Alleen niet bij jou.</span>',
   lede => 'De klant van vorig jaar heeft geen klacht en is niet boos. Hij is je gewoon vergeten, en rijdt door tot er iets kapotgaat. Dan belt hij degene die het dichtst bij is of die hem het laatst iets stuurde.',
