@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroParallax();
   initCalculator();
   initBooking();
-  initDemoForm();
   initTheme();
   initSignature();
   initWordAnim();
@@ -717,89 +716,6 @@ function initContactForm() {
   });
 }
 
-/* ============================================================
-   DEMO-FORMULIER — bezoeker vult zijn nummer in en start
-   meteen een demo-gesprek met de Helvaro-AI op WhatsApp.
-
-   INSTELLEN: zet het WhatsApp-demonummer van Helvaro in het
-   data-demo-number attribuut van .demo-form in index.html,
-   in internationaal formaat zonder + of spaties.
-   Bijvoorbeeld: data-demo-number="32470123456"
-   Zolang het leeg is, valt de knop terug op de boekingspagina.
-   ============================================================ */
-/* Teksten van het demo-formulier in de vijf talen */
-const FOUTMELDING = {
-  nl: 'Vul je WhatsApp-nummer in, inclusief landcode (bijvoorbeeld +32).',
-  fr: 'Saisissez votre num\u00e9ro WhatsApp avec l\'indicatif pays (par exemple +32).',
-  en: 'Enter your WhatsApp number including the country code (for example +32).',
-  de: 'Geben Sie Ihre WhatsApp-Nummer inklusive L\u00e4ndervorwahl ein (zum Beispiel +32).',
-  es: 'Introduce tu n\u00famero de WhatsApp con el prefijo del pa\u00eds (por ejemplo +32).'
-};
-const OPENINGSZIN = {
-  nl: 'Hallo Helvaro, ik wil graag een demo-gesprek. Mijn nummer is {nummer}.',
-  fr: 'Bonjour Helvaro, je souhaite une conversation de d\u00e9mo. Mon num\u00e9ro est {nummer}.',
-  en: 'Hi Helvaro, I would like a demo conversation. My number is {nummer}.',
-  de: 'Hallo Helvaro, ich m\u00f6chte gern ein Demo-Gespr\u00e4ch. Meine Nummer ist {nummer}.',
-  es: 'Hola Helvaro, me gustar\u00eda una conversaci\u00f3n de demo. Mi n\u00famero es {nummer}.'
-};
-
-function initDemoForm() {
-  const form = document.querySelector('.demo-form');
-  if (!form) return;
-
-  const input = form.querySelector('.demo-input');
-  const note = form.querySelector('.demo-note');
-  const noteText = note ? note.textContent : '';
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-
-    const raw = (input.value || '').trim();
-    const digits = raw.replace(/[^\d]/g, '');
-    const taal = (document.documentElement.lang || 'nl').slice(0, 2);
-
-    // Minimaal een plausibel internationaal nummer
-    if (digits.length < 8) {
-      input.classList.add('invalid');
-      if (note) {
-        note.textContent = FOUTMELDING[taal] || FOUTMELDING.nl;
-        note.classList.add('error');
-      }
-      input.focus();
-      return;
-    }
-
-    input.classList.remove('invalid');
-    if (note) {
-      note.textContent = noteText;
-      note.classList.remove('error');
-    }
-
-    const demoNumber = (form.dataset.demoNumber || '').replace(/[^\d]/g, '');
-
-    if (!demoNumber) {
-      // Nog geen demonummer ingesteld: stuur door naar de boekingspagina
-      window.location.href = 'meeting.html#booking';
-      return;
-    }
-
-    const sjabloon = OPENINGSZIN[taal] || OPENINGSZIN.nl;
-    const msg = sjabloon.replace('{nummer}', raw);
-    window.open(
-      'https://wa.me/' + demoNumber + '?text=' + encodeURIComponent(msg),
-      '_blank',
-      'noopener'
-    );
-  });
-
-  input.addEventListener('input', () => {
-    input.classList.remove('invalid');
-    if (note && note.classList.contains('error')) {
-      note.textContent = noteText;
-      note.classList.remove('error');
-    }
-  });
-}
 
 
 /* ============================================================

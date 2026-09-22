@@ -39,7 +39,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=98">
+  <link rel="stylesheet" href="css/style.css?v=99">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -103,11 +103,11 @@
             </a>
             <a href="controle.html" class="navdrop-item" role="menuitem">
               <span class="ndi-title">Controle en privacy</span>
-              <span class="ndi-sub">Wat een agent zelf mag, en waar je data staat</span>
+              <span class="ndi-sub">Wat het systeem zelf mag, en waar je data staat</span>
             </a>
             <a href="faro.html" class="navdrop-item" role="menuitem">
               <span class="ndi-title">Faro</span>
-              <span class="ndi-sub">Waar je meeleest, goedkeurt en vragen stelt</span>
+              <span class="ndi-sub">Meelezen, overnemen en hulp bij je berichten</span>
             </a>
           </div>
         </div>
@@ -200,11 +200,11 @@
         </a>
         <a href="controle.html" class="navdrop-item" role="menuitem">
           <span class="ndi-title">Controle en privacy</span>
-          <span class="ndi-sub">Wat een agent zelf mag, en waar je data staat</span>
+          <span class="ndi-sub">Wat het systeem zelf mag, en waar je data staat</span>
         </a>
         <a href="faro.html" class="navdrop-item" role="menuitem">
           <span class="ndi-title">Faro</span>
-          <span class="ndi-sub">Waar je meeleest, goedkeurt en vragen stelt</span>
+          <span class="ndi-sub">Meelezen, overnemen en hulp bij je berichten</span>
         </a>
       </div>
     </div>
@@ -296,14 +296,28 @@
             <a href="systeem.html" class="btn btn-ghost btn-lg">Bekijk hoe het werkt</a>
           </div>
 
-          <form class="demo-form" data-demo-number="32498078573" novalidate>
-            <label class="demo-label" for="demo-phone">Of stel zelf een vraag over een auto, via WhatsApp</label>
-            <div class="demo-row">
-              <input class="demo-input" type="tel" id="demo-phone" name="phone" placeholder="+32 470 12 34 56" autocomplete="tel" inputmode="tel" required>
-              <button type="submit" class="btn demo-btn">Start gesprek <span class="btn-arrow" aria-hidden="true">&#8594;</span></button>
+          <!-- Hier stond een veld waarin je je eigen nummer kon achterlaten
+               om met het systeem te praten. Dat verkocht het product niet,
+               het liet alleen zien dat het kon typen. De ruimte gaat nu naar
+               de drie kanalen, want dat is wat een autobedrijf herkent. -->
+          <div class="hero-kanalen">
+            <span class="hk-kop">Drie kanalen, één klantdossier</span>
+            <div class="hk-rij">
+              <span class="hk-kanaal">
+                <span class="hk-icoon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M3 9h18"/><path d="M6.5 6.8h.01M9 6.8h.01"/></svg></span>
+                Website
+              </span>
+              <span class="hk-kanaal">
+                <span class="hk-icoon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a7.5 7.5 0 0 1-11.2 6.5L4 20l1.5-4.3A7.5 7.5 0 1 1 20 12z"/><path d="M9 12h.01M12.5 12h.01M16 12h.01"/></svg></span>
+                WhatsApp
+              </span>
+              <span class="hk-kanaal">
+                <span class="hk-icoon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3.8 7l8.2 6 8.2-6"/></svg></span>
+                E-mail
+              </span>
             </div>
-            <p class="demo-note">Gratis en vrijblijvend. Je praat met hetzelfde systeem dat jouw kopers te zien krijgen.</p>
-          </form>
+            <p class="hk-zin">Begint hij op je site en gaat hij verder op WhatsApp, dan is dat dezelfde koper met dezelfde wagen.</p>
+          </div>
 
           <div class="trust-row">
             <span class="trust-pill">Gemaakt in België</span>
@@ -427,6 +441,43 @@
             </ul>
           </div>
 
+        </div>
+
+        <!-- E-mail wordt overal als restkanaal behandeld, terwijl daar de
+             langste aanvragen binnenkomen: met inruil, budget en een moment
+             erin. Daarom staat hier een echte mail en niet een vinkje in een
+             lijstje met koppelingen. -->
+        <div class="mail-blok reveal">
+          <div class="mail-kaart">
+            <div class="mail-balk">
+              <span class="mail-label">Inkomende mail</span>
+              <span class="mail-tijd">donderdag 08:30</span>
+            </div>
+            <div class="mail-body">
+              <p class="mail-van"><span class="mail-veld">Van</span>Thomas Peeters</p>
+              <p class="mail-onderwerp"><span class="mail-veld">Onderwerp</span>Interesse in BMW X5</p>
+              <p class="mail-tekst">Goedenavond, ik heb interesse in de BMW X5 die op uw site staat. Is die nog beschikbaar? Ik rijd zelf een Audi A4 uit 2018 die ik eventueel wil inruilen. In het weekend heb ik tijd om langs te komen.</p>
+            </div>
+          </div>
+
+          <div class="mail-pijl" aria-hidden="true">&#8594;</div>
+
+          <div class="mail-kaart mail-kaart-uit">
+            <div class="mail-balk">
+              <span class="mail-label">Eruit gehaald</span>
+              <span class="mail-tijd">08:31</span>
+            </div>
+            <div class="mail-body">
+              <dl class="mail-velden">
+                <div><dt>Koper</dt><dd>Thomas Peeters</dd></div>
+                <div><dt>Wagen</dt><dd>BMW X5 xDrive30d · 2021</dd></div>
+                <div><dt>Vraag</dt><dd>Beschikbaarheid</dd></div>
+                <div><dt>Inruil</dt><dd>Audi A4 · 2018</dd></div>
+                <div><dt>Moment</dt><dd>Weekend</dd></div>
+              </dl>
+              <p class="mail-voet">Alleen wat er in de mail staat. Wat hij niet schrijft, wordt niet ingevuld.</p>
+            </div>
+          </div>
         </div>
 
         <p class="stroom-voet reveal">Wisselt hij van kanaal, dan begint hij niet opnieuw. <a href="systeem.html#kanalen">Zo blijft de context bewaard</a></p>
@@ -671,6 +722,61 @@
               <span class="cg-uitkomst-label">Minder typen</span>
               <span class="cg-uitkomst-waarde">De korte opdracht gaat nooit zo naar de koper</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== FARO EN BERICHTEN ========================================
+         Deze staat bewust VOOR de prijs. Wat een autobedrijf hiervoor
+         betaalt, beoordeelt het pas als het weet wat er allemaal in zit,
+         en dit stuk kent bijna niemand.
+
+         De status staat op "in ontwikkeling" tot iemand bevestigt dat het
+         bij een klant draait. Dat is dezelfde regel als op de
+         koppelingenpagina, en die regel geldt ook voor onszelf. -->
+    <section class="section" data-gids="berichten" id="berichten">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">Faro</span>
+          <h2 class="section-title">Je voorraad is ook <span class="highlight">je content.</span></h2>
+          <p class="section-sub">Elke wagen die binnenkomt is een bericht dat je had kunnen plaatsen. Faro weet wat er op je terrein staat en stelt voor wat je ermee kunt doen. Jij kiest, jij plaatst.</p>
+        </div>
+
+        <div class="faro-content-blok">
+          <div class="fc-kolom fc-ideeen reveal">
+            <div class="fc-balk">
+              <span class="fc-label">Faro &#183; vandaag</span>
+              <span class="status-pil status-bouw">in ontwikkeling</span>
+            </div>
+            <ol class="fc-lijst">
+              <li><span class="fc-nr">01</span><span class="fc-tekst">Nieuw binnen<span class="fc-bron">BMW X5 xDrive30d &#183; 2021</span></span></li>
+              <li><span class="fc-nr">02</span><span class="fc-tekst">Wagen in de kijker<span class="fc-bron">Volvo XC40 T4 &#183; 62.000 km</span></span></li>
+              <li><span class="fc-nr">03</span><span class="fc-tekst">Zaterdag in de showroom<span class="fc-bron">Vier wagens onder 25.000</span></span></li>
+              <li><span class="fc-nr">04</span><span class="fc-tekst">Waar je op let bij een occasion<span class="fc-bron">Uit de vragen van deze week</span></span></li>
+              <li><span class="fc-nr">05</span><span class="fc-tekst">Net verkocht<span class="fc-bron">Golf GTI &#183; 2022</span></span></li>
+            </ol>
+            <p class="fc-voet">De ideeën komen uit je voorraad en uit wat kopers deze week gevraagd hebben. Niet uit een algemene contentkalender.</p>
+          </div>
+
+          <div class="fc-kolom fc-post reveal reveal-delay-1">
+            <div class="fc-balk">
+              <span class="fc-label">Voorstel &#183; 01 Nieuw binnen</span>
+            </div>
+            <div class="fc-postkaart">
+              <div class="fc-wagen">
+                <span class="fc-wagen-label">Uit je voorraad</span>
+                <span class="fc-wagen-naam">BMW X5 xDrive30d</span>
+                <span class="fc-wagen-regel">2021 &#183; 82.000 km &#183; automaat &#183; &euro; 48.900</span>
+              </div>
+              <p class="fc-tekst-post">Nieuw op de vloer: een BMW X5 xDrive30d uit 2021 met 82.000 km en volledige onderhoudshistoriek. Automaat, diesel, panoramadak. Zaterdag staat hij klaar om te bekijken.</p>
+              <div class="fc-acties">
+                <span class="fc-knop">Overnemen</span>
+                <span class="fc-knop fc-knop-stil">Anders schrijven</span>
+              </div>
+            </div>
+            <p class="fc-voet">Er wordt niets geplaatst zonder dat jij het gelezen hebt. De gegevens in de tekst komen uit je voorraad, niet uit een schatting.</p>
           </div>
         </div>
       </div>
