@@ -12,6 +12,7 @@ perl tools/sync-shell.pl
 perl tools/build-agents.pl
 perl tools/build-koppelingen.pl
 perl tools/sync-shell.pl
+perl tools/sync-og.pl
 perl tools/build-langs.pl
 perl tools/build-sitemap.pl
 perl tools/check-links.pl

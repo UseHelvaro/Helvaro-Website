@@ -4,10 +4,10 @@
   <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Control and privacy: what an agent may do, and where your data lives · Helvaro</title>
-  <meta name="description" content="Every conversation readable, approval per action type, an emergency stop per agent and processing within the EU. The agreements fixed before we start.">
-  <meta property="og:title" content="Controle en privacy: wat een agent mag, en waar je data staat · Helvaro">
-  <meta property="og:description" content="Every conversation readable, approval per action type, an emergency stop per agent and processing within the EU. The agreements fixed before we start.">
+  <title>Controle en privacy: je verkoper neemt altijd over · Helvaro</title>
+  <meta name="description" content="Zes afspraken die vastliggen voor we starten: overname door je verkoper, elk gesprek leesbaar, goedkeuring per actietype, een logboek, data in de EU en een noodstop.">
+  <meta property="og:title" content="Controle en privacy: je verkoper neemt altijd over · Helvaro">
+  <meta property="og:description" content="Zes afspraken die vastliggen voor we starten: overname door je verkoper, elk gesprek leesbaar, goedkeuring per actietype, een logboek, data in de EU en een noodstop.">
   <meta property="og:image" content="https://helvaro.pro/assets/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -22,7 +22,7 @@
   <link rel="alternate" hreflang="en" href="https://helvaro.pro/en/controle.html">
   <link rel="alternate" hreflang="de" href="https://helvaro.pro/de/controle.html">
   <link rel="alternate" hreflang="es" href="https://helvaro.pro/es/controle.html">
-  <link rel="alternate" hreflang="x-default" href="https://helvaro.pro/controle.html">
+  <link rel="alternate" hreflang="x-default" href="https://helvaro.pro/controle.html">
   <link rel="icon" href="../assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
@@ -34,14 +34,14 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="../css/style.css?v=95">
+  <link rel="stylesheet" href="../css/style.css?v=97">
 </head>
 <body data-vertaald="en">
   <a class="skip-link" href="#main">Skip to content</a>
 
 <!-- SHELL:NAV -->
 <a class="topbar" href="cases.html">
-    <span class="topbar-text">We are looking for five garages for the first measurement.</span>
+    <span class="topbar-text">We zoeken vijf autobedrijven voor de eerste meting.</span>
     <span class="topbar-link">See the pilot <span aria-hidden="true">&#8594;</span></span>
   </a>
 
@@ -60,8 +60,8 @@
               <span class="ndi-sub">Capture, understand, act, connect, measure</span>
             </a>
             <a href="agents/index.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">The agents</span>
-              <span class="ndi-sub">Ten workflows within the same system</span>
+              <span class="ndi-title">The workflows</span>
+              <span class="ndi-sub">Acht werkstromen binnen hetzelfde systeem</span>
             </a>
             <a href="koppelingen/index.html" class="navdrop-item" role="menuitem">
               <span class="ndi-title">Integrations</span>
@@ -79,33 +79,23 @@
         </div>
 
         <div class="navdrop">
-          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Automotive <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Voor autobedrijven <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
           <div class="navdrop-menu" role="menu">
             <a href="automotive.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">For the workshop</span>
-              <span class="ndi-sub">What the system does in an independent garage</span>
+              <span class="ndi-title">Voor autobedrijven</span>
+              <span class="ndi-sub">Wat het systeem doet bij een dealer of onafhankelijk autobedrijf</span>
             </a>
-            <a href="agents/apk-herinnering-agent.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">MOT agent</span>
-              <span class="ndi-sub">From an approaching MOT to a booked appointment</span>
+            <a href="agents/nieuwe-aanvraag.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Nieuwe aanvraag</span>
+              <span class="ndi-sub">Van vraag over een auto naar een afspraak</span>
             </a>
-            <a href="agents/werkplaats-inplan-agent.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Workshop agent</span>
-              <span class="ndi-sub">Appointments that fit your planning, not beside it</span>
+            <a href="agents/proefrit.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Proefrit</span>
+              <span class="ndi-sub">Eerst kijken of de wagen vrij is, dan pas een moment</span>
             </a>
-            <a href="agents/gemiste-gesprekken-agent.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Missed calls</span>
-              <span class="ndi-sub">Anyone who does not get through gets a message within a minute</span>
-            </a>
-            <span class="navdrop-scheiding" role="separator">Other sectors</span>
-            <a href="sectoren/vastgoed.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-              <span class="ndi-title">Real estate</span>
-            </a>
-            <a href="sectoren/bouw.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-              <span class="ndi-title">Construction &amp; renovation</span>
-            </a>
-            <a href="sectoren/keuken.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-              <span class="ndi-title">Kitchens</span>
+            <a href="agents/gemiste-aanvraag.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Follow-up</span>
+              <span class="ndi-sub">Het gesprek stopt niet als de koper stopt met typen</span>
             </a>
           </div>
         </div>
@@ -115,7 +105,7 @@
           <div class="navdrop-menu" role="menu">
             <a href="roi.html" class="navdrop-item" role="menuitem">
               <span class="ndi-title">Turnover calculator</span>
-              <span class="ndi-sub">What is left lying in your workshop</span>
+              <span class="ndi-sub">Wat blijft er liggen bij jouw aanvragen</span>
             </a>
             <a href="cases.html" class="navdrop-item" role="menuitem">
               <span class="ndi-title">Pilot and numbers</span>
@@ -167,8 +157,8 @@
           <span class="ndi-sub">Capture, understand, act, connect, measure</span>
         </a>
         <a href="agents/index.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">The agents</span>
-          <span class="ndi-sub">Ten workflows within the same system</span>
+          <span class="ndi-title">The workflows</span>
+          <span class="ndi-sub">Acht werkstromen binnen hetzelfde systeem</span>
         </a>
         <a href="koppelingen/index.html" class="navdrop-item" role="menuitem">
           <span class="ndi-title">Integrations</span>
@@ -186,33 +176,23 @@
     </div>
 
     <div class="navdrop">
-      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Automotive <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Voor autobedrijven <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
       <div class="navdrop-menu" role="menu">
         <a href="automotive.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">For the workshop</span>
-          <span class="ndi-sub">What the system does in an independent garage</span>
+          <span class="ndi-title">Voor autobedrijven</span>
+          <span class="ndi-sub">Wat het systeem doet bij een dealer of onafhankelijk autobedrijf</span>
         </a>
-        <a href="agents/apk-herinnering-agent.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">MOT agent</span>
-          <span class="ndi-sub">From an approaching MOT to a booked appointment</span>
+        <a href="agents/nieuwe-aanvraag.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Nieuwe aanvraag</span>
+          <span class="ndi-sub">Van vraag over een auto naar een afspraak</span>
         </a>
-        <a href="agents/werkplaats-inplan-agent.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Workshop agent</span>
-          <span class="ndi-sub">Appointments that fit your planning, not beside it</span>
+        <a href="agents/proefrit.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Proefrit</span>
+          <span class="ndi-sub">Eerst kijken of de wagen vrij is, dan pas een moment</span>
         </a>
-        <a href="agents/gemiste-gesprekken-agent.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Missed calls</span>
-          <span class="ndi-sub">Anyone who does not get through gets a message within a minute</span>
-        </a>
-        <span class="navdrop-scheiding" role="separator">Other sectors</span>
-        <a href="sectoren/vastgoed.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-          <span class="ndi-title">Real estate</span>
-        </a>
-        <a href="sectoren/bouw.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-          <span class="ndi-title">Construction &amp; renovation</span>
-        </a>
-        <a href="sectoren/keuken.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-          <span class="ndi-title">Kitchens</span>
+        <a href="agents/gemiste-aanvraag.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Follow-up</span>
+          <span class="ndi-sub">Het gesprek stopt niet als de koper stopt met typen</span>
         </a>
       </div>
     </div>
@@ -222,7 +202,7 @@
       <div class="navdrop-menu" role="menu">
         <a href="roi.html" class="navdrop-item" role="menuitem">
           <span class="ndi-title">Turnover calculator</span>
-          <span class="ndi-sub">What is left lying in your workshop</span>
+          <span class="ndi-sub">Wat blijft er liggen bij jouw aanvragen</span>
         </a>
         <a href="cases.html" class="navdrop-item" role="menuitem">
           <span class="ndi-title">Pilot and numbers</span>
@@ -269,8 +249,8 @@
           <span aria-current="page">Control and privacy</span>
         </nav>
         <span class="section-label">Control and privacy</span>
-        <h1 class="paghero-titel">Your team decides. <span class="highlight">Your agents do the rest.</span></h1>
-        <p class="paghero-lede">A system that talks to your customers has to be something you can read back, adjust and switch off. These are the agreements fixed before we start, and where your data stays.</p>
+        <h1 class="paghero-titel">Je verkoper beslist. <span class="highlight">Het systeem doet het voorwerk.</span></h1>
+        <p class="paghero-lede">Een systeem dat met je kopers praat, moet je kunnen nalezen, overnemen en stilzetten. Dit zijn de afspraken die vastliggen voor we starten, en waar je gegevens blijven.</p>
       </div>
     </section>
 
@@ -296,34 +276,34 @@
       <div class="container">
         <div class="section-header text-center reveal">
           <span class="section-label">Control</span>
-          <h2 class="section-title">Your team decides. Your agents do the rest.</h2>
-          <p class="section-sub">Agents acting on their own without you seeing what they do is precisely what we do not build. Six commitments, fixed before we start.</p>
+          <h2 class="section-title">Je team beslist. Het systeem doet het voorwerk.</h2>
+          <p class="section-sub">Een systeem dat zelfstandig met kopers praat zonder dat je ziet wat er gebeurt, dat is precies wat we niet bouwen. Zes afspraken die vastliggen voor we starten.</p>
         </div>
 
         <div class="sol-grid">
 
           <div class="sol-card reveal spot">
             <div class="sol-head"><span class="sol-tag">01</span></div>
-            <h3 class="sol-title">Every conversation readable</h3>
-            <p class="sol-desc">You read every conversation live and in full afterwards. Export whenever you want. A summary is never the only thing left.</p>
+            <h3 class="sol-title">Je verkoper neemt over</h3>
+            <p class="sol-desc">Op elk moment stapt een verkoper in het gesprek en stopt het systeem met antwoorden. De koper merkt geen overdracht, hij krijgt gewoon antwoord van een mens.</p>
           </div>
 
           <div class="sol-card reveal spot">
             <div class="sol-head"><span class="sol-tag">02</span></div>
-            <h3 class="sol-title">Approval per action type</h3>
-            <p class="sol-desc">You decide which actions an agent may carry out alone and which go past a person first. Per type, not one switch for everything.</p>
+            <h3 class="sol-title">Every conversation readable</h3>
+            <p class="sol-desc">You read every conversation live and in full afterwards. Export whenever you want. A summary is never the only thing left.</p>
           </div>
 
           <div class="sol-card reveal reveal-delay-1 spot">
             <div class="sol-head"><span class="sol-tag">03</span></div>
-            <h3 class="sol-title">Escalation with context</h3>
-            <p class="sol-desc">If an agent cannot resolve it, it hands over to a named person at your end, with the whole conversation and the reason attached. Within an agreed time.</p>
+            <h3 class="sol-title">Approval per action type</h3>
+            <p class="sol-desc">Jij bepaalt wat het systeem zelf mag doen en wat eerst langs een verkoper gaat. Per type, niet één schakelaar voor alles. Een prijs noemen is iets anders dan een proefrit vastzetten.</p>
           </div>
 
           <div class="sol-card reveal reveal-delay-1 spot">
             <div class="sol-head"><span class="sol-tag">04</span></div>
             <h3 class="sol-title">Action log</h3>
-            <p class="sol-desc">What the agent did, on which source, when, and who approved it. Exportable, including when your insurer or auditor asks for it.</p>
+            <p class="sol-desc">Wat er gedaan is, op welke wagen, wanneer, en wie het goedkeurde. Exporteerbaar, ook wanneer je verzekeraar of je revisor ernaar vraagt.</p>
           </div>
 
           <div class="sol-card reveal reveal-delay-2 spot">
@@ -335,13 +315,13 @@
           <div class="sol-card reveal reveal-delay-2 spot">
             <div class="sol-head"><span class="sol-tag">06</span></div>
             <h3 class="sol-title">Emergency stop</h3>
-            <p class="sol-desc">You stop any agent yourself, immediately, without calling us. Per agent, not everything at once.</p>
+            <p class="sol-desc">Je zet elke werkstroom zelf stil, meteen, zonder ons te bellen. Per werkstroom, niet alles tegelijk.</p>
           </div>
 
         </div>
 
         <div class="sol-cta reveal">
-          <p class="sol-cta-text" data-i18n-html="nietBeweren">What we do <strong>not</strong> claim: that an agent never makes a mistake. That is exactly why the approvals above exist. Our model providers process approved context under their own terms, and we put that in writing before we start.</p>
+          <p class="sol-cta-text" data-i18n-html="nietBeweren">What we do <strong>not</strong> claim: that a mistake is never made. That is why your salesperson can take over and why the approvals above exist. Our model providers process approved context under their own terms, and we put that in writing before we start.</p>
         </div>
       </div>
     </section>
@@ -376,7 +356,7 @@
         <div class="footer-col">
           <span class="footer-head">System</span>
           <a href="systeem.html" class="footer-link">The Helvaro system</a>
-          <a href="agents/index.html" class="footer-link">The agents</a>
+          <a href="agents/index.html" class="footer-link">The workflows</a>
           <a href="koppelingen/index.html" class="footer-link">Integrations</a>
           <a href="controle.html" class="footer-link">Control &amp; GDPR</a>
           <a href="faro.html" class="footer-link">Faro</a>
@@ -384,17 +364,17 @@
 
         <div class="footer-col">
           <span class="footer-head">Workflows</span>
-          <a href="agents/apk-herinnering-agent.html" class="footer-link">MOT reminder</a>
-          <a href="agents/werkplaats-inplan-agent.html" class="footer-link">Workshop scheduling</a>
-          <a href="agents/gemiste-gesprekken-agent.html" class="footer-link">Missed calls</a>
-          <a href="agents/offerte-opvolg-agent.html" class="footer-link">Quote follow-up</a>
-          <a href="agents/no-show-agent.html" class="footer-link">No-shows</a>
-          <a href="agents/index.html" class="footer-link">All ten</a>
+          <a href="agents/nieuwe-aanvraag.html" class="footer-link">Nieuwe aanvraag</a>
+          <a href="agents/proefrit.html" class="footer-link">Proefrit</a>
+          <a href="agents/voertuigadvies.html" class="footer-link">Voertuigadvies</a>
+          <a href="agents/inruil.html" class="footer-link">Inruil</a>
+          <a href="agents/gemiste-aanvraag.html" class="footer-link">Follow-up</a>
+          <a href="agents/index.html" class="footer-link">Alle acht</a>
         </div>
 
         <div class="footer-col">
           <span class="footer-head">Get started</span>
-          <a href="automotive.html" class="footer-link">For the workshop</a>
+          <a href="automotive.html" class="footer-link">Voor autobedrijven</a>
           <a href="roi.html" class="footer-link">Turnover calculator</a>
           <a href="cases.html" class="footer-link">Pilot and numbers</a>
           <a href="index.html#prijzen" class="footer-link">Pricing</a>

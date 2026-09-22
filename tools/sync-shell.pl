@@ -52,21 +52,19 @@ my @PAGES = qw(
   waarom.html contact.html meeting.html aanmelden.html privacybeleid.html
   sectoren/vastgoed.html sectoren/bouw.html sectoren/keuken.html
   agents/index.html
-  agents/apk-herinnering-agent.html
-  agents/werkplaats-inplan-agent.html
-  agents/gemiste-gesprekken-agent.html
-  agents/offerte-opvolg-agent.html
-  agents/no-show-agent.html
-  agents/onderdelen-navraag-agent.html
-  agents/leenauto-agent.html
-  agents/schade-intake-agent.html
-  agents/winterbanden-oproep-agent.html
-  agents/onderhoudsbeurt-herinnering-agent.html
+  agents/nieuwe-aanvraag.html
+  agents/proefrit.html
+  agents/voertuigadvies.html
+  agents/inruil.html
+  agents/financiering.html
+  agents/gemiste-aanvraag.html
+  agents/e-mail.html
+  agents/whatsapp.html
   koppelingen/index.html
-  koppelingen/automaat-go.html
-  koppelingen/autoflex.html
-  koppelingen/wincar.html
-  koppelingen/rdw-kenteken.html
+  koppelingen/voorraad.html
+  koppelingen/website.html
+  koppelingen/whatsapp-business.html
+  koppelingen/agenda.html
 );
 
 @PAGES = @ARGV if @ARGV;

@@ -7741,3 +7741,284 @@ p { text-wrap: pretty; }
   color: var(--accent-deep);
 }
 [data-theme="light"] .uit-nr { color: #8A6A33; }
+
+/* ============================================================================
+   AUTOBEDRIJVEN
+   ----------------------------------------------------------------------------
+   De voertuigkaart, het dossier en de overname. Geen nieuwe kleuren en geen
+   nieuwe vormtaal: dezelfde tokens, dezelfde hoeken, dezelfde randen als de
+   rest van de site. Donker blijft dragend, zand is het accent.
+   ========================================================================= */
+
+/* ── Voertuigkennis: de kaart naast het gesprek ───────────────────────── */
+.voertuig-blok {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 20px;
+  align-items: start;
+  margin-top: 44px;
+}
+.voertuig-kaart {
+  padding: 28px 28px 24px;
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius-l);
+  background:
+    linear-gradient(180deg, rgba(var(--accent-rgb), 0.06) 0%, transparent 46%),
+    var(--bg-card);
+}
+.vk-label {
+  display: block;
+  font-family: var(--font-h);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+[data-theme="light"] .vk-label { color: #8A6A33; }
+.vk-naam {
+  margin: 10px 0 20px;
+  font-family: var(--font-h);
+  font-size: clamp(20px, 2.4vw, 25px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-1);
+}
+.vk-specs { margin: 0; }
+.vk-specs > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-0);
+}
+.vk-specs > div:last-child { border-bottom: 0; }
+.vk-specs dt { font-size: 14px; color: var(--text-3); }
+.vk-specs dd { margin: 0; font-size: 14px; font-weight: 500; color: var(--text-1); }
+.vk-prijs {
+  font-family: var(--font-h);
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em;
+}
+.vk-voet {
+  margin: 18px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-0);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-3);
+}
+.voertuig-gesprek { max-width: none; margin: 0; }
+
+@media (max-width: 880px) {
+  .voertuig-blok { grid-template-columns: 1fr; }
+}
+
+/* ── Het dossier ──────────────────────────────────────────────────────── */
+.lead-blok {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 20px;
+  align-items: start;
+  margin-top: 44px;
+}
+.lead-kaart {
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-l);
+  background: var(--bg-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.lead-kop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 26px;
+  border-bottom: 1px solid var(--border-0);
+  background: var(--bg-2);
+}
+.lead-label {
+  display: block;
+  font-family: var(--font-h);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.lead-naam {
+  margin: 6px 0 0;
+  font-family: var(--font-h);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-1);
+}
+.lead-status {
+  flex: none;
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: var(--accent-fill);
+  color: var(--on-accent);
+  font-family: var(--font-h);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.lead-velden {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 26px;
+  margin: 0;
+  padding: 8px 26px 20px;
+}
+.lead-velden > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border-0);
+}
+.lead-velden dt { font-size: 13.5px; color: var(--text-3); }
+.lead-velden dd { margin: 0; font-size: 13.5px; font-weight: 500; color: var(--text-1); text-align: right; }
+.lead-voet {
+  margin: 0;
+  padding: 16px 26px 20px;
+  border-top: 1px solid var(--border-0);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-3);
+}
+.lead-uitleg {
+  padding: 28px 28px 24px;
+  border: 1px solid var(--border-0);
+  border-radius: var(--radius-l);
+  background: var(--bg-2);
+}
+.lead-uitleg-kop {
+  margin: 0 0 14px;
+  font-family: var(--font-h);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-1);
+}
+
+@media (max-width: 900px) {
+  .lead-blok { grid-template-columns: 1fr; }
+  .lead-velden { grid-template-columns: 1fr; padding-bottom: 12px; }
+}
+
+/* ── Overname ─────────────────────────────────────────────────────────── */
+.overname-blok {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: stretch;
+  gap: 0;
+  margin-top: 44px;
+}
+.overname-stap {
+  padding: 26px 26px 22px;
+  border: 1px solid var(--border-0);
+  border-radius: var(--radius-l);
+  background: var(--bg-card);
+}
+.overname-nr {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--accent-fill);
+  color: var(--on-accent);
+  font-family: var(--font-h);
+  font-size: 12px;
+  font-weight: 700;
+}
+.overname-kop {
+  margin: 14px 0 8px;
+  font-family: var(--font-h);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-1);
+}
+.overname-tekst { margin: 0; font-size: 15px; line-height: 1.65; color: var(--text-2); }
+.overname-pijl {
+  display: grid;
+  place-items: center;
+  padding: 0 16px;
+  font-size: 18px;
+  color: var(--accent-deep);
+}
+[data-theme="light"] .overname-pijl { color: #8A6A33; }
+.overname-gesprek { max-width: 720px; margin: 26px auto 0; }
+
+/* De interne opdracht ziet er bewust uit als een kattenbelletje, zodat het
+   verschil met het bericht aan de koper meteen zichtbaar is. */
+.cg-regel.cg-intern {
+  font-family: var(--font-b);
+  color: var(--text-3);
+}
+.cg-intern .cg-wie { color: var(--text-3); }
+.overname-scheiding {
+  height: 1px;
+  margin: 14px 0;
+  background: linear-gradient(90deg, transparent, var(--border-2), transparent);
+}
+
+@media (max-width: 860px) {
+  .overname-blok { grid-template-columns: 1fr; }
+  .overname-pijl { padding: 10px 0; transform: rotate(90deg); }
+}
+
+/* ── De vijf stappen, breder dan op een agentpagina ───────────────────── */
+.ws-lijst-breed {
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 16px;
+}
+
+/* ── Context over de kanalen heen ─────────────────────────────────────────
+   Drie berichten op drie kanalen die samen één dossier vormen. Elke stap
+   draagt onderaan wat het systeem eruit vasthoudt; dat is het hele punt. */
+.context-keten { max-width: 680px; margin: 44px auto 0; }
+.ck-stap {
+  padding: 22px 26px;
+  border: 1px solid var(--border-0);
+  border-radius: var(--radius-m);
+  background: var(--bg-card);
+}
+.ck-stap-uit {
+  border-color: var(--border-2);
+  background:
+    linear-gradient(180deg, rgba(var(--accent-rgb), 0.08) 0%, transparent 60%),
+    var(--bg-card);
+}
+.ck-kanaal {
+  display: block;
+  font-family: var(--font-h);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.ck-tekst {
+  margin: 10px 0 12px;
+  font-size: 16.5px;
+  line-height: 1.55;
+  color: var(--text-1);
+}
+.ck-vast {
+  display: inline-block;
+  padding: 4px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--border-1);
+  background: var(--bg-2);
+  font-size: 12.5px;
+  color: var(--accent-deep);
+}
+[data-theme="light"] .ck-vast { color: #8A6A33; }
+.ck-pijl { text-align: center; padding: 9px 0; color: var(--text-3); }

@@ -4,10 +4,10 @@
   <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Control y privacidad: lo que puede hacer un agente y dónde están tus datos · Helvaro</title>
-  <meta name="description" content="Cada conversación legible, aprobación por tipo de acción, parada de emergencia por agente y tratamiento dentro de la UE. Los acuerdos fijados antes de empezar.">
-  <meta property="og:title" content="Controle en privacy: wat een agent mag, en waar je data staat · Helvaro">
-  <meta property="og:description" content="Cada conversación legible, aprobación por tipo de acción, parada de emergencia por agente y tratamiento dentro de la UE. Los acuerdos fijados antes de empezar.">
+  <title>Controle en privacy: je verkoper neemt altijd over · Helvaro</title>
+  <meta name="description" content="Zes afspraken die vastliggen voor we starten: overname door je verkoper, elk gesprek leesbaar, goedkeuring per actietype, een logboek, data in de EU en een noodstop.">
+  <meta property="og:title" content="Controle en privacy: je verkoper neemt altijd over · Helvaro">
+  <meta property="og:description" content="Zes afspraken die vastliggen voor we starten: overname door je verkoper, elk gesprek leesbaar, goedkeuring per actietype, een logboek, data in de EU en een noodstop.">
   <meta property="og:image" content="https://helvaro.pro/assets/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -22,7 +22,7 @@
   <link rel="alternate" hreflang="en" href="https://helvaro.pro/en/controle.html">
   <link rel="alternate" hreflang="de" href="https://helvaro.pro/de/controle.html">
   <link rel="alternate" hreflang="es" href="https://helvaro.pro/es/controle.html">
-  <link rel="alternate" hreflang="x-default" href="https://helvaro.pro/controle.html">
+  <link rel="alternate" hreflang="x-default" href="https://helvaro.pro/controle.html">
   <link rel="icon" href="../assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
@@ -34,14 +34,14 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="../css/style.css?v=95">
+  <link rel="stylesheet" href="../css/style.css?v=97">
 </head>
 <body data-vertaald="es">
   <a class="skip-link" href="#main">Ir al contenido</a>
 
 <!-- SHELL:NAV -->
 <a class="topbar" href="cases.html">
-    <span class="topbar-text">Buscamos cinco talleres para la primera medición.</span>
+    <span class="topbar-text">We zoeken vijf autobedrijven voor de eerste meting.</span>
     <span class="topbar-link">Ver el piloto <span aria-hidden="true">&#8594;</span></span>
   </a>
 
@@ -60,8 +60,8 @@
               <span class="ndi-sub">Recoger, entender, actuar, conectar, medir</span>
             </a>
             <a href="agents/index.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Los agentes</span>
-              <span class="ndi-sub">Diez flujos de trabajo dentro del mismo sistema</span>
+              <span class="ndi-title">Los flujos de trabajo</span>
+              <span class="ndi-sub">Acht werkstromen binnen hetzelfde systeem</span>
             </a>
             <a href="koppelingen/index.html" class="navdrop-item" role="menuitem">
               <span class="ndi-title">Integraciones</span>
@@ -79,33 +79,23 @@
         </div>
 
         <div class="navdrop">
-          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Automotive <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Voor autobedrijven <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
           <div class="navdrop-menu" role="menu">
             <a href="automotive.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Para el taller</span>
-              <span class="ndi-sub">Qué hace el sistema en un taller independiente</span>
+              <span class="ndi-title">Voor autobedrijven</span>
+              <span class="ndi-sub">Wat het systeem doet bij een dealer of onafhankelijk autobedrijf</span>
             </a>
-            <a href="agents/apk-herinnering-agent.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Agente de ITV</span>
-              <span class="ndi-sub">De una ITV que se acerca a una cita reservada</span>
+            <a href="agents/nieuwe-aanvraag.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Nieuwe aanvraag</span>
+              <span class="ndi-sub">Van vraag over een auto naar een afspraak</span>
             </a>
-            <a href="agents/werkplaats-inplan-agent.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Agente de taller</span>
-              <span class="ndi-sub">Citas que encajan en tu planning, no al lado</span>
+            <a href="agents/proefrit.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Proefrit</span>
+              <span class="ndi-sub">Eerst kijken of de wagen vrij is, dan pas een moment</span>
             </a>
-            <a href="agents/gemiste-gesprekken-agent.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Llamadas perdidas</span>
-              <span class="ndi-sub">Quien no consigue contactar recibe un mensaje en menos de un minuto</span>
-            </a>
-            <span class="navdrop-scheiding" role="separator">Otros sectores</span>
-            <a href="sectoren/vastgoed.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-              <span class="ndi-title">Inmobiliaria</span>
-            </a>
-            <a href="sectoren/bouw.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-              <span class="ndi-title">Construcción y reformas</span>
-            </a>
-            <a href="sectoren/keuken.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-              <span class="ndi-title">Cocinas</span>
+            <a href="agents/gemiste-aanvraag.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Seguimiento</span>
+              <span class="ndi-sub">Het gesprek stopt niet als de koper stopt met typen</span>
             </a>
           </div>
         </div>
@@ -115,7 +105,7 @@
           <div class="navdrop-menu" role="menu">
             <a href="roi.html" class="navdrop-item" role="menuitem">
               <span class="ndi-title">Calculadora de facturación</span>
-              <span class="ndi-sub">Qué se queda sin hacer en tu taller</span>
+              <span class="ndi-sub">Wat blijft er liggen bij jouw aanvragen</span>
             </a>
             <a href="cases.html" class="navdrop-item" role="menuitem">
               <span class="ndi-title">Piloto y cifras</span>
@@ -167,8 +157,8 @@
           <span class="ndi-sub">Recoger, entender, actuar, conectar, medir</span>
         </a>
         <a href="agents/index.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Los agentes</span>
-          <span class="ndi-sub">Diez flujos de trabajo dentro del mismo sistema</span>
+          <span class="ndi-title">Los flujos de trabajo</span>
+          <span class="ndi-sub">Acht werkstromen binnen hetzelfde systeem</span>
         </a>
         <a href="koppelingen/index.html" class="navdrop-item" role="menuitem">
           <span class="ndi-title">Integraciones</span>
@@ -186,33 +176,23 @@
     </div>
 
     <div class="navdrop">
-      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Automotive <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Voor autobedrijven <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
       <div class="navdrop-menu" role="menu">
         <a href="automotive.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Para el taller</span>
-          <span class="ndi-sub">Qué hace el sistema en un taller independiente</span>
+          <span class="ndi-title">Voor autobedrijven</span>
+          <span class="ndi-sub">Wat het systeem doet bij een dealer of onafhankelijk autobedrijf</span>
         </a>
-        <a href="agents/apk-herinnering-agent.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Agente de ITV</span>
-          <span class="ndi-sub">De una ITV que se acerca a una cita reservada</span>
+        <a href="agents/nieuwe-aanvraag.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Nieuwe aanvraag</span>
+          <span class="ndi-sub">Van vraag over een auto naar een afspraak</span>
         </a>
-        <a href="agents/werkplaats-inplan-agent.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Agente de taller</span>
-          <span class="ndi-sub">Citas que encajan en tu planning, no al lado</span>
+        <a href="agents/proefrit.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Proefrit</span>
+          <span class="ndi-sub">Eerst kijken of de wagen vrij is, dan pas een moment</span>
         </a>
-        <a href="agents/gemiste-gesprekken-agent.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Llamadas perdidas</span>
-          <span class="ndi-sub">Quien no consigue contactar recibe un mensaje en menos de un minuto</span>
-        </a>
-        <span class="navdrop-scheiding" role="separator">Otros sectores</span>
-        <a href="sectoren/vastgoed.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-          <span class="ndi-title">Inmobiliaria</span>
-        </a>
-        <a href="sectoren/bouw.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-          <span class="ndi-title">Construcción y reformas</span>
-        </a>
-        <a href="sectoren/keuken.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-          <span class="ndi-title">Cocinas</span>
+        <a href="agents/gemiste-aanvraag.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Seguimiento</span>
+          <span class="ndi-sub">Het gesprek stopt niet als de koper stopt met typen</span>
         </a>
       </div>
     </div>
@@ -222,7 +202,7 @@
       <div class="navdrop-menu" role="menu">
         <a href="roi.html" class="navdrop-item" role="menuitem">
           <span class="ndi-title">Calculadora de facturación</span>
-          <span class="ndi-sub">Qué se queda sin hacer en tu taller</span>
+          <span class="ndi-sub">Wat blijft er liggen bij jouw aanvragen</span>
         </a>
         <a href="cases.html" class="navdrop-item" role="menuitem">
           <span class="ndi-title">Piloto y cifras</span>
@@ -269,8 +249,8 @@
           <span aria-current="page">Control y privacidad</span>
         </nav>
         <span class="section-label">Control y privacidad</span>
-        <h1 class="paghero-titel">Tu equipo decide. <span class="highlight">Tus agentes hacen el resto.</span></h1>
-        <p class="paghero-lede">Un sistema que habla con tus clientes tiene que poder releerse, ajustarse y detenerse. Estos son los acuerdos que quedan fijados antes de empezar, y dónde se quedan tus datos.</p>
+        <h1 class="paghero-titel">Je verkoper beslist. <span class="highlight">Het systeem doet het voorwerk.</span></h1>
+        <p class="paghero-lede">Een systeem dat met je kopers praat, moet je kunnen nalezen, overnemen en stilzetten. Dit zijn de afspraken die vastliggen voor we starten, en waar je gegevens blijven.</p>
       </div>
     </section>
 
@@ -296,34 +276,34 @@
       <div class="container">
         <div class="section-header text-center reveal">
           <span class="section-label">Control</span>
-          <h2 class="section-title">Tu equipo decide. Tus agentes hacen el resto.</h2>
-          <p class="section-sub">Agentes que actúan por su cuenta sin que veas lo que hacen es justo lo que no construimos. Seis compromisos, fijados antes de empezar.</p>
+          <h2 class="section-title">Je team beslist. Het systeem doet het voorwerk.</h2>
+          <p class="section-sub">Een systeem dat zelfstandig met kopers praat zonder dat je ziet wat er gebeurt, dat is precies wat we niet bouwen. Zes afspraken die vastliggen voor we starten.</p>
         </div>
 
         <div class="sol-grid">
 
           <div class="sol-card reveal spot">
             <div class="sol-head"><span class="sol-tag">01</span></div>
-            <h3 class="sol-title">Cada conversación legible</h3>
-            <p class="sol-desc">Sigues cada conversación en directo y la relees entera después. Exportar es siempre posible. Un resumen nunca es lo único que queda.</p>
+            <h3 class="sol-title">Je verkoper neemt over</h3>
+            <p class="sol-desc">Op elk moment stapt een verkoper in het gesprek en stopt het systeem met antwoorden. De koper merkt geen overdracht, hij krijgt gewoon antwoord van een mens.</p>
           </div>
 
           <div class="sol-card reveal spot">
             <div class="sol-head"><span class="sol-tag">02</span></div>
-            <h3 class="sol-title">Aprobación por tipo de acción</h3>
-            <p class="sol-desc">Tú decides qué acciones puede ejecutar un agente por su cuenta y cuáles pasan antes por una persona. Por tipo, no un único interruptor para todo.</p>
+            <h3 class="sol-title">Cada conversación legible</h3>
+            <p class="sol-desc">Sigues cada conversación en directo y la relees entera después. Exportar es siempre posible. Un resumen nunca es lo único que queda.</p>
           </div>
 
           <div class="sol-card reveal reveal-delay-1 spot">
             <div class="sol-head"><span class="sol-tag">03</span></div>
-            <h3 class="sol-title">Escalado con contexto</h3>
-            <p class="sol-desc">Si un agente no lo resuelve, lo pasa a una persona concreta de tu equipo, con toda la conversación y el motivo. Dentro de un plazo acordado.</p>
+            <h3 class="sol-title">Aprobación por tipo de acción</h3>
+            <p class="sol-desc">Jij bepaalt wat het systeem zelf mag doen en wat eerst langs een verkoper gaat. Per type, niet één schakelaar voor alles. Een prijs noemen is iets anders dan een proefrit vastzetten.</p>
           </div>
 
           <div class="sol-card reveal reveal-delay-1 spot">
             <div class="sol-head"><span class="sol-tag">04</span></div>
             <h3 class="sol-title">Registro de acciones</h3>
-            <p class="sol-desc">Qué hizo el agente, sobre qué fuente, cuándo y quién lo aprobó. Exportable, también cuando tu aseguradora o tu auditor lo pida.</p>
+            <p class="sol-desc">Wat er gedaan is, op welke wagen, wanneer, en wie het goedkeurde. Exporteerbaar, ook wanneer je verzekeraar of je revisor ernaar vraagt.</p>
           </div>
 
           <div class="sol-card reveal reveal-delay-2 spot">
@@ -335,13 +315,13 @@
           <div class="sol-card reveal reveal-delay-2 spot">
             <div class="sol-head"><span class="sol-tag">06</span></div>
             <h3 class="sol-title">Parada de emergencia</h3>
-            <p class="sol-desc">Detienes cualquier agente tú mismo, al instante, sin llamarnos. Por agente, no todo a la vez.</p>
+            <p class="sol-desc">Je zet elke werkstroom zelf stil, meteen, zonder ons te bellen. Per werkstroom, niet alles tegelijk.</p>
           </div>
 
         </div>
 
         <div class="sol-cta reveal">
-          <p class="sol-cta-text" data-i18n-html="nietBeweren">Lo que <strong>no</strong> afirmamos: que un agente nunca se equivoca. Precisamente por eso existen las aprobaciones de arriba. Nuestros proveedores de modelos procesan el contexto aprobado bajo sus propias condiciones, y lo dejamos por escrito antes de empezar.</p>
+          <p class="sol-cta-text" data-i18n-html="nietBeweren">Lo que <strong>no</strong> afirmamos: que nunca se comete un error. Por eso tu vendedor puede tomar el relevo y por eso existen las aprobaciones de arriba. Nuestros proveedores de modelos procesan el contexto aprobado bajo sus propias condiciones, y lo dejamos por escrito antes de empezar.</p>
         </div>
       </div>
     </section>
@@ -376,7 +356,7 @@
         <div class="footer-col">
           <span class="footer-head">Sistema</span>
           <a href="systeem.html" class="footer-link">El sistema Helvaro</a>
-          <a href="agents/index.html" class="footer-link">Los agentes</a>
+          <a href="agents/index.html" class="footer-link">Los flujos de trabajo</a>
           <a href="koppelingen/index.html" class="footer-link">Integraciones</a>
           <a href="controle.html" class="footer-link">Control y RGPD</a>
           <a href="faro.html" class="footer-link">Faro</a>
@@ -384,17 +364,17 @@
 
         <div class="footer-col">
           <span class="footer-head">Flujos de trabajo</span>
-          <a href="agents/apk-herinnering-agent.html" class="footer-link">Recordatorio de ITV</a>
-          <a href="agents/werkplaats-inplan-agent.html" class="footer-link">Planificación del taller</a>
-          <a href="agents/gemiste-gesprekken-agent.html" class="footer-link">Llamadas perdidas</a>
-          <a href="agents/offerte-opvolg-agent.html" class="footer-link">Seguimiento de presupuestos</a>
-          <a href="agents/no-show-agent.html" class="footer-link">Citas no presentadas</a>
-          <a href="agents/index.html" class="footer-link">Los diez</a>
+          <a href="agents/nieuwe-aanvraag.html" class="footer-link">Nieuwe aanvraag</a>
+          <a href="agents/proefrit.html" class="footer-link">Proefrit</a>
+          <a href="agents/voertuigadvies.html" class="footer-link">Voertuigadvies</a>
+          <a href="agents/inruil.html" class="footer-link">Inruil</a>
+          <a href="agents/gemiste-aanvraag.html" class="footer-link">Seguimiento</a>
+          <a href="agents/index.html" class="footer-link">Alle acht</a>
         </div>
 
         <div class="footer-col">
           <span class="footer-head">Empezar</span>
-          <a href="automotive.html" class="footer-link">Para el taller</a>
+          <a href="automotive.html" class="footer-link">Voor autobedrijven</a>
           <a href="roi.html" class="footer-link">Calculadora de facturación</a>
           <a href="cases.html" class="footer-link">Piloto y cifras</a>
           <a href="index.html#prijzen" class="footer-link">Precios</a>

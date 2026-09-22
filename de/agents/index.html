@@ -4,10 +4,10 @@
   <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Die zehn Agents des Helvaro-Systems · Helvaro</title>
-  <meta name="description" content="HU, Werkstattplanung, verpasste Anrufe, Angebote, No-Shows und mehr. Zehn Arbeitsabläufe im selben System, mit demselben Gedächtnis.">
-  <meta property="og:title" content="De tien agents van het Helvaro-systeem · Helvaro">
-  <meta property="og:description" content="HU, Werkstattplanung, verpasste Anrufe, Angebote, No-Shows und mehr. Zehn Arbeitsabläufe im selben System, mit demselben Gedächtnis.">
+  <title>De acht werkstromen van het Helvaro-systeem · Helvaro</title>
+  <meta name="description" content="Nieuwe aanvraag, proefrit, voertuigadvies, inruil, financiering, opvolging, e-mail en WhatsApp. Acht routes door hetzelfde systeem, met dezelfde koper en dezelfde wagen.">
+  <meta property="og:title" content="De acht werkstromen van het Helvaro-systeem · Helvaro">
+  <meta property="og:description" content="Nieuwe aanvraag, proefrit, voertuigadvies, inruil, financiering, opvolging, e-mail en WhatsApp. Acht routes door hetzelfde systeem, met dezelfde koper en dezelfde wagen.">
   <meta property="og:image" content="https://helvaro.pro/assets/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -34,14 +34,14 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="../../css/style.css?v=95">
+  <link rel="stylesheet" href="../../css/style.css?v=97">
 </head>
 <body data-vertaald="de">
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
 <!-- SHELL:NAV -->
 <a class="topbar" href="../cases.html">
-    <span class="topbar-text">Wir suchen fünf Werkstätten für die erste Messung.</span>
+    <span class="topbar-text">We zoeken vijf autobedrijven voor de eerste meting.</span>
     <span class="topbar-link">Zum Piloten <span aria-hidden="true">&#8594;</span></span>
   </a>
 
@@ -60,8 +60,8 @@
               <span class="ndi-sub">Auffangen, verstehen, handeln, verbinden, messen</span>
             </a>
             <a href="../agents/index.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Die Agents</span>
-              <span class="ndi-sub">Zehn Arbeitsabläufe im selben System</span>
+              <span class="ndi-title">Die Arbeitsabläufe</span>
+              <span class="ndi-sub">Acht werkstromen binnen hetzelfde systeem</span>
             </a>
             <a href="../koppelingen/index.html" class="navdrop-item" role="menuitem">
               <span class="ndi-title">Anbindungen</span>
@@ -79,33 +79,23 @@
         </div>
 
         <div class="navdrop">
-          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Automotive <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Voor autobedrijven <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
           <div class="navdrop-menu" role="menu">
             <a href="../automotive.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Für die Werkstatt</span>
-              <span class="ndi-sub">Was das System in einer freien Werkstatt tut</span>
+              <span class="ndi-title">Voor autobedrijven</span>
+              <span class="ndi-sub">Wat het systeem doet bij een dealer of onafhankelijk autobedrijf</span>
             </a>
-            <a href="../agents/apk-herinnering-agent.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">HU-Agent</span>
-              <span class="ndi-sub">Von der näher rückenden HU zum gebuchten Termin</span>
+            <a href="../agents/nieuwe-aanvraag.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Nieuwe aanvraag</span>
+              <span class="ndi-sub">Van vraag over een auto naar een afspraak</span>
             </a>
-            <a href="../agents/werkplaats-inplan-agent.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Werkstatt-Agent</span>
-              <span class="ndi-sub">Termine, die in Ihre Planung passen, nicht daneben</span>
+            <a href="../agents/proefrit.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Proefrit</span>
+              <span class="ndi-sub">Eerst kijken of de wagen vrij is, dan pas een moment</span>
             </a>
-            <a href="../agents/gemiste-gesprekken-agent.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Verpasste Anrufe</span>
-              <span class="ndi-sub">Wer nicht durchkommt, bekommt innerhalb einer Minute eine Nachricht</span>
-            </a>
-            <span class="navdrop-scheiding" role="separator">Andere Branchen</span>
-            <a href="../sectoren/vastgoed.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-              <span class="ndi-title">Immobilien</span>
-            </a>
-            <a href="../sectoren/bouw.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-              <span class="ndi-title">Bau &amp; Renovierung</span>
-            </a>
-            <a href="../sectoren/keuken.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-              <span class="ndi-title">Küchen</span>
+            <a href="../agents/gemiste-aanvraag.html" class="navdrop-item" role="menuitem">
+              <span class="ndi-title">Nachverfolgung</span>
+              <span class="ndi-sub">Het gesprek stopt niet als de koper stopt met typen</span>
             </a>
           </div>
         </div>
@@ -115,7 +105,7 @@
           <div class="navdrop-menu" role="menu">
             <a href="../roi.html" class="navdrop-item" role="menuitem">
               <span class="ndi-title">Umsatzrechner</span>
-              <span class="ndi-sub">Was in Ihrer Werkstatt liegen bleibt</span>
+              <span class="ndi-sub">Wat blijft er liggen bij jouw aanvragen</span>
             </a>
             <a href="../cases.html" class="navdrop-item" role="menuitem">
               <span class="ndi-title">Pilot und Zahlen</span>
@@ -167,8 +157,8 @@
           <span class="ndi-sub">Auffangen, verstehen, handeln, verbinden, messen</span>
         </a>
         <a href="../agents/index.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Die Agents</span>
-          <span class="ndi-sub">Zehn Arbeitsabläufe im selben System</span>
+          <span class="ndi-title">Die Arbeitsabläufe</span>
+          <span class="ndi-sub">Acht werkstromen binnen hetzelfde systeem</span>
         </a>
         <a href="../koppelingen/index.html" class="navdrop-item" role="menuitem">
           <span class="ndi-title">Anbindungen</span>
@@ -186,33 +176,23 @@
     </div>
 
     <div class="navdrop">
-      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Automotive <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
+      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Voor autobedrijven <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
       <div class="navdrop-menu" role="menu">
         <a href="../automotive.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Für die Werkstatt</span>
-          <span class="ndi-sub">Was das System in einer freien Werkstatt tut</span>
+          <span class="ndi-title">Voor autobedrijven</span>
+          <span class="ndi-sub">Wat het systeem doet bij een dealer of onafhankelijk autobedrijf</span>
         </a>
-        <a href="../agents/apk-herinnering-agent.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">HU-Agent</span>
-          <span class="ndi-sub">Von der näher rückenden HU zum gebuchten Termin</span>
+        <a href="../agents/nieuwe-aanvraag.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Nieuwe aanvraag</span>
+          <span class="ndi-sub">Van vraag over een auto naar een afspraak</span>
         </a>
-        <a href="../agents/werkplaats-inplan-agent.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Werkstatt-Agent</span>
-          <span class="ndi-sub">Termine, die in Ihre Planung passen, nicht daneben</span>
+        <a href="../agents/proefrit.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Proefrit</span>
+          <span class="ndi-sub">Eerst kijken of de wagen vrij is, dan pas een moment</span>
         </a>
-        <a href="../agents/gemiste-gesprekken-agent.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Verpasste Anrufe</span>
-          <span class="ndi-sub">Wer nicht durchkommt, bekommt innerhalb einer Minute eine Nachricht</span>
-        </a>
-        <span class="navdrop-scheiding" role="separator">Andere Branchen</span>
-        <a href="../sectoren/vastgoed.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-          <span class="ndi-title">Immobilien</span>
-        </a>
-        <a href="../sectoren/bouw.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-          <span class="ndi-title">Bau &amp; Renovierung</span>
-        </a>
-        <a href="../sectoren/keuken.html" class="navdrop-item navdrop-item-klein" role="menuitem">
-          <span class="ndi-title">Küchen</span>
+        <a href="../agents/gemiste-aanvraag.html" class="navdrop-item" role="menuitem">
+          <span class="ndi-title">Nachverfolgung</span>
+          <span class="ndi-sub">Het gesprek stopt niet als de koper stopt met typen</span>
         </a>
       </div>
     </div>
@@ -222,7 +202,7 @@
       <div class="navdrop-menu" role="menu">
         <a href="../roi.html" class="navdrop-item" role="menuitem">
           <span class="ndi-title">Umsatzrechner</span>
-          <span class="ndi-sub">Was in Ihrer Werkstatt liegen bleibt</span>
+          <span class="ndi-sub">Wat blijft er liggen bij jouw aanvragen</span>
         </a>
         <a href="../cases.html" class="navdrop-item" role="menuitem">
           <span class="ndi-title">Pilot und Zahlen</span>
@@ -266,152 +246,137 @@
         <nav class="kruimels" aria-label="Kruimelpad">
           <a href="../index.html">Start</a>
           <span aria-hidden="true">·</span>
-          <span aria-current="page">Agents</span>
+          <span aria-current="page">Arbeitsabläufe</span>
         </nav>
         <span class="section-label">Die Arbeitsabläufe</span>
-        <h1 class="paghero-titel">Zehn Agents. <span class="highlight">Ein System darunter.</span></h1>
-        <p class="paghero-lede">Das ist kein Laden mit zehn Einzelprodukten. Es sind zehn Arbeitsabläufe im selben System: Sie teilen dasselbe Gedächtnis, schreiben in dieselbe Planung und summieren sich in derselben Übersicht. Sie schalten ein, was Sie brauchen, und lassen den Rest aus.</p>
+        <h1 class="paghero-titel">Acht werkstromen. <span class="highlight">Ein System darunter.</span></h1>
+        <p class="paghero-lede">Dit zijn geen acht losse producten. Het zijn acht routes door hetzelfde systeem: dezelfde koper, dezelfde wagen, hetzelfde dossier. Je zet aan wat je nodig hebt en de rest staat klaar.</p>
         <div class="paghero-acties">
           <a href="../meeting.html" class="btn btn-lg">Demo planen <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
-          <a href="../systeem.html" class="btn btn-ghost btn-lg">So ist das System aufgebaut</a>
+          <a href="../systeem.html" class="btn btn-ghost btn-lg">Bekijk hoe het werkt</a>
         </div>
       </div>
     </section>
 
-    <!-- ===== WAAROM DIT GEEN TIEN PRODUCTEN ZIJN ====================== -->
     <section class="section" data-gids="verschil">
       <div class="container">
         <div class="section-header text-center reveal">
           <span class="section-label">Warum das zusammenhängt</span>
-          <h2 class="section-title">Zehn lose Hilfsmittel werden nie ein Prozess.</h2>
-          <p class="section-sub">Sie können für jede dieser Aufgaben einen eigenen Anbieter finden. Dann haben Sie zehn Abos, zehn Postfächer und null Überblick.</p>
+          <h2 class="section-title">Acht losse hulpmiddelen worden nooit een verkoopproces.</h2>
+          <p class="section-sub">Je kunt voor elk van deze taken iets aparts kopen. Dan heb je acht abonnementen, acht inboxen en nul overzicht van wat er met één koper gebeurd is.</p>
         </div>
         <div class="duo-grid">
           <div class="duo-kaart reveal spot">
-            <h3 class="duo-titel">Ein Gedächtnis</h3>
-            <p class="duo-desc">Eine Korrektur, die Sie einmal machen, gilt danach für jeden Agent. Der HU-Agent weiß, dass derselbe Kunde gestern wegen seiner Bremsen angerufen hat.</p>
+            <h3 class="duo-titel">Eén koper</h3>
+            <p class="duo-desc">Hij mailt vanavond en appt morgen. Dat is dezelfde persoon met dezelfde vraag, niet twee losse gesprekken.</p>
           </div>
           <div class="duo-kaart reveal spot">
-            <h3 class="duo-titel">Eine Planung</h3>
-            <p class="duo-desc">Alles mündet in denselben Zeitfenster im selben Kalender. Keine zwei Agents, die denselben Vormittag an zwei Leute versprechen.</p>
+            <h3 class="duo-titel">Eén wagen</h3>
+            <p class="duo-desc">Welke auto het gaat, wordt één keer vastgesteld en blijft daarna overal hetzelfde. Ook bij de inruil en de financiering.</p>
           </div>
           <div class="duo-kaart reveal reveal-delay-1 spot">
-            <h3 class="duo-titel">Eine Übersicht</h3>
-            <p class="duo-desc">Was hereinkam, was herauskam und was noch offen ist, steht auf einem Bildschirm. Nicht verteilt auf zehn Dashboards.</p>
+            <h3 class="duo-titel">Eén dossier</h3>
+            <p class="duo-desc">Alles wat gezegd is, staat op één plek. Je verkoper hoeft nooit opnieuw te vragen wat er al besproken was.</p>
           </div>
           <div class="duo-kaart reveal reveal-delay-1 spot">
             <h3 class="duo-titel">Ein Satz Absprachen</h3>
-            <p class="duo-desc">Was ein Agent selbst tun darf und was erst über Sie läuft, stellen Sie einmal ein. Das gilt danach für alles, was läuft.</p>
+            <p class="duo-desc">Wat het systeem zelf mag doen en wat eerst langs een verkoper gaat, zet je één keer. Dat geldt daarna voor alle acht.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== WAT BINNENKOMT ========================================== -->
-    <section class="section" data-gids="binnen" id="binnenkomend">
+    <section class="section" data-gids="binnen" id="vraag">
       <div class="section-glow" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header reveal">
           <span class="section-label">Gruppe 1</span>
-          <h2 class="section-title">Auffangen, was hereinkommt.</h2>
-          <p class="section-sub">Fünf Abläufe für alles, was der Kunde selbst anfängt. Anrufen, schreiben, ein Formular ausfüllen oder einen Schaden melden.</p>
+          <h2 class="section-title">Van vraag naar antwoord.</h2>
+          <p class="section-sub">Wat er gebeurt in de eerste minuten nadat een koper zich meldt. Dit is waar de meeste aanvragen gewonnen of verloren worden.</p>
         </div>
 
         <div class="uit-lijst">
-          <a class="uit-rij reveal" href="gemiste-gesprekken-agent.html">
-            <span class="uit-naam"><span class="uit-nr">01</span>Verpasste Anrufe</span>
-            <span class="uit-zin">Ein unbeantworteter Anruf bekommt innerhalb einer Minute eine Nachricht. Die einzige Lücke, deren Größe Sie derzeit nicht kennen.</span>
+          <a class="uit-rij reveal" href="nieuwe-aanvraag.html">
+            <span class="uit-naam"><span class="uit-nr">01</span>Nieuwe aanvraag</span>
+            <span class="uit-zin">Staat hij er nog, wat kost hij, wanneer kan ik kijken. Beantwoord met de gegevens uit je voorraad, ook om kwart voor tien 's avonds.</span>
             <span class="uit-pijl" aria-hidden="true">&#8594;</span>
           </a>
-          <a class="uit-rij reveal" href="werkplaats-inplan-agent.html">
-            <span class="uit-naam"><span class="uit-nr">02</span>Werkstattplanung</span>
-            <span class="uit-zin">Erst klären, was die Arbeit ist, dann erst ein Zeitfenster nennen. Mit der Dauer, die zu Ihrer Werkstatt gehört.</span>
-            <span class="uit-pijl" aria-hidden="true">&#8594;</span>
-          </a>
-          <a class="uit-rij reveal reveal-delay-1" href="onderdelen-navraag-agent.html">
-            <span class="uit-naam"><span class="uit-nr">03</span>Teileabfrage</span>
-            <span class="uit-zin">Preis und Lieferzeit werden nachgeschlagen, bevor ein Datum zugesagt wird. Kein Auto auf der Hebebühne ohne Teil.</span>
-            <span class="uit-pijl" aria-hidden="true">&#8594;</span>
-          </a>
-          <a class="uit-rij reveal reveal-delay-1" href="leenauto-agent.html">
-            <span class="uit-naam"><span class="uit-nr">04</span>Ersatzwagen</span>
-            <span class="uit-zin">Die Frage, die jede große Arbeit aufhält, beantwortet in dem Moment, in dem sie gestellt wird.</span>
-            <span class="uit-pijl" aria-hidden="true">&#8594;</span>
-          </a>
-          <a class="uit-rij reveal reveal-delay-2" href="schade-intake-agent.html">
-            <span class="uit-naam"><span class="uit-nr">05</span>Schadenaufnahme</span>
-            <span class="uit-zin">Fotos, Kennzeichen, Versicherer und Hergang da, bevor das Auto vorfährt.</span>
+          <a class="uit-rij reveal" href="voertuigadvies.html">
+            <span class="uit-naam"><span class="uit-nr">03</span>Voertuigadvies</span>
+            <span class="uit-zin">Een koper die op eisen zoekt in plaats van op een model, krijgt drie wagens die er werkelijk staan en het verschil ertussen uitgelegd.</span>
             <span class="uit-pijl" aria-hidden="true">&#8594;</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- ===== ZELF AANKLOPPEN ========================================= -->
-    <section class="section" data-gids="uitgaand" id="uitgaand">
+    <section class="section" data-gids="uitgaand" id="afspraak">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-label">Gruppe 2</span>
-          <h2 class="section-title">Selbst anklopfen, zum richtigen Zeitpunkt.</h2>
-          <p class="section-sub">Vier Abläufe, die mit dem arbeiten, was Sie schon haben: Ihre eigene Kartei, Ihre eigenen Ablaufdaten und Ihre eigenen offenen Angebote.</p>
+          <h2 class="section-title">Van antwoord naar afspraak.</h2>
+          <p class="section-sub">Drie werkstromen rond de vragen die tussen belangstelling en een handtekening staan: rijden, inruilen en betalen.</p>
         </div>
 
         <div class="uit-lijst">
-          <a class="uit-rij reveal" href="apk-herinnering-agent.html">
-            <span class="uit-naam"><span class="uit-nr">06</span>HU-Erinnerung</span>
-            <span class="uit-zin">Sechs Wochen vor dem Ablaufdatum eine Nachricht mit einem Datum darin, nicht mit der Bitte anzurufen.</span>
+          <a class="uit-rij reveal" href="proefrit.html">
+            <span class="uit-naam"><span class="uit-nr">02</span>Proefrit</span>
+            <span class="uit-zin">Eerst nakijken of de wagen vrij is, dan pas een moment noemen. Met bevestiging, herinnering en de wagen aan de afspraak.</span>
             <span class="uit-pijl" aria-hidden="true">&#8594;</span>
           </a>
-          <a class="uit-rij reveal" href="onderhoudsbeurt-herinnering-agent.html">
-            <span class="uit-naam"><span class="uit-nr">07</span>Inspektion</span>
-            <span class="uit-zin">Nach Kilometern oder nach Datum. Der Kunde, den Sie vergessen hatten, wird erinnert, bevor er woanders landet.</span>
+          <a class="uit-rij reveal" href="inruil.html">
+            <span class="uit-naam"><span class="uit-nr">04</span>Inruil</span>
+            <span class="uit-zin">Merk, bouwjaar, kilometers, historiek en foto's binnen voordat hij voorrijdt. Het bedrag bepaalt je verkoper.</span>
             <span class="uit-pijl" aria-hidden="true">&#8594;</span>
           </a>
-          <a class="uit-rij reveal reveal-delay-1" href="offerte-opvolg-agent.html">
-            <span class="uit-naam"><span class="uit-nr">08</span>Angebotsnachverfolgung</span>
-            <span class="uit-zin">Drei Kontaktmomente nach einem Angebot. Die Rechenarbeit ist schon getan, also ist das, was noch ein Ja wird, fast vollständig Marge.</span>
-            <span class="uit-pijl" aria-hidden="true">&#8594;</span>
-          </a>
-          <a class="uit-rij reveal reveal-delay-1" href="winterbanden-oproep-agent.html">
-            <span class="uit-naam"><span class="uit-nr">09</span>Reifenwechsel</span>
-            <span class="uit-zin">Im September anfangen statt in der Woche des ersten Frosts. Derselbe Umsatz, über vier Wochen verteilt.</span>
+          <a class="uit-rij reveal reveal-delay-1" href="financiering.html">
+            <span class="uit-naam"><span class="uit-nr">05</span>Financiering</span>
+            <span class="uit-zin">"Wat kost dat per maand" is een koopsignaal. Het wordt uitgelegd en doorgegeven, niet afgewimpeld en niet beloofd.</span>
             <span class="uit-pijl" aria-hidden="true">&#8594;</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- ===== DE AFSPRAAK VASTHOUDEN ================================== -->
-    <section class="section" data-gids="vasthouden" id="vasthouden">
+    <section class="section" data-gids="vasthouden" id="kanalen">
       <div class="section-glow" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header reveal">
           <span class="section-label">Gruppe 3</span>
-          <h2 class="section-title">Den Termin halten.</h2>
-          <p class="section-sub">Ein gebuchter Termin ist noch kein Auto auf der Hebebühne. Dieser Ablauf hängt an allem, was die anderen neun einplanen.</p>
+          <h2 class="section-title">Waar het gebeurt, en wat er daarna nog komt.</h2>
+          <p class="section-sub">Twee kanalen en de opvolging die eraan vastzit. Op alle drie hetzelfde dossier en dezelfde wagen.</p>
         </div>
 
         <div class="uit-lijst">
-          <a class="uit-rij reveal" href="no-show-agent.html">
-            <span class="uit-naam"><span class="uit-nr">10</span>No-Shows</span>
-            <span class="uit-zin">Bestätigen, erinnern, verschieben wo nötig, und das frei gewordene Zeitfenster sofort jemandem anbieten, der wartet.</span>
+          <a class="uit-rij reveal" href="whatsapp.html">
+            <span class="uit-naam"><span class="uit-nr">08</span>WhatsApp</span>
+            <span class="uit-zin">Het kanaal waarop kopers het snelst antwoorden, op één bedrijfsnummer in plaats van op de telefoon van één verkoper.</span>
+            <span class="uit-pijl" aria-hidden="true">&#8594;</span>
+          </a>
+          <a class="uit-rij reveal" href="e-mail.html">
+            <span class="uit-naam"><span class="uit-nr">07</span>E-Mail</span>
+            <span class="uit-zin">De langste en vaak serieuste aanvragen. Gelezen, gekoppeld aan een wagen en beantwoord voor ze in de mailbox wegzakken.</span>
+            <span class="uit-pijl" aria-hidden="true">&#8594;</span>
+          </a>
+          <a class="uit-rij reveal reveal-delay-1" href="gemiste-aanvraag.html">
+            <span class="uit-naam"><span class="uit-nr">06</span>Nachverfolgung</span>
+            <span class="uit-zin">Drie contactmomenten nadat een gesprek stilviel, met de wagen erbij. Daarna duidelijkheid, geen eindeloze herhaling.</span>
             <span class="uit-pijl" aria-hidden="true">&#8594;</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- ===== WAAR JE BEGINT ========================================== -->
     <section class="section" data-gids="beginnen">
       <div class="container">
         <div class="pilot-inner reveal">
           <span class="section-label">Empfehlung</span>
           <h2 class="section-title">Fangen Sie mit einem an.</h2>
-          <p class="pilot-tekst">Alles auf einmal einzuschalten klingt effizient und funktioniert selten. Sie wissen dann nicht, was wirkt, Ihr Team verliert den Überblick, und der erste Fehler in einem Ablauf bringt den ganzen Betrieb in Alarmbereitschaft. Einen einschalten, vier Wochen messen, dann den nächsten.</p>
+          <p class="pilot-tekst">Alles tegelijk aanzetten klinkt efficiënt en werkt zelden. Je weet dan niet wat er werkt, je verkopers raken het overzicht kwijt en de eerste fout in één werkstroom zet je hele bedrijf op scherp. Eén aanzetten, vier weken meten, dan de volgende.</p>
           <ul class="pilot-lijst pilot-lijst-3">
-            <li><strong>Wissen Sie nicht, wo anfangen</strong><span>Dann sind es die verpassten Anrufe, weil Sie dort sofort sehen, wie groß das Problem ist.</span></li>
-            <li><strong>Haben Sie eine ruhige Werkstatt</strong><span>Dann die HU-Erinnerung, denn diese Liste liegt bereit und füllt Ihre leeren Wochen.</span></li>
-            <li><strong>Gehen viele Angebote raus</strong><span>Dann die Angebotsnachfassung, denn dort liegt die Marge, die schon bezahlt ist.</span></li>
+            <li><strong>Wissen Sie nicht, wo anfangen</strong><span>Dan de nieuwe aanvraag, want daar zie je meteen hoeveel er buiten je uren binnenkomt.</span></li>
+            <li><strong>Komen er veel aanvragen per mail</strong><span>Dan e-mail, want daar ligt de langste en vaak serieuste vraag te wachten.</span></li>
+            <li><strong>Vallen gesprekken vaak stil</strong><span>Dan de opvolging, want daar ligt werk dat je al gedaan hebt.</span></li>
           </ul>
           <div class="pilot-acties">
             <a href="../meeting.html" class="btn btn-lg">Demo planen <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
@@ -451,7 +416,7 @@
         <div class="footer-col">
           <span class="footer-head">System</span>
           <a href="../systeem.html" class="footer-link">Das Helvaro-System</a>
-          <a href="../agents/index.html" class="footer-link">Die Agents</a>
+          <a href="../agents/index.html" class="footer-link">Die Arbeitsabläufe</a>
           <a href="../koppelingen/index.html" class="footer-link">Anbindungen</a>
           <a href="../controle.html" class="footer-link">Kontrolle und DSGVO</a>
           <a href="../faro.html" class="footer-link">Faro</a>
@@ -459,17 +424,17 @@
 
         <div class="footer-col">
           <span class="footer-head">Arbeitsabläufe</span>
-          <a href="../agents/apk-herinnering-agent.html" class="footer-link">HU-Erinnerung</a>
-          <a href="../agents/werkplaats-inplan-agent.html" class="footer-link">Werkstattplanung</a>
-          <a href="../agents/gemiste-gesprekken-agent.html" class="footer-link">Verpasste Anrufe</a>
-          <a href="../agents/offerte-opvolg-agent.html" class="footer-link">Angebotsnachverfolgung</a>
-          <a href="../agents/no-show-agent.html" class="footer-link">No-Shows</a>
-          <a href="../agents/index.html" class="footer-link">Alle zehn</a>
+          <a href="../agents/nieuwe-aanvraag.html" class="footer-link">Nieuwe aanvraag</a>
+          <a href="../agents/proefrit.html" class="footer-link">Proefrit</a>
+          <a href="../agents/voertuigadvies.html" class="footer-link">Voertuigadvies</a>
+          <a href="../agents/inruil.html" class="footer-link">Inruil</a>
+          <a href="../agents/gemiste-aanvraag.html" class="footer-link">Nachverfolgung</a>
+          <a href="../agents/index.html" class="footer-link">Alle acht</a>
         </div>
 
         <div class="footer-col">
           <span class="footer-head">Loslegen</span>
-          <a href="../automotive.html" class="footer-link">Für die Werkstatt</a>
+          <a href="../automotive.html" class="footer-link">Voor autobedrijven</a>
           <a href="../roi.html" class="footer-link">Umsatzrechner</a>
           <a href="../cases.html" class="footer-link">Pilot und Zahlen</a>
           <a href="../index.html#prijzen" class="footer-link">Preise</a>

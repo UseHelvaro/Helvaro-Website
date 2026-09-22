@@ -22,11 +22,11 @@
 
   var LABELS = {nl:'NL',fr:'FR',en:'EN',de:'DE',es:'ES'};
   var HERO = {
-    nl: 'Je bedrijf groeit. <span class="highlight">Je werkdruk niet.</span>',
-    fr: 'Votre activité grandit. <span class="highlight">Votre charge de travail, non.</span>',
-    en: 'Your business grows. <span class="highlight">Your workload doesn\'t.</span>',
-    de: 'Ihr Unternehmen wächst. <span class="highlight">Ihre Arbeitslast nicht.</span>',
-    es: 'Tu empresa crece. <span class="highlight">Tu carga de trabajo no.</span>'
+    nl: 'Elke voertuigaanvraag. <span class="highlight">Afgehandeld.</span>',
+    fr: 'Chaque demande de véhicule. <span class="highlight">Traitée.</span>',
+    en: 'Every vehicle enquiry. <span class="highlight">Handled.</span>',
+    de: 'Jede Fahrzeuganfrage. <span class="highlight">Bearbeitet.</span>',
+    es: 'Cada consulta de vehículo. <span class="highlight">Atendida.</span>'
   };
   /* Titel van het browsertabblad: die staat buiten de <body> en wordt
      dus niet door de tekstwandeling opgepikt. Apart vertalen. */
@@ -96,18 +96,18 @@
      alleen de vetgedrukte stukken zouden vertalen. Daarom hier als geheel. */
   var HTML_BLOKKEN = {
     nietBeweren: {
-      nl: "Wat we <strong>niet</strong> beweren: dat een agent nooit een fout maakt. Daarom bestaan de goedkeuringen hierboven. Onze modelleveranciers verwerken goedgekeurde context onder hun eigen voorwaarden, en dat zetten we op papier voor we beginnen.",
-      fr: "Ce que nous ne prétendons <strong>pas</strong> : qu'un agent ne se trompe jamais. C'est précisément pour cela que les approbations ci-dessus existent. Nos fournisseurs de modèles traitent le contexte approuvé selon leurs propres conditions, et nous le mettons par écrit avant de commencer.",
-      en: "What we do <strong>not</strong> claim: that an agent never makes a mistake. That is exactly why the approvals above exist. Our model providers process approved context under their own terms, and we put that in writing before we start.",
-      de: "Was wir <strong>nicht</strong> behaupten: dass ein Agent nie einen Fehler macht. Genau dafür gibt es die Freigaben oben. Unsere Modellanbieter verarbeiten freigegebenen Kontext zu ihren eigenen Bedingungen, und das halten wir schriftlich fest, bevor wir anfangen.",
-      es: "Lo que <strong>no</strong> afirmamos: que un agente nunca se equivoca. Precisamente por eso existen las aprobaciones de arriba. Nuestros proveedores de modelos procesan el contexto aprobado bajo sus propias condiciones, y lo dejamos por escrito antes de empezar."
+      nl: "Wat we <strong>niet</strong> beweren: dat er nooit een fout gemaakt wordt. Daarom kan je verkoper overnemen en bestaan de goedkeuringen hierboven. Onze modelleveranciers verwerken goedgekeurde context onder hun eigen voorwaarden, en dat zetten we op papier voor we beginnen.",
+      fr: "Ce que nous ne prétendons <strong>pas</strong> : qu'aucune erreur n'est jamais commise. C'est pour cela que votre vendeur peut reprendre la main et que les approbations ci-dessus existent. Nos fournisseurs de modèles traitent le contexte approuvé selon leurs propres conditions, et nous le mettons par écrit avant de commencer.",
+      en: "What we do <strong>not</strong> claim: that a mistake is never made. That is why your salesperson can take over and why the approvals above exist. Our model providers process approved context under their own terms, and we put that in writing before we start.",
+      de: "Was wir <strong>nicht</strong> behaupten: dass nie ein Fehler passiert. Genau dafür kann Ihr Verkäufer übernehmen und dafür gibt es die Freigaben oben. Unsere Modellanbieter verarbeiten freigegebenen Kontext zu ihren eigenen Bedingungen, und das halten wir schriftlich fest, bevor wir anfangen.",
+      es: "Lo que <strong>no</strong> afirmamos: que nunca se comete un error. Por eso tu vendedor puede tomar el relevo y por eso existen las aprobaciones de arriba. Nuestros proveedores de modelos procesan el contexto aprobado bajo sus propias condiciones, y lo dejamos por escrito antes de empezar."
     },
     faroTitel: {
-      nl: "Je agents doen het werk. <span class=\"highlight\">Faro houdt het in de gaten.</span>",
-      fr: "Vos agents font le travail. <span class=\"highlight\">Faro garde l'œil dessus.</span>",
-      en: "Your agents do the work. <span class=\"highlight\">Faro keeps watch over it.</span>",
-      de: "Ihre Agents machen die Arbeit. <span class=\"highlight\">Faro behält sie im Blick.</span>",
-      es: "Tus agentes hacen el trabajo. <span class=\"highlight\">Faro lo vigila.</span>"
+      nl: "Je werkstromen doen het werk. <span class=\"highlight\">Faro houdt het in de gaten.</span>",
+      fr: "Vos flux font le travail. <span class=\"highlight\">Faro garde l'œil dessus.</span>",
+      en: "Your workflows do the work. <span class=\"highlight\">Faro keeps watch over it.</span>",
+      de: "Ihre Abläufe machen die Arbeit. <span class=\"highlight\">Faro behält sie im Blick.</span>",
+      es: "Tus flujos hacen el trabajo. <span class=\"highlight\">Faro lo vigila.</span>"
     },
     gDataBewaren: {
       nl: "Van je Google-account bewaren we drie dingen: een <strong>vernieuwingstoken</strong> zodat je niet bij elke afspraak opnieuw moet inloggen, het <strong>e-mailadres</strong> van het gekoppelde account en het <strong>agenda-ID</strong> van de agenda die je gekozen hebt.",
@@ -152,11 +152,11 @@
       es: "El uso por parte de Helvaro de la información recibida a través de las API de Google se ajusta a la <a href=\"https://developers.google.com/terms/api-services-user-data-policy\">Google API Services User Data Policy</a>, incluidos los requisitos de Limited Use."
     },
     heroSub: {
-      nl: 'Helvaro bouwt en beheert <strong>AI-agents die het herhaalwerk overnemen</strong>. Gesprekken, opvolging, planning en de administratie erachter. <strong>Jij houdt elke beslissing.</strong>',
-      fr: 'Helvaro con\u00e7oit et g\u00e8re des <strong>agents IA qui reprennent le travail r\u00e9p\u00e9titif</strong>. Conversations, suivi, planification et l\'administration qui va avec. <strong>Chaque d\u00e9cision reste la v\u00f4tre.</strong>',
-      en: 'Helvaro builds and runs <strong>AI agents that take over the repetitive work</strong>. Conversations, follow-up, scheduling and the admin behind it. <strong>You keep every decision.</strong>',
-      de: 'Helvaro baut und betreibt <strong>KI-Agents, die die Routinearbeit \u00fcbernehmen</strong>. Gespr\u00e4che, Nachverfolgung, Terminplanung und die Verwaltung dahinter. <strong>Jede Entscheidung bleibt bei Ihnen.</strong>',
-      es: 'Helvaro construye y gestiona <strong>agentes de IA que asumen el trabajo repetitivo</strong>. Conversaciones, seguimiento, agenda y la administraci\u00f3n que conlleva. <strong>Cada decisi\u00f3n sigue siendo tuya.</strong>'
+      nl: 'Helvaro handelt aanvragen af via <strong>je website, WhatsApp en e-mail</strong>. Het weet over welke auto het gaat, kwalificeert de kans, volgt op en boekt de afspraak. <strong>Je verkoper houdt de regie.</strong>',
+      fr: 'Helvaro traite les demandes via <strong>votre site, WhatsApp et l\'e-mail</strong>. Il sait de quelle voiture il s\'agit, qualifie l\'opportunité, relance et fixe le rendez-vous. <strong>Votre vendeur garde la main.</strong>',
+      en: 'Helvaro handles enquiries from <strong>your website, WhatsApp and email</strong>. It knows which car is meant, qualifies the opportunity, follows up and books the appointment. <strong>Your salesperson stays in control.</strong>',
+      de: 'Helvaro bearbeitet Anfragen über <strong>Ihre Website, WhatsApp und E-Mail</strong>. Es weiß, um welches Auto es geht, qualifiziert die Chance, fasst nach und bucht den Termin. <strong>Ihr Verkäufer behält die Regie.</strong>',
+      es: 'Helvaro atiende las consultas desde <strong>tu web, WhatsApp y el correo</strong>. Sabe de qué coche se trata, cualifica la oportunidad, hace seguimiento y reserva la cita. <strong>Tu comercial mantiene el control.</strong>'
     }
   };
   function applyHtmlBlokken(lang){

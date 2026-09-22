@@ -44,45 +44,47 @@ my @PAGINAS = (
    'De tien agents van het Helvaro-systeem',
    'APK, werkplaatsplanning, gemiste gesprekken, offertes, no-shows en meer. Tien werkstromen binnen hetzelfde systeem, met hetzelfde geheugen.'],
 
-  ['agents/apk-herinnering-agent.html',
-   'APK-herinnering-agent: van vervaldatum naar geboekte keuring',
-   'Zes weken voor de APK verloopt een bericht met een concrete datum erbij. Vragen worden beantwoord, de afspraak wordt vastgezet.'],
+  ['agents/nieuwe-aanvraag.html',
+   'Nieuwe aanvraag: van vraag over een auto naar afspraak',
+   'Een koper vraagt of een wagen er nog staat. Helvaro antwoordt met de gegevens uit je voorraad, beantwoordt de vragen erna en zet een moment vast.'],
 
-  ['agents/werkplaats-inplan-agent.html',
-   'Werkplaats-inplan-agent: afspraken die in je planning passen',
-   'Een keuring is geen distributieriem. De agent weet hoelang een klus duurt en boekt het tijdslot dat erbij hoort.'],
+  ['agents/proefrit.html',
+   'Proefrit inplannen zonder heen en weer',
+   'Eerst nakijken of de wagen vrij is, dan pas een moment noemen. Met bevestiging, herinnering en de wagen aan de afspraak.'],
 
-  ['agents/gemiste-gesprekken-agent.html',
-   'Gemiste-gesprekken-agent: elke onbeantwoorde oproep krijgt antwoord',
-   'Wie niet doorkomt krijgt binnen een minuut een bericht, met de vraag waar het over gaat en een voorstel voor een tijdslot.'],
+  ['agents/voertuigadvies.html',
+   'Voertuigadvies: van eisen naar drie wagens die er staan',
+   'Een koper zoekt op budget, carrosserie en kilometers in plaats van op een model. Helvaro zoekt in je voorraad en legt het verschil uit.'],
 
-  ['agents/offerte-opvolg-agent.html',
-   'Offerte-opvolg-agent: een prijs die de deur uitgaat, komt ook terug',
-   'Drie contactmomenten na een prijsopgave, in jouw toon. Een duidelijk nee is ook een resultaat, want dan stopt het naijlen.'],
+  ['agents/inruil.html',
+   'Inruil: de gegevens binnen voor de koper voorrijdt',
+   'Merk, bouwjaar, kilometerstand, historiek en foto’s worden opgehaald. Het bedrag bepaalt je verkoper, niet het systeem.'],
 
-  ['agents/no-show-agent.html',
-   'No-show-agent: minder lege bruggen, minder loze uren',
-   'Bevestigen, herinneren en het vrijgekomen tijdslot meteen aanbieden aan iemand die wacht. Een lege brug kost evenveel als een volle.'],
+  ['agents/financiering.html',
+   'Financiering: het koopsignaal dat niet mag doodlopen',
+   'Uitleggen waar een maandbedrag van afhangt, ophalen wat nodig is en op tijd een verkoper erbij halen. Zonder bedragen te beloven.'],
 
-  ['agents/onderdelen-navraag-agent.html',
-   'Onderdelen-navraag-agent: de klant weet waar hij aan toe is',
-   'Levertijd, prijs en beschikbaarheid van onderdelen worden nagevraagd en teruggekoppeld, zodat je balie niet drie keer hoeft te bellen.'],
+  ['agents/gemiste-aanvraag.html',
+   'Opvolging: het gesprek stopt niet als de koper stopt',
+   'Drie contactmomenten na een gesprek dat stilviel, met de wagen erbij. Daarna duidelijkheid, geen eindeloze herhaling.'],
 
-  ['agents/leenauto-agent.html',
-   'Leenauto-agent: beschikbaarheid en reservering in één gesprek',
-   'Is er een leenauto vrij, wat kost het en wat zijn de voorwaarden. De vraag die elke afspraak vertraagt, meteen beantwoord.'],
+  ['agents/e-mail.html',
+   'E-mail: de serieuze aanvragen komen nog altijd per mail',
+   'Aanvragen uit je algemene mailbox worden gelezen, gekoppeld aan een wagen en beantwoord. Inclusief de inruil die erin genoemd wordt.'],
 
-  ['agents/schade-intake-agent.html',
-   'Schade-intake-agent: gegevens compleet voor de auto binnenrijdt',
-   "Foto's, kenteken, verzekeraar en toedracht worden opgehaald voor de klant langskomt, zodat de eerste afspraak meteen klopt."],
+  ['agents/whatsapp.html',
+   'WhatsApp voor autobedrijven: op één bedrijfsnummer',
+   'Hetzelfde systeem op het kanaal waar kopers het snelst antwoorden. Niet op de telefoon van één verkoper, maar in een dossier.'],
 
-  ['agents/winterbanden-oproep-agent.html',
-   'Bandenwissel-agent: twee seizoenen, één campagne',
-   'Twee keer per jaar een volle week werk, mits iemand op tijd begint. De agent benadert je hele bandenbestand en plant de wissels in.'],
 
-  ['agents/onderhoudsbeurt-herinnering-agent.html',
-   'Onderhoudsbeurt-agent: op kilometers of op datum',
-   'De klant die anders nog een half jaar doorrijdt, boekt nu. Herinneringen op basis van je eigen intervallen, niet op een vast schema.'],
+
+
+
+
+
+
+
+
 
   ['controle.html',
    'Controle en privacy: wat een agent mag, en waar je data staat',
@@ -96,21 +98,25 @@ my @PAGINAS = (
    'Koppelingen: waar Helvaro in je bestaande software past',
    'Een afspraak die alleen bij ons staat is geen afspraak. Dit is de eerlijke stand van zaken per koppeling: live, in ontwikkeling of gepland.'],
 
-  ['koppelingen/automaat-go.html',
-   'Helvaro en AutomaaT GO',
-   'Afspraken en klantgegevens naar het pakket waar veel onafhankelijke garages in werken. Stand van zaken, opzet en wat er nog niet is.'],
+  ['koppelingen/voorraad.html',
+   'Je voorraad koppelen: antwoorden uit je eigen wagens',
+   'Zonder je voorraad kan een systeem alleen algemene dingen zeggen. Met je voorraad antwoordt het met prijs, kilometerstand en uitvoering van de juiste wagen.'],
 
-  ['koppelingen/autoflex.html',
-   'Helvaro en Autoflex',
-   'Werkorders en werkplaatsplanning, zodat een geboekt tijdslot ook echt een werkorder wordt. Stand van zaken en de beoogde opzet.'],
+  ['koppelingen/website.html',
+   'De verkoper op je eigen website',
+   'Eén script op je bestaande site. Het gesprek gaat over de wagen op de pagina, vraagt contact wanneer er koopinteresse is en loopt door op WhatsApp.'],
 
-  ['koppelingen/wincar.html',
-   'Helvaro en WinCar',
-   'Klanthistorie en voertuigdossier als context onder elk gesprek. Stand van zaken en de beoogde opzet.'],
+  ['koppelingen/whatsapp-business.html',
+   'WhatsApp voor je autobedrijf, op één bedrijfsnummer',
+   'Het kanaal waarop kopers het snelst antwoorden, niet op de privételefoon van één verkoper maar op een nummer waar je hele team bij kan.'],
 
-  ['koppelingen/rdw-kenteken.html',
-   'Helvaro en het RDW-kentekenregister',
-   'Voertuiggegevens en APK-vervaldatum op basis van het kenteken dat de klant noemt. Stand van zaken en wat we wel en niet opslaan.'],
+  ['koppelingen/agenda.html',
+   'Je agenda koppelen: afspraken die je verkoper ziet staan',
+   'Er wordt geen moment aangeboden waarvan de beschikbaarheid niet bekend is. Bevestiging, herinnering en de wagen aan de afspraak.'],
+
+
+
+
 
   ['sectoren/keuken.html',
    'Keukenzaken: van aanvraag naar geboekte opmeting',
@@ -172,7 +178,7 @@ for my $rij (@PAGINAS) {
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="${o}css/style.css?v=95">
+  <link rel="stylesheet" href="${o}css/style.css?v=97">
 </head>
 <body>
   <a class="skip-link" href="#main">Naar de inhoud</a>
