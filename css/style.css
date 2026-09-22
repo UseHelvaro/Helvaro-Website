@@ -8022,3 +8022,39 @@ p { text-wrap: pretty; }
 }
 [data-theme="light"] .ck-vast { color: #8A6A33; }
 .ck-pijl { text-align: center; padding: 9px 0; color: var(--text-3); }
+
+/* ============================================================
+   WOORDMERK IN ZAND
+   ------------------------------------------------------------
+   Het woordmerk komt als gouden render uit de app: dezelfde tint
+   als de knoppen, maar een stuk donkerder. Gemeten over alle
+   ondoorzichtige pixels is het gemiddelde HSL(41, 56%, 59%),
+   terwijl het zand van de knoppen op HSL(41, 54%, 80%) zit.
+   Kleurtoon en verzadiging klopten dus al; alleen de helderheid
+   niet. Daarom verven we hem niet opnieuw maar verschuiven we
+   hem, zodat het reliëf in de letters blijft staan.
+
+   De drie waarden zijn uitgerekend, niet geprobeerd. saturate,
+   contrast en brightness zijn alle drie lineair, dus het
+   gemiddelde van het resultaat is het resultaat van het
+   gemiddelde: (l + (kanaal - l) * s) * ct * br + 127,5 * br *
+   (1 - ct). Die drie vergelijkingen op #E8D7B1 oplossen geeft
+   hieronder. contrast staat laag omdat het gemiddelde anders
+   alleen omhoog komt door de highlights uit te branden.
+
+   Licht thema krijgt eigen waarden. Zand is daar een VULLING en
+   geen letterkleur: bleek zand op wit haalt 1,3:1. Daar gaat hij
+   dus naar brons #B08A4A, dezelfde kleur die de knoprand en de
+   accenttekst daar gebruiken.
+   ============================================================ */
+.nav-logo img,
+.footer-logo,
+.nf-logo {
+  filter: saturate(0.74) contrast(0.42) brightness(1.47);
+}
+
+[data-theme="light"] .nav-logo img,
+[data-theme="light"] .footer-logo,
+[data-theme="light"] .nf-logo {
+  filter: saturate(1.25) contrast(0.90) brightness(0.83);
+}
