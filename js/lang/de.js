@@ -2153,7 +2153,7 @@ Object.assign(window.HELVARO_TR['de'], {
   "Foto’s erbij": "Mit Fotos",
   "Foto’s verstuurd": "Fotos gesendet",
   "Foto’s zijn geen gedoe": "Fotos sind kein Aufwand",
-  "Gebouwd voor het autobedrijf": "Gebaut für das Autohaus",
+  "Gebouwd voor het autobedrijf": "Gebaut für das Autohaus,",
   "Geen \"heb je al nagedacht\", maar iets dat hem verder helpt. De wagen staat er nog, of er zijn extra foto’s.": "Kein „haben Sie schon nachgedacht\", sondern etwas, das ihn weiterbringt. Das Fahrzeug steht noch da, oder es gibt zusätzliche Fotos.",
   "Geen \"neem gerust contact op\", maar twee concrete momenten waarop de wagen en iemand van je team beschikbaar zijn.": "Kein „melden Sie sich gern\", sondern zwei konkrete Zeiten, zu denen das Fahrzeug und jemand aus Ihrem Team verfügbar sind.",
   "Geen beloftes die je niet waarmaakt": "Keine Versprechen, die Sie nicht halten",

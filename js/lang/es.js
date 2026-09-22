@@ -2283,7 +2283,7 @@ Object.assign(window.HELVARO_TR['es'], {
   "Hoeveel daarvan zou een verkoop worden? (%)": "¿Cuántas de ellas acabarían en venta? (%)",
   "Hoeveel gesprekken, hoeveel afspraken, hoeveel overgenomen.": "Cuántas conversaciones, cuántas citas, cuántas asumidas.",
   "Hoeveel kilometer staat erop, en is de onderhoudshistoriek compleet?": "¿Cuántos kilómetros tiene, y el historial de mantenimiento está completo?",
-  "Hoeveel marge lekt er weg": "Cuánto margen se escapa",
+  "Hoeveel marge lekt er weg": "¿Cuánto margen se escapa",
   "Hoeveel van je aanvragen een afspraak werd, vergeleken met de nulmeting. Valt het tegen, dan schrijven we dat op. Dat is de afspraak.": "Cuántas de tus solicitudes acabaron en cita, comparado con la medición inicial. Si decepciona, lo escribimos. Ese es el acuerdo.",
   "Hoi, ik zag de Golf GTI staan. Nog beschikbaar?": "Hola, he visto el Golf GTI. ¿Sigue disponible?",
   "Iedereen die bij jou wagens verkoopt, de eigenaar meegerekend als hij meedraait.": "Todos los que venden vehículos en tu empresa, incluido el dueño si participa.",
