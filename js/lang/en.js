@@ -2803,3 +2803,31 @@ Object.assign(window.HELVARO_TR['en'], {
   "donderdag 08:30": "Thursday 08:30",
   "je content.": "your content."
 });
+
+Object.assign(window.HELVARO_TR['en'], {
+  "Aanvraag": "Enquiry",
+  "Ander kanaal.": "Different channel.",
+  "Antwoord": "Response",
+  "Antwoord met de gegevens uit je voorraad": "An answer with the data from your stock",
+  "Beantwoord met de gegevens erbij": "Answered with the data attached",
+  "Contact vragen pas bij echte koopinteresse": "Asking for contact details only on genuine buying interest",
+  "Daarna neemt je verkoper over, met alles wat er gezegd is binnen handbereik.": "After that your salesperson takes over, with everything that was said within reach.",
+  "De inruil wordt opgepakt in plaats van genegeerd": "The trade-in gets picked up instead of ignored",
+  "De vraag over financiering loopt niet dood": "The financing question does not die",
+  "Drie kanalen": "Three channels",
+  "Een moment voorstellen in plaats van terugbellen": "Proposing a slot instead of calling back",
+  "Elke aanvraag krijgt een antwoord.": "Every enquiry gets an answer.",
+  "Eén script op je bestaande site": "One script on your existing site",
+  "Eén systeem": "One system",
+  "Gelezen en gekoppeld aan een wagen": "Read and linked to a vehicle",
+  "Het gesprek gaat over de wagen op de pagina waar hij staat. Hij hoeft niet uit te leggen welke auto hij bedoelt, en jij hoeft niet te wachten tot hij een formulier invult.": "The conversation is about the vehicle on the page they are on. They do not have to explain which car they mean, and you do not have to wait for them to fill in a form.",
+  "Het maakt niet uit waar hij binnenkomt. Daarachter loopt elke keer dezelfde route, met hetzelfde dossier en dezelfde wagen eraan vast.": "It does not matter where they come in. Behind it runs the same route every time, with the same file and the same vehicle attached.",
+  "In de algemene mailbox komt alles binnen. Daar zakt de langste en vaak serieuste aanvraag weg tussen facturen en reclame, terwijl de inruil er al in staat.": "Everything arrives in the general mailbox. That is where the longest and often most serious enquiry sinks between invoices and advertising, while the trade-in is already in it.",
+  "Laat een aanvraag niet wachten.": "Do not leave an enquiry waiting.",
+  "Meteen reageren, de vraag beantwoorden en uitvragen wat je verkoper nodig heeft, terwijl het gesprek nog loopt. Ook om kwart voor tien 's avonds.": "Replying straight away, answering the question and collecting what your salesperson needs, while the conversation is still running. Also at a quarter to ten in the evening.",
+  "Scroll mee. Het toestel blijft staan, het kanaal verandert. Dezelfde koper, dezelfde wagen, hetzelfde systeem eronder.": "Scroll along. The device stays put, the channel changes. Same buyer, same vehicle, same system underneath.",
+  "Van bezoeker naar gesprek.": "From visitor to conversation.",
+  "Zelfde systeem.": "Same system.",
+  "Zo gaat hij verder.": "This is how they carry on.",
+  "Zo komt een koper binnen.": "This is how a buyer comes in."
+});

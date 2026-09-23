@@ -117,7 +117,13 @@ body {
   background: var(--bg-1);
   color: var(--text-1);
   line-height: 1.6;
+  /* hidden maakt van de body een scrollgebied, en daarmee breekt elke
+     position: sticky eronder. clip knipt net zo goed af maar laat de
+     body een gewoon blok, dus blijft kleven werken. De regel erboven is
+     de terugval voor browsers die clip nog niet kennen; die verliezen
+     dan het kleven en houden het afknippen. */
   overflow-x: hidden;
+  overflow-x: clip;
 }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
@@ -8016,60 +8022,6 @@ p { text-wrap: pretty; }
   filter: saturate(1.25) contrast(0.90) brightness(0.83);
 }
 
-/* ============================================================
-   HERO-KANALEN
-   ------------------------------------------------------------
-   Vervangt het WhatsApp-proefgesprek dat hier stond. Geen kaart
-   en geen kader: dit hoort bij de hero-tekst, niet ernaast.
-   ============================================================ */
-.hero-kanalen {
-  margin-top: 26px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border-0);
-  max-width: 480px;
-}
-.hk-kop {
-  display: block;
-  font-family: var(--font-b);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent-deep);
-  margin-bottom: 12px;
-}
-.hk-rij {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.hk-kanaal {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px 8px 11px;
-  border: 1px solid var(--border-0);
-  border-radius: var(--radius-s);
-  background: var(--bg-card);
-  font-family: var(--font-b);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-1);
-  white-space: nowrap;
-}
-.hk-icoon {
-  display: inline-flex;
-  width: 17px;
-  height: 17px;
-  color: var(--accent-deep);
-}
-.hk-icoon svg { width: 100%; height: 100%; }
-.hk-zin {
-  margin-top: 12px;
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: var(--text-3);
-}
 
 /* ============================================================
    MAIL-BLOK — e-mail als volwaardig kanaal
@@ -8300,8 +8252,540 @@ p { text-wrap: pretty; }
   .faro-content-blok { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .hero-kanalen { max-width: none; }
-  .hk-kanaal { font-size: 12.5px; padding: 7px 12px 7px 10px; }
   .mail-veld,
   .mail-velden dt { width: 58px; font-size: 10px; }
+}
+
+/* ============================================================
+   KANAALSTROOM — één toestel, drie kanalen
+   ------------------------------------------------------------
+   Links tekst die doorscrollt, rechts een toestel dat blijft
+   staan. Het toestel plakt alleen binnen deze sectie: daarbuiten
+   gaat het gewoon mee naar boven, zoals de rest van de pagina.
+   Geen vastgezette scroll, geen overgenomen muiswiel.
+   ============================================================ */
+.kanaalstroom { padding-bottom: 0; }
+
+.ks-raster {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 380px);
+  gap: 56px;
+  /* Niet start. Een kleefkind reist alleen binnen de doos van zijn ouder,
+     en met start is die doos precies zo hoog als de telefoon: dan laat hij
+     na het eerste paneel al los en scrollt hij weg. */
+  align-items: stretch;
+  margin-top: 40px;
+}
+
+/* ---- Links: de panelen ---------------------------------------------- */
+.ks-panel {
+  min-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 0;
+  opacity: 0.32;
+  transition: opacity 0.5s var(--ease);
+}
+.ks-panel.aan { opacity: 1; }
+.ks-panel-label {
+  font-family: var(--font-b);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin-bottom: 14px;
+}
+.ks-panel-titel {
+  font-family: var(--font-b);
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--text-1);
+  margin-bottom: 16px;
+}
+.ks-panel-tekst {
+  font-size: 16px;
+  line-height: 1.72;
+  color: var(--text-2);
+  max-width: 46ch;
+}
+.ks-panel-lijst {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  max-width: 46ch;
+}
+.ks-panel-lijst li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-3);
+}
+.ks-panel-lijst li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-deep);
+}
+.ks-route {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--border-0);
+  border: 1px solid var(--border-0);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  max-width: 46ch;
+}
+.ks-route li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  background: var(--bg-card);
+  font-family: var(--font-b);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-1);
+}
+.ks-route-nr {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-deep);
+  font-variant-numeric: tabular-nums;
+}
+.ks-panel-voet {
+  margin-top: 18px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-3);
+  max-width: 46ch;
+}
+
+/* ---- Rechts: het toestel -------------------------------------------- */
+.ks-kleef {
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.ks-kanaalbalk {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--border-0);
+  border-radius: 999px;
+  background: var(--bg-2);
+}
+.ks-kanaalknop {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: transparent;
+  font-family: var(--font-b);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  transition: background 0.3s var(--ease), color 0.3s var(--ease);
+}
+.ks-kanaalknop.aan {
+  background: var(--bg-card);
+  color: var(--text-1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+.ks-kanaalknop:focus-visible {
+  outline: 2px solid var(--accent-deep);
+  outline-offset: 2px;
+}
+
+.ks-frame {
+  position: relative;
+  width: 300px;
+  height: 604px;
+  padding: 12px;
+  border-radius: 42px;
+  background: #1C1C1C;
+  border: 1.5px solid rgba(var(--accent-rgb), 0.28);
+  box-shadow: 0 0 0 1px rgba(var(--accent-rgb), 0.07),
+              0 26px 70px rgba(0,0,0,0.55);
+}
+.ks-notch {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 86px;
+  height: 22px;
+  border-radius: 12px;
+  background: #0C0C0C;
+  z-index: 3;
+}
+.ks-scherm {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 31px;
+  overflow: hidden;
+  background: #0E0E0E;
+}
+.ks-weergave {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.42s var(--ease), transform 0.42s var(--ease);
+}
+.ks-weergave.aan {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* ---- Berichten, gedeeld over de drie kanalen ------------------------- */
+.ks-bericht {
+  opacity: 0;
+  transform: translateY(9px);
+  transition: opacity 0.34s var(--ease), transform 0.34s var(--ease);
+}
+.ks-bericht.zichtbaar { opacity: 1; transform: none; }
+.ks-bel {
+  padding: 9px 12px;
+  border-radius: 13px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+.ks-in { align-self: flex-end; max-width: 84%; }
+.ks-uit { align-self: flex-start; max-width: 84%; }
+.ks-in .ks-bel { background: #1F2C1F; color: #E8EFE4; border-bottom-right-radius: 4px; }
+.ks-uit .ks-bel { background: #1E1E1E; color: #E4E0D6; border-bottom-left-radius: 4px; }
+.ks-tijd {
+  display: block;
+  margin-top: 3px;
+  font-size: 9.5px;
+  color: rgba(255,255,255,0.32);
+}
+.ks-in .ks-tijd { text-align: right; }
+.ks-typ {
+  align-self: flex-start;
+  display: none;
+  gap: 4px;
+  padding: 10px 13px;
+  border-radius: 13px;
+  background: #1E1E1E;
+}
+.ks-typ.zichtbaar { display: flex; }
+.ks-typ span {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: rgba(232,215,177,0.55);
+  animation: ks-stip 1.2s infinite;
+}
+.ks-typ span:nth-child(2) { animation-delay: 0.18s; }
+.ks-typ span:nth-child(3) { animation-delay: 0.36s; }
+@keyframes ks-stip {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* ---- WhatsApp ------------------------------------------------------- */
+.ks-wa { height: 100%; display: flex; flex-direction: column; background: #0B0B0B; }
+.ks-wa-kop {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 44px 14px 11px;
+  background: #151515;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.ks-wa-terug { color: rgba(255,255,255,0.45); font-size: 17px; }
+.ks-wa-avatar {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #E8D7B1, #B89D73);
+  color: #1A1A1A;
+  font-family: var(--font-b);
+  font-size: 13px;
+  font-weight: 700;
+}
+.ks-wa-wie { display: flex; flex-direction: column; line-height: 1.25; }
+.ks-wa-naam { font-family: var(--font-b); font-size: 12.5px; font-weight: 600; color: #EDEAE2; }
+.ks-wa-status { font-size: 10px; color: rgba(232,215,177,0.6); }
+.ks-wa-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 12px 18px;
+  overflow: hidden;
+}
+
+/* ---- Website -------------------------------------------------------- */
+.ks-web { height: 100%; display: flex; flex-direction: column; background: #111; }
+.ks-web-balk {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 44px 14px 9px;
+  background: #1A1A1A;
+}
+.ks-web-slot { font-size: 7px; color: rgba(232,215,177,0.5); }
+.ks-web-url {
+  font-size: 10px;
+  color: rgba(255,255,255,0.42);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ks-web-pagina { padding: 12px 12px 0; }
+.ks-web-foto {
+  height: 96px;
+  border-radius: 10px;
+  background: linear-gradient(160deg, #202020, #161616);
+  border: 1px solid rgba(255,255,255,0.05);
+  display: grid;
+  place-items: center;
+  color: rgba(232,215,177,0.3);
+}
+.ks-web-foto svg { width: 46px; height: 46px; }
+.ks-web-info { display: flex; flex-direction: column; gap: 2px; padding: 11px 2px 0; }
+.ks-web-naam { font-family: var(--font-b); font-size: 14px; font-weight: 700; color: #EDEAE2; margin: 0; }
+.ks-web-prijs { font-family: var(--font-b); font-size: 15px; font-weight: 700; color: #E8D7B1; }
+.ks-web-regel { font-size: 10.5px; color: rgba(255,255,255,0.4); }
+.ks-widget {
+  margin: 12px 10px 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 13px;
+  background: #171717;
+  border: 1px solid rgba(232,215,177,0.16);
+  overflow: hidden;
+}
+.ks-widget-kop {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.ks-widget-stip {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #7DD87D;
+}
+.ks-widget-titel { font-family: var(--font-b); font-size: 11.5px; font-weight: 600; color: #DCD8CE; }
+.ks-widget-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 11px;
+  overflow: hidden;
+}
+.ks-widget-chat .ks-bel { font-size: 11.5px; }
+
+/* ---- E-mail --------------------------------------------------------- */
+.ks-mail { height: 100%; display: flex; flex-direction: column; background: #101010; }
+.ks-mail-kop {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 44px 15px 12px;
+  background: #171717;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.ks-mail-onderwerp { font-family: var(--font-b); font-size: 13px; font-weight: 700; color: #EDEAE2; }
+.ks-mail-aan { font-size: 10px; color: rgba(255,255,255,0.38); }
+.ks-mail-lijst {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 13px 18px;
+  overflow: hidden;
+}
+.ks-mail-item {
+  position: relative;
+  padding: 11px 12px;
+  border-radius: 10px;
+  background: #171717;
+  border: 1px solid rgba(255,255,255,0.05);
+  max-width: 100%;
+}
+.ks-mail-uit {
+  background: #1C1A15;
+  border-color: rgba(232,215,177,0.2);
+}
+.ks-mail-regel {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.ks-mail-van { font-family: var(--font-b); font-size: 11px; font-weight: 700; color: #E8D7B1; }
+.ks-mail-tijd { font-size: 9.5px; color: rgba(255,255,255,0.3); }
+.ks-mail-body {
+  font-size: 11px;
+  line-height: 1.62;
+  color: rgba(237,234,226,0.82);
+  white-space: pre-line;
+  margin: 0;
+}
+.ks-mail-draad {
+  position: absolute;
+  left: 18px;
+  bottom: -12px;
+  width: 1px;
+  height: 12px;
+  background: rgba(255,255,255,0.09);
+}
+
+/* ---- Smaller ---------------------------------------------------------
+   Onder 1024 past de tekst niet meer naast een toestel van 300 breed.
+   Dan gaat het toestel boven de tekst staan en plakt het daar. */
+@media (max-width: 1024px) {
+  /* Eén kolom: dan is het toestel een gewoon blok in een lange sectie, en
+     plakt het blok zelf. Een kleefkind in een rij van één zou meteen
+     loslaten, want die rij is niet hoger dan de telefoon. */
+  /* Eén kolom, en het toestel hoort bovenaan. Daarom flex en geen block:
+     met block doet order niets en belandt de telefoon onder alle tekst.
+     Het blok kleeft nu zelf, want een kleefkind in een rij van één zou
+     meteen loslaten. */
+  .ks-raster { display: flex; flex-direction: column; }
+  .ks-toestel {
+    order: -1;
+    position: sticky;
+    top: 72px;
+    z-index: 2;
+    padding: 12px 0 14px;
+    background: var(--bg-1);
+  }
+  .ks-kleef { position: static; }
+  .ks-frame { width: 258px; height: 520px; }
+  .ks-panel { min-height: 0; padding: 30px 0 34px; opacity: 1; }
+  .ks-panel + .ks-panel { border-top: 1px solid var(--border-0); }
+}
+@media (max-width: 560px) {
+  .ks-frame { width: 228px; height: 460px; border-radius: 34px; padding: 10px; }
+  .ks-scherm { border-radius: 25px; }
+  .ks-notch { width: 70px; height: 18px; top: 14px; }
+  .ks-wa-kop, .ks-web-balk, .ks-mail-kop { padding-top: 38px; }
+  .ks-bel { font-size: 11.5px; }
+  .ks-mail-body { font-size: 10.5px; }
+  .ks-kanaalknop { padding: 6px 12px; font-size: 11.5px; }
+  .ks-panel-tekst, .ks-panel-lijst, .ks-route, .ks-panel-voet { max-width: none; }
+}
+
+/* Wie beweging uitzet, krijgt het hele gesprek in één keer te zien.
+   Informatie mag nooit achter een animatie verstopt zitten. */
+@media (prefers-reduced-motion: reduce) {
+  .ks-weergave,
+  .ks-bericht,
+  .ks-panel { transition: none; }
+  .ks-typ { display: none !important; }
+  .ks-panel { opacity: 1; }
+}
+
+/* ---- Het dossier ------------------------------------------------------
+   Vierde scherm: waar de drie gesprekken samenkomen. Hier geen bellen maar
+   velden, want dit is geen gesprek meer. */
+.ks-dos { height: 100%; display: flex; flex-direction: column; background: #101010; }
+.ks-dos-kop {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 44px 16px 13px;
+  background: #171717;
+  border-bottom: 1px solid rgba(232,215,177,0.16);
+}
+.ks-dos-titel {
+  font-family: var(--font-b);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #E8D7B1;
+}
+.ks-dos-koper { font-family: var(--font-b); font-size: 14px; font-weight: 700; color: #EDEAE2; }
+.ks-dos-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 14px 13px;
+  overflow: hidden;
+}
+.ks-dos-via {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 11px 12px 13px;
+  border-radius: 10px;
+  background: #171717;
+  border: 1px solid rgba(255,255,255,0.05);
+  margin-bottom: 9px;
+}
+.ks-dos-kanalen { display: flex; flex-wrap: wrap; gap: 5px; }
+.ks-dos-kanaal {
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(232,215,177,0.12);
+  border: 1px solid rgba(232,215,177,0.24);
+  font-family: var(--font-b);
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #E8D7B1;
+}
+.ks-dos-regel {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.ks-dos-label {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+}
+.ks-dos-waarde {
+  font-family: var(--font-b);
+  font-size: 12px;
+  font-weight: 600;
+  color: #EDEAE2;
+  text-align: right;
+}
+.ks-dos-voet {
+  margin-top: auto;
+  padding: 12px 12px 0;
+  font-size: 10.5px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.4);
+  border-top: 1px solid rgba(255,255,255,0.05);
 }

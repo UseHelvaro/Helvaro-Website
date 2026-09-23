@@ -39,7 +39,7 @@
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
     (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
   </script>
-  <link rel="stylesheet" href="../css/style.css?v=99">
+  <link rel="stylesheet" href="../css/style.css?v=103">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -296,28 +296,6 @@
             <a href="systeem.html" class="btn btn-ghost btn-lg">Mira cómo funciona</a>
           </div>
 
-          <!-- Hier stond een veld waarin je je eigen nummer kon achterlaten
-               om met het systeem te praten. Dat verkocht het product niet,
-               het liet alleen zien dat het kon typen. De ruimte gaat nu naar
-               de drie kanalen, want dat is wat een autobedrijf herkent. -->
-          <div class="hero-kanalen">
-            <span class="hk-kop">Tres canales, un solo expediente de cliente</span>
-            <div class="hk-rij">
-              <span class="hk-kanaal">
-                <span class="hk-icoon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M3 9h18"/><path d="M6.5 6.8h.01M9 6.8h.01"/></svg></span>
-                Sitio web
-              </span>
-              <span class="hk-kanaal">
-                <span class="hk-icoon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a7.5 7.5 0 0 1-11.2 6.5L4 20l1.5-4.3A7.5 7.5 0 1 1 20 12z"/><path d="M9 12h.01M12.5 12h.01M16 12h.01"/></svg></span>
-                WhatsApp
-              </span>
-              <span class="hk-kanaal">
-                <span class="hk-icoon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3.8 7l8.2 6 8.2-6"/></svg></span>
-                Correo electrónico
-              </span>
-            </div>
-            <p class="hk-zin">Si empieza en tu web y sigue por WhatsApp, es el mismo comprador con el mismo vehículo.</p>
-          </div>
 
           <div class="trust-row">
             <span class="trust-pill">Hecho en Bélgica</span>
@@ -397,6 +375,93 @@
     <!-- ===== DRIE KANALEN, ÉÉN GESPREK ================================
          Het sterkste productidee en daarom meteen na de hero. Niet drie
          losse producten, maar drie ingangen naar dezelfde klant. -->
+    <!-- ===== KANAALSTROOM =============================================
+         Eén toestel dat blijft staan terwijl de tekst ernaast doorloopt.
+         Het scherm erin wisselt van WhatsApp naar de website naar e-mail.
+
+         De gesprekken staan niet hier maar in js/kanalen.js, per taal.
+         Reden: de vertaling leest de pagina bij het laden, en wat daarna
+         gebouwd wordt zou ze nooit zien. Zo blijft er ook één plek waar
+         je een scenario aanpast. -->
+    <section class="section kanaalstroom" id="kanalen-demo" data-gids="kanaalstroom" data-actief="whatsapp">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">Tres canales</span>
+          <h2 class="section-title">Así entra un comprador. <span class="highlight">Así continúa.</span></h2>
+          <p class="section-sub">Haz scroll. El dispositivo se queda quieto, el canal cambia. El mismo comprador, el mismo vehículo, el mismo sistema debajo.</p>
+        </div>
+
+        <div class="ks-raster">
+
+          <div class="ks-tekst">
+            <article class="ks-panel aan" data-kanaal="whatsapp">
+              <span class="ks-panel-label">WhatsApp</span>
+              <h3 class="ks-panel-titel">Cada solicitud recibe respuesta.</h3>
+              <p class="ks-panel-tekst">Responder al momento, atender la pregunta y recoger lo que tu vendedor necesita, mientras la conversación sigue viva. También a las diez menos cuarto de la noche.</p>
+              <ul class="ks-panel-lijst">
+                <li>Una respuesta con los datos de tu stock</li>
+                <li>La pregunta de financiación no muere</li>
+                <li>Proponer un hueco en lugar de devolver la llamada</li>
+              </ul>
+            </article>
+
+            <article class="ks-panel" data-kanaal="website">
+              <span class="ks-panel-label">Sitio web</span>
+              <h3 class="ks-panel-titel">De visitante a conversación.</h3>
+              <p class="ks-panel-tekst">La conversación va del vehículo de la página en la que está. No tiene que explicar de qué coche habla, y tú no tienes que esperar a que rellene un formulario.</p>
+              <ul class="ks-panel-lijst">
+                <li>Un script en tu web actual</li>
+                <li>El vehículo de la página como contexto</li>
+                <li>Pedir el contacto solo si hay interés de compra real</li>
+              </ul>
+            </article>
+
+            <article class="ks-panel" data-kanaal="email">
+              <span class="ks-panel-label">Correo electrónico</span>
+              <h3 class="ks-panel-titel">No dejes una solicitud esperando.</h3>
+              <p class="ks-panel-tekst">En el buzón general entra de todo. Ahí es donde se hunde la solicitud más larga y a menudo más seria entre facturas y publicidad, aunque ya lleve la entrega dentro.</p>
+              <ul class="ks-panel-lijst">
+                <li>Leído y vinculado a un vehículo</li>
+                <li>Respondido con los datos incluidos</li>
+                <li>La entrega se recoge en lugar de ignorarse</li>
+              </ul>
+            </article>
+
+            <article class="ks-panel ks-panel-slot" data-kanaal="systeem">
+              <span class="ks-panel-label">Un solo sistema</span>
+              <h3 class="ks-panel-titel">Otro canal. <span class="highlight">El mismo sistema.</span></h3>
+              <p class="ks-panel-tekst">Da igual por dónde entre. Detrás corre cada vez la misma ruta, con el mismo expediente y el mismo vehículo unido.</p>
+              <ol class="ks-route">
+                <li><span class="ks-route-nr">01</span>Solicitud</li>
+                <li><span class="ks-route-nr">02</span>Respuesta</li>
+                <li><span class="ks-route-nr">03</span>Cualificar</li>
+                <li><span class="ks-route-nr">04</span>Hacer seguimiento</li>
+                <li><span class="ks-route-nr">05</span>Cita</li>
+              </ol>
+              <p class="ks-panel-voet">Después tu vendedor toma el relevo, con todo lo dicho a mano.</p>
+            </article>
+          </div>
+
+          <div class="ks-toestel">
+            <div class="ks-kleef">
+              <div class="ks-kanaalbalk" role="group" aria-label="Kanaal">
+                <button type="button" class="ks-kanaalknop aan" data-kanaal="whatsapp" aria-current="true">WhatsApp</button>
+                <button type="button" class="ks-kanaalknop" data-kanaal="website" aria-current="false">Sitio web</button>
+                <button type="button" class="ks-kanaalknop" data-kanaal="email" aria-current="false">Correo electrónico</button>
+              </div>
+
+              <div class="ks-frame">
+                <div class="ks-notch" aria-hidden="true"></div>
+                <div class="ks-scherm" role="img" aria-label="Voorbeeldgesprekken waarin een koper via WhatsApp, de website en e-mail naar dezelfde BMW X5 vraagt en telkens antwoord krijgt met de gegevens uit de voorraad"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
     <section class="section stroom" data-gids="stroom" id="kanalen">
       <div class="container">
         <div class="section-header text-center reveal">
@@ -1026,6 +1091,7 @@
 <!-- /SHELL:FOOTER -->
 
   <script src="../js/main.js?v=93"></script>
+  <script src="../js/kanalen.js?v=2" defer></script>
   <script src="../js/motion.js?v=93"></script>
   <script src="../js/i18n.js?v=93"></script>
 

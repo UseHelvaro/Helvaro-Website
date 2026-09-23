@@ -2803,3 +2803,31 @@ Object.assign(window.HELVARO_TR['fr'], {
   "donderdag 08:30": "jeudi 08:30",
   "je content.": "c'est votre contenu."
 });
+
+Object.assign(window.HELVARO_TR['fr'], {
+  "Aanvraag": "Demande",
+  "Ander kanaal.": "Autre canal.",
+  "Antwoord": "Réponse",
+  "Antwoord met de gegevens uit je voorraad": "Une réponse avec les données de votre stock",
+  "Beantwoord met de gegevens erbij": "Traité avec les données à l'appui",
+  "Contact vragen pas bij echte koopinteresse": "Demander les coordonnées seulement en cas d'intérêt d'achat réel",
+  "Daarna neemt je verkoper over, met alles wat er gezegd is binnen handbereik.": "Ensuite, votre vendeur prend le relais, avec tout ce qui a été dit sous la main.",
+  "De inruil wordt opgepakt in plaats van genegeerd": "La reprise est prise en charge au lieu d'être ignorée",
+  "De vraag over financiering loopt niet dood": "La question du financement ne meurt pas",
+  "Drie kanalen": "Trois canaux",
+  "Een moment voorstellen in plaats van terugbellen": "Proposer un créneau au lieu de rappeler",
+  "Elke aanvraag krijgt een antwoord.": "Chaque demande reçoit une réponse.",
+  "Eén script op je bestaande site": "Un seul script sur votre site existant",
+  "Eén systeem": "Un seul système",
+  "Gelezen en gekoppeld aan een wagen": "Lu et rattaché à un véhicule",
+  "Het gesprek gaat over de wagen op de pagina waar hij staat. Hij hoeft niet uit te leggen welke auto hij bedoelt, en jij hoeft niet te wachten tot hij een formulier invult.": "La conversation porte sur le véhicule de la page où il se trouve. Il n'a pas à expliquer de quelle voiture il parle, et vous n'avez pas à attendre qu'il remplisse un formulaire.",
+  "Het maakt niet uit waar hij binnenkomt. Daarachter loopt elke keer dezelfde route, met hetzelfde dossier en dezelfde wagen eraan vast.": "Peu importe par où il arrive. Derrière, c'est chaque fois le même parcours, avec le même dossier et le même véhicule rattaché.",
+  "In de algemene mailbox komt alles binnen. Daar zakt de langste en vaak serieuste aanvraag weg tussen facturen en reclame, terwijl de inruil er al in staat.": "Tout arrive dans la boîte générale. C'est là que la demande la plus longue et souvent la plus sérieuse sombre entre les factures et la publicité, alors que la reprise y figure déjà.",
+  "Laat een aanvraag niet wachten.": "Ne laissez pas une demande attendre.",
+  "Meteen reageren, de vraag beantwoorden en uitvragen wat je verkoper nodig heeft, terwijl het gesprek nog loopt. Ook om kwart voor tien 's avonds.": "Répondre tout de suite, traiter la question et recueillir ce dont votre vendeur a besoin, pendant que la conversation est encore en cours. Même à vingt-deux heures moins le quart.",
+  "Scroll mee. Het toestel blijft staan, het kanaal verandert. Dezelfde koper, dezelfde wagen, hetzelfde systeem eronder.": "Faites défiler. L'appareil reste en place, le canal change. Même acheteur, même véhicule, même système en dessous.",
+  "Van bezoeker naar gesprek.": "Du visiteur à la conversation.",
+  "Zelfde systeem.": "Même système.",
+  "Zo gaat hij verder.": "Voilà comment il continue.",
+  "Zo komt een koper binnen.": "Voilà comment un acheteur arrive."
+});

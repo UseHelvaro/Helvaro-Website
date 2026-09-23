@@ -2803,3 +2803,31 @@ Object.assign(window.HELVARO_TR['es'], {
   "donderdag 08:30": "jueves 08:30",
   "je content.": "tu contenido."
 });
+
+Object.assign(window.HELVARO_TR['es'], {
+  "Aanvraag": "Solicitud",
+  "Ander kanaal.": "Otro canal.",
+  "Antwoord": "Respuesta",
+  "Antwoord met de gegevens uit je voorraad": "Una respuesta con los datos de tu stock",
+  "Beantwoord met de gegevens erbij": "Respondido con los datos incluidos",
+  "Contact vragen pas bij echte koopinteresse": "Pedir el contacto solo si hay interés de compra real",
+  "Daarna neemt je verkoper over, met alles wat er gezegd is binnen handbereik.": "Después tu vendedor toma el relevo, con todo lo dicho a mano.",
+  "De inruil wordt opgepakt in plaats van genegeerd": "La entrega se recoge en lugar de ignorarse",
+  "De vraag over financiering loopt niet dood": "La pregunta de financiación no muere",
+  "Drie kanalen": "Tres canales",
+  "Een moment voorstellen in plaats van terugbellen": "Proponer un hueco en lugar de devolver la llamada",
+  "Elke aanvraag krijgt een antwoord.": "Cada solicitud recibe respuesta.",
+  "Eén script op je bestaande site": "Un script en tu web actual",
+  "Eén systeem": "Un solo sistema",
+  "Gelezen en gekoppeld aan een wagen": "Leído y vinculado a un vehículo",
+  "Het gesprek gaat over de wagen op de pagina waar hij staat. Hij hoeft niet uit te leggen welke auto hij bedoelt, en jij hoeft niet te wachten tot hij een formulier invult.": "La conversación va del vehículo de la página en la que está. No tiene que explicar de qué coche habla, y tú no tienes que esperar a que rellene un formulario.",
+  "Het maakt niet uit waar hij binnenkomt. Daarachter loopt elke keer dezelfde route, met hetzelfde dossier en dezelfde wagen eraan vast.": "Da igual por dónde entre. Detrás corre cada vez la misma ruta, con el mismo expediente y el mismo vehículo unido.",
+  "In de algemene mailbox komt alles binnen. Daar zakt de langste en vaak serieuste aanvraag weg tussen facturen en reclame, terwijl de inruil er al in staat.": "En el buzón general entra de todo. Ahí es donde se hunde la solicitud más larga y a menudo más seria entre facturas y publicidad, aunque ya lleve la entrega dentro.",
+  "Laat een aanvraag niet wachten.": "No dejes una solicitud esperando.",
+  "Meteen reageren, de vraag beantwoorden en uitvragen wat je verkoper nodig heeft, terwijl het gesprek nog loopt. Ook om kwart voor tien 's avonds.": "Responder al momento, atender la pregunta y recoger lo que tu vendedor necesita, mientras la conversación sigue viva. También a las diez menos cuarto de la noche.",
+  "Scroll mee. Het toestel blijft staan, het kanaal verandert. Dezelfde koper, dezelfde wagen, hetzelfde systeem eronder.": "Haz scroll. El dispositivo se queda quieto, el canal cambia. El mismo comprador, el mismo vehículo, el mismo sistema debajo.",
+  "Van bezoeker naar gesprek.": "De visitante a conversación.",
+  "Zelfde systeem.": "El mismo sistema.",
+  "Zo gaat hij verder.": "Así continúa.",
+  "Zo komt een koper binnen.": "Así entra un comprador."
+});
