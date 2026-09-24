@@ -1202,7 +1202,25 @@ function initFaroGids() {
       void ballon.offsetWidth;          // forceer een herstart
       ballon.style.animation = '';
     }
+    spreek();
   }
+
+  /* Op de telefoon ligt de ballon over de tekst van de pagina: daar is
+     geen vrije hoek. Dus hij zegt zijn zin, en na zes seconden vouwt de
+     ballon in en blijft alleen een kleine valk in de hoek staan. Een tik
+     op de valk haalt de zin terug; een nieuwe sectie ook. */
+  var telefoon = window.matchMedia('(max-width: 720px)');
+  var stilTimer = 0;
+  function spreek() {
+    clearTimeout(stilTimer);
+    doos.classList.remove('stil');
+    if (telefoon.matches) {
+      stilTimer = setTimeout(function () { doos.classList.add('stil'); }, 6000);
+    }
+  }
+  img.addEventListener('click', function () {
+    if (doos.classList.contains('stil')) spreek();
+  });
 
   /* De sectie die het meest in beeld staat wint. Zonder die vergelijking
      springt hij heen en weer op de grens tussen twee secties. */

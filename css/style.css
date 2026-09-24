@@ -3763,6 +3763,16 @@ select:focus-visible {
   display: block;
   line-height: 1.2;
 }
+/* Een lange naam (Katrien · Keukens Verbeke) liep op smalle telefoons
+   over drie regels, tot onder de notch en in de chat. Twee regels max. */
+.wa-name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
 .wa-status {
   font-size: 11px;
   color: #25D366;
@@ -5017,6 +5027,14 @@ p { text-wrap: pretty; }
   }
 }
 
+/* Na zijn zin vouwt de ballon in (zie initFaroGids): dan staat alleen
+   een kleine valk rechtsonder, en ligt er geen tekst meer over de pagina. */
+@media (max-width: 720px) {
+  .faro-gids.stil { left: auto; }
+  .faro-gids.stil .faro-gids-ballon { display: none; }
+  .faro-gids.stil .faro-gids-img { width: 60px; height: 60px; cursor: pointer; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .faro-gids,
   .faro-gids-img,
@@ -6095,8 +6113,13 @@ p { text-wrap: pretty; }
   border-bottom: 1px solid var(--border-0);
 }
 .cg-wie {
-  flex: none;
-  width: 62px;
+  /* Minstens 62px zodat de regels onder elkaar lijnen, maar breder als
+     het label dat vraagt: VERKÄUFER of VERS L'ACHETEUR liepen anders in
+     de zin ernaast. Nooit meer dan een derde van de regel. */
+  flex: 0 0 auto;
+  min-width: 62px;
+  max-width: 34%;
+  overflow-wrap: anywhere;
   font-family: var(--font-h);
   font-size: 11px;
   font-weight: 600;
@@ -8248,13 +8271,40 @@ p { text-wrap: pretty; }
 
 @media (max-width: 900px) {
   .mail-blok { grid-template-columns: 1fr; gap: 12px; }
-  .mail-pijl { transform: rotate(90deg); }
+  /* Smal houden: een pijl over de volle breedte draait anders dwars
+     de tekst van de eerste kaart in. */
+  .mail-pijl { justify-self: center; transform: rotate(90deg); }
   .faro-content-blok { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .mail-veld,
   .mail-velden dt { width: 58px; font-size: 10px; }
 }
+
+/* Labels met een vaste breedte liepen in de waarde: ONDERWERP is breder
+   dan 58px, en Inzahlungnahme of Entrega del usado nog veel meer. Nu
+   bepaalt het langste label de kolom, en blijven de waarden onder elkaar
+   uitgelijnd. Een heel lang label breekt af in plaats van te overlappen. */
+.mail-body:has(> .mail-van) {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 10px;
+  align-items: baseline;
+}
+.mail-body:has(> .mail-van) > .mail-van,
+.mail-body:has(> .mail-van) > .mail-onderwerp { display: contents; }
+.mail-body:has(> .mail-van) > .mail-van > .mail-veld { margin-bottom: 6px; }
+.mail-body:has(> .mail-van) > .mail-onderwerp > .mail-veld { margin-bottom: 12px; }
+.mail-body:has(> .mail-van) > .mail-tekst { grid-column: 1 / -1; }
+.mail-velden {
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 12px;
+  align-items: baseline;
+}
+.mail-velden > div { display: contents; }
+.mail-veld,
+.mail-velden dt { width: auto; max-width: 7.5rem; overflow-wrap: break-word; }
+.mail-velden dd { margin: 0; overflow-wrap: anywhere; }
 
 /* ============================================================
    KANAALSTROOM — één toestel, drie kanalen
@@ -8678,7 +8728,10 @@ p { text-wrap: pretty; }
   .ks-toestel {
     order: -1;
     position: sticky;
-    top: 72px;
+    /* Precies onder de ingeklapte kop (die is 8px lager dan --nav-h
+       zodra je scrolt). Met een vaste 72px bleef er een strook open
+       waarin de tekst achter de kanaalknoppen doorschemerde. */
+    top: calc(var(--nav-h) - 8px);
     z-index: 2;
     padding: 12px 0 14px;
     background: var(--bg-1);
@@ -8689,7 +8742,18 @@ p { text-wrap: pretty; }
   .ks-panel + .ks-panel { border-top: 1px solid var(--border-0); }
 }
 @media (max-width: 560px) {
-  .ks-frame { width: 228px; height: 460px; border-radius: 34px; padding: 10px; }
+  /* Het toestel kleeft bovenaan en de tekst schuift eronder door. Met een
+     vaste 460px bleef er op een gewone telefoon nog geen 130px over om te
+     lezen, en op een kleine niets. De hoogte volgt nu het scherm, zodat er
+     altijd zo'n 240px tekst in beeld staat (404px = kop, knoppen, marges
+     en die leesruimte). De chat is onderaan verankerd, dus die krimpt mee. */
+  .ks-frame {
+    width: 228px;
+    height: clamp(300px, calc(100vh - 404px), 460px);
+    height: clamp(300px, calc(100svh - 404px), 460px);
+    border-radius: 34px;
+    padding: 10px;
+  }
   .ks-scherm { border-radius: 25px; }
   .ks-notch { width: 70px; height: 18px; top: 14px; }
   .ks-wa-kop, .ks-web-balk, .ks-mail-kop { padding-top: 38px; }
@@ -8788,4 +8852,46 @@ p { text-wrap: pretty; }
   line-height: 1.6;
   color: rgba(255,255,255,0.4);
   border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Het woordmerk staat in een <picture> zodat telefoons de WebP laden
+   (59 KB in plaats van 136 KB). De wrapper mag de opmaak niet raken. */
+.nav-logo picture,
+picture:has(> .footer-logo) { display: contents; }
+.nav-logo source { display: none; }   /* anders telt hij mee als flex-item */
+
+/* ============================================================
+   RAAKVLAKKEN OP DE TELEFOON
+   ------------------------------------------------------------
+   Een duim heeft rond de 44px nodig. Op aanraakschermen worden de
+   kleine knoppen en links daarom groter om aan te tikken, zonder
+   dat het beeld verschuift: extra padding met een negatieve marge
+   ertegenover, of een onzichtbaar vlak rond de knop.
+   ============================================================ */
+@media (hover: none) and (pointer: coarse) {
+  /* Sluitknop van Faro's wolk: 24px zichtbaar, 44px raakvlak. */
+  .faro-gids-sluit::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+  }
+
+  /* Kruimelpad: 21px hoog, nu 41px zonder dat de regel zakt. */
+  .kruimels a {
+    display: inline-block;
+    padding: 10px 0;
+    margin: -10px 0;
+  }
+
+  /* Kanaalknoppen in het scrollende toestel. */
+  .ks-kanaalknop {
+    padding: 11px 17px;
+    font-size: 13px;
+  }
+
+  .signup-alt-link {
+    display: inline-block;
+    padding: 10px 0;
+    margin: -10px 0;
+  }
 }
