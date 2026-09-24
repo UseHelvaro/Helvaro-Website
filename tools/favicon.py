@@ -59,6 +59,7 @@ def bijsnijden(im, marge=0.08):
 
 
 ZAND = "assets/logo-sand@2x.png"
+PLAAT = (18, 18, 18, 255)   # #121212, de achtergrond en theme-color van de site
 
 
 def main():
@@ -69,6 +70,20 @@ def main():
     groot.resize((48, 48), Image.LANCZOS).save(
         "assets/favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)])
     print("assets/favicon.ico geschreven")
+
+    # Google zet het icoon in de zoekresultaten in een CIRKEL en pakt het
+    # grootste icoon dat hij vindt (minstens 48px). Met alleen 16 en 32 nam
+    # hij de oude apple-touch-icon: een plaat met een klein embleem, dat
+    # werd een zwart rondje met een stipje. Deze twee zijn dus ondoorzichtig
+    # (iOS vult doorzichtig toch met zwart) op de achtergrond van de site,
+    # met het embleem op 64% zodat het ook in de cirkel helemaal binnen valt.
+    for maat, naam in ((192, "assets/favicon-192.png"), (180, "assets/apple-touch-icon.png")):
+        plaat = Image.new("RGBA", (maat, maat), PLAAT)
+        e = int(round(maat * 0.64))
+        embleem = groot.resize((e, e), Image.LANCZOS)
+        plaat.alpha_composite(embleem, ((maat - e) // 2, (maat - e) // 2))
+        plaat.convert("RGB").save(naam, optimize=True)
+        print(naam, "geschreven")
 
 
 if __name__ == "__main__":

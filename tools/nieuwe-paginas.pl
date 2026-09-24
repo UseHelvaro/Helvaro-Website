@@ -113,14 +113,6 @@ my @PAGINAS = (
   ['koppelingen/agenda.html',
    'Je agenda koppelen: afspraken die je verkoper ziet staan',
    'Er wordt geen moment aangeboden waarvan de beschikbaarheid niet bekend is. Bevestiging, herinnering en de wagen aan de afspraak.'],
-
-
-
-
-
-  ['sectoren/keuken.html',
-   'Keukenzaken: van aanvraag naar geboekte opmeting',
-   'Helvaro kwalificeert keukenaanvragen op budget, timing en type project, plant een opmeting of showroombezoek in en volgt de offerte nadien op.'],
 );
 
 sub op { my ($diep) = @_; return $diep == 0 ? '' : '../' x $diep }
@@ -167,10 +159,11 @@ for my $rij (@PAGINAS) {
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="$BASE/$url">$alt
-  <link rel="icon" href="${o}assets/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="${o}assets/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="${o}assets/favicon-16.png">
-  <link rel="apple-touch-icon" href="${o}assets/apple-touch-icon.png">
+  <link rel="icon" href="${o}assets/favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="${o}assets/favicon-32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="${o}assets/favicon-16.png?v=2">
+  <link rel="icon" type="image/png" sizes="192x192" href="${o}assets/favicon-192.png?v=2">
+  <link rel="apple-touch-icon" href="${o}assets/apple-touch-icon.png?v=2">
   <meta name="theme-color" content="#121212">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

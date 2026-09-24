@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/sectoren/:pagina", "destination": "/automotive.html", "permanent": true },
+    { "source": "/:taal(fr|en|de|es)/sectoren/:pagina", "destination": "/:taal/automotive.html", "permanent": true }
+  ]
+}

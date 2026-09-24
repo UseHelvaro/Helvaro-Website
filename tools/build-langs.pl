@@ -69,9 +69,6 @@ my @PAGES = qw(
   koppelingen/agenda.html
   waarom.html
   meeting.html
-  sectoren/vastgoed.html
-  sectoren/bouw.html
-  sectoren/keuken.html
   contact.html
   aanmelden.html
   privacybeleid.html
