@@ -381,6 +381,26 @@ for my $pagina (@PAGES) {
       }
     }
 
+    # 5d2. Attributen en gestructureerde data. De tekstvervanging hierboven
+    #      slaat alles binnen < en > over, dus labels voor schermlezers,
+    #      tooltips en placeholders bleven Nederlands, net als de JSON-LD die
+    #      Google leest. Alleen een exacte treffer in het woordenboek telt.
+    $h =~ s{\b(aria-label|alt|title|placeholder)="([^"]*)"}{
+      my ($heel, $a, $v) = ($&, $1, decode_ents($2)); $v =~ s/\s+/ /g;
+      if (exists $DICT{$lang}{$v}) { my $t = $DICT{$lang}{$v}; $t =~ s/&/&amp;/g; $t =~ s/"/&quot;/g; qq{$a="$t"} }
+      else { $heel }
+    }ge;
+    $h =~ s{(<script type="application/ld\+json">)(.*?)(</script>)}{
+      my ($o, $j, $c) = ($1, $2, $3);
+      $j =~ s{("(?:name|description|serviceType)"\s*:\s*")((?:[^"\\]|\\.)*)(")}{
+        my ($k, $v, $e) = ($1, $2, $3);
+        my $sl = $v; $sl =~ s/\\u([0-9a-fA-F]{4})/chr(hex($1))/ge; $sl =~ s/\\"/"/g;
+        if (exists $DICT{$lang}{$sl}) { my $t = $DICT{$lang}{$sl}; $t =~ s/\\/\\\\/g; $t =~ s/"/\\"/g; "$k$t$e" }
+        else { "$k$v$e" }
+      }ge;
+      "$o$j$c"
+    }gse;
+
     # 5e. Taal, locale, canonical en alternates.
     $h =~ s{<html lang="nl">}{<html lang="$lang">};
     $h =~ s{(<meta property="og:locale" content=")[^"]*(")}{$1$LOCALE{$lang}$2};
