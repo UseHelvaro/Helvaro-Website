@@ -485,6 +485,11 @@
        de toestand. Geen wachtrij, dus springen en terugscrollen geven
        hetzelfde antwoord als rustig naar beneden gaan. */
     function bepaal() {
+      /* Op de telefoon staat het toestel bovenaan en kies je zelf een kanaal
+         met de knoppen. Scrollen door de uitleg mag die keuze niet
+         overschrijven terwijl het toestel uit beeld is. Alleen de eerste
+         keer zetten we een beginstand. */
+      if (telefoon.matches && actief) return;
       var midden = window.innerHeight / 2;
       var beste = null;
       var kleinste = Infinity;
@@ -528,9 +533,15 @@
 
     /* Met de knoppen kun je ook springen. Dat is geen navigatie, maar wie
        met een toetsenbord werkt moet er wel bij kunnen. */
+    /* Op de telefoon kleeft het toestel niet meer (dan schoof de uitleg
+       eronder door). Springen naar het paneel zou het toestel dan uit beeld
+       duwen, precies op het moment dat je wilt zien wat er verandert. Daar
+       wisselt een knop dus het scherm zelf, en blijft de pagina staan. */
+    var telefoon = window.matchMedia('(max-width: 720px)');
     knoppen.forEach(function (k) {
       k.addEventListener('click', function () {
         var naam = k.getAttribute('data-kanaal');
+        if (telefoon.matches) { zet(naam); return; }
         var doel = panelen.filter(function (p) { return p.getAttribute('data-kanaal') === naam; })[0];
         if (doel) doel.scrollIntoView({ behavior: rustig ? 'auto' : 'smooth', block: 'center' });
       });

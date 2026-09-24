@@ -4,6 +4,12 @@ Maakt de favicons met een doorzichtige achtergrond.
 
     python3 tools/favicon.py
 
+Sinds 24 sep 2026 is de bron het zandkleurige embleem (logo-sand@2x.png),
+hetzelfde zand als het woordmerk in de balk. Dat bestand is al doorzichtig,
+dus er valt niets los te snijden: alleen strak bijsnijden zodat het embleem
+het hele tabblad vult. De oude weg (gouden embleem van icon-512 halen)
+staat hieronder nog voor de apple-touch-icon-uitleg.
+
 De bron is assets/icon-512.png: het embleem op een bijna zwarte plaat.
 Die plaat heeft overal helderheid 18, het embleem 110 en hoger, dus de
 twee zijn schoon te scheiden op helderheid. De zachte rand van het
@@ -52,16 +58,17 @@ def bijsnijden(im, marge=0.08):
     return im.crop(vak)
 
 
+ZAND = "assets/logo-sand@2x.png"
+
+
 def main():
-    groot = bijsnijden(doorzichtig())
+    groot = bijsnijden(Image.open(ZAND).convert("RGBA"), marge=0.02)
     for maat, naam in ((32, "assets/favicon-32.png"), (16, "assets/favicon-16.png")):
         groot.resize((maat, maat), Image.LANCZOS).save(naam)
         print(naam, "geschreven")
-    groot.resize((64, 64), Image.LANCZOS).save(
+    groot.resize((48, 48), Image.LANCZOS).save(
         "assets/favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)])
     print("assets/favicon.ico geschreven")
-    groot.resize((512, 512), Image.LANCZOS).save("assets/logo-mark.png")
-    print("assets/logo-mark.png geschreven (embleem zonder plaat)")
 
 
 if __name__ == "__main__":

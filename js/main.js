@@ -3,6 +3,7 @@
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initTopbarHoogte();
   initNav();
   initFAQ();
   initReveal();
@@ -31,6 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
   initOmzet();
   initNavActief();
 });
+
+/* ── Hoogte van de aankondigingsbalk ──────────────────────────────────────
+   De nav staat vast op --topbar-h onder de bovenrand. Die hoogte stond als
+   vast getal in de CSS, maar de balk breekt op een smalle telefoon of in
+   een langere vertaling naar twee regels. Dan lag de nav over de tweede
+   regel. We meten dus wat er echt staat. */
+function initTopbarHoogte() {
+  const bar = document.querySelector('.topbar');
+  if (!bar) return;
+  const zet = () => {
+    document.documentElement.style.setProperty('--topbar-h', bar.offsetHeight + 'px');
+  };
+  zet();
+  window.addEventListener('resize', zet, { passive: true });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(zet);
+}
 
 /* ── Waar staan de plaatjes ───────────────────────────────────────────────
    De pagina's staan op drie diepten: de hoofdmap, sectoren/, agents/ en
@@ -1197,29 +1214,91 @@ function initFaroGids() {
     reg.textContent = g[taal()] || g.nl;
     /* De ballon opnieuw laten opkomen bij elke nieuwe zin. Zonder dit
        wisselt alleen de tekst en lijkt het alsof er niets gebeurd is. */
-    if (ballon) {
+    if (ballon && !knop) {
       ballon.style.animation = 'none';
       void ballon.offsetWidth;          // forceer een herstart
       ballon.style.animation = '';
     }
-    spreek();
+    /* In de balk praat hij niet uit zichzelf: een stip zegt dat er een
+       nieuwe zin klaarstaat. Staat de ballon al open, dan wisselt de zin mee. */
+    if (knop && !doos.classList.contains('open')) doos.classList.add('nieuw');
   }
 
-  /* Op de telefoon ligt de ballon over de tekst van de pagina: daar is
-     geen vrije hoek. Dus hij zegt zijn zin, en na zes seconden vouwt de
-     ballon in en blijft alleen een kleine valk in de hoek staan. Een tik
-     op de valk haalt de zin terug; een nieuwe sectie ook. */
+  /* ── Op de telefoon: in de navigatiebalk ─────────────────────────────
+     Op 375px is er geen hoek van het scherm waar geen tekst langs scrolt.
+     Elke vaste plek dekt dus vroeg of laat iets af, ook een kleine valk.
+     De enige plek die al bovenop de pagina ligt is de balk zelf. Daar gaat
+     hij naast de menuknop staan. Zijn zin opent pas op een tik, als een
+     uitklapper onder de balk, en sluit bij scrollen of een tik ernaast. */
   var telefoon = window.matchMedia('(max-width: 720px)');
-  var stilTimer = 0;
-  function spreek() {
-    clearTimeout(stilTimer);
-    doos.classList.remove('stil');
-    if (telefoon.matches) {
-      stilTimer = setTimeout(function () { doos.classList.add('stil'); }, 6000);
-    }
+  var balk = document.querySelector('.nav-inner');
+  var hamburger = balk && balk.querySelector('.nav-hamburger');
+  var knop = null, thuis = doos.parentNode, naVolgend = doos.nextSibling;
+  var LABEL = { nl: 'Tip van Faro', en: 'Tip from Faro', fr: 'Conseil de Faro',
+                de: 'Tipp von Faro', es: 'Consejo de Faro' };
+
+  function sluit() {
+    if (!knop) return;
+    doos.classList.remove('open');
+    knop.setAttribute('aria-expanded', 'false');
   }
-  img.addEventListener('click', function () {
-    if (doos.classList.contains('stil')) spreek();
+  function open() {
+    doos.classList.add('open');
+    doos.classList.remove('nieuw');
+    knop.setAttribute('aria-expanded', 'true');
+    /* De punt van de ballon wijst naar de valk, waar die ook staat. */
+    var nav = doos.closest('.nav');
+    if (nav) {
+      var n = nav.getBoundingClientRect(), k = knop.getBoundingClientRect();
+      doos.style.setProperty('--faro-pijl', Math.max(8, n.right - (k.left + k.width / 2) - 12 - 10) + 'px');
+    }
+    scrollBij = window.scrollY;
+  }
+  function inBalk() {
+    if (knop || !balk || !hamburger) return;
+    knop = document.createElement('button');
+    knop.type = 'button';
+    knop.className = 'faro-gids-knop';
+    knop.setAttribute('aria-expanded', 'false');
+    knop.setAttribute('aria-controls', 'faroGidsBallon');
+    knop.setAttribute('aria-label', LABEL[taal()] || LABEL.nl);
+    knop.appendChild(img);
+    doos.appendChild(knop);
+    balk.insertBefore(doos, hamburger);
+    doos.classList.add('in-balk');
+    if (huidig) doos.classList.add('nieuw');
+    knop.addEventListener('click', function () {
+      if (doos.classList.contains('open')) sluit(); else open();
+    });
+  }
+  function uitBalk() {
+    if (!knop) return;
+    sluit();
+    doos.appendChild(img);
+    knop.remove();
+    knop = null;
+    doos.classList.remove('in-balk', 'nieuw');
+    thuis.insertBefore(doos, naVolgend);
+  }
+  function plaats() {
+    if (telefoon.matches && balk && hamburger) inBalk(); else uitBalk();
+    /* Een telefoon zonder navigatiebalk (404): dan liever geen Faro dan
+       een Faro die de tekst afdekt. */
+    doos.classList.toggle('geen-plek', telefoon.matches && !knop);
+  }
+  plaats();
+  if (telefoon.addEventListener) telefoon.addEventListener('change', plaats);
+  else if (telefoon.addListener) telefoon.addListener(plaats);
+
+  var scrollBij = 0;
+  window.addEventListener('scroll', function () {
+    if (knop && doos.classList.contains('open') && Math.abs(window.scrollY - scrollBij) > 60) sluit();
+  }, { passive: true });
+  document.addEventListener('click', function (e) {
+    if (knop && doos.classList.contains('open') && !doos.contains(e.target)) sluit();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && knop && doos.classList.contains('open')) { sluit(); knop.focus(); }
   });
 
   /* De sectie die het meest in beeld staat wint. Zonder die vergelijking

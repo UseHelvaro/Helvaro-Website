@@ -3061,7 +3061,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 body { padding-top: 0; }
 @media (max-width: 640px) {
   :root { --topbar-h: 41px; }
-  .topbar { font-size: 12.5px; padding: 9px 16px; }
+  /* Eén regel op de telefoon: de hele balk is al een link, dus de aparte
+     "Bekijk de pilot"-link wordt een pijl achter de zin. */
+  .topbar { font-size: 12.5px; padding: 11px 16px; min-height: 44px; }
+  .topbar-link { display: none; }
+  .topbar-text::after { content: " \2192"; color: var(--accent-light); font-weight: 600; }
 }
 
 /* ============================================================
@@ -5027,12 +5031,80 @@ p { text-wrap: pretty; }
   }
 }
 
-/* Na zijn zin vouwt de ballon in (zie initFaroGids): dan staat alleen
-   een kleine valk rechtsonder, en ligt er geen tekst meer over de pagina. */
+/* ── Telefoon: Faro in de navigatiebalk (zie initFaroGids) ─────────────
+   Geen vaste laag meer boven de pagina. Hij staat als kleine valk naast
+   de menuknop; zijn zin klapt pas open op een tik, onder de balk, zoals
+   het menu zelf. Een stip betekent: er staat een nieuwe zin klaar. */
 @media (max-width: 720px) {
-  .faro-gids.stil { left: auto; }
-  .faro-gids.stil .faro-gids-ballon { display: none; }
-  .faro-gids.stil .faro-gids-img { width: 60px; height: 60px; cursor: pointer; }
+  .faro-gids.geen-plek { display: none; }
+  .faro-gids.in-balk {
+    position: static;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 0;
+    transition: none;
+  }
+  .faro-gids.in-balk + .nav-hamburger { margin-left: 2px; }
+  .faro-gids-knop {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .faro-gids.in-balk .faro-gids-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .45));
+  }
+  .faro-gids.nieuw .faro-gids-knop::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: 5px;
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    background: var(--accent);
+    box-shadow: 0 0 0 2px var(--bg-0);
+  }
+  .faro-gids.in-balk .faro-gids-ballon {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 12px;
+    right: 12px;
+    max-width: none;
+    padding: 14px 44px 14px 16px;
+    border-radius: 16px;
+  }
+  .faro-gids.in-balk.open .faro-gids-ballon { display: block; }
+  .faro-gids.in-balk .faro-gids-tekst { font-size: 14px; }
+  /* De punt wijst omhoog naar de valk. */
+  .faro-gids.in-balk[data-kant] .faro-gids-ballon::after {
+    top: -20px;
+    bottom: auto;
+    left: auto;
+    right: var(--faro-pijl, 64px);
+    border: 10px solid transparent;
+    border-bottom-color: var(--faro-wolk);
+  }
+  /* Het kruisje binnen de ballon, met een volwaardig raakvlak. */
+  .faro-gids.in-balk .faro-gids-sluit {
+    top: 4px;
+    right: 4px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -8894,4 +8966,82 @@ picture:has(> .footer-logo) { display: contents; }
     padding: 10px 0;
     margin: -10px 0;
   }
+}
+
+/* ============================================================
+   TELEFOON — LEESBAAR, NIETS OVER DE TEKST, ALLES AAN TE TIKKEN
+   ------------------------------------------------------------
+   Uit een meting van alle 146 pagina's op 375px breed. Drie soorten
+   problemen kwamen terug, en die staan hier samen zodat ze niet
+   verspreid raken tussen de rest.
+   ============================================================ */
+@media (max-width: 720px) {
+  /* 1. Koppen niet afsnijden. .line-reveal-ready zette overflow:hidden
+     op de hero én op elke sectietitel. Op de telefoon, met een krappe
+     regelhoogte, knipte dat de staart van de g en j en de accenten op
+     hoofdletters (É) af, en liep de cursieve tweede regel over de eerste.
+     De woorden komen nog steeds omhoog, alleen zonder schaar. */
+  .line-reveal-ready { overflow: visible; }
+  .hero-title { line-height: 1.14; }
+  .section-title { line-height: 1.14; }
+
+  /* 2. Niets kleiner dan 12px. Labels van 9,5 tot 11,5px zijn op een
+     telefoon in de zon niet te lezen. */
+  .gesprek-merk, .cg-wie, .cg-uitkomst-label, .sys-kop, .wa-status,
+  .wa-date-badge, .status-pil, .stand-sub, .dag-label, .at-nr,
+  .meet-fase, .meet-hoofd-label, .sol-tag, .ks-panel-label, .ks-route-nr,
+  .ks-wa-status, .ks-tijd, .mail-label, .mail-tijd, .mail-veld,
+  .mail-velden dt, .vk-label, .lead-label, .fc-label, .fc-nr,
+  .fc-wagen-label, .pricing-note, .pricing-badge-pill,
+  .rek-uit-label, .ck-kanaal, .lb-kader-kop, .int-pill .soon-tag,
+  .wa-time, .ks-bel {
+    font-size: 12px;
+  }
+  .ks-kanaalknop { font-size: 13px; }
+
+  /* 3. Raakvlakken van minstens 44px. */
+  .nav-hamburger {
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-col { gap: 0; }
+  .footer-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 14px;
+  }
+  .footer-legal { gap: 4px 22px; }
+  .kruimels a,
+  .signup-alt-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .kruimels { gap: 2px 8px; margin-bottom: 12px; }
+  .ks-kanaalknop { min-height: 44px; padding: 11px 17px; }
+  /* "Opvangen / Begrijpen / Handelen" op de werkstroompagina's: 25px hoog.
+     Onzichtbare rand erbij, met negatieve marge zodat niets verschuift. */
+  .sys-lijst a { padding: 10px 0; margin: -10px 0 -6px; }
+
+  /* Kanaalstroom: het toestel kleefde bovenaan en de uitleg schoof eronder
+     door. Wat je aan het lezen was, verdween dus achter de telefoon. Op de
+     telefoon is het nu een gewoon blok bovenaan de sectie: kies een kanaal
+     met de knoppen, en lees daaronder de uitleg zonder dat er iets overheen
+     ligt. Dan mag het toestel ook weer zijn volle hoogte hebben, zodat het
+     hele gesprek in beeld past. */
+  .ks-toestel { position: relative; top: auto; }
+  .ks-frame { height: 460px; }
+
+  /* Faro naast de menuknop in plaats van 32px ervandaan. */
+  .nav-inner:has(.faro-gids.in-balk) { gap: 8px; }
+}
+
+/* Het neptoestel in de sectorpagina's: de bel- en menuknop in de kop
+   van WhatsApp zijn decor. Op een smalle telefoon kostten ze de naam
+   ("Wout · Bouwwerken Claes") zijn laatste woord. */
+@media (max-width: 420px) {
+  .wa-icons { display: none; }
 }
