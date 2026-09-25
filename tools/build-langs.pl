@@ -392,7 +392,7 @@ for my $pagina (@PAGES) {
     }ge;
     $h =~ s{(<script type="application/ld\+json">)(.*?)(</script>)}{
       my ($o, $j, $c) = ($1, $2, $3);
-      $j =~ s{("(?:name|description|serviceType)"\s*:\s*")((?:[^"\\]|\\.)*)(")}{
+      $j =~ s{("(?:name|description|serviceType|text)"\s*:\s*")((?:[^"\\]|\\.)*)(")}{
         my ($k, $v, $e) = ($1, $2, $3);
         my $sl = $v; $sl =~ s/\\u([0-9a-fA-F]{4})/chr(hex($1))/ge; $sl =~ s/\\"/"/g;
         if (exists $DICT{$lang}{$sl}) { my $t = $DICT{$lang}{$sl}; $t =~ s/\\/\\\\/g; $t =~ s/"/\\"/g; "$k$t$e" }

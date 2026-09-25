@@ -186,7 +186,7 @@ for my $rij (@PAGINAS) {
 <!-- /SHELL:FOOTER -->
 
   <script src="${o}js/main.js?v=93"></script>
-  <script src="${o}js/i18n.js?v=94"></script>
+  <script src="${o}js/i18n.js?v=95"></script>
 
   <aside class="faro-gids" id="faroGids" data-plek="rechtsonder" hidden>
     <div class="faro-gids-ballon" id="faroGidsBallon" aria-live="polite">
