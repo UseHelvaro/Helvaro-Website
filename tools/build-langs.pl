@@ -146,7 +146,7 @@ sub laad_i18n_blokken {
 my %ENT = (
   'amp' => '&', 'lt' => '<', 'gt' => '>', 'quot' => '"', 'nbsp' => ' ',
   'middot' => "\x{00b7}", 'euro' => "\x{20ac}", 'copy' => "\x{00a9}",
-  'hellip' => "\x{2026}", 'rsquo' => "\x{2019}", 'lsquo' => "\x{2018}",
+  'hellip' => "\x{2026}", 'rsquo' => "’", 'lsquo' => "\x{2018}",
   'ldquo' => "\x{201c}", 'rdquo' => "\x{201d}", 'laquo' => "\x{00ab}",
   'raquo' => "\x{00bb}", 'times' => "\x{00d7}", 'rarr' => "\x{2192}",
   'larr' => "\x{2190}", 'sup2' => "\x{00b2}", 'deg' => "\x{00b0}",

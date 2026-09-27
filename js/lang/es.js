@@ -2989,3 +2989,23 @@ Object.assign(window.HELVARO_TR['es'], {
   "Hoeveel aanvragen komen er per week binnen, en via welk kanaal?": "¿Cuántas solicitudes llegan por semana, y por qué canal?",
   "Maak je Helvaro-account aan en probeer veertien dagen gratis. Binnen 72 uur beantwoordt Helvaro de voertuigaanvragen van je autobedrijf met je eigen voorraad. Je kiest pas daarna een plan.": "Crea tu cuenta de Helvaro y pruébalo gratis durante catorce días. En 72 horas Helvaro responde a las solicitudes de vehículos de tu concesionario con tu propio stock. Eliges un plan solo después."
 });
+
+Object.assign(window.HELVARO_TR['es'], {
+  "Autobedrijven die meedraaien bepalen welke koppeling er als eerste af is.": "Los concesionarios que participan deciden qué integración se termina primero.",
+  "Benieuwd wat het bij jou doet?": "¿Con curiosidad por ver qué hace en tu caso?",
+  "De eerste weken": "Las primeras semanas",
+  "Een scherp tarief in het eerste jaar en je eigen cijfers zwart op wit, van jou, ook als je daarna stopt.": "Una tarifa ajustada el primer año y tus propias cifras negro sobre blanco, tuyas, también si lo dejas después.",
+  "Elke voertuigaanvraag beantwoord, ook ’s avonds en in het weekend.": "Cada solicitud de vehículo respondida, también por la tarde y el fin de semana.",
+  "Elke voertuigaanvraag beantwoord, ook ’s avonds en in het weekend. Een demo van 20 minuten op je eigen cijfers, zonder verplichtingen.": "Cada solicitud de vehículo respondida, también por la tarde y el fin de semana. Una demo de 20 minutos con tus propias cifras, sin compromiso.",
+  "Eén cijfer, gemeten bij jou.": "Una cifra, medida en tu empresa.",
+  "Eén cijfer. Vier weken. Bij jou geteld.": "Una cifra. Cuatro semanas. Contada en tu empresa.",
+  "Geen gemiddelde van een ander.": "No la media de otro.",
+  "Na vier weken weet je wat het opleverde.": "Después de cuatro semanas sabes qué ha aportado.",
+  "Namen van klanten die ons daar geen toestemming voor gaven": "Nombres de clientes que no nos dieron permiso para ello",
+  "Op de meeste sites van dit type staan percentages zonder bron en tevreden klanten zonder achternaam. Daar heb je niets aan, want je weet niet hoe er geteld is. Wij meten liever bij jou, op één cijfer dat je zelf kunt nakijken. Deze pagina legt uit welk cijfer dat is en hoe we het tellen.": "En la mayoría de webs de este tipo hay porcentajes sin fuente y clientes satisfechos sin apellido. Eso no te sirve de nada, porque no sabes cómo se ha contado. Preferimos medir en tu empresa, sobre una cifra que puedes comprobar tú mismo. Esta página explica qué cifra es y cómo la contamos.",
+  "Wat er in een case hoort te staan.": "Qué debe llevar un caso.",
+  "We begeleiden een beperkt aantal bedrijven tegelijk, omdat meelezen en bijsturen anders niet lukt. Past het bij jou niet, dan zeggen we dat in het eerste gesprek.": "Acompañamos a un número limitado de empresas a la vez, porque si no, leer y corregir sobre la marcha no funciona. Si no te encaja, lo decimos en la primera conversación.",
+  "We meten één cijfer, en we meten het bij jou: hoeveel van je aanvragen een afspraak wordt. Twee weken voordat er iets aanstaat, vier weken erna, op dezelfde manier geteld. Dat verschil is van jouw bedrijf en niet van een gemiddelde uit een folder.": "Medimos una cifra, y la medimos en tu empresa: cuántas de tus solicitudes acaban en cita. Dos semanas antes de encender nada, cuatro semanas después, contadas de la misma forma. Esa diferencia es de tu empresa, no de una media de folleto.",
+  "We noemen geen percentage dat we niet bij jou gemeten hebben. Hoe we wel tellen staat op": "No damos ningún porcentaje que no hayamos medido en tu empresa. Cómo contamos sí está en",
+  "Zo kun je zelf beoordelen of een case ergens op slaat. Ontbreekt een van deze zes, dan is het geen case maar een aanbeveling.": "Así puedes juzgar tú mismo si un caso se sostiene. Si falta uno de estos seis puntos, no es un caso sino una recomendación."
+});

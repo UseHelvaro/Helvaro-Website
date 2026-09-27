@@ -2989,3 +2989,23 @@ Object.assign(window.HELVARO_TR['en'], {
   "Hoeveel aanvragen komen er per week binnen, en via welk kanaal?": "How many enquiries come in per week, and through which channel?",
   "Maak je Helvaro-account aan en probeer veertien dagen gratis. Binnen 72 uur beantwoordt Helvaro de voertuigaanvragen van je autobedrijf met je eigen voorraad. Je kiest pas daarna een plan.": "Create your Helvaro account and try it free for fourteen days. Within 72 hours Helvaro answers your dealership's vehicle enquiries from your own stock. You only choose a plan afterwards."
 });
+
+Object.assign(window.HELVARO_TR['en'], {
+  "Autobedrijven die meedraaien bepalen welke koppeling er als eerste af is.": "The dealerships taking part decide which integration gets finished first.",
+  "Benieuwd wat het bij jou doet?": "Curious what it does at your business?",
+  "De eerste weken": "The first weeks",
+  "Een scherp tarief in het eerste jaar en je eigen cijfers zwart op wit, van jou, ook als je daarna stopt.": "A sharp rate in the first year and your own numbers in black and white, yours, also if you stop afterwards.",
+  "Elke voertuigaanvraag beantwoord, ook ’s avonds en in het weekend.": "Every vehicle enquiry answered, also in the evening and at the weekend.",
+  "Elke voertuigaanvraag beantwoord, ook ’s avonds en in het weekend. Een demo van 20 minuten op je eigen cijfers, zonder verplichtingen.": "Every vehicle enquiry answered, also in the evening and at the weekend. A 20-minute demo on your own numbers, no obligations.",
+  "Eén cijfer, gemeten bij jou.": "One number, measured at your business.",
+  "Eén cijfer. Vier weken. Bij jou geteld.": "One number. Four weeks. Counted at your business.",
+  "Geen gemiddelde van een ander.": "Not somebody else's average.",
+  "Na vier weken weet je wat het opleverde.": "After four weeks you know what it returned.",
+  "Namen van klanten die ons daar geen toestemming voor gaven": "Names of customers who did not give us permission for it",
+  "Op de meeste sites van dit type staan percentages zonder bron en tevreden klanten zonder achternaam. Daar heb je niets aan, want je weet niet hoe er geteld is. Wij meten liever bij jou, op één cijfer dat je zelf kunt nakijken. Deze pagina legt uit welk cijfer dat is en hoe we het tellen.": "Most sites of this kind show percentages without a source and happy customers without a surname. That is no use to you, because you do not know how it was counted. We would rather measure at your business, on one number you can check yourself. This page explains which number that is and how we count it.",
+  "Wat er in een case hoort te staan.": "What belongs in a case.",
+  "We begeleiden een beperkt aantal bedrijven tegelijk, omdat meelezen en bijsturen anders niet lukt. Past het bij jou niet, dan zeggen we dat in het eerste gesprek.": "We guide a limited number of businesses at a time, because reading along and adjusting does not work otherwise. If it does not fit you, we say so in the first conversation.",
+  "We meten één cijfer, en we meten het bij jou: hoeveel van je aanvragen een afspraak wordt. Twee weken voordat er iets aanstaat, vier weken erna, op dezelfde manier geteld. Dat verschil is van jouw bedrijf en niet van een gemiddelde uit een folder.": "We measure one number, and we measure it at your business: how many of your enquiries become an appointment. Two weeks before anything is switched on, four weeks after, counted the same way. That difference belongs to your company, not to an average from a brochure.",
+  "We noemen geen percentage dat we niet bij jou gemeten hebben. Hoe we wel tellen staat op": "We quote no percentage we have not measured at your business. How we do count is on",
+  "Zo kun je zelf beoordelen of een case ergens op slaat. Ontbreekt een van deze zes, dan is het geen case maar een aanbeveling.": "That way you can judge for yourself whether a case holds up. If one of these six is missing, it is not a case but a testimonial."
+});
