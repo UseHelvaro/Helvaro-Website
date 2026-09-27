@@ -2989,3 +2989,23 @@ Object.assign(window.HELVARO_TR['fr'], {
   "Hoeveel aanvragen komen er per week binnen, en via welk kanaal?": "Combien de demandes recevez-vous par semaine, et par quel canal ?",
   "Maak je Helvaro-account aan en probeer veertien dagen gratis. Binnen 72 uur beantwoordt Helvaro de voertuigaanvragen van je autobedrijf met je eigen voorraad. Je kiest pas daarna een plan.": "Créez votre compte Helvaro et essayez gratuitement pendant quatorze jours. Dans les 72 heures, Helvaro répond aux demandes de véhicules de votre garage avec votre propre stock. Vous ne choisissez une formule qu'ensuite."
 });
+
+Object.assign(window.HELVARO_TR['fr'], {
+  "Autobedrijven die meedraaien bepalen welke koppeling er als eerste af is.": "Les concessions qui participent décident quelle intégration sort en premier.",
+  "Benieuwd wat het bij jou doet?": "Curieux de voir ce que cela donne chez vous ?",
+  "De eerste weken": "Les premières semaines",
+  "Een scherp tarief in het eerste jaar en je eigen cijfers zwart op wit, van jou, ook als je daarna stopt.": "Un tarif serré la première année et vos propres chiffres noir sur blanc, à vous, même si vous arrêtez ensuite.",
+  "Elke voertuigaanvraag beantwoord, ook ’s avonds en in het weekend.": "Chaque demande de véhicule traitée, même le soir et le week-end.",
+  "Elke voertuigaanvraag beantwoord, ook ’s avonds en in het weekend. Een demo van 20 minuten op je eigen cijfers, zonder verplichtingen.": "Chaque demande de véhicule traitée, même le soir et le week-end. Une démo de 20 minutes sur vos propres chiffres, sans engagement.",
+  "Eén cijfer, gemeten bij jou.": "Un seul chiffre, mesuré chez vous.",
+  "Eén cijfer. Vier weken. Bij jou geteld.": "Un chiffre. Quatre semaines. Compté chez vous.",
+  "Geen gemiddelde van een ander.": "Pas la moyenne de quelqu’un d’autre.",
+  "Na vier weken weet je wat het opleverde.": "Après quatre semaines, vous savez ce que cela a rapporté.",
+  "Namen van klanten die ons daar geen toestemming voor gaven": "Les noms de clients qui ne nous en ont pas donné l’autorisation",
+  "Op de meeste sites van dit type staan percentages zonder bron en tevreden klanten zonder achternaam. Daar heb je niets aan, want je weet niet hoe er geteld is. Wij meten liever bij jou, op één cijfer dat je zelf kunt nakijken. Deze pagina legt uit welk cijfer dat is en hoe we het tellen.": "Sur la plupart des sites de ce genre, on trouve des pourcentages sans source et des clients satisfaits sans nom de famille. Cela ne vous sert à rien, car vous ne savez pas comment on a compté. Nous préférons mesurer chez vous, sur un seul chiffre que vous pouvez vérifier vous-même. Cette page explique quel chiffre c'est et comment nous le comptons.",
+  "Wat er in een case hoort te staan.": "Ce qu'un cas doit contenir.",
+  "We begeleiden een beperkt aantal bedrijven tegelijk, omdat meelezen en bijsturen anders niet lukt. Past het bij jou niet, dan zeggen we dat in het eerste gesprek.": "Nous accompagnons un nombre limité d'entreprises à la fois, sinon le suivi et les ajustements deviennent impossibles. Si cela ne vous convient pas, nous le disons dès le premier entretien.",
+  "We meten één cijfer, en we meten het bij jou: hoeveel van je aanvragen een afspraak wordt. Twee weken voordat er iets aanstaat, vier weken erna, op dezelfde manier geteld. Dat verschil is van jouw bedrijf en niet van een gemiddelde uit een folder.": "Nous mesurons un seul chiffre, et nous le mesurons chez vous : quelle part de vos demandes devient un rendez-vous. Deux semaines avant que quoi que ce soit ne soit activé, quatre semaines après, comptées de la même façon. Cette différence appartient à votre entreprise, pas à une moyenne de brochure.",
+  "We noemen geen percentage dat we niet bij jou gemeten hebben. Hoe we wel tellen staat op": "Nous ne citons aucun pourcentage que nous n'avons pas mesuré chez vous. Notre façon de compter figure sur",
+  "Zo kun je zelf beoordelen of een case ergens op slaat. Ontbreekt een van deze zes, dan is het geen case maar een aanbeveling.": "Vous pouvez ainsi juger vous-même si un cas tient debout. S'il manque l'un de ces six points, ce n'est pas un cas mais une recommandation."
+});
