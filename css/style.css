@@ -9045,3 +9045,36 @@ picture:has(> .footer-logo) { display: contents; }
 @media (max-width: 420px) {
   .wa-icons { display: none; }
 }
+
+/* ============================================================
+   CTA-TWIJFEL
+   ------------------------------------------------------------
+   De regel onder de aanmeldknop. Bewust geen tweede knop: twee
+   knoppen naast elkaar laten allebei aan kracht inboeten, en wie
+   een gesprek wil klikt ook op een tekstlink. Erft de uitlijning
+   van zijn ouder, zodat hij links staat in de hero en gecentreerd
+   in de band onderaan.
+   ============================================================ */
+.cta-twijfel {
+  margin-top: 14px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-3);
+}
+.cta-twijfel a {
+  color: var(--text-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(var(--accent-rgb), 0.45);
+  transition: color 0.25s var(--ease), text-decoration-color 0.25s var(--ease);
+}
+.cta-twijfel a:hover {
+  color: var(--text-1);
+  text-decoration-color: rgba(var(--accent-rgb), 0.9);
+}
+.cta-twijfel a:focus-visible {
+  outline: 2px solid var(--accent-deep);
+  outline-offset: 3px;
+  border-radius: 2px;
+}

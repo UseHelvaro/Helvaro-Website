@@ -3009,3 +3009,19 @@ Object.assign(window.HELVARO_TR['es'], {
   "We noemen geen percentage dat we niet bij jou gemeten hebben. Hoe we wel tellen staat op": "No damos ningún porcentaje que no hayamos medido en tu empresa. Cómo contamos sí está en",
   "Zo kun je zelf beoordelen of een case ergens op slaat. Ontbreekt een van deze zes, dan is het geen case maar een aanbeveling.": "Así puedes juzgar tú mismo si un caso se sostiene. Si falta uno de estos seis puntos, no es un caso sino una recomendación."
 });
+
+Object.assign(window.HELVARO_TR['es'], {
+  "Plan een gesprek van 20 minuten met het team": "Reserva una llamada de 20 minutos con el equipo",
+  "Start gratis": "Empieza gratis",
+  "Twijfel je nog?": "¿Todavía con dudas?"
+});
+
+Object.assign(window.HELVARO_TR['es'], {
+  "Begin met wat er vandaag wel is. Wat nog gebouwd wordt staat hierboven, met de status erbij.": "Empieza con lo que existe hoy. Lo que aún se está construyendo está arriba, con su estado.",
+  "Veertien dagen gratis op je eigen aanvragen, zonder verplichtingen.": "Catorce días gratis con tus propias solicitudes, sin compromiso.",
+  "Veertien dagen gratis, je eigen cijfers op tafel. Daarna weet je of het past.": "Catorce días gratis, tus propias cifras sobre la mesa. Después sabrás si encaja.",
+  "Veertien dagen gratis, op je eigen aanvragen. Je zet één werkstroom aan en ziet zelf wat er binnenkomt via je site, WhatsApp en mail, en wat ermee gebeurt.": "Catorce días gratis, con tus propias solicitudes. Enciendes un solo flujo y ves tú mismo qué entra por tu web, WhatsApp y correo, y qué pasa con ello.",
+  "Zet er één aan en kijk veertien dagen wat er binnenkomt en waar het blijft liggen. Daar komt meestal vanzelf uit waar je moet beginnen.": "Enciende uno y mira durante catorce días qué entra y dónde se queda. De ahí suele salir por sí solo por dónde empezar.",
+  "Zet het veertien dagen aan op je eigen aanvragen. Daarna weet je wat er binnenkwam, hoe snel het beantwoord werd en waar het bleef liggen.": "Enciéndelo catorce días con tus propias solicitudes. Después sabrás qué entró, con qué rapidez se respondió y dónde se quedó.",
+  "Zet één werkstroom aan op je eigen aanvragen en zie waar het bij jou blijft liggen.": "Enciende un flujo con tus propias solicitudes y mira dónde se queda en tu caso."
+});

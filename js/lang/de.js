@@ -3009,3 +3009,19 @@ Object.assign(window.HELVARO_TR['de'], {
   "We noemen geen percentage dat we niet bij jou gemeten hebben. Hoe we wel tellen staat op": "Wir nennen keinen Prozentsatz, den wir nicht bei Ihnen gemessen haben. Wie wir zählen, steht auf",
   "Zo kun je zelf beoordelen of een case ergens op slaat. Ontbreekt een van deze zes, dan is het geen case maar een aanbeveling.": "So können Sie selbst beurteilen, ob eine Fallstudie etwas taugt. Fehlt einer dieser sechs Punkte, ist es keine Fallstudie, sondern eine Empfehlung."
 });
+
+Object.assign(window.HELVARO_TR['de'], {
+  "Plan een gesprek van 20 minuten met het team": "Vereinbaren Sie ein 20-minütiges Gespräch mit dem Team",
+  "Start gratis": "Kostenlos starten",
+  "Twijfel je nog?": "Noch unsicher?"
+});
+
+Object.assign(window.HELVARO_TR['de'], {
+  "Begin met wat er vandaag wel is. Wat nog gebouwd wordt staat hierboven, met de status erbij.": "Fangen Sie mit dem an, was es heute gibt. Was noch gebaut wird, steht oben, mit Status.",
+  "Veertien dagen gratis op je eigen aanvragen, zonder verplichtingen.": "Vierzehn Tage kostenlos mit Ihren eigenen Anfragen, unverbindlich.",
+  "Veertien dagen gratis, je eigen cijfers op tafel. Daarna weet je of het past.": "Vierzehn Tage kostenlos, Ihre eigenen Zahlen auf dem Tisch. Danach wissen Sie, ob es passt.",
+  "Veertien dagen gratis, op je eigen aanvragen. Je zet één werkstroom aan en ziet zelf wat er binnenkomt via je site, WhatsApp en mail, en wat ermee gebeurt.": "Vierzehn Tage kostenlos, mit Ihren eigenen Anfragen. Sie schalten einen Ablauf ein und sehen selbst, was über Ihre Website, WhatsApp und Mail hereinkommt und was damit passiert.",
+  "Zet er één aan en kijk veertien dagen wat er binnenkomt en waar het blijft liggen. Daar komt meestal vanzelf uit waar je moet beginnen.": "Schalten Sie einen ein und schauen Sie vierzehn Tage, was hereinkommt und wo es liegen bleibt. Daraus ergibt sich meist von selbst, wo Sie anfangen sollten.",
+  "Zet het veertien dagen aan op je eigen aanvragen. Daarna weet je wat er binnenkwam, hoe snel het beantwoord werd en waar het bleef liggen.": "Schalten Sie es vierzehn Tage mit Ihren eigenen Anfragen ein. Danach wissen Sie, was hereinkam, wie schnell es beantwortet wurde und wo es liegen blieb.",
+  "Zet één werkstroom aan op je eigen aanvragen en zie waar het bij jou blijft liggen.": "Schalten Sie einen Ablauf für Ihre eigenen Anfragen ein und sehen Sie, wo es bei Ihnen liegen bleibt."
+});

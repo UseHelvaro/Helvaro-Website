@@ -3009,3 +3009,19 @@ Object.assign(window.HELVARO_TR['en'], {
   "We noemen geen percentage dat we niet bij jou gemeten hebben. Hoe we wel tellen staat op": "We quote no percentage we have not measured at your business. How we do count is on",
   "Zo kun je zelf beoordelen of een case ergens op slaat. Ontbreekt een van deze zes, dan is het geen case maar een aanbeveling.": "That way you can judge for yourself whether a case holds up. If one of these six is missing, it is not a case but a testimonial."
 });
+
+Object.assign(window.HELVARO_TR['en'], {
+  "Plan een gesprek van 20 minuten met het team": "Book a 20-minute call with the team",
+  "Start gratis": "Start free",
+  "Twijfel je nog?": "Still not sure?"
+});
+
+Object.assign(window.HELVARO_TR['en'], {
+  "Begin met wat er vandaag wel is. Wat nog gebouwd wordt staat hierboven, met de status erbij.": "Start with what exists today. What is still being built is above, with its status.",
+  "Veertien dagen gratis op je eigen aanvragen, zonder verplichtingen.": "Fourteen days free on your own enquiries, no obligations.",
+  "Veertien dagen gratis, je eigen cijfers op tafel. Daarna weet je of het past.": "Fourteen days free, your own numbers on the table. After that you know whether it fits.",
+  "Veertien dagen gratis, op je eigen aanvragen. Je zet één werkstroom aan en ziet zelf wat er binnenkomt via je site, WhatsApp en mail, en wat ermee gebeurt.": "Fourteen days free, on your own enquiries. You switch on one workflow and see for yourself what comes in through your site, WhatsApp and email, and what happens to it.",
+  "Zet er één aan en kijk veertien dagen wat er binnenkomt en waar het blijft liggen. Daar komt meestal vanzelf uit waar je moet beginnen.": "Switch one on and watch for fourteen days what comes in and where it gets left. That usually shows you by itself where to start.",
+  "Zet het veertien dagen aan op je eigen aanvragen. Daarna weet je wat er binnenkwam, hoe snel het beantwoord werd en waar het bleef liggen.": "Switch it on for fourteen days on your own enquiries. After that you know what came in, how fast it got answered and where it got left.",
+  "Zet één werkstroom aan op je eigen aanvragen en zie waar het bij jou blijft liggen.": "Switch on one workflow for your own enquiries and see where it gets left at your business."
+});

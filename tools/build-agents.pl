@@ -59,9 +59,10 @@ sub blok_agent {
   $h .= qq{        <h1 class="paghero-titel">} . r($a->{h1}) . qq{</h1>\n};
   $h .= qq{        <p class="paghero-lede">} . r($a->{lede}) . qq{</p>\n};
   $h .= qq{        <div class="paghero-acties">\n};
-  $h .= qq{          <a href="../meeting.html" class="btn btn-lg">Plan een demo <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>\n};
+  $h .= qq{          <a href="../aanmelden.html" class="btn btn-lg">Start gratis <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>\n};
   $h .= qq{          <a href="../systeem.html" class="btn btn-ghost btn-lg">Zo zit het systeem in elkaar</a>\n};
   $h .= qq{        </div>\n};
+  $h .= qq{        <p class="cta-twijfel">Twijfel je nog? <a href="../meeting.html">Plan een gesprek van 20 minuten met het team</a></p>\n};
   $h .= qq{      </div>\n};
   $h .= qq{    </section>\n\n};
 
@@ -187,7 +188,7 @@ sub blok_agent {
   $h .= qq{      <div class="cta-band-glow" aria-hidden="true"></div>\n      <div class="container">\n};
   $h .= qq{        <h2 class="cta-band-title reveal">} . r($a->{cta}) . qq{</h2>\n};
   $h .= qq{        <p class="cta-band-sub reveal reveal-delay-1">Twintig minuten op je eigen cijfers. We laten zien wat deze werkstroom bij jou zou doen, of waarom je beter met een andere kunt beginnen.</p>\n};
-  $h .= qq{        <a href="../meeting.html" class="btn btn-lg reveal reveal-delay-2">Plan een demo <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>\n};
+  $h .= qq{        <a href="../aanmelden.html" class="btn btn-lg reveal reveal-delay-2">Start gratis <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>\n        <p class="cta-twijfel">Twijfel je nog? <a href="../meeting.html">Plan een gesprek van 20 minuten met het team</a></p>\n};
   $h .= qq{      </div>\n    </section>\n};
 
   return $h;
