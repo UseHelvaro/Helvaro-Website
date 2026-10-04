@@ -540,35 +540,35 @@ const FORM_TEKST = {
   nl: { bezig:'Versturen…', gelukt:'Verzonden ✓', fout:'Versturen mislukt',
         leeg:'Vul alle velden in.', email:'Vul een geldig e-mailadres in.',
         gelukt_uitleg:'Bedankt, we nemen binnen 24 uur contact op.',
-        fout_uitleg:'Er ging iets mis. Mail ons rechtstreeks op hello@helvaro.pro.' ,
+        fout_uitleg:'Er ging iets mis. Mail ons rechtstreeks op info@helvaro.pro.' ,
         faro_idle:'Vul je gegevens in, dan zorg ik dat je bericht bij de juiste persoon komt.',
         faro_denkt:'Dat ziet er compleet uit. Klik op verzenden en ik geef het door.',
         faro_klaar:'Verzonden. Iemand van ons leest het en komt bij je terug.' },
   fr: { bezig:'Envoi…', gelukt:'Envoyé ✓', fout:'Échec de l\'envoi',
         leeg:'Veuillez remplir tous les champs.', email:'Saisissez une adresse e-mail valide.',
         gelukt_uitleg:'Merci, nous vous recontactons sous 24 heures.',
-        fout_uitleg:'Une erreur est survenue. Écrivez-nous à hello@helvaro.pro.' ,
+        fout_uitleg:'Une erreur est survenue. Écrivez-nous à info@helvaro.pro.' ,
         faro_idle:'Remplissez vos coordonnées et je veille à ce que votre message arrive au bon endroit.',
         faro_denkt:'Cela a l\'air complet. Cliquez sur envoyer et je le transmets.',
         faro_klaar:'Envoyé. Quelqu\'un de chez nous le lit et vous recontacte.' },
   en: { bezig:'Sending…', gelukt:'Sent ✓', fout:'Sending failed',
         leeg:'Please fill in every field.', email:'Enter a valid email address.',
         gelukt_uitleg:'Thanks, we will get back to you within 24 hours.',
-        fout_uitleg:'Something went wrong. Email us directly at hello@helvaro.pro.' ,
+        fout_uitleg:'Something went wrong. Email us directly at info@helvaro.pro.' ,
         faro_idle:'Fill in your details and I\'ll make sure your message reaches the right person.',
         faro_denkt:'That looks complete. Hit send and I\'ll pass it on.',
         faro_klaar:'Sent. Someone here will read it and get back to you.' },
   de: { bezig:'Wird gesendet…', gelukt:'Gesendet ✓', fout:'Senden fehlgeschlagen',
         leeg:'Bitte füllen Sie alle Felder aus.', email:'Geben Sie eine gültige E-Mail-Adresse ein.',
         gelukt_uitleg:'Danke, wir melden uns innerhalb von 24 Stunden.',
-        fout_uitleg:'Etwas ist schiefgelaufen. Schreiben Sie an hello@helvaro.pro.' ,
+        fout_uitleg:'Etwas ist schiefgelaufen. Schreiben Sie an info@helvaro.pro.' ,
         faro_idle:'Tragen Sie Ihre Daten ein, dann sorge ich dafür, dass Ihre Nachricht ankommt.',
         faro_denkt:'Das sieht vollständig aus. Klicken Sie auf Senden, ich gebe es weiter.',
         faro_klaar:'Gesendet. Jemand von uns liest es und meldet sich bei Ihnen.' },
   es: { bezig:'Enviando…', gelukt:'Enviado ✓', fout:'Error al enviar',
         leeg:'Rellena todos los campos.', email:'Introduce un correo válido.',
         gelukt_uitleg:'Gracias, te contactamos en menos de 24 horas.',
-        fout_uitleg:'Algo salió mal. Escríbenos a hello@helvaro.pro.' ,
+        fout_uitleg:'Algo salió mal. Escríbenos a info@helvaro.pro.' ,
         faro_idle:'Rellena tus datos y me aseguro de que tu mensaje llegue a la persona indicada.',
         faro_denkt:'Parece completo. Pulsa enviar y yo lo hago llegar.',
         faro_klaar:'Enviado. Alguien de nuestro equipo lo leerá y te responderá.' }
@@ -698,7 +698,7 @@ function initContactForm() {
       // Geen endpoint ingesteld: openen in de mailclient, zo raakt niets kwijt
       const onderwerp = 'Lead-analyse aanvraag — ' + bedrijf;
       const body = naam + ' (' + bedrijf + ')\n' + email + '\n\n' + bericht;
-      window.location.href = 'mailto:hello@helvaro.pro?subject=' +
+      window.location.href = 'mailto:info@helvaro.pro?subject=' +
         encodeURIComponent(onderwerp) + '&body=' + encodeURIComponent(body);
       toon('ok', t.gelukt_uitleg);
       /* Bewust GEEN 'klaar': er is niets naar ons verstuurd, alleen het

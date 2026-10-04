@@ -39,7 +39,7 @@ our $NEGEER = qr/^(?:Helvaro|Faro|Login|Home|Contact|FAQ|WhatsApp|Automotive|
                     Mathis\s.*|Driss\s.*|Wout\s.*|Katrien\s.*|Sindi\sSaid|Stefan\sV\.|
                     Teljo\sCrisrosio\sKodia|Passat.*|
                     Co-Founder\s.*|Limited\sUse|E-Mail:?|Google\sAgenda|
-                    app\.helvaro\.pro|hello\@helvaro\.pro|\x{00a9}\s*\d{4}\sHelvaro)$/x;
+                    app\.helvaro\.pro|info\@helvaro\.pro|\x{00a9}\s*\d{4}\sHelvaro)$/x;
 
 my %LOCALE = (nl => 'nl_BE', fr => 'fr_BE', en => 'en_GB', de => 'de_DE', es => 'es_ES');
 my $BASE = 'https://helvaro.pro';

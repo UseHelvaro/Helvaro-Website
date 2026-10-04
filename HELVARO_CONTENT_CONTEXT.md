@@ -295,14 +295,14 @@ All three also get the **visualisatie-agent**: generates images of a property/ki
 |---|---|---|
 | Starter | **€249,99/maand** — 3.000 credits ≈ 150 gesprekken, 1 agent | `index.html#prijzen` |
 | Growth *(Meest gekozen)* | **€499/maand** — 10.000 credits ≈ 500 gesprekken, 3 agents, visualisatie-agent, 40 talen | idem |
-| Scale *(Meest compleet)* | **vanaf €799/maand** — onbeperkte credits, fair-use (practical ceiling ~20.000 credits ≈ 1.000 gesprekken) | idem |
+| Scale *(Meest compleet)* | **Prijs op aanvraag** (de site toont "Neem contact op" sinds 4 oktober 2026; noem geen bedrag) — onbeperkte credits, fair-use (practical ceiling ~20.000 credits ≈ 1.000 gesprekken) | idem |
 | Credit maths | 1 gesprek ≈ 20 credits; credits cover conversations **and** generated images | idem |
 | Overage | *"Credits op is nooit gesprek op."* Top-ups cost the same per credit, never a penalty | idem |
 | Trial | **14 dagen gratis**, no card details, cancel any time | idem |
 | Terms | Geen setup-kosten · maandelijks opzegbaar | idem |
 | Time to live | **72 uur** (framed as *"meestal"*, *"afhankelijk van waar je voorraad staat"*) | `meeting.html`, `aanmelden.html` |
 | Conversion action | **Plan een demo** — 20 minutes, Google Calendar booking on `meeting.html` | `meeting.html` |
-| Contact | `hello@helvaro.pro` · app at `app.helvaro.pro` | footer |
+| Contact | `info@helvaro.pro` · app at `app.helvaro.pro` | footer |
 | Company | Belgian. Co-founders: Teljo Crisrosio Kodia (CEO), Sindi Said (CTO) | `waarom.html#team` |
 
 ### Which offer do you lead with? The pilot.
@@ -322,7 +322,7 @@ For content: **lead with the pilot** (five places, six weeks, one measured numbe
 | How it works | `helvaro.pro/systeem.html` · workflows `helvaro.pro/agents/` · integrations `helvaro.pro/koppelingen/` |
 | Start the trial | `helvaro.pro/aanmelden.html` → redirects to `app.helvaro.pro/signup` |
 | Log in | `app.helvaro.pro` |
-| E-mail | `hello@helvaro.pro` |
+| E-mail | `info@helvaro.pro` |
 
 "Link in bio" on social should point at `helvaro.pro/meeting.html` for a demo CTA, or the relevant deep page for a teaching post.
 
@@ -861,7 +861,7 @@ The site itself commits to this in public (`cases.html`), which means breaking i
 
 | Number | Use it as | Never |
 |---|---|---|
-| €249,99 / €499 / vanaf €799 per maand | Fact | — |
+| €249,99 / €499 per maand; Scale op aanvraag | Fact | Een bedrag voor Scale |
 | 14 dagen gratis, geen kaartgegevens | Fact | — |
 | 1 gesprek ≈ 20 credits | Fact | — |
 | 72 uur live | "meestal", "afhankelijk van je setup" | A guarantee |

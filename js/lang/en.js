@@ -3025,3 +3025,8 @@ Object.assign(window.HELVARO_TR['en'], {
   "Zet het veertien dagen aan op je eigen aanvragen. Daarna weet je wat er binnenkwam, hoe snel het beantwoord werd en waar het bleef liggen.": "Switch it on for fourteen days on your own enquiries. After that you know what came in, how fast it got answered and where it got left.",
   "Zet één werkstroom aan op je eigen aanvragen en zie waar het bij jou blijft liggen.": "Switch on one workflow for your own enquiries and see where it gets left at your business."
 });
+
+Object.assign(window.HELVARO_TR['en'], {
+  "Neem contact op": "Contact us",
+  "Reactie binnen een minuut, 24/7": "Reply within a minute, 24/7"
+});
