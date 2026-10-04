@@ -189,7 +189,7 @@ These are **positioning assets, not weaknesses**. Lead with them.
 - **Geen inruilbedrag.** *"De gegevens worden opgehaald, het bedrag noemt een mens. Een getal uit een systeem is later niet meer terug te draaien."*
 - **Geen verzonnen voertuiggegevens.** *"Wat niet in jouw voorraad staat, wordt niet beweerd. Liever 'dat zoek ik na' dan een verkeerde uitvoering."*
 - **Geen vervanging van je verkopers.** *"Het neemt het herhaalwerk over. De gesprekken waar het geld in zit, komen nog steeds bij een mens terecht."*
-- **Geen telefoon.**
+- **Geen oproep zonder samenvatting.** (Vervangt het vroegere "geen telefoon".)
 - **Geen beloofde cijfers.**
 
 Faro compresses all six into one line: *"Geen prijsafspraken en geen inruilbedrag. Liever nu duidelijk dan in maand drie."*
