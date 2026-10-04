@@ -5802,6 +5802,16 @@ p { text-wrap: pretty; }
 .status-plan { color: var(--text-3); }
 [data-theme="light"] .status-live { color: #15803D; }
 [data-theme="light"] .status-bouw { color: #8A6A33; }
+/* "nieuw" is geen vierde status maar een aankondiging. Zand op donker,
+   brons op licht: zand als tekst op wit haalt geen 2:1. */
+.status-nieuw { color: var(--accent); border-color: rgba(232,215,177,0.4); background: rgba(232,215,177,0.08); }
+[data-theme="light"] .status-nieuw { color: #8A6A33; border-color: rgba(138,106,51,0.35); background: rgba(138,106,51,0.06); }
+.section-title .status-pil { vertical-align: middle; position: relative; top: -0.2em; margin-left: 6px; }
+#telefonie .lead-uitleg .btn { margin-top: 20px; }
+/* Hier staat wat het WEL doet, dus een vinkje in plaats van het kruisje
+   van de grenzenlijst. */
+#telefonie .grens-lijst li::before { content: "\2713"; color: var(--accent); }
+[data-theme="light"] #telefonie .grens-lijst li::before { color: #8A6A33; }
 
 /* ── De stroom: klant, systeem, werkplaats ───────────────────────────────── */
 .stroom-diagram {

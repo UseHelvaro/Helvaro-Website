@@ -179,7 +179,7 @@ From `koppelingen/index.html`:
 | Faro content suggestions from your stock | **IN ONTWIKKELING** | Labelled on the homepage itself |
 | Direct CRM integration (HubSpot / Teamleader / Pipedrive) | **GEPLAND** | *"staat op de lijst, maar draait nog nergens"* |
 | Other calendars than Google Agenda | **NOT AVAILABLE** | "per geval bekeken" |
-| **Telephony / voice** | **DELIBERATELY NOT BUILT** | *"Telefonie staat er bewust niet bij. Dat is vandaag geen onderdeel van het product, en we zetten het er pas op als het dat wel is."* |
+| **Telefonie-agent** | **NIEUW, alleen in Scale** (sinds 4 oktober 2026 op de site) | Neemt ingestelde oproepen aan, ook buiten de openingsuren, zegt dat het een AI-systeem is, zet een samenvatting in het dossier. Noem geen opname, transcript, doorverbinden of afspraken boeken aan de telefoon: dat staat niet op de site. |
 
 ### Things the product deliberately refuses to do
 
@@ -192,7 +192,7 @@ These are **positioning assets, not weaknesses**. Lead with them.
 - **Geen telefoon.**
 - **Geen beloofde cijfers.**
 
-Faro compresses all six into one line: *"Geen prijsafspraken, geen inruilbedrag, geen telefoon. Liever nu duidelijk dan in maand drie."*
+Faro compresses all six into one line: *"Geen prijsafspraken en geen inruilbedrag. Liever nu duidelijk dan in maand drie."*
 
 **Every agent page and every integration page carries its own limits list** — "Wat deze agent niet doet" and "Wat nog niet kan". That is the richest seam of content on the site (pillar 5). Examples worth knowing: the stock integration cannot reserve a car or change its status; the calendar integration supports Google Agenda only, cannot set per-salesperson availability, and takes no deposits; the website widget cannot replace a stock module or take payments; WhatsApp cannot message people who did not make contact, cannot run campaigns to your database, and cannot migrate conversations off a salesperson's private phone (*"Dat is geen keuze van ons maar een regel van WhatsApp."*).
 

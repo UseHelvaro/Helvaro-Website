@@ -3030,3 +3030,38 @@ Object.assign(window.HELVARO_TR['en'], {
   "Neem contact op": "Contact us",
   "Reactie binnen een minuut, 24/7": "Reply within a minute, 24/7"
 });
+
+Object.assign(window.HELVARO_TR['en'], {
+  "Contacteer ons": "Contact us",
+  "Dinsdag 19:32": "Tuesday 19:32",
+  "Een koper belt terwijl je verkoper op proefrit is, of om 19:30 als de showroom dicht is. De telefonie-agent neemt de oproepen aan die jij instelt, vraagt wat de beller zoekt en zet een samenvatting in het dossier.": "A buyer calls while your salesperson is out on a test drive, or at 19:30 when the showroom is closed. The phone agent answers the calls you set up, asks what the caller is looking for and puts a summary in the file.",
+  "Gebeld": "Called",
+  "Geen oproep zonder samenvatting": "No call without a summary",
+  "Inbegrepen in het Scale-plan. Je verkoper weet wie er belde en waarom, zonder dat iemand iets op een briefje moest schrijven.": "Included in the Scale plan. Your salesperson knows who called and why, without anyone scribbling it on a note.",
+  "Ja, in het Scale-plan. De telefonie-agent neemt de oproepen aan die jij instelt, ook buiten de openingsuren, en zet een samenvatting van elk gesprek in het dossier. Website, WhatsApp en e-mail zitten in elk plan.": "Yes, in the Scale plan. The phone agent answers the calls you set up, including outside opening hours, and puts a summary of every conversation in the file. Website, WhatsApp and email are in every plan.",
+  "Je telefoon gaat.": "Your phone rings.",
+  "Neemt de oproepen aan die jij instelt, ook buiten de openingsuren.": "Answers the calls you set up, including outside opening hours.",
+  "Neemt de telefonie-agent op, dan staat er een samenvatting in het dossier: wie belde, waarom en wat de volgende stap is. Telefonie zit in het Scale-plan.": "When the phone agent picks up, a summary lands in the file: who called, why and what the next step is. Telephony is part of the Scale plan.",
+  "Niemand neemt op.": "Nobody picks up.",
+  "Nieuw": "New",
+  "Noemt aan de telefoon geen prijsafspraak en geen inruilbedrag.": "Makes no price deal and names no trade-in figure on the phone.",
+  "Noteert wie belde, over welke wagen en wat hij wil.": "Notes who called, about which vehicle and what they want.",
+  "Oproep": "Call",
+  "Peugeot 3008, 2017": "Peugeot 3008, 2017",
+  "Prijs op aanvraag. Onbeperkte credits onder fair use, onbeperkt aantal agents, een telefonie-agent en kwalificatievragen op maat.": "Price on request. Unlimited credits under fair use, unlimited agents, a phone agent and custom qualification questions.",
+  "Proefrit voorstellen": "Suggest a test drive",
+  "Sofie Janssens": "Sofie Janssens",
+  "Staat hij er nog, kan ze zaterdag langskomen": "Whether it is still there, and if she can come by on Saturday",
+  "Telefonie": "Telephony",
+  "Telefonie zit in het Scale-plan. Een oproep komt in hetzelfde dossier terecht als een formulier, een WhatsApp of een mail.": "Telephony is part of the Scale plan. A call lands in the same file as a form, a WhatsApp or an email.",
+  "Telefonie-agent": "Phone agent",
+  "Telefonie-agent, met een samenvatting per oproep": "Phone agent, with a summary of every call",
+  "Terugbellen": "Call back",
+  "Volgende stap": "Next step",
+  "Volvo XC40 T4": "Volvo XC40 T4",
+  "Voorbeeldweergave. De samenvatting bevat wat de beller zelf zegt. Zegt hij niets over een inruil, dan blijft dat veld leeg.": "Example view. The summary contains what the caller says themselves. If they say nothing about a trade-in, that field stays empty.",
+  "Wat de telefonie-agent doet": "What the phone agent does",
+  "Zegt aan het begin dat de beller met een AI-systeem spreekt.": "Tells the caller at the start that they are speaking to an AI system.",
+  "Zet na elke oproep een samenvatting in het dossier, met de volgende stap erbij.": "Puts a summary in the file after every call, with the next step included.",
+  "nieuw": "new"
+});

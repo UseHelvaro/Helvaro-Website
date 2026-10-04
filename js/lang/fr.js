@@ -3030,3 +3030,38 @@ Object.assign(window.HELVARO_TR['fr'], {
   "Neem contact op": "Contactez-nous",
   "Reactie binnen een minuut, 24/7": "Réponse en moins d'une minute, 24/7"
 });
+
+Object.assign(window.HELVARO_TR['fr'], {
+  "Contacteer ons": "Contactez-nous",
+  "Dinsdag 19:32": "Mardi 19h32",
+  "Een koper belt terwijl je verkoper op proefrit is, of om 19:30 als de showroom dicht is. De telefonie-agent neemt de oproepen aan die jij instelt, vraagt wat de beller zoekt en zet een samenvatting in het dossier.": "Un acheteur appelle pendant que votre vendeur est en essai, ou à 19h30 quand le showroom est fermé. L'agent téléphonique prend les appels que vous configurez, demande ce que l'appelant cherche et place un résumé dans le dossier.",
+  "Gebeld": "Appel reçu",
+  "Geen oproep zonder samenvatting": "Aucun appel sans résumé",
+  "Inbegrepen in het Scale-plan. Je verkoper weet wie er belde en waarom, zonder dat iemand iets op een briefje moest schrijven.": "Inclus dans le plan Scale. Votre vendeur sait qui a appelé et pourquoi, sans que personne ait dû le noter sur un bout de papier.",
+  "Ja, in het Scale-plan. De telefonie-agent neemt de oproepen aan die jij instelt, ook buiten de openingsuren, en zet een samenvatting van elk gesprek in het dossier. Website, WhatsApp en e-mail zitten in elk plan.": "Oui, dans le plan Scale. L'agent téléphonique prend les appels que vous configurez, y compris en dehors des heures d'ouverture, et place un résumé de chaque conversation dans le dossier. Le site web, WhatsApp et l'e-mail sont inclus dans chaque plan.",
+  "Je telefoon gaat.": "Votre téléphone sonne.",
+  "Neemt de oproepen aan die jij instelt, ook buiten de openingsuren.": "Prend les appels que vous configurez, y compris en dehors des heures d'ouverture.",
+  "Neemt de telefonie-agent op, dan staat er een samenvatting in het dossier: wie belde, waarom en wat de volgende stap is. Telefonie zit in het Scale-plan.": "Quand l'agent téléphonique décroche, un résumé arrive dans le dossier : qui a appelé, pourquoi et quelle est la prochaine étape. La téléphonie est incluse dans le plan Scale.",
+  "Niemand neemt op.": "Personne ne décroche.",
+  "Nieuw": "Nouveau",
+  "Noemt aan de telefoon geen prijsafspraak en geen inruilbedrag.": "Ne conclut au téléphone aucun accord de prix et ne cite aucun montant de reprise.",
+  "Noteert wie belde, over welke wagen en wat hij wil.": "Note qui a appelé, pour quel véhicule et ce qu'il veut.",
+  "Oproep": "Appel",
+  "Peugeot 3008, 2017": "Peugeot 3008, 2017",
+  "Prijs op aanvraag. Onbeperkte credits onder fair use, onbeperkt aantal agents, een telefonie-agent en kwalificatievragen op maat.": "Prix sur demande. Crédits illimités en usage raisonnable, nombre d'agents illimité, un agent téléphonique et des questions de qualification sur mesure.",
+  "Proefrit voorstellen": "Proposer un essai",
+  "Sofie Janssens": "Sofie Janssens",
+  "Staat hij er nog, kan ze zaterdag langskomen": "S'il est encore là, et si elle peut passer samedi",
+  "Telefonie": "Téléphonie",
+  "Telefonie zit in het Scale-plan. Een oproep komt in hetzelfde dossier terecht als een formulier, een WhatsApp of een mail.": "La téléphonie est incluse dans le plan Scale. Un appel arrive dans le même dossier qu'un formulaire, un WhatsApp ou un e-mail.",
+  "Telefonie-agent": "Agent téléphonique",
+  "Telefonie-agent, met een samenvatting per oproep": "Agent téléphonique, avec un résumé par appel",
+  "Terugbellen": "Rappeler",
+  "Volgende stap": "Prochaine étape",
+  "Volvo XC40 T4": "Volvo XC40 T4",
+  "Voorbeeldweergave. De samenvatting bevat wat de beller zelf zegt. Zegt hij niets over een inruil, dan blijft dat veld leeg.": "Vue d'exemple. Le résumé contient ce que l'appelant dit lui-même. S'il ne parle pas de reprise, ce champ reste vide.",
+  "Wat de telefonie-agent doet": "Ce que fait l'agent téléphonique",
+  "Zegt aan het begin dat de beller met een AI-systeem spreekt.": "Annonce dès le début à l'appelant qu'il parle à un système d'IA.",
+  "Zet na elke oproep een samenvatting in het dossier, met de volgende stap erbij.": "Place après chaque appel un résumé dans le dossier, avec la prochaine étape.",
+  "nieuw": "nouveau"
+});

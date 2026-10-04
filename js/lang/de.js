@@ -3030,3 +3030,38 @@ Object.assign(window.HELVARO_TR['de'], {
   "Neem contact op": "Kontaktieren Sie uns",
   "Reactie binnen een minuut, 24/7": "Antwort innerhalb einer Minute, 24/7"
 });
+
+Object.assign(window.HELVARO_TR['de'], {
+  "Contacteer ons": "Kontaktieren Sie uns",
+  "Dinsdag 19:32": "Dienstag 19:32",
+  "Een koper belt terwijl je verkoper op proefrit is, of om 19:30 als de showroom dicht is. De telefonie-agent neemt de oproepen aan die jij instelt, vraagt wat de beller zoekt en zet een samenvatting in het dossier.": "Ein Käufer ruft an, während Ihr Verkäufer auf Probefahrt ist, oder um 19:30 Uhr, wenn der Showroom geschlossen ist. Der Telefonagent nimmt die Anrufe an, die Sie festlegen, fragt, was der Anrufer sucht, und legt eine Zusammenfassung in der Akte ab.",
+  "Gebeld": "Angerufen",
+  "Geen oproep zonder samenvatting": "Kein Anruf ohne Zusammenfassung",
+  "Inbegrepen in het Scale-plan. Je verkoper weet wie er belde en waarom, zonder dat iemand iets op een briefje moest schrijven.": "Im Scale-Plan enthalten. Ihr Verkäufer weiß, wer angerufen hat und warum, ohne dass jemand etwas auf einen Zettel schreiben musste.",
+  "Ja, in het Scale-plan. De telefonie-agent neemt de oproepen aan die jij instelt, ook buiten de openingsuren, en zet een samenvatting van elk gesprek in het dossier. Website, WhatsApp en e-mail zitten in elk plan.": "Ja, im Scale-Plan. Der Telefonagent nimmt die Anrufe an, die Sie festlegen, auch außerhalb der Öffnungszeiten, und legt eine Zusammenfassung jedes Gesprächs in der Akte ab. Website, WhatsApp und E-Mail sind in jedem Plan enthalten.",
+  "Je telefoon gaat.": "Ihr Telefon klingelt.",
+  "Neemt de oproepen aan die jij instelt, ook buiten de openingsuren.": "Nimmt die Anrufe an, die Sie festlegen, auch außerhalb der Öffnungszeiten.",
+  "Neemt de telefonie-agent op, dan staat er een samenvatting in het dossier: wie belde, waarom en wat de volgende stap is. Telefonie zit in het Scale-plan.": "Nimmt der Telefonagent ab, liegt eine Zusammenfassung in der Akte: wer angerufen hat, warum und was der nächste Schritt ist. Telefonie ist im Scale-Plan enthalten.",
+  "Niemand neemt op.": "Niemand nimmt ab.",
+  "Nieuw": "Neu",
+  "Noemt aan de telefoon geen prijsafspraak en geen inruilbedrag.": "Trifft am Telefon keine Preisabsprache und nennt keinen Inzahlungnahmebetrag.",
+  "Noteert wie belde, over welke wagen en wat hij wil.": "Notiert, wer angerufen hat, zu welchem Fahrzeug und was er möchte.",
+  "Oproep": "Anruf",
+  "Peugeot 3008, 2017": "Peugeot 3008, 2017",
+  "Prijs op aanvraag. Onbeperkte credits onder fair use, onbeperkt aantal agents, een telefonie-agent en kwalificatievragen op maat.": "Preis auf Anfrage. Unbegrenzte Credits unter Fair Use, unbegrenzt viele Agenten, ein Telefonagent und individuelle Qualifizierungsfragen.",
+  "Proefrit voorstellen": "Probefahrt vorschlagen",
+  "Sofie Janssens": "Sofie Janssens",
+  "Staat hij er nog, kan ze zaterdag langskomen": "Ob er noch da ist und ob sie am Samstag vorbeikommen kann",
+  "Telefonie": "Telefonie",
+  "Telefonie zit in het Scale-plan. Een oproep komt in hetzelfde dossier terecht als een formulier, een WhatsApp of een mail.": "Telefonie ist im Scale-Plan enthalten. Ein Anruf landet in derselben Akte wie ein Formular, eine WhatsApp oder eine E-Mail.",
+  "Telefonie-agent": "Telefonagent",
+  "Telefonie-agent, met een samenvatting per oproep": "Telefonagent, mit Zusammenfassung pro Anruf",
+  "Terugbellen": "Rückruf",
+  "Volgende stap": "Nächster Schritt",
+  "Volvo XC40 T4": "Volvo XC40 T4",
+  "Voorbeeldweergave. De samenvatting bevat wat de beller zelf zegt. Zegt hij niets over een inruil, dan blijft dat veld leeg.": "Beispielansicht. Die Zusammenfassung enthält, was der Anrufer selbst sagt. Sagt er nichts zur Inzahlungnahme, bleibt das Feld leer.",
+  "Wat de telefonie-agent doet": "Was der Telefonagent tut",
+  "Zegt aan het begin dat de beller met een AI-systeem spreekt.": "Sagt dem Anrufer gleich zu Beginn, dass er mit einem KI-System spricht.",
+  "Zet na elke oproep een samenvatting in het dossier, met de volgende stap erbij.": "Legt nach jedem Anruf eine Zusammenfassung in der Akte ab, mit dem nächsten Schritt.",
+  "nieuw": "neu"
+});

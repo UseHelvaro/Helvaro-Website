@@ -22,7 +22,7 @@
   <link rel="alternate" hreflang="en" href="https://helvaro.pro/en/">
   <link rel="alternate" hreflang="de" href="https://helvaro.pro/de/">
   <link rel="alternate" hreflang="es" href="https://helvaro.pro/es/">
-  <link rel="alternate" hreflang="x-default" href="https://helvaro.pro/">
+  <link rel="alternate" hreflang="x-default" href="https://helvaro.pro/">
   <link rel="icon" href="../assets/favicon.ico?v=2" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png?v=2">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png?v=2">
@@ -65,7 +65,7 @@
             { "@type": "Offer", "name": "Growth", "price": "499.00", "priceCurrency": "EUR", "category": "SubscriptionPlan",
               "description": "10 000 crédits par mois, environ 500 conversations. Trois agents, agent de visualisation et 40 langues." },
             { "@type": "Offer", "name": "Scale", "category": "SubscriptionPlan",
-              "description": "Crédits illimités en usage raisonnable, nombre d'agents illimité et questions de qualification sur mesure." }
+              "description": "Prix sur demande. Crédits illimités en usage raisonnable, nombre d'agents illimité, un agent téléphonique et des questions de qualification sur mesure." }
           ] } }
     ]
   }
@@ -850,6 +850,55 @@
     </section>
 
 
+    <!-- ===== TELEFONIE ================================================
+         Nieuw, en alleen in Scale. Staat VOOR de prijs om dezelfde reden als
+         Faro hierboven: wie de Scale-kaart leest, moet al weten wat er in zit.
+         De kaart links is een voorbeeld, net als het dossier bij kwalificatie. -->
+    <section class="section" id="telefonie">
+      <div class="section-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">Téléphonie</span>
+          <h2 class="section-title">Votre téléphone sonne. <span class="highlight">Personne ne décroche.</span> <span class="status-pil status-nieuw">Nouveau</span></h2>
+          <p class="section-sub">Un acheteur appelle pendant que votre vendeur est en essai, ou à 19h30 quand le showroom est fermé. L'agent téléphonique prend les appels que vous configurez, demande ce que l'appelant cherche et place un résumé dans le dossier.</p>
+        </div>
+
+        <div class="lead-blok reveal">
+          <div class="lead-kaart">
+            <div class="lead-kop">
+              <div>
+                <span class="lead-label">Appel</span>
+                <h3 class="lead-naam">Sofie Janssens</h3>
+              </div>
+              <span class="lead-status">Rappeler</span>
+            </div>
+            <dl class="lead-velden">
+              <div><dt>Appel reçu</dt><dd>Mardi 19h32</dd></div>
+              <div><dt>Véhicule</dt><dd>Volvo XC40 T4</dd></div>
+              <div><dt>Demande</dt><dd>S'il est encore là, et si elle peut passer samedi</dd></div>
+              <div><dt>Reprise</dt><dd>Peugeot 3008, 2017</dd></div>
+              <div><dt>Prochaine étape</dt><dd>Proposer un essai</dd></div>
+            </dl>
+            <p class="lead-voet">Vue d'exemple. Le résumé contient ce que l'appelant dit lui-même. S'il ne parle pas de reprise, ce champ reste vide.</p>
+          </div>
+
+          <div class="lead-uitleg">
+            <h3 class="lead-uitleg-kop">Ce que fait l'agent téléphonique</h3>
+            <ul class="grens-lijst">
+              <li>Prend les appels que vous configurez, y compris en dehors des heures d'ouverture.</li>
+              <li>Annonce dès le début à l'appelant qu'il parle à un système d'IA.</li>
+              <li>Note qui a appelé, pour quel véhicule et ce qu'il veut.</li>
+              <li>Place après chaque appel un résumé dans le dossier, avec la prochaine étape.</li>
+              <li>Ne conclut au téléphone aucun accord de prix et ne cite aucun montant de reprise.</li>
+            </ul>
+            <p class="lead-voet">Inclus dans le plan Scale. Votre vendeur sait qui a appelé et pourquoi, sans que personne ait dû le noter sur un bout de papier.</p>
+            <a href="meeting.html" class="btn">Contactez-nous <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <section class="section" id="prijzen" data-gids="prijs">
       <div class="section-glow" aria-hidden="true"></div>
       <div class="container">
@@ -882,6 +931,7 @@
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Journal des actions, exportable</span></div>
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Un agent</span></div>
               <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Agent de visualisation</span></div>
+              <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Agent téléphonique</span></div>
               <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Parle 40 langues automatiquement</span></div>
               <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Exports CSV vers tout CRM</span></div>
               <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Support prioritaire, SLA &lt; 4 h</span></div>
@@ -916,6 +966,7 @@
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Journal des actions, exportable</span></div>
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">3 agents, configurés pour votre garage</span></div>
               <div class="pricing-feat included hl"><span class="feat-icon">✓</span><span class="feat-text">Agent de visualisation inclus</span></div>
+              <div class="pricing-feat excluded"><span class="feat-icon">✗</span><span class="feat-text">Agent téléphonique</span></div>
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Parle 40 langues automatiquement</span></div>
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Exports CSV vers tout CRM</span></div>
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Support prioritaire, SLA &lt; 4 h</span></div>
@@ -950,6 +1001,7 @@
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Journal des actions, exportable</span></div>
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Nombre illimité d'agents</span></div>
               <div class="pricing-feat included hl"><span class="feat-icon">✓</span><span class="feat-text">Agent de visualisation sans plafond pratique</span></div>
+              <div class="pricing-feat included hl"><span class="feat-icon">✓</span><span class="feat-text">Agent téléphonique, avec un résumé par appel</span></div>
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Parle 40 langues automatiquement</span></div>
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Exports CSV vers tout CRM</span></div>
               <div class="pricing-feat included"><span class="feat-icon">✓</span><span class="feat-text">Support prioritaire, SLA &lt; 4 h</span></div>

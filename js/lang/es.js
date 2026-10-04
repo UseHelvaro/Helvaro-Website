@@ -3030,3 +3030,38 @@ Object.assign(window.HELVARO_TR['es'], {
   "Neem contact op": "Contáctanos",
   "Reactie binnen een minuut, 24/7": "Respuesta en menos de un minuto, 24/7"
 });
+
+Object.assign(window.HELVARO_TR['es'], {
+  "Contacteer ons": "Contáctanos",
+  "Dinsdag 19:32": "Martes 19:32",
+  "Een koper belt terwijl je verkoper op proefrit is, of om 19:30 als de showroom dicht is. De telefonie-agent neemt de oproepen aan die jij instelt, vraagt wat de beller zoekt en zet een samenvatting in het dossier.": "Un comprador llama mientras tu vendedor está en una prueba, o a las 19:30 cuando la exposición ya ha cerrado. El agente telefónico atiende las llamadas que configuras, pregunta qué busca quien llama y deja un resumen en el expediente.",
+  "Gebeld": "Llamó",
+  "Geen oproep zonder samenvatting": "Ninguna llamada sin resumen",
+  "Inbegrepen in het Scale-plan. Je verkoper weet wie er belde en waarom, zonder dat iemand iets op een briefje moest schrijven.": "Incluido en el plan Scale. Tu vendedor sabe quién llamó y por qué, sin que nadie tenga que apuntarlo en un papel.",
+  "Ja, in het Scale-plan. De telefonie-agent neemt de oproepen aan die jij instelt, ook buiten de openingsuren, en zet een samenvatting van elk gesprek in het dossier. Website, WhatsApp en e-mail zitten in elk plan.": "Sí, en el plan Scale. El agente telefónico atiende las llamadas que configuras, también fuera del horario de apertura, y deja un resumen de cada conversación en el expediente. Web, WhatsApp y correo están en todos los planes.",
+  "Je telefoon gaat.": "Tu teléfono suena.",
+  "Neemt de oproepen aan die jij instelt, ook buiten de openingsuren.": "Atiende las llamadas que configuras, también fuera del horario de apertura.",
+  "Neemt de telefonie-agent op, dan staat er een samenvatting in het dossier: wie belde, waarom en wat de volgende stap is. Telefonie zit in het Scale-plan.": "Cuando el agente telefónico contesta, queda un resumen en el expediente: quién llamó, por qué y cuál es el siguiente paso. La telefonía está incluida en el plan Scale.",
+  "Niemand neemt op.": "Nadie contesta.",
+  "Nieuw": "Nuevo",
+  "Noemt aan de telefoon geen prijsafspraak en geen inruilbedrag.": "No pacta precios ni da un importe de tasación por teléfono.",
+  "Noteert wie belde, over welke wagen en wat hij wil.": "Anota quién llamó, por qué vehículo y qué quiere.",
+  "Oproep": "Llamada",
+  "Peugeot 3008, 2017": "Peugeot 3008, 2017",
+  "Prijs op aanvraag. Onbeperkte credits onder fair use, onbeperkt aantal agents, een telefonie-agent en kwalificatievragen op maat.": "Precio a consultar. Créditos ilimitados con uso razonable, agentes ilimitados, un agente telefónico y preguntas de calificación a medida.",
+  "Proefrit voorstellen": "Proponer una prueba",
+  "Sofie Janssens": "Sofie Janssens",
+  "Staat hij er nog, kan ze zaterdag langskomen": "Si sigue disponible y si puede pasar el sábado",
+  "Telefonie": "Telefonía",
+  "Telefonie zit in het Scale-plan. Een oproep komt in hetzelfde dossier terecht als een formulier, een WhatsApp of een mail.": "La telefonía está incluida en el plan Scale. Una llamada acaba en el mismo expediente que un formulario, un WhatsApp o un correo.",
+  "Telefonie-agent": "Agente telefónico",
+  "Telefonie-agent, met een samenvatting per oproep": "Agente telefónico, con un resumen por llamada",
+  "Terugbellen": "Devolver la llamada",
+  "Volgende stap": "Siguiente paso",
+  "Volvo XC40 T4": "Volvo XC40 T4",
+  "Voorbeeldweergave. De samenvatting bevat wat de beller zelf zegt. Zegt hij niets over een inruil, dan blijft dat veld leeg.": "Vista de ejemplo. El resumen contiene lo que dice quien llama. Si no dice nada de una entrega a cuenta, ese campo se queda vacío.",
+  "Wat de telefonie-agent doet": "Lo que hace el agente telefónico",
+  "Zegt aan het begin dat de beller met een AI-systeem spreekt.": "Avisa desde el principio de que quien llama habla con un sistema de IA.",
+  "Zet na elke oproep een samenvatting in het dossier, met de volgende stap erbij.": "Deja un resumen en el expediente tras cada llamada, con el siguiente paso.",
+  "nieuw": "nuevo"
+});
