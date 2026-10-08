@@ -45,7 +45,7 @@ for my $pad (sort @BESTANDEN) {
 
   # 1. De kleine knop in de kop: gewoon van doel en tekst wisselen.
   $telling{'menuknop'} += ($t =~ s{<a href="((?:\.\./)*)meeting\.html" class="btn">Plan een demo</a>}
-                                  {<a href="$1aanmelden.html" class="btn">Start gratis</a>}g);
+                                  {<a href="$1aanmelden.html" class="btn">Probeer Helvaro gratis</a>}g);
 
   # 2. Grote knoppen in een actiegroep: knop omzetten, en de twijfelregel
   #    NA het sluiten van de groep zetten. Binnen de groep zou hij in de

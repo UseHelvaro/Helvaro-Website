@@ -8,6 +8,8 @@ my @LANGS = qw(nl fr en de es);
 my @PAGES = (
   ['',                                            '1.0', 'weekly'],
   ['systeem.html',                                '0.9', 'monthly'],
+  ['telefonie.html',                              '0.9', 'monthly'],
+  ['prijzen.html',                                '0.9', 'monthly'],
   ['automotive.html',                             '0.9', 'monthly'],
   ['agents/',                                     '0.9', 'monthly'],
   ['agents/nieuwe-aanvraag.html',                 '0.8', 'monthly'],

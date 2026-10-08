@@ -6,6 +6,15 @@ Read this before writing any Helvaro post, caption, visual brief, website copy o
 Written: 23 September 2026 · Derived from the live repository `UseHelvaro/Helvaro-Website` (branch `main`, HEAD `57a69ed`) and the assets in it.
 Everything here is traceable to a file in this repo. Where the repo contradicts itself, that is recorded explicitly in §20 rather than smoothed over.
 
+> **Update 8 oktober 2026 — gaat voor waar het hieronder anders staat.**
+> - **Homepage is kort**: hero, telefonie, systeem in drie, marktplaatsen, vertrouwen, prijzen, afsluiter. De demo's (kanalen, voertuigkennis, kwalificatie, overname) staan nu op `systeem.html`.
+> - **Hero-kop**: *"Elke koper meteen een antwoord. Ook om 21:43."* — de oude kop "Elke voertuigaanvraag. Afgehandeld." blijft in tabtitels en elders bruikbaar.
+> - **Eén hoofdknop overal**: *"Probeer Helvaro gratis"* → `aanmelden.html`. Scale en telefonie: *"Contacteer ons"* → `meeting.html`.
+> - **Licht thema is de standaard.** Donker alleen als de bezoeker het zelf kiest (`helvaro_thema_keuze`).
+> - **Nieuwe pagina's**: `telefonie.html`, `prijzen.html`. Navigatie: Product · Telefonie · Koppelingen · Autobedrijven · Prijzen · Over ons.
+> - **Marktplaatsen** (gemeten in de app-code): AutoScout24 **live** (wagen herkend uit de link in een WhatsApp-bericht; import via advertentielink). 2dehands/2ememain en Gocar.be **gepland**: er bestaat geen code. Nooit "geïntegreerd met" schrijven voor die twee.
+> - **Sindi Said is een man**: hij/zijn, EN *his*, DE *sein*.
+
 ---
 
 ## 0. HOW TO USE THIS FILE

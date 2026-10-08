@@ -47,7 +47,7 @@ for ($NAV, $FOOT) { s{^<!--.*?-->\s*}{}s; }
 # Pagina's met een kop en een voet. 404.html staat er bewust niet bij: die
 # heeft er geen, en dat is daar de bedoeling.
 my @PAGES = qw(
-  index.html systeem.html automotive.html roi.html cases.html
+  index.html systeem.html telefonie.html prijzen.html automotive.html roi.html cases.html
   controle.html faro.html
   waarom.html contact.html meeting.html aanmelden.html privacybeleid.html
   agents/index.html

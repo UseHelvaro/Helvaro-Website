@@ -748,16 +748,20 @@ function initTheme() {
     return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
   }
 
+  /* Licht is de standaard. Alleen een KEUZE van de bezoeker wordt bewaard,
+     en onder een nieuwe sleutel: de oude (helvaro_theme) werd bij elk bezoek
+     automatisch op "dark" gezet, dus wie ooit langskwam, bleef anders donker
+     zien zonder dat ooit gekozen te hebben. */
   function apply(theme, animate) {
     if (animate) {
       root.classList.add('theme-anim');
       window.setTimeout(function () { root.classList.remove('theme-anim'); }, 320);
+      try { localStorage.setItem('helvaro_thema_keuze', theme); } catch (e) {}
     }
     root.setAttribute('data-theme', theme);
-    try { localStorage.setItem('helvaro_theme', theme); } catch (e) {}
     /* De browserbalk mee laten kleuren. Stond als twee media-query-metatags in
        de head, maar die keken naar de voorkeur van het BESTURINGSSYSTEEM -- en
-       die bepaalt hier niets meer sinds donker de standaard is. */
+       die bepaalt hier niets: licht is de standaard, tenzij de bezoeker koos. */
     var kleurTag = document.querySelector('meta[name="theme-color"]');
     if (kleurTag) kleurTag.setAttribute('content', theme === 'dark' ? '#121212' : '#FFFFFF');
     document.querySelectorAll('.theme-toggle').forEach(function (btn) {

@@ -164,12 +164,12 @@ for my $rij (@PAGINAS) {
   <link rel="icon" type="image/png" sizes="16x16" href="${o}assets/favicon-16.png?v=2">
   <link rel="icon" type="image/png" sizes="192x192" href="${o}assets/favicon-192.png?v=2">
   <link rel="apple-touch-icon" href="${o}assets/apple-touch-icon.png?v=2">
-  <meta name="theme-color" content="#121212">
+  <meta name="theme-color" content="#FFFFFF">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght\@12..96,500..700&family=Instrument+Serif:ital\@0;1&family=Inter:wght\@400;500;600&display=swap" rel="stylesheet">
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
-    (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+    (function(){try{var t=localStorage.getItem('helvaro_thema_keuze');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
   </script>
   <link rel="stylesheet" href="${o}css/style.css?v=97">
 </head>
@@ -186,7 +186,7 @@ for my $rij (@PAGINAS) {
 <!-- /SHELL:FOOTER -->
 
   <script src="${o}js/main.js?v=93"></script>
-  <script src="${o}js/i18n.js?v=95"></script>
+  <script src="${o}js/i18n.js?v=96"></script>
 
   <aside class="faro-gids" id="faroGids" data-plek="rechtsonder" hidden>
     <div class="faro-gids-ballon" id="faroGidsBallon" aria-live="polite">

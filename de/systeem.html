@@ -28,14 +28,14 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png?v=2">
   <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png?v=2">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=2">
-  <meta name="theme-color" content="#121212">
+  <meta name="theme-color" content="#FFFFFF">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
-    (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+    (function(){try{var t=localStorage.getItem('helvaro_thema_keuze');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
   </script>
-  <link rel="stylesheet" href="../css/style.css?v=107">
+  <link rel="stylesheet" href="../css/style.css?v=108">
 </head>
 <body data-vertaald="de">
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -53,70 +53,12 @@
       </a>
       <nav class="nav-links" aria-label="Hauptnavigation">
 
-        <div class="navdrop">
-          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">System <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
-          <div class="navdrop-menu" role="menu">
-            <a href="systeem.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Das Helvaro-System</span>
-              <span class="ndi-sub">Auffangen, verstehen, handeln, verbinden, messen</span>
-            </a>
-            <a href="agents/index.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Die Arbeitsabläufe</span>
-              <span class="ndi-sub">Acht Abläufe innerhalb desselben Systems</span>
-            </a>
-            <a href="koppelingen/index.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Anbindungen</span>
-              <span class="ndi-sub">Wo Helvaro in Ihre bestehende Software passt</span>
-            </a>
-            <a href="controle.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Kontrolle und Datenschutz</span>
-              <span class="ndi-sub">Was das System selbst darf und wo Ihre Daten liegen</span>
-            </a>
-            <a href="faro.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Faro</span>
-              <span class="ndi-sub">Mitlesen, übernehmen und Hilfe bei Ihren Beiträgen</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="navdrop">
-          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Für Autohäuser <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
-          <div class="navdrop-menu" role="menu">
-            <a href="automotive.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Für Autohäuser</span>
-              <span class="ndi-sub">Was das System bei einem Händler oder freien Autohaus tut</span>
-            </a>
-            <a href="agents/nieuwe-aanvraag.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Neue Anfrage</span>
-              <span class="ndi-sub">Von einer Frage zu einem Auto zu einem Termin</span>
-            </a>
-            <a href="agents/proefrit.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Probefahrt</span>
-              <span class="ndi-sub">Erst prüfen, ob das Fahrzeug frei ist, dann erst ein Termin</span>
-            </a>
-            <a href="agents/gemiste-aanvraag.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Nachverfolgung</span>
-              <span class="ndi-sub">Das Gespräch hört nicht auf, wenn der Käufer aufhört zu tippen</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="navdrop">
-          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Ergebnis <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
-          <div class="navdrop-menu" role="menu">
-            <a href="roi.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Umsatzrechner</span>
-              <span class="ndi-sub">Was bei Ihren Anfragen liegen bleibt</span>
-            </a>
-            <a href="cases.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Zahlen</span>
-              <span class="ndi-sub">Was wir messen und was wir noch nicht beweisen können</span>
-            </a>
-          </div>
-        </div>
-
-        <a href="index.html#prijzen" class="nav-link">Preise</a>
-        <a href="waarom.html" class="nav-link">Unternehmen</a>
+        <a href="systeem.html" class="nav-link">Produkt</a>
+        <a href="telefonie.html" class="nav-link">Telefonie</a>
+        <a href="koppelingen/index.html" class="nav-link">Anbindungen</a>
+        <a href="automotive.html" class="nav-link">Autohäuser</a>
+        <a href="prijzen.html" class="nav-link">Preise</a>
+        <a href="waarom.html" class="nav-link">Über uns</a>
         <a href="https://app.helvaro.pro/" class="nav-link">Anmelden</a>
 
         <div class="lang-switch">
@@ -139,7 +81,7 @@
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
         </button>
 
-        <a href="aanmelden.html" class="btn">Kostenlos starten</a>
+        <a href="aanmelden.html" class="btn">Helvaro kostenlos testen</a>
       </nav>
       <button class="nav-hamburger" aria-label="Menü öffnen" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -150,70 +92,12 @@
   <!-- Mobiel menu. Dezelfde links, apart blok, want het schuift open onder
        de balk in plaats van ernaast. Ook dit wordt gesynchroniseerd. -->
   <div class="nav-mobile" aria-label="Mobiles Menü">
-    <div class="navdrop">
-      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">System <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
-      <div class="navdrop-menu" role="menu">
-        <a href="systeem.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Das Helvaro-System</span>
-          <span class="ndi-sub">Auffangen, verstehen, handeln, verbinden, messen</span>
-        </a>
-        <a href="agents/index.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Die Arbeitsabläufe</span>
-          <span class="ndi-sub">Acht Abläufe innerhalb desselben Systems</span>
-        </a>
-        <a href="koppelingen/index.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Anbindungen</span>
-          <span class="ndi-sub">Wo Helvaro in Ihre bestehende Software passt</span>
-        </a>
-        <a href="controle.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Kontrolle und Datenschutz</span>
-          <span class="ndi-sub">Was das System selbst darf und wo Ihre Daten liegen</span>
-        </a>
-        <a href="faro.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Faro</span>
-          <span class="ndi-sub">Mitlesen, übernehmen und Hilfe bei Ihren Beiträgen</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="navdrop">
-      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Für Autohäuser <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
-      <div class="navdrop-menu" role="menu">
-        <a href="automotive.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Für Autohäuser</span>
-          <span class="ndi-sub">Was das System bei einem Händler oder freien Autohaus tut</span>
-        </a>
-        <a href="agents/nieuwe-aanvraag.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Neue Anfrage</span>
-          <span class="ndi-sub">Von einer Frage zu einem Auto zu einem Termin</span>
-        </a>
-        <a href="agents/proefrit.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Probefahrt</span>
-          <span class="ndi-sub">Erst prüfen, ob das Fahrzeug frei ist, dann erst ein Termin</span>
-        </a>
-        <a href="agents/gemiste-aanvraag.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Nachverfolgung</span>
-          <span class="ndi-sub">Das Gespräch hört nicht auf, wenn der Käufer aufhört zu tippen</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="navdrop">
-      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Ergebnis <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
-      <div class="navdrop-menu" role="menu">
-        <a href="roi.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Umsatzrechner</span>
-          <span class="ndi-sub">Was bei Ihren Anfragen liegen bleibt</span>
-        </a>
-        <a href="cases.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Zahlen</span>
-          <span class="ndi-sub">Was wir messen und was wir noch nicht beweisen können</span>
-        </a>
-      </div>
-    </div>
-
-    <a href="index.html#prijzen" class="nav-link">Preise</a>
-    <a href="waarom.html" class="nav-link">Unternehmen</a>
+    <a href="systeem.html" class="nav-link">Produkt</a>
+    <a href="telefonie.html" class="nav-link">Telefonie</a>
+    <a href="koppelingen/index.html" class="nav-link">Anbindungen</a>
+    <a href="automotive.html" class="nav-link">Autohäuser</a>
+    <a href="prijzen.html" class="nav-link">Preise</a>
+    <a href="waarom.html" class="nav-link">Über uns</a>
     <a href="https://app.helvaro.pro/" class="nav-link">Anmelden</a>
 
     <div class="lang-switch">
@@ -236,7 +120,7 @@
       <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
     </button>
 
-    <a href="aanmelden.html" class="btn">Kostenlos starten</a>
+    <a href="aanmelden.html" class="btn">Helvaro kostenlos testen</a>
   </div>
 <!-- /SHELL:NAV -->
 
@@ -253,10 +137,238 @@
         <h1 class="paghero-titel">Zwischen Ihrem Käufer und Ihrem Verkäufer <span class="highlight">sitzt gerade niemand.</span></h1>
         <p class="paghero-lede">Die meisten Autohäuser haben keine Lücke in ihrer Werbung. Sie haben eine Lücke zwischen dem Moment, in dem ein Käufer fragt, und dem Moment, in dem jemand Zeit zum Antworten hat. In dieser Lücke sitzt Helvaro.</p>
         <div class="paghero-acties">
-          <a href="aanmelden.html" class="btn btn-lg">Kostenlos starten <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+          <a href="aanmelden.html" class="btn btn-lg">Helvaro kostenlos testen <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
           <a href="agents/index.html" class="btn btn-ghost btn-lg">Die acht Abläufe ansehen</a>
         </div>
         <p class="cta-twijfel">Noch unsicher? <a href="meeting.html">Vereinbaren Sie ein 20-minütiges Gespräch mit dem Team</a></p>
+      </div>
+    </section>
+
+    <!-- ===== DRIE KANALEN, ÉÉN GESPREK ================================
+         Het sterkste productidee en daarom meteen na de hero. Niet drie
+         losse producten, maar drie ingangen naar dezelfde klant. -->
+    <!-- ===== KANAALSTROOM =============================================
+         Eén toestel dat blijft staan terwijl de tekst ernaast doorloopt.
+         Het scherm erin wisselt van WhatsApp naar de website naar e-mail.
+
+         De gesprekken staan niet hier maar in js/kanalen.js, per taal.
+         Reden: de vertaling leest de pagina bij het laden, en wat daarna
+         gebouwd wordt zou ze nooit zien. Zo blijft er ook één plek waar
+         je een scenario aanpast. -->
+    <section class="section kanaalstroom" id="kanalen-demo" data-gids="kanaalstroom" data-actief="whatsapp">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">Drei Kanäle</span>
+          <h2 class="section-title">So kommt ein Käufer herein. <span class="highlight">So macht er weiter.</span></h2>
+          <p class="section-sub">Scrollen Sie mit. Das Gerät bleibt stehen, der Kanal wechselt. Derselbe Käufer, dasselbe Fahrzeug, dasselbe System darunter.</p>
+        </div>
+
+        <div class="ks-raster">
+
+          <div class="ks-tekst">
+            <article class="ks-panel aan" data-kanaal="whatsapp">
+              <span class="ks-panel-label">WhatsApp</span>
+              <h3 class="ks-panel-titel">Jede Anfrage bekommt eine Antwort.</h3>
+              <p class="ks-panel-tekst">Sofort reagieren, die Frage beantworten und abfragen, was Ihr Verkäufer braucht, solange das Gespräch noch läuft. Auch um viertel vor zehn abends.</p>
+              <ul class="ks-panel-lijst">
+                <li>Eine Antwort mit den Daten aus Ihrem Bestand</li>
+                <li>Die Finanzierungsfrage verendet nicht</li>
+                <li>Einen Termin vorschlagen statt zurückzurufen</li>
+              </ul>
+            </article>
+
+            <article class="ks-panel" data-kanaal="website">
+              <span class="ks-panel-label">Website</span>
+              <h3 class="ks-panel-titel">Vom Besucher zum Gespräch.</h3>
+              <p class="ks-panel-tekst">Das Gespräch dreht sich um das Fahrzeug auf der Seite, auf der er steht. Er muss nicht erklären, welches Auto er meint, und Sie müssen nicht warten, bis er ein Formular ausfüllt.</p>
+              <ul class="ks-panel-lijst">
+                <li>Ein Skript auf Ihrer bestehenden Website</li>
+                <li>Das Fahrzeug der Seite als Kontext</li>
+                <li>Kontaktdaten erst bei echtem Kaufinteresse erfragen</li>
+              </ul>
+            </article>
+
+            <article class="ks-panel" data-kanaal="email">
+              <span class="ks-panel-label">E-Mail</span>
+              <h3 class="ks-panel-titel">Lassen Sie eine Anfrage nicht warten.</h3>
+              <p class="ks-panel-tekst">Im allgemeinen Postfach kommt alles an. Dort versinkt die längste und oft ernsteste Anfrage zwischen Rechnungen und Werbung, obwohl die Inzahlungnahme schon drinsteht.</p>
+              <ul class="ks-panel-lijst">
+                <li>Gelesen und einem Fahrzeug zugeordnet</li>
+                <li>Beantwortet mit den Daten dabei</li>
+                <li>Die Inzahlungnahme wird aufgegriffen statt ignoriert</li>
+              </ul>
+            </article>
+
+            <article class="ks-panel ks-panel-slot" data-kanaal="systeem">
+              <span class="ks-panel-label">Ein System</span>
+              <h3 class="ks-panel-titel">Anderer Kanal. <span class="highlight">Dasselbe System.</span></h3>
+              <p class="ks-panel-tekst">Es spielt keine Rolle, wo er hereinkommt. Dahinter läuft jedes Mal derselbe Weg, mit derselben Akte und demselben Fahrzeug daran.</p>
+              <ol class="ks-route">
+                <li><span class="ks-route-nr">01</span>Anfrage</li>
+                <li><span class="ks-route-nr">02</span>Antwort</li>
+                <li><span class="ks-route-nr">03</span>Qualifizieren</li>
+                <li><span class="ks-route-nr">04</span>Nachfassen</li>
+                <li><span class="ks-route-nr">05</span>Termin</li>
+              </ol>
+              <p class="ks-panel-voet">Danach übernimmt Ihr Verkäufer, mit allem Gesagten griffbereit.</p>
+            </article>
+          </div>
+
+          <div class="ks-toestel">
+            <div class="ks-kleef">
+              <div class="ks-kanaalbalk" role="group" aria-label="Kanal">
+                <button type="button" class="ks-kanaalknop aan" data-kanaal="whatsapp" aria-current="true">WhatsApp</button>
+                <button type="button" class="ks-kanaalknop" data-kanaal="website" aria-current="false">Website</button>
+                <button type="button" class="ks-kanaalknop" data-kanaal="email" aria-current="false">E-Mail</button>
+              </div>
+
+              <div class="ks-frame">
+                <div class="ks-notch" aria-hidden="true"></div>
+                <div class="ks-scherm" role="img" aria-label="Beispielgespräche, in denen ein Käufer über WhatsApp, die Website und E-Mail nach demselben BMW X5 fragt und jedes Mal eine Antwort mit den Daten aus dem Bestand erhält"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VOERTUIGKENNIS ===========================================
+         Het verschil tussen een chatbot op een dealersite en dit. De vraag
+         gaat over een specifieke auto, en het antwoord komt uit de gegevens
+         van die auto. Nadrukkelijk: uit jouw voorraad, niet verzonnen. -->
+    <section class="section kenteken" data-gids="kenteken" id="voertuigen">
+      <div class="section-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">Fahrzeugwissen</span>
+          <h2 class="section-title">Es kennt die Autos <span class="highlight">die Sie verkaufen.</span></h2>
+          <p class="section-sub">Ein Chatbot kennt Ihre Öffnungszeiten. Dieser kennt Ihren Bestand: welches Fahrzeug, welche Ausstattung, welcher Kilometerstand, welcher Preis.</p>
+        </div>
+
+        <div class="voertuig-blok reveal">
+
+          <article class="voertuig-kaart">
+            <span class="vk-label">Aus Ihrem Bestand</span>
+            <h3 class="vk-naam">BMW X5 xDrive30d</h3>
+            <dl class="vk-specs">
+              <div><dt>Baujahr</dt><dd>2021</dd></div>
+              <div><dt>Kilometerstand</dt><dd>82.000 km</dd></div>
+              <div><dt>Kraftstoff</dt><dd>Diesel</dd></div>
+              <div><dt>Getriebe</dt><dd>Automatik</dd></div>
+              <div><dt>Panoramadach</dt><dd>Ja</dd></div>
+              <div><dt>Preis</dt><dd class="vk-prijs">€ 48.900</dd></div>
+            </dl>
+            <p class="vk-voet">Diese Daten kommen aus Ihrer eigenen Bestandsdatei. Steht etwas nicht drin, sagt das System, dass es das nicht weiß.</p>
+          </article>
+
+          <div class="gesprek-kaart voertuig-gesprek">
+            <div class="gesprek-balk"><span>Website · 20:12</span><span class="gesprek-merk">Beispiel</span></div>
+            <div class="gesprek-body">
+              <div class="cg-regel cg-klant"><span class="cg-wie">Käufer</span>Hat der X5 ein Panoramadach?</div>
+              <div class="cg-regel cg-agent"><span class="cg-wie">Helvaro</span>Ja, dieser X5 xDrive30d hat ein Panoramadach. Er steht bei 82.000 km und ist Automatik, Diesel.</div>
+              <div class="cg-regel cg-klant"><span class="cg-wie">Käufer</span>Und Anhängerkupplung?</div>
+              <div class="cg-regel cg-agent"><span class="cg-wie">Helvaro</span>Das steht nicht in den Daten dieses Fahrzeugs. Ich frage bei einem Verkäufer nach und melde mich.</div>
+              <div class="cg-uitkomst">
+                <span class="cg-uitkomst-label">Nicht erfinden</span>
+                <span class="cg-uitkomst-waarde">Was nicht drinsteht, wird nachgefragt</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KWALIFICATIE ============================================= -->
+    <section class="section" data-gids="centrum" id="kwalificatie">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">Qualifizierung</span>
+          <h2 class="section-title">Ein Gespräch ist noch keine Chance. <span class="highlight">Dit wel.</span></h2>
+          <p class="section-sub">Was im Gespräch gesagt wird, kommt strukturiert bei Ihrem Verkäufer an. Damit er weiß, wen er zuerst anruft.</p>
+        </div>
+
+        <div class="lead-blok reveal">
+          <div class="lead-kaart">
+            <div class="lead-kop">
+              <div>
+                <span class="lead-label">Akte</span>
+                <h3 class="lead-naam">Thomas Peeters</h3>
+              </div>
+              <span class="lead-status">Warm</span>
+            </div>
+            <dl class="lead-velden">
+              <div><dt>Fahrzeug</dt><dd>BMW X5 xDrive30d</dd></div>
+              <div><dt>Budget</dt><dd>€ 45.000 tot 50.000</dd></div>
+              <div><dt>Laufzeit</dt><dd>1 bis 3 Monate</dd></div>
+              <div><dt>Finanzierung</dt><dd>Interesse</dd></div>
+              <div><dt>Inzahlungnahme</dt><dd>Audi A4, 2018</dd></div>
+              <div><dt>Termin</dt><dd>Samstag 14:00</dd></div>
+              <div><dt>Kanäle</dt><dd>Website, WhatsApp</dd></div>
+              <div><dt>Letzter Kontakt</dt><dd>Gestern 21:46</dd></div>
+            </dl>
+            <p class="lead-voet">Beispielansicht. Die Felder füllen sich mit dem, was der Käufer selbst sagt. Sagt er nichts zum Budget, bleibt das Feld leer.</p>
+          </div>
+
+          <div class="lead-uitleg">
+            <h3 class="lead-uitleg-kop">Was hier nicht passiert</h3>
+            <ul class="grens-lijst">
+              <li>Es wird kein Budget geraten, das der Käufer nicht genannt hat.</li>
+              <li>Es wird kein Inzahlungnahmewert versprochen.</li>
+              <li>Ein Besucher, der sich nur umsieht, muss seine Daten nicht hergeben.</li>
+              <li>Eine E-Mail-Adresse oder eine Telefonnummer reicht. Nicht beides.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OVERNAME =================================================
+         De belangrijkste vertrouwenssectie. De vraag die elke dealerhouder
+         stelt is "en als het ding iets verkeerds zegt". Het antwoord is:
+         je verkoper leest mee en stapt erin. -->
+    <section class="section" data-gids="controle" id="overname">
+      <div class="section-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-label">Übernahme</span>
+          <h2 class="section-title">Automatisch, wo es geht. <span class="highlight">Ein Mensch, wo es sein muss.</span></h2>
+          <p class="section-sub">Ihr Verkäufer liest jedes Gespräch mit und steigt jederzeit ein. Das Gespräch geht dort weiter, wo es war, der Käufer merkt keinen Schnitt.</p>
+        </div>
+
+        <div class="overname-blok reveal">
+          <div class="overname-stap">
+            <span class="overname-nr">01</span>
+            <h3 class="overname-kop">Helvaro wickelt ab</h3>
+            <p class="overname-tekst">Verfügbarkeit, Daten, ein Terminvorschlag. Die gewöhnliche Arbeit, sofort beantwortet.</p>
+          </div>
+          <div class="overname-pijl" aria-hidden="true">&#8594;</div>
+          <div class="overname-stap">
+            <span class="overname-nr">02</span>
+            <h3 class="overname-kop">Ihr Verkäufer steigt ein</h3>
+            <p class="overname-tekst">Ein Knopf. Ab da tippt er selbst, oder er lässt das System wieder weitermachen.</p>
+          </div>
+          <div class="overname-pijl" aria-hidden="true">&#8594;</div>
+          <div class="overname-stap">
+            <span class="overname-nr">03</span>
+            <h3 class="overname-kop">Alles liegt schon da</h3>
+            <p class="overname-tekst">Das Auto, das Budget, die Laufzeit und das ganze Gespräch. Er muss nichts erneut fragen.</p>
+          </div>
+        </div>
+
+        <div class="gesprek-kaart overname-gesprek reveal">
+          <div class="gesprek-balk"><span>Kurze Anweisung · intern</span><span class="gesprek-merk">Beispiel</span></div>
+          <div class="gesprek-body">
+            <div class="cg-regel cg-intern"><span class="cg-wie">Verkäufer</span>ja noch verfügbar, Samstag 14 Uhr geht</div>
+            <div class="overname-scheiding" aria-hidden="true"></div>
+            <div class="cg-regel cg-agent"><span class="cg-wie">An den Käufer</span>Gute Nachricht, der X5 steht noch. Samstag um 14:00 kann ich für Sie freihalten. Soll ich?</div>
+            <div class="cg-uitkomst">
+              <span class="cg-uitkomst-label">Weniger tippen</span>
+              <span class="cg-uitkomst-waarde">Die kurze Anweisung geht nie so an den Käufer</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -478,7 +590,7 @@
       <div class="container">
         <h2 class="cta-band-title reveal">Zwanzig Minuten, mit Ihren eigenen Anfragen.</h2>
         <p class="cta-band-sub reveal reveal-delay-1">Schalten Sie einen Ablauf für Ihre eigenen Anfragen ein und sehen Sie, wo es bei Ihnen liegen bleibt.</p>
-        <a href="aanmelden.html" class="btn btn-lg reveal reveal-delay-2">Kostenlos starten <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+        <a href="aanmelden.html" class="btn btn-lg reveal reveal-delay-2">Helvaro kostenlos testen <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
         <p class="cta-twijfel">Noch unsicher? <a href="meeting.html">Vereinbaren Sie ein 20-minütiges Gespräch mit dem Team</a></p>
       </div>
     </section>
@@ -488,12 +600,6 @@
 <!-- SHELL:FOOTER -->
 <footer class="footer">
     <div class="container footer-inner">
-
-      <div class="footer-cta">
-        <p class="footer-cta-text">Zeigen Sie, was hereinkommt.</p>
-        <a href="aanmelden.html" class="btn btn-lg">Kostenlos starten <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
-      </div>
-      <p class="cta-twijfel">Noch unsicher? <a href="meeting.html">Vereinbaren Sie ein 20-minütiges Gespräch mit dem Team</a></p>
 
       <div class="footer-cols">
         <div class="footer-col footer-col-brand">
@@ -506,6 +612,7 @@
           <span class="footer-head">System</span>
           <a href="systeem.html" class="footer-link">Das Helvaro-System</a>
           <a href="agents/index.html" class="footer-link">Die Arbeitsabläufe</a>
+          <a href="telefonie.html" class="footer-link">Telefonie</a>
           <a href="koppelingen/index.html" class="footer-link">Anbindungen</a>
           <a href="controle.html" class="footer-link">Kontrolle und DSGVO</a>
           <a href="faro.html" class="footer-link">Faro</a>
@@ -526,7 +633,7 @@
           <a href="automotive.html" class="footer-link">Für Autohäuser</a>
           <a href="roi.html" class="footer-link">Umsatzrechner</a>
           <a href="cases.html" class="footer-link">Zahlen</a>
-          <a href="index.html#prijzen" class="footer-link">Preise</a>
+          <a href="prijzen.html" class="footer-link">Preise</a>
           <a href="meeting.html" class="footer-link">Gespräch planen</a>
         </div>
 
@@ -550,9 +657,10 @@
   </footer>
 <!-- /SHELL:FOOTER -->
 
-  <script src="../js/main.js?v=95"></script>
+  <script src="../js/main.js?v=96"></script>
+  <script src="../js/kanalen.js?v=3" defer></script>
   <script src="../js/motion.js?v=93"></script>
-  <script src="../js/i18n.js?v=95"></script>
+  <script src="../js/i18n.js?v=96"></script>
 
   <aside class="faro-gids" id="faroGids" data-plek="rechtsonder" hidden>
     <div class="faro-gids-ballon" id="faroGidsBallon" aria-live="polite">

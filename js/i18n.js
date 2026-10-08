@@ -22,11 +22,11 @@
 
   var LABELS = {nl:'NL',fr:'FR',en:'EN',de:'DE',es:'ES'};
   var HERO = {
-    nl: 'Elke voertuigaanvraag. <span class="highlight">Afgehandeld.</span>',
-    fr: 'Chaque demande de véhicule. <span class="highlight">Traitée.</span>',
-    en: 'Every vehicle enquiry. <span class="highlight">Handled.</span>',
-    de: 'Jede Fahrzeuganfrage. <span class="highlight">Bearbeitet.</span>',
-    es: 'Cada consulta de vehículo. <span class="highlight">Atendida.</span>'
+    nl: 'Elke koper meteen een antwoord. <span class="highlight">Ook om 21:43.</span>',
+    fr: 'Chaque acheteur reçoit une réponse immédiate. <span class="highlight">Même à 21h43.</span>',
+    en: 'Every buyer answered straight away. <span class="highlight">Even at 21:43.</span>',
+    de: 'Jeder Käufer bekommt sofort eine Antwort. <span class="highlight">Auch um 21:43.</span>',
+    es: 'Cada comprador, una respuesta al momento. <span class="highlight">También a las 21:43.</span>'
   };
   /* Titel van het browsertabblad: die staat buiten de <body> en wordt
      dus niet door de tekstwandeling opgepikt. Apart vertalen. */
@@ -152,11 +152,11 @@
       es: "El uso por parte de Helvaro de la información recibida a través de las API de Google se ajusta a la <a href=\"https://developers.google.com/terms/api-services-user-data-policy\">Google API Services User Data Policy</a>, incluidos los requisitos de Limited Use."
     },
     heroSub: {
-      nl: 'Helvaro handelt aanvragen af via <strong>je website, WhatsApp en e-mail</strong>. Het weet over welke auto het gaat, kwalificeert de kans, volgt op en boekt de afspraak. <strong>Je verkoper houdt de regie.</strong>',
-      fr: 'Helvaro traite les demandes via <strong>votre site, WhatsApp et l\'e-mail</strong>. Il sait de quelle voiture il s\'agit, qualifie l\'opportunité, relance et fixe le rendez-vous. <strong>Votre vendeur garde la main.</strong>',
-      en: 'Helvaro handles enquiries from <strong>your website, WhatsApp and email</strong>. It knows which car is meant, qualifies the opportunity, follows up and books the appointment. <strong>Your salesperson stays in control.</strong>',
-      de: 'Helvaro bearbeitet Anfragen über <strong>Ihre Website, WhatsApp und E-Mail</strong>. Es weiß, um welches Auto es geht, qualifiziert die Chance, fasst nach und bucht den Termin. <strong>Ihr Verkäufer behält die Regie.</strong>',
-      es: 'Helvaro atiende las consultas desde <strong>tu web, WhatsApp y el correo</strong>. Sabe de qué coche se trata, cualifica la oportunidad, hace seguimiento y reserva la cita. <strong>Tu comercial mantiene el control.</strong>'
+      nl: 'Helvaro beantwoordt vragen over je wagens via <strong>je website en WhatsApp</strong>, met de gegevens uit je eigen voorraad, en zet de afspraak in je agenda. <strong>Je verkoper neemt over wanneer het telt.</strong>',
+      fr: 'Helvaro répond aux questions sur vos véhicules via <strong>votre site et WhatsApp</strong>, avec les données de votre propre stock, et inscrit le rendez-vous dans votre agenda. <strong>Votre vendeur reprend la main quand cela compte.</strong>',
+      en: 'Helvaro answers questions about your vehicles on <strong>your website and WhatsApp</strong>, using the data from your own stock, and puts the appointment in your calendar. <strong>Your salesperson takes over when it matters.</strong>',
+      de: 'Helvaro beantwortet Fragen zu Ihren Fahrzeugen über <strong>Ihre Website und WhatsApp</strong>, mit den Daten aus Ihrem eigenen Bestand, und trägt den Termin in Ihren Kalender ein. <strong>Ihr Verkäufer übernimmt, wenn es darauf ankommt.</strong>',
+      es: 'Helvaro responde a las preguntas sobre tus vehículos en <strong>tu web y WhatsApp</strong>, con los datos de tu propio stock, y anota la cita en tu agenda. <strong>Tu vendedor toma el relevo cuando importa.</strong>'
     }
   };
   function applyHtmlBlokken(lang){

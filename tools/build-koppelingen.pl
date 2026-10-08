@@ -56,7 +56,7 @@ sub blok {
   $h .= qq{        <h1 class="paghero-titel">} . r($k->{h1}) . qq{</h1>\n};
   $h .= qq{        <p class="paghero-lede">} . r($k->{lede}) . qq{</p>\n};
   $h .= qq{        <div class="paghero-acties">\n};
-  $h .= qq{          <a href="../aanmelden.html" class="btn btn-lg">Start gratis <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>\n};
+  $h .= qq{          <a href="../aanmelden.html" class="btn btn-lg">Probeer Helvaro gratis <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>\n};
   $h .= qq{          <a href="index.html" class="btn btn-ghost btn-lg">Alle koppelingen</a>\n};
   $h .= qq{        </div>\n};
   $h .= qq{        <p class="cta-twijfel">Twijfel je nog? <a href="../meeting.html">Plan een gesprek van 20 minuten met het team</a></p>\n};
@@ -145,7 +145,7 @@ sub blok {
   $h .= qq{      <div class="cta-band-glow" aria-hidden="true"></div>\n      <div class="container">\n};
   $h .= qq{        <h2 class="cta-band-title reveal">} . r($k->{cta}) . qq{</h2>\n};
   $h .= qq{        <p class="cta-band-sub reveal reveal-delay-1">Vertel ons in welk pakket je werkt. We zeggen eerlijk of het vandaag kan, of wanneer wel.</p>\n};
-  $h .= qq{        <a href="../aanmelden.html" class="btn btn-lg reveal reveal-delay-2">Start gratis <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>\n        <p class="cta-twijfel">Twijfel je nog? <a href="../meeting.html">Plan een gesprek van 20 minuten met het team</a></p>\n};
+  $h .= qq{        <a href="../aanmelden.html" class="btn btn-lg reveal reveal-delay-2">Probeer Helvaro gratis <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>\n        <p class="cta-twijfel">Twijfel je nog? <a href="../meeting.html">Plan een gesprek van 20 minuten met het team</a></p>\n};
   $h .= qq{      </div>\n    </section>\n};
 
   return $h;

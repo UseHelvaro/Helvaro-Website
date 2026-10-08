@@ -33,14 +33,14 @@
        donker. Een bezoeker met een lichte systeemvoorkeur kreeg dus witte
        browserbalken boven een donkere pagina. initTheme() werkt deze kleur bij
        wanneer iemand zelf naar licht wisselt. -->
-  <meta name="theme-color" content="#121212">
+  <meta name="theme-color" content="#FFFFFF">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script>/* Thema vooraf zetten zodat de pagina niet even in de verkeerde kleur flitst */
-    (function(){try{var t=localStorage.getItem('helvaro_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+    (function(){try{var t=localStorage.getItem('helvaro_thema_keuze');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
   </script>
-  <link rel="stylesheet" href="../css/style.css?v=107">
+  <link rel="stylesheet" href="../css/style.css?v=108">
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://helvaro.pro/" },
@@ -66,70 +66,12 @@
       </a>
       <nav class="nav-links" aria-label="Navigation principale">
 
-        <div class="navdrop">
-          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Système <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
-          <div class="navdrop-menu" role="menu">
-            <a href="systeem.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Le système Helvaro</span>
-              <span class="ndi-sub">Capter, comprendre, agir, connecter, mesurer</span>
-            </a>
-            <a href="agents/index.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Les flux de travail</span>
-              <span class="ndi-sub">Huit flux au sein du même système</span>
-            </a>
-            <a href="koppelingen/index.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Intégrations</span>
-              <span class="ndi-sub">Où Helvaro s'insère dans votre logiciel existant</span>
-            </a>
-            <a href="controle.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Contrôle et confidentialité</span>
-              <span class="ndi-sub">Ce que le système peut faire seul, et où sont vos données</span>
-            </a>
-            <a href="faro.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Faro</span>
-              <span class="ndi-sub">Suivre, reprendre la main et de l'aide pour vos publications</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="navdrop">
-          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Pour les concessions <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
-          <div class="navdrop-menu" role="menu">
-            <a href="automotive.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Pour les concessions</span>
-              <span class="ndi-sub">Ce que le système fait chez un concessionnaire ou une concession indépendante</span>
-            </a>
-            <a href="agents/nieuwe-aanvraag.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Nouvelle demande</span>
-              <span class="ndi-sub">D'une question sur une voiture à un rendez-vous</span>
-            </a>
-            <a href="agents/proefrit.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Essai</span>
-              <span class="ndi-sub">D'abord vérifier que le véhicule est libre, ensuite seulement un créneau</span>
-            </a>
-            <a href="agents/gemiste-aanvraag.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Relance</span>
-              <span class="ndi-sub">La conversation ne s'arrête pas quand l'acheteur cesse d'écrire</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="navdrop">
-          <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Résultat <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
-          <div class="navdrop-menu" role="menu">
-            <a href="roi.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Calculateur de chiffre d'affaires</span>
-              <span class="ndi-sub">Ce qui traîne parmi vos demandes</span>
-            </a>
-            <a href="cases.html" class="navdrop-item" role="menuitem">
-              <span class="ndi-title">Chiffres</span>
-              <span class="ndi-sub">Ce que nous mesurons, et ce que nous ne pouvons pas encore prouver</span>
-            </a>
-          </div>
-        </div>
-
-        <a href="index.html#prijzen" class="nav-link">Tarifs</a>
-        <a href="waarom.html" class="nav-link">Entreprise</a>
+        <a href="systeem.html" class="nav-link">Produit</a>
+        <a href="telefonie.html" class="nav-link">Téléphonie</a>
+        <a href="koppelingen/index.html" class="nav-link">Intégrations</a>
+        <a href="automotive.html" class="nav-link">Garages</a>
+        <a href="prijzen.html" class="nav-link">Tarifs</a>
+        <a href="waarom.html" class="nav-link">À propos</a>
         <a href="https://app.helvaro.pro/" class="nav-link">Connexion</a>
 
         <div class="lang-switch">
@@ -152,7 +94,7 @@
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
         </button>
 
-        <a href="aanmelden.html" class="btn">Commencer gratuitement</a>
+        <a href="aanmelden.html" class="btn">Essayez Helvaro gratuitement</a>
       </nav>
       <button class="nav-hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -163,70 +105,12 @@
   <!-- Mobiel menu. Dezelfde links, apart blok, want het schuift open onder
        de balk in plaats van ernaast. Ook dit wordt gesynchroniseerd. -->
   <div class="nav-mobile" aria-label="Menu mobile">
-    <div class="navdrop">
-      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Système <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
-      <div class="navdrop-menu" role="menu">
-        <a href="systeem.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Le système Helvaro</span>
-          <span class="ndi-sub">Capter, comprendre, agir, connecter, mesurer</span>
-        </a>
-        <a href="agents/index.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Les flux de travail</span>
-          <span class="ndi-sub">Huit flux au sein du même système</span>
-        </a>
-        <a href="koppelingen/index.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Intégrations</span>
-          <span class="ndi-sub">Où Helvaro s'insère dans votre logiciel existant</span>
-        </a>
-        <a href="controle.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Contrôle et confidentialité</span>
-          <span class="ndi-sub">Ce que le système peut faire seul, et où sont vos données</span>
-        </a>
-        <a href="faro.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Faro</span>
-          <span class="ndi-sub">Suivre, reprendre la main et de l'aide pour vos publications</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="navdrop">
-      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Pour les concessions <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
-      <div class="navdrop-menu" role="menu">
-        <a href="automotive.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Pour les concessions</span>
-          <span class="ndi-sub">Ce que le système fait chez un concessionnaire ou une concession indépendante</span>
-        </a>
-        <a href="agents/nieuwe-aanvraag.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Nouvelle demande</span>
-          <span class="ndi-sub">D'une question sur une voiture à un rendez-vous</span>
-        </a>
-        <a href="agents/proefrit.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Essai</span>
-          <span class="ndi-sub">D'abord vérifier que le véhicule est libre, ensuite seulement un créneau</span>
-        </a>
-        <a href="agents/gemiste-aanvraag.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Relance</span>
-          <span class="ndi-sub">La conversation ne s'arrête pas quand l'acheteur cesse d'écrire</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="navdrop">
-      <button type="button" class="navdrop-toggle" aria-haspopup="true" aria-expanded="false">Résultat <span class="navdrop-caret" aria-hidden="true">&#9662;</span></button>
-      <div class="navdrop-menu" role="menu">
-        <a href="roi.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Calculateur de chiffre d'affaires</span>
-          <span class="ndi-sub">Ce qui traîne parmi vos demandes</span>
-        </a>
-        <a href="cases.html" class="navdrop-item" role="menuitem">
-          <span class="ndi-title">Chiffres</span>
-          <span class="ndi-sub">Ce que nous mesurons, et ce que nous ne pouvons pas encore prouver</span>
-        </a>
-      </div>
-    </div>
-
-    <a href="index.html#prijzen" class="nav-link">Tarifs</a>
-    <a href="waarom.html" class="nav-link">Entreprise</a>
+    <a href="systeem.html" class="nav-link">Produit</a>
+    <a href="telefonie.html" class="nav-link">Téléphonie</a>
+    <a href="koppelingen/index.html" class="nav-link">Intégrations</a>
+    <a href="automotive.html" class="nav-link">Garages</a>
+    <a href="prijzen.html" class="nav-link">Tarifs</a>
+    <a href="waarom.html" class="nav-link">À propos</a>
     <a href="https://app.helvaro.pro/" class="nav-link">Connexion</a>
 
     <div class="lang-switch">
@@ -249,7 +133,7 @@
       <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
     </button>
 
-    <a href="aanmelden.html" class="btn">Commencer gratuitement</a>
+    <a href="aanmelden.html" class="btn">Essayez Helvaro gratuitement</a>
   </div>
 <!-- /SHELL:NAV -->
 
@@ -801,7 +685,7 @@
       <div class="container">
         <h2 class="cta-band-title reveal">Vos acheteurs n'attendent pas. Pourquoi le feriez-vous ?</h2>
         <p class="cta-band-sub reveal reveal-delay-1">Quatorze jours gratuits sur vos propres demandes, sans engagement.</p>
-        <a href="aanmelden.html" class="btn btn-lg reveal reveal-delay-2">Commencer gratuitement <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
+        <a href="aanmelden.html" class="btn btn-lg reveal reveal-delay-2">Essayez Helvaro gratuitement <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
         <p class="cta-twijfel">Vous hésitez encore ? <a href="meeting.html">Planifiez un entretien de 20 minutes avec l'équipe</a></p>
       </div>
     </section>
@@ -811,12 +695,6 @@
   <!-- SHELL:FOOTER -->
 <footer class="footer">
     <div class="container footer-inner">
-
-      <div class="footer-cta">
-        <p class="footer-cta-text">Montrez ce qui arrive.</p>
-        <a href="aanmelden.html" class="btn btn-lg">Commencer gratuitement <span class="btn-arrow" aria-hidden="true">&#8594;</span></a>
-      </div>
-      <p class="cta-twijfel">Vous hésitez encore ? <a href="meeting.html">Planifiez un entretien de 20 minutes avec l'équipe</a></p>
 
       <div class="footer-cols">
         <div class="footer-col footer-col-brand">
@@ -829,6 +707,7 @@
           <span class="footer-head">Système</span>
           <a href="systeem.html" class="footer-link">Le système Helvaro</a>
           <a href="agents/index.html" class="footer-link">Les flux de travail</a>
+          <a href="telefonie.html" class="footer-link">Téléphonie</a>
           <a href="koppelingen/index.html" class="footer-link">Intégrations</a>
           <a href="controle.html" class="footer-link">Contrôle et RGPD</a>
           <a href="faro.html" class="footer-link">Faro</a>
@@ -849,7 +728,7 @@
           <a href="automotive.html" class="footer-link">Pour les concessions</a>
           <a href="roi.html" class="footer-link">Calculateur de chiffre d'affaires</a>
           <a href="cases.html" class="footer-link">Chiffres</a>
-          <a href="index.html#prijzen" class="footer-link">Tarifs</a>
+          <a href="prijzen.html" class="footer-link">Tarifs</a>
           <a href="meeting.html" class="footer-link">Planifier un appel</a>
         </div>
 
@@ -873,8 +752,8 @@
   </footer>
 <!-- /SHELL:FOOTER -->
 
-  <script src="../js/main.js?v=95"></script>
+  <script src="../js/main.js?v=96"></script>
   <script src="../js/motion.js?v=93"></script>
-  <script src="../js/i18n.js?v=95"></script>
+  <script src="../js/i18n.js?v=96"></script>
 </body>
 </html>
